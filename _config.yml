@@ -1,0 +1,4 @@
+permalink: /:title
+paginate: 7
+url: http://markmiyashita.com
+markdown: rdiscount
