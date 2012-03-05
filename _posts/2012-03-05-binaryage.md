@@ -11,6 +11,6 @@ permalink: /projects/mac-hints-from-binaryage
 
 <h1>Mac Hints from BinaryAge</h1>
 
-<a href="http://hints.binaryage.com"><img class="clear blog-image-full-border" width="480" height="235" src="/images/binaryage.png" title="Mac Hints from BinaryAge"></a>
+<a href="http://hints.binaryage.com"><img class="clear blog-image-full-border" width="480" height="235" src="{{site.url}}/images/binaryage.png" title="Mac Hints from BinaryAge"></a>
 
 I have recently become signed to do some freelancer work for a BinaryAge led by the developer of the popular apps TotalFinder and TotalTerminal. I am in charge of running the subdomain hints.binaryage.com where I maintain the structure of the site as well as regularly post articles, tutorials, etc. The site is run using a platform called Jekyll, a simple static page generator and it is hosted on Github using Github Pages. 
