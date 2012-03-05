@@ -21,7 +21,7 @@ layout: nil
         <content type="html"><![CDATA[{{ post.content }}]]></content>
         <author>
             <name>{{post.author_name}}</name>
-            <uri>{{post.author_uri}}</uri>
+            <url>{{post.author_url}}</url>
         </author>
     </entry>
     {% endfor %}
