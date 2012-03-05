@@ -1,0 +1,32 @@
+# coding: utf-8
+ROOT = File.expand_path('.')
+
+require 'rubygems'
+begin
+    require 'colored'
+rescue LoadError
+    raise 'You must "gem install colored" to use terminal colors'
+end
+
+def die(s)
+  puts(s.red)
+  exit(1)
+end
+
+def sys(cmd)
+    puts ("> "+cmd).blue
+    system(cmd)
+end
+
+desc "run the local debug server"
+task :serve do
+  puts "#{"first-time setup".magenta} (markmiyashita.org will be your local dev url):"
+  puts "add #{"127.0.0.1 markmiyashita.org".yellow} into #{"/etc/hosts".blue}"
+  puts "tip: setup nginx to be transparent proxy for http://markmiyashita.org => http://markmiyashita.org:4002"
+  puts "=> #{"http://markmiyashita.org:4002".green} or #{"http://markmiyashita.org".green} with nginx"
+  puts ""
+  
+  sys("jekyll --auto --server 4002 --url http://markmiyashita.org")
+end
+
+task :default => :serve

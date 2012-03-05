@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Mark Miyashita</title>
+    <link href="http://markmiyashita.com/atom.xml" rel="self"/>
+    <link href="http://markmiyashita.com"/>
+    <updated>2012-03-05T09:34:53-08:00</updated>
+    <id>http://markmiyashita.com/</id>
+    
+    
+    <entry>
+        <title><![CDATA[Projects]]></title>
+        
+        <link href="http://markmiyashita.com//projects"/>
+        <updated>2012-03-04T21:00:00-08:00</updated>
+        <id>markmiyashita.com:/projects</id>
+        <content type="html"><![CDATA[<h1>Projects</h1>
+
+
+<p>I do things.</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <uri></uri>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[About]]></title>
+        
+        <link href="http://markmiyashita.com//about"/>
+        <updated>2012-03-04T21:00:00-08:00</updated>
+        <id>markmiyashita.com:/about</id>
+        <content type="html"><![CDATA[<p>My name is Mark Miyashita and I am a student at the University of California, Berkeley studying Electrical Engineering and Computer Science. I have a passion for computer science and creating content for the world to benefit from. Currently, I am the author and editor of <a href="http://hints.binaryage.com">Mac Hints from BinaryAge</a>. This site is built using Jekyll, a new static-post content creator, and hosted using Github Pages. In addition to coding websites and small side projects, I am also learning Python, Objective-C, and Unix to broaden my skill set.</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <uri></uri>
+        </author>
+    </entry>
+    
+</feed>
