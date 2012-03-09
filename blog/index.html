@@ -3,3 +3,9 @@ layout: blog
 title: Blog
 ---
 
+<ul>
+    {% for post in site.categories.blog %}
+        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+        {{ post.content }}
+    {% endfor %}
+</ul>
