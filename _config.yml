@@ -2,3 +2,9 @@ permalink: /blog/:title
 paginate: 7
 url: http://markmiyashita.com
 markdown: rdiscount
+title: Mark Miyashita
+author:
+    name: Mark Miyashita
+    email: negativetwelve@gmail.com
+    gihub: negativetwelve
+    twitter: negativetwelve
