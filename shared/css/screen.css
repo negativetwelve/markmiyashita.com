@@ -15,6 +15,11 @@ html, body {
   height: 100%;
 }
 
+charts {
+    margin: 0;
+    padding: 0;
+}
+
 body {
   background-color: white;
   font: 11px helvetica, arial, clean, sans-serif;
@@ -209,3 +214,18 @@ ul.posts {
   #related h2 {
     margin-bottom: 1em;
   }
+  
+/*****************************************************************************/
+/*
+/* 404 Page
+/*
+/*****************************************************************************/
+.fail {
+    color: #a00;
+    font-weight: bold;
+    font-size: 125px;
+    margin-left: -2.5em;
+    margin-right: -2.5em;
+//    margin: .25em auto;
+    line-height: 100px;
+}
