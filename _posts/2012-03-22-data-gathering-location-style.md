@@ -1,7 +1,7 @@
 ---
 layout: blog-post
 title: "Data Gathering, Location Style"
-tags: [mark miyashita, mark, miyashita, uc berkeley, cal, uc, berkeley, university of california, berkeley, computer science, cs, eecs, electrical engineering, mac, iphone, mac os x, mac hints, binaryage, mac hints from binaryage, tutorial, blog, apple, technology]
+tags: [mark miyashita, mark, miyashita, uc berkeley, cal, uc, berkeley, university of california, berkeley, computer science, cs, eecs, electrical engineering, mac, iphone, mac os x, mac hints, binaryage, mac hints from binaryage, tutorial, blog, apple, technology, data, tracking, productivity, vimeo, video, analytics]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
