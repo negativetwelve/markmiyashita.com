@@ -221,11 +221,13 @@ ul.posts {
 /*
 /*****************************************************************************/
 .fail {
-    color: #a00;
+    color: #000;
     font-weight: bold;
-    font-size: 125px;
-    margin-left: -2.5em;
-    margin-right: -2.5em;
-//    margin: .25em auto;
-    line-height: 100px;
+    font-size: 15px;
+//    margin-left: 0em;
+//    margin-right: 0em;
+//    margin: 0em auto;
+    margin-top: 12em;
+    margin-bottom: 12em;
+    line-height: 18px;
 }
