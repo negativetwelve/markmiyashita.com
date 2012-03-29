@@ -11,6 +11,14 @@
   padding: 0;
 }
 
+html {
+	background: url(/images/mark.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 html, body {
   height: 100%;
 }
@@ -21,7 +29,8 @@ charts {
 }
 
 body {
-  background-color: white;
+//  background-color: white;
+//  opacity: 0.8;
   font: 11px helvetica, arial, clean, sans-serif;
   *font-size: small;
   text-align: center;
@@ -84,11 +93,14 @@ ul.posts {
 /*****************************************************************************/
 
 .site {
+    background-color: white;
+    opacity: 0.7;
     font-size: 110%;
     text-align: justify;
     width: 40em;
     margin: 3em auto 2em auto;
     line-height: 1.5em;
+    padding: 1em 1em 1em 1em;
 }
 
 .title-bar {
@@ -231,3 +243,9 @@ ul.posts {
     margin-bottom: 12em;
     line-height: 18px;
 }
+
+/*****************************************************************************/
+/*
+/* Home Page
+/*
+/*****************************************************************************/

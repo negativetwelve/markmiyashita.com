@@ -15,7 +15,7 @@ permalink: /productivity
 <!-- configurable section -->
 <script type="text/javascript">
 if (typeof rtapi == 'undefined') var rtapi = {}; rtapi.k9OY = {};
-rtapi.k9OY.title = 'All-time';
+rtapi.k9OY.title = 'Weekly Activity Summary';
 rtapi.k9OY.kind = 'sidebar';
 rtapi.k9OY.styling = { width:480, height:480 };
 </script>
