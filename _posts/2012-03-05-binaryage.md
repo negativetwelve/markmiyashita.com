@@ -1,15 +1,14 @@
 ---
-layout: default
+layout: projects-post
 title: "Mac Hints from BinaryAge"
 tags: [mark miyashita, mark, miyashita, uc berkeley, cal, uc, berkeley, university of california, berkeley, computer science, cs, eecs, electrical engineering, mac, iphone, mac os x, mac hints, binaryage, mac hints from binaryage, tutorial, blog, apple, technology]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
-date: 2012-03-05 010:00:00 -8
+date: 2012-03-05 10:00:00 -8
 permalink: /projects/mac-hints-from-binaryage
+categories: projects
 ---
-
-<h1>Mac Hints from BinaryAge</h1>
 
 <a href="http://hints.binaryage.com"><img class="clear blog-image-full-border" width="480" height="235" src="{{site.url}}/images/binaryage.png" title="Mac Hints from BinaryAge"></a>
 
