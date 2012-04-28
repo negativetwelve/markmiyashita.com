@@ -10,7 +10,7 @@ permalink: /projects/crosslives
 categories: projects
 ---
 
-<a href="http://crosslives.com"><img class="clear blog-image-full-border" width="480" src="{{site.url}}/images/crosslives.png" title="Crosslives"></a>
+<a href="http://crosslives.com"><img class="clear blog-image-full-border" width="480" src="http://markmiyashita.com/images/crosslives.png" title="Crosslives"></a>
 
 It's about time our lives crossed together.
 
