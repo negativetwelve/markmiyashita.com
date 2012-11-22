@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to Win a Hackathons"
+title: "How to Win a Hackathon"
 tags: [mark miyashita, mark, miyashita, uc berkeley, cal, uc, berkeley, university of california, berkeley, computer science, cs, eecs, electrical engineering, mac, iphone, mac os x, mac hints, binaryage, mac hints from binaryage, hackathons, hackjams, berkeley, facebook hackathon, hackathon]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com

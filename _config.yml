@@ -1,6 +1,6 @@
 permalink: /blog/:title
-paginate: 7
 url: http://markmiyashita.com
+pygments: true
 markdown: rdiscount
 title: Mark Miyashita
 author:
