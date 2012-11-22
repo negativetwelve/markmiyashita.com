@@ -1,6 +1,8 @@
 body {
   font-family: "Source Sans Pro",sans-serif;
   font-size: 14px;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
@@ -26,19 +28,90 @@ ul li {
 }
 
 .main {
-  min-width: 850px;
+  //min-width: 850px;
 }
 
-.sidebar {
-  width: 20%;
-  position: fixed;
-  min-height: 100%;
-  min-width: 180px;
-  background-color: whiteSmoke;
-  padding-top: 50px;
-  padding-left: 2%;
-  z-index: 1;
+@media (min-width: 979px) {
+  .sidebar {
+    width: 20%;
+    position: fixed;
+    min-height: 100%;
+    min-width: 180px;
+    background-color: whiteSmoke;
+    padding-top: 50px;
+    padding-left: 2%;
+    z-index: 1;
+  }
+  
+  .content {
+    margin-left: 22%;
+    min-width: 600px;
+    position: relative;
+    z-index: 10;
+    padding: 50px 20px 0px 20px;
+    background-color: white;
+    border-left: 1px solid #E3E3E3;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
+    min-height: 1000px;
+  }
 }
+
+@media (min-width: 768px) and (max-width: 979px) {
+  .sidebar {
+    width: 25%;
+    position: fixed;
+    min-height: 100%;
+    min-width: 180px;
+    background-color: whiteSmoke;
+    padding-top: 50px;
+    padding-left: 2%;
+    z-index: 1;
+  }
+  
+  .content {
+    margin-left: 27%;
+    min-width: 600px;
+    position: relative;
+    z-index: 10;
+    padding: 50px 20px 0px 20px;
+    background-color: white;
+    border-left: 1px solid #E3E3E3;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+    -moz-backface-visibility: visible;
+    min-height: 1000px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: block;
+    position: relative;
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin: 0;
+    padding: 5px 20px;
+    background-color: whiteSmoke;
+  }
+  
+  .content {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: block;
+    width: auto;
+    min-width: 0;
+    margin-top: 0;
+    padding: 0 5px;
+    clear: both;
+    background-color: white;
+    position: absolute;
+  }
+}
+
 
 .sidebar a {
 
@@ -53,18 +126,6 @@ ul li {
 }
 
 .sidebar-inner {
-  padding-top: 40%;
-  width: 70%;
-}
-
-.content {
-  margin-left: 22%;
-  min-width: 600px;
-  background-color: white;
-  border-left: 1px solid #E3E3E3;
-  min-height: 1000px;
-  padding: 50px 20px 0px 20px;
-  z-index: 999;
 }
 
 .content-inner {
