@@ -1,87 +1,63 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="Mark Miyashita" />
-   <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+  <head>
+      <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <title>{{ page.title }}</title>
+     <meta name="author" content="Mark Miyashita" />
+     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+    
+     <link rel="stylesheet" href="/public/css/bootstrap.css" type="text/css" />
+     <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
+     <link rel="stylesheet" href="/public/css/main.css" type="text/css" />
+     <link rel="stylesheet" href="/public/css/site.css" type="text/css" />
 
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/shared/css/syntax.css" type="text/css" />
+  </head>
+  <body>
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/shared/css/screen.css" type="text/css" media="screen, projection" />
-
-</head>
-<body>
-
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
-
-<div class="site">
-  <div class="title">
-    <a href="/">Mark Miyashita</a>
-    <a class="extra" href="/">about</a>
-    <a class="extra" href="/resume">résumé</a>
-    <a class="extra" href="/projects">projects</a>
-    <a class="extra" href="/blog">blog</a>
-    <a class="extra" href="/productivity">productivity</a>
-    <a class="extra" href="/links">links</a>
-  </div>
-  
-  {{ content }}
-  
-  <div class="footer">
-    <div class="contact">
-      <p>
-        Mark Miyashita<br />
-        University of California, Berkeley<br />
-        Electrical Engineering and Computer Science<br />
-        Editor and Author at <a href="http://hints.binaryage.com/">Mac Hints from BinaryAge</a><br />
-        negativetwelve[at]gmail[dot]com
-      </p>
+    <div class="main">
+      <div class="sidebar">
+        <div class="sidebar-inner">
+          <div class="about">
+            <h1>Mark Miyashita</h1>
+            Web, Tech, Startups, and Entrepreneurship
+            <ul class="contact">
+              <li>Phone: (480) 331-1375</li>
+              <li>Email: <a href="mailto:negativetwelve@gmail.com">negativetwelve@gmail.com</a></li>
+            </ul>
+          </div>
+          <ul class="links">
+            <li><a href="/downloads/mark_miyashita_resume.pdf">Resume</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+            
+          <ul class="social">
+            <li><a href="http://github.com/negativetwelve">Github</a></li>
+            <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49">LinkedIn</a></li>
+            <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+          </ul>
+          
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="content-inner">
+          {{ content }}
+        </div>
+      </div>
     </div>
-    <div class="contact">
-      <p>
-        <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a><br />
-        <a href="http://github.com/negativetwelve/">Github</a><br />
-        <a href="http://twitter.com/negativetwelve/">Twitter</a><br />
-        <a href="http://markmiyashita.brandyourself.com/">BrandYourself</a><br />
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/markmiyashita">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
-  </div>
-</div>
 
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
 
-<!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-29669299-1");
-pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-</body>
+  </body>
 </html>

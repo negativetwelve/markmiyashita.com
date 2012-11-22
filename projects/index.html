@@ -1,11 +1,34 @@
 ---
-layout: projects
-title: Projects
+layout: default
+title: Projects | Mark Miyashita
 ---
 
-<ul>
-    {% for post in site.categories.projects %}
-        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-        {{ post.content }}
-    {% endfor %}
-</ul>
+<h1>Projects</h1>
+
+<div class="projects-list">
+  <div class="project">
+    A set of projects that I have recently built. A full profile can be found on my <a href="http://github.com/negativetwelve">Github account</a>.
+    
+    <div class="project-header"><a href="https://github.com/negativetwelve/sound-of-dub">Sound of Dub</a> (<a href="intense-journey-6792.herokuapp.com">intense-journey-6792.herokuapp.com</a>)</div>
+    A music app that I built at the Hackers@Berkeley and IEEE hackathon. Using the API, I grab songs from Soundcloud and allow users to form their own playlists or listen in a radio-style fashion.
+    
+    <div class="project-header"><a href="https://github.com/negativetwelve/Tim">Tim</a> (<a href="https://timtodo.herokuapp.com/">https://timtodo.herokuapp.com/</a>)</div>
+    Winner of the Hilfinger award at the Fall 2012 HackJam. A vim-style web todo app.
+      
+    <div class="project-header"><a href="https://github.com/negativetwelve/facebook-hackathon">Life Logger</a></div>
+    I worked on a team of four at the <a href="https://www.facebook.com/events/279390882175206/">2012 Battle of the Bay Facebook Hackathon</a>. We built an event logger for your computer that logs mouse clicks, application switches, and keystrokes. Then we analyzed and displayed the data using jquery graphs.
+      
+    <div class="project-header"><a href="https://github.com/negativetwelve/pets-alliance">Pets Alliance</a></div>
+    A massively multiplayer online role-playing game/side project which I started in June of 2012. I have built the game from scratch using Ruby on Rails.
+    
+    <div class="project-header"><a href="https://github.com/negativetwelve/markmiyashita.com">markmiyashita.com</a></div>
+    My personal website that I have developed from scratch. It is built using Jekyll, a static blog generator.
+      
+    <div class="project-header">imbyter.com (no longer active)</div>
+    Technology site that attracted over 40,000 unique users and its success eventually led to my job at BinaryAge.
+      
+    <div class="project-header"><a href="https://github.com/negativetwelve/bashprofile.com">bashprofile.com</a></div>
+    Another website that I started as a technology news site. Currently under major development.
+      
+  </div>
+</div>

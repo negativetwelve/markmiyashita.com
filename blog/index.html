@@ -1,11 +1,11 @@
 ---
-layout: blog
-title: Blog
+layout: default
+title: Blog | Mark Miyashita
 ---
 
-<ul>
-    {% for post in site.categories.blog %}
-        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-        {{ post.content }}
-    {% endfor %}
-</ul>
+<h1>Blog</h1>
+
+{% for post in paginator.posts %}
+  <div class="blog-title">{{ post.title }}</div>
+  <div class="blog-content">{{ post.content }}</div>
+{% endfor %}
