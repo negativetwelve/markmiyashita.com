@@ -14,7 +14,7 @@ This year I started participating in many hackathons of different lengths, diffe
 
 * Unless you're a full-stack developer with really, really good frontend skills, you need a designer. The presentation is arguably the most important part and if your product is not visually pleasing, it will be hard to overcome.
 * The demo is the most important part. No matter how great your project is, if you can't show it properly, or you can't explain the technical aspects of it, you won't be able to show off your project in a way that will attract the developers.
-* Work on something that you are passionate in. Passion helps you work faster and with less distractions, trust me.
+* Work on something that you are passionate about. Passion helps you work faster and with less distractions, trust me.
 * Make an application that does one thing and make sure it does that one thing very, very well. Most projects that win have one purpose. The reason that they are able to win is because their project is complete and it has a direct purpose. Projects that are too ambitious almost always come up short because of missing features.
 
 These are just some of the things that I've noticed at various hackathons that I have participated in. Have any additional tips? Leave them in the comments below!
