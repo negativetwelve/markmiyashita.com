@@ -18,3 +18,5 @@ This year I started participating in many hackathons of different lengths, diffe
 * Make an application that does one thing and make sure it does that one thing very, very well. Most projects that win have one purpose. The reason that they are able to win is because their project is complete and it has a direct purpose. Projects that are too ambitious almost always come up short because of missing features.
 
 These are just some of the things that I've noticed at various hackathons that I have participated in. Have any additional tips? Leave them in the comments below!
+
+Wow! My article was featured on the front page of Hacker News for almost half a day! You can check out the discussion <a href="http://news.ycombinator.com/item?id=4830418">here!</a> Thanks for all the support everyone!
