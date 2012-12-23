@@ -2,43 +2,28 @@
 layout: default
 title: Projects - Mark Miyashita
 ---
-
-<ul class="breadcrumb">
-  <li><a href="/">Home</a> <span class="divider">/</span></li>
-  <li class="active">Projects</li>
-</ul>
-
-<h1>Projects</h1>
-
-<div class="projects-list">
-  <div class="project">
-    <div class="alert alert-info">
-      A set of projects that I have recently built. A full profile can be found on my <a href="http://github.com/negativetwelve">Github account</a>.
+<section class="projects blue-section" id="projects-divider">
+  <div class="row">
+    <div class="twelve columns">
+      <h1>Projects</h1>
     </div>
-    
-    <div class="project-header"><a href="https://github.com/negativetwelve/appsearches">Appsearch.es</a> (<a href="http://www.appsearch.es/">appsearch.es</a>)</div>
-    I made a scrapper that grabs tons of data from Apple's App Store and displays it in a clean interface. I also implemented a very fast search system that uses Postgresql's built in full-text search coupled with indices on the fields that I search over. Together, the response time is very fast!
-    
-    <div class="project-header"><a href="https://github.com/negativetwelve/sound-of-dub">Sound of Dub</a> (<a href="http://intense-journey-6792.herokuapp.com">intense-journey-6792.herokuapp.com</a>)</div>
-    A music app that I built at the Hackers@Berkeley and IEEE hackathon. Using the API, I grab songs from Soundcloud and allow users to form their own playlists or listen in a radio-style fashion.
-    
-    <div class="project-header"><a href="https://github.com/negativetwelve/Tim">Tim</a> (<a href="https://timtodo.herokuapp.com/">https://timtodo.herokuapp.com/</a>)</div>
-    Winner of the Hilfinger award at the Fall 2012 HackJam. A vim-style web todo app.
-      
-    <div class="project-header"><a href="https://github.com/negativetwelve/facebook-hackathon">Life Logger</a></div>
-    I worked on a team of four at the <a href="https://www.facebook.com/events/279390882175206/">2012 Battle of the Bay Facebook Hackathon</a>. We built an event logger for your computer that logs mouse clicks, application switches, and keystrokes. Then we analyzed and displayed the data using jquery graphs.
-      
-    <div class="project-header"><a href="https://github.com/negativetwelve/pets-alliance">Pets Alliance</a></div>
-    A massively multiplayer online role-playing game/side project which I started in June of 2012. I have built the game from scratch using Ruby on Rails.
-    
-    <div class="project-header"><a href="https://github.com/negativetwelve/markmiyashita.com">markmiyashita.com</a></div>
-    My personal website that I have developed from scratch. It is built using Jekyll, a static blog generator.
-      
-    <div class="project-header">imbyter.com (no longer active)</div>
-    Technology site that attracted over 40,000 unique users and its success eventually led to my job at BinaryAge.
-      
-    <div class="project-header"><a href="https://github.com/negativetwelve/bashprofile.com">bashprofile.com</a></div>
-    Another website that I started as a technology news site. Currently under major development.
-      
   </div>
-</div>
+  
+  {% for project in site.projects %}
+  <div class="row company-modal" data-reveal-id="modal-{{ project.modal }}">
+    <div class="two columns">
+      <div class="company-image"><img src="{{ project.image }}" alt="{{ project.name }}" class="image-medium-border"></div>
+    </div>
+    <div class="ten columns">
+      <div class="company-name">
+        <h4 class="no-margin-top">{{ project.name }}
+          {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
+          {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
+        </h4>
+        <h5>{{ project.description }}</h5>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  
+</section>

@@ -10,3 +10,118 @@ author:
     email: negativetwelve@gmail.com
     gihub: negativetwelve
     twitter: negativetwelve
+    
+work:
+  - name: Kloudless
+    role: Software Engineer
+    start-date: "Dec. '12"
+    end-date: "Present"
+    image: /public/images/kloudless.png
+    modal: kloudless
+    description: Part of a small team, I will be playing an integral role in developing the middle stack to make the application as fast and bug-free as possible.
+    full-description:
+      
+  - name: UC Berkeley
+    role: Undergraduate Student Instructor for CS61A
+    start-date: "Jan. '13"
+    end-date: "Present"
+    image: /public/images/berkeley.png
+    modal: cs61a-ta
+    description: In the Spring semester, I will be an Undergraduate Student Instructor for the introductory computer science course, CS61A.
+    full-description:
+    
+  - name: Inigral Inc.
+    role: Software Engineer Intern
+    start-date: "Jul. '12"
+    end-date: "Dec. '12"
+    image: /public/images/inigral.png
+    modal: inigral
+    description: As a back-end developer, I hack on new features and solve mysterious bugs. In a startup environment, I continue to learn everyday both in code and development practices.
+    full-description:
+      
+  - name: UC Berkeley
+    role: CS10 Head Reader
+    start-date: "Aug. '12"
+    end-date: "Dec. '12"
+    image: /public/images/berkeley.png
+    modal: cs10-reader
+    description: As the Head Reader for the undergraduate course CS10, I not only grade homework, projects, and exams, but also work with Professor Dan Garcia to deal with logistics and delegation of work among the readers.
+    full-description:
+      
+  - name: UC Berkeley SA-IT
+    role: Residential Computing Consultant
+    start-date: "May '12"
+    end-date: "Present"
+    image: /public/images/rescomp.png
+    modal: rescomp
+    description: I provide technical support on topics such as computer software, security, and general hardware configurations for all students living in university-owned housing.
+    full-description:
+  
+  - name: UC Berkeley
+    role: CS61A Reader
+    start-date: "May '12"
+    end-date: "Dec. '12"
+    image: /public/images/berkeley.png
+    modal: cs61a-reader
+    description: This semester, working with Professor John DeNero, my job is to focus on coding style within projects. I help students become both precise and concise in their code while still keeping it readable and manageable.
+    full-description:
+      
+  - name: Mac Hints from BinaryAge
+    role: Website Developer/Editor
+    start-date: "Feb. '12"
+    end-date: "Present"
+    image: /public/images/binaryage.png
+    modal: binaryage
+    description: I develop and maintain a subsection of the website BinaryAge.com. I designed the layout and contribute articles every week. Over 290,000 views since I began developing in March of 2012. Average of 1,500 views a day/45,000 views a month.
+    full-description:
+    
+projects:
+  - name: Appsearch.es
+    url: http://appsearch.es
+    repo: https://github.com/negativetwelve/appsearches
+    image: /public/images/appsearches.png
+    modal: appsearches
+    description: An iOS app search engine. Data is gathered using a scrapper that I built and stored in a Postgres database. Search is done by indexing the database and using Postgres built-in full-text search.
+  
+  - name: Sound of Dub
+    url: https://intense-journey-6792.herokuapp.com/
+    repo: https://github.com/negativetwelve/sound-of-dub
+    image: /public/images/sound-of-dub.png
+    modal: sound-of-dub
+    description: A music app that I built at a hackathon. It utilizes the Soundcloud API and allows users to make and play their own playlists.
+      
+  - name: Tim Todo
+    url: https://timtodo.herokuapp.com/
+    repo: https://github.com/negativetwelve/Tim
+    image: /public/images/tim.png
+    modal: tim
+    description: A vim-style web based todo app that I built with a friend at our first ever hackathon. We won the Hilfinger Award given to us by Box at the 2012 H@B Hackjam.
+      
+  - name: Life Logger
+    url: 
+    repo: https://github.com/negativetwelve/facebook-hackathon
+    image: /public/images/life-logger.png
+    modal: life-logger
+    description: I worked with a team of four at the 2012 Battle of the Bay Facebook Hackathon. We built an event logger for your computer that allows you to visualize and analyze your habits on the computer.
+      
+  - name: markmiyashita.com
+    url: http://markmiyashita.com
+    repo: https://github.com/negativetwelve/markmiyashita.com
+    image: /public/images/website.png
+    modal: markmiyashita
+    description: My personal about me website that I have developed from scratch. It is built using Jekyll and hosted on Github Pages.
+      
+  - name: Pets Alliance
+    url:
+    repo: https://github.com/negativetwelve/pets-alliance
+    image: /public/images/petsalliance.png
+    modal: petsalliance
+    description: Half of an MMORPG that I built in the summer of 2012. The UI was never finished by the backend worked pretty well. May continue this project in the future.
+      
+  - name: bashprofile.com
+    url: http://bashprofile.com
+    repo: https://github.com/negativetwelve/bashprofile.com
+    image: /public/images/bashprofile.png
+    modal: bashprofile
+    description: A small tech blog that I built and designed.
+  

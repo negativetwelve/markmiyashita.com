@@ -9,46 +9,20 @@
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
     
     <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/public/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="/public/js/foundation.min.js"></script>
+    <script type="text/javascript" src="/public/js/main.js"></script>
     
-    <link rel="stylesheet" href="/public/css/bootstrap-responsive.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/bootstrap.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/main.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/foundation.min.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/site.css" type="text/css" />
     
   </head>
+  <header>
+    {% include header.html %}
+  </header>
   <body>
-
-    <div class="main">
-        <div class="sidebar">  
-          <div class="about">
-            <h1><a href="/">Mark Miyashita</a></h1>
-            Web, Tech, Startups, and Entrepreneurship
-            <ul class="contact">
-              <li>Phone: (480) 331-1375</li>
-              <li>Email: <a href="mailto:negativetwelve@gmail.com">negativetwelve@gmail.com</a></li>
-            </ul>
-          </div>
-          <ul class="links">
-            <li><a href="/">Resume</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/blog">Blog</a></li>
-          </ul>
-            
-          <ul class="social">
-            <li><a href="http://github.com/negativetwelve">Github</a></li>
-            <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49">LinkedIn</a></li>
-            <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
-          </ul>
-        </div>
-      
-      <div class="content">
-        <div class="content-inner">
-          {{ content }}
-        </div>
-      </div>
-    </div>
+    <div id="content"></div>
+    {{ content }}
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -62,4 +36,8 @@
     <!-- Google Analytics end -->
 
   </body>
+  
+  <footer>
+    {% include footer.html %}
+  </footer>
 </html>
