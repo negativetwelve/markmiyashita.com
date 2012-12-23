@@ -66,7 +66,7 @@ section.resume, section.blog, section.contact {
 }
 
 section#about-me {
-  height: 70%;
+  min-height: 70%;
 }
 
 section.resume#resume-intro {
@@ -112,7 +112,7 @@ section#blog-full .row .twelve.columns h1, section#main-blog-post .row .twelve.c
 }
 
 section#contact {
-  height: 70%;
+  min-height: 70%;
   background: #2BA6CB;
 }
 
