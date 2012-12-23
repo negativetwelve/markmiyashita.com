@@ -65,11 +65,6 @@ section.resume, section.blog, section.contact {
   display: none;
 }
 
-section#about-me {
-  min-height: 70%;
-  height: auto;
-}
-
 section.resume#resume-intro {
   padding: 20px 0;
   background: rgb(234, 255, 82);
@@ -96,6 +91,21 @@ section.blue-section a:hover {
   color: #444444;
 }
 
+section#about-me {
+  min-height: 70%;
+  height: auto;
+}
+
+section#contact {
+  min-height: 70%;
+  height: auto;
+  background: #2BA6CB;
+}
+
+section#contact h1 {
+  color: white;
+}
+
 section#blog-full, section#main-blog-post {
   background: #ECF8FF;
 }
@@ -110,16 +120,6 @@ section#blog-full .row .twelve.columns h5, section#main-blog-post .row .twelve.c
 
 section#blog-full .row .twelve.columns h1, section#main-blog-post .row .twelve.columns h1 {
   margin-bottom: 0px;
-}
-
-section#contact {
-  min-height: 70%;
-  height: auto;
-  background: #2BA6CB;
-}
-
-section#contact h1 {
-  color: white;
 }
 
 /* Sub-section: Resume */
