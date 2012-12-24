@@ -230,6 +230,11 @@ section#awards h5 {
   margin-bottom: 0px;
 }
 
+.about-me-images {
+  float: left;
+  padding: 10px;
+}
+
 .image-about-me {
   -moz-box-shadow: 0 4px 3px rgba(0,0,0,0.5);
   -webkit-box-shadow: 0 4px 3px rgba(0, 0, 0, 0.5);  
