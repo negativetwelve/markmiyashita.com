@@ -22,8 +22,6 @@ $(document).ready(function() {
 
   $('.load-item').click(function() {
     loadSection($(this).context.text);
-    var pageTracker = _gat._getTracker("UA-29669299-1");
-    pageTracker._trackPageview();
   });
   
   $('.load-contact').click(function() {
@@ -38,14 +36,17 @@ function scrollToContent() {
 }
 
 function loadSection(location) {
+  var loc = location.toLowerCase();
+  _gaq.push(['_trackPageview', '/#' + loc]);
   $('section').stop().slideUp();
-  var section = $('.' + location.toLowerCase());
+  var section = $('.' + loc);
   $(section).stop().slideDown(function() {
     scrollToContent();
   });
 };
 
 function loadProjects() {
+  _gaq.push(['_trackPageview', '/#projects']);
   $('section').stop().slideUp();
   var section = $('.resume');
   $(section).stop().slideDown(function() {
