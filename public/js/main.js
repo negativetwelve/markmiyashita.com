@@ -9,6 +9,7 @@ $(document).ready(function() {
       loadProjects();
     }
   } else {
+    scrollToContent();
   }
   
   $('.load-projects').click(function() {
@@ -28,13 +29,17 @@ $(document).ready(function() {
   });
 });
 
+function scrollToContent() {
+  $('html, body').animate({
+    scrollTop: $("#content").offset().top
+  }, 10);
+}
+
 function loadSection(location) {
   $('section').stop().slideUp();
   var section = $('.' + location.toLowerCase());
   $(section).stop().slideDown(function() {
-    $('html, body').animate({
-      scrollTop: $("#content").offset().top
-    }, 10);
+    scrollToContent();
   });
 };
 
