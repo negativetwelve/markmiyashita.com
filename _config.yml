@@ -116,7 +116,7 @@ projects:
     repo: https://github.com/negativetwelve/pets-alliance
     image: /public/images/petsalliance.png
     modal: petsalliance
-    description: Half of an MMORPG that I built in the summer of 2012. The UI was never finished by the backend worked pretty well. May continue this project in the future.
+    description: Half of an MMORPG that I built in the summer of 2012. The UI was never finished but the backend worked pretty well. May continue this project in the future.
       
   - name: bashprofile.com
     url: http://bashprofile.com
