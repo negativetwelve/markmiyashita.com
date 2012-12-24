@@ -24,6 +24,10 @@ $(document).ready(function() {
     loadSection($(this).context.text);
   });
   
+  $('.load-resume').click(function() {
+    loadSection('resume');
+  })
+  
   $('.load-contact').click(function() {
     loadSection('contact');
   });
