@@ -54,7 +54,7 @@ work:
     end-date: "Present"
     image: /public/images/rescomp.png
     modal: rescomp
-    description: I provide technical support on topics such as computer software, security, and general hardware configurations for all students living in university-owned housing.
+    description: I provide technical support and customer service on topics such as computer software, security, and general hardware configurations for all students living in university-owned housing. I also lead workshops geared towards teaching students about being safe on the web.
     full-description:
   
   - name: UC Berkeley
