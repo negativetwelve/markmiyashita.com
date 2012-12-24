@@ -8,7 +8,7 @@ $(document).ready(function() {
     } else {
       loadProjects();
     }
-  } else {
+  } else if (relative != '/') {
     scrollToContent();
   }
   
