@@ -37,7 +37,7 @@ function scrollToContent() {
 
 function loadSection(location) {
   var loc = location.toLowerCase();
-  pageTracker.push(['_trackPageview', '/#' + loc]);
+  pageTracker._trackPageview('/#' + loc);
   $('section').stop().slideUp();
   var section = $('.' + loc);
   $(section).stop().slideDown(function() {
@@ -46,7 +46,7 @@ function loadSection(location) {
 };
 
 function loadProjects() {
-  pageTracker.push(['_trackPageview', '/#projects']);
+  pageTracker._trackPageview('/#projects');
   $('section').stop().slideUp();
   var section = $('.resume');
   $(section).stop().slideDown(function() {
