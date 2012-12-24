@@ -37,7 +37,6 @@ function scrollToContent() {
 
 function loadSection(location) {
   var loc = location.toLowerCase();
-  var pageTracker = _gat._getTracker("UA-29669299-1");
   pageTracker._trackPageview('/#' + loc);
   $('section').stop().slideUp();
   var section = $('.' + loc);
@@ -47,7 +46,6 @@ function loadSection(location) {
 };
 
 function loadProjects() {
-  var pageTracker = _gat._getTracker("UA-29669299-1");
   pageTracker._trackPageview('/#projects');
   $('section').stop().slideUp();
   var section = $('.resume');
