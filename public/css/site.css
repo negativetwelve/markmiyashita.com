@@ -255,7 +255,7 @@ section#awards h5 {
   border-radius: 20px;
 }
 
-.resume .row.company-modal:hover {
+header .row .three.columns h4 a:hover, #main-name:hover {
   animation-name: jiggle;
   -moz-animation-name: jiggle;
   -webkit-animation-name: jiggle;
@@ -278,24 +278,24 @@ section#awards h5 {
   
 @-webkit-keyframes jiggle {
   0%{
-    left: 0px;
+    padding-left: 0px;
   }
-  40%{
-    left: 0px;
+  10%{
+    padding-left: 0px;
   }
-  45%{
-    left: 5px;
+  15%{
+    padding-left: 10px;
   }
-  50%{
-    left: 0px;
+  20%{
+    padding-left: 0px;
   }
-  55%{
-    left: -5px;
+  25%{
+    padding-left: 5px;
   }
-  60%{
-    left: 0px;
+  30%{
+    padding-left: 0px;
   }
   100%{
-    left: 0px;
+    padding-left: 0px;
   }
 }

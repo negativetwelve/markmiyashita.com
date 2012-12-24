@@ -37,7 +37,7 @@ function scrollToContent() {
   $('html, body').animate({
     scrollTop: $("#content").offset().top
   }, 10);
-}
+};
 
 function loadSection(location) {
   var loc = location.toLowerCase();
