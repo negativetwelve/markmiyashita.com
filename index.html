@@ -183,7 +183,10 @@ title: Mark Miyashita
         <h5>by: <a href="{{ post.author_url }}">{{ post.author_name }}</a></h5>
         <h5>{{ post.date | date:"%B %d, %Y"  }}</h5>
         <div class="padding-bottom"></div>
-        <div class="blog-content">{{ post.content }}</div>
+        <div class="blog-content">
+          {{ post.content | truncatewords: 70 }} 
+          <a href="{{ post.url | replace '.html','' }}" class="post-readmore">(Read More)</a>
+        </div>
       {% endfor %}
     </div>
   </div>
