@@ -22,6 +22,8 @@ $(document).ready(function() {
 
   $('.load-item').click(function() {
     loadSection($(this).context.text);
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
   });
   
   $('.load-contact').click(function() {
