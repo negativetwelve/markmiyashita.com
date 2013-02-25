@@ -6,6 +6,8 @@ author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 date: 2012-12-31 19:15:00 -7
+
+published: false
 ---
 
 Let me just start out by saying, 2012 has been the best year yet. I met so many extraordinary people, stumbled upon so many new and exciting opportunities, and opened up many doors for future paths. I'm ecstatic about what the future holds for me and thought it would be a good idea to record the highlights of the past year for reflection and archival purposes.

@@ -186,6 +186,7 @@ title: Mark Miyashita
   <div class="row">
     <div class="twelve columns">
       {% for post in paginator.posts %}
+        {% if post.published %}
         <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
         <h5>by: <a href="{{ post.author_url }}">{{ post.author_name }}</a></h5>
         <h5>{{ post.date | date:"%B %d, %Y"  }}</h5>
@@ -194,6 +195,7 @@ title: Mark Miyashita
           {{ post.content | truncatewords: 70 }} 
           <a href="{{ post.url | replace '.html','' }}" class="post-readmore">(Read More)</a>
         </div>
+        {% endif %}
       {% endfor %}
     </div>
   </div>

@@ -6,6 +6,8 @@ author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 date: 2012-11-22 13:04:00 -7
+
+published: true
 ---
 
 <img src="/public/images/hackathon.jpg" class="image-full-width image-rounded">
