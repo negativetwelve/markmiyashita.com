@@ -70,6 +70,12 @@ section.resume#resume-intro {
   background: rgb(234, 255, 82);
 }
 
+section.blog#blog-full {
+  background: white;
+  min-height: calc(100% - 309px);
+  min-height: -webkit-calc(100% - 309px);
+}
+
 section.blue-section {
   background: #2BA6CB;
   color: white;
@@ -92,13 +98,13 @@ section.blue-section a:hover {
 }
 
 section#about-me {
-  min-height: 70%;
-  height: auto;
+  min-height: calc(100% - 233px);
+  min-height: -webkit-calc(100% - 233px);
 }
 
 section#contact {
-  min-height: 70%;
-  height: auto;
+  min-height: calc(100% - 233px);
+  min-height: -webkit-calc(100% - 233px);
 }
 
 section#contact h1 {
@@ -106,7 +112,7 @@ section#contact h1 {
 }
 
 section#blog-full, section#main-blog-post {
-  background: #ECF8FF;
+  background: white;
 }
 
 section#blog-full h1, section#main-blog-post h1 {
