@@ -154,7 +154,12 @@ section#cs61a h1,
 section#cs61a h2,
 section#cs61a h3,
 section#cs61a h4,
-section#cs61a h5 {
+section#cs61a h5,
+section#hkn h1,
+section#hkn h2,
+section#hkn h3,
+section#hkn h4,
+section#hkn h5 {
   color: #222;
 }
 

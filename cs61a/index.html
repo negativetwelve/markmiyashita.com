@@ -53,6 +53,22 @@ title: CS61A - Spring 2013 - Mark Miyashita
 
     <div class="row">
       <div class="twelve columns">
+        <h4>Challenge Problem - Week of 2/25</h4>
+        <div class="description">
+          Write a function that sorts an rlist. You might want to look up the <a href="http://en.wikipedia.org/wiki/Insertion_sort">Wikipedia article on Insertion Sort</a> although you are more than welcome to implement any kind of sort you want! Use the <code>first</code> and <code>rest</code> functions that we have defined for rlists and used in class. You may want to define a helper function...
+        </div>
+        <pre class="brush: python;">
+          def sort_rlist(r):
+              """
+              >>> r = rlist(4, rlist(3, rlist(6, rlist(8, rlist(1, empty_rlist)))))
+              >>> sort_rlist(r)
+              (1, (3, (4, (6, (8, None)))))
+              """
+              "***YOUR CODE HERE***"
+        </pre>
+        
+        <hr>
+        
         <h4>Warmup - Week of 2/25</h4>
         <div class="description">
           Write a function that emulates the fucntionality of <code>map</code> but for our implementation of rlists. You may use the functions we have been working with: <code>first</code> and <code>rest</code>.
