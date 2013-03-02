@@ -149,7 +149,12 @@ section#main-blog-post h1,
 section#main-blog-post h2,
 section#main-blog-post h3,
 section#main-blog-post h4,
-section#main-blog-post h5 {
+section#main-blog-post h5,
+section#cs61a h1,
+section#cs61a h2,
+section#cs61a h3,
+section#cs61a h4,
+section#cs61a h5 {
   color: #222;
 }
 
