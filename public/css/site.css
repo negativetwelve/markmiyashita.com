@@ -76,6 +76,11 @@ section.blog#blog-full {
   min-height: -webkit-calc(100% - 309px);
 }
 
+section#hkn, section#cs61a {
+  min-height: calc(100% - 233px);
+  min-height: -webkit-calc(100% - 233px);
+}
+
 section.blue-section {
   background: #2BA6CB;
   color: white;
