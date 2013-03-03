@@ -17,3 +17,11 @@ published: false
 <pre class="brush: python;">
   
 </pre>
+
+<button onclick="toggleSolution()">Toggle Solution</button>
+
+<div class="solution" style="display:none">
+  <pre class="brush: python;">
+    No solutions yet!
+  </pre>
+</div>
