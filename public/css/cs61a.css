@@ -14,7 +14,8 @@
 .tag_block {
   float: left;
   height: 100px;
-  width: 19%;
+  width: calc(20% - 1px);
+  width: -webkit-calc(20% - 1px);
   background-color: #ddd;
   -moz-transition: background .15s linear;
   -webkit-transition: background .15s linear;
