@@ -10,3 +10,35 @@
 .description {
   margin-bottom: 10px;
 }
+
+.tag_block {
+  float: left;
+  height: 100px;
+  width: 19%;
+  background-color: #ddd;
+  -moz-transition: background .15s linear;
+  -webkit-transition: background .15s linear;
+  overflow: scroll;
+  padding-left: 20px;
+  padding-right: 20px;  
+  margin-left: 1px;
+  margin-bottom: 1px;
+}
+
+.problem_block {
+  float: left;
+  height: 300px;
+  width: 33%;
+  background-color: #ddd;
+  -moz-transition: background .15s linear;
+  -webkit-transition: background .15s linear;
+  overflow: scroll;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+}
+
+.problem_block:hover, .tag_block:hover {
+  background-color: #eee;
+}

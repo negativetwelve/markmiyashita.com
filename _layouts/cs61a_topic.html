@@ -1,0 +1,22 @@
+---
+layout: cs61a_base
+---
+<section class="cs61a" id="cs61a">
+  <div class="row">
+    <div class="twelve columns">
+      {% for problem in site.categories.problems %}
+        {% if problem.tags contains page.name %}
+          {% if problem.published %}
+          <a href="{{ problem.url }}">
+            <div class="problem_block">
+              <h2>{{ problem.title }}</h2>
+              <h4>{{ problem.type }} Problem</h4>
+              <h4>{{ problem.date | date: "%b %d, %Y" }}</h4>
+            </div>
+          </a>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

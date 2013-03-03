@@ -1,4 +1,4 @@
-permalink: /blog/:title
+permalink: /:categories/:title
 url: http://markmiyashita.com
 paginate: 10000
 lsi: true
@@ -11,6 +11,36 @@ author:
     gihub: negativetwelve
     twitter: negativetwelve
     
+current_semester: sp13
+problem_topics:
+  - name: Higher Order Functions
+    url: higher_order_functions
+    tag: higher order functions
+  
+  - name: Iteration
+    url: iteration
+    tag: iteration
+  
+  - name: Lists
+    url: lists
+    tag: lists
+  
+  - name: Math
+    url: math
+    tag: math
+  
+  - name: Recursion
+    url: recursion
+    tag: recursion
+    
+  - name: Rlists
+    url: rlists
+    tag: rlists
+    
+  - name: Strings
+    url: strings
+    tag: strings
+
 work:
   - name: Kloudless
     role: Software Engineer

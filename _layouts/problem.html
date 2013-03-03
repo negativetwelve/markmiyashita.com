@@ -1,0 +1,19 @@
+---
+layout: cs61a_base
+---
+<section class="blue-section">
+  <div class="row">
+    <div class="twelve columns">
+      <h1>{{ page.type }} Problem - {{ page.date | date: "%b %d, %Y" }} - {{ page.title }}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="cs61a" id="cs61a">
+  <div class="row">
+    <div class="twelve columns">
+      <h4><a href="/cs61a/{{ page.categories[1] }}">Go Back</a></h4>
+      {{ content }}
+    </div>
+  </div>
+</section>

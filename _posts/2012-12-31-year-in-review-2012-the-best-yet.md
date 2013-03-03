@@ -2,6 +2,7 @@
 layout: post
 title: "2012, The Best Yet"
 tags: [mark miyashita, mark, miyashita, uc berkeley, cal, uc, berkeley, university of california, berkeley, computer science, cs, eecs, electrical engineering, mac, ta, cs61a, teaching, kloudless, inigral, startups, life, review, 2012]
+categories: [blog]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
