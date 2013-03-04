@@ -12,7 +12,7 @@ published: true
 solution: true
 ---
 <p>
-  Write a function that sums up the digits of a number. Try to implment it both iteratively and recursively.
+  Write a function that sums up the digits of a number. Try to implement it both iteratively and recursively.
 </p>
 
 <pre class="brush: python;">
