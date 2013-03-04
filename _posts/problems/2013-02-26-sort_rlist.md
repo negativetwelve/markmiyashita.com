@@ -28,7 +28,7 @@ solution: true
 {% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
-<div class="solution" style="display:none">
+<div class="solution">
   <pre class="brush: python;">
     def sort_rlist(r):
         """ Sort an rlist in ascending order

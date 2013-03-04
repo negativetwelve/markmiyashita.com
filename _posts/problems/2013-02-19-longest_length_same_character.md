@@ -48,7 +48,7 @@ Make sure that your function works on all inputs, including the empty string! He
 {% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
-<div class="solution" style="display:none">
+<div class="solution">
   <pre class="brush: python;">
     def helper(word, prev_char, curr_count, curr_max):
         if len(word) == 0:
