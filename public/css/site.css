@@ -77,7 +77,7 @@ section.blog#blog-full {
   min-height: -webkit-calc(100% - 309px);
 }
 
-section#hkn, section#cs61a {
+section#hkn, section#cs61a, section#about-me, section#contact, section#main-blog-post {
   min-height: calc(100% - 233px);
   min-height: -webkit-calc(100% - 233px);
 }
@@ -106,16 +106,6 @@ section.blue-section a {
 
 section.blue-section a:hover {
   color: #444444;
-}
-
-section#about-me {
-  min-height: calc(100% - 233px);
-  min-height: -webkit-calc(100% - 233px);
-}
-
-section#contact {
-  min-height: calc(100% - 233px);
-  min-height: -webkit-calc(100% - 233px);
 }
 
 section#contact h1 {
