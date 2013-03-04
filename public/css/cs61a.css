@@ -45,3 +45,7 @@
 .problem_block:hover, .tag_block:hover {
   background-color: #eee;
 }
+
+.topic_comments {
+  padding-top: 20px;
+}
