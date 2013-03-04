@@ -47,7 +47,7 @@ title: CS61A - Spring 2013 - Mark Miyashita
     <div class="row">
       <div class="twelve columns">
         <div class="announcements">
-          <h1>Announcements!</h1>
+          <h2>Announcements!</h2>
           <h4>Extra Problems:</h4>
           Starting on Tuesday the 19th, I have given out either a warmup problem or a challenge problem to my lab and discussion sections. They will be posted below and updated throughout the semester with solutions.
           <hr>
@@ -58,7 +58,7 @@ title: CS61A - Spring 2013 - Mark Miyashita
     <div class="row">
       <div class="twelve columns">
         <div id="tags">
-          <h1>Topics</h1>
+          <h2>Topics</h2>
           {% for topic in site.problem_topics %}
             <a href="/cs61a/sp13/topics/{{ topic.url }}">
               <div class="tag_block">
@@ -73,14 +73,14 @@ title: CS61A - Spring 2013 - Mark Miyashita
     <div class="row">
       <div class="twelve columns">
         <div id="problems">
-          <h1>Problems</h1>
+          <h2>Problems</h2>
           {% for problem in site.categories.problems %}
             {% if problem.published %}
             <a href="{{ problem.url }}">
               <div class="problem_block">
-                <h2>{{ problem.title }}</h2>
-                <h4>{{ problem.type }} Problem</h4>
-                <h4>{{ problem.date | date: "%b %d, %Y" }}</h4>
+                <h3>{{ problem.title }}</h3>
+                <h5>{{ problem.type }} Problem<h5>
+                <h5>{{ problem.date | date: "%b %d, %Y" }}</h5>
               </div>
             </a>
             {% endif %}
