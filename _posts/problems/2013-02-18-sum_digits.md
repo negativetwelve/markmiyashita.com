@@ -9,8 +9,9 @@ author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
 published: true
+solution: true
 ---
-<div class="description">Write a function that sums up the digits of a number. Try to implment it both iteratively and recursively.</div>
+<p>Write a function that sums up the digits of a number. Try to implment it both iteratively and recursively.</p>
 
 <pre class="brush: python;">
   def sum_digits(n):
@@ -23,6 +24,7 @@ published: true
       "***YOUR CODE HERE***"
 </pre>
 
+{% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
 <div class="solution" style="display:none">
@@ -35,3 +37,4 @@ published: true
   
   When we are given a number, n, that is less than 10, we know that the number has only one digit so we can just return that number. When it is greater than or equal to ten, we want to mod it by 10 to get the ones place, and then remove the ones place and use recursion to find the sum of the rest of the digits. The floordiv operator allows us to remove the ones place from the number by floordiving by 10.
 </div>
+{% endif %}
