@@ -29,7 +29,7 @@ published: true
   </p>
   
   <pre class="brush: python;">
-    >>> ages = {'joe' : 20, 'jenny' : 19, 'tony' : 24}
+    >>> ages = {'joe': 20, 'jenny': 19, 'tony': 24}
     >>> ages['tony'] = 23
   </pre>
   
@@ -39,7 +39,7 @@ published: true
   
   <pre class="brush: python;">
     >>> ages
-    {'joe' : 20, 'jenny' : 19, 'tony' : 23}
+    {'joe': 20, 'jenny': 19, 'tony': 23}
   </pre>
   
   <p>
@@ -72,7 +72,7 @@ published: true
   <pre class="brush: python;">
     >>> ages['harry'] = 19
     >>> ages
-    {'joe' : 20, 'harry' : 19, 'jenny' : 19, 'tony' : 23}  
+    {'joe': 20, 'harry': 19, 'jenny': 19, 'tony': 23}  
   </pre>
   
   <p>
@@ -82,7 +82,7 @@ published: true
   <pre class="brush: python;">
     >>> ages['jenny'] = 25
     >>> ages
-    {'joe' : 20, 'jenny' : 25, 'harry' : 19, 'tony' : 23}
+    {'joe': 20, 'jenny': 25, 'harry': 19, 'tony': 23}
   </pre>
   
   <p>
@@ -99,7 +99,7 @@ published: true
   <pre class="brush: python;">
     >>> del ages['tony']
     >>> ages
-    {'joe' : 20, 'jenny' : 25, 'harry' : 19}
+    {'joe': 20, 'jenny': 25, 'harry': 19}
   </pre>
   
   <p>
@@ -146,8 +146,25 @@ published: true
   <h4>Dictionaries in Environment Diagrams</h4>
   
   <p>
-    Work in progress, will be updated soon.
+    Dictionaries have a representation in environment diagrams too. We represent it by listing the type <i>dict</i> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code> points to the dict object. Here is what our <code>ages</code> dictionary would look like:
   </p>
+  
+  <p>
+    <img src="/public/images/dictionaries/environment_diagram_01.png" alt="An environment diagram that contains a dictionary.">
+  </p>
+  <p>
+    When we add and remove items from the dictionary, our environment diagram updates to this:
+  </p>
+  
+  <pre class="brush: python;">
+    >>> ages['joe'] = 22
+    >>> del ages['jenny']
+    >>> ages
+    {'joe': 22, 'harry': 19}
+  </pre>
+  
+  <p>
+    <img src="/public/images/dictionaries/environment_diagram_02.png" alt="An updated environment diagram.">
 </div>
 
 <div id="extra">
