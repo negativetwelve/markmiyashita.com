@@ -1,11 +1,27 @@
 ---
 layout: cs61a_base
 ---
-<section class="cs61a" id="cs61a">
+<section class="blue-section">
   <div class="row">
     <div class="twelve columns">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="cs61a" id="cs61a_notes">
+  <div class="row">
+    <div class="twelve columns">
+      <h4><a href="/cs61a/{{ page.categories[1] }}">Go Back</a></h4>
+      {{ content }}
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="twelve columns">
+      <h2>Extra Practice with {{ page.title }}</h2>
       {% for problem in site.categories.problems %}
-        {% if problem.tags contains page.name %}
+        {% if problem.tags contains page.tags[0] %}
           {% if problem.published %}
           <a href="{{ problem.url }}">
             <div class="problem_block">
@@ -19,10 +35,10 @@ layout: cs61a_base
       {% endfor %}
     </div>
   </div>
-    
+  
   <div class="row">
     <div class="twelve columns">
-      <div class="topic_comments">
+      <div class="note_comments">
         <div id="disqus_thread"></div>
         <script type="text/javascript">
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

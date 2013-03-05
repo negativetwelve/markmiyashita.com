@@ -30,7 +30,11 @@ header a {
   color: white;
 }
 
-header h1, h2, h3, h4, h5 {
+header h1, 
+header h2,
+header h3,
+header h4,
+header h5 {
   color: white;
 }
 
@@ -71,7 +75,7 @@ section.resume#resume-intro {
   background: rgb(234, 255, 82);
 }
 
-section.blog#blog-full {
+section.blog#blog-full, section#cs61a_notes {
   background: white;
   min-height: calc(100% - 309px);
   min-height: -webkit-calc(100% - 309px);

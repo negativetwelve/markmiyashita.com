@@ -34,7 +34,8 @@
 .problem_block {
   float: left;
   height: 200px;
-  width: 33%;
+  width: calc(33.33% - 1px);
+  width: -webkit-calc(33.33% - 1px);
   min-width: 290px;
   background-color: #ddd;
   -moz-transition: background .15s linear;
@@ -52,4 +53,13 @@
 
 .topic_comments {
   padding-top: 20px;
+}
+
+.note_comments {
+  padding-top: 20px;
+}
+
+pre.note {
+  background-color: #eee;
+  padding: 10px;
 }

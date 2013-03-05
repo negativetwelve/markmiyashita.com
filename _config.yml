@@ -12,46 +12,6 @@ author:
     twitter: negativetwelve
     
 current_semester: sp13
-problem_topics:
-  - name: Dictionaries
-    url: dictionaries
-    tag: dictionaries
-    
-  - name: Higher Order Functions
-    url: higher_order_functions
-    tag: higher order functions
-  
-  - name: Iteration
-    url: iteration
-    tag: iteration
-  
-  - name: Lists
-    url: lists
-    tag: lists
-  
-  - name: Math
-    url: math
-    tag: math
-    
-  - name: Memoization
-    url: memoization
-    tag: memoization
-    
-  - name: Nonlocal
-    url: nonlocal
-    tag: nonlocal
-  
-  - name: Recursion
-    url: recursion
-    tag: recursion
-    
-  - name: Rlists
-    url: rlists
-    tag: rlists
-    
-  - name: Strings
-    url: strings
-    tag: strings
 
 work:
   - name: Kloudless
