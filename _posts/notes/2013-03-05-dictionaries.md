@@ -28,7 +28,7 @@ published: true
     A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> ages = {'joe' : 20, 'jenny' : 19, 'tony' : 24}
     >>> ages['tony'] = 23
   </pre>
@@ -37,7 +37,7 @@ published: true
     If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> ages
     {'joe' : 20, 'jenny' : 19, 'tony' : 23}
   </pre>
@@ -53,7 +53,7 @@ published: true
     Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> ages['joe']
     20
     >>> ages['johnny']
@@ -69,7 +69,7 @@ published: true
     Elements in a dictionary can be inserted in the same way that they are changed. Dictionaries are considered a mutable data type because we can change the entries and add new ones. To add elements, we do the following:
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> ages['harry'] = 19
     >>> ages
     {'joe' : 20, 'harry' : 19, 'jenny' : 19, 'tony' : 23}  
@@ -79,7 +79,7 @@ published: true
     To change elements, we do the same thing, except we know that the key already exists.
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> ages['jenny'] = 25
     >>> ages
     {'joe' : 20, 'jenny' : 25, 'harry' : 19, 'tony' : 23}
@@ -96,7 +96,7 @@ published: true
     If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> del ages['tony']
     >>> ages
     {'joe' : 20, 'jenny' : 25, 'harry' : 19}
@@ -113,7 +113,7 @@ published: true
     We have several methods for iterating over a dictionary. Again, we remind ourselves that dictionaries are unordered so we cannot rely upon a for loop to give us the same values after we manipulate the data. For example:
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> for i in ages:
     ...     print(i)
     ...
@@ -126,7 +126,7 @@ published: true
     Notice that the <i>keys</i> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:
   </p>
   
-  <pre class="brush: python; gutter: false;">
+  <pre class="brush: python;">
     >>> for i in ages.values():
     ...     print(i)
     ...
