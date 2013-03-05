@@ -9,9 +9,9 @@ layout: cs61a_base
           {% if problem.published %}
           <a href="{{ problem.url }}">
             <div class="problem_block">
-              <h2>{{ problem.title }}</h2>
-              <h4>{{ problem.type }} Problem</h4>
-              <h4>{{ problem.date | date: "%b %d, %Y" }}</h4>
+              <h3>{{ problem.title }}</h3>
+              <h5>{{ problem.type }} Problem</h5>
+              <h5>{{ problem.date | date: "%b %d, %Y" }}</h5>
             </div>
           </a>
           {% endif %}
