@@ -1,23 +1,22 @@
 ---
 layout: web_dev_base
-title: Rails Walkthrough by&colon; Mark Miyashita
+title: Web Development - Mark Miyashita
 ---
 <section id="web_dev">
   <div class="row">
     <div class="twelve columns">
       
-      <h1>Rails Walkthrough</h1>
-      <h4>By: Mark Miyashita</h4>
+      <h1>Web Development</h1>
       
-      This page is a work in progress and will be updated soon!
+      <hr>
       
-      {% for note in site.categories.web_dev reversed %}
-        {% if note.is_chapter %}
-          <h4><a href="{{ note.url }}">Chapter {{ note.chapter }} {{ note.title }}</a></h4>
-        {% else %}
-          <h5 class="indent"><a href="{{ note.url }}">{{ note.chapter }}.{{ note.section }} {{ note.title }}</a></h5>
-        {% endif %}
-      {% endfor %}
+      <h4><a href="/web_dev/rails">Rails Walkthrough</a></h4>
+      <h5>By: Mark Miyashita</h5>
+      <p>
+        A work-in-progress book that provides step-by-step instructions on making an advanced web app using Ruby on Rails. People with zero experience will be walked through creating the application step-by-step. Others with some web development experience will find hidden gems that will help them become better at their craft.
+      </p>
+      
+      <hr>
       
     </div>
   </div>
