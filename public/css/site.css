@@ -3,6 +3,10 @@ html, body {
   height: 100%;
 }
 
+.top-bar {
+  margin: 0;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: "OpenSans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
   font-weight: 300;
@@ -43,9 +47,21 @@ section {
 }
 
 footer {
-  background: #3F3F3F;
+  background: #222;
   color: white;
   padding: 25px 0;
+}
+
+.navigation {
+  font-size: 23px;
+  font-family: "OpenSans", "Helvetica Neue", "Helvetica", Arial, Verdana, sans-serif;
+  font-weight: 300;
+  margin-left: 14px;
+  line-height: 45px;
+}
+
+.nav_bar {
+  padding-right: 6%;
 }
 
 .divider {
@@ -77,18 +93,18 @@ section.resume#resume-intro {
 
 section.blog#blog-full, section#cs61a_notes {
   background: white;
-  min-height: calc(100% - 309px);
-  min-height: -webkit-calc(100% - 309px);
+  min-height: calc(100% - 140px);
+  min-height: -webkit-calc(100% - 140px);
 }
 
-section#hkn, section#cs61a, section#about-me, section#contact, section#main-blog-post {
-  min-height: calc(100% - 233px);
-  min-height: -webkit-calc(100% - 233px);
+section#hkn, section#cs61a, section#about-me, section#contact, section#main-blog-post, section#web_dev {
+  min-height: calc(100% - 225px);
+  min-height: -webkit-calc(100% - 225px);
 }
 
 section#not_found {
-  min-height: calc(100% - 513px);
-  min-height: -webkit-calc(100% - 513px);
+  min-height: calc(100% - 505px);
+  min-height: -webkit-calc(100% - 505px);
 }
 
 section.blue-section {

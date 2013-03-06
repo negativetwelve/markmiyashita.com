@@ -1,0 +1,24 @@
+---
+layout: web_dev_base
+title: Rails Walkthrough by&colon; Mark Miyashita
+---
+<section id="web_dev">
+  <div class="row">
+    <div class="twelve columns">
+      
+      <h1>Rails Walkthrough</h1>
+      <h4>By: Mark Miyashita</h4>
+      
+      This page is a work in progress and will be updated soon!
+      
+      {% for note in site.categories.web_dev reversed %}
+        {% if note.is_chapter %}
+          <h4><a href="{{ note.url }}">Chapter {{ note.chapter }} {{ note.title }}</a></h4>
+        {% else %}
+          <h5 class="indent"><a href="{{ note.url }}">{{ note.chapter }}.{{ note.section }} {{ note.title }}</a></h5>
+        {% endif %}
+      {% endfor %}
+      
+    </div>
+  </div>
+</section>

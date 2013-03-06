@@ -1,14 +1,13 @@
 ---
-layout: note
-title: "Rlists"
-tags: [rlists]
-categories: [cs61a, sp13, notes]
+layout: web_dev_note
+title: ""
+tags: []
+categories: [web_dev]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
+date: 2013-00-00 00:00:00 -7
 published: false
 ---
-<p>
-  This is a note about rlists.
-</p>
+

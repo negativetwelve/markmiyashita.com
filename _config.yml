@@ -1,7 +1,6 @@
 permalink: /:categories/:title
 url: http://markmiyashita.com
 paginate: 10000
-lsi: true
 pygments: true
 markdown: rdiscount
 title: Mark Miyashita

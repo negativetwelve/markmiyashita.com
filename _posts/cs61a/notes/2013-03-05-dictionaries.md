@@ -146,14 +146,11 @@ published: true
   <h4>Dictionaries in Environment Diagrams</h4>
   
   <p>
-    Dictionaries have a representation in environment diagrams too. We represent it by listing the type <i>dict</i> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code> points to the dict object. Here is what our <code>ages</code> dictionary would look like:
+    Dictionaries have a representation in environment diagrams too. We represent it by listing the type <i>dict</i> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:
   </p>
   
   <p>
-    <!--
-    <img src="/public/images/dictionaries/environment_diagram_01.png" alt="An environment diagram that contains a dictionary.">
-    -->
-    <iframe width="800" height="230" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=ages+%3D+%7B'joe'+%3A+20,+'jenny'+%3A+25,+'harry'+%3A+19%7D&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&py=3&curInstr=1"> </iframe>
+    <iframe width="100%" height="210" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=ages+%3D+%7B'joe'+%3A+20,+'jenny'+%3A+25,+'harry'+%3A+19%7D&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&py=3&curInstr=1"> </iframe>
   </p>
   <p>
     When we add and remove items from the dictionary, our environment diagram updates to this:
@@ -167,10 +164,7 @@ published: true
   </pre>
   
   <p>
-    <!--
-    <img src="/public/images/dictionaries/environment_diagram_02.png" alt="An updated environment diagram.">
-    -->
-    <iframe width="800" height="250" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=ages+%3D+%7B'joe'+%3A+20,+'jenny'+%3A+25,+'harry'+%3A+19%7D%0Aages%5B'joe'%5D+%3D+22%0Adel+ages%5B'jenny'%5D&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&py=3&curInstr=3"></iframe>
+    <iframe width="100%" height="250" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=ages+%3D+%7B'joe'+%3A+20,+'jenny'+%3A+25,+'harry'+%3A+19%7D%0Aages%5B'joe'%5D+%3D+22%0Adel+ages%5B'jenny'%5D&cumulative=false&heapPrimitives=false&drawParentPointers=false&textReferences=false&py=3&curInstr=3"></iframe>
 </div>
 
 <div id="extra">
