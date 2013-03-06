@@ -71,7 +71,7 @@ title: CS61A - Spring 2013 - Mark Miyashita
   <div class="row">
     <div class="twelve columns">
       <div id="tags">
-        <h2>Notes</h2>
+        <h2>Notes:</h2>
         {% for topic in site.categories.notes reversed %}
           <a href="{{ topic.url }}">
             <div class="tag_block">
@@ -86,7 +86,7 @@ title: CS61A - Spring 2013 - Mark Miyashita
   <div class="row">
     <div class="twelve columns">
       <div id="problems">
-        <h2>Problems</h2>
+        <h2>Problems:</h2>
         {% for problem in site.categories.problems %}
           {% if problem.published %}
           <a href="{{ problem.url }}">
