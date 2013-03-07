@@ -19,36 +19,38 @@
   float: left;
   height: 100px;
   min-width: 144px;
-  width: calc(20% - 1px);
-  width: -webkit-calc(20% - 1px);
-  background-color: #ddd;
+  width: calc(20% - 3px);
+  width: -webkit-calc(20% - 3px);
+  background-color: #f2f2f2;
+  border: solid 1px #e6e6e6;
   -moz-transition: background .15s linear;
   -webkit-transition: background .15s linear;
   overflow: scroll;
   padding-left: 20px;
   padding-right: 20px;  
-  margin-left: 1px;
-  margin-bottom: 1px;
+  margin-left: 3px;
+  margin-bottom: 3px;
 }
 
 .problem_block {
   float: left;
   height: 200px;
-  width: calc(33.33% - 1px);
-  width: -webkit-calc(33.33% - 1px);
+  width: calc(33.33% - 3px);
+  width: -webkit-calc(33.33% - 3px);
   min-width: 290px;
-  background-color: #ddd;
+  background-color: #f2f2f2;
+  border: solid 1px #e6e6e6;
   -moz-transition: background .15s linear;
   -webkit-transition: background .15s linear;
   overflow: scroll;
   padding-left: 20px;
   padding-right: 20px;
-  margin-right: 1px;
-  margin-bottom: 1px;
+  margin-right: 3px;
+  margin-bottom: 3px;
 }
 
 .problem_block:hover, .tag_block:hover {
-  background-color: #eee;
+  background-color: #ddd;
 }
 
 .topic_comments {
