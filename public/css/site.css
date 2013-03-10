@@ -3,6 +3,10 @@ html, body {
   height: 100%;
 }
 
+.nav_bar {
+  padding-right: 5.5%;
+}
+
 .top-bar {
   margin: 0;
 }
@@ -51,7 +55,7 @@ section {
 }
 
 footer {
-  background: #222;
+  background: rgba(0, 0, 0, 0.85);
   color: white;
   padding: 25px 0;
 }
@@ -62,10 +66,6 @@ footer {
   font-weight: 300;
   margin-left: 14px;
   line-height: 45px;
-}
-
-.nav_bar {
-  padding-right: 6%;
 }
 
 .divider {
