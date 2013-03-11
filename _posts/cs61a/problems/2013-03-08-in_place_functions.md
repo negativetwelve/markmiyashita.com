@@ -24,6 +24,7 @@ solution: false
       >>> l
       [1, 4, 9, 16]
       """
+      "***YOUR CODE HERE***"
       
   def sort_in_place(lst):
       """ Takes in a list and sorts it in-place, just like the builtin .sort() method does.
@@ -32,6 +33,7 @@ solution: false
       >>> l
       [1, 2, 3, 4]
       """
+      "***YOUR CODE HERE***"
 </pre>
 
 {% if page.solution %}
