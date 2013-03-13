@@ -1,0 +1,367 @@
+html {
+  font-family: sans-serif;
+  color: #4d4d4d;
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'proxima-nova','Helvetica',sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.4;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3a3a3a;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  max-width: 480px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+a, a:visited, a:focus, a:hover {
+  color: #333;
+  text-decoration: none;
+  outline: 0;
+}
+
+a:hover, a:focus {
+  color: #000;
+}
+
+p {
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #4d4d4d;
+  font-family: 'proxima-nova',sans-serif;
+  font-weight: 400;
+}
+
+li {
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+
+article a {
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+header#sidebar {
+  display: block;
+  position: fixed;
+  width: 26%;
+  padding-left: 3%;
+  padding-top: 30px;
+  z-index: 1;
+}
+
+header#sidebar img.profile_pic {
+  display: block;
+  position: relative;
+  background-color: #000;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+}
+
+header#sidebar h2, header#sidebar h1, header#sidebar h3 {
+  width: 75%;
+}
+
+header#sidebar h2, header#sidebar h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: 900;
+  color: #000;
+  font-family: 'freight-sans-pro','helvetica',sans-serif;
+}
+
+header#sidebar h1 {
+  margin-top: 15px;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+header#sidebar h2 {
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+header#sidebar h3 {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 23px;
+  color: #585c60;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+div#links {
+  padding-right: 12%;
+}
+
+div#links span a, a.button_link {
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 25px;
+  border: 4px solid #f8f8f8;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  z-index: 5;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #999;
+  margin-left: -30px;
+  font-weight: 600;
+  background-color: #fff;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+div#links span a:hover, a.button_link:hover {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+
+div#links span a:hover, a.button_link:hover, figure.logo, aside.alsoby li a:hover, figure.kudo.complete div.filling {
+  background-color: #14446a;
+}
+
+div#links span a:hover, a.button_link:hover, nav.pagination span.next a, nav.pagination span.prev a, aside.read_next a:hover h3, blockquote {
+  border-color: #14446a;
+}
+
+section#main_content {
+  position: relative;
+  margin-left: 26%;
+  border-left: 1px solid #e3e3e3;
+  min-height: 100%;
+  z-index: 10;
+  background-color: #fff;
+}
+
+header#top_bar {
+  padding: 40px 0 40px 40px;
+}
+
+header#top_bar {
+  display: block;
+  font-family: "freight-sans-pro",sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 1px;
+  line-height: 23px;
+}
+
+article.post {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid #e2e2e2;
+  min-height: 130px;
+  overflow-x: hidden;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li {
+  max-width: 550px;
+  //padding-right: 100px;
+}
+
+article.post h2 a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #CCC;
+  font-family: "freight-sans-pro",sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  -webkit-font-smoothing: antialiased;
+}
+
+article h2 a.no-link {
+  border: none;
+  font-size: 28px;
+}
+
+section article.post p, section article.post li {
+  font-size: 17px;
+  line-height: 27px;
+}
+
+#disqus_thread {
+  max-width: 550px;
+}
+
+header#sidebar img.profile_pic {
+  width: 140px;
+  height: 140px;
+}
+
+pre code {
+  border: none;
+  display: block;
+  border: 1px solid #d2d2d2;
+  background-color: #f8f8f8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+  margin-left: -50px;
+  margin-right: 0;
+  width: auto;
+  border-left: none;
+  border-right: none;
+  padding-left: 50px;
+}
+
+@media only all and (min-width: 1150px) {
+  header#sidebar img.profile_pic {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 750px) {
+  header#sidebar img.profile_pic {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (device-height: 1024px) and (device-width: 768px), only all and (max-height: 650px) {
+  header#sidebar {
+    position: absolute;
+  }
+}
+
+@media (max-width: 750px) {
+  header#sidebar img.profile_pic {
+    margin: 0 auto;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-top: 20px;
+  }
+  
+  header#sidebar {
+    display: block;
+    position: relative;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    float: none;
+    text-align: center;
+  }
+  
+  section#main_content, div#disqus_comments {
+    margin-left: 0;
+    border-left: none;
+    margin-top: 15px;
+  }
+  
+  header#sidebar {
+    text-align: center;
+  }
+  
+  header#sidebar h1, header#sidebar h2, header#sidebar h3 {
+    max-width: 70%;
+    width: auto;
+    margin: 0 auto;
+  }
+  
+  header#sidebar h1 {
+    margin-top: 5px;
+  }
+  
+  header#sidebar h2 {
+    margin-top: 2px;
+  }
+  
+  header#sidebar h3 {
+    margin-top: 5px;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+  
+  article hr, article p, article h2, article h1, article h3, article h4, article h5, article h6, article blockquote p, article blockquote h2, article blockquote h1, article blockquote h3, article blockquote h4, article blockquote h5, article blockquote h6 {
+    max-width: 100%;
+  }
+  
+  article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  article.post {
+    padding: 60px;
+    padding-top: 30px;
+  }
+  
+  header#top_bar {
+    display: none;
+  }
+  
+  div#links {
+    margin: 0;
+    padding: 0;
+  }
+  
+  div#links span {
+    display: inline;
+    margin: 0;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  article.post {
+    padding-top: 20px;
+  }
+  
+  header#sidebar img.profile_pic {
+    width: 114px;
+    height: 114px;
+  }
+}
+
+@media (max-width: 560px) {
+  article.post, div#disqus_comments {
+    padding: 20px;
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+}

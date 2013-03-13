@@ -15,26 +15,30 @@ solution: true
   Write a function that sums up the digits of a number. Try to implement it both iteratively and recursively.
 </p>
 
-<pre class="brush: python;">
-  def sum_digits(n):
-      """ Takes a number n as input and outputs the sum of the digits of n.
-      >>> sum_digits(100)
-      1
-      >>> sum_digits(235)
-      10
-      """
-      "***YOUR CODE HERE***"
+<pre>
+  <code class="prettyprint">
+def sum_digits(n):
+    """ Takes a number n as input and outputs the sum of the digits of n.
+    >>> sum_digits(100)
+    1
+    >>> sum_digits(235)
+    10
+    """
+    "***YOUR CODE HERE***"
+  </code>
 </pre>
 
 {% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
 <div class="solution">
-  <pre class="brush: python;">
-    def sum_digits(n):
-        if n < 10:
-            return n
-        return n % 10 + sum_digits(n // 10)
+  <pre>
+    <code class="prettyprint">
+def sum_digits(n):
+    if n < 10:
+        return n
+    return n % 10 + sum_digits(n // 10)
+    </code>
   </pre>
   
   <p>

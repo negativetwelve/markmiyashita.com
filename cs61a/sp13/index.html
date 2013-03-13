@@ -2,115 +2,68 @@
 layout: cs61a_base
 title: CS61A - Spring 2013 - Mark Miyashita
 ---
-<section class="cs61a" id="cs61a">
-  <div class="row">
-    <div class="twelve columns">
-      <h1>CS61A Spring 2013</h1>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="twelve columns">
-      <h1>Mark Miyashita</h1>
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="four columns">
-      <img src="/public/images/mark_miyashita.png" class="pic"></img>
-    </div>
-    <div class="four columns">
-      <div class="panel">            
-        <h4>
-          Sections:
-        </h4>
-        <p>
-          Lab/Disc 23 - WF 11am-12:30pm<br/>
-          Lab/Disc 27 - TTh 9:30am-11am
-        </p>
-      </div>
-    </div>
-    <div class="four columns">
-      <div class="panel">
-        <h4>
-          Office Hours:
-        </h4>
-        <p>
-          Tuesday 11am-12pm, 3-4pm in 751 Soda<br/>
-          Wednesday 2-3pm in 345 Soda<br/>
-          Thursday 11am-12pm in 345 Soda<br/>
-        </p>
-      </div>
-    </div>
-    
-    <div class="four columns">
-      <div class="panel">
-        <h4>Email:</h4>
-        <a href="mailto:cs61a-td@imail.eecs.berkeley.edu">cs61a-td@imail.eecs.berkeley.edu</a>
-      </div>
-    </div>
-    
-    <div class="four columns">
-      <div class="panel">
-        <h4>Personal:</h4>
-        <p>
-          You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!
-        </p>
-      </div>
-    </div>
-    
-  </div>
-    
-  <div class="row">
-    <div class="twelve columns">
-      <div class="announcements">
-        <h2>Announcements:</h2>
-        <h4>Notes:</h4>
-        <p>
-          I will be writing up supplementary notes about the topics that we are focusing on. These will be posted on this website under the topics that are listed below.
-        </p>
-        <h4>Extra Problems:</h4>
-        <p>
-          Starting on Tuesday the 19th, I have given out either a warmup problem or a challenge problem to my lab and discussion sections. They will be posted below and updated throughout the semester with solutions.
-        </p>
-        <hr>
-      </div>
-    </div>
-  </div> 
+<header id="top_bar">
+  <date class="current_date"></date>
+</header>
 
+<article class="post">
+  <h2>CS61A Spring 2013</h2>
+  <h4>Office Hours:</h4>
+  <p>
+    Tuesday 11am-12pm, 3-4pm in 751 Soda<br/>
+    Wednesday 2-3pm in 345 Soda<br/>
+    Thursday 11am-12pm in 345 Soda<br/>
+  </p>
+  
+  <h4>Sections:</h4>
+  <p>
+    Lab/Disc 23 - WF 11am-12:30pm<br/>
+    Lab/Disc 27 - TTh 9:30am-11am
+  </p>
+  
+  <h4>Email:</h4>
+  <p>
+    <a href="mailto:cs61a-td@imail.eecs.berkeley.edu">cs61a-td@imail.eecs.berkeley.edu</a>
+  </p>
+  
+  <h4>Personal:</h4>
+  <p>
+    You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!
+  </p>
+  
+  <h2>Announcements:</h2>
+  <h4>Notes:</h4>
+  <p>
+    I will be writing up supplementary notes about the topics that we are focusing on. These will be posted on this website under the topics that are listed below.
+  </p>
+  <h4>Extra Problems:</h4>
+  <p>
+    Starting on Tuesday the 19th, I have given out either a warmup problem or a challenge problem to my lab and discussion sections. They will be posted below and updated throughout the semester with solutions.
+  </p>
+  
+  <h2>Notes:</h2>
   <div class="row">
-    <div class="twelve columns">
-      <div id="tags">
-        <h2>Notes:</h2>
-        {% for topic in site.categories.notes reversed %}
-          <a href="{{ topic.url }}">
-            <div class="tag_block">
-              <h4>{{ topic.title }}</h4>
-            </div>
-          </a>
-        {% endfor %}
+  {% for topic in site.categories.notes reversed %}
+    <a href="{{ topic.url }}">
+      <div class="tag_block">
+        <h4>{{ topic.title }}</h4>
       </div>
-    </div>
-  </div>
-    
-  <div class="row">
-    <div class="twelve columns">
-      <div id="problems">
-        <h2>Problems:</h2>
-        {% for problem in site.categories.problems %}
-          {% if problem.published %}
-          <a href="{{ problem.url }}">
-            <div class="problem_block">
-              <h4>{{ problem.title }}</h4>
-              <h5>{{ problem.type }} Problem<h5>
-              <h5>{{ problem.date | date: "%b %d, %Y" }}</h5>
-            </div>
-          </a>
-          {% endif %}
-        {% endfor %}
-      </div>
-    </div>
+    </a>
+  {% endfor %}
   </div>
   
-  <div class="padding-bottom"></div>
-</section>
+  <h2>Problems:</h2>
+  <div class="row">
+  {% for problem in site.categories.problems %}
+    {% if problem.published %}
+    <a href="{{ problem.url }}">
+      <div class="problem_block">
+        <h4>{{ problem.title }}</h4>
+        <h5>{{ problem.type }} Problem<h5>
+        <h5>{{ problem.date | date: "%b %d, %Y" }}</h5>
+      </div>
+    </a>
+    {% endif %}
+  {% endfor %}
+  </div>
+</article>

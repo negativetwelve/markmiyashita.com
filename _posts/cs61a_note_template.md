@@ -13,7 +13,7 @@ published: false
     
 </p>
 
-<pre class="brush: python;">
+<code class="prettyprint">
   
 </pre>
 
@@ -21,7 +21,7 @@ published: false
 <button onclick="toggleSolution()">Toggle Solution</button>
 
 <div class="solution">
-  <pre class="brush: python;">
+  <code class="prettyprint">
     
   </pre>
   

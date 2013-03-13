@@ -1,29 +1,22 @@
 ---
-layout: default
+layout: main_post
 title: Projects - Mark Miyashita
 ---
-<section class="projects blue-section" id="projects-divider">
-  <div class="row">
-    <div class="twelve columns">
-      <h1>Projects</h1>
-    </div>
-  </div>
-  
-  {% for project in site.projects %}
-  <div class="row company-modal" data-reveal-id="modal-{{ project.modal }}">
-    <div class="two columns">
-      <div class="company-image"><img src="{{ project.image }}" alt="{{ project.name }}" class="image-medium-border"></div>
-    </div>
-    <div class="ten columns">
-      <div class="company-name">
-        <h4 class="no-margin-top">{{ project.name }}
-          {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
-          {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
-        </h4>
-        <h5>{{ project.description }}</h5>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-  
-</section>
+<header id="top_bar">
+  Projects
+</header>
+
+{% for project in site.projects %}
+  <article class="post">
+    <!--
+    <img src="{{ project.image }}" alt="{{ project.name }}" class="image-medium-border">
+    -->
+    <h4 class="no-margin-top">{{ project.name }}
+      {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
+      {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
+    </h4>
+    <p>
+      {{ project.description }}
+    </p>
+  </article>
+{% endfor %}

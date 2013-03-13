@@ -18,47 +18,55 @@ solution: true
 <h5>Hint #1: You might want to use a helper function...</h5>
 <h5>Hint #2: Your helper function might want to include the following information (maybe more):</h5>
 
-<pre class="brush: python;">
-  def helper(word, prev_char, curr_count, curr_max):
-      "***YOUR CODE HERE***"
+<pre>
+  <code class="prettyprint">
+def helper(word, prev_char, curr_count, curr_max):
+    "***YOUR CODE HERE***"
+  </code>
 </pre>
 
 Make sure that your function works on all inputs, including the empty string! Here are the functions <code>first</code> and <code>rest</code> that we have been working with in class.
 </div>
-        
-<pre class="brush: python;">
-  def first(word):
-      return word[0]
+
+<pre>
+  <code class="prettyprint">
+def first(word):
+    return word[0]
     
-  def rest(word):
-      return word[1:]
+def rest(word):
+    return word[1:]
+  </code>
 </pre>
 
-<pre class="brush: python;">
-  def find_longest_run(word):
-      """ Finds the length of the longest contiguous string of a single character and returns the length.
-      >>> find_longest_run("hello")
-      2
-      >>> find_longest_run("helloooo")
-      4
-      """
-      "***YOUR CODE HERE***"
+<pre>
+  <code class="prettyprint">
+def find_longest_run(word):
+    """ Finds the length of the longest contiguous string of a single character and returns the length.
+    >>> find_longest_run("hello")
+    2
+    >>> find_longest_run("helloooo")
+    4
+    """
+    "***YOUR CODE HERE***"
+  </code>
 </pre>
 
 {% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
 <div class="solution">
-  <pre class="brush: python;">
-    def helper(word, prev_char, curr_count, curr_max):
-        if len(word) == 0:
-            return curr_max
-        elif first(word) == prev_char:
-            return helper(rest(word), first(word), curr_count + 1, max(curr_count + 1, curr_max))
-        return helper(rest(word), first(word), 1, curr_max)
+  <pre>
+    <code class="prettyprint">
+def helper(word, prev_char, curr_count, curr_max):
+    if len(word) == 0:
+        return curr_max
+    elif first(word) == prev_char:
+        return helper(rest(word), first(word), curr_count + 1, max(curr_count + 1, curr_max))
+    return helper(rest(word), first(word), 1, curr_max)
 
-    def find_longest_run(word):
-        return helper(word, "", 0, 0)
+def find_longest_run(word):
+    return helper(word, "", 0, 0)
+    </code>
   </pre>
   
   <p>

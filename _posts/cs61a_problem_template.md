@@ -15,16 +15,20 @@ solution: false
     
 </p>
 
-<pre class="brush: python;">
-  
+<pre>
+  <code class="prettyprint">
+    
+  </code>
 </pre>
 
 {% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
 <div class="solution">
-  <pre class="brush: python;">
+  <pre>
+    <code class="prettyprint">
     
+    </code>
   </pre>
   
   <p>

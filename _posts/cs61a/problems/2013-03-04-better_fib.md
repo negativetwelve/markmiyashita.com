@@ -15,7 +15,8 @@ solution: true
   Remember <code>fib</code>, the function that we created a while ago to find the nth fibonacci number and to show tree recursion? The function was really slow on large inputs because at each level of recursion, it would make two recursive calls to itself AND it would recompute numbers that it already knew. For example, calling <code>fib(3)</code> computes <code>fib(2)</code> once and <code>fib(1)</code> twice. We don't need to compute out <code>fib(1)</code> twice. Using a dictionary, your job is to re-write the function <code>fib</code> so that it only computes a certain recursive call once. (i.e. it only computes <code>fib(1)</code> once) Remember that a dictionary is able to store and look up items using a key-value system. If you want a hint, the idea that we are implementing is called <i>memoization</i>.
 </p>
 
-<pre class="brush: python;">
+<pre>
+  <code class="prettyprint">
   def better_fib(n):
       """ Takes in a number, n, and computes the nth fibonacci number recursively.
       To save time, it will only compute each value once and store it in a dictionary.
@@ -26,13 +27,15 @@ solution: true
       354224848179261915075   # this should take less than a second
       """
       "***YOUR CODE HERE***"
+  </code>
 </pre>
 
 {% if page.solution %}
 <button onclick="toggleSolution()">Toggle Solution</button>
 
 <div class="solution">
-  <pre class="brush: python;">
+  <pre>
+    <code class="prettyprint">
     def better_fib(n):
         d = {}
         def fib_helper(n):
@@ -44,6 +47,7 @@ solution: true
             d[n] = fib_help(n - 1) + fib_help(n - 2)
             return d[n]
         return fib_helper(n)
+    </code>
   </pre>
   
   <p>

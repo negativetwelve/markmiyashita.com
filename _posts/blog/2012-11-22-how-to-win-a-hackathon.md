@@ -11,7 +11,7 @@ date: 2012-11-22 13:04:00 -7
 published: true
 ---
 
-<img src="/public/images/hackathon.jpg" class="image-full-width image-rounded">
+<img src="/public/images/hackathon.jpg" class="img-border">
 
 This year I started participating in many hackathons of different lengths, different atmospheres, and different types of applications that won. I am still quite new to the hackathon scene, but I thought I'd share my thoughts on how most winners, won.
 
