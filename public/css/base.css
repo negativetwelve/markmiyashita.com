@@ -13,6 +13,10 @@
   clear: both;
 }
 
+.affix {
+  position: fixed;
+}
+
 .img-border {
   max-width: 100%;
   padding: 4px;
