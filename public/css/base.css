@@ -17,6 +17,10 @@
   position: fixed;
 }
 
+img {
+  width: 100%;
+}
+
 .img-border {
   max-width: 100%;
   padding: 4px;
