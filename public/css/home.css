@@ -407,6 +407,6 @@ pre code {
   article.post, div#disqus_comments {
     padding: 20px;
     padding-left: 15px;
-    padding-right: 10px;
+    padding-right: 15px;
   }
 }

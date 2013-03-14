@@ -18,7 +18,10 @@ solution: true
 <pre>
   <code class="prettyprint">
 def sum_digits(n):
-    """ Takes a number n as input and outputs the sum of the digits of n.
+    """
+    Takes a number n as input and outputs the 
+    sum of the digits of n.
+    
     >>> sum_digits(100)
     1
     >>> sum_digits(235)
@@ -35,6 +38,15 @@ def sum_digits(n):
   <pre>
     <code class="prettyprint">
 def sum_digits(n):
+    """
+    Takes a number n as input and outputs the 
+    sum of the digits of n.
+    
+    >>> sum_digits(100)
+    1
+    >>> sum_digits(235)
+    10
+    """
     if n < 10:
         return n
     return n % 10 + sum_digits(n // 10)

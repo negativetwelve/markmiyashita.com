@@ -41,7 +41,10 @@ def rest(word):
 <pre>
   <code class="prettyprint">
 def find_longest_run(word):
-    """ Finds the length of the longest contiguous string of a single character and returns the length.
+    """
+    Finds the length of the longest contiguous string
+    of a single character and returns the length.
+    
     >>> find_longest_run("hello")
     2
     >>> find_longest_run("helloooo")
@@ -65,6 +68,15 @@ def helper(word, prev_char, curr_count, curr_max):
     return helper(rest(word), first(word), 1, curr_max)
 
 def find_longest_run(word):
+    """
+    Finds the length of the longest contiguous string
+    of a single character and returns the length.
+    
+    >>> find_longest_run("hello")
+    2
+    >>> find_longest_run("helloooo")
+    4
+    """
     return helper(word, "", 0, 0)
     </code>
   </pre>

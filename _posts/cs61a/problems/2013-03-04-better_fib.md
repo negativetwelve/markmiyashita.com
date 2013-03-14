@@ -17,16 +17,19 @@ solution: true
 
 <pre>
   <code class="prettyprint">
-  def better_fib(n):
-      """ Takes in a number, n, and computes the nth fibonacci number recursively.
-      To save time, it will only compute each value once and store it in a dictionary.
-      We will define better_fib(0) = 0 and better_fib(1) = 1.
-      >>> better_fib(3)
-      2
-      >>> better_fib(100)
-      354224848179261915075   # this should take less than a second
-      """
-      "***YOUR CODE HERE***"
+def better_fib(n):
+    """
+    Takes in a number, n, and computes the nth fibonacci
+    number recursively. To save time, it will only compute
+    each value once and store it in a dictionary. We will
+    define better_fib(0) = 0 and better_fib(1) = 1.
+      
+    >>> better_fib(3)
+    2
+    >>> better_fib(100)
+    354224848179261915075   # this should take less than a second
+    """
+    "***YOUR CODE HERE***"
   </code>
 </pre>
 
@@ -36,17 +39,28 @@ solution: true
 <div class="solution">
   <pre>
     <code class="prettyprint">
-    def better_fib(n):
-        d = {}
-        def fib_helper(n):
-            if n in d:
-                return d[n]
-            if n <= 1:
-                d[n] = n
-                return n
-            d[n] = fib_help(n - 1) + fib_help(n - 2)
+def better_fib(n):
+    """
+    Takes in a number, n, and computes the nth fibonacci
+    number recursively. To save time, it will only compute
+    each value once and store it in a dictionary. We will
+    define better_fib(0) = 0 and better_fib(1) = 1.
+      
+    >>> better_fib(3)
+    2
+    >>> better_fib(100)
+    354224848179261915075   # this should take less than a second
+    """
+    d = {}
+    def fib_helper(n):
+        if n in d:
             return d[n]
-        return fib_helper(n)
+        if n <= 1:
+            d[n] = n
+            return n
+        d[n] = fib_help(n - 1) + fib_help(n - 2)
+        return d[n]
+    return fib_helper(n)
     </code>
   </pre>
   

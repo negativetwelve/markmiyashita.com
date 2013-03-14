@@ -1,3 +1,14 @@
+.announcement {
+  background-color: #f8f8f8;
+  border: 1px solid #d2d2d2;
+  border-left: none;
+  border-right: none;
+  margin-left: -50px;
+  padding-left: 50px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
 .pic {
   float: left;
   padding-top: 10px;
@@ -18,9 +29,9 @@
 .tag_block {
   float: left;
   height: 100px;
-  min-width: 144px;
-  width: calc(20% - 3px);
-  width: -webkit-calc(20% - 3px);
+  min-width: 136px;
+  width: calc(33% - 66px);
+  width: -webkit-calc(33% - 66px);
   background-color: #f2f2f2;
   border: solid 1px #e6e6e6;
   -moz-transition: background .15s linear;
@@ -35,9 +46,9 @@
 .problem_block {
   float: left;
   height: 200px;
-  width: calc(33.33% - 3px);
-  width: -webkit-calc(33.33% - 3px);
-  min-width: 290px;
+  width: calc(50% - 46px);
+  width: -webkit-calc(50% - 46px);
+  min-width: 229px;
   background-color: #f2f2f2;
   border: solid 1px #e6e6e6;
   -moz-transition: background .15s linear;
@@ -47,6 +58,17 @@
   padding-right: 20px;
   margin-right: 3px;
   margin-bottom: 3px;
+}
+
+@media (max-width: 750px) {
+  .tag_block {
+    width: 100%;
+  }
+  
+  .problem_block {
+    width: 100%;
+  }
+
 }
 
 .problem_block:hover, .tag_block:hover {

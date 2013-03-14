@@ -8,6 +8,11 @@ title: CS61A - Spring 2013 - Mark Miyashita
 
 <article class="post">
   <h2>CS61A Spring 2013</h2>
+  
+  <div class="announcement">
+    If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a>
+  </div>
+  
   <h4>Office Hours:</h4>
   <p>
     Tuesday 11am-12pm, 3-4pm in 751 Soda<br/>
@@ -41,29 +46,23 @@ title: CS61A - Spring 2013 - Mark Miyashita
     Starting on Tuesday the 19th, I have given out either a warmup problem or a challenge problem to my lab and discussion sections. They will be posted below and updated throughout the semester with solutions.
   </p>
   
+</article>
+
+<article class="post" id="extra_problems">
   <h2>Notes:</h2>
-  <div class="row">
-  {% for topic in site.categories.notes reversed %}
-    <a href="{{ topic.url }}">
-      <div class="tag_block">
-        <h4>{{ topic.title }}</h4>
-      </div>
-    </a>
-  {% endfor %}
-  </div>
+  <p>
+    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
+  </p>
+  <ul>
+    {% for topic in site.categories.notes reversed %}
+    <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
+    {% endfor %}
+  </ul>
   
   <h2>Problems:</h2>
-  <div class="row">
-  {% for problem in site.categories.problems %}
-    {% if problem.published %}
-    <a href="{{ problem.url }}">
-      <div class="problem_block">
-        <h4>{{ problem.title }}</h4>
-        <h5>{{ problem.type }} Problem<h5>
-        <h5>{{ problem.date | date: "%b %d, %Y" }}</h5>
-      </div>
-    </a>
-    {% endif %}
-  {% endfor %}
-  </div>
+  <ul>
+    {% for problem in site.categories.problems %}
+    <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
+    {% endfor %}
+  </ul>
 </article>

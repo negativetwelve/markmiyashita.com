@@ -19,6 +19,8 @@ solution: true
   <code class="prettyprint">
 def sort_rlist(r):
     """
+    Sort an rlist in ascending order.
+    
     >>> r = rlist(4, rlist(3, rlist(6, rlist(8, rlist(1, empty_rlist)))))
     >>> sort_rlist(r)
     (1, (3, (4, (6, (8, None)))))
@@ -34,7 +36,9 @@ def sort_rlist(r):
   <pre>
     <code class="prettyprint">
 def sort_rlist(r):
-    """ Sort an rlist in ascending order
+    """
+    Sort an rlist in ascending order.
+    
     >>> r = rlist(3, rlist(5, rlist(1, rlist(9, rlist(7, None)))))
     >>> sort_rlist(r)
     (1, (3, (5, (7, (9, None)))))
@@ -44,7 +48,9 @@ def sort_rlist(r):
     return insert(first(r), sort_rlist(rest(r)))
 
 def insert(item, r):
-    """ Inserts item into r in sorted order
+    """
+    Inserts item into r in sorted order.
+    
     >>> r = rlist(4, rlist(6, rlist(8, None)))
     >>> insert(5, r)
     (4, (5, (6, (8, None))))

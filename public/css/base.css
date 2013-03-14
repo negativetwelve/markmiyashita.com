@@ -13,6 +13,16 @@
   clear: both;
 }
 
+@media (max-width: 750px) {
+  .row {
+    max-width: 100%;
+  }
+}
+
+.max-width {
+  max-width: 550px;
+}
+
 .affix {
   position: fixed;
 }
