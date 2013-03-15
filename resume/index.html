@@ -12,15 +12,14 @@ title: Resume - Mark Miyashita
   </p>
 </article>
 
-<article class="post">
+<article class="post no_overflow">
+  <!--
+  <img src="/public/images/berkeley.png" alt="berkeley" class="resume_image">
+  -->
   <h2>Education</h2>
   <h3>University of California, Berkeley, 2015</h3>
   <h3>B.S. Electrical Engineering and Computer Sciences (EECS)</h3>
   <p>
-    <!--
-    <img src="/public/images/berkeley.png" alt="berkeley" class="img-border img-medium">
-    -->
-    
     Relevent Coursework: CS61C (C, Mips), CS61BL (Java and Data Structures), CS61A (Python), CS98 (iOS/Objective-C), CS9E (Unix)
   </p>
 </article>
@@ -29,13 +28,17 @@ title: Resume - Mark Miyashita
   <h2>Experience</h2>
   {% for job in site.work %}
   <!--
-  <img src="{{ job.image }}" alt="{{ job.name }}" class="image-medium-border">
+  <div class="work_container no_overflow">
+  <img src="{{ job.image }}" alt="{{ job.name }}" class="resume_image">
   -->
   <h2>{{ job.role }} at {{ job.name }}</h2>
   <h3>({{ job.start-date }} - {{ job.end-date }})</h3>
   <p>
     {{ job.description }}
   </p>
+  <!--
+  </div>
+  -->
   {% endfor %}
 </article>
 

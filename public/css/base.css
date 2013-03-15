@@ -27,6 +27,10 @@
   position: fixed;
 }
 
+.no_overflow {
+  overflow: hidden;
+}
+
 img {
   width: 100%;
 }

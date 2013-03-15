@@ -7,16 +7,19 @@ title: Projects - Mark Miyashita
 </header>
 
 {% for project in site.projects %}
-  <article class="post">
+  <article class="post no_overflow">
+    <img class="project_image" src="{{ project.image }}"></img>
     <!--
     <img src="{{ project.image }}" alt="{{ project.name }}" class="image-medium-border">
     -->
-    <h4 class="no-margin-top">{{ project.name }}
+    <div class="project_description">
+    <h4>{{ project.name }}
       {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
       {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
     </h4>
     <p>
       {{ project.description }}
     </p>
+  </div>
   </article>
 {% endfor %}
