@@ -81,7 +81,11 @@ def sort_in_place(lst):
   </pre>
   
   <p>
-    
+    For each of these, the important note is that we are iterating over the elements of the lists using the index values to directly mutate the list. If we were to do a for loop such as <code>for i in lst</code> then the value of <code>i</code> would change at each iteration but that is separate from the <code>lst</code> itself. The result is that you would not be mutating the list.
+  </p>
+
+  <p>
+    For the <code>sort_in_place</code> function, our general algorithm is to find the minimum of the rest of the list and set that to be the next item. The first time, we are finding the minimum of the whole list and setting that as our first item. Then the next time, we are finding the minimum of the rest of the list and setting that as our next item and so on and so forth. Let me know if the comments below if this method is confusing for you!
   </p>
 </div>
 {% endif %}
