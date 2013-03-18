@@ -9,24 +9,10 @@ google_plus: 101180624276428786239
 
 published: false
 ---
-<p>
-    
-</p>
 
-<code class="prettyprint">
-  
-</pre>
 
-{% if page.solution %}
-<button onclick="toggleSolution()">Toggle Solution</button>
-
-<div class="solution">
+<pre>
   <code class="prettyprint">
-    
-  </pre>
   
-  <p>
-    
-  </p>
-</div>
-{% endif %}
+  </code>
+</pre>
