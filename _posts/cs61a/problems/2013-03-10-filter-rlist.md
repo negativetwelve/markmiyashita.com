@@ -2,7 +2,7 @@
 layout: problem
 title: "Filter Rlist"
 type: Warmup
-tags: [rlist, recursion]
+tags: [rlists, recursion]
 categories: [cs61a, sp13, problems]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
