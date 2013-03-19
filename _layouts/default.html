@@ -48,7 +48,37 @@
     
     <script type="text/javascript">
       prettyPrint();
-      document.getElementsByClassName("current_date")[0].innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
+      var date = document.getElementsByClassName("current_date")[0];
+      if (date) {
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());        
+      }
+
+      $(document).keypress(function(e) {
+        base = document.location.origin;
+        switch (e.charCode) {
+          case 97: // 'a' for about
+            document.location.href = base;
+            break;
+          case 98: // 'b' for blog
+            document.location.href = base + '/blog';
+            break;
+          case 104: // 'h' for hkn
+            document.location.href = base + "/hkn";
+            break;
+          case 112: // 'p' for projects
+            document.location.href = base + '/projects';
+            break;
+          case 114: // 'r' for resume
+            document.location.href = base + '/resume';
+            break;
+          case 119: // 'w' for web development
+            document.location.href = base + '/web_dev';
+            break;
+          case 99: // 'c' for cs61a
+            window.location.href = base + "/cs61a/sp13";
+            break;
+        }
+      });
     </script>
     
   </body>
