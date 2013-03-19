@@ -117,7 +117,7 @@ def filter_rlist(fn, s):
   </pre>
   
   <p>
-    Our implementations for the functions remain the same as before when we had a different abstraction. The only thing that has changed is the fact that we now call our first and rest in different ways. Previously, we used <code>first(r):</code>, now we call <code>r.first</code>.
+    Our implementations for the functions remain the same as before when we had a different abstraction. The only thing that has changed is the fact that we now call our first and rest in different ways. Previously, we used <code>first(r)</code>, now we call <code>r.first</code>.
   </p>
 
   <p>
