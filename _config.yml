@@ -19,7 +19,7 @@ work:
     end-date: "Present"
     image: /public/images/kloudless.png
     modal: kloudless
-    description: Part of a small team, I will be playing an integral role in developing the middle stack to make the application as fast and bug-free as possible.
+    description: I am currently working on the back-end dealing with technologies such as Storm, Hurricane, and the Django web server.
     full-description:
       
   - name: UC Berkeley
@@ -28,7 +28,7 @@ work:
     end-date: "Present"
     image: /public/images/berkeley.png
     modal: cs61a-ta
-    description: In the Spring semester, I will be an Undergraduate Student Instructor for the introductory computer science course, CS61A.
+    description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. 
     full-description:
     
   - name: Inigral Inc.
@@ -37,7 +37,7 @@ work:
     end-date: "Dec. '12"
     image: /public/images/inigral.png
     modal: inigral
-    description: As a back-end developer, I hack on new features and solve mysterious bugs. In a startup environment, I continue to learn everyday both in code and development practices.
+    description: I worked on both the front and back-end of Inigral's large scale Rails app. On the back-end, I worked to optimize database queries as well as fix bugs that involved the administrative panels. On the front-end, I fixed several issues dealing with the appearance of the communities pages.
     full-description:
       
   - name: UC Berkeley
