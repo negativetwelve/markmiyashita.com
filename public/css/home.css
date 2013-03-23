@@ -17,7 +17,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #3a3a3a;
   margin-top: 25px;
   margin-bottom: 20px;
-  max-width: 480px;
 }
 
 h1 {
@@ -61,64 +60,6 @@ article a {
   color: #000;
 }
 
-header#sidebar {
-  display: block;
-  position: fixed;
-  width: 26%;
-  padding-left: 3%;
-  padding-top: 30px;
-  z-index: 1;
-}
-
-header#sidebar img.profile_pic {
-  display: block;
-  position: relative;
-  background-color: #000;
-  border-radius: 50%;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  z-index: 1;
-  width: 90px;
-  height: 90px;
-}
-
-header#sidebar h2, header#sidebar h1, header#sidebar h3 {
-  width: 75%;
-}
-
-header#sidebar h2, header#sidebar h1 {
-  margin: 0;
-  padding: 0;
-  font-weight: 900;
-  color: #000;
-  font-family: 'freight-sans-pro','helvetica',sans-serif;
-}
-
-header#sidebar h1 {
-  margin-top: 15px;
-  font-size: 30px;
-  line-height: 30px;
-}
-
-header#sidebar h2 {
-  margin-top: 10px;
-  letter-spacing: 1px;
-  font-size: 13px;
-  line-height: 16px;
-  text-transform: uppercase;
-}
-
-header#sidebar h3 {
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 23px;
-  color: #585c60;
-  -webkit-font-smoothing: antialiased;
-  margin: 0;
-  margin-bottom: 25px;
-  margin-top: 10px;
-}
-
 section.footer {
   clear: both;
   padding-top: 0;
@@ -139,7 +80,7 @@ section.footer p.copyright {
   margin-left: 0;
   padding-bottom: 30px;
   font-weight: 400;
-  padding-left: 20px;
+  padding-left: 100px;
 }
 
 section.footer p.copyright, section.footer p.copyright a {
@@ -148,83 +89,25 @@ section.footer p.copyright, section.footer p.copyright a {
   -webkit-font-smoothing: antialiased;
 }
 
-div#links {
-  padding-right: 12%;
-}
-
-div#links span a, a.button_link {
-  position: relative;
-  display: inline-block;
-  font-size: 15px;
-  line-height: 25px;
-  border: 4px solid #f8f8f8;
-  border-radius: 20px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  z-index: 5;
-  padding-left: 15px;
-  padding-right: 15px;
-  color: #999;
-  margin-left: -30px;
-  font-weight: 600;
-  background-color: #fff;
-  margin-left: 0px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-}
-
-div#links span a:hover, a.button_link:hover {
-  color: #fff;
-  background-color: #000;
-  border-color: #000;
-}
-
-div#links span a:hover, a.button_link:hover, figure.logo, aside.alsoby li a:hover, figure.kudo.complete div.filling {
-  background-color: #14446a;
-}
-
-div#links span a:hover, a.button_link:hover, nav.pagination span.next a, nav.pagination span.prev a, aside.read_next a:hover h3, blockquote {
-  border-color: #14446a;
-}
-
 section#main_content {
   position: relative;
-  margin-left: 26%;
   border-left: 1px solid #e3e3e3;
-  min-height: 100%;
   z-index: 10;
   background-color: #fff;
-}
-
-header#top_bar {
-  padding: 40px 0 40px 40px;
-}
-
-header#top_bar {
-  display: block;
-  font-family: "freight-sans-pro",sans-serif;
-  position: relative;
-  text-transform: uppercase;
-  color: #000;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 1px;
-  line-height: 23px;
 }
 
 article.post {
   display: block;
   position: relative;
-  padding-left: 50px;
+  padding-left: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
   border-top: 1px solid #e2e2e2;
-  min-height: 130px;
   overflow-x: hidden;
 }
 
 article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li {
-  max-width: 550px;
+  max-width: 700px;
   //padding-right: 100px;
 }
 
@@ -250,12 +133,7 @@ section article.post p, section article.post li {
 }
 
 #disqus_thread {
-  max-width: 550px;
-}
-
-header#sidebar img.profile_pic {
-  width: 140px;
-  height: 140px;
+  max-width: 700px;
 }
 
 pre code {
@@ -266,85 +144,40 @@ pre code {
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 13px;
-  margin-left: -50px;
+  margin-left: -100px;
   margin-right: 0;
   width: auto;
   border-left: none;
   border-right: none;
-  padding-left: 50px;
+  padding-left: 100px;
 }
 
 @media only all and (min-width: 1150px) {
-  header#sidebar img.profile_pic {
-    width: 200px;
-    height: 200px;
-  }
+
+}
+
+@media (max-width: 1150px) and (min-width: 900px) {
+
 }
 
 @media (max-width: 900px) and (min-width: 750px) {
-  header#sidebar img.profile_pic {
-    width: 120px;
-    height: 120px;
+  article.post {
+    padding-left: 50px;
+    padding-right: 50px;
   }
-}
 
-@media (device-height: 1024px) and (device-width: 768px), only all and (max-height: 650px) {
-  header#sidebar {
-    position: absolute;
+  section.footer p.copyright {
+    padding-left: 50px;
   }
 }
 
 @media (max-width: 750px) {
-  header#sidebar img.profile_pic {
-    margin: 0 auto;
-    position: relative;
-    left: auto;
-    right: auto;
-    margin-top: 20px;
-  }
-  
-  header#sidebar {
-    display: block;
-    position: relative;
-    min-height: 0;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
-    float: none;
-    text-align: center;
-  }
-  
   section#main_content, div#disqus_comments {
     margin-left: 0;
     border-left: none;
     margin-top: 15px;
   }
-  
-  header#sidebar {
-    text-align: center;
-  }
-  
-  header#sidebar h1, header#sidebar h2, header#sidebar h3 {
-    max-width: 70%;
-    width: auto;
-    margin: 0 auto;
-  }
-  
-  header#sidebar h1 {
-    margin-top: 5px;
-  }
-  
-  header#sidebar h2 {
-    margin-top: 2px;
-  }
-  
-  header#sidebar h3 {
-    margin-top: 5px;
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-  
+
   article hr, article p, article h2, article h1, article h3, article h4, article h5, article h6, article blockquote p, article blockquote h2, article blockquote h1, article blockquote h3, article blockquote h4, article blockquote h5, article blockquote h6 {
     max-width: 100%;
   }
@@ -358,23 +191,7 @@ pre code {
     padding: 60px;
     padding-top: 30px;
   }
-  
-  header#top_bar {
-    display: none;
-  }
-  
-  div#links {
-    margin: 0;
-    padding: 0;
-  }
-  
-  div#links span {
-    display: inline;
-    margin: 0;
-    margin-right: 0;
-    margin-left: 0;
-  }
-  
+
   section#main_content article pre code {
     width: auto;
     margin: 0;
@@ -390,16 +207,15 @@ pre code {
     padding-right: 60px;
     width: 100%;
   }
+
+  section.footer p.copyright {
+    padding-left: 60px;
+  }
 }
 
 @media (max-width: 620px) {
   article.post {
     padding-top: 20px;
-  }
-  
-  header#sidebar img.profile_pic {
-    width: 114px;
-    height: 114px;
   }
 }
 
@@ -408,5 +224,9 @@ pre code {
     padding: 20px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  section.footer p.copyright {
+    padding-left: 15px;
   }
 }

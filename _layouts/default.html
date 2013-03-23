@@ -21,14 +21,16 @@
     <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
   </head>
   
-  <body>
-    <header id="sidebar">
-      {% include sidebar.html %}
+  <body>    
+    <header id="header">
+      {% include header.html %}
     </header>
-    
+
     <section id="main_content">
+
       {{ content }}
       
       {% include footer.html %}
