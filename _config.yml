@@ -3,6 +3,7 @@ url: http://markmiyashita.com
 paginate: 10000
 pygments: true
 markdown: rdiscount
+exclude: [Gemfile, Gemfile.lock, rakefile, readme.md, LICENSE, CNAME]
 title: Mark Miyashita
 author:
     name: Mark Miyashita
