@@ -1,9 +1,9 @@
 # Mark Miyashita
-[http://markmiyashita.com]() 
+<http://markmiyashita.com>
 
 # Using Jekyll
 
-The site is built using [https://github.com/mojombo/jekyll](Jekyll), a static blog generator that was built by [https://github.com/mojombo](mojombo). It works seamlessly with [http://pages.github.com/](Github Pages) which allows you to deploy your website just by pushing to a branch on your repo. After the initial set up time, adding content to the blog is a breeze.
+The site is built using <a href="https://github.com/mojombo/jekyll">Jekyll</a>. a static blog generator that was built by <a href="https://github.com/mojombo">mojombo</a>. It works seamlessly with <a href="http://pages.github.com/">Github Pages</a> which allows you to deploy your website just by pushing to a branch on your repo. After the initial set up time, adding content to the blog is a breeze.
 
 # Structure
 
