@@ -13,23 +13,33 @@ Contains general configuration for Jekyll and also the information that is forma
 
 ### /_posts
 
+Contains all of the posts that I have written. The directory is split into sections for my blog, cs61a, and my web_dev subdirectories. Posts are written in:
 
+    yyyy-mm-dd-title-of-post.md
+
+and are all written in markdown format.
 
 ### /blog, /contact, /cs61a, /hkn, /new, /projects, /resume, /web_dev
 
-These are the subdirectories that contain the index.html files that represent going to http://markmiyashita/<directory>. They utilize the layouts that are established in _layouts and work with content stored in _posts.
+These are the subdirectories that contain the index.html files that represent going to http://markmiyashita/\<directory\>. They utilize the layouts that are established in _layouts and work with content stored in _posts.
+
+### /downloads
+
+Contains files that may be downloaded by users such as my resume.
 
 ### /_layouts
 
-
+Contains the skeleton template files that form the basic outline of a post, a blog post, a note, etc. This maintains a website that eliminates as much repetition as possible. It also allows me to make a single change to a template that affects several posts or several subdirectories at a time (and consistently).
 
 ### /_includes
 
+Directory that contains the files that can be used in various parts of the website. For example, the header is in its own file to be included in the template later on. That way I can edit the header by itself. It creates a modular website that is easily to edit and maintain. Files can be included using the following syntax:
 
+    {% include header.html %}
 
 ### /public
 
-
+Contains the /js, /css, /img directories that contain the respective javascript, stylesheet, and image files.
 
 ### CNAME
 
@@ -37,19 +47,19 @@ The CNAME file allows me to easily point my repo to my own personal domain. Afte
 
 ### sitemap.xml
 
-
+Sitemap used for search engines to find the pages on the site. 
 
 ### atom.xml
 
-
+Creates an atom feed for people to subscribe to my posts.
 
 ### robots.txt
 
-
+Allows search engines to crawl the site.
 
 ### LICENSE
 
-
+A basic license file that I need to update!
 
 ### Gemfile
 
