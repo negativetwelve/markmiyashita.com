@@ -57,7 +57,7 @@ Allows search engines to crawl the site.
 
 ### LICENSE
 
-A basic license file that I need to update!
+Standard MIT License.
 
 ### Gemfile
 
