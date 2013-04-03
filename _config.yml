@@ -78,6 +78,13 @@ work:
     full-description:
     
 projects:
+  - name: Calaborate
+    url: http://calaborate.herokuapp.com
+    repo: https://github.com/negativetwelve/calaborate
+    image: /public/images/calaborate.png
+    modal: calaborate
+    description: I worked as the lead developer on a small team to develop a tool for Cal students to create meetups and study sessions to review for midterms and finals.
+
   - name: Appsearch.es
     url: http://appsearch.es
     repo: https://github.com/negativetwelve/appsearches
