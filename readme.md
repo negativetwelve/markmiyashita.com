@@ -13,11 +13,9 @@ Contains general configuration for Jekyll and also the information that is forma
 
 ### /_posts
 
-Contains all of the posts that I have written. The directory is split into sections for my blog, cs61a, and my web_dev subdirectories. Posts are written in:
+Contains all of the posts that I have written. The directory is split into sections for my blog, cs61a, and my web_dev subdirectories. Posts are written in markdown and the file names are in the form:
 
     yyyy-mm-dd-title-of-post.md
-
-and are all written in markdown format.
 
 ### /blog, /contact, /cs61a, /hkn, /new, /projects, /resume, /web_dev
 
