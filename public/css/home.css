@@ -7,7 +7,7 @@ html {
 
 body {
   font-family: 'proxima-nova','Helvetica',sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1em;
   line-height: 1.4;
   height: 100%;
@@ -46,7 +46,7 @@ p {
   margin-bottom: 20px;
   color: #4d4d4d;
   font-family: 'proxima-nova',sans-serif;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 li {
@@ -79,7 +79,7 @@ section.footer p.copyright {
   border-top: 1px solid #e2e2e2;
   margin-left: 0;
   padding-bottom: 30px;
-  font-weight: 400;
+  font-weight: 300;
   padding-left: 100px;
 }
 
