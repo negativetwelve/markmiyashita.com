@@ -1,6 +1,8 @@
 permalink: /:categories/:title
 url: http://markmiyashita.com
 paginate: 10000
+auto: true
+server: true
 pygments: true
 markdown: rdiscount
 exclude: [Gemfile, Gemfile.lock, rakefile, readme.md, LICENSE, CNAME]

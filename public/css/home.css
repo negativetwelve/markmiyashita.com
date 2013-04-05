@@ -132,6 +132,10 @@ section article.post p, section article.post li {
   line-height: 27px;
 }
 
+p.about_links a {
+  border-bottom: 1px solid #ccc;
+}
+
 #disqus_thread {
   max-width: 700px;
 }
