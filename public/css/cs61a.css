@@ -5,6 +5,8 @@
   border-right: none;
   margin-left: -100px;
   padding-left: 100px;
+  margin-right: -100px;
+  padding-right: 100px;
   padding-bottom: 20px;
   padding-top: 20px;
 }

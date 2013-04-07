@@ -100,6 +100,7 @@ article.post {
   display: block;
   position: relative;
   padding-left: 100px;
+  padding-right: 100px;
   padding-top: 40px;
   padding-bottom: 40px;
   border-top: 1px solid #e2e2e2;
@@ -149,11 +150,12 @@ pre code {
   padding-bottom: 10px;
   font-size: 13px;
   margin-left: -100px;
-  margin-right: 0;
+  margin-right: -100px;
   width: auto;
   border-left: none;
   border-right: none;
   padding-left: 100px;
+  padding-right: 100px;
 }
 
 @media only all and (min-width: 1150px) {

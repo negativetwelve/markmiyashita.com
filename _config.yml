@@ -107,6 +107,20 @@ projects:
     image: /public/images/tim.png
     modal: tim
     description: A vim-style web based todo app that I built with a friend at our first ever hackathon. We won the Hilfinger Award given to us by Box at the 2012 H@B Hackjam.
+
+  - name: Visualizing Graphs
+    url: http://markmiyashita.com/projects/graphs
+    repo:
+    image: /public/images/graphs.png
+    modal: graphs
+    description: A small, WIP, graph visualizer that allows you to create and edit graphs with nodes and edges. You can easily create random graphs and strongly connected graphs.
+
+  - name: markmiyashita.com
+    url: http://markmiyashita.com
+    repo: https://github.com/negativetwelve/markmiyashita.com
+    image: /public/images/website.png
+    modal: markmiyashita
+    description: My personal about me website that I have developed from scratch. It is built using Jekyll and hosted on Github Pages.
       
   - name: Life Logger
     url: 
@@ -114,13 +128,6 @@ projects:
     image: /public/images/life-logger.png
     modal: life-logger
     description: I worked with a team of four at the 2012 Battle of the Bay Facebook Hackathon. We built an event logger for your computer that allows you to visualize and analyze your habits on the computer.
-      
-  - name: markmiyashita.com
-    url: http://markmiyashita.com
-    repo: https://github.com/negativetwelve/markmiyashita.com
-    image: /public/images/website.png
-    modal: markmiyashita
-    description: My personal about me website that I have developed from scratch. It is built using Jekyll and hosted on Github Pages.
       
   - name: Pets Alliance
     url:
