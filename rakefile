@@ -29,4 +29,21 @@ task :serve do
   sys("jekyll --auto --server 4002 --url http://markmiyashita.org")
 end
 
+desc "generate a new post"
+namespace :post do
+  namespace :cs61a do
+    task :note, [:title] do |t, args|
+      date = Time.now.strftime("%Y-%m-%d-")
+      title = args[:title].gsub('-', '_').gsub(' ', '_').downcase + '.md'
+      sys("cp #{ROOT}/_posts/templates/cs61a_note_template.md #{ROOT}/_posts/cs61a/notes/#{date + title}")
+    end
+
+    task :problem, [:title] do |t, args|
+      date = Time.now.strftime("%Y-%m-%d-")
+      title = args[:title].gsub('-', '_').gsub(' ', '_').downcase + '.md'
+      sys("cp #{ROOT}/_posts/templates/cs61a_problem_template.md #{ROOT}/_posts/cs61a/problems/#{date + title}")
+    end
+  end
+end
+
 task :default => :serve

@@ -3,6 +3,7 @@ GEM
   specs:
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
+    colored (1.2)
     directory_watcher (1.5.1)
     fast-stemmer (1.0.2)
     jekyll (0.12.1)
@@ -28,6 +29,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  colored
   jekyll (= 0.12.1)
   liquid (= 2.4.1)
   rdiscount
