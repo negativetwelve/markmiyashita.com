@@ -29,19 +29,23 @@ end
 
 desc "generate a new post"
 namespace :post do
+  date = Time.now.strftime("%Y-%m-%d-")
   namespace :cs61a do
     task :note, [:title] do |t, args|
-      date = Time.now.strftime("%Y-%m-%d-")
       title = format_title(args[:title])
       sys("cp #{ROOT}/_posts/templates/cs61a_note_template.md #{ROOT}/_posts/cs61a/notes/#{date + title}")
     end
 
     task :problem, [:title] do |t, args|
-      date = Time.now.strftime("%Y-%m-%d-")
       title = format_title(args[:title])
       sys("cp #{ROOT}/_posts/templates/cs61a_problem_template.md #{ROOT}/_posts/cs61a/problems/#{date + title}")
     end
   end
+
+  task :blog, [:title] do |t, args|
+    title = format_title(args[:title])
+    sys("cp #{ROOT}/_posts/templates/blog_template.md #{ROOT}/_posts/blog/#{date + title}")
+  end
 end
 
-task :default => :serve
+task :default => :server
