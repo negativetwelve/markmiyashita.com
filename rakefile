@@ -46,6 +46,13 @@ namespace :post do
     title = format_title(args[:title])
     sys("cp #{ROOT}/_posts/templates/blog_template.md #{ROOT}/_posts/blog/#{date + title}")
   end
+
+  namespace :rails do
+    task :chapter, [:title] do |t, args|
+      title = format_title(args[:title])
+      sys("cp #{ROOT}/_posts/templates/web_dev_note_template.md #{ROOT}/_posts/web_dev/rails/#{date + title}")
+    end
+  end
 end
 
 task :default => :server
