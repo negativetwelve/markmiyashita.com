@@ -1,6 +1,6 @@
 permalink: /:categories/:title
 url: http://markmiyashita.com
-paginate: 1
+paginate: 10
 auto: true
 server: true
 pygments: true

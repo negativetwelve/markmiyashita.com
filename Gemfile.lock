@@ -4,7 +4,7 @@ GEM
     classifier (1.3.3)
       fast-stemmer (>= 1.0.0)
     colored (1.2)
-    directory_watcher (1.5.1)
+    directory_watcher (1.4.1)
     fast-stemmer (1.0.2)
     jekyll (0.12.1)
       classifier (~> 1.3)
@@ -21,7 +21,7 @@ GEM
     pygments.rb (0.3.7)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
-    rdiscount (2.0.7.1)
+    rdiscount (2.0.7.2)
     syntax (1.0.0)
     yajl-ruby (1.1.0)
 
@@ -30,6 +30,7 @@ PLATFORMS
 
 DEPENDENCIES
   colored
+  directory_watcher (= 1.4.1)
   jekyll (= 0.12.1)
   liquid (= 2.4.1)
   rdiscount
