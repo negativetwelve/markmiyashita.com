@@ -54,6 +54,10 @@ li {
   margin-bottom: 12px;
 }
 
+li:first-child {
+  margin-top: 12px;
+}
+
 article a {
   text-decoration: none;
   border-bottom: 1px solid #ccc;
