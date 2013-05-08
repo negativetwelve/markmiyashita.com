@@ -16,15 +16,15 @@ author:
 current_semester: sp13
 
 work:
-  - name: Kloudless
-    role: Software Engineer
-    start-date: "Dec. '12"
+  - name: Yelp
+    role: Software Engineering Intern - Mobile Team
+    start-date: "May '13"
     end-date: "Present"
-    image: /public/images/kloudless.png
-    modal: kloudless
-    description: I am currently working on the back-end dealing with technologies such as Storm, Hurricane, and the Django web server.
+    image: /public/images/yelp.png
+    modal: yelp
+    description: This summer I will be working at Yelp as an intern on the Mobile Team. I will be working on a small team working on adding features to the mobile web app and the iOS and Android apps.
     full-description:
-      
+
   - name: UC Berkeley
     role: Undergraduate Student Instructor for CS61A
     start-date: "Jan. '13"
@@ -32,6 +32,15 @@ work:
     image: /public/images/berkeley.png
     modal: cs61a-ta
     description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. 
+    full-description:
+
+  - name: Kloudless
+    role: Software Engineer
+    start-date: "Dec. '12"
+    end-date: "May '13"
+    image: /public/images/kloudless.png
+    modal: kloudless
+    description: I am currently working on the back-end dealing with technologies such as Storm, Hurricane, and the Django web server.
     full-description:
     
   - name: Inigral Inc.
@@ -55,7 +64,7 @@ work:
   - name: UC Berkeley SA-IT
     role: Residential Computing Consultant
     start-date: "May '12"
-    end-date: "Present"
+    end-date: "May '13"
     image: /public/images/rescomp.png
     modal: rescomp
     description: I provide technical support and customer service on topics such as computer software, security, and general hardware configurations for all students living in university-owned housing. I also lead workshops geared towards teaching students about being safe on the web.
@@ -73,7 +82,7 @@ work:
   - name: Mac Hints from BinaryAge
     role: Website Developer/Editor
     start-date: "Feb. '12"
-    end-date: "Present"
+    end-date: "May '13"
     image: /public/images/binaryage.png
     modal: binaryage
     description: I develop and maintain a subsection of the website BinaryAge.com. I designed the layout and contribute articles every week. Over 290,000 views since I began developing in March of 2012. Average of 1,500 views a day/45,000 views a month.
