@@ -29,6 +29,7 @@ def find_secret(secret, sentence):
     >>> find_secret("hello", sentence)
     False
     """
+    "***YOUR CODE HERE***"
   </code>
 </pre>
 
