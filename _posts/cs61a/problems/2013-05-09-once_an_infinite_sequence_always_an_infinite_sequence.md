@@ -124,7 +124,7 @@ def add_streams(s1, s2):
 </pre>
 
 <p>
-  I'll make a new post titled: "Once An Infinite Sequence, Always an Infinite Sequence [Part 2]"" and a link will be posted here.
+  I'll make a new post titled: "Once An Infinite Sequence, Always an Infinite Sequence [Part 2]" and a link will be posted here.
 </p>
 
 {% if page.solution %}

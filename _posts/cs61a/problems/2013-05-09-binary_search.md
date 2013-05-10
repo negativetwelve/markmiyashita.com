@@ -12,7 +12,7 @@ published: true
 solution: true
 ---
 <p>
-  In this problem, our input is an and a sorted list. We want to see if the item exists in the list, but we want to do this search in &#920;(log n). That means that we cannot create copies of the list, we can't slice the list, and we can't just simply iterate through the list. Instead, we will use a technique called binary search. You can find more information about the algorithm <a href="http://en.wikipedia.org/wiki/Binary_search_algorithm">here.</a> 
+  In this problem, our input is an item and a sorted list. We want to see if the item exists in the list, but we want to do this search in &#920;(log n). That means that we cannot create copies of the list, we can't slice the list, and we can't just simply iterate through the list. Instead, we will use a technique called binary search. You can find more information about the algorithm <a href="http://en.wikipedia.org/wiki/Binary_search_algorithm">here.</a> 
 </p>
 
 <p>
