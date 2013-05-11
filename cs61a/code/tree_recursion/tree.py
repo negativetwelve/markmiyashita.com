@@ -1,5 +1,6 @@
 # Tree class defined for CS61A at UC Berkeley
 # Edited by Mark Miyashita
+# http://markmiyashita.com/cs61a
 
 class Tree(object):
     """ A tree with internal values. """
