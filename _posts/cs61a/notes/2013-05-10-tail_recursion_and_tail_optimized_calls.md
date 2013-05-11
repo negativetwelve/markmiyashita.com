@@ -25,7 +25,7 @@ def factorial(n):
 
 because it needs to keep track of the <code>n *</code> at each level of recursion.
 
-This version, is tail recursive because at the end of the last frame, it can return the answer, instead of going back up through all the frames to multiply and compute the answer:
+The following implementation of <code>factorial</code>, is tail recursive because at the end of the last frame, it can return the answer, instead of going back up through all the frames to multiply and compute the answer:
 
 <pre>
   <code class="prettyprint">
