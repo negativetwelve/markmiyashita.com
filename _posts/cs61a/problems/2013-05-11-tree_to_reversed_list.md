@@ -9,7 +9,7 @@ author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
 published: true
-solution: false
+solution: true
 ---
 <p>
   This problem uses the <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree.py">Tree class</a> and the template for this file can be downloaded <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree_to_reversed_list.py">here.</a>
@@ -37,7 +37,19 @@ def tree_to_reversed_list(tree):
 <div class="solution">
   <pre>
     <code class="prettyprint">
-    
+def tree_to_reversed_list(tree):
+    """
+    >>> t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    >>> tree_to_reversed_list(t)
+    [8, 7, 6, 5, 4, 1]
+    """
+    lst = []
+    if tree.right:
+        lst.extend(tree_to_reversed_list(tree.right))
+    lst.append(tree.entry)
+    if tree.left:
+        lst.extend(tree_to_reversed_list(tree.left))
+    return lst
     </code>
   </pre>
   

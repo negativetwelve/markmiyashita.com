@@ -9,7 +9,7 @@ author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
 published: true
-solution: false
+solution: true
 ---
 <p>
   This problem uses the <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree.py">Tree class</a> and the template for this file can be downloaded <a href="http://markmiyashita.com/cs61a/code/tree_recursion/is_binary_search_tree.py">here.</a>
@@ -40,7 +40,22 @@ def is_binary_search_tree(tree):
 <div class="solution">
   <pre>
     <code class="prettyprint">
-    
+def is_binary_search_tree(tree):
+    """
+    >>> t = Tree(3, Tree(2), Tree(4))
+    >>> is_binary_search_tree(t)
+    True
+    >>> t = Tree(5, Tree(1, Tree(3)), Tree(6, Tree(10)))
+    >>> is_binary_search_tree(t)
+    False
+    """
+    if tree is None:
+        return True
+    if tree.left and tree.left.entry > tree.entry:
+        return False
+    if tree.right and tree.right.entry < tree.entry:
+        return False
+    return is_binary_search_tree(tree.left) and is_binary_search_tree(tree.right)
     </code>
   </pre>
   

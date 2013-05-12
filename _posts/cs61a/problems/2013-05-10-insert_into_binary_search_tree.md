@@ -9,7 +9,7 @@ author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
 published: true
-solution: false
+solution: true
 ---
 <p>
   This problem uses the <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree.py">Tree class</a> and the template for this file can be downloaded <a href="http://markmiyashita.com/cs61a/code/tree_recursion/insert.py">here.</a>
@@ -38,7 +38,25 @@ def insert(item, tree):
 <div class="solution">
   <pre>
     <code class="prettyprint">
-    
+def insert(item, tree):
+    """
+    >>> t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    >>> insert(2, t)
+    >>> t
+    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
+    """
+    if tree is None:
+        return
+    elif item < tree.entry:
+        if tree.left:
+            insert(item, tree.left)
+        else:
+            tree.left = Tree(item)
+    else:
+        if tree.right:
+            insert(item, tree.right)
+        else:
+            tree.right = Tree(item)
     </code>
   </pre>
   

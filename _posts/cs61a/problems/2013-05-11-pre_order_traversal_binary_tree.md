@@ -9,7 +9,7 @@ author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
 published: true
-solution: false
+solution: true
 ---
 <p>
   This problem uses the <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree.py">Tree class</a> and the template for this file can be downloaded <a href="http://markmiyashita.com/cs61a/code/tree_recursion/pre_order_traversal.py">here.</a>
@@ -46,7 +46,22 @@ def pre_order_traversal(tree):
 <div class="solution">
   <pre>
     <code class="prettyprint">
-    
+def pre_order_traversal(tree):
+    """
+    >>> t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    >>> pre_order_traversal(t)
+    5
+    1
+    4
+    7
+    6
+    8
+    """
+    if tree is None:
+        return
+    print(tree.entry)
+    pre_order_traversal(tree.left)
+    pre_order_traversal(tree.right)
     </code>
   </pre>
   
