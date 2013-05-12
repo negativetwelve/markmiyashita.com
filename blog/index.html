@@ -13,7 +13,7 @@ title: Blog - Mark Miyashita
     <p>
       {{ post.content | truncatewords: 70 }}
     </p>
-    <a href="{{ post.url | replace '.html','' }}" class="post-readmore">(Read More)</a>
+    <a href="{{ post.url }}" class="post-readmore">(Read More)</a>
     {% endif %}
   {% endfor %}
 </article>
