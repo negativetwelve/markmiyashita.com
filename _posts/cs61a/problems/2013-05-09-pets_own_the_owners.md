@@ -1,6 +1,6 @@
 ---
 layout: problem
-title: "Pet's Own the Owners"
+title: "Pets Own the Owners"
 type: Warmup
 tags: [oop, bound methods, object oriented programming]
 categories: [cs61a, sp13, problems]
