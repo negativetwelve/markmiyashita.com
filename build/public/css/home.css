@@ -1,0 +1,242 @@
+html {
+  font-family: sans-serif;
+  color: #4d4d4d;
+  font-size: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'proxima-nova','Helvetica',sans-serif;
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.4;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3a3a3a;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+a, a:visited, a:focus, a:hover {
+  color: #333;
+  text-decoration: none;
+  outline: 0;
+}
+
+a:hover, a:focus {
+  color: #000;
+}
+
+p {
+  font-size: 15px;
+  line-height: 23px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #4d4d4d;
+  font-family: 'proxima-nova',sans-serif;
+  font-weight: 300;
+}
+
+li {
+  line-height: 18px;
+  margin-bottom: 12px;
+}
+
+li:first-child {
+  margin-top: 12px;
+}
+
+article a {
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+section.footer {
+  clear: both;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+section.footer a {
+  margin-left: 0;
+  clear: both;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+section.footer p.copyright {
+  margin-bottom: 0;
+  margin-top: 0;
+  border-top: 1px solid #e2e2e2;
+  margin-left: 0;
+  padding-bottom: 30px;
+  font-weight: 300;
+  padding-left: 100px;
+}
+
+section.footer p.copyright, section.footer p.copyright a {
+  font-size: 14px;
+  color: #ccc;
+  -webkit-font-smoothing: antialiased;
+}
+
+section#main_content {
+  position: relative;
+  border-left: 1px solid #e3e3e3;
+  z-index: 10;
+  background-color: #fff;
+}
+
+article.post {
+  display: block;
+  position: relative;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid #e2e2e2;
+  overflow-x: hidden;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote, article li {
+  max-width: 700px;
+  //padding-right: 100px;
+}
+
+article.post h2 a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #CCC;
+  font-family: "freight-sans-pro",sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  -webkit-font-smoothing: antialiased;
+}
+
+article h2 a.no-link {
+  border: none;
+  font-size: 28px;
+}
+
+section article.post p, section article.post li {
+  font-size: 17px;
+  line-height: 27px;
+}
+
+p.about_links a {
+  border-bottom: 1px solid #ccc;
+}
+
+#disqus_thread {
+  max-width: 700px;
+}
+
+pre code {
+  border: none;
+  display: block;
+  border: 1px solid #d2d2d2;
+  background-color: #f8f8f8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+  margin-left: -100px;
+  margin-right: -100px;
+  width: auto;
+  border-left: none;
+  border-right: none;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+@media only all and (min-width: 1150px) {
+
+}
+
+@media (max-width: 1150px) and (min-width: 900px) {
+
+}
+
+@media (max-width: 900px) and (min-width: 750px) {
+  article.post {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  section.footer p.copyright {
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 750px) {
+  section#main_content, div#disqus_comments {
+    margin-left: 0;
+    border-left: none;
+    margin-top: 15px;
+  }
+
+  article hr, article p, article h2, article h1, article h3, article h4, article h5, article h6, article blockquote p, article blockquote h2, article blockquote h1, article blockquote h3, article blockquote h4, article blockquote h5, article blockquote h6 {
+    max-width: 100%;
+  }
+  
+  article h1, article h2, article h3, article h4, article h5, article h6, article p, article blockquote {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  
+  article.post {
+    padding: 60px;
+    padding-top: 30px;
+  }
+
+  section#main_content article pre code {
+    width: auto;
+    margin: 0;
+    padding-left: 25px;
+    margin-left: -20px;
+    width: 100%;
+  }
+  
+  body section#main_content article pre code {
+    margin: 0;
+    padding-left: 60px;
+    margin-left: -60px;
+    padding-right: 60px;
+    width: 100%;
+  }
+
+  section.footer p.copyright {
+    padding-left: 60px;
+  }
+}
+
+@media (max-width: 620px) {
+  article.post {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  article.post, div#disqus_comments {
+    padding: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  section.footer p.copyright {
+    padding-left: 15px;
+  }
+}
