@@ -44,11 +44,12 @@ def tree_to_reversed_list(tree):
     [8, 7, 6, 5, 4, 1]
     """
     lst = []
-    if tree.right:
-        lst.extend(tree_to_reversed_list(tree.right))
-    lst.append(tree.entry)
-    if tree.left:
-        lst.extend(tree_to_reversed_list(tree.left))
+    if tree is not None:
+        if tree.right:
+            lst.extend(tree_to_reversed_list(tree.right))
+        lst.append(tree.entry)
+        if tree.left:
+            lst.extend(tree_to_reversed_list(tree.left))
     return lst
     </code>
   </pre>
