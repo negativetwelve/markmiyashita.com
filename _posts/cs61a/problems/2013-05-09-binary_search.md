@@ -54,9 +54,9 @@ def binary_search(item, lst):
       if item == lst[mid]:
           return True
       if item < lst[mid]:
-          return binary_search(item, lst, low, mid - 1)
+          return helper(item, lst, low, mid - 1)
       if item > lst[mid]:
-          return binary_search(item, lst, mid + 1, high)
+          return helper(item, lst, mid + 1, high)
     return helper(item, lst, 0, len(lst))
     </code>
   </pre>
