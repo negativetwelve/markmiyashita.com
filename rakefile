@@ -22,6 +22,15 @@ def format_title(title)
   title.gsub('-', '_').gsub(' ', '_').downcase + '.md'
 end
 
+def format_dir(title)
+  title.gsub('-', '_').gsub(' ', '_').downcase
+end
+
+def format_title_with_directory(title)
+  s = title.split('/')
+  [format_dir(s[0]), format_title(title)]
+end
+
 desc "run the local server"
 task :serve do
   sys("jekyll")
@@ -53,6 +62,17 @@ namespace :post do
       sys("cp #{ROOT}/_posts/templates/web_dev_note_template.md #{ROOT}/_posts/web_dev/rails/#{date + title}")
     end
   end
+end
+
+task :note, [:title] do |t, args|
+  title = format_title(args[:title])
+  sys("touch #{ROOT}/_includes/cs61a/notes/#{title}")
+end
+
+task :problem, [:title] do |t, args|
+  directory, title = format_title_with_directory(args[:title])
+  sys("mkdir -p #{ROOT}/_includes/cs61a/problems/#{directory}")
+  sys("touch #{ROOT}/_includes/cs61a/problems/#{title}")
 end
 
 task :default => :server

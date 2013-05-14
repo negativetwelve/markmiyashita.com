@@ -1,16 +1,3 @@
----
-layout: problem
-title: "Longest Length of the Same Character in a String"
-type: Challenge
-tags: [recursion, strings]
-categories: [cs61a, sp13, problems]
-author_name: Mark Miyashita
-author_url: http://markmiyashita.com
-google_plus: 101180624276428786239
-
-published: true
-solution: true
----
 <p>
   Write a function that finds the length of the longest contiguous string of the same character and returns that length. Implement it recursively (you probably don't want to do it iteratively but you're free to try!) You may use the functions <code>first</code> and <code>rest</code> defined below.
 </p>

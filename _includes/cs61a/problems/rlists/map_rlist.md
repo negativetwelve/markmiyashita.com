@@ -1,16 +1,3 @@
----
-layout: problem
-title: "Map Rlist"
-type: Warmup
-tags: [rlists, recursion, higher order functions]
-categories: [cs61a, sp13, problems]
-author_name: Mark Miyashita
-author_url: http://markmiyashita.com
-google_plus: 101180624276428786239
-
-published: true
-solution: true
----          
 <p>
   Write a function that emulates the fucntionality of <code>map</code> but for our implementation of rlists. You may use the functions we have been working with: <code>first</code> and <code>rest</code>.
 </p>

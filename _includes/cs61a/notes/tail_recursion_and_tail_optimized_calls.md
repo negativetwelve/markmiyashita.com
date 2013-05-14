@@ -1,15 +1,3 @@
----
-layout: note
-title: "Tail Recursion and Tail Optimized Calls"
-tags: [tail recursion]
-categories: [cs61a, sp13, notes]
-author_name: Mark Miyashita
-author_url: http://markmiyashita.com
-google_plus: 101180624276428786239
-
-published: true
----
-
 Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: <a href="http://paulbutler.org/archives/tail-recursion-in-python/">http://paulbutler.org/archives/tail-recursion-in-python/</a>
 
 Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:

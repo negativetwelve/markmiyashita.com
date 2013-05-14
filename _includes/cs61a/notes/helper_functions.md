@@ -1,14 +1,3 @@
----
-layout: note
-title: "Helper Functions"
-tags: [helper functions]
-categories: [cs61a, sp13, notes]
-author_name: Mark Miyashita
-author_url: http://markmiyashita.com
-google_plus: 101180624276428786239
-
-published: true
----
 <h4>What are helper functions?</h4>
 
 Helper functions are useful when you want to extend the amount of parameters that a certain function takes in. Helper functions are generally used to make our lives easier. This occurs most often when working with recursion, especially if you want your function to be tail recursive. 

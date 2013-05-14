@@ -1,7 +1,7 @@
 ---
 layout: note
-title: "Recursion"
-tags: [recursion]
+title: "Object Oriented Programming"
+tags: [oop]
 categories: [cs61a, sp13, notes]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
@@ -9,6 +9,5 @@ google_plus: 101180624276428786239
 
 published: false
 ---
-<p>
-  This is a note about recursion.
-</p>
+
+{% include cs61a/notes/object_oriented_programming.md %}

@@ -15,9 +15,11 @@ layout: cs61a_base
   <h2>Extra Practice with {{ page.title }}</h2>
   <ul>
   {% for problem in site.categories.problems %}
-    {% if problem.tags contains page.tags[0] or problem.tags contains page.tags[1] or problem.tags contains page.tags[2] %}
-      {% if problem.published %}
-      <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
+    {% if problem.categories contains page.categories[1] %}
+      {% if problem.tags contains page.tags[0] or problem.tags contains page.tags[1] or problem.tags contains page.tags[2] %}
+        {% if problem.published %}
+          <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
+        {% endif %}
       {% endif %}
     {% endif %}
   {% endfor %}

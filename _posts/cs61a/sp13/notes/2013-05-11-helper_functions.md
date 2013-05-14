@@ -1,14 +1,13 @@
 ---
 layout: note
-title: "Environment Diagrams"
-tags: [environment diagrams]
+title: "Helper Functions"
+tags: [helper functions]
 categories: [cs61a, sp13, notes]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
 google_plus: 101180624276428786239
 
-published: false
+published: true
 ---
-<p>
-  This is a note about environment diagrams.
-</p>
+
+{% include cs61a/notes/helper_functions.md %}
