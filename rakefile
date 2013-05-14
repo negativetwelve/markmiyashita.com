@@ -42,12 +42,12 @@ namespace :post do
   namespace :cs61a do
     task :note, [:title] do |t, args|
       title = format_title(args[:title])
-      sys("cp #{ROOT}/_posts/templates/cs61a_note_template.md #{ROOT}/_posts/cs61a/notes/#{date + title}")
+      sys("cp #{ROOT}/_posts/templates/cs61a_note_template.md #{ROOT}/_posts/cs61a/su13/notes/#{date + title}")
     end
 
     task :problem, [:title] do |t, args|
       title = format_title(args[:title])
-      sys("cp #{ROOT}/_posts/templates/cs61a_problem_template.md #{ROOT}/_posts/cs61a/problems/#{date + title}")
+      sys("cp #{ROOT}/_posts/templates/cs61a_problem_template.md #{ROOT}/_posts/cs61a/su13/problems/#{date + title}")
     end
   end
 
@@ -72,7 +72,7 @@ end
 task :problem, [:title] do |t, args|
   directory, title = format_title_with_directory(args[:title])
   sys("mkdir -p #{ROOT}/_includes/cs61a/problems/#{directory}")
-  sys("touch #{ROOT}/_includes/cs61a/problems/#{title}")
+  sys("cp #{ROOT}/_includes/cs61a/problems/template.md #{ROOT}/_includes/cs61a/problems/#{title}")
 end
 
 task :default => :server
