@@ -1,6 +1,4 @@
-<p>
-  Write a function that sums up the digits of a number. Try to implement it both iteratively and recursively.
-</p>
+Write a function that sums up the digits of a number. Try to implement it both iteratively and recursively.
 
 <pre>
   <code class="prettyprint">
