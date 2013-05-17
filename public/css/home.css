@@ -150,8 +150,8 @@ pre code {
   display: block;
   border: 1px solid #d2d2d2;
   background-color: #f8f8f8;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 13px;
   margin-left: -100px;
   margin-right: -100px;
@@ -160,6 +160,33 @@ pre code {
   border-right: none;
   padding-left: 100px;
   padding-right: 100px;
+}
+
+a.solution_toggle {
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 25px;
+  border: 4px solid #f8f8f8;
+  border-radius: 20px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  z-index: 5;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #999;
+  margin-left: -30px;
+  font-weight: 600;
+  background-color: #fff;
+  margin-left: 0px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+a.solution_toggle:hover {
+  color: #fff;
+  background-color: #14446a;
+  border-color: #14446a;
 }
 
 @media only all and (min-width: 1150px) {
