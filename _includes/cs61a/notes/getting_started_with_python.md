@@ -13,9 +13,9 @@ Let's start with a few fundamentals. First, we have variables. Variables are lik
   </code>
 </pre>
 
-Here, we defined to variables, <code>a</code> and <code>b</code> and their values are now 5 and 6, respectively.
+Here, we defined to variables, `a` and `b` and their values are now 5 and 6, respectively.
 
-Strings are like words or sentences and we represent them as being surrounded by either single quotes, <code>'</code> or double quotes, <code>"</code>. We can store strings as variables too.
+Strings are like words or sentences and we represent them as being surrounded by either single quotes, `'` or double quotes, `"`. We can store strings as variables too.
 
 <pre>
   <code class="prettyprint">
@@ -40,7 +40,7 @@ SyntaxError: invalid syntax
   </code>
 </pre>
 
-Here, we encounter a syntax error because Python thinks the string ends at <code>'don'</code> and then doesn't know what to do with the rest. The proper way to represent this string is to do the following:
+Here, we encounter a syntax error because Python thinks the string ends at `'don'` and then doesn't know what to do with the rest. The proper way to represent this string is to do the following:
 
 <pre>
   <code class="prettyprint">
