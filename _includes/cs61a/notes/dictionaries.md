@@ -8,14 +8,14 @@
 
 #### Introduction
 
-Dictionaries are another type of <i>data structure</i> that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
+Dictionaries are another type of _data structure_ that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
   
 A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:
 
     >>> ages = {'joe': 20, 'jenny': 19, 'tony': 24}
     >>> ages['tony'] = 23
 
-If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.
+If I try to add another person named `tony`, instead of having two keys, both labeled `tony`, I will instead have one key for `tony` mapped to the new value.
   
     >>> ages
     {'joe': 20, 'jenny': 19, 'tony': 23}
@@ -24,7 +24,7 @@ This shows that dictionary keys are unique. Another thing we should note is that
 
 #### Accessing Elements
 
-Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.
+Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a `KeyError`.
   
     >>> ages['joe']
     20
@@ -51,13 +51,13 @@ Again, notice that the elements are in a different order this time, a reminder t
 
 #### Removing Elements
 
-If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:
+If you desire to remove items from a dictionary, you must use the special built-in, `del`. The syntax is as follows:
 
     >>> del ages['tony']
     >>> ages
     {'joe': 20, 'jenny': 25, 'harry': 19}  
 
-We use the <code>del</code> function that requires you to specify the dictionary and the associated key that you want to remove.
+We use the `del` function that requires you to specify the dictionary and the associated key that you want to remove.
 
 #### Iterating Over the Elements in a Dictionary
 
@@ -70,7 +70,7 @@ We have several methods for iterating over a dictionary. Again, we remind oursel
     joe
     jenny
 
-Notice that the <i>keys</i> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:
+Notice that the _keys_ are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the `.keys()` method to iterate over just the keys. We also have access to the `.values()` method and the `.items()` method and they work as follows:
 
     >>> for i in ages.values():
     ...     print(i)
@@ -87,7 +87,7 @@ Notice that the <i>keys</i> are what gets printed and that the values are nowher
 
 #### Dictionaries in Environment Diagrams
 
-Dictionaries have a representation in environment diagrams too. We represent it by listing the type <i>dict</i> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:
+Dictionaries have a representation in environment diagrams too. We represent it by listing the type _dict_ above the boxes with the keys on the left and the values on the right. The name of our dictionary, `ages`, points to the dict object. Here is what our `ages` dictionary would look like:
 
 ![Environment Diagram](/public/images/dictionaries/environment_diagram_01.png)
 
