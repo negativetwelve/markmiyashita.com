@@ -162,6 +162,10 @@ pre code {
   padding-right: 100px;
 }
 
+p code {
+  white-space: nowrap;
+}
+
 a.solution_toggle {
   position: relative;
   display: inline-block;

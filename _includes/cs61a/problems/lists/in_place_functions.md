@@ -1,3 +1,4 @@
+{% capture question %}
 This weeks homework had a lot of problems where we wanted you to solve them in-place (meaning without creating a new list). Instead, we wanted you to swap the items in the list and directly modify the input list. Here are a few more practice problems to make sure that you understand how in-place functions work. Write two functions (unrelated to one another) called `map_in_place` and `sort_in_place` that each take in a list. `map_in_place` will modify the original list by mapping the input function over each of the elements of the list. `sort_in_place` can use any sorting algorithm you want and will modify the original list so that it is sorted after calling this function on it. 
 
     def map_in_place(fn, lst):
@@ -24,11 +25,9 @@ This weeks homework had a lot of problems where we wanted you to solve them in-p
         [1, 3, 4, 5, 6, 12]
         """
         "***YOUR CODE HERE***"
+{% endcapture %}
 
-{% if page.solution %}
-[Toggle Solution](#solution){: .solution_toggle}
-
-<div class="solution" markdown="1">
+{% capture solution %}
     def map_in_place(fn, lst):
         """
         Takes in a function, fn, and maps it over
@@ -60,5 +59,6 @@ This weeks homework had a lot of problems where we wanted you to solve them in-p
 For each of these, the important note is that we are iterating over the elements of the lists using the index values to directly mutate the list. If we were to do a for loop such as `for i in lst` then the value of `i` would change at each iteration but that is separate from the `lst` itself. The result is that you would not be mutating the list.
 
 For the `sort_in_place` function, our general algorithm is to find the minimum of the rest of the list and set that to be the next item. The first time, we are finding the minimum of the whole list and setting that as our first item. Then the next time, we are finding the minimum of the rest of the list and setting that as our next item and so on and so forth. Let me know if the comments below if this method is confusing for you!
-</div>
-{% endif %}
+{% endcapture %}
+
+{% include cs61a/problem_template.md %}

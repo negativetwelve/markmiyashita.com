@@ -14,7 +14,7 @@ function styleCode() {
     return;
   } 
   var a = false;
-  $("pre code").each(function() {
+  $("code").each(function() {
     if (!$(this).hasClass("prettyprint")) {
       $(this).addClass("prettyprint");
       a = true

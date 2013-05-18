@@ -1,182 +1,105 @@
 - [Introduction](#introduction)
-- [Accessing Elements](#accessing)
-- [Inserting and Changing Elements](#changing)
-- [Removing Elements](#removing)
-- [Iterating Over the Elements of a Dictionary](#iterating)
-- [Dictionaries in Environment Diagrams](#environments)
-- [Useful Methods for Dictionaries](#extra)
+- [Accessing Elements](#accessing-elements)
+- [Inserting and Changing Elements](#inserting-and-changing-elements)
+- [Removing Elements](#removing-elements)
+- [Iterating Over the Elements of a Dictionary](#iterating-over-the-elements-of-a-dictionary)
+- [Dictionaries in Environment Diagrams](#dictionaries-in-environment-diagrams)
+- [Useful Methods for Dictionaries](#useful-methods-for-dictionaries)
 
-<div id="introduction">
-  <h4>Introduction</h4>
-  <p>
-    Dictionaries are another type of <i>data structure</i> that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
-  </p>
-  
-  <p>
-    A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> ages = {'joe': 20, 'jenny': 19, 'tony': 24}
->>> ages['tony'] = 23
-    </code>
-  </pre>
-  
-  <p>
-    If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> ages
-{'joe': 20, 'jenny': 19, 'tony': 23}
-    </code>
-  </pre>
-  
-  <p>
-    This shows that dictionary keys are unique. Another thing we should note is that dictionaries are unordered. Python has its own way of organizing and arranging the items, but we as the programmer do not know for sure.
-  </p>
-</div>
+#### Introduction
 
-<div id="accessing">
-  <h4>Accessing Elements</h4>
-  <p>
-    Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.
-  </p>
+Dictionaries are another type of <i>data structure</i> that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
   
-  <pre>
-    <code class="prettyprint">
->>> ages['joe']
-20
->>> ages['johnny']
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-KeyError: 'johnny'
-    </code>
-  </pre>
-</div>
+A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:
 
-<div id="changing">
-  <h4>Inserting and Changing Elements</h4>
-  <p>
-    Elements in a dictionary can be inserted in the same way that they are changed. Dictionaries are considered a mutable data type because we can change the entries and add new ones. To add elements, we do the following:
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> ages['harry'] = 19
->>> ages
-{'joe': 20, 'harry': 19, 'jenny': 19, 'tony': 23}  
-    </code>
-  </pre>
-  
-  <p>
-    To change elements, we do the same thing, except we know that the key already exists.
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> ages['jenny'] = 25
->>> ages
-{'joe': 20, 'jenny': 25, 'harry': 19, 'tony': 23}
-    </code>
-  </pre>
-  
-  <p>
-    Again, notice that the elements are in a different order this time, a reminder that dictionaries are unordered and that we cannot rely upon the order when we iterate over them.
-  </p>
-</div>
+    >>> ages = {'joe': 20, 'jenny': 19, 'tony': 24}
+    >>> ages['tony'] = 23
 
-<div id="removing">
-  <h4>Removing Elements</h4>
-  <p>
-    If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:
-  </p>
+If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.
   
-  <pre>
-    <code class="prettyprint">
->>> del ages['tony']
->>> ages
-{'joe': 20, 'jenny': 25, 'harry': 19}
-    </code>
-  </pre>
-  
-  <p>
-    We use the <code>del</code> function that requires you to specify the dictionary and the associated key that you want to remove.
-  </p>
-</div>
+    >>> ages
+    {'joe': 20, 'jenny': 19, 'tony': 23}
 
-<div id="iterating">
-  <h4>Iterating Over the Elements in a Dictionary</h4>
-  <p>
-    We have several methods for iterating over a dictionary. Again, we remind ourselves that dictionaries are unordered so we cannot rely upon a for loop to give us the same values after we manipulate the data. For example:
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> for i in ages:
-...     print(i)
-...
-harry
-joe
-jenny
-    </code>
-  </pre>
-  
-  <p>
-    Notice that the <i>keys</i> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> for i in ages.values():
-...     print(i)
-...
-19
-20
-25
->>> for k, v in ages.items():
-...     print(k, v)
-...
-harry 19
-joe 20
-jenny 25
-    </code>
-  </pre>
-</div>
+This shows that dictionary keys are unique. Another thing we should note is that dictionaries are unordered. Python has its own way of organizing and arranging the items, but we as the programmer do not know for sure.
 
-<div id="environments">
-  <h4>Dictionaries in Environment Diagrams</h4>
-  
-  <p>
-    Dictionaries have a representation in environment diagrams too. We represent it by listing the type <i>dict</i> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:
-  </p>
-  <p>
-    <img src="/public/images/dictionaries/environment_diagram_01.png">    
-  </p>
-  <p>
-    When we add and remove items from the dictionary, our environment diagram updates to this:
-  </p>
-  
-  <pre>
-    <code class="prettyprint">
->>> ages['joe'] = 22
->>> del ages['jenny']
->>> ages
-{'joe': 22, 'harry': 19}
-    </code>
-  </pre>
-  
-  <p>
-    <img src="/public/images/dictionaries/environment_diagram_02.png">    
-  </p>
-</div>
+#### Accessing Elements
 
-<div id="extra">
-  <h4>Useful Methods for Dictionaries</h4>
+Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.
   
-  <p>
-    Work in progress, will be updated soon.
-  </p>
-</div>
+    >>> ages['joe']
+    20
+    >>> ages['johnny']
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    KeyError: 'johnny'
+
+#### Inserting and Changing Elements
+
+Elements in a dictionary can be inserted in the same way that they are changed. Dictionaries are considered a mutable data type because we can change the entries and add new ones. To add elements, we do the following:
+
+    >>> ages['harry'] = 19
+    >>> ages
+    {'joe': 20, 'harry': 19, 'jenny': 19, 'tony': 23}
+
+To change elements, we do the same thing, except we know that the key already exists.
+
+    >>> ages['jenny'] = 25
+    >>> ages
+    {'joe': 20, 'jenny': 25, 'harry': 19, 'tony': 23}
+
+Again, notice that the elements are in a different order this time, a reminder that dictionaries are unordered and that we cannot rely upon the order when we iterate over them.
+
+#### Removing Elements
+
+If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:
+
+    >>> del ages['tony']
+    >>> ages
+    {'joe': 20, 'jenny': 25, 'harry': 19}  
+
+We use the <code>del</code> function that requires you to specify the dictionary and the associated key that you want to remove.
+
+#### Iterating Over the Elements in a Dictionary
+
+We have several methods for iterating over a dictionary. Again, we remind ourselves that dictionaries are unordered so we cannot rely upon a for loop to give us the same values after we manipulate the data. For example:
+
+    >>> for i in ages:
+    ...     print(i)
+    ...
+    harry
+    joe
+    jenny
+
+Notice that the <i>keys</i> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:
+
+    >>> for i in ages.values():
+    ...     print(i)
+    ...
+    19
+    20
+    25
+    >>> for k, v in ages.items():
+    ...     print(k, v)
+    ...
+    harry 19
+    joe 20
+    jenny 25
+
+#### Dictionaries in Environment Diagrams
+
+Dictionaries have a representation in environment diagrams too. We represent it by listing the type <i>dict</i> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:
+
+![Environment Diagram](/public/images/dictionaries/environment_diagram_01.png)
+
+When we add and remove items from the dictionary, our environment diagram updates to this:
+
+    >>> ages['joe'] = 22
+    >>> del ages['jenny']
+    >>> ages
+    {'joe': 22, 'harry': 19}
+
+![Environment Diagram](/public/images/dictionaries/environment_diagram_02.png">)
+
+#### Useful Methods for Dictionaries
+
+Work in progress, will be updated soon.

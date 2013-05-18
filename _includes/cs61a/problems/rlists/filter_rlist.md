@@ -1,3 +1,4 @@
+{% capture question %}
 We want to define a function `filter_rlist` that takes in a function and an rlist and returns a new rlist that keeps all the items that satisfy the given input function. For this, we will be using the functional representation of our rlists using tuples and we will have the following constructors and selectors to use:
 
     empty_rlist = None
@@ -24,11 +25,9 @@ We want to define a function `filter_rlist` that takes in a function and an rlis
         (4, None)
         """
         "***YOUR CODE HERE***"
+{% endcapture %}
 
-{% if page.solution %}
-[Toggle Solution](#solution){: .solution_toggle}
-
-<div class="solution" markdown="1">
+{% capture solution %}
     def filter_rlist(fn, r):
         """
         Takes in a function, fn, and an rlist, r.
@@ -46,5 +45,6 @@ We want to define a function `filter_rlist` that takes in a function and an rlis
         return filter_rlist(fn, rest(r))
 
 Basically, we want to check to see if the first element of our rlist satisfies the input function. If it does, then we need construct a new rlist, keeping the first element, and recursively applying the filter on the rest. If it does not satisfy the function, then we can just recurse on the rest and that will disregard the current element. Finally, our base case is when we have the `empty_rlist`. When we have an `empty_rlist`, we don't have to filter anything else out because we've already filtered everything!
-</div>
-{% endif %}
+{% endcapture %}
+
+{% include cs61a/problem_template.md %}

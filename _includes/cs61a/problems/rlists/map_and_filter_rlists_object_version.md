@@ -1,3 +1,4 @@
+{% capture question %}
 We've already seen how to implement `map` and `filter` using our tuple/functional abstraction for rlists, now let's implement the same functions using the class version. You should be able to write these from scratch but here are the previous implementations of [map](http://markmiyashita.com/cs61a/sp13/problems/map_rlist/) and [filter](http://markmiyashita.com/cs61a/sp13/problems/filter_rlist/). Here is the class Rlist that we will be using as our abstraction.
 
     class Rlist(object):
@@ -57,11 +58,9 @@ Let's write our functions `map` and `filter` that work for the Rlist class. Here
         Rlist(2)
         """
         "***YOUR CODE HERE***"
+{% endcapture %}
 
-{% if page.solution %}
-[Toggle Solution](#solution){: .solution_toggle}
-
-<div class="solution" markdown="1">
+{% capture solution %}
     def map_rlist(fn, s):
         """ Return an Rlist resulting from mapping fn over the elements of s.
 
@@ -92,5 +91,6 @@ Our implementations for the functions remain the same as before when we had a di
 For map, we still want to return the empty rlist when the input is the empty rlist. Then, we want to apply the function to the first item of our rlist and recursively call map on the rest of our rlist.
 
 For filter, we want to check if the first item satisfies our input function. If it does satisfy the function, then we can keep that item and recursively call filter on the rest of our rlist. If it does not, then we can ignore the first item entirely and recursively call filter on the rest of the rlist.
-</div>
-{% endif %}
+{% endcapture %}
+
+{% include cs61a/problem_template.md %}

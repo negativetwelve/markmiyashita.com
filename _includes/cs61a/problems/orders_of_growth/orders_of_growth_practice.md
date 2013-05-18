@@ -1,3 +1,4 @@
+{% capture question %}
 Given the functions below, analyze the run time of each in Big Theta notation.
 
     def factorial(n):
@@ -62,11 +63,9 @@ Given the functions below, analyze the run time of each in Big Theta notation.
                 boss(i)
             return i
         return boss(n // 2)
+{% endcapture %}
 
-{% if page.solution %}
-[Toggle Solution](#solution){: .solution_toggle}
-
-<div class="solution" markdown="1">
+{% capture solution %}
     def factorial(n):
         if n < 2:
             return 1
@@ -147,5 +146,6 @@ For the sake of this class, this is exponential and approximately &#920;(2<sup>n
         return boss(n // 2)
 
 &#920;(n)
-</div>
-{% endif %}
+{% endcapture %}
+
+{% include cs61a/problem_template.md %}
