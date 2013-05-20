@@ -1,10 +1,5 @@
-- [Introduction](#introduction)
-- [Accessing Elements](#accessing-elements)
-- [Inserting and Changing Elements](#inserting-and-changing-elements)
-- [Removing Elements](#removing-elements)
-- [Iterating Over the Elements of a Dictionary](#iterating-over-the-elements-of-a-dictionary)
-- [Dictionaries in Environment Diagrams](#dictionaries-in-environment-diagrams)
-- [Useful Methods for Dictionaries](#useful-methods-for-dictionaries)
+* Table of Contents
+{:toc}
 
 #### Introduction
 

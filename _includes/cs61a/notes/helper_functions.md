@@ -1,4 +1,7 @@
-#### What are helper functions?
+* Table of Contents
+{:toc}
+
+#### What are Helper Functions?
 
 Helper functions are useful when you want to extend the amount of parameters that a certain function takes in. Helper functions are generally used to make our lives easier. This occurs most often when working with recursion, especially if you want your function to be tail recursive. 
 

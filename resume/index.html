@@ -27,27 +27,17 @@ title: Resume - Mark Miyashita
 <article class="post" id="work">
   <h2>Experience</h2>
   {% for job in site.work %}
-  <!--
-  <div class="work_container no_overflow">
-  <img src="{{ job.image }}" alt="{{ job.name }}" class="resume_image">
-  -->
   <h2>{{ job.role }} at {{ job.name }}</h2>
   <h3>({{ job.start-date }} - {{ job.end-date }})</h3>
   <p>
     {{ job.description }}
   </p>
-  <!--
-  </div>
-  -->
   {% endfor %}
 </article>
 
 <article class="post" id="projects">
   <h2>Projects</h2>
   {% for project in site.projects limit:5 %}
-  <!--
-  <img src="{{ project.image }}" alt="{{ project.name }}" class="image-medium-border">
-  -->
   <h2>{{ project.name }}
       {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
       {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
@@ -65,6 +55,11 @@ title: Resume - Mark Miyashita
   <h3>HKN (Eta Kappa Nu) Department Relations - Fall 2013</h3>
   <p>
     I am the liaison between the EECS Administrative staff and HKN and the rest of the student body. I attend meetings that make decisions the affect students in EECS as well as give department tours to prospective students who are thinking of coming to Cal.
+  </p>
+
+  <h3>Cal Blueprint Project Leader - Fall 2013</h3>
+  <p>
+    I lead a team of four project members to build an application that will help a non-profit organization.
   </p>
 
   <h3>HKN (Eta Kappa Nu) Bridge Officer - Spring 2013</h3>

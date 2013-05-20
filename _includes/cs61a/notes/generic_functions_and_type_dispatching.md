@@ -1,7 +1,5 @@
-- [Pupose](#purpose)
-- [Type Tag Function](#type-tag-function)
-- [Creating our Dictionaries](#creating-our-dictionaries)
-- [Putting it all Together](#putting-it-all-together)
+* Table of Contents
+{:toc}
 
 #### Purpose
 

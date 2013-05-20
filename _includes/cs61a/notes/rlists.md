@@ -1,6 +1,5 @@
-- [Introduction](#introduction)
-- [Data Abstraction](#data-abstraction)
-- [Constructors and Selectors](#constructors-and-selectors)
+* Table of Contents
+{:toc}
 
 #### Introduction
 
