@@ -10,8 +10,9 @@ author:
     email: negativetwelve@gmail.com
     gihub: negativetwelve
     twitter: negativetwelve
-    
-current_semester: sp13
+
+current_semester: su13
+
 
 work:
   - name: Yelp
@@ -40,7 +41,7 @@ work:
     modal: kloudless
     description: I am currently working on the back-end dealing with technologies such as Storm, Hurricane, and the Django web server.
     full-description:
-    
+
   - name: Inigral Inc.
     role: Software Engineer Intern
     start-date: "Jul. '12"
@@ -49,7 +50,7 @@ work:
     modal: inigral
     description: I worked on both the front and back-end of Inigral's large scale Rails app. On the back-end, I worked to optimize database queries as well as fix bugs that involved the administrative panels. On the front-end, I fixed several issues dealing with the appearance of the communities pages.
     full-description:
-      
+
   - name: UC Berkeley
     role: CS10 Head Reader
     start-date: "Aug. '12"
@@ -58,7 +59,7 @@ work:
     modal: cs10-reader
     description: As the Head Reader for the undergraduate course CS10, I not only grade homework, projects, and exams, but also work with Professor Dan Garcia to deal with logistics and delegation of work among the readers.
     full-description:
-      
+
   - name: UC Berkeley SA-IT
     role: Residential Computing Consultant
     start-date: "May '12"
@@ -67,7 +68,7 @@ work:
     modal: rescomp
     description: I provide technical support and customer service on topics such as computer software, security, and general hardware configurations for all students living in university-owned housing. I also lead workshops geared towards teaching students about being safe on the web.
     full-description:
-  
+
   - name: UC Berkeley
     role: CS61A Reader
     start-date: "May '12"
@@ -76,7 +77,7 @@ work:
     modal: cs61a-reader
     description: This semester, working with Professor John DeNero, my job is to focus on coding style within projects. I help students become both precise and concise in their code while still keeping it readable and manageable.
     full-description:
-      
+
   - name: Mac Hints from BinaryAge
     role: Website Developer/Editor
     start-date: "Feb. '12"
@@ -85,7 +86,7 @@ work:
     modal: binaryage
     description: I develop and maintain a subsection of the website BinaryAge.com. I designed the layout and contribute articles every week. Over 290,000 views since I began developing in March of 2012. Average of 1,500 views a day/45,000 views a month.
     full-description:
-    
+
 projects:
   - name: Calaborate
     url: http://calaborate.herokuapp.com
@@ -100,14 +101,14 @@ projects:
     image: /public/images/appsearches.png
     modal: appsearches
     description: An iOS app search engine. Data is gathered using a scrapper that I built and stored in a Postgres database. Search is done by indexing the database and using Postgres built-in full-text search.
-  
+
   - name: Sound of Dub
     url: https://intense-journey-6792.herokuapp.com/
     repo: https://github.com/negativetwelve/sound-of-dub
     image: /public/images/sound-of-dub.png
     modal: sound-of-dub
     description: A music app that I built at a hackathon. It utilizes the Soundcloud API and allows users to make and play their own playlists.
-      
+
   - name: Tim Todo
     url: https://timtodo.herokuapp.com/
     repo: https://github.com/negativetwelve/Tim
@@ -128,25 +129,25 @@ projects:
     image: /public/images/website.png
     modal: markmiyashita
     description: My personal about me website that I have developed from scratch. It is built using Jekyll and hosted on Github Pages.
-      
+
   - name: Life Logger
     url: 
     repo: https://github.com/negativetwelve/facebook-hackathon
     image: /public/images/life-logger.png
     modal: life-logger
     description: I worked with a team of four at the 2012 Battle of the Bay Facebook Hackathon. We built an event logger for your computer that allows you to visualize and analyze your habits on the computer.
-      
+
   - name: Pets Alliance
     url:
     repo: https://github.com/negativetwelve/pets-alliance
     image: /public/images/petsalliance.png
     modal: petsalliance
     description: Half of an MMORPG that I built in the summer of 2012. The UI was never finished but the backend worked pretty well. May continue this project in the future.
-      
+
   - name: bashprofile.com
     url: http://bashprofile.com
     repo: https://github.com/negativetwelve/bashprofile.com
     image: /public/images/bashprofile.png
     modal: bashprofile
     description: A small tech blog that I built and designed.
-  
+
