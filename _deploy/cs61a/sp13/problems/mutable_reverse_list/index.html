@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutable Reverse List</title>
+    <meta name="author" content="Mark Miyashita" />
+    <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+
+    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="/public/js/prettify.js"></script>
+    <script type="text/javascript" src="/public/js/home.js"></script>
+
+    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/projects.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/resume.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
+
+<h1>
+  <a href="/">Mark Miyashita</a>
+</h1>
+
+<h2>
+  <a href="/">negativetwelve</a>
+</h2>
+
+<h3>
+  <p class="about_links">
+    <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+  </p>
+</h3>
+
+<div id="links">
+  <span><a href="/">About</a></span>
+  <span><a href="/projects">Projects</a></span>
+  <span><a href="/resume">Resume</a></span>
+  <span><a href="/blog">Blog</a></span>
+  <span><a href="/cs61a/su13">CS61A</a></span>
+  <span><a href="/interviews">Interviews</a></span>
+  <span><a href="/hkn">HKN</a></span>
+  <span><a href="/web_dev">Web Development</a></span>
+  <span><a href="/contact">Contact</a></span>
+</div>
+
+    </header>
+
+    <section id="main_content">
+
+      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
+
+<header id="top_bar">
+  May 09, 2013
+</header>
+
+<article class="post">
+  <a href="/cs61a/sp13" class="button_link">Go Back</a>
+  
+  <h4>Challenge Problem</h4>
+  <h2>Mutable Reverse List</h2>
+  
+  
+<p>In this problem, we want to do several things and we want to do them all at once. First, we want to reverse the input list; however, we also want to mutate the input list. In addition, we add the restriction that we want to do this recursively. </p>
+
+<pre><code>def mutable_reverse(lst):
+    """
+    &gt;&gt;&gt; l = [1, 4, 5, 1, 4]
+    &gt;&gt;&gt; mutable_reverse(l)
+    &gt;&gt;&gt; l
+    [4, 1, 5, 4, 1]
+    &gt;&gt;&gt; l = [1, 4, 5, 1, 4, 5]
+    &gt;&gt;&gt; mutable_reverse(l)
+    &gt;&gt;&gt; l
+    [5, 4, 1, 5, 4, 1]
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <p>There are several solutions to this problem. Some are more efficient, some have fewer lines, but all work. Here are a few that you guys came up with during the review session today. Send me an email if this was your solution and I’ll include your name here!</p>
+
+  <pre><code>def mutable_reverse(lst):
+    """
+    &gt;&gt;&gt; l = [1, 4, 5, 1, 4]
+    &gt;&gt;&gt; mutable_reverse(l)
+    &gt;&gt;&gt; l
+    [4, 1, 5, 4, 1]
+    &gt;&gt;&gt; l = [1, 4, 5, 1, 4, 5]
+    &gt;&gt;&gt; mutable_reverse(l)
+    &gt;&gt;&gt; l
+    [5, 4, 1, 5, 4, 1]
+    """
+    def helper(index, lst):
+        if len(lst) % 2 == 0 and index == len(lst) // 2 or len(lst) % 2 == 1 and index == len(lst) // 2 + 1:
+            return
+        lst[index], lst[len(lst) - 1 - index] = lst[len(lst) - 1 - index], lst[index]
+        helper(index + 1, lst)
+    helper(0, lst)
+
+def mutable_reverse(lst):
+    """
+    &gt;&gt;&gt; l = [1, 4, 5, 1, 4]
+    &gt;&gt;&gt; mutable_reverse(l)
+    &gt;&gt;&gt; l
+    [4, 1, 5, 4, 1]
+    &gt;&gt;&gt; l = [1, 4, 5, 1, 4, 5]
+    &gt;&gt;&gt; mutable_reverse(l)
+    &gt;&gt;&gt; l
+    [5, 4, 1, 5, 4, 1]
+    """
+    if len(lst) &gt; 0:
+        item = lst.pop()
+        mutable_reverse(lst)
+        lst.insert(0, item)
+</code></pre>
+
+  <p>The first keeps track of an index of which values it has returned. When it reaches halfway, it stops.</p>
+
+  <p>The second solution is very elegant and it takes advantage of using recursion as an implicit stack. Don’t worry if you don’t know what that it, you’ll learn all about stacks in CS61B. Basically, when drawing out the environment diagram, we’re keeping the variable <code>item</code> at each level and then inserting it at the beginning as we traverse back up the frames. </p>
+
+</div>
+
+
+  
+</article>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
+
+
+      <section class="footer">
+  <p class="copyright">
+    © 2012 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
+  </p>
+</section>
+    </section>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
+
+    <script type="text/javascript">
+      prettyPrint();
+      var date = document.getElementsByClassName("current_date")[0];
+      if (date) {
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
+      }
+
+      $(document).keypress(function(e) {
+        base = document.location.origin;
+        switch (e.charCode) {
+          case 97: // 'a' for about
+            document.location.href = base;
+            break;
+          case 98: // 'b' for blog
+            document.location.href = base + '/blog';
+            break;
+          case 104: // 'h' for hkn
+            document.location.href = base + "/hkn";
+            break;
+          case 112: // 'p' for projects
+            document.location.href = base + '/projects';
+            break;
+          case 114: // 'r' for resume
+            document.location.href = base + '/resume';
+            break;
+          case 119: // 'w' for web development
+            document.location.href = base + '/web_dev';
+            break;
+          case 99: // 'c' for cs61a
+            window.location.href = base + "/cs61a/sp13";
+            break;
+        }
+      });
+    </script>
+  </body>
+
+</html>
