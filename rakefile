@@ -1,4 +1,9 @@
 # coding: utf-8
+
+deploy_dir = "_deploy"
+deploy_branch = "gh-pages"
+
+
 ROOT = File.expand_path('.')
 
 require 'rubygems'
@@ -7,6 +12,33 @@ begin
 rescue LoadError
   raise 'You must "gem install colored" to use terminal colors'
 end
+
+def cp_dir(soruce_dir, destination_dir)
+  system("cp -R #{source_dir} #{destination_dir}")
+end
+
+desc "generate site"
+namespace :generate do
+  puts("Generating static site into _deploy")
+  system('jekyll build')
+end
+
+desc "deploy site"
+namespace :deploy do
+  puts "Getting ready to deploy."
+  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
+  system("cd #{deploy_dir}")
+  system("git add .")
+  system("git add -u")
+  puts "\n## Commiting: Site updated at #{Time.now.utc}"
+  message = "Site updated at #{Time.now.utc}"
+  system "git commit -m \"#{message}\""
+  puts "\n## Pushing generated #{deploy_dir} website"
+  system "git push origin #{deploy_branch} --force"
+  puts "\n## Github Pages deploy complete"
+end
+
+
 
 def die(s)
   puts(s.red)
