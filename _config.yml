@@ -1,6 +1,5 @@
 permalink: /:categories/:title
 url: http://markmiyashita.com
-paginate: 10
 destination: _deploy
 pygments: true
 markdown: kramdown
