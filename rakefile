@@ -18,13 +18,13 @@ def cp_dir(soruce_dir, destination_dir)
 end
 
 desc "generate site"
-namespace :generate do
+task :generate do
   puts("Generating static site into _deploy")
   system('jekyll build')
 end
 
 desc "deploy site"
-namespace :deploy do
+task :deploy do
   puts "Getting ready to deploy."
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
   system("cd #{deploy_dir}")
