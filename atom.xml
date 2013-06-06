@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-06-05T01:37:17-07:00</updated>
+    <updated>2013-06-05T21:01:38-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -15,19 +15,30 @@
         <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//interviews/problems/merge_sort"/>
-        <updated>2013-06-03T00:00:00-07:00</updated>
+        <updated>2013-06-02T00:00:00-07:00</updated>
         <id>markmiyashita.com:/interviews/problems/merge_sort</id>
         <content type="html"><![CDATA[<h2 id="merge-sort">Merge Sort</h2>
 
-<p>Merge sort is a popular sorting algorithm.</p>
+<h2 id="python">Python</h2>
 
-<pre><code>def merge_sort(lst):
-    return lst
-</code></pre>
+<div class="highlight"><pre><code class="python"><span class="c"># Mark Miyashita</span>
+
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lst</span>
+</code></pre></div>
+
+<h2 id="ruby">Ruby</h2>
+
+<div class="highlight"><pre><code class="ruby"><span class="c1"># Mark Miyashita</span>
+
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="n">lst</span>
+<span class="k">end</span>
+</code></pre></div>
 
 ]]></content>
         <author>
-            <name>Mark Miyashita</name>
+            <name></name>
             <url></url>
         </author>
     </entry>
