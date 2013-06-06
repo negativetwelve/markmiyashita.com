@@ -1,3 +1,18 @@
+GIT
+  remote: git://github.com/negativetwelve/jekyll.git
+  revision: d8d9ce0a5f04a36eb874753d6b04d1d08e5da55c
+  specs:
+    jekyll (1.0.2)
+      classifier (~> 1.3)
+      colorator (~> 0.1)
+      commander (~> 4.1.3)
+      directory_watcher (~> 1.4.1)
+      kramdown (~> 1.0.2)
+      liquid (~> 2.3)
+      maruku (~> 0.5)
+      pygments.rb (~> 0.5.0)
+      safe_yaml (~> 0.7.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -9,17 +24,7 @@ GEM
       highline (~> 1.6.11)
     directory_watcher (1.4.1)
     fast-stemmer (1.0.2)
-    highline (1.6.18)
-    jekyll (1.0.2)
-      classifier (~> 1.3)
-      colorator (~> 0.1)
-      commander (~> 4.1.3)
-      directory_watcher (~> 1.4.1)
-      kramdown (~> 1.0.2)
-      liquid (~> 2.3)
-      maruku (~> 0.5)
-      pygments.rb (~> 0.5.0)
-      safe_yaml (~> 0.7.0)
+    highline (1.6.19)
     kramdown (1.0.2)
     liquid (2.5.0)
     maruku (0.6.1)
@@ -28,7 +33,7 @@ GEM
     pygments.rb (0.5.0)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
-    rdiscount (2.0.7.2)
+    rdiscount (2.1.6)
     safe_yaml (0.7.1)
     syntax (1.0.0)
     yajl-ruby (1.1.0)
@@ -39,6 +44,6 @@ PLATFORMS
 DEPENDENCIES
   colored
   directory_watcher (= 1.4.1)
-  jekyll (= 1.0.2)
+  jekyll!
   liquid (= 2.5.0)
   rdiscount
