@@ -4,10 +4,10 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Interview Practice Problems - Mark Miyashita</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
-    
+
     <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
     <script type="text/javascript" src="/public/js/prettify.js"></script>
@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
   </head>
-  
-  <body>    
+
+  <body>
     <header id="header">
       <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
 
@@ -48,7 +48,7 @@
   <span><a href="/resume">Resume</a></span>
   <span><a href="/blog">Blog</a></span>
   <span><a href="/cs61a/su13">CS61A</a></span>
-  <span><a href="/interviews">Interview Practice</a></span>
+  <span><a href="/interviews/problems">Interview Practice</a></span>
   <span><a href="/hkn">HKN</a></span>
   <span><a href="/web_dev">Web Development</a></span>
   <span><a href="/contact">Contact</a></span>
@@ -58,16 +58,65 @@
 
     <section id="main_content">
 
-      
+      <header id="top_bar">
+  <date class="current_date"></date>
+</header>
 
+<article class="post">
+
+  <h2>Interview Practice Problems</h2>
+
+  <p>
+    Below if a list of practice interview problems collected from various
+    sources including <a href="http://projecteuler.net/problems">Project
+      Euler</a>, random questions from Stack Overflow, and generally programming
+    questions that I believe every computer science student should know. Each problem has
+    one or more solutions in multiple languages. Feel free to discuss the
+    solutions in the comments of each question. If you have any specific
+    questions or languages that you would like me to support, please send me an
+    email (you can find my email address on the <a href="/contact">contact
+      page</a>). The problems are arranged into three categories, "Beginner",
+    "Intermediate", and "Advanced" and they are based upon my biased judgement.
+  </p>
+
+
+  <h3>Level 1 - Beginner's Luck</h3>
+  <ul>
+  
+    
+    <li><a href="/interviews/problems/merge_sort">Merge Sort</a> -
       
+        <code>python</code>
+      
+        <code>ruby</code>
+      
+    </li>
+    
+  
+  </ul>
+
+  <h3>Level 2 - Intermediate Mezzanine</h3>
+  <ul>
+  
+    
+  
+  </ul>
+
+  <h3>Level 3 - Advanced Elite</h3>
+  <ul>
+  
+    
+  
+  </ul>
+</article>
+
+
       <section class="footer">
   <p class="copyright">
     © 2012 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
   </p>
 </section>
     </section>
-    
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -79,12 +128,12 @@
     pageTracker._trackPageview();
     </script>
     <!-- Google Analytics end -->
-    
+
     <script type="text/javascript">
       prettyPrint();
       var date = document.getElementsByClassName("current_date")[0];
       if (date) {
-        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());        
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
       }
 
       $(document).keypress(function(e) {
@@ -98,6 +147,9 @@
             break;
           case 104: // 'h' for hkn
             document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
             break;
           case 112: // 'p' for projects
             document.location.href = base + '/projects';
@@ -114,7 +166,7 @@
         }
       });
     </script>
-    
+
   </body>
-  
+
 </html>

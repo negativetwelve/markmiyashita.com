@@ -7,7 +7,7 @@
     <title>HKN - Mark Miyashita</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
-    
+
     <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
     <script type="text/javascript" src="/public/js/prettify.js"></script>
@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
   </head>
-  
-  <body>    
+
+  <body>
     <header id="header">
       <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
 
@@ -48,7 +48,7 @@
   <span><a href="/resume">Resume</a></span>
   <span><a href="/blog">Blog</a></span>
   <span><a href="/cs61a/su13">CS61A</a></span>
-  <span><a href="/interviews">Interview Practice</a></span>
+  <span><a href="/interviews/problems">Interview Practice</a></span>
   <span><a href="/hkn">HKN</a></span>
   <span><a href="/web_dev">Web Development</a></span>
   <span><a href="/contact">Contact</a></span>
@@ -77,14 +77,13 @@
   
 </article>
 
-      
+
       <section class="footer">
   <p class="copyright">
     © 2012 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
   </p>
 </section>
     </section>
-    
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -96,12 +95,12 @@
     pageTracker._trackPageview();
     </script>
     <!-- Google Analytics end -->
-    
+
     <script type="text/javascript">
       prettyPrint();
       var date = document.getElementsByClassName("current_date")[0];
       if (date) {
-        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());        
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
       }
 
       $(document).keypress(function(e) {
@@ -115,6 +114,9 @@
             break;
           case 104: // 'h' for hkn
             document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
             break;
           case 112: // 'p' for projects
             document.location.href = base + '/projects';
@@ -131,7 +133,7 @@
         }
       });
     </script>
-    
+
   </body>
-  
+
 </html>
