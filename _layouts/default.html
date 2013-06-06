@@ -7,7 +7,7 @@
     <title>{{ page.title }}</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
-    
+
     <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
     <script type="text/javascript" src="/public/js/prettify.js"></script>
@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
   </head>
-  
-  <body>    
+
+  <body>
     <header id="header">
       {% include header.html %}
     </header>
@@ -32,10 +32,9 @@
     <section id="main_content">
 
       {{ content }}
-      
+
       {% include footer.html %}
     </section>
-    
 
     <!-- Google Analytics -->
     <script type="text/javascript">
@@ -47,12 +46,12 @@
     pageTracker._trackPageview();
     </script>
     <!-- Google Analytics end -->
-    
+
     <script type="text/javascript">
       prettyPrint();
       var date = document.getElementsByClassName("current_date")[0];
       if (date) {
-        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());        
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
       }
 
       $(document).keypress(function(e) {
@@ -66,6 +65,9 @@
             break;
           case 104: // 'h' for hkn
             document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
             break;
           case 112: // 'p' for projects
             document.location.href = base + '/projects';
@@ -82,7 +84,7 @@
         }
       });
     </script>
-    
+
   </body>
-  
+
 </html>

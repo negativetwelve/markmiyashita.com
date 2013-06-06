@@ -1,5 +1,58 @@
 ---
 layout: default
+title: Interview Practice Problems - Mark Miyashita
 ---
 
-{{ content }}
+<header id="top_bar">
+  <date class="current_date"></date>
+</header>
+
+<article class="post">
+
+  <h2>Interview Practice Problems</h2>
+
+  <p>
+    Below if a list of practice interview problems collected from various
+    sources including <a href="http://projecteuler.net/problems">Project
+      Euler</a>, random questions from Stack Overflow, and generally programming
+    questions that I believe every computer science student should know. Each problem has
+    one or more solutions in multiple languages. Feel free to discuss the
+    solutions in the comments of each question. If you have any specific
+    questions or languages that you would like me to support, please send me an
+    email (you can find my email address on the <a href="/contact">contact
+      page</a>). The problems are arranged into three categories, "Beginner",
+    "Intermediate", and "Advanced" and they are based upon my biased judgement.
+  </p>
+
+
+  <h3>Level 1 - Beginner's Luck</h3>
+  <ul>
+  {% for problem in site.categories.interviews %}
+    {% if problem.categories contains 'problems' and problem.tags contains 'beginner' %}
+    <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
+      {% for language in problem.languages %}
+        <code>{{ language }}</code>
+      {% endfor %}
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+
+  <h3>Level 2 - Intermediate Mezzanine</h3>
+  <ul>
+  {% for problem in site.categories.interviews %}
+    {% if problem.categories contains 'problems' and problem.tags contains 'intermediate' %}
+    <li><a href="{{ problem.url }}">{{ problem.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+
+  <h3>Level 3 - Advanced Elite</h3>
+  <ul>
+  {% for problem in site.categories.interviews %}
+    {% if problem.categories contains 'problems' and problem.tags contains 'advanced' %}
+    <li><a href="{{ problem.url }}">{{ problem.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</article>

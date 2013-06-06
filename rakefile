@@ -3,7 +3,6 @@
 deploy_dir = "_deploy"
 deploy_branch = "gh-pages"
 
-
 ROOT = File.expand_path('.')
 
 require 'rubygems'
@@ -13,8 +12,10 @@ rescue LoadError
   raise 'You must "gem install colored" to use terminal colors'
 end
 
-def cp_dir(soruce_dir, destination_dir)
-  system("cp -R #{source_dir} #{destination_dir}")
+desc "copy code files for interview practice problems"
+task :copy_code do
+  puts "Copying code files into interview problems directory"
+  cp_r("_includes/interviews/problems/", "_deploy/problems")
 end
 
 desc "generate site"
@@ -27,7 +28,9 @@ desc "deploy site"
 task :deploy do
   puts "Getting ready to deploy."
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
+  puts "Generating site from source."
   Rake::Task[:generate].execute
+  Rake::Task[:copy_code].execute
   cd "#{deploy_dir}" do
     system("git add .")
     system("git add -u")

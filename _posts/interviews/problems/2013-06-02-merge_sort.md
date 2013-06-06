@@ -2,6 +2,8 @@
 layout: interview_problem
 title: "Merge Sort"
 categories: [interviews, problems]
+tags: [beginner]
+languages: [python, ruby]
 ---
 
 ## Merge Sort
@@ -20,3 +22,5 @@ categories: [interviews, problems]
 {% highlight ruby %}
 {% include ruby %}
 {% endhighlight %}
+
+## Java
