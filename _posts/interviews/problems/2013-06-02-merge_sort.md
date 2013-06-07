@@ -3,7 +3,7 @@ layout: interview_problem
 title: "Merge Sort"
 categories: [interviews, problems]
 tags: [beginner]
-languages: [python]
+languages: [python, ruby]
 ---
 
 {% capture description %}

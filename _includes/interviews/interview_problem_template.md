@@ -16,10 +16,10 @@
 Write your solution in any language you like. We have solutions below for the
 following languages:
 
-{% for language in page.languages %}<span>[{{ language | capitalize }}](#{{ language }}){: .button_link}</span>{% endfor %}
+{% for language in page.languages %}<span>[{{ language | capitalize }}](#{{ language }}){: .button_link .load_solution}</span>{% endfor %}
 
 {% if page.languages contains 'python' %}
-### Python Solution [(download)](/{{ python }})
+### Python Solution [(download)](/{{ python }}) {#python}
 
 {% highlight python %}
 {% include python %}
@@ -28,7 +28,7 @@ following languages:
 
 
 {% if page.languages contains 'ruby' %}
-### Ruby Solution [(download)](/{{ ruby }})
+### Ruby Solution [(download)](/{{ ruby }}) {#ruby}
 
 {% highlight ruby %}
 {% include ruby %}
@@ -37,7 +37,7 @@ following languages:
 
 
 {% if page.languages contains 'java' %}
-### Java Solution [(download)](/{{ java }})
+### Java Solution [(download)](/{{ java }}) {#java}
 
 {% highlight java %}
 {% include java %}
@@ -46,7 +46,7 @@ following languages:
 
 
 {% if page.languages contains 'javascript' %}
-### Javascript Solution [(download)](/{{ javascript }})
+### Javascript Solution [(download)](/{{ javascript }}) {#javascript}
 
 {% highlight javascript %}
 {% include javascript %}
