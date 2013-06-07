@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-06-06T01:00:11-07:00</updated>
+    <updated>2013-06-06T22:36:54-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -36,9 +36,9 @@ each.</li>
 <p>Write your solution in any language you like. We have solutions below for the
 following languages:</p>
 
-<p><span><a href="#python" class="button_link">Python</a></span></p>
+<p><span><a href="#python" class="button_link load_solution">Python</a></span><span><a href="#ruby" class="button_link load_solution">Ruby</a></span></p>
 
-<h3 id="python-solution-downloadinterviewsproblemsmergesortmergesortpythonpy">Python Solution <a href="/interviews/problems/merge_sort/merge_sort_python.py">(download)</a></h3>
+<h3 id="python">Python Solution <a href="/interviews/problems/merge_sort/merge_sort_python.py">(download)</a></h3>
 
 <div class="highlight"><pre><code class="python"><span class="c"># Merge Sort Python Solution</span>
 <span class="c"># By: Mark Miyashita</span>
@@ -73,6 +73,36 @@ following languages:</p>
     <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
         <span class="k">return</span> <span class="p">[</span><span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">right</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</code></pre></div>
+
+<h3 id="ruby">Ruby Solution <a href="/interviews/problems/merge_sort/merge_sort_ruby.rb">(download)</a></h3>
+
+<div class="highlight"><pre><code class="ruby"><span class="c1"># !/usr/bin/env ruby</span>
+<span class="c1"># Merge Sort Ruby Solution</span>
+<span class="c1"># By: Mark Miyashita</span>
+
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">lst</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+    <span class="n">lst</span>
+  <span class="k">else</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.mid</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="o">[</span><span class="n">mid</span><span class="o">.</span><span class="n">.lst</span><span class="o">.</span><span class="n">length</span><span class="o">]</span><span class="p">)</span>
+    <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span>
+    <span class="n">right</span>
+  <span class="k">elsif</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
+    <span class="n">left</span>
+  <span class="k">elsif</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
+    <span class="o">[</span><span class="n">left</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.left</span><span class="o">.</span><span class="n">length</span><span class="o">]</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="o">[</span><span class="n">right</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.right</span><span class="o">.</span><span class="n">length</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
 </code></pre></div>
 
 ]]></content>
