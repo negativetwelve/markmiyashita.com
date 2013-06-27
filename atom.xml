@@ -3,9 +3,45 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-06-25T19:03:14-07:00</updated>
+    <updated>2013-06-27T00:16:19-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[Functions Inside Functions]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/functions_inside_functions"/>
+        <updated>2013-06-26T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/functions_inside_functions</id>
+        <content type="html"><![CDATA[
+<p>Here we have some functions defined below. Run through and figure out what the two calls at the bottom output and then draw the environment diagram.</p>
+
+<pre><code>def f(g, f):
+    return g(f)
+
+def foo(g, h):
+    return h * g(h)
+
+def h(i):
+    return 5
+
+f(h, foo)       #1
+
+f(h, foo(h, 3)) #2
+</code></pre>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[What Are Functions]]></title>
@@ -16,9 +52,9 @@
         
         <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
         
-        <link href="http://markmiyashita.com//cs61a/su13/problems/what-are-functions"/>
+        <link href="http://markmiyashita.com//cs61a/su13/problems/what_are_functions"/>
         <updated>2013-06-25T00:00:00-07:00</updated>
-        <id>markmiyashita.com:/cs61a/su13/problems/what-are-functions</id>
+        <id>markmiyashita.com:/cs61a/su13/problems/what_are_functions</id>
         <content type="html"><![CDATA[
 <p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
 
