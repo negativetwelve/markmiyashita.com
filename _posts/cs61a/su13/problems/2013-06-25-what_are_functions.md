@@ -12,4 +12,4 @@ published: true
 solution: false
 ---
 
-{% include cs61a/problems/basics/what-are-functions.md %}
+{% include cs61a/problems/basics/what_are_functions.md %}
