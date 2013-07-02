@@ -22,7 +22,7 @@ A church numeral is basically just a funtion that takes in a value which we call
 
 #### Add One
 
-So this is pretty easy, huh? Let's take it to another level. Let's define a function that can add 1 to a church numberal. If I call this function on the church numeral, `one`, I should get back a function that is similar to the function `two` that we defined above.
+So this is pretty easy, huh? Let's take it to another level. Let's define a function that can add 1 to a church numeral. If I call this function on the church numeral, `one`, I should get back a function that is similar to the function `two` that we defined above.
 
     def add_one(n):
         """Returns the church numeral that is one more than the input n."""
