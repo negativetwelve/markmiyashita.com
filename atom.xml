@@ -3,9 +3,67 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-02T01:54:35-07:00</updated>
+    <updated>2013-07-04T13:07:35-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[Sum Digits]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/sum_digits"/>
+        <updated>2013-07-03T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/sum_digits</id>
+        <content type="html"><![CDATA[
+<p>Write a function that sums up the digits of a number. Try to implement it both iteratively and recursively.</p>
+
+<pre><code>def sum_digits(n):
+    """
+    Takes a number n as input and outputs the 
+    sum of the digits of n.
+    
+    &gt;&gt;&gt; sum_digits(100)
+    1
+    &gt;&gt;&gt; sum_digits(235)
+    10
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def sum_digits(n):
+    """
+    Takes a number n as input and outputs the 
+    sum of the digits of n.
+    
+    &gt;&gt;&gt; sum_digits(100)
+    1
+    &gt;&gt;&gt; sum_digits(235)
+    10
+    """
+    if n &lt; 10:
+        return n
+    return n % 10 + sum_digits(n // 10)
+</code></pre>
+
+  <p>When we are given a number, n, that is less than 10, we know that the number has only one digit so we can just return that number. When it is greater than or equal to ten, we want to mod it by 10 to get the ones place, and then remove the ones place and use recursion to find the sum of the rest of the digits. The floordiv operator allows us to remove the ones place from the number by floordiving by 10.</p>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[Church Numerals]]></title>

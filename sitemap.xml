@@ -3,9 +3,14 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-02T01:54:35-07:00</lastmod>
+        <lastmod>2013-07-04T13:07:35-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/sum_digits</loc>
+        <lastmod>2013-07-03T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/notes/church_numerals</loc>
