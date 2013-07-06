@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-06T09:27:38-07:00</updated>
+    <updated>2013-07-06T09:42:40-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -74,6 +74,78 @@
     <li>6</li>
     <li>3</li>
     <li>6</li>
+  </ol>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Tuples Practice]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/tuples_practice"/>
+        <updated>2013-07-06T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/tuples_practice</id>
+        <content type="html"><![CDATA[
+<p>Here are some tuples problems! What would Python output at each of the numbered questions below?</p>
+
+<pre><code>&gt;&gt;&gt; a = (1, 2, 3)
+&gt;&gt;&gt; b = (3, 2, a)
+&gt;&gt;&gt; a               #1
+
+&gt;&gt;&gt; b               #2
+
+&gt;&gt;&gt; b[0] == a[2]    #3
+
+&gt;&gt;&gt; c = (1, 2, 3)
+&gt;&gt;&gt; a == c          #4
+
+&gt;&gt;&gt; a is c          #5
+
+&gt;&gt;&gt; b[2] is c       #6
+
+&gt;&gt;&gt; b[2] is a       #7
+
+&gt;&gt;&gt; b[:2]           #8
+
+&gt;&gt;&gt; c[1:]           #9
+
+&gt;&gt;&gt; d = (a, b, c)
+&gt;&gt;&gt; d[1:2]          #10
+
+&gt;&gt;&gt; d[2][2]         #11
+
+&gt;&gt;&gt; d[1][0]         #12
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <ol>
+    <li>(1, 2, 3)</li>
+    <li>(3, 2, (1, 2, 3))</li>
+    <li>True</li>
+    <li>True</li>
+    <li>False</li>
+    <li>False</li>
+    <li>True</li>
+    <li>(3, 2)</li>
+    <li>(2, 3)</li>
+    <li>((3, 2, (1, 2, 3)),)</li>
+    <li>3</li>
+    <li>3</li>
   </ol>
 
 </div>

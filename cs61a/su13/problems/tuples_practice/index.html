@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Helper Functions</title>
+    <title>Tuples Practice</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -61,169 +61,69 @@
       <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
 
 <header id="top_bar">
-  May 11, 2013
+  Jul 06, 2013
 </header>
 
 <article class="post">
-  <a href="/cs61a/sp13" class="button_link">Go Back</a>
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
   
-  <h2>Helper Functions</h2>
+  <h4>Warmup Problem</h4>
+  <h2>Tuples Practice</h2>
+  
+  
+<p>Here are some tuples problems! What would Python output at each of the numbered questions below?</p>
 
-  <ul id="markdown-toc">
-  <li><a href="#what-are-helper-functions">What are Helper Functions?</a></li>
-</ul>
+<pre><code>&gt;&gt;&gt; a = (1, 2, 3)
+&gt;&gt;&gt; b = (3, 2, a)
+&gt;&gt;&gt; a               #1
 
-<h4 id="what-are-helper-functions">What are Helper Functions?</h4>
+&gt;&gt;&gt; b               #2
 
-<p>Helper functions are useful when you want to extend the amount of parameters that a certain function takes in. Helper functions are generally used to make our lives easier. This occurs most often when working with recursion, especially if you want your function to be tail recursive. </p>
+&gt;&gt;&gt; b[0] == a[2]    #3
 
-<p>Let’s take a look at the following function:</p>
+&gt;&gt;&gt; c = (1, 2, 3)
+&gt;&gt;&gt; a == c          #4
 
-<pre><code>def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
+&gt;&gt;&gt; a is c          #5
+
+&gt;&gt;&gt; b[2] is c       #6
+
+&gt;&gt;&gt; b[2] is a       #7
+
+&gt;&gt;&gt; b[:2]           #8
+
+&gt;&gt;&gt; c[1:]           #9
+
+&gt;&gt;&gt; d = (a, b, c)
+&gt;&gt;&gt; d[1:2]          #10
+
+&gt;&gt;&gt; d[2][2]         #11
+
+&gt;&gt;&gt; d[1][0]         #12
 </code></pre>
 
-<p>Let’s say our task is to make this function tail recursive. Recall that the definition of tail recursion in its simplest form is to return the answer that we have accumulated throughout all of the function calls, in the last frame. In regular recursion, we must first recursively create frames until we hit the base case. Then from there, we use the base case to build our answer going back up. In tail recursion, we don’t have the “going back up” stage. </p>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<p>We know that we can’t do this while only taking in a single parameter, n, so we look to create a helper function.</p>
+<div class="solution">
 
-<p>Using a helper function can’t ever stop you from solving a problem, as long as you’re using it correctly. In the worst case, you don’t actually need the helper function and you will realize this when some of the parameters of the helper function go unused. The way you determine which extra parameters to include depends on the problem but here are some general tips for deciding what to do:</p>
+  <ol>
+    <li>(1, 2, 3)</li>
+    <li>(3, 2, (1, 2, 3))</li>
+    <li>True</li>
+    <li>True</li>
+    <li>False</li>
+    <li>False</li>
+    <li>True</li>
+    <li>(3, 2)</li>
+    <li>(2, 3)</li>
+    <li>((3, 2, (1, 2, 3)),)</li>
+    <li>3</li>
+    <li>3</li>
+  </ol>
 
-<ul>
-  <li>Am I keeping track of something at each level of recursion like a counter?</li>
-  <li>Is this recursive problem supposed to be tail recursive?</li>
-  <li>Am I supposed to be accumulating a list or value?</li>
-</ul>
+</div>
 
-<p>If you look out for those three things, you should be able to identify when a helper function might make your life easier. If you have any mroe questions, please post in the comment below.</p>
 
-  
-  <h2>Extra Practice with Helper Functions</h2>
-  <ul>
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-  </ul>
   
 </article>
 
