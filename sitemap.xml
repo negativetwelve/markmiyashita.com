@@ -3,12 +3,17 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-06T09:06:25-07:00</lastmod>
+        <lastmod>2013-07-06T09:27:38-07:00</lastmod>
     </url>
     
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/problems/what_would_python_print</loc>
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/newtons_method_practice</loc>
         <lastmod>2013-07-06T00:00:00-07:00</lastmod>
     </url>
     

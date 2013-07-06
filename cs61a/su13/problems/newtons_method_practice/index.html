@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Would Python Print?</title>
+    <title>Newton's Method Practice</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -68,64 +68,63 @@
   <a href="/cs61a/su13" class="button_link">Go Back</a>
   
   <h4>Challenge Problem</h4>
-  <h2>What Would Python Print?</h2>
+  <h2>Newton's Method Practice</h2>
   
   
-<p>If we were to type these Python statements and expressions into the interpreter, what would they do? These all either evaluate to a value, an error, or another function. These start out fairly easy and get pretty tough by then end. Remember your rules for evaluating lambdas!</p>
+<p>Recall the following definitions from Newton’s Method from discussion:</p>
 
-<pre><code>&gt;&gt;&gt; x = lambda: 4
-&gt;&gt;&gt; y = lambda x: x + 3
-&gt;&gt;&gt; z = lambda x: y
-&gt;&gt;&gt; z(4)(1)               #1
+<pre><code>def approx_deriv(fn, x, dx=0.00001):
+    return (fn(x+dx)-fn(x))/dx
 
-&gt;&gt;&gt; z(5)(1)               #2
-
-&gt;&gt;&gt; h = lambda f, g: g(f)
-&gt;&gt;&gt; h(lambda x: x * 2, lambda x: x)(2)      #3
-
-&gt;&gt;&gt; g = lambda f: f(f)
-&gt;&gt;&gt; g(g(lambda x: x))(3)  #4
-
-&gt;&gt;&gt; g(g(lambda x: x))(lambda x: x + 5)(1)   #5
-
-&gt;&gt;&gt; a = lambda b: lambda a: b(a)
-&gt;&gt;&gt; b = lambda b: lambda b: b + 1
-&gt;&gt;&gt; a(b)                #6
-
-&gt;&gt;&gt; a(b)(1)(2)          #7
-
-&gt;&gt;&gt; b(a)(5)             #8
-
-&gt;&gt;&gt; b(a(b))(7)          #9
-
-&gt;&gt;&gt; c = lambda a, b: (b, a)
-&gt;&gt;&gt; b(a(c))(5)          #10
-
-&gt;&gt;&gt; c(a, b)[1](b)(1)(2) #11
-
-&gt;&gt;&gt; c(b(1), b(2))[0](5) #12
+def newtons_method(fn, guess=1, max_iterations=100):
+    ALLOWED_ERROR_MARGIN = 0.0000001
+    i = 1
+    while abs(fn(guess)) &gt; ALLOWED_ERROR_MARGIN and i &lt;= max_iterations:
+        guess = guess - fn(guess) / approx_deriv(fn, guess)
+        i += 1
+    return guess
 </code></pre>
 
-<p>You can break this question up into subquestions. The first part is numbers 1-2, second part is 3-5, third part is 6-12.</p>
+<p>If you don’t understand Newton’s Method at all, be sure to ask your TA during office hours or ask on Piazza.</p>
+
+<p>We want to write a function that will help us find the roots of the following mathematical equation:</p>
+
+<pre><code>f(x) = x^3 + x + 1
+</code></pre>
+
+<p>Write a function, <code>f</code> that can find the root(s) of the function above.</p>
+
+<pre><code>def f():
+    """Returns at least one root of the equation x^3 + x + 1."""
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p>Now, we want to make this function more general. How can we write a new function <code>g</code> that takes in an argument <code>y</code> and finds the roots of:</p>
+
+<pre><code>f(x, y) = x^3 + y + 1
+</code></pre>
+
+<p>For any <code>y</code> value.</p>
+
+<pre><code>def g(y):
+    """Returns at least one root of the equation x^3 + y + 1.
+
+    &gt;&gt;&gt; round(g(5), 3)
+    -1.817
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>4</li>
-    <li>4</li>
-    <li>4</li>
-    <li>3</li>
-    <li>6</li>
-    <li>function</li>
-    <li>3</li>
-    <li>6</li>
-    <li>8</li>
-    <li>6</li>
-    <li>3</li>
-    <li>6</li>
-  </ol>
+  <pre><code>def f():
+    return newtons_method(lambda x: x**3 + x + 1
+
+def g(y):
+    return newtons_method(lambda x: x**3 + y + 1
+</code></pre>
 
 </div>
 

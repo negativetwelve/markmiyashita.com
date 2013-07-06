@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-06T09:06:25-07:00</updated>
+    <updated>2013-07-06T09:27:38-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -75,6 +75,83 @@
     <li>3</li>
     <li>6</li>
   </ol>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Newton's Method Practice]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/newtons_method_practice"/>
+        <updated>2013-07-06T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/newtons_method_practice</id>
+        <content type="html"><![CDATA[
+<p>Recall the following definitions from Newton’s Method from discussion:</p>
+
+<pre><code>def approx_deriv(fn, x, dx=0.00001):
+    return (fn(x+dx)-fn(x))/dx
+
+def newtons_method(fn, guess=1, max_iterations=100):
+    ALLOWED_ERROR_MARGIN = 0.0000001
+    i = 1
+    while abs(fn(guess)) &gt; ALLOWED_ERROR_MARGIN and i &lt;= max_iterations:
+        guess = guess - fn(guess) / approx_deriv(fn, guess)
+        i += 1
+    return guess
+</code></pre>
+
+<p>If you don’t understand Newton’s Method at all, be sure to ask your TA during office hours or ask on Piazza.</p>
+
+<p>We want to write a function that will help us find the roots of the following mathematical equation:</p>
+
+<pre><code>f(x) = x^3 + x + 1
+</code></pre>
+
+<p>Write a function, <code>f</code> that can find the root(s) of the function above.</p>
+
+<pre><code>def f():
+    """Returns at least one root of the equation x^3 + x + 1."""
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p>Now, we want to make this function more general. How can we write a new function <code>g</code> that takes in an argument <code>y</code> and finds the roots of:</p>
+
+<pre><code>f(x, y) = x^3 + y + 1
+</code></pre>
+
+<p>For any <code>y</code> value.</p>
+
+<pre><code>def g(y):
+    """Returns at least one root of the equation x^3 + y + 1.
+
+    &gt;&gt;&gt; round(g(5), 3)
+    -1.817
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def f():
+    return newtons_method(lambda x: x**3 + x + 1
+
+def g(y):
+    return newtons_method(lambda x: x**3 + y + 1
+</code></pre>
 
 </div>
 
