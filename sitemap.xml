@@ -3,9 +3,14 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-04T13:07:35-07:00</lastmod>
+        <lastmod>2013-07-06T08:27:23-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/longest_length_same_character</loc>
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/problems/sum_digits</loc>
