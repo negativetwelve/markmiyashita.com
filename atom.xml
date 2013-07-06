@@ -3,9 +3,87 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-06T08:27:23-07:00</updated>
+    <updated>2013-07-06T09:06:25-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[What Would Python Print?]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/what_would_python_print"/>
+        <updated>2013-07-06T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/what_would_python_print</id>
+        <content type="html"><![CDATA[
+<p>If we were to type these Python statements and expressions into the interpreter, what would they do? These all either evaluate to a value, an error, or another function. These start out fairly easy and get pretty tough by then end. Remember your rules for evaluating lambdas!</p>
+
+<pre><code>&gt;&gt;&gt; x = lambda: 4
+&gt;&gt;&gt; y = lambda x: x + 3
+&gt;&gt;&gt; z = lambda x: y
+&gt;&gt;&gt; z(4)(1)               #1
+
+&gt;&gt;&gt; z(5)(1)               #2
+
+&gt;&gt;&gt; h = lambda f, g: g(f)
+&gt;&gt;&gt; h(lambda x: x * 2, lambda x: x)(2)      #3
+
+&gt;&gt;&gt; g = lambda f: f(f)
+&gt;&gt;&gt; g(g(lambda x: x))(3)  #4
+
+&gt;&gt;&gt; g(g(lambda x: x))(lambda x: x + 5)(1)   #5
+
+&gt;&gt;&gt; a = lambda b: lambda a: b(a)
+&gt;&gt;&gt; b = lambda b: lambda b: b + 1
+&gt;&gt;&gt; a(b)                #6
+
+&gt;&gt;&gt; a(b)(1)(2)          #7
+
+&gt;&gt;&gt; b(a)(5)             #8
+
+&gt;&gt;&gt; b(a(b))(7)          #9
+
+&gt;&gt;&gt; c = lambda a, b: (b, a)
+&gt;&gt;&gt; b(a(c))(5)          #10
+
+&gt;&gt;&gt; c(a, b)[1](b)(1)(2) #11
+
+&gt;&gt;&gt; c(b(1), b(2))[0](5) #12
+</code></pre>
+
+<p>You can break this question up into subquestions. The first part is numbers 1-2, second part is 3-5, third part is 6-12.</p>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <ol>
+    <li>4</li>
+    <li>4</li>
+    <li>4</li>
+    <li>3</li>
+    <li>6</li>
+    <li>function</li>
+    <li>3</li>
+    <li>6</li>
+    <li>8</li>
+    <li>6</li>
+    <li>3</li>
+    <li>6</li>
+  </ol>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[Longest Length of the Same Character in a String]]></title>
@@ -295,6 +373,19 @@ f(h, foo)       #1
 f(h, foo(h, 3)) #2
 </code></pre>
 
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <ol>
+    <li>5</li>
+    <li>5</li>
+  </ol>
+
+  <p>The important thing to note here is the order of evaluation. Remember that you don’t pay attention to the body of a function until you actually call the function AND that you need to evaluate all of your operands before you can apply your operator.</p>
+
+</div>
+
 ]]></content>
         <author>
             <name>Mark Miyashita</name>
@@ -339,6 +430,22 @@ f(h, foo(h, 3)) #2
 
 &gt;&gt;&gt; b       #6
 </code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <ol>
+    <li>6</li>
+    <li>5</li>
+    <li>36 (printed)</li>
+    <li>6</li>
+    <li>36 (printed)
+36 (printed)</li>
+    <li>6</li>
+  </ol>
+
+</div>
 
 ]]></content>
         <author>
