@@ -1,8 +1,8 @@
 ---
 layout: problem
-title: "What Would Python Print?"
+title: "Newton's Method Practice"
 type: Challenge
-tags: [lambdas, python, evaluation]
+tags: [newtons_method, math]
 categories: [cs61a, su13, problems]
 author_name: Mark Miyashita
 author_url: http://markmiyashita.com
@@ -12,4 +12,4 @@ published: true
 solution: true
 ---
 
-{% include cs61a/problems/lambdas/what_would_python_print.md %}
+{% include cs61a/problems/newtons_method/newtons_method_practice.md %}
