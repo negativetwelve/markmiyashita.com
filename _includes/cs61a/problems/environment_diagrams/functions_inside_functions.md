@@ -21,6 +21,9 @@ Here we have some functions defined below. Run through and figure out what the t
 1. 5
 2. 5
 
+The important thing to note here is the order of evaluation. Remember that you don't pay attention to the body of a function until you actually call the function AND that you need to evaluate all of your operands before you can apply your operator.
+
+
 {% endcapture %}
 
 {% include cs61a/problem_template.md %}
