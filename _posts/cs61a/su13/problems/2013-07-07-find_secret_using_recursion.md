@@ -12,6 +12,4 @@ published: true
 solution: true
 ---
 
-This problem is designed to include lists (which you haven't learned as of yet). To change the problem slightly, instead of returning the list of indices, instead just return True or False depending on whether or not the secret is in the sentence.
-
 {% include cs61a/problems/recursion/find_secret_using_recursion.md %}
