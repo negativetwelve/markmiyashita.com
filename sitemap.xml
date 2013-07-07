@@ -3,9 +3,14 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-06T09:42:40-07:00</lastmod>
+        <lastmod>2013-07-07T15:52:22-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/find_secret_using_recursion</loc>
+        <lastmod>2013-07-07T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/problems/what_would_python_print</loc>
