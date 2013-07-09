@@ -3,9 +3,57 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-07T15:58:54-07:00</updated>
+    <updated>2013-07-09T08:26:19-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[Helper Functions]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="notes" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/notes/helper_functions"/>
+        <updated>2013-07-09T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/notes/helper_functions</id>
+        <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#what-are-helper-functions">What are Helper Functions?</a></li>
+</ul>
+
+<h4 id="what-are-helper-functions">What are Helper Functions?</h4>
+
+<p>Helper functions are useful when you want to extend the amount of parameters that a certain function takes in. Helper functions are generally used to make our lives easier. This occurs most often when working with recursion, especially if you want your function to be tail recursive. </p>
+
+<p>Let’s take a look at the following function:</p>
+
+<pre><code>def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+</code></pre>
+
+<p>Let’s say our task is to make this function tail recursive. Recall that the definition of tail recursion in its simplest form is to return the answer that we have accumulated throughout all of the function calls, in the last frame. In regular recursion, we must first recursively create frames until we hit the base case. Then from there, we use the base case to build our answer going back up. In tail recursion, we don’t have the “going back up” stage. </p>
+
+<p>We know that we can’t do this while only taking in a single parameter, n, so we look to create a helper function.</p>
+
+<p>Using a helper function can’t ever stop you from solving a problem, as long as you’re using it correctly. In the worst case, you don’t actually need the helper function and you will realize this when some of the parameters of the helper function go unused. The way you determine which extra parameters to include depends on the problem but here are some general tips for deciding what to do:</p>
+
+<ul>
+  <li>Am I keeping track of something at each level of recursion like a counter?</li>
+  <li>Is this recursive problem supposed to be tail recursive?</li>
+  <li>Am I supposed to be accumulating a list or value?</li>
+</ul>
+
+<p>If you look out for those three things, you should be able to identify when a helper function might make your life easier. If you have any mroe questions, please post in the comment below.</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[Find Secret (Using Recursion)]]></title>

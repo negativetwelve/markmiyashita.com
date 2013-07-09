@@ -3,9 +3,14 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-07T15:58:54-07:00</lastmod>
+        <lastmod>2013-07-09T08:26:19-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/notes/helper_functions</loc>
+        <lastmod>2013-07-09T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/problems/find_secret_using_recursion</loc>
