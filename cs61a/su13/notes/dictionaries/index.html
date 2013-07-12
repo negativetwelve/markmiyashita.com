@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionaries</title>
+    <meta name="author" content="Mark Miyashita" />
+    <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+
+    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="/public/js/prettify.js"></script>
+    <script type="text/javascript" src="/public/js/home.js"></script>
+
+    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/projects.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/resume.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
+
+<h1>
+  <a href="/">Mark Miyashita</a>
+</h1>
+
+<h2>
+  <a href="/">negativetwelve</a>
+</h2>
+
+<h3>
+  <p class="about_links">
+    <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+  </p>
+</h3>
+
+<div id="links">
+  <span><a href="/">About</a></span>
+  <span><a href="/projects">Projects</a></span>
+  <span><a href="/resume">Resume</a></span>
+  <span><a href="/blog">Blog</a></span>
+  <span><a href="/cs61a/su13">CS61A</a></span>
+  <span><a href="/interviews/problems">Interview Practice</a></span>
+  <span><a href="/hkn">HKN</a></span>
+  <span><a href="/web_dev">Web Development</a></span>
+  <span><a href="/contact">Contact</a></span>
+</div>
+
+    </header>
+
+    <section id="main_content">
+
+      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
+
+<header id="top_bar">
+  July 10, 2013
+</header>
+
+<article class="post">
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
+  
+  <h2>Dictionaries</h2>
+
+  <ul id="markdown-toc">
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#accessing-elements">Accessing Elements</a></li>
+  <li><a href="#inserting-and-changing-elements">Inserting and Changing Elements</a></li>
+  <li><a href="#removing-elements">Removing Elements</a></li>
+  <li><a href="#iterating-over-the-elements-in-a-dictionary">Iterating Over the Elements in a Dictionary</a></li>
+  <li><a href="#dictionaries-in-environment-diagrams">Dictionaries in Environment Diagrams</a></li>
+  <li><a href="#useful-methods-for-dictionaries">Useful Methods for Dictionaries</a></li>
+</ul>
+
+<h4 id="introduction">Introduction</h4>
+
+<p>Dictionaries are another type of <em>data structure</em> that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.</p>
+
+<p>A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:</p>
+
+<pre><code>&gt;&gt;&gt; ages = {'joe': 20, 'jenny': 19, 'tony': 24}
+&gt;&gt;&gt; ages['tony'] = 23
+</code></pre>
+
+<p>If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.</p>
+
+<pre><code>&gt;&gt;&gt; ages
+{'joe': 20, 'jenny': 19, 'tony': 23}
+</code></pre>
+
+<p>This shows that dictionary keys are unique. Another thing we should note is that dictionaries are unordered. Python has its own way of organizing and arranging the items, but we as the programmer do not know for sure.</p>
+
+<h4 id="accessing-elements">Accessing Elements</h4>
+
+<p>Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.</p>
+
+<pre><code>&gt;&gt;&gt; ages['joe']
+20
+&gt;&gt;&gt; ages['johnny']
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+KeyError: 'johnny'
+</code></pre>
+
+<h4 id="inserting-and-changing-elements">Inserting and Changing Elements</h4>
+
+<p>Elements in a dictionary can be inserted in the same way that they are changed. Dictionaries are considered a mutable data type because we can change the entries and add new ones. To add elements, we do the following:</p>
+
+<pre><code>&gt;&gt;&gt; ages['harry'] = 19
+&gt;&gt;&gt; ages
+{'joe': 20, 'harry': 19, 'jenny': 19, 'tony': 23}
+</code></pre>
+
+<p>To change elements, we do the same thing, except we know that the key already exists.</p>
+
+<pre><code>&gt;&gt;&gt; ages['jenny'] = 25
+&gt;&gt;&gt; ages
+{'joe': 20, 'jenny': 25, 'harry': 19, 'tony': 23}
+</code></pre>
+
+<p>Again, notice that the elements are in a different order this time, a reminder that dictionaries are unordered and that we cannot rely upon the order when we iterate over them.</p>
+
+<h4 id="removing-elements">Removing Elements</h4>
+
+<p>If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:</p>
+
+<pre><code>&gt;&gt;&gt; del ages['tony']
+&gt;&gt;&gt; ages
+{'joe': 20, 'jenny': 25, 'harry': 19}  
+</code></pre>
+
+<p>We use the <code>del</code> function that requires you to specify the dictionary and the associated key that you want to remove.</p>
+
+<h4 id="iterating-over-the-elements-in-a-dictionary">Iterating Over the Elements in a Dictionary</h4>
+
+<p>We have several methods for iterating over a dictionary. Again, we remind ourselves that dictionaries are unordered so we cannot rely upon a for loop to give us the same values after we manipulate the data. For example:</p>
+
+<pre><code>&gt;&gt;&gt; for i in ages:
+...     print(i)
+...
+harry
+joe
+jenny
+</code></pre>
+
+<p>Notice that the <em>keys</em> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:</p>
+
+<pre><code>&gt;&gt;&gt; for i in ages.values():
+...     print(i)
+...
+19
+20
+25
+&gt;&gt;&gt; for k, v in ages.items():
+...     print(k, v)
+...
+harry 19
+joe 20
+jenny 25
+</code></pre>
+
+<h4 id="dictionaries-in-environment-diagrams">Dictionaries in Environment Diagrams</h4>
+
+<p>Dictionaries have a representation in environment diagrams too. We represent it by listing the type <em>dict</em> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:</p>
+
+<p><img src="/public/images/dictionaries/environment_diagram_01.png" alt="Environment Diagram" /></p>
+
+<p>When we add and remove items from the dictionary, our environment diagram updates to this:</p>
+
+<pre><code>&gt;&gt;&gt; ages['joe'] = 22
+&gt;&gt;&gt; del ages['jenny']
+&gt;&gt;&gt; ages
+{'joe': 22, 'harry': 19}
+</code></pre>
+
+<p><img src="/public/images/dictionaries/environment_diagram_02.png&quot;&gt;" alt="Environment Diagram" /></p>
+
+<h4 id="useful-methods-for-dictionaries">Useful Methods for Dictionaries</h4>
+
+<p>Work in progress, will be updated soon.</p>
+
+  
+  <h2>Extra Practice with Dictionaries</h2>
+  <ul>
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+  </ul>
+  
+</article>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
+
+
+      <section class="footer">
+  <p class="copyright">
+    © 2013 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
+  </p>
+</section>
+
+    </section>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
+
+    <script type="text/javascript">
+      prettyPrint();
+      var date = document.getElementsByClassName("current_date")[0];
+      if (date) {
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
+      }
+
+      $(document).keypress(function(e) {
+        base = document.location.origin;
+        switch (e.charCode) {
+          case 97: // 'a' for about
+            document.location.href = base;
+            break;
+          case 98: // 'b' for blog
+            document.location.href = base + '/blog';
+            break;
+          case 104: // 'h' for hkn
+            document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
+            break;
+          case 112: // 'p' for projects
+            document.location.href = base + '/projects';
+            break;
+          case 114: // 'r' for resume
+            document.location.href = base + '/resume';
+            break;
+          case 119: // 'w' for web development
+            document.location.href = base + '/web_dev';
+            break;
+          case 99: // 'c' for cs61a
+            window.location.href = base + "/cs61a/su13";
+            break;
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

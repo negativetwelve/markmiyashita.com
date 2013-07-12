@@ -3,9 +3,19 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-09T08:26:19-07:00</lastmod>
+        <lastmod>2013-07-12T03:13:09-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/notes/rlists</loc>
+        <lastmod>2013-07-10T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/notes/dictionaries</loc>
+        <lastmod>2013-07-10T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/notes/helper_functions</loc>
