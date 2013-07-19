@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-18T22:19:13-07:00</updated>
+    <updated>2013-07-18T22:24:45-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -128,6 +128,438 @@ class Pigeon(Bird):
 <p>It seems to be working. Now let’s try to understand <em>why</em> it’s working.</p>
 
 <p>We first create a Parrot object and call it <code>p</code>. Then we call <code>children_on_the_nth_year</code> with the object as our first argument and the number 2 as our second argument. What will <code>tag</code> equal after executing the first line of the function? Remember that <code>type_tag</code> looks up the class name for our object, in this case it would be looking up Parrot, and in the <code>type_tag.tags</code> dictionary we would lookup the key Parrot and get back the value <code>'bird'</code>. We store that as the value <code>tag</code>. Then, on the next line, we lookup that tag that we just found in our <code>reproduction_rates</code> dictionary. What type of object will this dictionary return? It will give us back a function. What does this function do? It takes in some number, which represents the number of years, and returns how many children that animal will have that year. In this instance, we lookup <code>'bird'</code> and get back the lambda function <code>lambda years: years ** 2</code>. With the input now being <code>n</code> which is the value 2 in this example, the function returns that value <code>2 ** 2</code> which is just 4. The overall function will now return 4 and that is our answer. The similar process applies to the Rabbit, however, this time its tag is ‘rabbit’ and the function will be for the rabbit and not for the bird. </p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Designing Classes and Using Inheritance]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/designing_classes_and_using_inheritance"/>
+        <updated>2013-07-18T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/designing_classes_and_using_inheritance</id>
+        <content type="html"><![CDATA[
+<p>Say we wanted to design some classes that represent Cars, Trucks, and Buses. Each one has a variable, let’s call it <code>repair_cost</code> that represents the amount of money required to repair that object. Each class has a different <code>repair_cost</code>, but each object in the class has the same <code>repair_cost</code>. So, each Car object has a <code>repair_cost</code> of 10, Trucks cost 20, and Buses cost 30.</p>
+
+<pre><code>&gt;&gt;&gt; c1 = Car()
+&gt;&gt;&gt; t1 = Truck()
+&gt;&gt;&gt; b1 = Bus()
+&gt;&gt;&gt; c1.repair_cost
+10
+&gt;&gt;&gt; t1.repair_cost
+20
+&gt;&gt;&gt; b1.repair_cost
+30
+</code></pre>
+
+<p>How many classes should we make to minimize the amount of code?</p>
+
+<p>After we have determined the number of classes to make, let’s make them! Implement the Car, Truck, Bus, and any other classes (which could be none!) that you feel are necessary to create this situation in a way that makes the most sense (making use of inheritance, overridding, etc.). Let’s also set a variable on all the vehicles that states how many wheels it has (let’s just say that all of our vehicles have 4 wheels).</p>
+
+<p>Once you have your classes made, implement a function that takes in an <code>amount_paid</code> and compares that to the <code>repair_cost</code>. If the <code>amount_paid</code> is greater than or equal to the <code>repair_cost</code>, then the item is allowed to be fixed and it should print out a message indicating that it has been fixed. If it cannot be fixed, then it should print out a different message indicating so. Try to minimize the amount of code that is required for this problem using inheritance.</p>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <p>There are many ways to answer this question. Here is the solution that I came up with.</p>
+
+  <pre><code>class Vehicle(object):
+    num_wheels = 4
+
+    def repair(self, amount_paid):
+        if amount_paid &gt;= self.repair_cost:
+            print("The " + type(self).__name__ + " has been fixed!")
+        else:
+            print("The " + type(self).__name__ + " was not fixed :( Please pay more money.")
+
+class Car(Vehicle):
+    repair_cost = 10
+
+class Truck(Vehicle):
+    repair_cost = 20
+
+class Bus(Vehicle):
+    repair_cost = 30
+</code></pre>
+
+  <p>The <code>type(self).__name__</code> is something that is not important, all it does is grab the name of the class of self and convert it to string form. </p>
+
+  <p>The important parts here are the fact that we <strong>do not</strong> have any <code>__init__</code> statements, anywhere! The reason is because our objects themselves do not have any instance variables, they only have class variables. So, we simply make a generic object (becuase the class Vehicle inherites from the generic object class) that allows us to assign some class variables.</p>
+
+  <p>For the subclasses, Car, Truck, and Bus, we only need to set the <code>repair_cost</code> because that is the only thing that changes between the different classes. The <code>repair</code> method that we definied in the Vehicle class still works. Do you see why?</p>
+
+  <p>The answer lies in the fact that the <code>repair</code> method checks <code>self.repair_cost</code> instead of <code>Vehicle.repair_cost</code> or <code>Car.repair_cost</code>. The result is that whichever object this method is called on, it will use the type of the <em>object</em> to determine which <code>repair_cost</code> to use. The result is that we can now make one general method that works for multiple different subclasses.</p>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Better Fib]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/better_fib"/>
+        <updated>2013-07-18T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/better_fib</id>
+        <content type="html"><![CDATA[
+<p>Remember <code>fib</code>, the function that we created a while ago to find the nth fibonacci number and to show tree recursion? The function was really slow on large inputs because at each level of recursion, it would make two recursive calls to itself AND it would recompute numbers that it already knew. For example, calling <code>fib(3)</code> computes <code>fib(2)</code> once and <code>fib(1)</code> twice. We don’t need to compute out <code>fib(1)</code> twice. Using a dictionary, your job is to re-write the function <code>fib</code> so that it only computes a certain recursive call once. (i.e. it only computes <code>fib(1)</code> once) Remember that a dictionary is able to store and look up items using a key-value system. If you want a hint, the idea that we are implementing is called <em>memoization</em>.</p>
+
+<pre><code>def better_fib(n):
+    """
+    Takes in a number, n, and computes the nth fibonacci
+    number recursively. To save time, it will only compute
+    each value once and store it in a dictionary. We will
+    define better_fib(0) = 0 and better_fib(1) = 1.
+      
+    &gt;&gt;&gt; better_fib(3)
+    2
+    &gt;&gt;&gt; better_fib(100)
+    354224848179261915075   # this should take less than a second
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def better_fib(n):
+    """
+    Takes in a number, n, and computes the nth fibonacci
+    number recursively. To save time, it will only compute
+    each value once and store it in a dictionary. We will
+    define better_fib(0) = 0 and better_fib(1) = 1.
+      
+    &gt;&gt;&gt; better_fib(3)
+    2
+    &gt;&gt;&gt; better_fib(100)
+    354224848179261915075   # this should take less than a second
+    """
+    d = {}
+    def fib_helper(n):
+        if n in d:
+            return d[n]
+        if n &lt;= 1:
+            d[n] = n
+            return n
+        d[n] = fib_help(n - 1) + fib_help(n - 2)
+        return d[n]
+    return fib_helper(n)
+</code></pre>
+
+  <p>There are several main ideas being tested in this problem. First, the overarching idea is <strong>memoization</strong>. We want to be able to quickly compute the nth fibonacci number and to do this, we will memoize, or remember, what the previous values that we computed were. To implement this, we will use a dictionary. Now, we could have passed the dictionary through our helper function, but then we would start having multiple copies of the dictionary floating around our function calls. To avoid that, we will be using the final main idea, a mutable data structure. In this problem, by creating the dictionary outside of the inner function, we only have to create one. That dictionary is is accessible by every single recursive call. That means that if we compute <code>fib(7)</code> in one recursive call, but we need it later when evaluating <code>fib(8)</code>, then we can evaluate it immidiately.</p>
+
+  <p>The function first checks to see if the item is currently in the dictionary. If it is, it returns the value of it immidiately and goes onto the next recursive call. If not, it computes the number, then stores it directly into the dictionary for future access. This saves unnecessary computations that might occur later on.</p>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Sort Rlist]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/sort_rlist"/>
+        <updated>2013-07-17T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/sort_rlist</id>
+        <content type="html"><![CDATA[
+<p>Write a function that sorts an rlist. You might want to look up the <a href="http://en.wikipedia.org/wiki/Insertion_sort">Wikipedia article on Insertion Sort</a> although you are more than welcome to implement any kind of sort you want! Use the <code>first</code> and <code>rest</code> functions that we have defined for rlists and used in class. You may want to define a helper function…</p>
+
+<pre><code>def sort_rlist(r):
+    """
+    Sort an rlist in ascending order.
+    
+    &gt;&gt;&gt; r = rlist(4, rlist(3, rlist(6, rlist(8, rlist(1, empty_rlist)))))
+    &gt;&gt;&gt; sort_rlist(r)
+    (1, (3, (4, (6, (8, None)))))
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def sort_rlist(r):
+    """
+    Sort an rlist in ascending order.
+    
+    &gt;&gt;&gt; r = rlist(3, rlist(5, rlist(1, rlist(9, rlist(7, None)))))
+    &gt;&gt;&gt; sort_rlist(r)
+    (1, (3, (5, (7, (9, None)))))
+    """
+    if r == empty_rlist:
+        return r
+    return insert(first(r), sort_rlist(rest(r)))
+
+def insert(item, r):
+    """
+    Inserts item into r in sorted order.
+    
+    &gt;&gt;&gt; r = rlist(4, rlist(6, rlist(8, None)))
+    &gt;&gt;&gt; insert(5, r)
+    (4, (5, (6, (8, None))))
+    """
+    if r == empty_rlist:
+        return rlist(item, empty_rlist)
+    if item &lt;= first(r):
+        return rlist(item, r)
+    return rlist(first(r), insert(item, rest(r)))
+</code></pre>
+
+  <p>First off, I want to state that this problem was very challenging. If you didn’t get it, don’t fret!</p>
+
+  <p>Let’s take a look at what this function is doing and how the <code>insert</code> function works. The <code>insert</code> function takes in an item and an rlist and inserts it as soon as it finds a number in the list that is bigger than it. This means that it assumes that everything before it is already sorted. For example, if our list was (1, (3, (6, (7, None)))) and we want to insert 4, it will first compare itself to 1, then 3, then 6. When it gets to 6, it realizes that it is less than that value and inserts itself just before the 6.</p>
+
+  <p>Now let’s take a look at the actual <code>sort_rlist</code> function. This function will continue to sort the rest of the rlist until it is equal to the empty rlist. At each recursive call, it is inserting the first of the rlist (in the doctest above, it first tries to insert 3) into the correct position <em>of the already sorted rlist</em>. This is the most important fact here. The <code>sort_rlist</code> function does not return the rlist until it has completely finished sorting what it currently has. That means that at each iteration, we are inserting the current item into an already sorted list AND if we correctly insert the current item then the rlist remains sorted. The output if the final sorted rlist.</p>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Map Rlist]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/map_rlist"/>
+        <updated>2013-07-17T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/map_rlist</id>
+        <content type="html"><![CDATA[
+<p>Write a function that emulates the fucntionality of <code>map</code> but for our implementation of rlists. You may use the functions we have been working with: <code>first</code> and <code>rest</code>.</p>
+
+<pre><code>def map_rlist(fn, r):
+    """
+    Takes in a function, fn, and applies it to all
+    items in the input rlist, r.
+    
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(3, empty_rlist)))
+    &gt;&gt;&gt; map_rlist(lambda x: x*x, r)
+    (1, (4, (9, None)))
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def map_rlist(fn, r):
+    """
+    Takes in a function, fn, and applies it to all
+    items in the input rlist, r.
+    
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(3, empty_rlist)))
+    &gt;&gt;&gt; map_rlist(lambda x: x*x, r)
+    (1, (4, (9, None)))
+    """
+    if r == empty_rlist
+        return r
+    return rlist(fn(first(r)), map_rlist(fn, rest(r)))
+</code></pre>
+
+  <p>We want to apply the function, fn, to each item of the rlist so we’re going to need to access eah element individually. To do this, we will use recursion to recursively map over the rest of the rlist. We will return the newly created rlist by using the constructor <code>rlist</code> which takes in a first and a rest. The first element will be the original first element with the function applied to it.</p>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Filter Rlist]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/filter_rlist"/>
+        <updated>2013-07-17T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/filter_rlist</id>
+        <content type="html"><![CDATA[
+<p>We want to define a function <code>filter_rlist</code> that takes in a function and an rlist and returns a new rlist that keeps all the items that satisfy the given input function. For this, we will be using the functional representation of our rlists using tuples and we will have the following constructors and selectors to use:</p>
+
+<pre><code>empty_rlist = None
+
+def rlist(first, rest):
+    return (first, rest)
+
+def first(r):
+    return r[0]
+
+def rest(r):
+    return r[1]
+</code></pre>
+
+<pre><code>def filter_rlist(fn, r):
+    """
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def filter_rlist(fn, r):
+    """
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
+    """
+    if r == empty_rlist:
+        return r
+    if fn(first(r)):
+        return rlist(first(r), filter_rlist(fn, rest(r)))
+    return filter_rlist(fn, rest(r))
+</code></pre>
+
+  <p>Basically, we want to check to see if the first element of our rlist satisfies the input function. If it does, then we need construct a new rlist, keeping the first element, and recursively applying the filter on the rest. If it does not satisfy the function, then we can just recurse on the rest and that will disregard the current element. Finally, our base case is when we have the <code>empty_rlist</code>. When we have an <code>empty_rlist</code>, we don’t have to filter anything else out because we’ve already filtered everything!</p>
+
+</div>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[In-Place Functions]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/in_place_functions"/>
+        <updated>2013-07-16T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/in_place_functions</id>
+        <content type="html"><![CDATA[
+<p>This weeks homework had a lot of problems where we wanted you to solve them in-place (meaning without creating a new list). Instead, we wanted you to swap the items in the list and directly modify the input list. Here are a few more practice problems to make sure that you understand how in-place functions work. Write two functions (unrelated to one another) called <code>map_in_place</code> and <code>sort_in_place</code> that each take in a list. <code>map_in_place</code> will modify the original list by mapping the input function over each of the elements of the list. <code>sort_in_place</code> can use any sorting algorithm you want and will modify the original list so that it is sorted after calling this function on it. </p>
+
+<pre><code>def map_in_place(fn, lst):
+    """
+    Takes in a function, fn, and maps it over
+    each item of the input list, lst.
+    Returns None and instead modifies the input list.
+
+    &gt;&gt;&gt; r = [3, 2, 4, 5, 6]
+    &gt;&gt;&gt; map_in_place(lambda x: x*x, r)
+    &gt;&gt;&gt; r
+    [9, 4, 16, 25, 36]
+    """
+    "***YOUR CODE HERE***"
+
+def sort_in_place(lst):
+    """
+    Takes in a list and sorts it in-place,
+    just like the builtin .sort() method does.
+
+    &gt;&gt;&gt; r = [1, 5, 4, 6, 3, 12]
+    &gt;&gt;&gt; sort_in_place(r)
+    &gt;&gt;&gt; r
+    [1, 3, 4, 5, 6, 12]
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def map_in_place(fn, lst):
+    """
+    Takes in a function, fn, and maps it over
+    each item of the input list, lst.
+    Returns None and instead modifies the input list.
+
+    &gt;&gt;&gt; r = [3, 2, 4, 5, 6]
+    &gt;&gt;&gt; map_in_place(lambda x: x*x, r)
+    &gt;&gt;&gt; r
+    [9, 4, 16, 25, 36]
+    """
+    for i in range(len(lst)):
+        lst[i] = fn(lst[i])
+
+def sort_in_place(lst):
+    """
+    Takes in a list and sorts it in-place,
+    just like the builtin .sort() method does.
+
+    &gt;&gt;&gt; r = [1, 5, 4, 6, 3, 12]
+    &gt;&gt;&gt; sort_in_place(r)
+    &gt;&gt;&gt; r
+    [1, 3, 4, 5, 6, 12]
+    """
+    for i in range(len(lst)):
+        index_of_min = lst.index(min(lst[i:]))
+        lst[i], lst[index_of_min] = lst[index_of_min], lst[i]
+</code></pre>
+
+  <p>For each of these, the important note is that we are iterating over the elements of the lists using the index values to directly mutate the list. If we were to do a for loop such as <code>for i in lst</code> then the value of <code>i</code> would change at each iteration but that is separate from the <code>lst</code> itself. The result is that you would not be mutating the list.</p>
+
+  <p>For the <code>sort_in_place</code> function, our general algorithm is to find the minimum of the rest of the list and set that to be the next item. The first time, we are finding the minimum of the whole list and setting that as our first item. Then the next time, we are finding the minimum of the rest of the list and setting that as our next item and so on and so forth. Let me know if the comments below if this method is confusing for you!</p>
+
+</div>
+
 ]]></content>
         <author>
             <name>Mark Miyashita</name>

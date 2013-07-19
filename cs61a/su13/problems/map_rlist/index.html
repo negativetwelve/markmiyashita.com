@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Map Rlist</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -58,9 +58,76 @@
 
     <section id="main_content">
 
-      <head>
-  <meta http-equiv="refresh" content="0; url=/cs61a/su13/problems/designing_classes_and_using_inheritance">
-</head>
+      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
+
+<header id="top_bar">
+  Jul 17, 2013
+</header>
+
+<article class="post">
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
+  
+  <h4>Warmup Problem</h4>
+  <h2>Map Rlist</h2>
+  
+  
+<p>Write a function that emulates the fucntionality of <code>map</code> but for our implementation of rlists. You may use the functions we have been working with: <code>first</code> and <code>rest</code>.</p>
+
+<pre><code>def map_rlist(fn, r):
+    """
+    Takes in a function, fn, and applies it to all
+    items in the input rlist, r.
+    
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(3, empty_rlist)))
+    &gt;&gt;&gt; map_rlist(lambda x: x*x, r)
+    (1, (4, (9, None)))
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def map_rlist(fn, r):
+    """
+    Takes in a function, fn, and applies it to all
+    items in the input rlist, r.
+    
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(3, empty_rlist)))
+    &gt;&gt;&gt; map_rlist(lambda x: x*x, r)
+    (1, (4, (9, None)))
+    """
+    if r == empty_rlist
+        return r
+    return rlist(fn(first(r)), map_rlist(fn, rest(r)))
+</code></pre>
+
+  <p>We want to apply the function, fn, to each item of the rlist so we’re going to need to access eah element individually. To do this, we will use recursion to recursively map over the rest of the rlist. We will return the newly created rlist by using the constructor <code>rlist</code> which takes in a first and a rest. The first element will be the original first element with the function applied to it.</p>
+
+</div>
+
+
+  
+</article>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
 
 
       <section class="footer">

@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tail Recursion and Tail Optimized Calls</title>
+    <title>Designing Classes and Using Inheritance</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -61,180 +61,71 @@
       <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
 
 <header id="top_bar">
-  May 10, 2013
+  Jul 18, 2013
 </header>
 
 <article class="post">
-  <a href="/cs61a/sp13" class="button_link">Go Back</a>
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
   
-  <h2>Tail Recursion and Tail Optimized Calls</h2>
-
+  <h4>Warmup Problem</h4>
+  <h2>Designing Classes and Using Inheritance</h2>
   
-<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: [http://paulbutler.org/archives/tail-recursion-in-python/]</p>
+  
+<p>Say we wanted to design some classes that represent Cars, Trucks, and Buses. Each one has a variable, let’s call it <code>repair_cost</code> that represents the amount of money required to repair that object. Each class has a different <code>repair_cost</code>, but each object in the class has the same <code>repair_cost</code>. So, each Car object has a <code>repair_cost</code> of 10, Trucks cost 20, and Buses cost 30.</p>
 
-<p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:</p>
-
-<pre><code>def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
+<pre><code>&gt;&gt;&gt; c1 = Car()
+&gt;&gt;&gt; t1 = Truck()
+&gt;&gt;&gt; b1 = Bus()
+&gt;&gt;&gt; c1.repair_cost
+10
+&gt;&gt;&gt; t1.repair_cost
+20
+&gt;&gt;&gt; b1.repair_cost
+30
 </code></pre>
 
-<p>because it needs to keep track of the <code>n *</code> at each level of recursion.</p>
+<p>How many classes should we make to minimize the amount of code?</p>
 
-<p>The following implementation of <code>factorial</code>, is tail recursive because at the end of the last frame, it can return the answer, instead of going back up through all the frames to multiply and compute the answer:</p>
+<p>After we have determined the number of classes to make, let’s make them! Implement the Car, Truck, Bus, and any other classes (which could be none!) that you feel are necessary to create this situation in a way that makes the most sense (making use of inheritance, overridding, etc.). Let’s also set a variable on all the vehicles that states how many wheels it has (let’s just say that all of our vehicles have 4 wheels).</p>
 
-<pre><code>def factorial(n):
-    def helper(n, total):
-        if n == 1:
-            return total
-        return helper(n - 1, total * n)
-    return helper(n, 1)
+<p>Once you have your classes made, implement a function that takes in an <code>amount_paid</code> and compares that to the <code>repair_cost</code>. If the <code>amount_paid</code> is greater than or equal to the <code>repair_cost</code>, then the item is allowed to be fixed and it should print out a message indicating that it has been fixed. If it cannot be fixed, then it should print out a different message indicating so. Try to minimize the amount of code that is required for this problem using inheritance.</p>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <p>There are many ways to answer this question. Here is the solution that I came up with.</p>
+
+  <pre><code>class Vehicle(object):
+    num_wheels = 4
+
+    def repair(self, amount_paid):
+        if amount_paid &gt;= self.repair_cost:
+            print("The " + type(self).__name__ + " has been fixed!")
+        else:
+            print("The " + type(self).__name__ + " was not fixed :( Please pay more money.")
+
+class Car(Vehicle):
+    repair_cost = 10
+
+class Truck(Vehicle):
+    repair_cost = 20
+
+class Bus(Vehicle):
+    repair_cost = 30
 </code></pre>
 
-<p>You can’t have tail optimized calls in Python – at least, not like the code that we defined above. You can define your own sort of tail optimized way of evaluating the functions by using lambdas, and I believe the article linked at the top of this post goes into detail about how to implement this if you are interested. In Scheme, the language detects when you have something like the helper function in the example above where your return statement consists of only the recursive call. In the first example, we have the <code>n *</code> and the recursive call which means it cannot be tail optimized because it needs to keep track of all of the frames that it creates. In a tail optimized call, Scheme will get rid of the frames that are no longer necessary.</p>
+  <p>The <code>type(self).__name__</code> is something that is not important, all it does is grab the name of the class of self and convert it to string form. </p>
 
-<p><strong>tl;dr</strong> – Tail recursion can be done in any language where the basic idea is that you return the answer in the final frame of recursion. Tail optimized calls are a Scheme (and some other languages, not including Python) feature where it will get rid of the frames above, if certain conditions are met – such as where the return statement is only the recursive call and nothing else. The cases in which Scheme uses a tail optimized call are located on the lecture slides located <a href="http://www-inst.eecs.berkeley.edu/~cs61a/sp13/slides/35-TailCalls_6pp.pdf">here</a>.</p>
+  <p>The important parts here are the fact that we <strong>do not</strong> have any <code>__init__</code> statements, anywhere! The reason is because our objects themselves do not have any instance variables, they only have class variables. So, we simply make a generic object (becuase the class Vehicle inherites from the generic object class) that allows us to assign some class variables.</p>
 
-  
-  <h2>Extra Practice with Tail Recursion and Tail Optimized Calls</h2>
-  <ul>
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-  </ul>
+  <p>For the subclasses, Car, Truck, and Bus, we only need to set the <code>repair_cost</code> because that is the only thing that changes between the different classes. The <code>repair</code> method that we definied in the Vehicle class still works. Do you see why?</p>
+
+  <p>The answer lies in the fact that the <code>repair</code> method checks <code>self.repair_cost</code> instead of <code>Vehicle.repair_cost</code> or <code>Car.repair_cost</code>. The result is that whichever object this method is called on, it will use the type of the <em>object</em> to determine which <code>repair_cost</code> to use. The result is that we can now make one general method that works for multiple different subclasses.</p>
+
+</div>
+
+
   
 </article>
 

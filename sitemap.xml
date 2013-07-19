@@ -3,13 +3,43 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-18T22:19:13-07:00</lastmod>
+        <lastmod>2013-07-18T22:24:45-07:00</lastmod>
     </url>
     
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/notes/generic_functions_and_type_dispatching</loc>
         <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/designing_classes_and_using_inheritance</loc>
+        <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/better_fib</loc>
+        <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/sort_rlist</loc>
+        <lastmod>2013-07-17T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/map_rlist</loc>
+        <lastmod>2013-07-17T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/filter_rlist</loc>
+        <lastmod>2013-07-17T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/in_place_functions</loc>
+        <lastmod>2013-07-16T00:00:00-07:00</lastmod>
     </url>
     
     <url>

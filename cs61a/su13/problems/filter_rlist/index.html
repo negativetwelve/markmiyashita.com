@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Filter Rlist</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -58,9 +58,92 @@
 
     <section id="main_content">
 
-      <head>
-  <meta http-equiv="refresh" content="0; url=/cs61a/su13/problems/designing_classes_and_using_inheritance">
-</head>
+      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
+
+<header id="top_bar">
+  Jul 17, 2013
+</header>
+
+<article class="post">
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
+  
+  <h4>Warmup Problem</h4>
+  <h2>Filter Rlist</h2>
+  
+  
+<p>We want to define a function <code>filter_rlist</code> that takes in a function and an rlist and returns a new rlist that keeps all the items that satisfy the given input function. For this, we will be using the functional representation of our rlists using tuples and we will have the following constructors and selectors to use:</p>
+
+<pre><code>empty_rlist = None
+
+def rlist(first, rest):
+    return (first, rest)
+
+def first(r):
+    return r[0]
+
+def rest(r):
+    return r[1]
+</code></pre>
+
+<pre><code>def filter_rlist(fn, r):
+    """
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def filter_rlist(fn, r):
+    """
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
+    """
+    if r == empty_rlist:
+        return r
+    if fn(first(r)):
+        return rlist(first(r), filter_rlist(fn, rest(r)))
+    return filter_rlist(fn, rest(r))
+</code></pre>
+
+  <p>Basically, we want to check to see if the first element of our rlist satisfies the input function. If it does, then we need construct a new rlist, keeping the first element, and recursively applying the filter on the rest. If it does not satisfy the function, then we can just recurse on the rest and that will disregard the current element. Finally, our base case is when we have the <code>empty_rlist</code>. When we have an <code>empty_rlist</code>, we don’t have to filter anything else out because we’ve already filtered everything!</p>
+
+</div>
+
+
+  
+</article>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
 
 
       <section class="footer">
