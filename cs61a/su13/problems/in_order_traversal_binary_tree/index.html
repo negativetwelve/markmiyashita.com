@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tail Recursion and Tail Optimized Calls</title>
+    <title>In Order Traversal (Binary Tree)</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -61,206 +61,61 @@
       <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
 
 <header id="top_bar">
-  May 10, 2013
+  Jul 22, 2013
 </header>
 
 <article class="post">
-  <a href="/cs61a/sp13" class="button_link">Go Back</a>
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
   
-  <h2>Tail Recursion and Tail Optimized Calls</h2>
-
+  <h4>Challenge Problem</h4>
+  <h2>In Order Traversal (Binary Tree)</h2>
   
-<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: [http://paulbutler.org/archives/tail-recursion-in-python/]</p>
+  
+<p>This problem uses the <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree.py">Tree Class</a> and the template for this file can be downloaded <a href="http://markmiyashita.com/cs61a/code/tree_recursion/in_order_traversal.py">here</a>.</p>
 
-<p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:</p>
+<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
 
-<pre><code>def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
+<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. In Order Traversal is one of them and the algorithm goes like this. First, we will recursively print out all the values to our left, then, we will print out the current node’s entry, then recursively print out all the values on the right. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
+
+<pre><code>def in_order_traversal(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; in_order_traversal(t)
+    1
+    4
+    5
+    6
+    7
+    8
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
-<p>because it needs to keep track of the <code>n *</code> at each level of recursion.</p>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<p>The following implementation of <code>factorial</code>, is tail recursive because at the end of the last frame, it can return the answer, instead of going back up through all the frames to multiply and compute the answer:</p>
+<div class="solution">
 
-<pre><code>def factorial(n):
-    def helper(n, total):
-        if n == 1:
-            return total
-        return helper(n - 1, total * n)
-    return helper(n, 1)
+  <pre><code>def in_order_traversal(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; in_order_traversal(t)
+    1
+    4
+    5
+    6
+    7
+    8
+    """
+    if tree is None:
+        return
+    in_order_traversal(tree.left)
+    print(tree.entry)
+    in_order_traversal(tree.right)
 </code></pre>
 
-<p>You can’t have tail optimized calls in Python – at least, not like the code that we defined above. You can define your own sort of tail optimized way of evaluating the functions by using lambdas, and I believe the article linked at the top of this post goes into detail about how to implement this if you are interested. In Scheme, the language detects when you have something like the helper function in the example above where your return statement consists of only the recursive call. In the first example, we have the <code>n *</code> and the recursive call which means it cannot be tail optimized because it needs to keep track of all of the frames that it creates. In a tail optimized call, Scheme will get rid of the frames that are no longer necessary.</p>
+</div>
 
-<p><strong>tl;dr</strong> – Tail recursion can be done in any language where the basic idea is that you return the answer in the final frame of recursion. Tail optimized calls are a Scheme (and some other languages, not including Python) feature where it will get rid of the frames above, if certain conditions are met – such as where the return statement is only the recursive call and nothing else. The cases in which Scheme uses a tail optimized call are located on the lecture slides located <a href="http://www-inst.eecs.berkeley.edu/~cs61a/sp13/slides/35-TailCalls_6pp.pdf">here</a>.</p>
 
-  
-  <h2>Extra Practice with Tail Recursion and Tail Optimized Calls</h2>
-  <ul>
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-  </ul>
   
 </article>
 

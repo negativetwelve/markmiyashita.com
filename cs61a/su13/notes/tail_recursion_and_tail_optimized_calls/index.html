@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rlists</title>
+    <title>Tail Recursion and Tail Optimized Calls</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -61,167 +61,55 @@
       <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
 
 <header id="top_bar">
-  March 05, 2013
+  July 25, 2013
 </header>
 
 <article class="post">
-  <a href="/cs61a/sp13" class="button_link">Go Back</a>
+  <a href="/cs61a/su13" class="button_link">Go Back</a>
   
-  <h2>Rlists</h2>
-
-  <ul id="markdown-toc">
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#data-abstraction">Data Abstraction</a></li>
-  <li><a href="#constructors-and-selectors">Constructors and Selectors</a></li>
-</ul>
-
-<h4 id="introduction">Introduction</h4>
-
-<p>What exactly are rlists? rlists are a CS61A abstraction that defines a series of pairs that connect together by accessing the <code>first</code> and <code>rest</code> elements of the pair. We have defined the following constructs for our rlist abstraction:</p>
-
-<pre><code>empty_rlist = None
-
-def rlist(first, rest):
-    return (first, rest)
-
-def first(r):
-    return r[0]
-
-def rest(r):
-    return r[1]
-</code></pre>
-
-<p>What does this mean for us? This means that for any rlist, we only have access to the first element of the list and a way to get the rest of the items (which is also an rlist). The idea is simple, but we can do powerful things with rlists.</p>
-
-<h4 id="data-abstraction">Data Abstraction</h4>
-
-<p>This rlist abstraction is considered an abstraction in the first place because we can change how rlists are stored and accessed. For example, we can define our class as follows and the code that we write (assuming we don’t break any abstraction barriers ourselves) would still work.</p>
-
-<pre><code>empty_rlist = lambda x: None
-
-def rlist(first, rest):
-    return lambda x: (first, rest)
-
-def first(r):
-    return r(None)[0]
-
-def rest(r):
-    return r(None)[1]
-
-def show(r):
-    if r == empty_rlist:
-        return None
-    return (first(r), show(rest(r)))
-</code></pre>
-
-<p>Notice how we had to add a new function, <code>show</code> that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at <code>&amp;lt;function rlist.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x1006f07a0&amp;gt;</code> all day because our new abstraction returns functions.</p>
-
-<p>Okay, abstractions aside, let’s figure out how to tackle these rlist problems!</p>
-
-<h4 id="constructors-and-selectors">Constructors and Selectors</h4>
-
-<p><strong>Always, always, always</strong> remember that we only have access to two things in our rlist, the <code>first</code> element, and the rlist that consists of the <code>rest</code> of the elements. Generally, you won’t usually see many nested calls (for example: <code>first(rest(rest()))</code>) because we usually let recursion take care of the actual traversing part.</p>
-
-<p>Let’s walk through an example. Say we wanted to write a function, <code>less_rlist</code> that keeps all elements in the rlist that are less than the given input, <code>n</code>. How would we approach this problem?</p>
-
-<pre><code>def less_rlist(r, n):
-    """
-    Takes in an rlist, r, and a number n.
-    Returns a new rlist with all the elements from the original
-    rlist that are less than n.
-
-    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(5, rlist(3, empty_rlist))))
-    &gt;&gt;&gt; less_rlist(r, 3)
-    (1, (2, None))
-    """
-</code></pre>
-
-<p>I recommend starting with the base case. Once we figure that out, we know when to stop, and we can focus on getting our input down to that level. For this question, and for most rlists in general, we want to think about our smallest input. For an rlist, that smallest input is the <code>empty_rlist</code>. When we input the <code>empty_rlist</code>, we expect to get back the <code>empty_rlist</code> because all the elements (none in this case) are less than n. So we can now write one of our base cases.</p>
-
-<pre><code>def less_rlist(r, n):
-    if r == empty_rlist:
-        return r
-</code></pre>
-
-<p>Now we need to determine if there are any more base cases. For this question, we also have to consider the case when the item that we are currently on is less than the number n. What do we need to do when this is true? We need to just continue recursing on the rest of the list while keeping this element in our new rlist. What do we need to do when it’s false? We need to also recurse on the rest of our rlist, BUT, we don’t need to keep the current item and we can just keep going. Let’s write the if case.</p>
-
-<pre><code>def less_rlist(r, n):
-    if r == empty_rlist:
-        return r
-    if first(r) &lt; n:
-        return rlist(first(r), less_rlist(rest(r), n))
-</code></pre>
-
-<p>The only single element that we can check is the one that we are currently on. The way we access this element is by calling the function, <code>first</code> on our rlist. Like we said above, when this is true, we need to construct an rlist with the first element being in our new rlist and the rest of the rlist is just the result of calling the same function on the rest. By calling the function on the rest of our rlist, we are making our way to the base case. Let’s finish up the function. What do we do in the recursive case? We just call the same function on our rest and we forget about the current element because it does not satisfy the condition of being less than n. Let’s write it.</p>
-
-<pre><code>def less_rlist(r, n):
-    if r == empty_rlist:
-        return r
-    if first(r) &lt; n:
-        return rlist(first(r), less_rlist(rest(r), n))
-    return less_rlist(rest(r), n)
-</code></pre>
-
-<p>That wasn’t so bad was it? Try some of the extra recursive rlist questions below!</p>
+  <h2>Tail Recursion and Tail Optimized Calls</h2>
 
   
-  <h2>Extra Practice with Rlists</h2>
+<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: [http://paulbutler.org/archives/tail-recursion-in-python/]</p>
+
+<p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:</p>
+
+<pre><code>def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+</code></pre>
+
+<p>because it needs to keep track of the <code>n *</code> at each level of recursion.</p>
+
+<p>The following implementation of <code>factorial</code>, is tail recursive because at the end of the last frame, it can return the answer, instead of going back up through all the frames to multiply and compute the answer:</p>
+
+<pre><code>def factorial(n):
+    def helper(n, total):
+        if n == 1:
+            return total
+        return helper(n - 1, total * n)
+    return helper(n, 1)
+</code></pre>
+
+<p>You can’t have tail optimized calls in Python – at least, not like the code that we defined above. You can define your own sort of tail optimized way of evaluating the functions by using lambdas, and I believe the article linked at the top of this post goes into detail about how to implement this if you are interested. In Scheme, the language detects when you have something like the helper function in the example above where your return statement consists of only the recursive call. In the first example, we have the <code>n *</code> and the recursive call which means it cannot be tail optimized because it needs to keep track of all of the frames that it creates. In a tail optimized call, Scheme will get rid of the frames that are no longer necessary.</p>
+
+<p><strong>tl;dr</strong> – Tail recursion can be done in any language where the basic idea is that you return the answer in the final frame of recursion. Tail optimized calls are a Scheme (and some other languages, not including Python) feature where it will get rid of the frames above, if certain conditions are met – such as where the return statement is only the recursive call and nothing else. The cases in which Scheme uses a tail optimized call are located on the lecture slides located <a href="http://www-inst.eecs.berkeley.edu/~cs61a/sp13/slides/35-TailCalls_6pp.pdf">here</a>.</p>
+
+  
+  <h2>Extra Practice with Tail Recursion and Tail Optimized Calls</h2>
   <ul>
   
     
-  
+      
     
   
     
-  
+      
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
+      
     
   
     
@@ -290,10 +178,6 @@ def show(r):
   
     
       
-        
-          <li>Mar 19, 2013 - <a href="/cs61a/sp13/problems/map_and_filter_rlist_object_version">Map and Filter Rlist (Object Version)</a></li>
-        
-      
     
   
     
@@ -301,10 +185,6 @@ def show(r):
     
   
     
-      
-        
-          <li>Mar 10, 2013 - <a href="/cs61a/sp13/problems/filter_rlist">Filter Rlist</a></li>
-        
       
     
   
@@ -322,18 +202,6 @@ def show(r):
   
     
       
-        
-          <li>Feb 26, 2013 - <a href="/cs61a/sp13/problems/sort_rlist">Sort Rlist</a></li>
-        
-      
-    
-  
-    
-      
-        
-          <li>Feb 25, 2013 - <a href="/cs61a/sp13/problems/map_rlist">Map Rlist</a></li>
-        
-      
     
   
     
@@ -341,7 +209,57 @@ def show(r):
     
   
     
-      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
   </ul>

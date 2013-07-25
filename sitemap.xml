@@ -3,9 +3,74 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-07-21T16:03:41-07:00</lastmod>
+        <lastmod>2013-07-25T00:10:08-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/notes/tail_recursion_and_tail_optimized_calls</loc>
+        <lastmod>2013-07-25T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/orders_of_growth_practice</loc>
+        <lastmod>2013-07-24T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/trees_trees_everywhere</loc>
+        <lastmod>2013-07-23T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/tree_to_reversed_list</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/pre_order_traversal_binary_tree</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/post_order_traversal_binary_tree</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/merge_sort</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/map_and_filter_rlist_object_version</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/is_my_tree_binary_and_searchable</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/insert_into_binary_search_tree</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/in_order_traversal_binary_tree</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/flip_tree</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/binary_search</loc>
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/problems/mutable_reverse_list</loc>
