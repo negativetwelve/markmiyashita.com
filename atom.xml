@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-07-25T00:10:08-07:00</updated>
+    <updated>2013-07-25T20:51:00-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -282,7 +282,7 @@ def toilet(n):
         <content type="html"><![CDATA[
 <p>This problem uses the <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree.py">Tree Class</a> and the template for this file can be downloaded <a href="http://markmiyashita.com/cs61a/code/tree_recursion/tree_to_reversed_list.py">here</a>.</p>
 
-<p>In this problem, the input is a binary tree and the output is a list. The list is formed by getting the rightmost entry first. If you haven’t already, the traversal questions located <a href="http://markmiyashita.com/cs61a/sp13/problems/trees_trees_everywhere/">here</a> may help you.</p>
+<p>In this problem, the input is a binary tree and the output is a list. The list is formed by getting the rightmost entry first. If you haven’t already, the traversal questions located <a href="http://markmiyashita.com/cs61a/su13/problems/trees_trees_everywhere/">here</a> may help you.</p>
 
 <pre><code>def tree_to_reversed_list(tree):
     """
