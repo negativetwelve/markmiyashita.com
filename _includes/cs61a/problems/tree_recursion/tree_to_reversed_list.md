@@ -1,7 +1,7 @@
 {% capture question %}
 This problem uses the [Tree Class](http://markmiyashita.com/cs61a/code/tree_recursion/tree.py) and the template for this file can be downloaded [here](http://markmiyashita.com/cs61a/code/tree_recursion/tree_to_reversed_list.py).
 
-In this problem, the input is a binary tree and the output is a list. The list is formed by getting the rightmost entry first. If you haven't already, the traversal questions located [here](http://markmiyashita.com/cs61a/sp13/problems/trees_trees_everywhere/) may help you.
+In this problem, the input is a binary tree and the output is a list. The list is formed by getting the rightmost entry first. If you haven't already, the traversal questions located [here](http://markmiyashita.com/cs61a/{{ page.categories[1] }}/problems/trees_trees_everywhere/) may help you.
 
     def tree_to_reversed_list(tree):
         """
