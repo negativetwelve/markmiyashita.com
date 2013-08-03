@@ -30,7 +30,7 @@ work:
     end-date: "Present"
     image: /public/images/berkeley.png
     modal: cs61a-ta
-    description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. 
+    description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. My TA ratings are located <a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">here.</a>
     full-description:
 
   - name: Kloudless
@@ -39,7 +39,7 @@ work:
     end-date: "May '13"
     image: /public/images/kloudless.png
     modal: kloudless
-    description: I am currently working on the back-end dealing with technologies such as Storm, Hurricane, and the Django web server.
+    description: I worked on adding automation for attachments by adding a stream that listens for new emails and then processes a set of user-defined rules. The stream is an abstraction for Storm, a distributed realtime computation system.
     full-description:
 
   - name: Inigral Inc.
@@ -88,6 +88,26 @@ work:
     full-description:
 
 projects:
+  - name: Pound Pong
+    url:
+    repo: https://github.com/negativetwelve/ping-pong-ipad
+    image:
+    modal: pound-pong
+    description: Initially, the idea started out as a web app that would keep track of all of the Ping Pong matches that went on at the Yelp office. However, the project quickly transitioned into much more. Using an RFID scanner hooked up to an Arduino which is hooked up to the iPad, we can communicate with the application using our badges which all happen to be RFID. From there, we can 'badge' into our matches and record the winner in a seamless transaction using nothing more than our badges and a single tap to label the winner. Results are sent to a simple Flask server through a JSON API where they are stored in a Mongo Database. This was a project that I worked on with a group of 4 at our semi-annual Yelp hackathon. We had two people working on the Flask server / front-end of the website and two of us (including me) working on the iPad app and getting it to communicate with the RFID scanner.
+
+  - name: iOS (currently unnamed) game with JSON API
+    url: 
+    repo: 
+    modal: 
+    description: I've been working on an iOS game that has a Rails JSON backend and will eventually have a web component also. If you are interested in working on this project with me, send me an email and we can talk about specifics. Promo video and web page coming soon.
+
+  - name: Global Snapshot
+    url: http://globalsnapshot.herokuapp.com/
+    repo: https://github.com/japhethwong/global-snapshot
+    image: 
+    modal: global-snapshot
+    description: Working on a group of three at the LinkedIn Hack Day 2013, we buit a realtime Twitter and Flickr visualizer. Watch as tweets and photos fall onto the map and as the photos form a realtime stream on the sidebar. Want to see more photos? Simply expand the sidebar by pressing the toggle button on the bottom right. Hover over any of the dots to view the tweet or photo from that location. Node.js backend while working with several APIs including Google Maps, Twitter Realtime, and Flickr Realtime. Also uses Socket.io for sending the data to the browser in realtime.
+
   - name: Calaborate
     url: http://calaborate.herokuapp.com
     repo: https://github.com/negativetwelve/calaborate
@@ -115,13 +135,6 @@ projects:
     image: /public/images/tim.png
     modal: tim
     description: A vim-style web based todo app that I built with a friend at our first ever hackathon. We won the Hilfinger Award given to us by Box at the 2012 H@B Hackjam.
-
-  - name: Visualizing Graphs
-    url: http://markmiyashita.com/projects/graphs
-    repo:
-    image: /public/images/graphs.png
-    modal: graphs
-    description: A small, WIP, graph visualizer that allows you to create and edit graphs with nodes and edges. You can easily create random graphs and strongly connected graphs.
 
   - name: markmiyashita.com
     url: http://markmiyashita.com
