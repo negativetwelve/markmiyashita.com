@@ -38,14 +38,14 @@ This rlist abstraction is considered an abstraction in the first place because w
             return None
         return (first(r), show(rest(r)))
 
-Notice how we had to add a new function, `show` that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at `&lt;function rlist.&lt;locals&gt;.&lt;lambda&gt; at 0x1006f07a0&gt;` all day because our new abstraction returns functions.
+Notice how we had to add a new function, `show` that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at `<function rlist<locals>.<lambda> at 0x1006f07a0>` all day because our new abstraction returns functions.
 
 Okay, abstractions aside, let's figure out how to tackle these rlist problems!
 
 #### Constructors and Selectors
-  
+
 __Always, always, always__ remember that we only have access to two things in our rlist, the `first` element, and the rlist that consists of the `rest` of the elements. Generally, you won't usually see many nested calls (for example: `first(rest(rest()))`) because we usually let recursion take care of the actual traversing part.
-  
+
 Let's walk through an example. Say we wanted to write a function, `less_rlist` that keeps all elements in the rlist that are less than the given input, `n`. How would we approach this problem?
 
     def less_rlist(r, n):
