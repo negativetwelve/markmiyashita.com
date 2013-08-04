@@ -114,7 +114,7 @@ def show(r):
     return (first(r), show(rest(r)))
 </code></pre>
 
-<p>Notice how we had to add a new function, <code>show</code> that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at <code>&amp;lt;function rlist.&amp;lt;locals&amp;gt;.&amp;lt;lambda&amp;gt; at 0x1006f07a0&amp;gt;</code> all day because our new abstraction returns functions.</p>
+<p>Notice how we had to add a new function, <code>show</code> that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at <code>&lt;function rlist&lt;locals&gt;.&lt;lambda&gt; at 0x1006f07a0&gt;</code> all day because our new abstraction returns functions.</p>
 
 <p>Okay, abstractions aside, let’s figure out how to tackle these rlist problems!</p>
 
