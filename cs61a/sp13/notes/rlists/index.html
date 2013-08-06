@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rlists</title>
+    <meta name="author" content="Mark Miyashita" />
+    <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+
+    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="/public/js/prettify.js"></script>
+    <script type="text/javascript" src="/public/js/home.js"></script>
+
+    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/projects.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/resume.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
+
+<h1>
+  <a href="/">Mark Miyashita</a>
+</h1>
+
+<h2>
+  <a href="/">negativetwelve</a>
+</h2>
+
+<h3>
+  <p class="about_links">
+    <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+  </p>
+</h3>
+
+<div id="links">
+  <span><a href="/">About</a></span>
+  <span><a href="/projects">Projects</a></span>
+  <span><a href="/resume">Resume</a></span>
+  <span><a href="/blog">Blog</a></span>
+  <span><a href="/cs61a/su13">CS61A</a></span>
+  <span><a href="/interviews/problems">Interview Practice</a></span>
+  <span><a href="/hkn">HKN</a></span>
+  <span><a href="/web_dev">Web Development</a></span>
+  <span><a href="/contact">Contact</a></span>
+</div>
+
+    </header>
+
+    <section id="main_content">
+
+      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
+
+<header id="top_bar">
+  March 05, 2013
+</header>
+
+<article class="post">
+  <a href="/cs61a/sp13" class="button_link">Go Back</a>
+  
+  <h2>Rlists</h2>
+
+  <ul id="markdown-toc">
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#data-abstraction">Data Abstraction</a></li>
+  <li><a href="#constructors-and-selectors">Constructors and Selectors</a></li>
+</ul>
+
+<h4 id="introduction">Introduction</h4>
+
+<p>What exactly are rlists? rlists are a CS61A abstraction that defines a series of pairs that connect together by accessing the <code>first</code> and <code>rest</code> elements of the pair. We have defined the following constructs for our rlist abstraction:</p>
+
+<pre><code>empty_rlist = None
+
+def rlist(first, rest):
+    return (first, rest)
+
+def first(r):
+    return r[0]
+
+def rest(r):
+    return r[1]
+</code></pre>
+
+<p>What does this mean for us? This means that for any rlist, we only have access to the first element of the list and a way to get the rest of the items (which is also an rlist). The idea is simple, but we can do powerful things with rlists.</p>
+
+<h4 id="data-abstraction">Data Abstraction</h4>
+
+<p>This rlist abstraction is considered an abstraction in the first place because we can change how rlists are stored and accessed. For example, we can define our class as follows and the code that we write (assuming we don’t break any abstraction barriers ourselves) would still work.</p>
+
+<pre><code>empty_rlist = lambda x: None
+
+def rlist(first, rest):
+    return lambda x: (first, rest)
+
+def first(r):
+    return r(None)[0]
+
+def rest(r):
+    return r(None)[1]
+
+def show(r):
+    if r == empty_rlist:
+        return None
+    return (first(r), show(rest(r)))
+</code></pre>
+
+<p>Notice how we had to add a new function, <code>show</code> that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at <code>&lt;function rlist&lt;locals&gt;.&lt;lambda&gt; at 0x1006f07a0&gt;</code> all day because our new abstraction returns functions.</p>
+
+<p>Okay, abstractions aside, let’s figure out how to tackle these rlist problems!</p>
+
+<h4 id="constructors-and-selectors">Constructors and Selectors</h4>
+
+<p><strong>Always, always, always</strong> remember that we only have access to two things in our rlist, the <code>first</code> element, and the rlist that consists of the <code>rest</code> of the elements. Generally, you won’t usually see many nested calls (for example: <code>first(rest(rest()))</code>) because we usually let recursion take care of the actual traversing part.</p>
+
+<p>Let’s walk through an example. Say we wanted to write a function, <code>less_rlist</code> that keeps all elements in the rlist that are less than the given input, <code>n</code>. How would we approach this problem?</p>
+
+<pre><code>def less_rlist(r, n):
+    """
+    Takes in an rlist, r, and a number n.
+    Returns a new rlist with all the elements from the original
+    rlist that are less than n.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(5, rlist(3, empty_rlist))))
+    &gt;&gt;&gt; less_rlist(r, 3)
+    (1, (2, None))
+    """
+</code></pre>
+
+<p>I recommend starting with the base case. Once we figure that out, we know when to stop, and we can focus on getting our input down to that level. For this question, and for most rlists in general, we want to think about our smallest input. For an rlist, that smallest input is the <code>empty_rlist</code>. When we input the <code>empty_rlist</code>, we expect to get back the <code>empty_rlist</code> because all the elements (none in this case) are less than n. So we can now write one of our base cases.</p>
+
+<pre><code>def less_rlist(r, n):
+    if r == empty_rlist:
+        return r
+</code></pre>
+
+<p>Now we need to determine if there are any more base cases. For this question, we also have to consider the case when the item that we are currently on is less than the number n. What do we need to do when this is true? We need to just continue recursing on the rest of the list while keeping this element in our new rlist. What do we need to do when it’s false? We need to also recurse on the rest of our rlist, BUT, we don’t need to keep the current item and we can just keep going. Let’s write the if case.</p>
+
+<pre><code>def less_rlist(r, n):
+    if r == empty_rlist:
+        return r
+    if first(r) &lt; n:
+        return rlist(first(r), less_rlist(rest(r), n))
+</code></pre>
+
+<p>The only single element that we can check is the one that we are currently on. The way we access this element is by calling the function, <code>first</code> on our rlist. Like we said above, when this is true, we need to construct an rlist with the first element being in our new rlist and the rest of the rlist is just the result of calling the same function on the rest. By calling the function on the rest of our rlist, we are making our way to the base case. Let’s finish up the function. What do we do in the recursive case? We just call the same function on our rest and we forget about the current element because it does not satisfy the condition of being less than n. Let’s write it.</p>
+
+<pre><code>def less_rlist(r, n):
+    if r == empty_rlist:
+        return r
+    if first(r) &lt; n:
+        return rlist(first(r), less_rlist(rest(r), n))
+    return less_rlist(rest(r), n)
+</code></pre>
+
+<p>That wasn’t so bad was it? Try some of the extra recursive rlist questions below!</p>
+
+  
+  <h2>Extra Practice with Rlists</h2>
+  <ul>
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          <li>Mar 19, 2013 - <a href="/cs61a/sp13/problems/map_and_filter_rlist_object_version">Map and Filter Rlist (Object Version)</a></li>
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          <li>Mar 10, 2013 - <a href="/cs61a/sp13/problems/filter_rlist">Filter Rlist</a></li>
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        
+          <li>Feb 26, 2013 - <a href="/cs61a/sp13/problems/sort_rlist">Sort Rlist</a></li>
+        
+      
+    
+  
+    
+      
+        
+          <li>Feb 25, 2013 - <a href="/cs61a/sp13/problems/map_rlist">Map Rlist</a></li>
+        
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  </ul>
+  
+</article>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
+
+
+      <section class="footer">
+  <p class="copyright">
+    © 2013 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
+  </p>
+</section>
+
+    </section>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
+
+    <script type="text/javascript">
+      prettyPrint();
+      var date = document.getElementsByClassName("current_date")[0];
+      if (date) {
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
+      }
+
+      $(document).keypress(function(e) {
+        base = document.location.origin;
+        switch (e.charCode) {
+          case 97: // 'a' for about
+            document.location.href = base;
+            break;
+          case 98: // 'b' for blog
+            document.location.href = base + '/blog';
+            break;
+          case 104: // 'h' for hkn
+            document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
+            break;
+          case 112: // 'p' for projects
+            document.location.href = base + '/projects';
+            break;
+          case 114: // 'r' for resume
+            document.location.href = base + '/resume';
+            break;
+          case 119: // 'w' for web development
+            document.location.href = base + '/web_dev';
+            break;
+          case 99: // 'c' for cs61a
+            window.location.href = base + "/cs61a/su13";
+            break;
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Stack, One Queue</title>
+    <meta name="author" content="Mark Miyashita" />
+    <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+
+    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="/public/js/prettify.js"></script>
+    <script type="text/javascript" src="/public/js/home.js"></script>
+
+    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/projects.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/resume.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
+
+<h1>
+  <a href="/">Mark Miyashita</a>
+</h1>
+
+<h2>
+  <a href="/">negativetwelve</a>
+</h2>
+
+<h3>
+  <p class="about_links">
+    <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+  </p>
+</h3>
+
+<div id="links">
+  <span><a href="/">About</a></span>
+  <span><a href="/projects">Projects</a></span>
+  <span><a href="/resume">Resume</a></span>
+  <span><a href="/blog">Blog</a></span>
+  <span><a href="/cs61a/su13">CS61A</a></span>
+  <span><a href="/interviews/problems">Interview Practice</a></span>
+  <span><a href="/hkn">HKN</a></span>
+  <span><a href="/web_dev">Web Development</a></span>
+  <span><a href="/contact">Contact</a></span>
+</div>
+
+    </header>
+
+    <section id="main_content">
+
+      <header id="top_bar">
+  <date class="current_date"></date>
+</header>
+
+<article class="post">
+
+<h2 id="one-stack-one-queue">One Stack, One Queue</h2>
+
+<p>Stacks and Queues are popular abstract data structures that represent fundamental ideas in programming and more specifically data structures. One popular interview question is to mimic the functionality of a queue using two stacks. This question takes that a step further by requiring the queue to be made out of a single stack. Recall what fundamental idea stacks are related to and this question will be a breeze.</p>
+
+<p>Write your solution in any language you like. We have solutions below for the
+following languages:</p>
+
+<p><span><a href="#python" class="button_link load_solution">Python</a></span></p>
+
+<h3 id="python">Python Solution <a href="/interviews/problems/one_stack_one_queue/one_stack_one_queue_python.py">(download)</a></h3>
+
+<div class="highlight"><pre><code class="python"><span class="c"># One Stack, One Queue - Python Solution</span>
+<span class="c"># By: Mark Miyashita</span>
+
+<span class="k">class</span> <span class="nc">Queue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a queue using only one stack.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds an item to the queue.</span>
+
+<span class="sd">        &gt;&gt;&gt; q = Queue()</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        []</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(1)</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [1]</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(4)</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [1, 4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Removes the first item in the queue.</span>
+
+<span class="sd">        &gt;&gt;&gt; q = Queue()</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        []</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(14)</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(123)</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [14, 123]</span>
+<span class="sd">        &gt;&gt;&gt; q.dequeue()</span>
+<span class="sd">        14</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [123]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">temp</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">item</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</code></pre></div>
+
+
+</article>
+
+
+      <section class="footer">
+  <p class="copyright">
+    © 2013 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
+  </p>
+</section>
+
+    </section>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
+
+    <script type="text/javascript">
+      prettyPrint();
+      var date = document.getElementsByClassName("current_date")[0];
+      if (date) {
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
+      }
+
+      $(document).keypress(function(e) {
+        base = document.location.origin;
+        switch (e.charCode) {
+          case 97: // 'a' for about
+            document.location.href = base;
+            break;
+          case 98: // 'b' for blog
+            document.location.href = base + '/blog';
+            break;
+          case 104: // 'h' for hkn
+            document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
+            break;
+          case 112: // 'p' for projects
+            document.location.href = base + '/projects';
+            break;
+          case 114: // 'r' for resume
+            document.location.href = base + '/resume';
+            break;
+          case 119: // 'w' for web development
+            document.location.href = base + '/web_dev';
+            break;
+          case 99: // 'c' for cs61a
+            window.location.href = base + "/cs61a/su13";
+            break;
+        }
+      });
+    </script>
+
+  </body>
+
+</html>
