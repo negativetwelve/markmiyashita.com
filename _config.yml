@@ -122,6 +122,13 @@ projects:
     modal: appsearches
     description: An iOS app search engine. Data is gathered using a scrapper that I built and stored in a Postgres database. Search is done by indexing the database and using Postgres built-in full-text search.
 
+  - name: Rubik's Detection
+    url:
+    repo: https://github.com/negativetwelve/rubiks_detection
+    image:
+    modal: rubiks-detection
+    description: The idea was simple, take a web camera, use it to detect the colors of a rubik's cube that a user holds up to the screen. Analyze the colors, pass the output to a solver and display the necessary steps to solve the cube. It actually worked and we won third place at a hackathon as a result. My main role was working on detecting the colors by holding up the rubik's cube to your screen.
+
   - name: Sound of Dub
     url: https://intense-journey-6792.herokuapp.com/
     repo: https://github.com/negativetwelve/sound-of-dub
