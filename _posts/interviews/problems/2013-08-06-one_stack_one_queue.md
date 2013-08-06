@@ -1,6 +1,6 @@
 ---
 layout: interview_problem
-title: "One Stack One Queue"
+title: "One Stack, One Queue"
 categories: [interviews, problems]
 tags: [intermediate]
 languages: [python]
