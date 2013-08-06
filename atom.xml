@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-08-06T01:12:48-07:00</updated>
+    <updated>2013-08-06T02:01:00-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -273,7 +273,7 @@ add.impl = {('generator', 'generator') : add_generators,
         <updated>2013-07-25T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a/su13/notes/tail_recursion_and_tail_optimized_calls</id>
         <content type="html"><![CDATA[
-<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: [http://paulbutler.org/archives/tail-recursion-in-python/]</p>
+<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: <a href="http://paulbutler.org/archives/tail-recursion-in-python/">here</a></p>
 
 <p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:</p>
 
@@ -3528,7 +3528,7 @@ SyntaxError: invalid syntax
         <updated>2013-05-10T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a/sp13/notes/tail_recursion_and_tail_optimized_calls</id>
         <content type="html"><![CDATA[
-<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: [http://paulbutler.org/archives/tail-recursion-in-python/]</p>
+<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: <a href="http://paulbutler.org/archives/tail-recursion-in-python/">here</a></p>
 
 <p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:</p>
 
