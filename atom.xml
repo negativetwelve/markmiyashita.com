@@ -3,9 +3,41 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-08-06T00:32:20-07:00</updated>
+    <updated>2013-08-06T00:53:29-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[One Stack, One Queue]]></title>
+        
+        <category term="interviews" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//interviews/problems/one_stack_one_queue"/>
+        <updated>2013-08-06T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/interviews/problems/one_stack_one_queue</id>
+        <content type="html"><![CDATA[
+<h2 id="one-stack-one-queue">One Stack, One Queue</h2>
+
+<p>Stacks and Queues are popular abstract data structures that represent fundamental ideas in programming and more specifically data structures. One popular interview question is to mimic the functionality of a queue using two stacks. This question takes that a step further by requiring the queue to be made out of a single stack. Recall what fundamental idea stacks are related to and this question will be a breeze.</p>
+
+<p>Write your solution in any language you like. We have solutions below for the
+following languages:</p>
+
+<p><span><a href="#python" class="button_link load_solution">Python</a></span></p>
+
+<h3 id="python">Python Solution <a href="/interviews/problems/one_stack,_one_queue/one_stack,_one_queue_python.py">(download)</a></h3>
+
+<div class="highlight"><pre><code class="python"><span class="n">Include</span> <span class="nb">file</span> <span class="s">&#39;interviews/problems/one_stack,_one_queue/one_stack,_one_queue_python.py&#39;</span> <span class="n">contains</span> <span class="n">invalid</span> <span class="n">characters</span> <span class="ow">or</span> <span class="n">sequences</span>
+</code></pre></div>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[Tail Recursion and Tail Optimized Calls]]></title>
