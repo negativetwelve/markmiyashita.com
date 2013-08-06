@@ -3,12 +3,17 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-08-06T01:07:15-07:00</lastmod>
+        <lastmod>2013-08-06T01:12:48-07:00</lastmod>
     </url>
     
     
     <url>
         <loc>http://markmiyashita.com/interviews/problems/one_stack_one_queue</loc>
+        <lastmod>2013-08-06T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/once_an_infinite_sequence_always_an_infinite_sequence</loc>
         <lastmod>2013-08-06T00:00:00-07:00</lastmod>
     </url>
     
