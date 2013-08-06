@@ -1,5 +1,5 @@
 {% assign base = 'interviews/problems/' %}
-{% assign problem_title = page.title | replace ',', ''| downcase | split: ' ' | join: '_' %}
+{% assign problem_title = page.title | replace: ',', ' '| downcase | split: ' ' | join: '_' %}
 {% capture path %}{{ base }}{{ problem_title }}/{{ problem_title }}{% endcapture %}
 
 
