@@ -29,11 +29,11 @@ title: Interview Practice Problems - Mark Miyashita
   <ul>
   {% for problem in site.categories.interviews %}
     {% if problem.categories contains 'problems' and problem.tags contains 'beginner' %}
-    <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
+      <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
       {% for language in problem.languages %}
         <code>{{ language }}</code>
       {% endfor %}
-    </li>
+      </li>
     {% endif %}
   {% endfor %}
   </ul>
@@ -41,8 +41,12 @@ title: Interview Practice Problems - Mark Miyashita
   <h3>Level 2 - Intermediate Mezzanine</h3>
   <ul>
   {% for problem in site.categories.interviews %}
-    {% if problem.categories contains 'problems' and problem.tags contains 'intermediate' %}
-    <li><a href="{{ problem.url }}">{{ problem.title }}</a></li>
+   {% if problem.categories contains 'problems' and problem.tags contains 'intermediate' %}
+     <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
+      {% for language in problem.languages %}
+        <code>{{ language }}</code>
+      {% endfor %}
+      </li>
     {% endif %}
   {% endfor %}
   </ul>
@@ -51,7 +55,11 @@ title: Interview Practice Problems - Mark Miyashita
   <ul>
   {% for problem in site.categories.interviews %}
     {% if problem.categories contains 'problems' and problem.tags contains 'advanced' %}
-    <li><a href="{{ problem.url }}">{{ problem.title }}</a></li>
+      <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
+      {% for language in problem.languages %}
+        <code>{{ language }}</code>
+      {% endfor %}
+      </li>
     {% endif %}
   {% endfor %}
   </ul>
