@@ -21,7 +21,7 @@ work:
     end-date: "Present"
     image: /public/images/yelp.png
     modal: yelp
-    description: As an intern on the Mobile Team, I built a flow analysis tool that allows you to breakdown and visualize user flows from the app. It also enables a visual interface for A/B testing and breakdown of data by dimensions. I also worked on improving performance for some of our back-end processing, worked with analytics on the mobile apps, and added a few minor features to the iOS app.
+    description: As an intern on the Mobile Team, I built a flow analysis tool that allows you to breakdown and visualize user flows from the app. It also enables a visual interface for A/B testing and breakdown of data by dimensions. Gave a technical presentation to all of Yelp Engineering about the architecture of my project and how to extend it. I also worked on improving performance for some of our back-end processing, worked with analytics on the mobile apps, and added a few minor features to the iOS app.
     full-description:
 
   - name: UC Berkeley
