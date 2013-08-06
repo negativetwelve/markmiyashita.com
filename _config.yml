@@ -99,7 +99,7 @@ projects:
     url: 
     repo: 
     modal: 
-    description: I've been working on an iOS game that has a Rails JSON backend and will eventually have a web component also. If you are interested in working on this project with me, send me an email and we can talk about specifics. Promo video and web page coming soon.
+    description: I've been working on an iOS game that has a Rails JSON backend and will eventually have a web component too. Promo video and web page coming soon.
 
   - name: Global Snapshot
     url: http://globalsnapshot.herokuapp.com/
