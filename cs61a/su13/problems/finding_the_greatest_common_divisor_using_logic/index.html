@@ -4,7 +4,7 @@
     <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tail Recursion and Tail Optimized Calls</title>
+    <title>Finding the Greatest Common Divisor Using Logic</title>
     <meta name="author" content="Mark Miyashita" />
     <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
 
@@ -61,222 +61,26 @@
       <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
 
 <header id="top_bar">
-  July 25, 2013
+  Aug 08, 2013
 </header>
 
 <article class="post">
   <a href="/cs61a/su13" class="button_link">Go Back</a>
   
-  <h2>Tail Recursion and Tail Optimized Calls</h2>
-
+  <h4>Challenge Problem</h4>
+  <h2>Finding the Greatest Common Divisor Using Logic</h2>
   
-<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: <a href="http://paulbutler.org/archives/tail-recursion-in-python/">here</a></p>
+  
+<p>Using the result of Homework 13 and after implmenting <code>modulus</code> <a href="http://markmiyashita.com/cs61a/sp13/problems/modulus_in_logic/">here</a>, you should be able to take those and write a fact for the greatest common divisor. I would recommending reading the Wikipedia article about using Euclid’s method for finding the GCD of two numbers. The link can be found <a href="http://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid.27s_algorithm">here</a>. Post in the comments if you have any questions.</p>
 
-<p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:</p>
+<pre><code>(fact (gcd ***YOUR CODE HERE*** ))
 
-<pre><code>def factorial(n):
-    if n == 1:
-        return 1
-    return n * factorial(n - 1)
+
+(query (gcd (1 1 1 1) (1 1) ?what))
+; expect Success! ; what: (1 1)
 </code></pre>
 
-<p>because it needs to keep track of the <code>n *</code> at each level of recursion.</p>
 
-<p>The following implementation of <code>factorial</code>, is tail recursive because at the end of the last frame, it can return the answer, instead of going back up through all the frames to multiply and compute the answer:</p>
-
-<pre><code>def factorial(n):
-    def helper(n, total):
-        if n == 1:
-            return total
-        return helper(n - 1, total * n)
-    return helper(n, 1)
-</code></pre>
-
-<p>You can’t have tail optimized calls in Python – at least, not like the code that we defined above. You can define your own sort of tail optimized way of evaluating the functions by using lambdas, and I believe the article linked at the top of this post goes into detail about how to implement this if you are interested. In Scheme, the language detects when you have something like the helper function in the example above where your return statement consists of only the recursive call. In the first example, we have the <code>n *</code> and the recursive call which means it cannot be tail optimized because it needs to keep track of all of the frames that it creates. In a tail optimized call, Scheme will get rid of the frames that are no longer necessary.</p>
-
-<p><strong>tl;dr</strong> – Tail recursion can be done in any language where the basic idea is that you return the answer in the final frame of recursion. Tail optimized calls are a Scheme (and some other languages, not including Python) feature where it will get rid of the frames above, if certain conditions are met – such as where the return statement is only the recursive call and nothing else. The cases in which Scheme uses a tail optimized call are located on the lecture slides located <a href="http://www-inst.eecs.berkeley.edu/~cs61a/sp13/slides/35-TailCalls_6pp.pdf">here</a>.</p>
-
-  
-  <h2>Extra Practice with Tail Recursion and Tail Optimized Calls</h2>
-  <ul>
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-      
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  </ul>
   
 </article>
 

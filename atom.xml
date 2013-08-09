@@ -3,9 +3,67 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-08-06T02:01:00-07:00</updated>
+    <updated>2013-08-08T23:56:53-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[Modulus in Logic]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/modulus_in_logic"/>
+        <updated>2013-08-08T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/modulus_in_logic</id>
+        <content type="html"><![CDATA[
+<p>Using the result of your Homework 13 solutions, let’s implement some more math functions! Implement <code>modulus</code> that acts like the <code>mod</code> operator in Python. It should return the remainder.</p>
+
+<pre><code>(fact (% ***YOUR CODE HERE*** ))
+
+
+(query (% (1 1 1) (1 1) ?what))
+; expect Success! ; what: (1)
+</code></pre>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Finding the Greatest Common Divisor Using Logic]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13/problems/finding_the_greatest_common_divisor_using_logic"/>
+        <updated>2013-08-08T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/su13/problems/finding_the_greatest_common_divisor_using_logic</id>
+        <content type="html"><![CDATA[
+<p>Using the result of Homework 13 and after implmenting <code>modulus</code> <a href="http://markmiyashita.com/cs61a/sp13/problems/modulus_in_logic/">here</a>, you should be able to take those and write a fact for the greatest common divisor. I would recommending reading the Wikipedia article about using Euclid’s method for finding the GCD of two numbers. The link can be found <a href="http://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid.27s_algorithm">here</a>. Post in the comments if you have any questions.</p>
+
+<pre><code>(fact (gcd ***YOUR CODE HERE*** ))
+
+
+(query (gcd (1 1 1 1) (1 1) ?what))
+; expect Success! ; what: (1 1)
+</code></pre>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[One Stack, One Queue]]></title>

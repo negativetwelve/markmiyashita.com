@@ -3,9 +3,19 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-08-06T02:01:00-07:00</lastmod>
+        <lastmod>2013-08-08T23:56:53-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/modulus_in_logic</loc>
+        <lastmod>2013-08-08T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/problems/finding_the_greatest_common_divisor_using_logic</loc>
+        <lastmod>2013-08-08T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/interviews/problems/one_stack_one_queue</loc>
