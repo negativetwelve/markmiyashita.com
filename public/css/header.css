@@ -54,11 +54,11 @@ header#header h3 {
   margin-top: 10px;
 }
 
-div#links {
+div.links {
   padding-right: 12%;
 }
 
-div#links span a, a.button_link {
+div.links span a, a.button_link {
   position: relative;
   display: inline-block;
   font-size: 15px;
@@ -79,17 +79,17 @@ div#links span a, a.button_link {
   margin-bottom: 10px;
 }
 
-div#links span a:hover, a.button_link:hover {
+div.links span a:hover, a.button_link:hover {
   color: #fff;
   background-color: #000;
   border-color: #000;
 }
 
-div#links span a:hover, a.button_link:hover, figure.logo, aside.alsoby li a:hover, figure.kudo.complete div.filling {
+div.links span a:hover, a.button_link:hover, figure.logo, aside.alsoby li a:hover, figure.kudo.complete div.filling {
   background-color: #14446a;
 }
 
-div#links span a:hover, a.button_link:hover, nav.pagination span.next a, nav.pagination span.prev a, aside.read_next a:hover h3, blockquote {
+div.links span a:hover, a.button_link:hover, nav.pagination span.next a, nav.pagination span.prev a, aside.read_next a:hover h3, blockquote {
   border-color: #14446a;
 }
 
@@ -108,6 +108,35 @@ header#top_bar {
   font-size: 16px;
   letter-spacing: 1px;
   line-height: 23px;
+}
+
+ul#dropdown {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  background-color: white;
+}
+
+a#dropdown-button {
+  
+}
+
+#sub-links {
+  display: none;
+}
+
+
+#dropdown-wrapper {
+}
+
+#dropdown-menu {
+  display: none;
+  list-style: none;
+  width: 300px;
+  position: absolute;
+  z-index: 100;
+  margin: 0px;
+  padding: 0px;
 }
 
 @media only all and (min-width: 1150px) {
@@ -129,7 +158,7 @@ header#top_bar {
     float: left;
   }
 
-  div#links {
+  div.links {
     padding-top: 20px;
   }
 }
@@ -203,12 +232,12 @@ header#top_bar {
     display: none;
   }
   
-  div#links {
+  div.links {
     margin: 0;
     padding: 0;
   }
   
-  div#links span {
+  div.links span {
     display: inline;
     margin: 0;
     margin-right: 0;

@@ -1,0 +1,45 @@
+---
+layout: cs61b_base
+title: CS61B - Data Structures - Mark Miyashita
+---
+
+<header id="top_bar">
+  <date class="current_date"></date>
+</header>
+
+<article class="post" id="extra_problems">
+  <h2>CS61B - Data Structures - UC Berkeley</h2>
+  <p>
+    This is the second course in the CS61 Series at UC Berkeley. The language used throughout the course is Java and the students spend most of their time learning about different data structures, sorting algorithms, and general search algorithms.
+  </p>
+
+  <div class="announcement">
+    <p>
+      Be sure to check out the <a href="/interviews/problems"i>interviews</a> section which contains a lot of interview level questions regarding data structures and run time.
+    </p>
+  </div>
+
+
+  <h2>Notes:</h2>
+  <p>
+    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
+  </p>
+  <ul>
+    {% for topic in site.categories.cs61b reversed %}
+      {% if topic.categories contains 'notes' %}
+        <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  
+  <h2>Problems:</h2>
+  <ul>
+    {% for problem in site.categories.cs61b %}
+      {% if problem.categories contains 'problems' %}
+        <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</article>
+
+

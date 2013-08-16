@@ -69,6 +69,9 @@
           case 105: // 'i' for interview practice
             document.location.href = base + "/interviews/problems";
             break;
+          case 109: // 'm' for more
+            $('#sub-links').slideDown('medium');
+            break;
           case 112: // 'p' for projects
             document.location.href = base + '/projects';
             break;
@@ -81,6 +84,8 @@
           case 99: // 'c' for cs61a
             window.location.href = base + "/cs61a/su13";
             break;
+          default:
+            console.log(e.charCode);
         }
       });
     </script>
