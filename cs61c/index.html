@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS61C - C, Mips, and Computer Achitecture - Mark Miyashita</title>
+    <meta name="author" content="Mark Miyashita" />
+    <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+
+    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="/public/js/prettify.js"></script>
+    <script type="text/javascript" src="/public/js/home.js"></script>
+
+    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/prettify.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/projects.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/resume.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/base.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
+    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
+
+<h1>
+  <a href="/">Mark Miyashita</a>
+</h1>
+
+<h2>
+  <a href="/">negativetwelve</a>
+</h2>
+
+<h3>
+  <p class="about_links">
+    <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+  </p>
+</h3>
+
+<div class="links">
+  <span><a href="/">About</a></span>
+  <span><a href="/projects">Projects</a></span>
+  <span><a href="/resume">Resume</a></span>
+  <span><a href="/blog">Blog</a></span>
+  <span><a href="/cs61a/fa13">CS61A</a></span>
+  <span><a href="#" id="dropdown-button">Other CS Courses</a></span>
+  <span><a href="/interviews/problems">Interview Practice</a></span>
+  <span><a href="/hkn">HKN</a></span>
+  <span><a href="/web_dev">Web Development</a></span>
+  <span><a href="/contact">Contact</a></span>
+</div>
+<div class="links" id="sub-links">
+  <span><a href="/cs61b">CS61B</a></span>
+  <span><a href="/cs61c">CS61C</a></span>
+</div>
+
+
+    </header>
+
+    <section id="main_content">
+
+      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
+
+<header id="top_bar">
+  <date class="current_date"></date>
+</header>
+
+<article class="post" id="extra_problems">
+  <h2>CS61C - C, Mips, and Computer Architecture - UC Berkeley</h2>
+  <p>
+    This is the final class in the CS61 Series at UC Berkeley. The class focuses on more low-level programming including Mips, caching, performance, parallelism, pipelining, CPUs, memory management, and more. It also touches on a few more specific topics such as RAID, virtual memory, and modern microprocessors. The course uses a variety of different languages such as C, Java, Mips, and more.
+  </p>
+  <h2>Notes:</h2>
+  <p>
+    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
+  </p>
+  <ul>
+    
+  </ul>
+  
+  <h2>Problems:</h2>
+  <ul>
+    
+  </ul>
+</article>
+
+
+
+
+
+      <section class="footer">
+  <p class="copyright">
+    © 2013 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
+  </p>
+</section>
+
+    </section>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-29669299-1");
+    pageTracker._trackPageview();
+    </script>
+    <!-- Google Analytics end -->
+
+    <script type="text/javascript">
+      prettyPrint();
+      var date = document.getElementsByClassName("current_date")[0];
+      if (date) {
+        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
+      }
+
+      $(document).keypress(function(e) {
+        base = document.location.origin;
+        switch (e.charCode) {
+          case 97: // 'a' for about
+            document.location.href = base;
+            break;
+          case 98: // 'b' for blog
+            document.location.href = base + '/blog';
+            break;
+          case 104: // 'h' for hkn
+            document.location.href = base + "/hkn";
+            break;
+          case 105: // 'i' for interview practice
+            document.location.href = base + "/interviews/problems";
+            break;
+          case 109: // 'm' for more
+            $('#sub-links').slideDown('medium');
+            break;
+          case 112: // 'p' for projects
+            document.location.href = base + '/projects';
+            break;
+          case 114: // 'r' for resume
+            document.location.href = base + '/resume';
+            break;
+          case 119: // 'w' for web development
+            document.location.href = base + '/web_dev';
+            break;
+          case 99: // 'c' for cs61a
+            window.location.href = base + "/cs61a/su13";
+            break;
+          default:
+            console.log(e.charCode);
+        }
+      });
+    </script>
+
+  </body>
+
+</html>

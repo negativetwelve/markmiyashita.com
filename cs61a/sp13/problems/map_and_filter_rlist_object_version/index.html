@@ -42,17 +42,23 @@
   </p>
 </h3>
 
-<div id="links">
+<div class="links">
   <span><a href="/">About</a></span>
   <span><a href="/projects">Projects</a></span>
   <span><a href="/resume">Resume</a></span>
   <span><a href="/blog">Blog</a></span>
-  <span><a href="/cs61a/su13">CS61A</a></span>
+  <span><a href="/cs61a/fa13">CS61A</a></span>
+  <span><a href="#" id="dropdown-button">Other CS Courses</a></span>
   <span><a href="/interviews/problems">Interview Practice</a></span>
   <span><a href="/hkn">HKN</a></span>
   <span><a href="/web_dev">Web Development</a></span>
   <span><a href="/contact">Contact</a></span>
 </div>
+<div class="links" id="sub-links">
+  <span><a href="/cs61b">CS61B</a></span>
+  <span><a href="/cs61c">CS61C</a></span>
+</div>
+
 
     </header>
 
@@ -235,6 +241,9 @@ def filter_rlist(fn, s):
           case 105: // 'i' for interview practice
             document.location.href = base + "/interviews/problems";
             break;
+          case 109: // 'm' for more
+            $('#sub-links').slideDown('medium');
+            break;
           case 112: // 'p' for projects
             document.location.href = base + '/projects';
             break;
@@ -247,6 +256,8 @@ def filter_rlist(fn, s):
           case 99: // 'c' for cs61a
             window.location.href = base + "/cs61a/su13";
             break;
+          default:
+            console.log(e.charCode);
         }
       });
     </script>

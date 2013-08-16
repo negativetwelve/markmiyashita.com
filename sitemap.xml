@@ -3,9 +3,19 @@
     
     <url>
         <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-08-08T23:56:53-07:00</lastmod>
+        <lastmod>2013-08-16T03:53:43-07:00</lastmod>
     </url>
     
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/problems/what_are_functions</loc>
+        <lastmod>2013-08-15T00:00:00-07:00</lastmod>
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/notes/getting_started_with_python</loc>
+        <lastmod>2013-08-15T00:00:00-07:00</lastmod>
+    </url>
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/problems/modulus_in_logic</loc>

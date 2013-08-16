@@ -6,6 +6,17 @@ $(document).ready(function() {
 
   styleCode();
 
+  $(document).click(function(event) {
+    $('#sub-links').slideUp('medium');
+  });
+  
+  $('a#dropdown-button').click(function(event) {
+    event.stopPropagation();
+    event.preventDefault();
+    $('#sub-links').slideDown('medium');
+  });
+    //$('#dropdown-menu').slideUp('medium');
+
 });
 
 
