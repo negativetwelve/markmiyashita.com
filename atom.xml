@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-08-16T03:53:43-07:00</updated>
+    <updated>2013-08-17T12:39:18-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -54,7 +54,7 @@
     <li>5</li>
     <li>36 (printed)</li>
     <li>6</li>
-    <li>36 (printed)
+    <li>36 (printed) <br />
 36 (printed)</li>
     <li>6</li>
   </ol>
@@ -3072,7 +3072,7 @@ f(h, foo(h, 3)) #2
     <li>5</li>
     <li>36 (printed)</li>
     <li>6</li>
-    <li>36 (printed)
+    <li>36 (printed) <br />
 36 (printed)</li>
     <li>6</li>
   </ol>
