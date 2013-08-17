@@ -31,7 +31,7 @@ What would the following output in Python?
 2. 5
 3. 36 (printed)
 4. 6
-5. 36 (printed)
+5. 36 (printed) <br/>
    36 (printed)
 6. 6
 
