@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog_post
 title: "Install Heroku and Deploy Your App"
 tags: [heroku, deploy]
 categories: [blog]

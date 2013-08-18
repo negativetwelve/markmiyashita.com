@@ -12,3 +12,17 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+li {
+  font-size: 17px;
+  line-height: 27px;
+}
+
+header li {
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.navbar {
+  border: none;
+}

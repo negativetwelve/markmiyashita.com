@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog_post
 title: "Python *args and **kwargs"
 tags: [python]
 categories: [blog]

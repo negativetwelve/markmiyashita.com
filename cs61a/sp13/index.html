@@ -1,13 +1,9 @@
 ---
 layout: cs61a
-title: CS61A - Fall 2013
+title: CS61A - Spring 2013
 ---
 <article class="post">
-  <h2>CS61A Fall 2013</h2>
-
-  <p id="previous_semesters">
-    Previous Semesters: <a href="/cs61a/su13">Summer 2013</a> &middot; <a href="/cs61a/sp13">Spring 2013</a>
-  </p>
+  <h2>CS61A Spring 2013</h2>
 
   <div class="bs-callout bs-callout-info">
     <h2>Announcements</h2>
@@ -15,23 +11,31 @@ title: CS61A - Fall 2013
       If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a>
     </p>
     <ul>
-      <li>If you would like to lab assist in the Fall, please fill out <a href="https://docs.google.com/forms/d/15hC07VjqZ70PLZ69nfwcaSARZg1pMqboZy8kOsibyx0/viewform">this form</a> or send me an email.
+      <li>
+        Thanks for an awesome semester guys! If you need/want to contact me for whatever reason, you can find my email address in the <a href="http://markmiyashita.com/contact">contact section</a>! Have a great summer!
+      </li>
+      <li>
+        If you are interested in becoming a lab assistant for the summer, please contact me. My information is above and it is also on the pinned post on Piazza. You can either choose to volunteer or you can actually receive units based on the amount of time that you work! Email me with any questions!
+      </li>
     </ul>
   </div>
   
   <h4>Office Hours:</h4>
   <p>
-    TBD
+    Tuesday 11am-12pm, 3-4pm in 751 Soda<br/>
+    Wednesday 2-3pm in 345 Soda<br/>
+    Thursday 11am-12pm in 345 Soda<br/>
   </p>
   
   <h4>Sections:</h4>
   <p>
-    TBD
+    Lab/Disc 23 - WF 11am-12:30pm<br/>
+    Lab/Disc 27 - TTh 9:30am-11am
   </p>
   
   <h4>Email:</h4>
   <p>
-    TBD
+    <a href="mailto:cs61a-td@imail.eecs.berkeley.edu">cs61a-td@imail.eecs.berkeley.edu</a>
   </p>
   
   <h4>Personal:</h4>
@@ -47,7 +51,7 @@ title: CS61A - Fall 2013
     These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
   </p>
   <ul>
-    {% for topic in site.categories.fa13 reversed %}
+    {% for topic in site.categories.sp13 reversed %}
       {% if topic.categories contains 'notes' %}
         <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
       {% endif %}
@@ -56,7 +60,7 @@ title: CS61A - Fall 2013
   
   <h2>Problems:</h2>
   <ul>
-    {% for problem in site.categories.fa13 %}
+    {% for problem in site.categories.sp13 %}
       {% if problem.categories contains 'problems' %}
         <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
       {% endif %}
