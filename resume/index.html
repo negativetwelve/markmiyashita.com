@@ -1,0 +1,123 @@
+---
+layout: default
+title: Resume
+---
+<h1>Resume</h1>
+
+<div class="alert alert-info">
+  Thanks for checking out my resume. Below you will find an interactive version and you can download a pdf <a class="alert-link" href="/downloads/mark_miyashita_resume.pdf">here.</a>
+</div>
+
+<div class="page-header" id="education">
+  <!--
+  <img src="/public/images/berkeley.png" alt="berkeley" class="resume_image">
+  -->
+  <h1>Education</h1>
+</div>
+<div class="page-content">
+  <h3>University of California, Berkeley, 2015</h3>
+  <h4>B.S. Electrical Engineering and Computer Sciences (EECS)</h4>
+  <p>
+    Relevent Coursework: CS170 (Algorithms), CS61C (C, Mips), CS61BL (Java and Data Structures), CS61A (Python), CS98 (iOS/Objective-C), CS9E (Unix)
+  </p>
+</div>
+
+<div class="page-header" id="work">
+  <h1>Experience</h1>
+</div>
+<div class="page-content">
+  {% for job in site.work %}
+  <h3>{{ job.role }} at {{ job.name }}</h3>
+  <h4>({{ job.start-date }} - {{ job.end-date }})</h4>
+  <p>
+    {{ job.description }}
+  </p>
+  {% endfor %}
+</div>
+
+<div class="page-header" id="projects">
+  <h1>Projects</h1>
+</div>
+<div class="page-content">
+  {% for project in site.projects limit:5 %}
+  <h3>{{ project.name }}
+      {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
+      {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
+  </h3>
+  <p>
+    {{ project.description }}
+  </p>
+  {% endfor %}
+
+  <a class="large button" href="/projects">See more</a>
+</div>
+
+<div class="page-header" id="leadership">
+  <h1>Leadership</h1>
+</div>
+<div class="page-content">
+  <h3>HKN (Eta Kappa Nu) Department Relations - Fall 2013</h3>
+  <p>
+    I am the liaison between the EECS Administrative staff and HKN and the rest of the student body. I attend meetings that make decisions the affect students in EECS as well as give department tours to prospective students who are thinking of coming to Cal.
+  </p>
+
+  <h3>Cal Blueprint Project Leader - Fall 2013</h3>
+  <p>
+    I lead a team of four project members to build an application that will help a non-profit organization.
+  </p>
+
+  <h3>HKN (Eta Kappa Nu) Bridge Officer - Spring 2013</h3>
+  <p>
+    I am in charge of recording and capturing, the everlasting moments that take place during HKN events. I am also in charge of overseeing a group of candidates as they progress through the semester to becoming initiates in the EECS Honors Society.
+  </p>
+
+  <h3>Hackers@Berkeley Officer:</h3>
+  <p>
+    I help run <a href="http://hackersatberkeley.com">Hackers@Berkeley</a>, the largest computer science and engineering club at Cal. Responsibilities include maintaining the club website (<a href="http://hackersatberkeley.com">hackersatberkeley.com</a>) as well as planning and running events such as workshops.
+  </p>
+</div>
+
+<div class="page-header" id="skills">
+  <h1>Skills</h1>
+</div>
+<div class="page-content">
+  <h3>Proficient in:</h3>
+  <p>
+    Python, Ruby on Rails, Javascript, Objective-C, HTML5, CSS
+  </p>
+
+  <h3>Experience in:</h3>
+  <p>
+    Java, Angular.js, C, iOS Development, Node.js, Ajax, Json, jQuery, Coffeescript, Sass, Scheme
+  </p>
+
+  <h3>Other Software:</h3>
+  <p>
+    Mac OS X, Unix, Windows 7/Vista/XP, Adobe Photoshop CS4/CS5, Microsoft Office (Word, Excel, Powerpoint)
+  </p>
+</div>
+
+<div class="page-header" id="awards">
+  <h1>Awards</h1>
+</div>
+<div class="page-content">
+  <h3>H@B Hackjam - Spring 2013 - 3rd Place</h3>
+  <p>
+    My team won 3rd place. We built a website that uses the web camera to detect the colors of a rubiks cube that the user holds up to the screen. Using computer vision, we detected the colors, passed the output to a solver, and then displayed the steps necessary to solve the cube. Guaranteed to not run in polynomial time.
+  </p>
+
+  <h3>HKN Outstanding Candidate - Fall 2012</h3>
+  <p>
+    I was selected as the Outstanding Candidate for the Fall 2012 initiates into HKN, the EECS Honors Society at UC Berkeley.
+  </p>
+
+  <h3>H@B Hackjam - Fall 2012 - Hilfinger Award from Box</h3>
+  <p>
+    My teammate and I were selected for this award based on our submission Tim which is described above.
+  </p>
+
+  <h3>HKN (Eta Kappa Nu) Candidate - Fall 2012</h3>
+  <p>
+    I was selected as a candidate for the EECS Honors Society. HKN accepts students in the top 1/4 of the Junior standing EECS students.
+  </p>
+</div>

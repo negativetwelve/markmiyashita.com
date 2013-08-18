@@ -1,0 +1,17 @@
+---
+layout: web_dev_base
+title: Rails Walkthrough - Mark Miyashita
+---
+<header id="top_bar">
+  <date class="current_date"></date>
+</header>
+
+<article class="post" markdown="1">
+
+{% capture toc %}
+{% include rails_walkthrough/table_of_contents.md %}
+{% endcapture %}
+
+{{ toc | markdownify }}
+
+</article>
