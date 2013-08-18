@@ -1,5 +1,5 @@
 ---
-layout: note
+layout: cs_note
 title: "Generic Functions and Type Dispatching"
 tags: [type dispatching, generic functions]
 categories: [cs61a, su13, notes]

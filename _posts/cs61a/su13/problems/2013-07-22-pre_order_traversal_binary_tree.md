@@ -1,5 +1,5 @@
 ---
-layout: problem
+layout: cs_problem
 title: "Pre Order Traversal (Binary Tree)"
 type: Challenge
 tags: [recursion, tree recursion]
