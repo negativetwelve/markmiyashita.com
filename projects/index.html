@@ -8,7 +8,6 @@ title: Projects - Mark Miyashita
 
 {% for project in site.projects %}
   <article class="post no_overflow">
-    <img class="project_image" src="{{ project.image }}"></img>
     <div class="project_description">
     <h3>{{ project.name }}
       {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
@@ -17,6 +16,7 @@ title: Projects - Mark Miyashita
     <p>
       {{ project.description }}
     </p>
+    <img class="project_image" src="{{ project.image }}"></img>
   </div>
   </article>
 {% endfor %}

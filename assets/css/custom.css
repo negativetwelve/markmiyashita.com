@@ -10,3 +10,11 @@
   font-size: 14px;
   line-height: 20px;
 }
+
+.project_image {
+  max-width: 100%;
+}
+
+.img-border {
+  max-width: 100%;
+}

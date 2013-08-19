@@ -29,4 +29,5 @@ header li {
 
 .navbar {
   border: none;
+  min-height: 40px;
 }
