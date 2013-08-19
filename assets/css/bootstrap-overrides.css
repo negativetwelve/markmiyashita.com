@@ -18,9 +18,13 @@ li {
   line-height: 27px;
 }
 
+.nav > li > a {
+  padding: 10px;
+}
+
 header li {
-  font-size: 15px;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .navbar {

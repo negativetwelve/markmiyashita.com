@@ -2,18 +2,18 @@
 layout: one_column
 title: Projects - Mark Miyashita
 ---
-<header id="top_bar">
-  Projects
-</header>
+<div class="page-header">
+  <h1>Projects</h1>
+</div>
 
 {% for project in site.projects %}
   <article class="post no_overflow">
     <img class="project_image" src="{{ project.image }}"></img>
     <div class="project_description">
-    <h2>{{ project.name }}
+    <h3>{{ project.name }}
       {% if project.url %}<a href="{{ project.url }}">(demo)</a>{% endif %}
       {% if project.repo %}<a href="{{ project.repo }}">(repo)</a>{% endif %}
-    </h2>
+    </h3>
     <p>
       {{ project.description }}
     </p>
