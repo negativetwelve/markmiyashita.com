@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<div class="col-md-3">
+  <div class="bs-sidebar hidden-print" role="complementary">
+    <ul class="nav bs-sidenav">
+      {% capture nav_path %}navigation/{{ page.nav }}.html{% endcapture %}
+      {% include nav_path %}
+    </ul>
+  </div>
+</div>
+<div class="col-md-9" role="main">
+  {{ content }}
+</div>

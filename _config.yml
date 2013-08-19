@@ -13,6 +13,9 @@ author:
 
 current_semester: fa13
 
+cs61a_categories:
+  basics: [su13, fa13]
+  higher_order_functions: [sp13, su13]
 
 work:
   - name: Yelp
