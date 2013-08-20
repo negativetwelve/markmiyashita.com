@@ -1,9 +1,26 @@
 ---
 layout: cs_course
 ---
+{% capture class_name %}{{ page.categories[0] }}{% endcapture %}
+{% if page.categories.size > 1 %}
+  {% capture semester %}{{ page.categories[1] }}{% endcapture %}
+{% else %}
+  {% capture semester %}base{% endcapture %}
+{% endif %}
 
-This is a topic.
 
-{{ page }}
+<h1>{{ page.categories[0] | upcase }} - {{ page.title }}</h1>
 
-{{ content }}
+<div class="page-header">
+  <h3>Practice Problems:</h3>
+</div>
+{% for problem in site.categories[class_name] %}
+  {% if problem.tags contains semester %}
+    {% if problem.categories contains 'basics' %}
+      <li><a href="{{ problem.url }}">{{ problem.title }}</a></li>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+
+

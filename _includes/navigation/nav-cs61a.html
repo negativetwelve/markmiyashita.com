@@ -1,5 +1,0 @@
-{% for topic in site.cs61a_categories %}
-  {% if topic[1] contains page.categories[1] %}
-    <li><a href="/cs61a/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
-  {% endif %}
-{% endfor %}
