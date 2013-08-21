@@ -21,7 +21,7 @@ end
 desc "generate site"
 task :generate do
   puts("Generating static site into _deploy")
-  system('jekyll build')
+  system('jekyll build --config _config.yml,_cs_config.yml,_work_config.yml,_projects_config.yml')
 end
 
 desc "deploy site"

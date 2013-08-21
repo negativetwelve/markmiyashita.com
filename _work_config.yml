@@ -1,0 +1,74 @@
+work:
+  - name: Yelp
+    role: Software Engineering Intern - Mobile Team
+    start-date: "May '13"
+    end-date: "Present"
+    image: /assets/images/yelp.png
+    modal: yelp
+    description: As an intern on the Mobile Team, I built a flow analysis tool that allows you to breakdown and visualize user flows from the app. It also enables a visual interface for A/B testing and breakdown of data by dimensions. Gave a technical presentation to all of Yelp Engineering about the architecture of my project and how to extend it. I also worked on improving performance for some of our back-end processing, worked with analytics on the mobile apps, and added a few minor features to the iOS app.
+    full-description:
+
+  - name: UC Berkeley
+    role: Undergraduate Student Instructor for CS61A
+    start-date: "Jan. '13"
+    end-date: "Present"
+    image: /assets/images/berkeley.png
+    modal: cs61a-ta
+    description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. My TA ratings are located <a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">here.</a>
+    full-description:
+
+  - name: Kloudless
+    role: Software Engineer
+    start-date: "Dec. '12"
+    end-date: "May '13"
+    image: /assets/images/kloudless.png
+    modal: kloudless
+    description: I worked on adding automation for attachments by adding a stream that listens for new emails and then processes a set of user-defined rules. The stream is an abstraction for Storm, a distributed realtime computation system.
+    full-description:
+
+  - name: Inigral Inc.
+    role: Software Engineer Intern
+    start-date: "Jul. '12"
+    end-date: "Dec. '12"
+    image: /assets/images/inigral.png
+    modal: inigral
+    description: I worked on both the front and back-end of Inigral's large scale Rails app. On the back-end, I worked to optimize database queries as well as fix bugs that involved the administrative panels. On the front-end, I fixed several issues dealing with the appearance of the communities pages.
+    full-description:
+
+  - name: UC Berkeley
+    role: CS10 Head Reader
+    start-date: "Aug. '12"
+    end-date: "Dec. '12"
+    image: /assets/images/berkeley.png
+    modal: cs10-reader
+    description: As the Head Reader for the undergraduate course CS10, I not only grade homework, projects, and exams, but also work with Professor Dan Garcia to deal with logistics and delegation of work among the readers.
+    full-description:
+
+  - name: UC Berkeley SA-IT
+    role: Residential Computing Consultant
+    start-date: "May '12"
+    end-date: "May '13"
+    image: /assets/images/rescomp.png
+    modal: rescomp
+    description: I provide technical support and customer service on topics such as computer software, security, and general hardware configurations for all students living in university-owned housing. I also lead workshops geared towards teaching students about being safe on the web.
+    full-description:
+
+  - name: UC Berkeley
+    role: CS61A Reader
+    start-date: "May '12"
+    end-date: "Dec. '12"
+    image: /assets/images/berkeley.png
+    modal: cs61a-reader
+    description: This semester, working with Professor John DeNero, my job is to focus on coding style within projects. I help students become both precise and concise in their code while still keeping it readable and manageable.
+    full-description:
+
+  - name: Mac Hints from BinaryAge
+    role: Website Developer/Editor
+    start-date: "Feb. '12"
+    end-date: "May '13"
+    image: /assets/images/binaryage.png
+    modal: binaryage
+    description: I develop and maintain a subsection of the website BinaryAge.com. I designed the layout and contribute articles every week. Over 290,000 views since I began developing in March of 2012. Average of 1,500 views a day/45,000 views a month.
+    full-description:
+
+

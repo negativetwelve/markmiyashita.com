@@ -1,16 +1,3 @@
----
-layout: cs_problem
-title: What Are Functions?
-type: Warmup
-category: basics
-tags: [functions]
-semesters: [base, su13, fa13]
-include: cs61a/problems/basics/what_are_functions.md
-
-published: true
-solution: [su13, fa13]
----
-
 {% capture question %}
 So far, we've been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don't worry if these are hard at first, they will get easier throughout the semester!
 

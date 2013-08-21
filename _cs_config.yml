@@ -1,0 +1,43 @@
+current_semester: fa13
+
+cs_classes:
+  cs61a:
+    basics: [base, su13, fa13]
+    functions: []
+    control: []
+    higher_order_functions: [base, sp13, su13]
+    environment_diagrams: []
+    lambdas: []
+    newtons_method: []
+    recursion: [base, sp13]
+    rlists: [base, sp13]
+    data_abstraction: []
+    iterables: []
+    object_oriented_programming: [base, sp13]
+    dictionaries: [base, sp13]
+    mutable_data: [base, sp13]
+    inheritance: [base, sp13]
+    generic_functions: [base, sp13]
+    orders_of_growth: [base, sp13]
+    tree_recursion: [base, sp13]
+    memoization: [base, sp13]
+    functional_programming: []
+    scheme: []
+    exceptions: []
+    interpreters: []
+    tail_recursion: []
+    streams: []
+    generators: []
+    iterators: []
+    declarative_programming: []
+    logic: [base, sp13]
+    unification: []
+    mapreduce: []
+    parallelism: []
+  cs61b:
+    basics: [base]
+    linked_list: []
+  cs61c:
+  cs70:
+  cs170:
+  cs188:
