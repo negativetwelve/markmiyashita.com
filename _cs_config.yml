@@ -2,41 +2,108 @@ current_semester: fa13
 
 cs_classes:
   cs61a:
-    basics: [base, su13, fa13]
-    functions: []
-    control: []
-    higher_order_functions: [base, sp13, su13]
-    environment_diagrams: []
-    lambdas: []
-    newtons_method: []
-    recursion: [base, sp13]
-    rlists: [base, sp13]
-    data_abstraction: []
-    iterables: []
-    object_oriented_programming: [base, sp13]
-    dictionaries: [base, sp13]
-    mutable_data: [base, sp13]
-    inheritance: [base, sp13]
-    generic_functions: [base, sp13]
-    orders_of_growth: [base, sp13]
-    tree_recursion: [base, sp13]
-    memoization: [base, sp13]
-    functional_programming: []
-    scheme: []
-    exceptions: []
-    interpreters: []
-    tail_recursion: []
-    streams: []
-    generators: []
-    iterators: []
-    declarative_programming: []
-    logic: [base, sp13]
-    unification: []
-    mapreduce: []
-    parallelism: []
+    basics:
+      semesters: [base, su13, fa13]
+      problems:
+        - name: "What Are Functions?"
+          file: what_are_functions
+          type: Warmup
+          tags: [functions]
+          semesters:
+            - base:
+                date: "2013-06-15"
+                published: true
+                solution: true
+              su13:
+                date: "2013-06-15"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-08-15"
+                published: true
+                solution: true
+
+      notes:
+        - name: "Getting Started with Python"
+          file: getting_started_with_python
+          tags: [functions, variables]
+          semesters:
+            - base:
+                date: "2013-06-15"
+                published: true
+              su13:
+                date: "2013-06-15"
+                published: true
+              fa13:
+                date: "2013-08-15"
+                published: true
+    functions:
+      semesters: []
+    control:
+      semesters: []
+    higher_order_functions:
+      semesters: [base, sp13, su13]
+    environment_diagrams:
+      semesters: []
+    lambdas:
+      semesters: []
+    newtons_method:
+      semesters: []
+    recursion:
+      semesters: [base, sp13]
+    rlists:
+      semesters: [base, sp13]
+    data_abstraction:
+      semesters: []
+    iterables:
+      semesters: []
+    object_oriented_programming:
+      semesters: [base, sp13]
+    dictionaries:
+      semesters: [base, sp13]
+    mutable_data:
+      semesters: [base, sp13]
+    inheritance:
+      semesters: [base, sp13]
+    generic_functions:
+      semesters: [base, sp13]
+    orders_of_growth:
+      semesters: [base, sp13]
+    tree_recursion:
+      semesters: [base, sp13]
+    memoization:
+      semesters: [base, sp13]
+    functional_programming:
+      semesters: []
+    scheme:
+      semesters: []
+    exceptions:
+      semesters: []
+    interpreters:
+      semesters: []
+    tail_recursion:
+      semesters: []
+    streams:
+      semesters: []
+    generators:
+      semesters: []
+    iterators:
+      semesters: []
+    declarative_programming:
+      semesters: []
+    logic:
+      semesters: [base, sp13]
+    unification:
+      semesters: []
+    mapreduce:
+      semesters: []
+    parallelism:
+      semesters: []
   cs61b:
-    basics: [base]
-    linked_list: []
+    basics:
+      semesters: [base]
+    linked_list:
+      semesters: []
   cs61c:
   cs70:
   cs170:

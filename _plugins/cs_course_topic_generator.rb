@@ -33,14 +33,17 @@ module Jekyll
         cs_classes.each do |course, course_hash|
           dir = "#{course}/"
           unless course_hash.nil? or course_hash.size == 0
-            course_hash.each do |topic, semesters|
-              semesters.each do |semester|
-                if semester != 'base'
-                  semester_dir = dir + semester
-                  site.pages << CSTopicPage.new(site, site.source, File.join(semester_dir, topic), topic, [course, semester])
+            course_hash.each do |topic, topic_hash|
+              semesters = topic_hash["semesters"]
+              unless semesters.nil? or semesters.size == 0
+                semesters.each do |semester|
+                  if semester != 'base'
+                    semester_dir = dir + semester
+                    site.pages << CSTopicPage.new(site, site.source, File.join(semester_dir, topic), topic, [course, semester, topic])
+                  end
                 end
+                site.pages << CSTopicPage.new(site, site.source, File.join(dir, topic), topic, [course, topic])
               end
-              site.pages << CSTopicPage.new(site, site.source, File.join(dir, topic), topic, [course])
             end
           end
         end
