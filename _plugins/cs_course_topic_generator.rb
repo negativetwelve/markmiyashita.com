@@ -9,6 +9,25 @@ module Jekyll
       underscore(word).gsub(/\b('?[a-z])/) { $1.capitalize }
     end
 
+    def semesterize(string)
+      season = string[0..1]
+      case season
+      when "fa"
+        season = "Fall"
+      when "sp"
+        season = "Spring"
+      when "su"
+        season = "Summer"
+      when "wi"
+        season = "Winter"
+      end
+
+      year = string[2..3]
+      year = "20" + year
+
+      return "#{season} #{year}"
+    end
+
     def initialize(site, base, dir, topic, categories)
       @site = site
       @base = base
@@ -20,7 +39,11 @@ module Jekyll
 
       self.data['topic'] = topic
       self.data['categories'] = categories
-      self.data['title'] = "#{titleize(topic)}"
+      if categories.size == 3
+        self.data['title'] = "#{categories[0].upcase} - #{semesterize(categories[1])} - #{titleize(topic)}"
+      else
+        self.data['title'] = "#{categories[0].upcase} - #{titleize(topic)}"
+      end
     end
   end
 

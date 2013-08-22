@@ -4,3 +4,50 @@
 <script src="{{ page.base_url }}/assets/js/jquery-1.8.3.min.js"></script>
 <script src="{{ page.base_url }}/assets/js/bootstrap.min.js"></script>
 
+<!-- Google Analytics -->
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  var pageTracker = _gat._getTracker("UA-29669299-1");
+  pageTracker._trackPageview();
+</script>
+<!-- Google Analytics end -->
+
+<script type="text/javascript">
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>

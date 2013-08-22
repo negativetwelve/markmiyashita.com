@@ -11,11 +11,9 @@
   {% endif %}
 </title>
 
-<!-- Bootstrap core CSS -->
 <link href="{{ page.base_url }}/assets/css/bootstrap.css" rel="stylesheet">
 <link href="{{ page.base_url }}/assets/css/bootstrap-overrides.css" rel="stylesheet">
 
-<!-- Documentation extras -->
 <link href="{{ page.base_url }}/assets/css/main.css" rel="stylesheet">
 <link href="{{ page.base_url }}/assets/css/pygments.css" rel="stylesheet">
 <link href="{{ page.base_url }}/assets/css/custom.css" rel="stylesheet">
@@ -25,64 +23,3 @@
   <script src="{{ page.base_url }}assets/js/html5shiv.js"></script>
   <script src="{{ page.base_url }}assets/js/respond.min.js"></script>
 <![endif]-->
-
-<!-- Favicons -->
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ page.base_url }}assets/ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ page.base_url }}assets/ico/apple-touch-icon-114-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ page.base_url }}assets/ico/apple-touch-icon-72-precomposed.png">
-                <link rel="apple-touch-icon-precomposed" href="{{ page.base_url }}assets/ico/apple-touch-icon-57-precomposed.png">
-                               <link rel="shortcut icon" href="{{ page.base_url }}assets/ico/favicon.png">
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-  var pageTracker = _gat._getTracker("UA-29669299-1");
-  pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
-
-<script type="text/javascript">
-  prettyPrint();
-  var date = document.getElementsByClassName("current_date")[0];
-  if (date) {
-    date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
-  }
-
-$(document).keypress(function(e) {
-  base = document.location.origin;
-  switch (e.charCode) {
-    case 97: // 'a' for about
-      document.location.href = base;
-      break;
-    case 98: // 'b' for blog
-      document.location.href = base + '/blog';
-      break;
-    case 104: // 'h' for hkn
-      document.location.href = base + "/hkn";
-      break;
-    case 105: // 'i' for interview practice
-      document.location.href = base + "/interviews/problems";
-      break;
-    case 109: // 'm' for more
-      $('#sub-links').slideDown('medium');
-      break;
-    case 112: // 'p' for projects
-      document.location.href = base + '/projects';
-      break;
-    case 114: // 'r' for resume
-      document.location.href = base + '/resume';
-      break;
-    case 119: // 'w' for web development
-      document.location.href = base + '/web_dev';
-      break;
-    case 99: // 'c' for cs61a
-      window.location.href = base + "/cs61a";
-      break;
-    default:
-      console.log(e.charCode);
-  }
-});
-</script>

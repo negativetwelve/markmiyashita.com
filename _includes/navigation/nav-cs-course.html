@@ -1,5 +1,6 @@
 {% capture class_name %}{{ page.categories[0] }}{% endcapture %}
 {% capture semester %}{{ page.categories[1] }}{% endcapture %}
+
 {% capture topics %}{% for topic in site.cs_classes[class_name] %}{{ topic[0] }},{% endfor %}{% endcapture %}
 {% assign topics = topics | split: ',' %}
 
@@ -7,7 +8,7 @@
   {% if topic[1]["semesters"].size > 0 %}
     {% if topic[1]["semesters"] contains semester %}
       <li><a href="/{{ class_name }}/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
-    {% elsif page.categories.size == 2 and topics contains page.categories[1] %}
+    {% elsif page.categories.size == 1  or (page.categories.size == 2 and topics contains page.categories[1]) %}
       <li><a href="/{{ class_name }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
     {% endif %}
   {% endif %}

@@ -1,6 +1,6 @@
 module Jekyll
 
-  class CSProblem < Page
+  class CSItem < Page
     def underscore(word)
       word.gsub('_', ' ')
     end
@@ -9,7 +9,7 @@ module Jekyll
       underscore(word).gsub(/\b('?[a-z])/) { $1.capitalize }
     end
 
-    def initialize(site, base, course, semester, semester_info, topic, problem)
+    def initialize(site, base, course, semester, semester_info, topic, item, is_problem)
       @site = site
       @base = base
       base_dir = "#{course}/"
@@ -17,25 +17,53 @@ module Jekyll
         base_dir += "#{semester}/"
       end
       base_dir += "#{topic}/"
-      @dir = File.join(base_dir, problem["file"])
+      @dir = File.join(base_dir, item["file"])
       @name = 'index.html'
 
       self.process(@name)
-      self.read_yaml(File.join(base, "_layouts"), "cs_problem.html")
 
-      self.data["title"] = course.upcase + " - " + problem["name"]
-      self.data["name"] = problem["name"]
+      if is_problem
+        self.read_yaml(File.join(base, "_layouts"), "cs_problem.html")
+      else
+        self.read_yaml(File.join(base, "_layouts"), "cs_note.html")
+      end
+
+      self.data["title"] = course.upcase + " - " + item["name"]
+      self.data["name"] = item["name"]
+
       if semester == "base"
         self.data["categories"] = [course, topic]
       else
         self.data["categories"] = [course, semester, topic]
       end
-      self.data["file"] = problem["file"]
-      self.data["type"] = problem["type"]
-      self.data["tags"] = problem["tags"]
+
+      self.data["file"] = item["file"]
+      self.data["semester"] = semester
+      self.data["tags"] = item["tags"]
       self.data["date"] = semester_info["date"]
       self.data["published"] = semester_info["published"]
+    end
+  end
+
+  class CSProblem < CSItem
+    alias :super_initialize :initialize
+
+    def initialize(site, base, course, semester, semester_info, topic, problem)
+      super_initialize(site, base, course, semester, semester_info, topic, problem, true)
+      self.data["type"] = problem["type"]
       self.data["solution"] = semester_info["solution"]
+      self.data["is_problem"] = true
+      self.data["is_note"] = false
+    end
+  end
+
+  class CSNote < CSItem
+    alias :super_initialize :initialize
+
+    def initialize(site, base, course, semester, semester_info, topic, note)
+      super_initialize(site, base, course, semester, semester_info, topic, note, false)
+      self.data["is_problem"] = false
+      self.data["is_note"] = true
     end
   end
 
@@ -56,6 +84,17 @@ module Jekyll
                   semesters.each do |semester_hash|
                     semester_hash.each do |semester, semester_info|
                       site.pages << CSProblem.new(site, site.source, course, semester, semester_info, topic, problem)
+                    end
+                  end
+                end
+              end
+              notes = topic_hash["notes"]
+              unless notes.nil? or notes.size == 0
+                notes.each do |note|
+                  semesters = note["semesters"]
+                  semesters.each do |semester_hash|
+                    semester_hash.each do |semester, semester_info|
+                      site.pages << CSNote.new(site, site.source, course, semester, semester_info, topic, note)
                     end
                   end
                 end

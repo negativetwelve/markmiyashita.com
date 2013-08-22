@@ -29,10 +29,10 @@ cs_classes:
           tags: [functions, variables]
           semesters:
             - base:
-                date: "2013-06-15"
+                date: "2013-05-14"
                 published: true
               su13:
-                date: "2013-06-15"
+                date: "2013-05-14"
                 published: true
               fa13:
                 date: "2013-08-15"
@@ -50,7 +50,25 @@ cs_classes:
     newtons_method:
       semesters: []
     recursion:
-      semesters: [base, sp13]
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Sum Digits"
+          file: sum_digits
+          type: Warmup
+          tags: [iteration, math]
+          semesters:
+            - base:
+                date: "2013-02-18"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-02-18"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-03"
+                published: true
+                solution: true
     rlists:
       semesters: [base, sp13]
     data_abstraction:
@@ -102,6 +120,14 @@ cs_classes:
   cs61b:
     basics:
       semesters: [base]
+      notes:
+        - name: "Getting Started with Java"
+          file: getting_started_with_java
+          tags: [classes, types]
+          semesters:
+            - base:
+                date: "2013-08-20"
+                published: true
     linked_list:
       semesters: []
   cs61c:

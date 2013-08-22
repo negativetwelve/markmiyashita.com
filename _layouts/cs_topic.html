@@ -2,25 +2,47 @@
 layout: cs_course
 ---
 {% capture class_name %}{{ page.categories[0] }}{% endcapture %}
-{% if page.categories.size > 1 %}
+{% if page.categories.size > 2 %}
+  {% capture topic %}{{ page.categories[2] }}{% endcapture %}
   {% capture semester %}{{ page.categories[1] }}{% endcapture %}
 {% else %}
+  {% capture topic %}{{ page.categories[1] }}{% endcapture %}
   {% capture semester %}base{% endcapture %}
 {% endif %}
 
 
-<h1>{{ page.categories[0] | upcase }} - {{ page.title }}</h1>
+<h1>{{ page.title }}</h1>
+
+<div class="page-header">
+  <h3>Notes:</h3>
+</div>
+
+<div class="cs-notes">
+  <ul>
+  {% for p in site.pages %}
+    {% if p.is_note and p.categories[0] == class_name and p.semester == semester and p.categories contains topic %}
+      <li><h4><a href="{{ p.url | urlify }}">{{ p.name }}</a></h4></li>
+      {{ p.content | split:'<!--start-->' | last | split: '<!--end-->' | first }}
+      <a href="{{ p.url | urlify }}">(Read More!)</a>
+    {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 <div class="page-header">
   <h3>Practice Problems:</h3>
 </div>
-{% for problem in site.categories[class_name] %}
-  {% if problem.tags contains semester %}
-    {% if problem.categories contains 'basics' %}
-      <li><a href="{{ problem.url }}">{{ problem.title }}</a></li>
+
+<div class="cs-problems">
+  <p>
+    Below are a list of practice problems, test what you've learned!
+  </p>
+
+  <ul>
+  {% for p in site.pages %}
+    {% if p.is_problem and p.categories[0] == class_name and p.semester == semester and p.categories contains topic %}
+      <li><a href="{{ p.url | urlify }}">{{ p.name }}</a></li>
     {% endif %}
-  {% endif %}
-{% endfor %}
-
-
-
+  {% endfor %}
+  </ul>
+</div>

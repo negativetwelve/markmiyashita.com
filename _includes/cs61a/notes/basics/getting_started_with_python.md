@@ -3,7 +3,11 @@
 
 #### Welcome!
 
+<!--start-->
+
 Welcome to CS61A! For the most part, this course is not about learning Python, the language, but instead, we focus on big computer science ideas. However, to implement those ideas in code...we need Python to do so. So we're going to spend the first 1-2 weeks going over simple ideas in Python that will allow us to work on implementing the bigger ideas of the course.
+
+<!--end-->
 
 #### Downloading and Installing Python 3
 

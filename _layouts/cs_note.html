@@ -1,14 +1,11 @@
 ---
 layout: cs_course
-
-title: ""
-tags: []
-categories: []
-author_name: Mark Miyashita
-author_url: http://markmiyashita.com
-google_plus: 101180624276428786239
-
-published: true
 ---
 
-{{ content }}
+<h3>{{ page.name }}</h3>
+
+{% capture file %}{% if page.categories.size > 2 %}{{ page.categories[0] }}/problems/{{ page.categories[2] }}/{{ page.file }}.md{% else %}{{ page.categories[0] }}/notes/{{ page.categories[1] }}/{{ page.file }}.md{% endif %}{% endcapture %}
+
+{% capture contents %}{% include file %}{% endcapture %}
+
+{{ contents | markdownify }}
