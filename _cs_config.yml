@@ -162,6 +162,57 @@ cs_classes:
                 date: "2013-07-14"
                 published: true
                 solution: true
+        - name: "Binary Search"
+          file: binary_search
+          type: Warmup
+          tags: [tree recursion]
+          semesters:
+            - base:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+        - name: "Merge Sort"
+          file: merge_sort
+          type: Challenge
+          tags: [iterables]
+          semesters:
+            - base:
+                date: "2013-03-11"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-03-11"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+        - name: "Mutable Reverse List"
+          file: mutable_reverse_list
+          type: Challenge
+          tags: [mutable data, iterables, sequences]
+          semesters:
+            - base:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-07-21"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-21"
+                published: true
+                solution: true
       notes:
         - name: "Helper Functions"
           file: helper_functions
@@ -298,7 +349,25 @@ cs_classes:
                 published: true
 
     object_oriented_programming:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Pets Own the Owners"
+          file: pets_own_the_owners
+          type: Warmup
+          tags: [bound methods]
+          semesters:
+            - base:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-24"
+                published: true
+                solution: true
 
     mutable_data:
       semesters: [base, sp13, su13]
@@ -322,7 +391,25 @@ cs_classes:
                 solution: true
 
     inheritance:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Designing Classes and Using Inheritance"
+          file: designing_classes_and_using_inheritance
+          type: Warmup
+          tags: [object oriented programming]
+          semesters:
+            - base:
+                date: "2013-03-09"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-03-09"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-18"
+                published: true
+                solution: true
 
     generic_functions:
       semesters: [base, sp13, su13]
@@ -342,10 +429,148 @@ cs_classes:
                 published: true
 
     orders_of_growth:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Orders of Growth Practice"
+          file: orders_of_growth_practice
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-04-04"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-04-04"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-24"
+                published: true
+                solution: true
 
     tree_recursion:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Flip Tree"
+          file: flip_tree
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+        - name: "In Order Traversal of a Binary Tree"
+          file: in_order_traversal_binary_tree
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+        - name: "Pre Order Traversal of a Binary Tree"
+          file: pre_order_traversal_binary_tree
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+        - name: "Post Order Traversal of a Binary Tree"
+          file: post_order_traversal_binary_tree
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-11"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+        - name: "Insert Into Binary Search Tree"
+          file: insert_into_binary_search_tree
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-12"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-12"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-23"
+                published: true
+                solution: true
+        - name: "Is My Tree Binary and Searchable?"
+          file: is_my_tree_binary_and_searchable
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-13"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-13"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-24"
+                published: true
+                solution: true
+        - name: "Tree to Reversed List"
+          file: tree_to_reversed_list
+          type: Challenge
+          tags: [recursion]
+          semesters:
+            - base:
+                date: "2013-05-14"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-14"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-25"
+                published: true
+                solution: true
 
     memoization:
       semesters: [base, sp13, su13]
@@ -399,18 +624,85 @@ cs_classes:
 
     streams:
       semesters: []
+      problems:
+        - name: "Streams of Streams"
+          file: streams_of_streams
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-08-10"
+                published: false
+                solution: false
+              su13:
+                date: "2013-08-10"
+                published: false
+                solution: false
 
     generators:
       semesters: []
 
     iterators:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Once an Infinite Sequence, Always an Infinite Sequence"
+          file: once_an_infinite_sequence_always_an_infinite_sequence
+          type: Challenge
+          tags: [generic functions, streams, generators, type dispatching]
+          semesters:
+            - base:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-09"
+                published: true
+                solution: true
+              su13:
+                date: "2013-08-06"
+                published: true
+                solution: true
 
     declarative_programming:
       semesters: []
 
     logic:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Finding the Greatest Common Divisor using Logic"
+          file: finding_the_greatest_common_divisor_using_logic
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-05-12"
+                published: true
+                solution: false
+              sp13:
+                date: "2013-05-12"
+                published: true
+                solution: false
+              su13:
+                date: "2013-08-08"
+                published: true
+                solution: false
+        - name: "Modulus In Logic"
+          file: modulus_in_logic
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-05-12"
+                published: true
+                solution: false
+              sp13:
+                date: "2013-05-12"
+                published: true
+                solution: false
+              su13:
+                date: "2013-08-08"
+                published: true
+                solution: false
 
     unification:
       semesters: []
@@ -423,7 +715,7 @@ cs_classes:
 
   cs61b:
     basics:
-      semesters: [base]
+      semesters: []
       notes:
         - name: "Getting Started with Java"
           file: getting_started_with_java
@@ -431,7 +723,7 @@ cs_classes:
           semesters:
             - base:
                 date: "2013-08-20"
-                published: true
+                published: false
     linked_list:
       semesters: []
   cs61c:

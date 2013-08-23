@@ -37,6 +37,10 @@ pre {
   border: none;
 }
 
+.navbar-collapse {
+  padding: 0;
+}
+
 /* Start header colors */
 .bs-header h1, .bs-header h4 {
   color: #4A5783;
@@ -53,6 +57,10 @@ pre {
 
 .bs-sidenav {
   background-color: #EDF1FF;
+}
+
+.bs-sidenav li.no-topics {
+  padding: 5px 20px;
 }
 
 .bs-sidebar .nav > li > a:hover, .bs-sidebar .nav > li > a:focus {

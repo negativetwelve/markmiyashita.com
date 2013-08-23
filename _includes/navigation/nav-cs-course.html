@@ -6,14 +6,21 @@
 {% capture topics %}{% for topic in site.cs_classes[class_name] %}{{ topic[0] }},{% endfor %}{% endcapture %}
 {% assign topics = topics | split: ',' %}
 
-{% for topic in site.cs_classes[class_name] %}
-  {% if topic[1]["semesters"].size > 0 %}
-    {% if topic[1]["semesters"] contains semester %}
-      <li><a href="/{{ class_name }}/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
-    {% elsif page.categories.size == 1  or (page.categories.size == 2 and topics contains page.categories[1]) %}
-      <li><a href="/{{ class_name }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
+{% capture has_topics %}{% for topic in site.cs_classes[class_name] %}{% if topic[1]["semesters"].size > 0 %}{{ topic[0] }},{% endif %}{% endfor %}{% endcapture %}
+{% assign has_topics = has_topics | split: ',' %}
+
+{% if has_topics.size > 0 %}
+  {% for topic in site.cs_classes[class_name] %}
+    {% if topic[1]["semesters"].size > 0 %}
+      {% if topic[1]["semesters"] contains semester %}
+        <li><a href="/{{ class_name }}/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
+      {% elsif page.categories.size == 1  or (page.categories.size == 2 and topics contains page.categories[1]) %}
+        <li><a href="/{{ class_name }}/{{ topic[0] }}">{{ topic[0] | titleize }}</a></li>
+      {% endif %}
     {% endif %}
-  {% endif %}
-{% endfor %}
+  {% endfor %}
+{% else %}
+  <li class="no-topics">Sorry, there currently aren't topics for {{ page.title }}.</li>
+{% endif %}
   </ul>
 </div>

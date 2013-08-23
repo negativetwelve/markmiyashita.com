@@ -44,6 +44,7 @@ module Jekyll
       else
         self.data['title'] = "#{categories[0].upcase} - #{titleize(topic)}"
       end
+      self.data["name"] = titleize(topic)
     end
   end
 

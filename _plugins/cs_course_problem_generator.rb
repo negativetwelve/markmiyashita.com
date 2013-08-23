@@ -89,9 +89,11 @@ module Jekyll
                   semesters = problem["semesters"]
                   semesters.each do |semester_hash|
                     semester_hash.each do |semester, semester_info|
-                      new_problem = CSProblem.new(site, site.source, course, semester, semester_info, topic, problem)
-                      site.pages << new_problem
-                      site.custom_posts["cs_classes"] << new_problem
+                      if semester_info["published"]
+                        new_problem = CSProblem.new(site, site.source, course, semester, semester_info, topic, problem)
+                        site.pages << new_problem
+                        site.custom_posts["cs_classes"] << new_problem
+                      end
                     end
                   end
                 end
@@ -102,9 +104,11 @@ module Jekyll
                   semesters = note["semesters"]
                   semesters.each do |semester_hash|
                     semester_hash.each do |semester, semester_info|
-                      new_note = CSNote.new(site, site.source, course, semester, semester_info, topic, note)
-                      site.pages << new_note
-                      site.custom_posts["cs_classes"] << new_note
+                      if semester_info["published"]
+                        new_note = CSNote.new(site, site.source, course, semester, semester_info, topic, note)
+                        site.pages << new_note
+                        site.custom_posts["cs_classes"] << new_note
+                      end
                     end
                   end
                 end

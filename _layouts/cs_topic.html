@@ -18,6 +18,11 @@ layout: cs_course
 </div>
 
 <div class="cs-notes">
+{% if site.custom_posts[class_name][semester][topic].notes.size == 0 %}
+  <p>
+    Looks like there currently aren't any notes (yet) about {{ page.name }}...if you'd like to see some, <a href="/contact">let me know.</a>
+  </p>
+{% else %}
   <ul>
   {% for cs_post in site.custom_posts[class_name][semester][topic].notes %}
     <li><h4><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a></h4></li>
@@ -25,6 +30,7 @@ layout: cs_course
     <a href="{{ cs_post.clean_url }}">(Read More!)</a>
   {% endfor %}
   </ul>
+{% endif %}
 </div>
 
 <div class="page-header">
@@ -32,6 +38,11 @@ layout: cs_course
 </div>
 
 <div class="cs-problems">
+{% if site.custom_posts[class_name][semester][topic].problems.size == 0 %}
+  <p>
+    Looks like there currently aren't any practice problems (yet) about {{ page.name }}...if you'd like to see some, <a href="/contact">let me know.</a>
+  </p>
+{% else %}
   <p>
     Below are a list of practice problems, test what you've learned!
   </p>
@@ -41,4 +52,5 @@ layout: cs_course
     <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a></li>
   {% endfor %}
   </ul>
+{% endif %}
 </div>
