@@ -31,3 +31,68 @@ header li {
   border: none;
   min-height: 40px;
 }
+
+pre {
+  padding: 0;
+  border: none;
+}
+
+/* Start header colors */
+.bs-header h1, .bs-header h4 {
+  color: #4A5783;
+}
+
+.bs-header p a {
+  color: #4d4d4d;
+  border-bottom: 1px solid #ccc;
+}
+
+.bs-header p a:hover {
+  text-decoration: none;
+}
+
+.bs-sidenav {
+  background-color: #EDF1FF;
+}
+
+.bs-sidebar .nav > li > a:hover, .bs-sidebar .nav > li > a:focus {
+  background-color: #D3E3FF;
+  border-right: 1px solid #4A5783;
+}
+
+.bs-sidebar.affix {
+  top: 60px;
+}
+
+.bs-docs-nav .navbar-nav > .active > a, .bs-docs-nav .navbar-nav > .active > a:hover {
+  background-color: white;
+  color: #999999;
+  font-weight: bold;
+}
+
+.bs-docs-nav .navbar-nav > li > a:hover {
+  color: #999999;
+  text-decoration: underline;
+}
+
+.navbar-inverse .navbar-nav > .dropdown > a:hover .caret,
+.navbar-inverse .navbar-nav > .open > a .caret, .navbar-inverse .navbar-nav > .open > a:hover .caret, .navbar-inverse .navbar-nav > .open > a:focus .caret {
+  border-top-color: #999999;
+  border-bottom-color: #999999;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+  background-color: #F7F7F7;
+  color: #999999;
+  text-decoration: underline;
+}
+
+.dropdown-menu > li > a {
+  color: #999999;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  color: #999999;
+  text-decoration: none;
+  background-color: #F7F7F7;
+}

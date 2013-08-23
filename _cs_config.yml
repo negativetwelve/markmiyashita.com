@@ -22,7 +22,6 @@ cs_classes:
                 date: "2013-08-15"
                 published: true
                 solution: true
-
       notes:
         - name: "Getting Started with Python"
           file: getting_started_with_python
@@ -37,18 +36,78 @@ cs_classes:
               fa13:
                 date: "2013-08-15"
                 published: true
+
     functions:
       semesters: []
+
     control:
       semesters: []
+
     higher_order_functions:
-      semesters: [base, sp13, su13]
+      semesters: [base, su13]
+      problems:
+        - name: "Functions Inside Functions"
+          file: functions_inside_functions
+          type: Warmup
+          tags: [environment diagrams, functions]
+          semesters:
+            - base:
+                date: "2013-06-26"
+                published: true
+                solution: true
+              su13:
+                date: "2013-06-26"
+                published: true
+                solution: true
+      notes:
+        - name: "Church Numerals"
+          file: church_numerals
+          tags: [math]
+          semesters:
+            - base:
+                date: "2013-07-02"
+                published: true
+              su13:
+                date: "2013-07-02"
+                published: true
+
     environment_diagrams:
       semesters: []
+
     lambdas:
-      semesters: []
+      semesters: [base, su13]
+      problems:
+        - name: "What Would Python Print?"
+          file: what_would_python_print
+          type: Challenge
+          tags: [evaluation]
+          semesters:
+            - base:
+                date: "2013-07-06"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-06"
+                published: true
+                solution: true
+
     newtons_method:
-      semesters: []
+      semesters: [base, su13]
+      problems:
+        - name: "Newton's Method Practice"
+          file: newtons_method_practice
+          type: Challenge
+          tags: [math, iteration]
+          semesters:
+            - base:
+                date: "2013-07-06"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-06"
+                published: true
+                solution: true
+
     recursion:
       semesters: [base, sp13, su13]
       problems:
@@ -69,54 +128,299 @@ cs_classes:
                 date: "2013-07-03"
                 published: true
                 solution: true
+        - name: "Longest Length of the Same Character in a String"
+          file: longest_length_of_the_same_character_in_a_string
+          type: Challenge
+          tags: [strings]
+          semesters:
+            - base:
+                date: "2013-02-19"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-02-19"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-06"
+                published: true
+                solution: true
+        - name: "Find Secret Using Recursion"
+          file: find_secret_using_recursion
+          type: Challenge
+          tags: [lists, strings, sequences, iterables]
+          semesters:
+            - base:
+                date: "2013-05-08"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-05-08"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-14"
+                published: true
+                solution: true
+      notes:
+        - name: "Helper Functions"
+          file: helper_functions
+          tags: [tail recursion, iteration]
+          semesters:
+            - base:
+                date: "2013-05-11"
+                published: true
+              sp13:
+                date: "2013-05-11"
+                published: true
+              su13:
+                date: "2013-07-09"
+                published: true
+
     rlists:
-      semesters: [base, sp13]
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Map Rlist"
+          file: map_rlist
+          type: Warmup
+          tags: [recursion, higher order functions]
+          semesters:
+            - base:
+                date: "2013-02-25"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-02-25"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-17"
+                published: true
+                solution: true
+        - name: "Filter Rlist"
+          file: filter_rlist
+          type: Warmup
+          tags: [recursion, higher order functions]
+          semesters:
+            - base:
+                date: "2013-02-25"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-02-25"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-17"
+                published: true
+                solution: true
+        - name: "Sort Rlist"
+          file: sort_rlist
+          type: Challenge
+          tags: [recursion, higher order functions]
+          semesters:
+            - base:
+                date: "2013-02-26"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-02-26"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-18"
+                published: true
+                solution: true
+        - name: "Map and Filter Rlist (Object Version)"
+          file: map_and_filter_rlists_object_version
+          type: Challenge
+          tags: [recursion, higher order functions, mutable data, object oriented programming]
+          semesters:
+            - base:
+                date: "2013-03-19"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-03-19"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-22"
+                published: true
+                solution: true
+      notes:
+        - name: "Rlists As Functions"
+          file: rlists_as_functions
+          tags: [recursion, data structures, data abstraction]
+          semesters:
+            - base:
+                date: "2013-03-05"
+                published: true
+              sp13:
+                date: "2013-03-05"
+                published: true
+              su13:
+                date: "2013-07-10"
+                published: true
+
     data_abstraction:
       semesters: []
+
     iterables:
-      semesters: []
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Tuples Practice"
+          file: tuples_practice
+          type: Warmup
+          tags: [tuples, sequences]
+          semesters:
+            - base:
+                date: "2013-07-06"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-06"
+                published: true
+                solution: true
+      notes:
+        - name: "Dictionaries"
+          file: dictionaries
+          tags: [data structures]
+          semesters:
+            - base:
+                date: "2013-03-05"
+                published: true
+              sp13:
+                date: "2013-03-05"
+                published: true
+              su13:
+                date: "2013-07-10"
+                published: true
+
     object_oriented_programming:
-      semesters: [base, sp13]
-    dictionaries:
-      semesters: [base, sp13]
+      semesters: []
+
     mutable_data:
-      semesters: [base, sp13]
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "In Place Functions"
+          file: in_place_functions
+          type: Challenge
+          tags: [lists, iteration]
+          semesters:
+            - base:
+                date: "2013-03-08"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-03-08"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-16"
+                published: true
+                solution: true
+
     inheritance:
-      semesters: [base, sp13]
+      semesters: []
+
     generic_functions:
-      semesters: [base, sp13]
+      semesters: [base, sp13, su13]
+      notes:
+        - name: "Generic Functions and Type Dispatching"
+          file: generic_functions_and_type_dispatching
+          tags: [type dispatching, abstraction]
+          semesters:
+            - base:
+                date: "2013-03-18"
+                published: true
+              sp13:
+                date: "2013-03-18"
+                published: true
+              su13:
+                date: "2013-07-18"
+                published: true
+
     orders_of_growth:
-      semesters: [base, sp13]
+      semesters: []
+
     tree_recursion:
-      semesters: [base, sp13]
+      semesters: []
+
     memoization:
-      semesters: [base, sp13]
+      semesters: [base, sp13, su13]
+      problems:
+        - name: "Better Fib"
+          file: better_fib
+          type: Warmup
+          tags: [recursion, dictionaries]
+          semesters:
+            - base:
+                date: "2013-03-04"
+                published: true
+                solution: true
+              sp13:
+                date: "2013-03-04"
+                published: true
+                solution: true
+              su13:
+                date: "2013-07-18"
+                published: true
+                solution: true
+
     functional_programming:
       semesters: []
+
     scheme:
       semesters: []
+
     exceptions:
       semesters: []
+
     interpreters:
       semesters: []
+
     tail_recursion:
-      semesters: []
+      semesters: [base, sp13, su13]
+      notes:
+        - name: "Tail Recursion and Tail Optimized Calls"
+          file: tail_recursion_and_tail_optimized_calls
+          tags: [recursion, scheme]
+          semesters:
+            - base:
+                date: "2013-05-10"
+                published: true
+              sp13:
+                date: "2013-05-10"
+                published: true
+              su13:
+                date: "2013-07-25"
+                published: true
+
     streams:
       semesters: []
+
     generators:
       semesters: []
+
     iterators:
       semesters: []
+
     declarative_programming:
       semesters: []
+
     logic:
-      semesters: [base, sp13]
+      semesters: []
+
     unification:
       semesters: []
+
     mapreduce:
       semesters: []
+
     parallelism:
       semesters: []
+
   cs61b:
     basics:
       semesters: [base]

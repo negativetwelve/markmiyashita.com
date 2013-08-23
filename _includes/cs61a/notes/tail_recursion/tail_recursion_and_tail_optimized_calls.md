@@ -1,9 +1,11 @@
 * Table of Contents
 {:toc}
 
+<!--start-->
 Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: [here](http://paulbutler.org/archives/tail-recursion-in-python/)
 
 Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:
+<!--end-->
 
     def factorial(n):
         if n == 1:

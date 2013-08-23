@@ -3,7 +3,7 @@ url: http://markmiyashita.com
 destination: _deploy
 pygments: true
 markdown: kramdown
-exclude: [Gemfile, Gemfile.lock, rakefile, readme.md, LICENSE]
+exclude: [Gemfile, Gemfile.lock, rakefile, readme.md, LICENSE, _todo.yml]
 title: Mark Miyashita
 author:
   name: Mark Miyashita

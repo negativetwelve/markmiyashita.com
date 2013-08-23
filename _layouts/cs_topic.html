@@ -19,12 +19,10 @@ layout: cs_course
 
 <div class="cs-notes">
   <ul>
-  {% for p in site.pages %}
-    {% if p.is_note and p.categories[0] == class_name and p.semester == semester and p.categories contains topic %}
-      <li><h4><a href="{{ p.url | urlify }}">{{ p.name }}</a></h4></li>
-      {{ p.content | split:'<!--start-->' | last | split: '<!--end-->' | first }}
-      <a href="{{ p.url | urlify }}">(Read More!)</a>
-    {% endif %}
+  {% for cs_post in site.custom_posts[class_name][semester][topic].notes %}
+    <li><h4><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a></h4></li>
+    {{ cs_post.content | summarize }}
+    <a href="{{ cs_post.clean_url }}">(Read More!)</a>
   {% endfor %}
   </ul>
 </div>
@@ -39,10 +37,8 @@ layout: cs_course
   </p>
 
   <ul>
-  {% for p in site.pages %}
-    {% if p.is_problem and p.categories[0] == class_name and p.semester == semester and p.categories contains topic %}
-      <li><a href="{{ p.url | urlify }}">{{ p.name }}</a></li>
-    {% endif %}
+  {% for cs_post in site.custom_posts[class_name][semester][topic].problems %}
+    <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a></li>
   {% endfor %}
   </ul>
 </div>

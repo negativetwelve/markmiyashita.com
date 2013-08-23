@@ -3,7 +3,9 @@
 
 #### What are Church Numerals?
 
+<!--start-->
 [Church numerals](http://en.wikipedia.org/wiki/Church_encoding#Computation_with_Church_numerals) come from [lambda calculus](http://en.wikipedia.org/wiki/Lambda_calculus) and are based upon the idea that you can represent numbers by using a series of nested functions. At the most basic level, we have zero which can be defined as:
+<!--end-->
 
     def zero(f):
         return lambda x: x

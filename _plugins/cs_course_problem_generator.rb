@@ -30,6 +30,8 @@ module Jekyll
 
       self.data["title"] = course.upcase + " - " + item["name"]
       self.data["name"] = item["name"]
+      self.data["course"] = course
+      self.data["topic"] = topic
 
       if semester == "base"
         self.data["categories"] = [course, topic]
@@ -42,6 +44,7 @@ module Jekyll
       self.data["tags"] = item["tags"]
       self.data["date"] = semester_info["date"]
       self.data["published"] = semester_info["published"]
+      self.data["clean_url"] = self.url.gsub('/index.html', '')
     end
   end
 
@@ -71,6 +74,9 @@ module Jekyll
     safe true
 
     def generate(site)
+      unless site.custom_posts.key? "cs_classes"
+        site.custom_posts["cs_classes"] = []
+      end
       if site.config.key? "cs_classes"
         cs_classes = site.config["cs_classes"]
         cs_classes.each do |course, course_hash|
@@ -83,7 +89,9 @@ module Jekyll
                   semesters = problem["semesters"]
                   semesters.each do |semester_hash|
                     semester_hash.each do |semester, semester_info|
-                      site.pages << CSProblem.new(site, site.source, course, semester, semester_info, topic, problem)
+                      new_problem = CSProblem.new(site, site.source, course, semester, semester_info, topic, problem)
+                      site.pages << new_problem
+                      site.custom_posts["cs_classes"] << new_problem
                     end
                   end
                 end
@@ -94,7 +102,9 @@ module Jekyll
                   semesters = note["semesters"]
                   semesters.each do |semester_hash|
                     semester_hash.each do |semester, semester_info|
-                      site.pages << CSNote.new(site, site.source, course, semester, semester_info, topic, note)
+                      new_note = CSNote.new(site, site.source, course, semester, semester_info, topic, note)
+                      site.pages << new_note
+                      site.custom_posts["cs_classes"] << new_note
                     end
                   end
                 end

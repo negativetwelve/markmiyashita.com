@@ -3,7 +3,9 @@
 
 #### Purpose
 
+<!--start-->
 Generic functions are functions that we can create the are able to work on a variety of different objects. For example, if we have a Square class and a Rectangle class and we want to find the area of either, we should be able to make one function that takes in either of the objects, figures out what the type of the object is, and calls the right function to find the area for that object.
+<!--end-->
 
 #### Type Tag Function
 

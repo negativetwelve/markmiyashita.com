@@ -3,7 +3,9 @@
 
 #### Introduction
 
+<!--start-->
 What exactly are rlists? rlists are a CS61A abstraction that defines a series of pairs that connect together by accessing the `first` and `rest` elements of the pair. We have defined the following constructs for our rlist abstraction:
+<!--end-->
 
     empty_rlist = None
 

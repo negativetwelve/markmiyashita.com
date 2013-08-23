@@ -43,6 +43,16 @@ task :deploy do
   end
 end
 
+desc "test deploy"
+task :test_deploy do
+  puts "TESTING DEPLOY SCENARIO"
+  (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
+  puts "Generating site from source."
+  Rake::Task[:generate].execute
+  Rake::Task[:copy_code].execute
+  puts "Check deploy/ for the files that would have been uploaded to github and deployed."
+end
+
 
 def die(s)
   puts(s.red)

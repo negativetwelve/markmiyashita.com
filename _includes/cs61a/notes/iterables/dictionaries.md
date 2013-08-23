@@ -3,8 +3,10 @@
 
 #### Introduction
 
+<!--start-->
 Dictionaries are another type of _data structure_ that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
-  
+<!--end-->
+
 A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:
 
     >>> ages = {'joe': 20, 'jenny': 19, 'tony': 24}

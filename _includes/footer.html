@@ -3,6 +3,7 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ page.base_url }}/assets/js/jquery-1.8.3.min.js"></script>
 <script src="{{ page.base_url }}/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
 
 <!-- Google Analytics -->
 <script type="text/javascript">
@@ -16,6 +17,8 @@
 <!-- Google Analytics end -->
 
 <script type="text/javascript">
+hljs.initHighlightingOnLoad();
+
 $(document).keypress(function(e) {
   base = document.location.origin;
   switch (e.charCode) {
