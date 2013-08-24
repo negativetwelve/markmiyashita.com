@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-08-23T22:54:33-07:00</updated>
+    <updated>2013-08-23T23:01:48-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -51,6 +51,24 @@ Drawing diagrams is always a helpful way in solving most problems. If you’re w
 If two students sitting next to each other are having the same problem, have them work together to try to figure out the answer. Just helped a student with that same question? Have the student that you just helped help out the next student with the same question. Let them know that being able to explain something to another person is the best indicator of mastery of a subject. If they can explain something to another student then they successfully understand the topic! This really comes into play when you are helping out in office hours (especially before a project or homework); getting students to work together in groups will make your life (and their lives) easier.</p>
   </li>
 </ol>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</article>
 ]]></content>
         <author>
             <name></name>
@@ -134,6 +152,24 @@ A: You should talk individually with your TA about this. In general, we’re fin
 </ol>
 
 <p>If you have any other questions, feel free to email me!</p>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</article>
 ]]></content>
         <author>
             <name></name>
