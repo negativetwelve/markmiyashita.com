@@ -368,6 +368,14 @@ cs_classes:
                 date: "2013-07-24"
                 published: true
                 solution: true
+      notes:
+        - name: "Intro to Object Oriented Programming"
+          file: intro_to_object_oriented_programming
+          tags: []
+          semesters:
+            - base:
+                date: "2013-08-08"
+                published: false
 
     mutable_data:
       semesters: [base, sp13, su13]

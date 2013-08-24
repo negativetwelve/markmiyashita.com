@@ -3,7 +3,7 @@
     Looking for more CS classes? Check out:
     {% for class in site.cs_classes %}
       {% if page.categories[0] contains class[0] %}
-        {{ class[0] | upcase }}
+        <strong><a href="/{{ class[0] }}">{{ class[0] | upcase }}</a></strong>
       {% else %}
         <a href="/{{ class[0] }}">{{ class[0] | upcase }}</a>
       {% endif %}

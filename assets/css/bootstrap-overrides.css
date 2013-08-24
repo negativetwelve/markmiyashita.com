@@ -37,8 +37,26 @@ pre {
   border: none;
 }
 
+.bs-docs-nav .navbar-toggle {
+  border-color: #4A5783;
+  background-color: #4A5783;
+}
+
+.bs-docs-nav .navbar-toggle:hover {
+  background-color: #4A5783;
+  border-color: #4A5783;
+}
+
+.bs-header h1, .bs-header p {
+  margin-right: 0;
+}
+
 .navbar-collapse {
   padding: 0;
+}
+
+.navbar-nav {
+  margin: 0;
 }
 
 /* Start header colors */
@@ -72,6 +90,13 @@ pre {
   top: 60px;
 }
 
+@media(max-width: 991px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #999999;
+    text-decoration: underline;
+  }
+}
+
 .bs-docs-nav .navbar-nav > .active > a, .bs-docs-nav .navbar-nav > .active > a:hover {
   background-color: white;
   color: #999999;
@@ -103,4 +128,9 @@ pre {
   color: #999999;
   text-decoration: none;
   background-color: #F7F7F7;
+}
+
+/* Syntax Highlighting */
+.highlight {
+  padding: 0;
 }

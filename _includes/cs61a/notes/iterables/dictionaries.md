@@ -86,7 +86,7 @@ Notice that the _keys_ are what gets printed and that the values are nowhere to 
 
 Dictionaries have a representation in environment diagrams too. We represent it by listing the type _dict_ above the boxes with the keys on the left and the values on the right. The name of our dictionary, `ages`, points to the dict object. Here is what our `ages` dictionary would look like:
 
-![Environment Diagram](/public/images/dictionaries/environment_diagram_01.png)
+![Environment Diagram](/assets/images/dictionaries/environment_diagram_01.png)
 
 When we add and remove items from the dictionary, our environment diagram updates to this:
 
@@ -95,7 +95,7 @@ When we add and remove items from the dictionary, our environment diagram update
     >>> ages
     {'joe': 22, 'harry': 19}
 
-![Environment Diagram](/public/images/dictionaries/environment_diagram_02.png">)
+![Environment Diagram](/assets/images/dictionaries/environment_diagram_02.png)
 
 #### Useful Methods for Dictionaries
 

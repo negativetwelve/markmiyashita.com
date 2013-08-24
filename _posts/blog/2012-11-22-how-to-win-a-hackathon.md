@@ -11,9 +11,11 @@ date: 2012-11-22 13:04:00 -7
 published: true
 ---
 
+<!--start-->
 <img src="/assets/images/hackathon.jpg" class="img-border">
 
 This year I started participating in many hackathons of different lengths, different atmospheres, and different types of applications that won. I am still quite new to the hackathon scene, but I thought I'd share my thoughts on how most winners, won.
+<!--end-->
 
 * Unless you're a full-stack developer with really, really good frontend skills, you need a designer. The presentation is arguably the most important part and if your product is not visually pleasing, it will be hard to overcome.
 * The demo is the most important part. No matter how great your project is, if you can't show it properly, or you can't explain the technical aspects of it, you won't be able to show off your project in a way that will attract the developers.

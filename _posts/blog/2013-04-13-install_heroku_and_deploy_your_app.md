@@ -20,9 +20,11 @@ published: true
 
 ## Introduction
 
+<!--start-->
 So, you've finished adding the final touches to your app and now you want to put in on the Internet for everyone else to use. How do I do that?!
 
 Well, there are several options available to you at this point, most of them are free. The most popular free option is to use Heroku and I'm going to be walking through the steps to set up Heroku on your computer and deploy your first app.
+<!--end-->
 
 First, let's talk a little about what Heroku is. Heroku is a cloud application platform. In one sentence, Heroku allows you to serve your web applications using their servers and allows other computers to access your site at the specified url. Heroku has mastered the art of simplicity, and setting up an app and deploying has never been easier. Let's dive into the steps necessary to do this.
 

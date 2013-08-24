@@ -3,42 +3,16 @@ layout: cs_course
 title: CS188
 categories: [cs188]
 ---
-
-<header id="top_bar">
-  <date class="current_date"></date>
-</header>
-
 <article class="post" id="extra_problems">
   <h2>CS188 - Artificial Intelligence - UC Berkeley</h2>
   <p>
+    This is a course about artificial intelligence with an emphasis on the ideas and techniques used to design intelligent computer systems. Throughout the course, you will build autonomous agents that can make decisions based on their environment and optimize for rewards.
   </p>
 
   <div class="announcement">
     <p>
     </p>
   </div>
-
-
-  <h2>Notes:</h2>
-  <p>
-    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
-  </p>
-  <ul>
-    {% for topic in site.categories.cs188 reversed %}
-      {% if topic.categories contains 'notes' %}
-        <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-  
-  <h2>Problems:</h2>
-  <ul>
-    {% for problem in site.categories.cs188 %}
-      {% if problem.categories contains 'problems' %}
-        <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
 </article>
 
 

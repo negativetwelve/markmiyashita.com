@@ -45,26 +45,3 @@ categories: [cs61a, sp13]
   </p>
   
 </article>
-
-<article class="post" id="extra_problems">
-  <h2>Notes:</h2>
-  <p>
-    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
-  </p>
-  <ul>
-    {% for topic in site.categories.sp13 reversed %}
-      {% if topic.categories contains 'notes' %}
-        <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-  
-  <h2>Problems:</h2>
-  <ul>
-    {% for problem in site.categories.sp13 %}
-      {% if problem.categories contains 'problems' %}
-        <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</article>

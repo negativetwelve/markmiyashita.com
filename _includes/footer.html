@@ -5,18 +5,15 @@
 <script src="{{ page.base_url }}/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/highlight.pack.js"></script>
 
-<!-- Google Analytics -->
 <script type="text/javascript">
-  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-  var pageTracker = _gat._getTracker("UA-29669299-1");
-  pageTracker._trackPageview();
-</script>
-<!-- Google Analytics end -->
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
 
-<script type="text/javascript">
+
 hljs.initHighlightingOnLoad();
 
 $(document).keypress(function(e) {

@@ -3,43 +3,16 @@ layout: cs_course
 title: CS70
 categories: [cs70]
 ---
-
-<header id="top_bar">
-  <date class="current_date"></date>
-</header>
-
 <article class="post" id="extra_problems">
   <h2>CS70 - Discrete Mathematics and Probability - UC Berkeley</h2>
   <p>
-    
+    This class focuses on logic and problem solving skills and a few applications of these skills in areas of computer science. Some other topics include RSA and modular arithmetic, graph theory, expectation and inference (probability).
   </p>
 
   <div class="announcement">
     <p>
     </p>
   </div>
-
-
-  <h2>Notes:</h2>
-  <p>
-    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
-  </p>
-  <ul>
-    {% for topic in site.categories.cs70 reversed %}
-      {% if topic.categories contains 'notes' %}
-        <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-  
-  <h2>Problems:</h2>
-  <ul>
-    {% for problem in site.categories.cs70 %}
-      {% if problem.categories contains 'problems' %}
-        <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
 </article>
 
 

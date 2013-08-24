@@ -10,7 +10,7 @@ nav: nav-blog
     {% if post.published %}
     <h2><a href="{{ post.url }}" class="no-link">{{ post.title }}</a></h2>
     <p>
-      {{ post.content | truncatewords: 70 }}
+      {{ post.content | summarize }}
     </p>
     <a href="{{ post.url }}" class="post-readmore">(Read More)</a>
     {% endif %}

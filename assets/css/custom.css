@@ -1,8 +1,11 @@
+.solution {
+  display: none;
+}
+
 .profile-pic {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  float: left;
   margin-right: 20px;
 }
 
@@ -17,4 +20,37 @@
 
 .img-border {
   max-width: 100%;
+}
+
+@media(min-width: 1200px) {
+  .profile-pic {
+    float: left;
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1199px) {
+  .profile-pic {
+    float: left;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .profile-pic {
+    float: left;
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media(max-width: 767px) {
+  .profile-pic {
+    margin: 0 auto;
+    position: relative;
+    left: auto;
+    right: auto;
+    width: 100px;
+    height: 100px;
+  }
 }

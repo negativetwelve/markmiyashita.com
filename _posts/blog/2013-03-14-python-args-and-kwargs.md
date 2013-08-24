@@ -11,7 +11,9 @@ date: 2013-03-14 15:38:00 -7
 published: true
 ---
 
+<!--start-->
 In Python, there are two special symbols that you can use when defining functions to allow them to take in a variable number of arguments. The syntax is to use the symbol `*` to take in a variable number of arguments; by convention, it is often used with the word `args`. What `*args` allows you to do is take in more arguments than the normal of formal arguments that you previously defined. With `*args`, any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments). Here's an example which should make this clear:
+<!--end-->
 
     def func_with_two(one, two):
         """

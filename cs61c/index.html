@@ -3,36 +3,11 @@ layout: cs_course
 title: CS61C
 categories: [cs61c]
 ---
-
-<header id="top_bar">
-  <date class="current_date"></date>
-</header>
-
 <article class="post" id="extra_problems">
   <h2>CS61C - C, Mips, and Computer Architecture - UC Berkeley</h2>
   <p>
     This is the final class in the CS61 Series at UC Berkeley. The class focuses on more low-level programming including Mips, caching, performance, parallelism, pipelining, CPUs, memory management, and more. It also touches on a few more specific topics such as RAID, virtual memory, and modern microprocessors. The course uses a variety of different languages such as C, Java, Mips, and more.
   </p>
-  <h2>Notes:</h2>
-  <p>
-    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
-  </p>
-  <ul>
-    {% for topic in site.categories.cs61c reversed %}
-      {% if topic.categories contains 'notes' %}
-        <li><a href="{{ topic.url }}">{{ topic.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-  
-  <h2>Problems:</h2>
-  <ul>
-    {% for problem in site.categories.cs61c %}
-      {% if problem.categories contains 'problems' %}
-        <li>{{ problem.date | date: "%b %d, %Y" }} - <a href="{{ problem.url }}">{{ problem.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
 </article>
 
 

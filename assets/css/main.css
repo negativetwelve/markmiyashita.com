@@ -794,7 +794,6 @@ body {
 }
 .highlight pre code {
   font-size: inherit;
-  color: #333; /* Effectively the base text color */
 }
 .highlight pre .lineno {
   display: inline-block;

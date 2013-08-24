@@ -16,7 +16,9 @@
 Write your solution in any language you like. We have solutions below for the
 following languages:
 
-{% for language in page.languages %}<span>[{{ language | capitalize }}](#{{ language }}){: .button_link .load_solution}</span>{% endfor %}
+{% for language in page.languages %}
+[{{ language | capitalize }}](#{{ language }})
+{% endfor %}
 
 {% if page.languages contains 'python' %}
 ### Python Solution [(download)](/{{ python }}) {#python}
