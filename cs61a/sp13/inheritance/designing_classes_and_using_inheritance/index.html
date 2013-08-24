@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently a Software Engineer at Yelp and a TA for CS61A at UC Berkeley.">
+<meta name="author" content="Mark Miyashita">
+<link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml">
+
+<title>
+  
+    CS61A - Designing Classes and Using Inheritance - Mark Miyashita
+  
+</title>
+
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
+<link href="/assets/css/solarized_dark.css" rel="stylesheet">
+
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+  var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+  analytics.load("xq4lhfphjv");
+</script>
+    <!-- Place anything custom after this. -->
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip navigation</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/projects">Projects</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li class="active">
+          <a href="/cs61a/fa13">CS61A</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More CS Classes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/cs61b">CS61B - Data Structures</a></li>
+            <li><a href="/cs61c">CS61C - Computer Architecture</a></li>
+            <li><a href="/cs70">CS70 - Discrete Mathematics</a></li>
+            <li><a href="/cs170">CS170 - Algorithms</a></li>
+            <li><a href="/cs188">CS188 - Artificial Intelligence</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/interviews/problems">Interview Practice</a>
+        </li>
+        <li>
+          <a href="/hkn">HKN</a>
+        </li>
+        <li>
+          <a href="/web_dev">Web Development</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <img class="profile-pic" src="/assets/images/mark_miyashita_small.png"></img>
+        <h1>Mark Miyashita</h1>
+        <h4>negativetwelve</h4>
+        <p>
+          <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+        </p>
+      </div>
+    </div>
+
+    
+      <div class="bs-old-docs">
+  <div class="container">
+    Looking for more CS classes? Check out:
+    
+      
+        <strong><a href="/cs61a">CS61A</a></strong>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61b">CS61B</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61c">CS61C</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs70">CS70</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs170">CS170</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs188">CS188</a>
+      
+      
+    
+  </div>
+</div>
+
+    
+
+
+    <div class="container bs-docs-container">
+      <div class="row">
+          <div class="col-md-3">
+  
+  <div class="bs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="335">
+  <ul class="nav bs-sidenav">
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+    
+  
+    
+  
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/recursion">Recursion</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/rlists">Rlists</a></li>
+      
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/iterables">Iterables</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/object_oriented_programming">Object Oriented Programming</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/mutable_data">Mutable Data</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/inheritance">Inheritance</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/generic_functions">Generic Functions</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/orders_of_growth">Orders Of Growth</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/tree_recursion">Tree Recursion</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/memoization">Memoization</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/tail_recursion">Tail Recursion</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/iterators">Iterators</a></li>
+      
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/sp13/logic">Logic</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+  
+
+  </ul>
+</div>
+</div>
+<div class="col-md-9" role="main">
+  <h3>Designing Classes and Using Inheritance</h3>
+
+
+
+
+
+
+<p>Say we wanted to design some classes that represent Cars, Trucks, and Buses. Each one has a variable, let’s call it <code>repair_cost</code> that represents the amount of money required to repair that object. Each class has a different <code>repair_cost</code>, but each object in the class has the same <code>repair_cost</code>. So, each Car object has a <code>repair_cost</code> of 10, Trucks cost 20, and Buses cost 30.</p>
+
+<pre><code>&gt;&gt;&gt; c1 = Car()
+&gt;&gt;&gt; t1 = Truck()
+&gt;&gt;&gt; b1 = Bus()
+&gt;&gt;&gt; c1.repair_cost
+10
+&gt;&gt;&gt; t1.repair_cost
+20
+&gt;&gt;&gt; b1.repair_cost
+30
+</code></pre>
+
+<p>How many classes should we make to minimize the amount of code?</p>
+
+<p>After we have determined the number of classes to make, let’s make them! Implement the Car, Truck, Bus, and any other classes (which could be none!) that you feel are necessary to create this situation in a way that makes the most sense (making use of inheritance, overridding, etc.). Let’s also set a variable on all the vehicles that states how many wheels it has (let’s just say that all of our vehicles have 4 wheels).</p>
+
+<p>Once you have your classes made, implement a function that takes in an <code>amount_paid</code> and compares that to the <code>repair_cost</code>. If the <code>amount_paid</code> is greater than or equal to the <code>repair_cost</code>, then the item is allowed to be fixed and it should print out a message indicating that it has been fixed. If it cannot be fixed, then it should print out a different message indicating so. Try to minimize the amount of code that is required for this problem using inheritance.</p>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <p>There are many ways to answer this question. Here is the solution that I came up with.</p>
+
+  <pre><code>class Vehicle(object):
+    num_wheels = 4
+
+    def repair(self, amount_paid):
+        if amount_paid &gt;= self.repair_cost:
+            print("The " + type(self).__name__ + " has been fixed!")
+        else:
+            print("The " + type(self).__name__ + " was not fixed :( Please pay more money.")
+
+class Car(Vehicle):
+    repair_cost = 10
+
+class Truck(Vehicle):
+    repair_cost = 20
+
+class Bus(Vehicle):
+    repair_cost = 30
+</code></pre>
+
+  <p>The <code>type(self).__name__</code> is something that is not important, all it does is grab the name of the class of self and convert it to string form. </p>
+
+  <p>The important parts here are the fact that we <strong>do not</strong> have any <code>__init__</code> statements, anywhere! The reason is because our objects themselves do not have any instance variables, they only have class variables. So, we simply make a generic object (becuase the class Vehicle inherites from the generic object class) that allows us to assign some class variables.</p>
+
+  <p>For the subclasses, Car, Truck, and Bus, we only need to set the <code>repair_cost</code> because that is the only thing that changes between the different classes. The <code>repair</code> method that we definied in the Vehicle class still works. Do you see why?</p>
+
+  <p>The answer lies in the fact that the <code>repair</code> method checks <code>self.repair_cost</code> instead of <code>Vehicle.repair_cost</code> or <code>Car.repair_cost</code>. The result is that whichever object this method is called on, it will use the type of the <em>object</em> to determine which <code>repair_cost</code> to use. The result is that we can now make one general method that works for multiple different subclasses.</p>
+
+</div>
+
+
+
+</div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <p class="copyright">
+        © 2013 Mark Miyashita
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="http://github.com/negativetwelve">Github</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">TA Ratings</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+        <li class="muted">&middot;</li>        
+        <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+      </ul>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/js/jquery-1.8.3.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
+
+
+hljs.initHighlightingOnLoad();
+
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>
+
+  </body>
+</html>

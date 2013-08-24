@@ -1,168 +1,280 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en">
   <head>
-    <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS61B - Data Structures - Mark Miyashita</title>
-    <meta name="author" content="Mark Miyashita" />
-    <link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently a Software Engineer at Yelp and a TA for CS61A at UC Berkeley.">
+<meta name="author" content="Mark Miyashita">
+<link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml">
 
-    <script type="text/javascript" src="/public/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/public/js/jquery-ui-1.9.2.custom.min.js"></script>
-    <script type="text/javascript" src="/public/js/prettify.js"></script>
-    <script type="text/javascript" src="/public/js/home.js"></script>
+<title>
+  
+    CS61B - Mark Miyashita
+  
+</title>
 
-    <link rel="stylesheet" href="/public/css/normalize.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/prettify.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/projects.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/resume.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/base.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/layouts.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/home.css" type="text/css" />
-    <link rel="stylesheet" href="/public/css/header.css" type="text/css" />
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
+<link href="/assets/css/solarized_dark.css" rel="stylesheet">
+
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+  var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+  analytics.load("xq4lhfphjv");
+</script>
+    <!-- Place anything custom after this. -->
   </head>
-
   <body>
-    <header id="header">
-      <a href="/"><img class="profile_pic" src="/public/images/mark_miyashita_small.png"></img></a>
+    <a class="sr-only" href="#content">Skip navigation</a>
 
-<h1>
-  <a href="/">Mark Miyashita</a>
-</h1>
-
-<h2>
-  <a href="/">negativetwelve</a>
-</h2>
-
-<h3>
-  <p class="about_links">
-    <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
-  </p>
-</h3>
-
-<div class="links">
-  <span><a href="/">About</a></span>
-  <span><a href="/projects">Projects</a></span>
-  <span><a href="/resume">Resume</a></span>
-  <span><a href="/blog">Blog</a></span>
-  <span><a href="/cs61a/fa13">CS61A</a></span>
-  <span><a href="#" id="dropdown-button">Other CS Courses</a></span>
-  <span><a href="/interviews/problems">Interview Practice</a></span>
-  <span><a href="/hkn">HKN</a></span>
-  <span><a href="/web_dev">Web Development</a></span>
-  <span><a href="/contact">Contact</a></span>
-</div>
-<div class="links" id="sub-links">
-  <span><a href="/cs61b">CS61B</a></span>
-  <span><a href="/cs61c">CS61C</a></span>
-</div>
-
-
-    </header>
-
-    <section id="main_content">
-
-      <link rel="stylesheet" href="/public/css/cs61a.css" type="text/css" />
-
-<header id="top_bar">
-  <date class="current_date"></date>
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/projects">Projects</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li>
+          <a href="/cs61a/fa13">CS61A</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More CS Classes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/cs61b">CS61B - Data Structures</a></li>
+            <li><a href="/cs61c">CS61C - Computer Architecture</a></li>
+            <li><a href="/cs70">CS70 - Discrete Mathematics</a></li>
+            <li><a href="/cs170">CS170 - Algorithms</a></li>
+            <li><a href="/cs188">CS188 - Artificial Intelligence</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/interviews/problems">Interview Practice</a>
+        </li>
+        <li>
+          <a href="/hkn">HKN</a>
+        </li>
+        <li>
+          <a href="/web_dev">Web Development</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<article class="post" id="extra_problems">
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <img class="profile-pic" src="/assets/images/mark_miyashita_small.png"></img>
+        <h1>Mark Miyashita</h1>
+        <h4>negativetwelve</h4>
+        <p>
+          <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+        </p>
+      </div>
+    </div>
+
+    
+      <div class="bs-old-docs">
+  <div class="container">
+    Looking for more CS classes? Check out:
+    
+      
+        <a href="/cs61a">CS61A</a>
+      
+      
+      -
+      
+    
+      
+        <strong><a href="/cs61b">CS61B</a></strong>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61c">CS61C</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs70">CS70</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs170">CS170</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs188">CS188</a>
+      
+      
+    
+  </div>
+</div>
+
+    
+
+
+    <div class="container bs-docs-container">
+      <div class="row">
+          <div class="col-md-3">
+  
+  <div class="bs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="335">
+  <ul class="nav bs-sidenav">
+
+
+
+
+
+
+
+
+
+
+  <li class="no-topics">Sorry, there currently aren't any topics for CS61B.</li>
+
+  </ul>
+</div>
+</div>
+<div class="col-md-9" role="main">
+  <article class="post" id="extra_problems">
   <h2>CS61B - Data Structures - UC Berkeley</h2>
   <p>
     This is the second course in the CS61 Series at UC Berkeley. The language used throughout the course is Java and the students spend most of their time learning about different data structures, sorting algorithms, and general search algorithms.
   </p>
 
-  <div class="announcement">
+  <div class="bs-callout bs-callout-info">
+    <h2>Announcements</h2>
     <p>
       Be sure to check out the <a href="/interviews/problems"i>interviews</a> section which contains a lot of interview level questions regarding data structures and run time.
     </p>
   </div>
-
-
-  <h2>Notes:</h2>
-  <p>
-    These are a work in progress, if there is a specific topic you would like me to do first, please let me know via email!
-  </p>
-  <ul>
-    
-  </ul>
-  
-  <h2>Problems:</h2>
-  <ul>
-    
-  </ul>
 </article>
 
 
 
 
 
-      <section class="footer">
-  <p class="copyright">
-    © 2013 Mark Miyashita - <a href="http://github.com/negativetwelve">Github</a> - <a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a> - <a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a>
-  </p>
-</section>
+</div>
+      </div>
 
-    </section>
+    </div>
 
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-    <script type="text/javascript">
-    var pageTracker = _gat._getTracker("UA-29669299-1");
-    pageTracker._trackPageview();
-    </script>
-    <!-- Google Analytics end -->
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <p class="copyright">
+        © 2013 Mark Miyashita
+      </p>
 
-    <script type="text/javascript">
-      prettyPrint();
-      var date = document.getElementsByClassName("current_date")[0];
-      if (date) {
-        date.innerHTML = $.datepicker.formatDate('MM dd, yy', new Date());
-      }
+      <ul class="footer-links">
+        <li><a href="http://github.com/negativetwelve">Github</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">TA Ratings</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+        <li class="muted">&middot;</li>        
+        <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+      </ul>
+    </footer>
 
-      $(document).keypress(function(e) {
-        base = document.location.origin;
-        switch (e.charCode) {
-          case 97: // 'a' for about
-            document.location.href = base;
-            break;
-          case 98: // 'b' for blog
-            document.location.href = base + '/blog';
-            break;
-          case 104: // 'h' for hkn
-            document.location.href = base + "/hkn";
-            break;
-          case 105: // 'i' for interview practice
-            document.location.href = base + "/interviews/problems";
-            break;
-          case 109: // 'm' for more
-            $('#sub-links').slideDown('medium');
-            break;
-          case 112: // 'p' for projects
-            document.location.href = base + '/projects';
-            break;
-          case 114: // 'r' for resume
-            document.location.href = base + '/resume';
-            break;
-          case 119: // 'w' for web development
-            document.location.href = base + '/web_dev';
-            break;
-          case 99: // 'c' for cs61a
-            window.location.href = base + "/cs61a/su13";
-            break;
-          default:
-            console.log(e.charCode);
-        }
-      });
-    </script>
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/js/jquery-1.8.3.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
+
+
+hljs.initHighlightingOnLoad();
+
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>
 
   </body>
-
 </html>

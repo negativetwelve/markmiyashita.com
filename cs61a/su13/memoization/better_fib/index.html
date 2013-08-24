@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently a Software Engineer at Yelp and a TA for CS61A at UC Berkeley.">
+<meta name="author" content="Mark Miyashita">
+<link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml">
+
+<title>
+  
+    CS61A - Better Fib - Mark Miyashita
+  
+</title>
+
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
+<link href="/assets/css/solarized_dark.css" rel="stylesheet">
+
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script type="text/javascript">
+  var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
+  analytics.load("xq4lhfphjv");
+</script>
+    <!-- Place anything custom after this. -->
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip navigation</a>
+
+    <!-- Docs master nav -->
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/projects">Projects</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li class="active">
+          <a href="/cs61a/fa13">CS61A</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More CS Classes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/cs61b">CS61B - Data Structures</a></li>
+            <li><a href="/cs61c">CS61C - Computer Architecture</a></li>
+            <li><a href="/cs70">CS70 - Discrete Mathematics</a></li>
+            <li><a href="/cs170">CS170 - Algorithms</a></li>
+            <li><a href="/cs188">CS188 - Artificial Intelligence</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/interviews/problems">Interview Practice</a>
+        </li>
+        <li>
+          <a href="/hkn">HKN</a>
+        </li>
+        <li>
+          <a href="/web_dev">Web Development</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <!-- Docs page layout -->
+    <div class="bs-header" id="content">
+      <div class="container">
+        <img class="profile-pic" src="/assets/images/mark_miyashita_small.png"></img>
+        <h1>Mark Miyashita</h1>
+        <h4>negativetwelve</h4>
+        <p>
+          <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+        </p>
+      </div>
+    </div>
+
+    
+      <div class="bs-old-docs">
+  <div class="container">
+    Looking for more CS classes? Check out:
+    
+      
+        <strong><a href="/cs61a">CS61A</a></strong>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61b">CS61B</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61c">CS61C</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs70">CS70</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs170">CS170</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs188">CS188</a>
+      
+      
+    
+  </div>
+</div>
+
+    
+
+
+    <div class="container bs-docs-container">
+      <div class="row">
+          <div class="col-md-3">
+  
+  <div class="bs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="335">
+  <ul class="nav bs-sidenav">
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+        <li><a href="/cs61a/su13/basics">Basics</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/higher_order_functions">Higher Order Functions</a></li>
+      
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/lambdas">Lambdas</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/newtons_method">Newtons Method</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/recursion">Recursion</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/rlists">Rlists</a></li>
+      
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/iterables">Iterables</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/object_oriented_programming">Object Oriented Programming</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/mutable_data">Mutable Data</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/inheritance">Inheritance</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/generic_functions">Generic Functions</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/orders_of_growth">Orders Of Growth</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/tree_recursion">Tree Recursion</a></li>
+      
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/memoization">Memoization</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/tail_recursion">Tail Recursion</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/iterators">Iterators</a></li>
+      
+    
+  
+    
+  
+    
+      
+        <li><a href="/cs61a/su13/logic">Logic</a></li>
+      
+    
+  
+    
+  
+    
+  
+    
+  
+
+  </ul>
+</div>
+</div>
+<div class="col-md-9" role="main">
+  <h3>Better Fib</h3>
+
+
+
+
+
+
+<p>Remember <code>fib</code>, the function that we created a while ago to find the nth fibonacci number and to show tree recursion? The function was really slow on large inputs because at each level of recursion, it would make two recursive calls to itself AND it would recompute numbers that it already knew. For example, calling <code>fib(3)</code> computes <code>fib(2)</code> once and <code>fib(1)</code> twice. We don’t need to compute out <code>fib(1)</code> twice. Using a dictionary, your job is to re-write the function <code>fib</code> so that it only computes a certain recursive call once. (i.e. it only computes <code>fib(1)</code> once) Remember that a dictionary is able to store and look up items using a key-value system. If you want a hint, the idea that we are implementing is called <em>memoization</em>.</p>
+
+<pre><code>def better_fib(n):
+    """
+    Takes in a number, n, and computes the nth fibonacci
+    number recursively. To save time, it will only compute
+    each value once and store it in a dictionary. We will
+    define better_fib(0) = 0 and better_fib(1) = 1.
+      
+    &gt;&gt;&gt; better_fib(3)
+    2
+    &gt;&gt;&gt; better_fib(100)
+    354224848179261915075   # this should take less than a second
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def better_fib(n):
+    """
+    Takes in a number, n, and computes the nth fibonacci
+    number recursively. To save time, it will only compute
+    each value once and store it in a dictionary. We will
+    define better_fib(0) = 0 and better_fib(1) = 1.
+      
+    &gt;&gt;&gt; better_fib(3)
+    2
+    &gt;&gt;&gt; better_fib(100)
+    354224848179261915075   # this should take less than a second
+    """
+    d = {}
+    def fib_helper(n):
+        if n in d:
+            return d[n]
+        if n &lt;= 1:
+            d[n] = n
+            return n
+        d[n] = fib_help(n - 1) + fib_help(n - 2)
+        return d[n]
+    return fib_helper(n)
+</code></pre>
+
+  <p>There are several main ideas being tested in this problem. First, the overarching idea is <strong>memoization</strong>. We want to be able to quickly compute the nth fibonacci number and to do this, we will memoize, or remember, what the previous values that we computed were. To implement this, we will use a dictionary. Now, we could have passed the dictionary through our helper function, but then we would start having multiple copies of the dictionary floating around our function calls. To avoid that, we will be using the final main idea, a mutable data structure. In this problem, by creating the dictionary outside of the inner function, we only have to create one. That dictionary is is accessible by every single recursive call. That means that if we compute <code>fib(7)</code> in one recursive call, but we need it later when evaluating <code>fib(8)</code>, then we can evaluate it immidiately.</p>
+
+  <p>The function first checks to see if the item is currently in the dictionary. If it is, it returns the value of it immidiately and goes onto the next recursive call. If not, it computes the number, then stores it directly into the dictionary for future access. This saves unnecessary computations that might occur later on.</p>
+
+</div>
+
+
+
+</div>
+      </div>
+
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="bs-footer" role="contentinfo">
+      <p class="copyright">
+        © 2013 Mark Miyashita
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="http://github.com/negativetwelve">Github</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">TA Ratings</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+        <li class="muted">&middot;</li>        
+        <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+      </ul>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/js/jquery-1.8.3.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
+
+
+hljs.initHighlightingOnLoad();
+
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>
+
+  </body>
+</html>
