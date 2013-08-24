@@ -419,6 +419,24 @@ class Pigeon(Bird):
 <p>We first create a Parrot object and call it <code>p</code>. Then we call <code>children_on_the_nth_year</code> with the object as our first argument and the number 2 as our second argument. What will <code>tag</code> equal after executing the first line of the function? Remember that <code>type_tag</code> looks up the class name for our object, in this case it would be looking up Parrot, and in the <code>type_tag.tags</code> dictionary we would lookup the key Parrot and get back the value <code>'bird'</code>. We store that as the value <code>tag</code>. Then, on the next line, we lookup that tag that we just found in our <code>reproduction_rates</code> dictionary. What type of object will this dictionary return? It will give us back a function. What does this function do? It takes in some number, which represents the number of years, and returns how many children that animal will have that year. In this instance, we lookup <code>'bird'</code> and get back the lambda function <code>lambda years: years ** 2</code>. With the input now being <code>n</code> which is the value 2 in this example, the function returns that value <code>2 ** 2</code> which is just 4. The overall function will now return 4 and that is our answer. The similar process applies to the Rabbit, however, this time its tag is ‘rabbit’ and the function will be for the rabbit and not for the bird. </p>
 
 
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
+
 </div>
       </div>
 
