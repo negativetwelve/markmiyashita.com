@@ -5,16 +5,12 @@ site_pages:
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    {% for site_page in page.site_pages %}
-    <url>
-        <loc>{{ site.url | xml_escape }}{{site_page}}</loc>
-        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
-    </url>
-    {% endfor %}
-    {% for post in site.posts %}
+    {% for post in site.pages %}
     <url>
         <loc>{{ site.url | xml_escape }}{{ post.url | xml_escape }}</loc>
+        {% if post.date %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        {% endif %}
     </url>
     {% endfor %}
 </urlset>
