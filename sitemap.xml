@@ -2,49 +2,1105 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-        <loc>http://markmiyashita.com/</loc>
-        <lastmod>2013-08-23T20:40:52-07:00</lastmod>
+        <loc>http://markmiyashita.com/404.html</loc>
+        
     </url>
     
+    <url>
+        <loc>http://markmiyashita.com/atom.xml</loc>
+        
+    </url>
     
     <url>
-        <loc>http://markmiyashita.com/interviews/problems/one_stack_one_queue</loc>
+        <loc>http://markmiyashita.com/blog/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/contact/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs170/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs188/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61c/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs70/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/hkn/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/interviews/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/interviews/problems/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/new/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/projects/graphs/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/projects/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/resume/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/sitemap.xml</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/web_dev/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/web_dev/rails/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/basics/what_are_functions/index.html</loc>
+        
+        <lastmod>2013-06-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/basics/what_are_functions/index.html</loc>
+        
+        <lastmod>2013-06-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/basics/what_are_functions/index.html</loc>
+        
+        <lastmod>2013-08-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/basics/getting_started_with_python/index.html</loc>
+        
+        <lastmod>2013-05-14T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/basics/getting_started_with_python/index.html</loc>
+        
+        <lastmod>2013-05-14T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/basics/getting_started_with_python/index.html</loc>
+        
+        <lastmod>2013-08-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/higher_order_functions/functions_inside_functions/index.html</loc>
+        
+        <lastmod>2013-06-26T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/higher_order_functions/functions_inside_functions/index.html</loc>
+        
+        <lastmod>2013-06-26T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/higher_order_functions/church_numerals/index.html</loc>
+        
+        <lastmod>2013-07-02T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/higher_order_functions/church_numerals/index.html</loc>
+        
+        <lastmod>2013-07-02T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/lambdas/what_would_python_print/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/lambdas/what_would_python_print/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/newtons_method/newtons_method_practice/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/newtons_method/newtons_method_practice/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/sum_digits/index.html</loc>
+        
+        <lastmod>2013-02-18T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/sum_digits/index.html</loc>
+        
+        <lastmod>2013-02-18T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/sum_digits/index.html</loc>
+        
+        <lastmod>2013-07-03T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/longest_length_of_the_same_character_in_a_string/index.html</loc>
+        
+        <lastmod>2013-02-19T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/longest_length_of_the_same_character_in_a_string/index.html</loc>
+        
+        <lastmod>2013-02-19T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/longest_length_of_the_same_character_in_a_string/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/find_secret_using_recursion/index.html</loc>
+        
+        <lastmod>2013-05-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/find_secret_using_recursion/index.html</loc>
+        
+        <lastmod>2013-05-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/find_secret_using_recursion/index.html</loc>
+        
+        <lastmod>2013-07-14T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/binary_search/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/binary_search/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/binary_search/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/merge_sort/index.html</loc>
+        
+        <lastmod>2013-03-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/merge_sort/index.html</loc>
+        
+        <lastmod>2013-03-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/merge_sort/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/mutable_reverse_list/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/mutable_reverse_list/index.html</loc>
+        
+        <lastmod>2013-07-21T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/mutable_reverse_list/index.html</loc>
+        
+        <lastmod>2013-07-21T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/helper_functions/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/helper_functions/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/helper_functions/index.html</loc>
+        
+        <lastmod>2013-07-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/map_rlist/index.html</loc>
+        
+        <lastmod>2013-02-25T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/rlists/map_rlist/index.html</loc>
+        
+        <lastmod>2013-02-25T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/rlists/map_rlist/index.html</loc>
+        
+        <lastmod>2013-07-17T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/filter_rlist/index.html</loc>
+        
+        <lastmod>2013-02-25T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/rlists/filter_rlist/index.html</loc>
+        
+        <lastmod>2013-02-25T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/rlists/filter_rlist/index.html</loc>
+        
+        <lastmod>2013-07-17T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/sort_rlist/index.html</loc>
+        
+        <lastmod>2013-02-26T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/rlists/sort_rlist/index.html</loc>
+        
+        <lastmod>2013-02-26T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/rlists/sort_rlist/index.html</loc>
+        
+        <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/map_and_filter_rlists_object_version/index.html</loc>
+        
+        <lastmod>2013-03-19T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/rlists/map_and_filter_rlists_object_version/index.html</loc>
+        
+        <lastmod>2013-03-19T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/rlists/map_and_filter_rlists_object_version/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/rlists_as_functions/index.html</loc>
+        
+        <lastmod>2013-03-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/rlists/rlists_as_functions/index.html</loc>
+        
+        <lastmod>2013-03-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/rlists/rlists_as_functions/index.html</loc>
+        
+        <lastmod>2013-07-10T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/iterables/tuples_practice/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/iterables/tuples_practice/index.html</loc>
+        
+        <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/iterables/dictionaries/index.html</loc>
+        
+        <lastmod>2013-03-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/iterables/dictionaries/index.html</loc>
+        
+        <lastmod>2013-03-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/iterables/dictionaries/index.html</loc>
+        
+        <lastmod>2013-07-10T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/object_oriented_programming/pets_own_the_owners/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/object_oriented_programming/pets_own_the_owners/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/object_oriented_programming/pets_own_the_owners/index.html</loc>
+        
+        <lastmod>2013-07-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/mutable_data/in_place_functions/index.html</loc>
+        
+        <lastmod>2013-03-08T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/mutable_data/in_place_functions/index.html</loc>
+        
+        <lastmod>2013-03-08T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/mutable_data/in_place_functions/index.html</loc>
+        
+        <lastmod>2013-07-16T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/inheritance/designing_classes_and_using_inheritance/index.html</loc>
+        
+        <lastmod>2013-03-09T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/inheritance/designing_classes_and_using_inheritance/index.html</loc>
+        
+        <lastmod>2013-03-09T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/inheritance/designing_classes_and_using_inheritance/index.html</loc>
+        
+        <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
+        
+        <lastmod>2013-03-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
+        
+        <lastmod>2013-03-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
+        
+        <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/orders_of_growth/orders_of_growth_practice/index.html</loc>
+        
+        <lastmod>2013-04-04T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/orders_of_growth/orders_of_growth_practice/index.html</loc>
+        
+        <lastmod>2013-04-04T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/orders_of_growth/orders_of_growth_practice/index.html</loc>
+        
+        <lastmod>2013-07-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/flip_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/flip_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/flip_tree/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/in_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/in_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/in_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/pre_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/pre_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/pre_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/post_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/post_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-05-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/post_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/insert_into_binary_search_tree/index.html</loc>
+        
+        <lastmod>2013-05-12T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/insert_into_binary_search_tree/index.html</loc>
+        
+        <lastmod>2013-05-12T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/insert_into_binary_search_tree/index.html</loc>
+        
+        <lastmod>2013-07-23T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/is_my_tree_binary_and_searchable/index.html</loc>
+        
+        <lastmod>2013-05-13T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/is_my_tree_binary_and_searchable/index.html</loc>
+        
+        <lastmod>2013-05-13T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/is_my_tree_binary_and_searchable/index.html</loc>
+        
+        <lastmod>2013-07-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/tree_to_reversed_list/index.html</loc>
+        
+        <lastmod>2013-05-14T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/tree_to_reversed_list/index.html</loc>
+        
+        <lastmod>2013-05-14T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/tree_to_reversed_list/index.html</loc>
+        
+        <lastmod>2013-07-25T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/memoization/better_fib/index.html</loc>
+        
+        <lastmod>2013-03-04T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/memoization/better_fib/index.html</loc>
+        
+        <lastmod>2013-03-04T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/memoization/better_fib/index.html</loc>
+        
+        <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
+        
+        <lastmod>2013-05-10T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
+        
+        <lastmod>2013-05-10T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
+        
+        <lastmod>2013-07-25T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/iterators/once_an_infinite_sequence_always_an_infinite_sequence/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/iterators/once_an_infinite_sequence_always_an_infinite_sequence/index.html</loc>
+        
+        <lastmod>2013-05-09T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/iterators/once_an_infinite_sequence_always_an_infinite_sequence/index.html</loc>
+        
         <lastmod>2013-08-06T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/interviews/problems/merge_sort</loc>
-        <lastmod>2013-06-02T00:00:00-07:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/logic/finding_the_greatest_common_divisor_using_logic/index.html</loc>
+        
+        <lastmod>2013-05-12T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/blog/install_heroku_and_deploy_your_app</loc>
-        <lastmod>2013-04-13T01:39:00-07:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/sp13/logic/finding_the_greatest_common_divisor_using_logic/index.html</loc>
+        
+        <lastmod>2013-05-12T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/blog/python-args-and-kwargs</loc>
-        <lastmod>2013-03-14T15:38:00-07:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/su13/logic/finding_the_greatest_common_divisor_using_logic/index.html</loc>
+        
+        <lastmod>2013-08-08T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/blog/how-to-win-a-hackathon</loc>
-        <lastmod>2012-11-22T12:04:00-08:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/logic/modulus_in_logic/index.html</loc>
+        
+        <lastmod>2013-05-12T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/web_dev/rails/setting_up_our_first_app</loc>
-        <lastmod>0000-01-03T00:00:00-08:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/sp13/logic/modulus_in_logic/index.html</loc>
+        
+        <lastmod>2013-05-12T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/web_dev/rails/models_views_and_controllers</loc>
-        <lastmod>0000-01-02T00:00:00-08:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/su13/logic/modulus_in_logic/index.html</loc>
+        
+        <lastmod>2013-08-08T00:00:00-07:00</lastmod>
+        
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/web_dev/rails/introduction_and_purpose</loc>
-        <lastmod>0000-01-01T00:00:00-08:00</lastmod>
+        <loc>http://markmiyashita.com/cs61a/su13/basics/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/basics/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/basics/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/higher_order_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/higher_order_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/lambdas/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/lambdas/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/newtons_method/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/newtons_method/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/rlists/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/rlists/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/iterables/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/iterables/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/iterables/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/object_oriented_programming/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/object_oriented_programming/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/object_oriented_programming/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/mutable_data/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/mutable_data/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/mutable_data/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/inheritance/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/inheritance/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/inheritance/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/generic_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/generic_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/generic_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/orders_of_growth/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/orders_of_growth/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/orders_of_growth/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tree_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/memoization/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/memoization/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/memoization/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/tail_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/tail_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tail_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/iterators/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/iterators/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/iterators/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp13/logic/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/su13/logic/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/logic/index.html</loc>
+        
     </url>
     
 </urlset>
