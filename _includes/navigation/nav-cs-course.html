@@ -21,7 +21,7 @@
       {% assign notes_count = site.custom_posts[class_name][semester][topic_name].notes.size %}
       {% assign problems_count = site.custom_posts[class_name][semester][topic_name].problems.size %}
       {% assign count = notes_count | plus: problems_count %}
-      {% if topic[1]["semesters"] contains semester %}
+      {% if topic[1]["semesters"] contains page.categories[1] %}
       <li><a href="/{{ class_name }}/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }} ({{ count }})</a></li>
       {% elsif page.categories.size == 1  or (page.categories.size == 2 and topics contains page.categories[1]) %}
       <li><a href="/{{ class_name }}/{{ topic[0] }}">{{ topic[0] | titleize }} ({{ count }})</a></li>
