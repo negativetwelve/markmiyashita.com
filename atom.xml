@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-08-24T02:25:02-07:00</updated>
+    <updated>2013-08-24T14:31:54-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -77,12 +77,20 @@ If two students sitting next to each other are having the same problem, have the
     </entry>
     
     <entry>
-        <title><![CDATA[Lab_assistants]]></title>
+        <title><![CDATA[CS61A - Lab Assistants]]></title>
         
-        <link href="http://markmiyashita.com//lab_assistants"/>
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/lab_assistants"/>
         <updated>2013-08-23T00:00:00-07:00</updated>
-        <id>markmiyashita.com:/lab_assistants</id>
-        <content type="html"><![CDATA[
+        <id>markmiyashita.com:/cs61a/lab_assistants</id>
+        <content type="html"><![CDATA[<h3 id="faq">FAQ</h3>
+
+<p>Check out the <a href="/cs61a/lab_assistants/faq">FAQ</a> with answers to frequently asked questions about lab assisting.</p>
+
+<h3 id="tips">Tips</h3>
+
+<p>Check out the <a href="/cs61a/lab_assistants/tips">Tips</a> section for general tips about helping out students and being a great teacher.</p>
 ]]></content>
         <author>
             <name></name>
