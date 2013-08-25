@@ -3,16 +3,17 @@ layout: one_column
 title: Blog
 nav: nav-blog
 ---
-<h1>Blog</h1>
+<div class="page-header">
+  <h1>Blog</h1>
+</div>
 
 <article class="post">
   {% for post in site.categories.blog %}
     {% if post.published %}
     <h2><a href="{{ post.url }}" class="no-link">{{ post.title }}</a></h2>
     <p>
-      {{ post.content | summarize }}
+      {{ post.content | summarize }} <a href="{{ post.url }}" class="post-readmore">(Read More)</a>
     </p>
-    <a href="{{ post.url }}" class="post-readmore">(Read More)</a>
     {% endif %}
   {% endfor %}
 </article>
