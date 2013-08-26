@@ -23,7 +23,7 @@ work:
     end-date: "May '13"
     image: /assets/images/kloudless.png
     modal: kloudless
-    description: I worked on adding automation for attachments by adding a stream that listens for new emails and then processes a set of user-defined rules. The stream is an abstraction for Storm, a distributed realtime computation system.
+    description: I worked on adding automation for attachments by adding a stream that listens for new emails and then processes a set of user-defined rules. The stream is an abstraction for Storm, a distributed real-time computation system.
     full-description:
 
   - name: Inigral Inc.
