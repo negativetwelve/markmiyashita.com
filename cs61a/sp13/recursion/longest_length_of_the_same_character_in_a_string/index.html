@@ -28,10 +28,41 @@
   <script src="assets/js/respond.min.js"></script>
 <![endif]-->
 
+<!-- Start of Google Analytics Code -->
 <script type="text/javascript">
-  var analytics=analytics||[];(function(){var e=["identify","track","trackLink","trackForm","trackClick","trackSubmit","page","pageview","ab","alias","ready","group"],t=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var n=0;n<e.length;n++)analytics[e[n]]=t(e[n])})(),analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n)};
-  analytics.load("xq4lhfphjv");
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29669299-1']);
+  _gaq.push(['_setDomainName', 'markmiyashita.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
+<!-- End of Google Analytics Code -->
+
+<!-- Start of Woopra Code -->
+<script>
+(function(){
+  var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+})("woopra");
+
+woopra.config({
+    domain: 'markmiyashita.com',
+    idle_timeout: 600000
+});
+woopra.track('pv', {
+    url: window.location.pathname+window.location.search,
+    title: document.title
+});
+</script>
+<!-- End of Woopra Code -->
+
+
     <!-- Place anything custom after this. -->
   </head>
   <body>
@@ -499,10 +530,7 @@ def find_longest_run(word):
     </footer>
 
     <!-- JS and analytics only. -->
-    <!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/assets/js/jquery-1.8.3.min.js"></script>
+    <script src="/assets/js/jquery-1.8.3.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/highlight.pack.js"></script>
 
@@ -552,6 +580,7 @@ $(document).keypress(function(e) {
   }
 });
 </script>
+
 
   </body>
 </html>
