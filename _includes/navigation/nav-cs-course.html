@@ -15,6 +15,13 @@
 {% assign has_topics = has_topics | split: ',' %}
 
 {% if has_topics.size > 0 %}
+  {% assign count = class_name | count_all_problems_and_notes: semester %}
+  {% if semester == 'base' %}
+    <li><a href="/{{ class_name }}/practice">All Problems and Notes ({{ count }})</a></li>
+  {% else %}
+    <li><a href="/{{ class_name }}/{{ page.categories[1] }}/practice">All Problems and Notes ({{ count }})</a></li>
+  {% endif %}
+
   {% for topic in site.cs_classes[class_name] %}
     {% assign topic_name = topic[0] %}
     {% if topic[1]["semesters"].size > 0 %}
@@ -22,12 +29,13 @@
       {% assign problems_count = site.custom_posts[class_name][semester][topic_name].problems.size %}
       {% assign count = notes_count | plus: problems_count %}
       {% if topic[1]["semesters"] contains page.categories[1] %}
-      <li><a href="/{{ class_name }}/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }} ({{ count }})</a></li>
+        <li><a href="/{{ class_name }}/{{ page.categories[1] }}/{{ topic[0] }}">{{ topic[0] | titleize }} ({{ count }})</a></li>
       {% elsif page.categories.size == 1  or (page.categories.size == 2 and topics contains page.categories[1]) %}
-      <li><a href="/{{ class_name }}/{{ topic[0] }}">{{ topic[0] | titleize }} ({{ count }})</a></li>
+        <li><a href="/{{ class_name }}/{{ topic[0] }}">{{ topic[0] | titleize }} ({{ count }})</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}
+
 {% else %}
   <li class="no-topics">Sorry, there currently aren't any topics for {{ page.title }}.</li>
 {% endif %}
