@@ -11,7 +11,7 @@
 
 <title>
   
-    CS61A - What Are Functions? - Mark Miyashita
+    CS61A - Functions Inside Functions - Mark Miyashita
   
 </title>
 
@@ -401,36 +401,27 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  <h3>What Are Functions?</h3>
+  <h3>Functions Inside Functions</h3>
 
 
 
 
 
 
-<p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
+<p>Here we have some functions defined below. Run through and figure out what the two calls at the bottom output and then draw the environment diagram.</p>
 
-<p>What would the following output in Python?</p>
+<pre><code>def f(g, f):
+    return g(f)
 
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a = 6
-&gt;&gt;&gt; a       #1
+def foo(g, h):
+    return h * g(h)
 
-&gt;&gt;&gt; b       #2
+def h(i):
+    return 5
 
-&gt;&gt;&gt; def square(x):
-...     print(x * x)
-...     return x
-...
-&gt;&gt;&gt; a = square(a)
-            #3 - what is printed here?
-&gt;&gt;&gt; a       #4
+f(h, foo)       #1
 
-&gt;&gt;&gt; b = square(square(a))
-            #5 - what is printed here?
-
-&gt;&gt;&gt; b       #6
+f(h, foo(h, 3)) #2
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
@@ -438,14 +429,11 @@ woopra.track('pv', {
 <div class="solution">
 
   <ol>
-    <li>6</li>
     <li>5</li>
-    <li>36 (printed)</li>
-    <li>6</li>
-    <li>36 (printed) <br />
-36 (printed)</li>
-    <li>6</li>
+    <li>5</li>
   </ol>
+
+  <p>The important thing to note here is the order of evaluation. Remember that you don’t pay attention to the body of a function until you actually call the function AND that you need to evaluate all of your operands before you can apply your operator.</p>
 
 </div>
 
