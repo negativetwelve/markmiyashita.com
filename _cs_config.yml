@@ -44,7 +44,7 @@ cs_classes:
       semesters: []
 
     higher_order_functions:
-      semesters: [base, su13]
+      semesters: [base, su13, fa13]
       problems:
         - name: "Functions Inside Functions"
           file: functions_inside_functions
@@ -57,6 +57,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-06-26"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-02"
                 published: true
                 solution: true
       notes:
