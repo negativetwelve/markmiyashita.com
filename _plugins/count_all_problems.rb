@@ -15,8 +15,8 @@ module Jekyll
 
     def count_all_helper(class_name, semester, type)
       count = 0
-      @context.registers[:site].config["cs_classes"].each do |class_name, class_content|
-        unless class_content.nil?
+      @context.registers[:site].config["cs_classes"].each do |class_title, class_content|
+        unless class_content.nil? or class_title != class_name
           class_content.each do |topic, topic_content|
             if topic_content.include? type
               count += counter(topic_content[type], semester)
