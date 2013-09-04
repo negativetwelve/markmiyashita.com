@@ -1,0 +1,5 @@
+<ul>
+  {% for week in site.e98 %}
+  <li><a href="/e98/week/{{ forloop.index }}">Week {{ forloop.index }} - {{ week }}</a></li>
+  {% endfor %}
+</ul>

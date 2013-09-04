@@ -1,0 +1,10 @@
+<div class="bs-old-docs">
+  <div class="container">
+    {% for index in site.e98 %}
+      <a href="/e98/week/{{ forloop.index }}">Week {{ forloop.index }}</a>
+      {% unless forloop.last %}
+      -
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
