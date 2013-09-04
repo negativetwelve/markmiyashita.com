@@ -746,6 +746,16 @@ cs_classes:
     linked_list:
       semesters: []
   cs61c:
+    basics:
+      semesters: [base]
+      notes:
+        - name: "Introduction to C"
+          file: introduction_to_c
+          tags: [C, language, compiler]
+          semesters:
+            - base:
+                date: "2013-09-03"
+                published: true
   cs70:
   cs170:
   cs188:
