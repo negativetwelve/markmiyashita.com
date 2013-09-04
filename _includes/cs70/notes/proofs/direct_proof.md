@@ -16,7 +16,7 @@ __Theorem:__ Every odd integer is the difference of two perfect squares.
 
 This is equivalent to saying:
 
-$$(\forall x \in \mathbb{Z})(\text{x is odd} \Rightarrow \exists a \exists b \in \mathbb{z} \text{ such that } a^2 - b^2 = x)$$
+$$(\forall x \in \mathbb{Z})(\text{x is odd} \Rightarrow \exists a \exists b \in \mathbb{Z} \text{ such that } a^2 - b^2 = x)$$
 
 __Proof:__ By definition, if we let $$c = 2b + 1$$ where $$b$$ in an integer, then $$c$$ must be odd. We want to prove that $$c$$ can be made up of the difference between two perfect squares.
 
