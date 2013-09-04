@@ -11,7 +11,7 @@
 
 <title>
   
-    CS61A - Dictionaries - Mark Miyashita
+    CS61C - Introduction to C - Mark Miyashita
   
 </title>
 
@@ -93,7 +93,7 @@ woopra.track('pv', {
         <li>
           <a href="/blog">Blog</a>
         </li>
-        <li class="active">
+        <li>
           <a href="/cs61a/fa13">CS61A</a>
         </li>
         <li class="dropdown">
@@ -142,7 +142,7 @@ woopra.track('pv', {
     Looking for more CS classes? Check out:
     
       
-        <strong><a href="/cs61a">CS61A</a></strong>
+        <a href="/cs61a">CS61A</a>
       
       
       -
@@ -156,7 +156,7 @@ woopra.track('pv', {
       
     
       
-        <a href="/cs61c">CS61C</a>
+        <strong><a href="/cs61c">CS61C</a></strong>
       
       
       -
@@ -208,7 +208,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/su13/practice">All Problems and Notes (37)</a></li>
+    <li><a href="/cs61c/practice">All Problems and Notes (1)</a></li>
   
 
   
@@ -218,210 +218,8 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/su13/basics">Basics (2)</a></li>
+        <li><a href="/cs61c/basics">Basics (1)</a></li>
       
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/higher_order_functions">Higher Order Functions (2)</a></li>
-      
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/lambdas">Lambdas (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/newtons_method">Newtons Method (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/recursion">Recursion (7)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/rlists">Rlists (5)</a></li>
-      
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/iterables">Iterables (2)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/object_oriented_programming">Object Oriented Programming (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/mutable_data">Mutable Data (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/inheritance">Inheritance (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/generic_functions">Generic Functions (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/orders_of_growth">Orders Of Growth (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/tree_recursion">Tree Recursion (7)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/memoization">Memoization (1)</a></li>
-      
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/tail_recursion">Tail Recursion (1)</a></li>
-      
-    
-  
-    
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/iterators">Iterators (1)</a></li>
-      
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/su13/logic">Logic (2)</a></li>
-      
-    
-  
-    
-    
-  
-    
-    
-  
-    
     
   
 
@@ -431,130 +229,85 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  <h1>Dictionaries</h1>
+  <h1>Introduction to C</h1>
 
 
 
 
 
 <ul id="markdown-toc">
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#accessing-elements">Accessing Elements</a></li>
-  <li><a href="#inserting-and-changing-elements">Inserting and Changing Elements</a></li>
-  <li><a href="#removing-elements">Removing Elements</a></li>
-  <li><a href="#iterating-over-the-elements-in-a-dictionary">Iterating Over the Elements in a Dictionary</a></li>
-  <li><a href="#dictionaries-in-environment-diagrams">Dictionaries in Environment Diagrams</a></li>
-  <li><a href="#useful-methods-for-dictionaries">Useful Methods for Dictionaries</a></li>
+  <li><a href="#c-as-a-language">C as a Language</a></li>
+  <li><a href="#hello-world">Hello World</a></li>
+  <li><a href="#deconstucting-our-first-c-program">Deconstucting our first C Program</a></li>
 </ul>
 
-<h4 id="introduction">Introduction</h4>
+<h4 id="c-as-a-language">C as a Language</h4>
 
 <!--start-->
-<p>Dictionaries are another type of <em>data structure</em> that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
+<p>C is a general programming language that is static typed, and has many functionalities such as lexical variable scope and recursion. It is somewhat low-level and can easily be compiled into machine languages that the computer can easily understand. It is one of the most widely used programming languages of all time and it also has popular derivatives such as C++, C#, and Objective-C. As with any new programming language, let’s write “Hello World” in our new language, C! We start with a blank file called <code>hello.c</code>
 <!--end--></p>
 
-<p>A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:</p>
+<h4 id="hello-world">Hello World</h4>
 
-<pre><code>&gt;&gt;&gt; ages = {'joe': 20, 'jenny': 19, 'tony': 24}
-&gt;&gt;&gt; ages['tony'] = 23
+<p>Hello world is a simple enough program that we’re going to write it entirely, then take a look at what we’ve done. Here’s the code for <code>hello.c</code></p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+int main()
+{
+  printf("Hello World\n");
+  return 0;
+}
 </code></pre>
 
-<p>If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.</p>
+<p>To make sure that it works, we must first compile our .c file into something that our computer can run. You need to havea compiler on your computer in order to do this. For this demo, and the rest of the posts in CS61C, we are going to use the gcc compiler.</p>
 
-<pre><code>&gt;&gt;&gt; ages
-{'joe': 20, 'jenny': 19, 'tony': 23}
+<p>To compile our <code>hello.c</code> file, we’re going to run:</p>
+
+<pre><code>gcc hello.c -o hello
 </code></pre>
 
-<p>This shows that dictionary keys are unique. Another thing we should note is that dictionaries are unordered. Python has its own way of organizing and arranging the items, but we as the programmer do not know for sure.</p>
+<p>Let’s deconstruct this command. First, we note that the Unix program that we’re running is <code>gcc</code>. The first argument, <code>hello.c</code> is the name of the file that we want to compile. We could stop here if we wanted but we added on a compiler flag, namely, -o. The <code>-o</code> flag for the gcc compiler allows you to specify an output file/name for the program. In this case, we are saying “compile the program <code>hello.c</code> into a program that the computer can run called <code>hello</code>.” If we omitted the <code>-o hello</code> part of the command, everything would still work but we would be left with a file called <code>a.out</code> that we can run. <code>a.out</code> is the default filename if one is not specified.</p>
 
-<h4 id="accessing-elements">Accessing Elements</h4>
+<p>Once we have compiled our file with the command <code>gcc hello.c -o hello</code>, we can then run our file. To run our file, we enter the following into our Unix prompt:</p>
 
-<p>Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.</p>
-
-<pre><code>&gt;&gt;&gt; ages['joe']
-20
-&gt;&gt;&gt; ages['johnny']
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-KeyError: 'johnny'
+<pre><code>$ ./hello
+Hello World
 </code></pre>
 
-<h4 id="inserting-and-changing-elements">Inserting and Changing Elements</h4>
+<p>If we did everything right, we should see the text ‘Hello World’. <code>./</code> means to execute the program (in this case we’re executing a program called ‘hello’).</p>
 
-<p>Elements in a dictionary can be inserted in the same way that they are changed. Dictionaries are considered a mutable data type because we can change the entries and add new ones. To add elements, we do the following:</p>
+<p>Let’s take a moment to deconstruct our actual C program that we wrote, <code>hello.c</code>.</p>
 
-<pre><code>&gt;&gt;&gt; ages['harry'] = 19
-&gt;&gt;&gt; ages
-{'joe': 20, 'harry': 19, 'jenny': 19, 'tony': 23}
+<h4 id="deconstucting-our-first-c-program">Deconstucting our first C Program</h4>
+
+<p>First, at the top of the file, we included the line:</p>
+
+<pre><code>#include &lt;stdio.h&gt;
 </code></pre>
 
-<p>To change elements, we do the same thing, except we know that the key already exists.</p>
+<p>which allows us to later on use the function <code>printf</code>. We say that <code>printf</code> is declared in this header file. Header files are contain declarations of classes, variables, and functions. It is similar to an import statement in Python or include in Ruby.</p>
 
-<pre><code>&gt;&gt;&gt; ages['jenny'] = 25
-&gt;&gt;&gt; ages
-{'joe': 20, 'jenny': 25, 'harry': 19, 'tony': 23}
+<p>The second part:</p>
+
+<pre><code>int main()
 </code></pre>
 
-<p>Again, notice that the elements are in a different order this time, a reminder that dictionaries are unordered and that we cannot rely upon the order when we iterate over them.</p>
+<p>means we are declaring a function <code>main</code> that returns an int. Every C file needs a <code>main</code> function or else nothing will run. The reason why it returns an int and not something else is because the Unix machine expects to receive an <a href="http://tldp.org/LDP/abs/html/exitcodes.html">exit code</a> from the program so that it knows what to do next.</p>
 
-<h4 id="removing-elements">Removing Elements</h4>
+<p>Within the body of the <code>main()</code> function, we have the following:</p>
 
-<p>If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:</p>
-
-<pre><code>&gt;&gt;&gt; del ages['tony']
-&gt;&gt;&gt; ages
-{'joe': 20, 'jenny': 25, 'harry': 19}  
+<pre><code>printf("Hello World\n");
 </code></pre>
 
-<p>We use the <code>del</code> function that requires you to specify the dictionary and the associated key that you want to remove.</p>
+<p>This line (with <code>printf</code> being imported from <code>&lt;stdio.h&gt;</code>) prints the text “Hello World\n” to standard out. In C, nothing is implicit so we need to explicitly state that we want a newline character <code>\n</code> to appear after our text.</p>
 
-<h4 id="iterating-over-the-elements-in-a-dictionary">Iterating Over the Elements in a Dictionary</h4>
+<p>The last line:</p>
 
-<p>We have several methods for iterating over a dictionary. Again, we remind ourselves that dictionaries are unordered so we cannot rely upon a for loop to give us the same values after we manipulate the data. For example:</p>
-
-<pre><code>&gt;&gt;&gt; for i in ages:
-...     print(i)
-...
-harry
-joe
-jenny
+<pre><code>return 0;
 </code></pre>
 
-<p>Notice that the <em>keys</em> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:</p>
-
-<pre><code>&gt;&gt;&gt; for i in ages.values():
-...     print(i)
-...
-19
-20
-25
-&gt;&gt;&gt; for k, v in ages.items():
-...     print(k, v)
-...
-harry 19
-joe 20
-jenny 25
-</code></pre>
-
-<h4 id="dictionaries-in-environment-diagrams">Dictionaries in Environment Diagrams</h4>
-
-<p>Dictionaries have a representation in environment diagrams too. We represent it by listing the type <em>dict</em> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:</p>
-
-<p><img src="/assets/images/dictionaries/environment_diagram_01.png" alt="Environment Diagram" /></p>
-
-<p>When we add and remove items from the dictionary, our environment diagram updates to this:</p>
-
-<pre><code>&gt;&gt;&gt; ages['joe'] = 22
-&gt;&gt;&gt; del ages['jenny']
-&gt;&gt;&gt; ages
-{'joe': 22, 'harry': 19}
-</code></pre>
-
-<p><img src="/assets/images/dictionaries/environment_diagram_02.png" alt="Environment Diagram" /></p>
-
-<h4 id="useful-methods-for-dictionaries">Useful Methods for Dictionaries</h4>
-
-<p>Work in progress, will be updated soon.</p>
+<p>is the exit code that we were talking about earlier. Since the <code>main</code> function is required to return an int, we return 0 because that represents the exit code for success. We want to signal to Unix that the file that we are running was a success.</p>
 
 
 <article class="post">
