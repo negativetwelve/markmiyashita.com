@@ -11,7 +11,7 @@
 
 <title>
   
-    CS61B - Mark Miyashita
+    CS61B - Object Oriented Programming Review - Mark Miyashita
   
 </title>
 
@@ -232,23 +232,59 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  <article class="post" id="extra_problems">
-  <h2>CS61B - Data Structures - UC Berkeley</h2>
-  <p>
-    This is the second course in the CS61 Series at UC Berkeley. The language used throughout the course is Java and the students spend most of their time learning about different data structures, sorting algorithms, and general search algorithms.
-  </p>
+  <h3>Object Oriented Programming Review</h3>
 
-  <div class="bs-callout bs-callout-info">
-    <h2>Announcements</h2>
-    <p>
-      Be sure to check out the <a href="/interviews/problems"i>interviews</a> section which contains a lot of interview level questions regarding data structures and run time.
-    </p>
+
+
+
+
+<ul id="markdown-toc">
+  <li><a href="#vocabulary">Vocabulary</a></li>
+  <li><a href="#class">Class</a></li>
+  <li><a href="#objects">Objects</a></li>
+  <li><a href="#methods">Methods</a></li>
+</ul>
+
+<h4 id="vocabulary">Vocabulary</h4>
+
+<!--start-->
+<p>Object Oriented Programming contains a lot of vocabulary and that vocabulary is crucial to your understanding of the programming paradigm. Thus, we spend a decent amount of time making sure that your fundamental understanding of the vocabulary is sound. We have 3 main words that you should be acquainted with. They are: class, objects, and methods.
+<!--end--></p>
+
+<h4 id="class">Class</h4>
+
+<p>A class is the fundamental idea in object oriented programming. You can think of the class as a sort of blueprint for the objects that you want to create. For example, I might make a <code>Person</code> class that represents a real life human being. That <code>Person</code> might have an age, a height, a weight, etc. Those are what we call attributes of the object.</p>
+
+<p>This blueprint of a <code>Person</code> that we are creating represents and holds the instructions on how to create an object. This is called the <em>constructor</em>. The <em>constructor</em>’s job is to create an object or an instance of the class (as they are often referred to as).</p>
+
+<h4 id="objects">Objects</h4>
+
+<p>Objects are things that hold information. They are also referred to as instances of a class. What that means is that the object is created using the <em>constructor</em> method of the class. Once our object has been created, we can start storing and retrieving information from the contents of the object. There are two more vocabulary words that are attached to objects, they are: attributes and methods.</p>
+
+<p>Attributes hold information about the object. This includes anything that you want to look up about your object. Using the example from before, we have our <code>Person</code> class that has a height, weight, and age. Those are all attributes because they hold and store information about our object. They do not change when accessed and we can look them up at any time.</p>
+
+<h4 id="methods">Methods</h4>
+
+<p>A method is a function that is associated with a particular class. It works either on an individual object or on a class as a whole. A method is something that either accesses information about the object or class, or it changes or mutates the information associated with that object or class. Methods are associated with the class that they are defined in.</p>
+
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   </div>
 </article>
-
-
-
-
 
 </div>
       </div>

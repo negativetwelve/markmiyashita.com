@@ -916,6 +916,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61b/basics/object_oriented_programming_review/index.html</loc>
+        
+        <lastmod>2013-09-03T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/su13/basics/index.html</loc>
         
     </url>
@@ -1157,6 +1164,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/logic/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/basics/index.html</loc>
         
     </url>
     
