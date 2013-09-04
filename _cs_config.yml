@@ -757,5 +757,15 @@ cs_classes:
                 date: "2013-09-03"
                 published: true
   cs70:
+    proofs:
+      semesters: [base]
+      notes:
+        - name: "Direct Proof"
+          file: direct_proof
+          tags: [proofs]
+          semesters:
+            - base:
+                date: "2013-09-04"
+                published: true
   cs170:
   cs188:
