@@ -11,7 +11,7 @@
 
 <title>
   
-    CS61A - What Are Functions? - Mark Miyashita
+    CS61A - Sum Digits - Mark Miyashita
   
 </title>
 
@@ -408,51 +408,48 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  <h3>What Are Functions?</h3>
+  <h3>Sum Digits</h3>
 
 
 
 
 
 
-<p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
+<p>Write a function that sums up the digits of a number. Try to implement it both iteratively and recursively.</p>
 
-<p>What would the following output in Python?</p>
-
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a = 6
-&gt;&gt;&gt; a       #1
-
-&gt;&gt;&gt; b       #2
-
-&gt;&gt;&gt; def square(x):
-...     print(x * x)
-...     return x
-...
-&gt;&gt;&gt; a = square(a)
-            #3 - what is printed here?
-&gt;&gt;&gt; a       #4
-
-&gt;&gt;&gt; b = square(square(a))
-            #5 - what is printed here?
-
-&gt;&gt;&gt; b       #6
+<pre><code>def sum_digits(n):
+    """
+    Takes a number n as input and outputs the 
+    sum of the digits of n.
+    
+    &gt;&gt;&gt; sum_digits(100)
+    1
+    &gt;&gt;&gt; sum_digits(235)
+    10
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>6</li>
-    <li>5</li>
-    <li>36 (printed)</li>
-    <li>6</li>
-    <li>36 (printed) <br />
-36 (printed)</li>
-    <li>6</li>
-  </ol>
+  <pre><code>def sum_digits(n):
+    """
+    Takes a number n as input and outputs the 
+    sum of the digits of n.
+    
+    &gt;&gt;&gt; sum_digits(100)
+    1
+    &gt;&gt;&gt; sum_digits(235)
+    10
+    """
+    if n &lt; 10:
+        return n
+    return n % 10 + sum_digits(n // 10)
+</code></pre>
+
+  <p>When we are given a number, n, that is less than 10, we know that the number has only one digit so we can just return that number. When it is greater than or equal to ten, we want to mod it by 10 to get the ones place, and then remove the ones place and use recursion to find the sum of the rest of the digits. The floordiv operator allows us to remove the ones place from the number by floordiving by 10.</p>
 
 </div>
 

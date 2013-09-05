@@ -318,6 +318,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/sum_digits/index.html</loc>
+        
+        <lastmod>2013-09-04T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/recursion/longest_length_of_the_same_character_in_a_string/index.html</loc>
         
         <lastmod>2013-02-19T00:00:00-08:00</lastmod>
@@ -1018,6 +1025,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/index.html</loc>
         
     </url>
     
