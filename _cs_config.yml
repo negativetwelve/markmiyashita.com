@@ -22,6 +22,19 @@ cs_classes:
                 date: "2013-08-15"
                 published: true
                 solution: true
+        - name: "Renaming Functions"
+          file: renaming_functions
+          type: Warmup
+          tags: [functions, names]
+          semesters:
+            - base:
+                date: "2013-09-05"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-05"
+                published: true
+                solution: true
       notes:
         - name: "Getting Started with Python"
           file: getting_started_with_python
