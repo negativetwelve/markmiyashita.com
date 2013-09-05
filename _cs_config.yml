@@ -113,7 +113,7 @@ cs_classes:
                 solution: true
 
     recursion:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Sum Digits"
           file: sum_digits
@@ -130,6 +130,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-03"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-04"
                 published: true
                 solution: true
         - name: "Longest Length of the Same Character in a String"
