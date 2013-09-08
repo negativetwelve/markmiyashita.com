@@ -74,6 +74,45 @@ module Jekyll
     end
   end
 
+  class CSCode < Page
+    def initialize(site, base, course, topic, item)
+      @site = site
+      @base = base
+      base_dir = "#{course}/#{topic}/code"
+      @dir = File.join(base_dir, item["output"])
+      @name = 'index.html'
+
+      self.process(@name)
+      self.read_yaml(File.join(base, "_layouts"), "cs_code.html")
+
+      self.data["title"] = course.upcase + " - " + item["name"]
+      self.data["name"] = item["name"]
+      self.data["course"] = course
+      self.data["topic"] = topic
+
+      self.data["file"] = item["file"]
+      self.data["language"] = item["language"]
+      self.data["clean_url"] = self.url.gsub('/index.html', '')
+      self.data["categories"] = [course, topic]
+    end
+  end
+
+  class CodeFile < Page
+    def initialize(site, base, course, topic, item)
+      @site = site
+      @base = base
+      base_dir = "#{course}/#{topic}/code"
+      @dir = File.join(base_dir, item["output"])
+      @name = item["file"]
+      self.process(@name)
+      self.read_yaml(File.join(base, "_layouts"), "code_file.html")
+
+      self.data["file"] = item["file"]
+      self.data["course"] = course
+      self.data["topic"] = topic
+    end
+  end
+
   class CSProblemGenerator < Generator
     safe true
 
@@ -115,6 +154,15 @@ module Jekyll
                       end
                     end
                   end
+                end
+              end
+              code = topic_hash["code"]
+              unless code.nil? or code.size == 0
+                code.each do |c|
+                  new_code = CSCode.new(site, site.source, course, topic, c)
+                  code_file = CodeFile.new(site, site.source, course, topic, c)
+                  site.pages << code_file
+                  site.pages << new_code
                 end
               end
             end
