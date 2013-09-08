@@ -30,7 +30,6 @@ task :deploy do
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
   puts "Generating site from source."
   Rake::Task[:generate].execute
-  Rake::Task[:copy_code].execute
   cd "#{deploy_dir}" do
     system("git add .")
     system("git add -u")
