@@ -3,10 +3,10 @@
 {% capture path %}{{ base }}{{ problem_title }}/{{ problem_title }}{% endcapture %}
 
 
-{% capture python %}{{ path }}_python.py{% endcapture %}
-{% capture ruby %}{{ path }}_ruby.rb{% endcapture %}
-{% capture java %}{{ path }}_java.java{% endcapture %}
-{% capture javascript %}{{ path }}_javascript.js{% endcapture %}
+{% capture python_file %}{{ path }}_python.py{% endcapture %}
+{% capture ruby_file %}{{ path }}_ruby.rb{% endcapture %}
+{% capture java_file %}{{ path }}_java.java{% endcapture %}
+{% capture javascript_file %}{{ path }}_javascript.js{% endcapture %}
 
 
 ## {{ page.title }}
@@ -21,36 +21,36 @@ following languages:
 {% endfor %}
 
 {% if page.languages contains 'python' %}
-### Python Solution [(download)](/{{ python }}) {#python}
+### Python Solution [(download)](/{{ python_file }}) {#python}
 
 {% highlight python %}
-{% include python %}
+{% include python_file %}
 {% endhighlight %}
 {% endif %}
 
 
 {% if page.languages contains 'ruby' %}
-### Ruby Solution [(download)](/{{ ruby }}) {#ruby}
+### Ruby Solution [(download)](/{{ ruby_file }}) {#ruby}
 
 {% highlight ruby %}
-{% include ruby %}
+{% include ruby_file %}
 {% endhighlight %}
 {% endif %}
 
 
 {% if page.languages contains 'java' %}
-### Java Solution [(download)](/{{ java }}) {#java}
+### Java Solution [(download)](/{{ java_file }}) {#java}
 
 {% highlight java %}
-{% include java %}
+{% include java_file %}
 {% endhighlight %}
 {% endif %}
 
 
 {% if page.languages contains 'javascript' %}
-### Javascript Solution [(download)](/{{ javascript }}) {#javascript}
+### Javascript Solution [(download)](/{{ javascript_file }}) {#javascript}
 
 {% highlight javascript %}
-{% include javascript %}
+{% include javascript_file %}
 {% endhighlight %}
 {% endif %}
