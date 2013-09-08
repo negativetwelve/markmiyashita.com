@@ -480,6 +480,11 @@ cs_classes:
 
     tree_recursion:
       semesters: [base, sp13, su13]
+      code:
+        - name: "Tree Implementation"
+          output: tree
+          file: tree.py
+          language: python
       problems:
         - name: "Flip Tree"
           file: flip_tree
@@ -762,9 +767,14 @@ cs_classes:
                 published: true
     singly_linked_list:
       semesters: [base]
+      code:
+        - name: "Singly Linked List Implementation"
+          output: singly_linked_list
+          file: SinglyLinkedList.java
+          language: java
       notes:
         - name: "Singly Linked List"
-          file: singly_linked_list
+          file: general_singly_linked_list
           tags: [data structures, linked list]
           semesters:
             - base:
@@ -778,6 +788,18 @@ cs_classes:
           semesters:
             - base:
                 date: "2013-09-07"
+                published: true
+                solution: true
+                interview_problem: true
+                interview_level: beginner
+                interview_languages: [java]
+        - name: "Insert an Element into a Singly Linked List"
+          file: insert_general_singly_linked_list
+          type: Warmup
+          tags: [insert, data structures]
+          semesters:
+            - base:
+                date: "2013-09-08"
                 published: true
                 solution: true
                 interview_problem: true
