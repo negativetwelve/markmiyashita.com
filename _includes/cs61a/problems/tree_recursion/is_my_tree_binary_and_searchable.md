@@ -1,5 +1,5 @@
 {% capture question %}
-This problem uses the [Tree Class](http://markmiyashita.com/cs61a/code/tree_recursion/tree.py) and the template for this file can be downloaded [here](http://markmiyashita.com/cs61a/code/tree_recursion/is_binary_search_tree.py).
+This problem uses the Tree Class defined [here.]({% code tree %})
 
 Given an input tree, we want to test if the tree is a binary search tree. A tree is a binary search tree if for each of its branches, all of the values on the left subtree are less than the entry and all of the values on the right subtree are greater than the entry.
 

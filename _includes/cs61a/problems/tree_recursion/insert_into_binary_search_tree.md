@@ -1,5 +1,5 @@
 {% capture question %}
-This problem uses the [Tree Class](http://markmiyashita.com/cs61a/code/tree_recursion/tree.py) and the template for this file can be downloaded [here](http://markmiyashita.com/cs61a/code/tree_recursion/insert.py).
+This problem uses the Tree Class defined [here.]({% code tree %})
 
 In this problem we are going to be inserting an item into a binary search tree. Recall that a binary search tree means that all items on the left of the tree are less than the current entry and all items on the right of the tree are greater than the current entry. Note: We cannot insert into an empty tree because of our implementation. Since we are using None as our empty tree, we can't add a `.entry` to None because it is not an object. This function should still work for all other trees though.
 

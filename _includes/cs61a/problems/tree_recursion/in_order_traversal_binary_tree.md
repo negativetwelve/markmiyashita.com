@@ -1,5 +1,5 @@
 {% capture question %}
-This problem uses the [Tree Class](http://markmiyashita.com/cs61a/code/tree_recursion/tree.py) and the template for this file can be downloaded [here](http://markmiyashita.com/cs61a/code/tree_recursion/in_order_traversal.py).
+This problem uses the Tree Class defined [here.]({% code tree %})
 
 This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.
 

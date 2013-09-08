@@ -1,5 +1,5 @@
 {% capture question %}
-This problem uses the [Tree Class](http://markmiyashita.com/cs61a/code/tree_recursion/tree.py) and the template for this file can be downloaded [here](http://markmiyashita.com/cs61a/code/tree_recursion/flip_tree.py).
+This problem uses the Tree Class defined [here.]({% code tree %})
 
 In this problem, we want to swap the left and right branches of our tree. Take a look at the doctests and leave comments below if anything is confusing/you want a hint.
 
