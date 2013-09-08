@@ -1,0 +1,16 @@
+---
+layout: cs_course
+---
+
+<h1>{{ page.name }}</h1>
+
+<h4><a href="{{ page.file }}">Download</a></h4>
+
+{% capture file %}{{ page.course }}/code/{{ page.topic }}/{{ page.file }}{% endcapture %}
+
+{% capture contents %}{% include file %}{% endcapture %}
+
+{% assign language = page.language %}
+{% highlight language %}
+{{ contents }}
+{% endhighlight %}
