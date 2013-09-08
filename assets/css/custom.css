@@ -22,6 +22,21 @@
   max-width: 100%;
 }
 
+.disclaimer {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 10px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+#markdown-toc {
+  margin-bottom: 20px;
+}
+
+#disqus_thread {
+  margin-top: 20px;
+}
+
 @media(min-width: 1200px) {
   .profile-pic {
     float: left;
