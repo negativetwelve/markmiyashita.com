@@ -760,8 +760,16 @@ cs_classes:
             - base:
                 date: "2013-09-03"
                 published: true
-    linked_list:
-      semesters: []
+    singly_linked_list:
+      semesters: [base]
+      notes:
+        - name: "Singly Linked List"
+          file: singly_linked_list
+          tags: [data structures, linked list]
+          semesters:
+            - base:
+                date: "2013-09-07"
+                published: true
   cs61c:
     basics:
       semesters: [base]
