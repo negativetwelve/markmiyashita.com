@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/negativetwelve/jekyll.git
-  revision: 3d1006b51a998221f9940bfcd7ed5975996c6197
+  revision: 417b31ee85aa49ca2028bbe33207a11bb9aa0c3f
   specs:
     jekyll (1.0.2)
       classifier (~> 1.3)
