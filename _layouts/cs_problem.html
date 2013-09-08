@@ -1,7 +1,9 @@
 ---
 layout: cs_course
 ---
-<h3>{{ page.name }}</h3>
+<div class="page-header">
+  <h3>{{ page.name }}</h3>
+</div>
 
 {% capture file %}{% if page.categories.size > 2 %}{{ page.categories[0] }}/problems/{{ page.categories[2] }}/{{ page.file }}.md{% else %}{{ page.categories[0] }}/problems/{{ page.categories[1] }}/{{ page.file }}.md{% endif %}{% endcapture %}
 
@@ -9,4 +11,5 @@ layout: cs_course
 
 {{ contents | markdownify }}
 
+{% include found_error.html %}
 {% include disqus.html %}
