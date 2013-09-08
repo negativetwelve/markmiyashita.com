@@ -770,6 +770,19 @@ cs_classes:
             - base:
                 date: "2013-09-07"
                 published: true
+      problems:
+        - name: "Insert an Element into the Beginning of a Singly Linked List"
+          file: insert_beginning_of_singly_linked_list
+          type: Warmup
+          tags: [insert, data structures]
+          semesters:
+            - base:
+                date: "2013-09-07"
+                published: true
+                solution: true
+                interview_problem: true
+                interview_level: beginner
+                interview_languages: [java]
   cs61c:
     basics:
       semesters: [base]

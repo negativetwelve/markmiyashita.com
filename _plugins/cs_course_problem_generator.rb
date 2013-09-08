@@ -45,6 +45,10 @@ module Jekyll
       self.data["date"] = semester_info["date"]
       self.data["published"] = semester_info["published"]
       self.data["clean_url"] = self.url.gsub('/index.html', '')
+
+      self.data["interview_problem"] = semester_info["interview_problem"]
+      self.data["interview_level"] = semester_info["interview_level"]
+      self.data["interview_languages"] = semester_info["interview_languages"]
     end
   end
 

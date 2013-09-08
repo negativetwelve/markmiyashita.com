@@ -28,41 +28,20 @@ nav: nav-interview-problems
 
   <h3>Level 1 - Beginner</h3>
   <ul>
-  {% for problem in site.categories.interviews %}
-    {% if problem.categories contains 'problems' and problem.tags contains 'beginner' %}
-      <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
-      {% for language in problem.languages %}
-        <code>{{ language }}</code>
-      {% endfor %}
-      </li>
-    {% endif %}
-  {% endfor %}
+    {% assign interview_level = 'beginner' %}
+    {% include 'interview_problems_set.html' %}
   </ul>
 
   <h3>Level 2 - Intermediate</h3>
   <ul>
-  {% for problem in site.categories.interviews %}
-   {% if problem.categories contains 'problems' and problem.tags contains 'intermediate' %}
-     <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
-      {% for language in problem.languages %}
-        <code>{{ language }}</code>
-      {% endfor %}
-      </li>
-    {% endif %}
-  {% endfor %}
+    {% assign interview_level = 'intermediate' %}
+    {% include 'interview_problems_set.html' %}
   </ul>
 
   <h3>Level 3 - Advanced</h3>
   <ul>
-  {% for problem in site.categories.interviews %}
-    {% if problem.categories contains 'problems' and problem.tags contains 'advanced' %}
-      <li><a href="{{ problem.url }}">{{ problem.title }}</a> -
-      {% for language in problem.languages %}
-        <code>{{ language }}</code>
-      {% endfor %}
-      </li>
-    {% endif %}
-  {% endfor %}
+    {% assign interview_level = 'advanced' %}
+    {% include 'interview_problems_set.html' %}
   </ul>
 
   <h2>Topics that you should be familiar with:</h2>
@@ -70,9 +49,14 @@ nav: nav-interview-problems
     This list is in no way comprehensive and it is a work-in-progress. I'll try to update it as I think of new topics that are important to know.
   </p>
   <ul>
-    <li><a href="http://en.wikipedia.org/wiki/List_of_data_structures"><strong>Data Structures</strong></a> - Pay attention to how the data structures are implemented, the runtimes for <code>insert</code>, <code>lookup</code>, and <code>remove</code> and you should understand the advantages of using one over the other. Also think about which scenarios it makes sense to use which data structure.
+    <li><strong>Data Structures</strong></a> - Pay attention to how the data structures are implemented, the runtimes for <code>insert</code>, <code>lookup</code>, and <code>remove</code> and you should understand the advantages of using one over the other. Also think about which scenarios it makes sense to use which data structure.
       <ul>
-        <li><a href="http://en.wikipedia.org/wiki/Linked_list">Linked List</a></li>
+        <li><a href="/cs61b/singly_linked_list">Singly Linked List</a></li>
+        <li><a href="/cs61b/doubly_linked_list">Doubly Linked List</a></li>
+      </ul>
+
+    <li>More Data Structures (with links to Wikipedia -- I will write up my own versions when I have time)</li>
+      <ul>
         <li><a href="http://en.wikipedia.org/wiki/Doubly_linked_list">Doubly-Linked List</a></li>
         <li><a href="http://en.wikipedia.org/wiki/Array_data_structure">Arrays</a></li>
         <li><a href="http://en.wikipedia.org/wiki/Hash_table">Hash Map (or Hash Table)</a></li>

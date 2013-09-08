@@ -4,6 +4,7 @@ destination: _deploy
 pygments: true
 markdown: kramdown
 exclude: [Gemfile, Gemfile.lock, rakefile, readme.md, LICENSE, _todo.yml]
+include: [.gitignore]
 title: Mark Miyashita
 author:
   name: Mark Miyashita
