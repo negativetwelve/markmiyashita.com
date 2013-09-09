@@ -37,6 +37,22 @@
   margin-top: 20px;
 }
 
+.solution_toggle {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  padding: 6px 12px;
+}
+
+.solution_toggle:hover {
+  color: #ffffff;
+  background-color: #d2322d;
+  border-color: #ac2925;
+  text-decoration: none;
+}
+
 @media(min-width: 1200px) {
   .profile-pic {
     float: left;
