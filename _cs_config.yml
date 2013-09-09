@@ -829,6 +829,30 @@ cs_classes:
                 interview_problem: true
                 interview_level: beginner
                 interview_languages: [java]
+        - name: "Append Two Singly Linked Lists"
+          file: append_singly_linked_lists
+          type: Warmup
+          tags: [append, data structures]
+          semesters:
+            - base:
+                date: "2013-09-08"
+                published: true
+                solution: true
+                interview_problem: true
+                interview_level: beginner
+                interview_languages: [java]
+        - name: "Reverse a Singly Linked List"
+          file: reverse_singly_linked_list
+          type: Challenge
+          tags: [reverse, data structures, recursion]
+          semesters:
+            - base:
+                date: "2013-09-08"
+                published: true
+                solution: true
+                interview_problem: true
+                interview_level: intermediate
+                interview_languages: [java]
   cs61c:
     basics:
       semesters: [base]
