@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
 <meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,12 +62,10 @@ woopra.track('pv', {
 <!-- End of Woopra Code -->
 
 
-    <!-- Place anything custom after this. -->
   </head>
   <body>
     <a class="sr-only" href="#content">Skip navigation</a>
 
-    <!-- Docs master nav -->
     <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
   <div class="container">
     <div class="navbar-header">
@@ -127,7 +124,6 @@ woopra.track('pv', {
 </header>
 
 
-    <!-- Docs page layout -->
     <div class="bs-header" id="content">
       <div class="container">
         <img class="profile-pic" src="/assets/images/mark_miyashita_small.png"></img>
@@ -436,7 +432,9 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
+  <div class="page-header">
   <h1>Generic Functions and Type Dispatching</h1>
+</div>
 
 
 
@@ -555,6 +553,9 @@ class Pigeon(Bird):
 <p>We first create a Parrot object and call it <code>p</code>. Then we call <code>children_on_the_nth_year</code> with the object as our first argument and the number 2 as our second argument. What will <code>tag</code> equal after executing the first line of the function? Remember that <code>type_tag</code> looks up the class name for our object, in this case it would be looking up Parrot, and in the <code>type_tag.tags</code> dictionary we would lookup the key Parrot and get back the value <code>'bird'</code>. We store that as the value <code>tag</code>. Then, on the next line, we lookup that tag that we just found in our <code>reproduction_rates</code> dictionary. What type of object will this dictionary return? It will give us back a function. What does this function do? It takes in some number, which represents the number of years, and returns how many children that animal will have that year. In this instance, we lookup <code>'bird'</code> and get back the lambda function <code>lambda years: years ** 2</code>. With the input now being <code>n</code> which is the value 2 in this example, the function returns that value <code>2 ** 2</code> which is just 4. The overall function will now return 4 and that is our answer. The similar process applies to the Rabbit, however, this time its tag is ‘rabbit’ and the function will be for the rabbit and not for the bird. </p>
 
 
+<p class="disclaimer">
+  I don't claim to be perfect so if you find an error on this page, please <a href="/contact">send me an email</a> perferrably with a link to this page so that I know what I need to fix!
+</p>
 <article class="post">
   <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -578,8 +579,6 @@ class Pigeon(Bird):
 
     </div>
 
-    <!-- Footer
-    ================================================== -->
     <footer class="bs-footer" role="contentinfo">
       <p class="copyright">
         © 2013 Mark Miyashita
@@ -598,7 +597,6 @@ class Pigeon(Bird):
       </ul>
     </footer>
 
-    <!-- JS and analytics only. -->
     <script src="/assets/js/jquery-1.8.3.min.js"></script>
 <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/highlight.pack.js"></script>

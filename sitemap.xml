@@ -857,6 +857,16 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/code/tree/tree.py</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/tree_recursion/code/tree/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/memoization/better_fib/index.html</loc>
         
         <lastmod>2013-03-04T00:00:00-08:00</lastmod>
@@ -965,6 +975,65 @@
         <loc>http://markmiyashita.com/cs61b/basics/object_oriented_programming_review/index.html</loc>
         
         <lastmod>2013-09-03T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/insert_beginning_of_singly_linked_list/index.html</loc>
+        
+        <lastmod>2013-09-07T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/insert_general_singly_linked_list/index.html</loc>
+        
+        <lastmod>2013-09-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/lookup_singly_linked_list/index.html</loc>
+        
+        <lastmod>2013-09-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/remove_singly_linked_list/index.html</loc>
+        
+        <lastmod>2013-09-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/append_singly_linked_lists/index.html</loc>
+        
+        <lastmod>2013-09-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/reverse_singly_linked_list/index.html</loc>
+        
+        <lastmod>2013-09-08T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/general_singly_linked_list/index.html</loc>
+        
+        <lastmod>2013-09-07T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/code/singly_linked_list/SinglyLinkedList.java</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/code/singly_linked_list/index.html</loc>
         
     </url>
     
@@ -1234,6 +1303,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61b/basics/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61b/singly_linked_list/index.html</loc>
         
     </url>
     
