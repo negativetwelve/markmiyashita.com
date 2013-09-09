@@ -1,5 +1,5 @@
 {% capture question %}
-We want to write a method for the [SinglyLinkedList class](/cs61b/code/classes/SinglyLinkedList.java) that allows us to insert an element into the beginning of the list. We want this operation to be completed in &Theta;(1) time.
+We want to write a method for the [SinglyLinkedList class]({% code singly_linked_list %}) that allows us to insert an element into the beginning of the list. We want this operation to be completed in &Theta;(1) time.
 
     public void insertBeginning(Object element) {
 
