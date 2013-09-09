@@ -43,10 +43,8 @@ If the element is equal to the one that we're looking for, then we can return `t
 Here are some tests that you can add to the `SinglyLinkedList` class to verify that the `lookup` method is working. Of course, you should write more tests that what I have here, but it's a start:
 
     public static void main(String[] args) {
-      SinglyLinkedList t = new SinglyLinkedList();
-      t.insert(1, 0);
-      t.insert(2, 0);
-      t.insert(3, 0);
+      Object[] elements = {3, 2, 1};
+      SinglyLinkedList t = new SinglyLinkedList(elements);
       System.out.println(t.lookup(3));
       System.out.println(t.lookup(4));
     }

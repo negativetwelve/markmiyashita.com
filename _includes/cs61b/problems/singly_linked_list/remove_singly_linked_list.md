@@ -45,25 +45,23 @@ In the `SinglyLinkedListNode` class, we have a simple recursive function that co
 If you want to check your own implementation, I used the following as my tests cases. They are very limited and definitely do not cover all possible edge cases.
 
     public static void main(String[] args) {
-      SinglyLinkedList x = new SinglyLinkedList();
-      x.insert(1, 0);
-      x.insert(3, 1);
-      x.insert(2, 1);
-      System.out.println(x.lookup(3));
+      Object[] elements = {1, 2, 3, 4, 5};
+      SinglyLinkedList x = new SinglyLinkedList(elements);
+      System.out.println(x.toString());
       x.remove(3);
-      System.out.println(x.lookup(3));
+      System.out.println(x.toString());
       x.remove(1);
-      System.out.println(x.lookup(1));
+      System.out.println(x.toString());
       x.remove(5);
-      System.out.println(x.lookup(2));
+      System.out.println(x.toString());
     }
 
 This should output:
 
-    true
-    false
-    false
-    true
+    1 2 3 4 5
+    1 2 4 5
+    2 4 5
+    2 4
 
 {% endcapture %}
 

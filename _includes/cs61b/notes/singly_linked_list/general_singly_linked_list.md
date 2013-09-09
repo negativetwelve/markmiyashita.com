@@ -4,14 +4,14 @@
 #### Description
 
 <!--start-->
-A linked list is a collection of nodes that are "linked" together. The nodes are arranged in such a way that each node "points" to the next item in the sequence. There are several variants of this data structure that include the singly linked list that we are going to talk about in this post as well as the [doubly linked list](/cs61b/doubly_linked_list).
+A linked list is a collection of nodes that are "linked" together. The nodes are arranged in such a way that each node "points" to the next item in the sequence. There are several variants of this data structure that include the singly linked list that we are going to talk about in this post as well as the doubly linked list.
 <!--end-->
 
 A singly linked list is exactly what it sounds like. Each of the nodes in the sequence contain a single pointer to the next item. That means that at any one time, a node only knows about one other node. It has no notion of where it came from (meaning it does not know what the previous element is), nor does it know what the beginning or end of the sequence is. Throughout the rest of this note and in the problems [located here](/cs61b/singly_linked_list/#problems), I will be using this [Singly Linked List]({% code singly_linked_list %}) class.
 
 #### Tradeoffs
 
-A linked list has several advantages and disadvantages. For one, since each node only has a pointer to the next node, finding a particular node is a pretty costly task. One of the advantages or using a singly linked list is the ease of writing algotihms to add, update, and remove elements. Because of a singly linked list is an inherently recursive data structure, the algorithms are often simpler with one or two base cases and one or two recursive cases. An example of simple recursive algorithms would be to [merge two singly linked lists](/cs61b/singly_linked_list/merging_two_singly_linked_lists) and [reversing a singly linked list](/cs61b/singly_linked_list/reverse_singly_linked_list).
+A linked list has several advantages and disadvantages. For one, since each node only has a pointer to the next node, finding a particular node is a pretty costly task. One of the advantages or using a singly linked list is the ease of writing algotihms to add, update, and remove elements. Because of a singly linked list is an inherently recursive data structure, the algorithms are often simpler with one or two base cases and one or two recursive cases. An example of simple recursive algorithms would be to [append a singly linked list to another](/cs61b/singly_linked_list/append_singly_linked_lists) and [reversing a singly linked list](/cs61b/singly_linked_list/reverse_singly_linked_list).
 
 #### Runtime of Common Operations
 
