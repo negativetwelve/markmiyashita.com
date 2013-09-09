@@ -795,8 +795,32 @@ cs_classes:
                 interview_languages: [java]
         - name: "Insert an Element into a Singly Linked List"
           file: insert_general_singly_linked_list
+          type: Challenge
+          tags: [insert, data structures, recursion]
+          semesters:
+            - base:
+                date: "2013-09-08"
+                published: true
+                solution: true
+                interview_problem: true
+                interview_level: beginner
+                interview_languages: [java]
+        - name: "Lookup an Element in a Singly Linked List"
+          file: lookup_singly_linked_list
           type: Warmup
-          tags: [insert, data structures]
+          tags: [lookup, data structures, recursion]
+          semesters:
+            - base:
+                date: "2013-09-08"
+                published: true
+                solution: true
+                interview_problem: true
+                interview_level: beginner
+                interview_languages: [java]
+        - name: "Remove an Element from a Singly Linked List"
+          file: remove_singly_linked_list
+          type: Warmup
+          tags: [remove, data structures, recursion]
           semesters:
             - base:
                 date: "2013-09-08"
