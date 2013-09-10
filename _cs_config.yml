@@ -89,7 +89,32 @@ cs_classes:
                 published: true
 
     environment_diagrams:
-      semesters: []
+      semesters: [base, fa13]
+      problems:
+        - name: "Nested Functions"
+          file: nested_functions
+          type: Challenge
+          tags: [higher order functions, functions]
+          semesters:
+            - base:
+                date: "2013-09-10"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-10"
+                published: true
+                solution: true
+      notes:
+        - name: "Rules of Environment Diagrams"
+          file: rules_of_environment_diagrams
+          tags: [functions]
+          semesters:
+            - base:
+                date: "2013-09-10"
+                published: true
+              fa13:
+                date: "2013-09-10"
+                published: true
 
     lambdas:
       semesters: [base, su13]
