@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - What Would Python Print? - Mark Miyashita
+    CS61A - Higher Order Functions in Environment Diagrams - Mark Miyashita
   
 </title>
 
@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/practice">All Problems and Notes (41)</a></li>
+    <li><a href="/cs61a/fa13/practice">All Problems and Notes (8)</a></li>
   
 
   
@@ -219,7 +219,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/basics">Basics (3)</a></li>
+        <li><a href="/cs61a/fa13/basics">Basics (3)</a></li>
       
     
   
@@ -235,7 +235,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (2)</a></li>
+        <li><a href="/cs61a/fa13/higher_order_functions">Higher Order Functions (1)</a></li>
       
     
   
@@ -245,7 +245,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (3)</a></li>
+        <li><a href="/cs61a/fa13/environment_diagrams">Environment Diagrams (3)</a></li>
       
     
   
@@ -255,7 +255,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -265,7 +271,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
+        <li><a href="/cs61a/fa13/recursion">Recursion (1)</a></li>
       
     
   
@@ -274,18 +280,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/recursion">Recursion (7)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/rlists">Rlists (5)</a></li>
       
     
   
@@ -298,7 +292,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -308,7 +308,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -318,7 +324,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -328,8 +340,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
-      
     
   
     
@@ -337,38 +347,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
       
     
   
@@ -390,8 +368,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
-      
     
   
     
@@ -406,8 +382,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterators">Iterators (1)</a></li>
-      
     
   
     
@@ -418,8 +392,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/logic">Logic (2)</a></li>
       
     
   
@@ -440,7 +412,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>What Would Python Print?</h3>
+  <h3>Higher Order Functions in Environment Diagrams</h3>
 </div>
 
 
@@ -448,61 +420,35 @@ woopra.track('pv', {
 
 
 
-<p>If we were to type these Python statements and expressions into the interpreter, what would they do? These all either evaluate to a value, an error, or another function. These start out fairly easy and get pretty tough by then end. Remember your rules for evaluating lambdas!</p>
+<p>Note: this problem is quite long. It’s very good practice though and if you can successfully complete this problem, you are pretty csolid on environment diagrams! Draw out the following environment diagram:</p>
 
-<pre><code>&gt;&gt;&gt; x = lambda: 4
-&gt;&gt;&gt; y = lambda x: x + 3
-&gt;&gt;&gt; z = lambda x: y
-&gt;&gt;&gt; z(4)(1)               #1
+<pre><code>def f(x):
+    def y(f):
+        return f(x)
+    return y
 
-&gt;&gt;&gt; z(5)(1)               #2
+def g(x):
+    return f(x)
 
-&gt;&gt;&gt; h = lambda f, g: g(f)
-&gt;&gt;&gt; h(lambda x: x * 2, lambda x: x)(2)      #3
+def h(x):
+    return x * 2
 
-&gt;&gt;&gt; g = lambda f: f(f)
-&gt;&gt;&gt; g(g(lambda x: x))(3)  #4
+def z(s):
+    return s + 2
 
-&gt;&gt;&gt; g(g(lambda x: x))(lambda x: x + 5)(1)   #5
-
-&gt;&gt;&gt; a = lambda b: lambda a: b(a)
-&gt;&gt;&gt; b = lambda b: lambda b: b + 1
-&gt;&gt;&gt; a(b)                #6
-
-&gt;&gt;&gt; a(b)(1)(2)          #7
-
-&gt;&gt;&gt; b(a)(5)             #8
-
-&gt;&gt;&gt; b(a(b))(7)          #9
-
-&gt;&gt;&gt; c = lambda a, b: (b, a)
-&gt;&gt;&gt; b(a(c))(5)          #10
-
-&gt;&gt;&gt; c(a, b)[1](b)(1)(2) #11
-
-&gt;&gt;&gt; c(b(1), b(2))[0](5) #12
+y = g(5)
+z = y(z)
 </code></pre>
-
-<p>You can break this question up into subquestions. The first part is numbers 1-2, second part is 3-5, third part is 6-12.</p>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>4</li>
-    <li>4</li>
-    <li>4</li>
-    <li>3</li>
-    <li>6</li>
-    <li>function</li>
-    <li>3</li>
-    <li>6</li>
-    <li>8</li>
-    <li>6</li>
-    <li>3</li>
-    <li>6</li>
-  </ol>
+  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/fa13/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
+
+  <p>The number one thing to remember is that when you <strong>call</strong> a function, you always need to make a new frame! And, also remember that functions have to keep track of their parent frames when they are not defined in the global frame. What that means is the nested function <code>y(f)</code> has a parent frame because it’s defined inside of the <code>f</code> frame.</p>
+
+  <iframe width="800" height="1020" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=def+f(x)%3A%0A++++def+y(f)%3A%0A++++++++return+f(x)%0A++++return+y%0A%0Adef+g(x)%3A%0A++++return+f(x)%0A%0Adef+h(x)%3A%0A++++return+x+*+2%0A%0Adef+z(s)%3A%0A++++return+s+%2B+2%0A%0Ay+%3D+g(5)%0Az+%3D+y(z)%0Ap+%3D+y(h)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
 
 </div>
 
