@@ -104,6 +104,19 @@ cs_classes:
                 date: "2013-09-10"
                 published: true
                 solution: true
+        - name: "Higher Order Functions in Environment Diagrams"
+          file: higher_order_functions
+          type: Challenge
+          tags: [higher order functions, functions]
+          semesters:
+            - base:
+                date: "2013-09-11"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-11"
+                published: true
+                solution: true
       notes:
         - name: "Rules of Environment Diagrams"
           file: rules_of_environment_diagrams
