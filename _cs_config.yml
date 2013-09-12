@@ -76,6 +76,19 @@ cs_classes:
                 date: "2013-09-02"
                 published: true
                 solution: true
+        - name: "Which Function is Higher Order?"
+          file: which_function_is_higher_order
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-09-12"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-12"
+                published: true
+                solution: true
       notes:
         - name: "Church Numerals"
           file: church_numerals
