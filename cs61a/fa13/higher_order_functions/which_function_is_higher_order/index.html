@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Find Secret Using Recursion - Mark Miyashita
+    CS61A - Which Function is Higher Order? - Mark Miyashita
   
 </title>
 
@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/practice">All Problems and Notes (42)</a></li>
+    <li><a href="/cs61a/fa13/practice">All Problems and Notes (9)</a></li>
   
 
   
@@ -219,7 +219,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/basics">Basics (3)</a></li>
+        <li><a href="/cs61a/fa13/basics">Basics (3)</a></li>
       
     
   
@@ -235,7 +235,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (3)</a></li>
+        <li><a href="/cs61a/fa13/higher_order_functions">Higher Order Functions (2)</a></li>
       
     
   
@@ -245,7 +245,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (3)</a></li>
+        <li><a href="/cs61a/fa13/environment_diagrams">Environment Diagrams (3)</a></li>
       
     
   
@@ -255,7 +255,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -265,7 +271,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
+        <li><a href="/cs61a/fa13/recursion">Recursion (1)</a></li>
       
     
   
@@ -274,18 +280,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/recursion">Recursion (7)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/rlists">Rlists (5)</a></li>
       
     
   
@@ -298,7 +292,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -308,7 +308,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -318,7 +324,13 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
       
     
   
@@ -328,8 +340,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
-      
     
   
     
@@ -337,38 +347,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
       
     
   
@@ -390,8 +368,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
-      
     
   
     
@@ -406,8 +382,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterators">Iterators (1)</a></li>
-      
     
   
     
@@ -418,8 +392,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/logic">Logic (2)</a></li>
       
     
   
@@ -440,7 +412,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Find Secret Using Recursion</h3>
+  <h3>Which Function is Higher Order?</h3>
 </div>
 
 
@@ -448,55 +420,52 @@ woopra.track('pv', {
 
 
 
-<p>We want to see if the letters within out “secret” can be found, in order, in the given sentence. If it is, we will return back a list of indices that we will use as a secret code. If the secret word’s letters cannot be found within the sentence, then we have failed and should return False. Yes, this problem can be done using iteration instead of recursion, but let’s stick to practicing recursion. Hint: You might want to use a helper.</p>
+<p>Here we have some functions defined below. Run through and figure out what the following expressions evaluate to. If you have time, draw the environment diagram (it might make the problem easier to solve!) If the expression raises an error, just write ERROR. If the expression returns a function, just write FUNC.</p>
 
-<pre><code>def find_secret(secret, sentence):
-    """
-    If the individual letters of the secret are in order within the sentence,
-    then the function reutrns the list of indices of those letters. If not, it returns False.
+<pre><code>x = 3
+y = 5
 
-    &gt;&gt;&gt; secret = "mark"
-    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
-    &gt;&gt;&gt; find_secret(secret, sentence)
-    [3, 7, 14, 27]
-    &gt;&gt;&gt; find_secret("hello", sentence)
-    False
-    """
-    "***YOUR CODE HERE***"
+def f(x):
+    def g(y):
+        return x * y
+    return g
+
+def h(f, g):
+    return g(x)(y)
+
+def g(x):
+    def f(y):
+        return x
+    return f(x)
+
+&gt;&gt;&gt; g(5)          #1
+
+&gt;&gt;&gt; f(5)          #2
+
+&gt;&gt;&gt; f(6)(7)       #3
+
+&gt;&gt;&gt; h(g, f)       #4
+
+&gt;&gt;&gt; g = f(5)
+&gt;&gt;&gt; g(4)          #5
+
+&gt;&gt;&gt; h(f, f)       #6
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def find_secret(secret, sentence):
-    """
-    If the individual letters of the secret are in order within the sentence,
-    then the function reutrns the list of indices of those letters. If not, it returns False.
+  <ol>
+    <li>5</li>
+    <li>FUNC</li>
+    <li>42</li>
+    <li>15</li>
+    <li>20</li>
+    <li>15</li>
+  </ol>
 
-    &gt;&gt;&gt; secret = "mark"
-    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
-    &gt;&gt;&gt; find_secret(secret, sentence)
-    [3, 7, 14, 27]
-    &gt;&gt;&gt; find_secret("hello", sentence)
-    False
-    """
-    def helper(secret, sentence, indices, index):
-        if len(secret) == 0:
-            return indices
-        if len(sentence) == 0:
-            return False
-        if secret[0] == sentence[0]:
-            return helper(secret[1:], sentence[1:], indices + [index], index + 1)
-        return helper(secret, sentence[1:], indices, index + 1)
-    return helper(secret, sentence, [], 0)
-</code></pre>
-
-  <p>If we have a secret that is the empty string, then that automatically exists in our sentence so we return the indices that we have accumulated. If the sentence itself is empty and the secret is not empty, then we have failed and must return False.</p>
-
-  <p>In our recursive cases, we have either found the letter or we have not. If we have found the letter, then we reduce our secret and our sentence by cutting off the first letter. We also increase our index by 1 to move to the next position in the sentence and we also add the current index to our list of indices. </p>
-
-  <p>If we did not find the letter, we just pass through the same secret and we reduce our sentence by one character, keep the indices the same because we didn’t find anything and increase our index by 1. The index just helps us keep track of where we are within the sentence. </p>
+  <p>Remember to label the parent frames when drawing the environment. Also remember that a function’s intrinsic name and the variables that point to it may have differing values.</p>
 
 </div>
 
