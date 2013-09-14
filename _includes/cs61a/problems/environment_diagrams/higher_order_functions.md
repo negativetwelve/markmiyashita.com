@@ -17,6 +17,7 @@ Note: this problem is quite long. It's very good practice though and if you can 
 
     y = g(5)
     z = y(z)
+    p = y(h)
 
 {% endcapture %}
 
