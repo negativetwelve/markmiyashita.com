@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Functions Inside Functions - Mark Miyashita
+    CS61A - More Higher Order Functions Practice - Mark Miyashita
   
 </title>
 
@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/fa13/practice">All Problems and Notes (10)</a></li>
+    <li><a href="/cs61a/practice">All Problems and Notes (43)</a></li>
   
 
   
@@ -219,7 +219,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/fa13/basics">Basics (3)</a></li>
+        <li><a href="/cs61a/basics">Basics (3)</a></li>
       
     
   
@@ -235,7 +235,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/fa13/higher_order_functions">Higher Order Functions (2)</a></li>
+        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (3)</a></li>
       
     
   
@@ -245,7 +245,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/fa13/environment_diagrams">Environment Diagrams (4)</a></li>
+        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (4)</a></li>
       
     
   
@@ -255,13 +255,7 @@ woopra.track('pv', {
       
       
       
-    
-  
-    
-    
-      
-      
-      
+        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
       
     
   
@@ -271,7 +265,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/fa13/recursion">Recursion (1)</a></li>
+        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
       
     
   
@@ -281,16 +275,7 @@ woopra.track('pv', {
       
       
       
-    
-  
-    
-    
-  
-    
-    
-      
-      
-      
+        <li><a href="/cs61a/recursion">Recursion (7)</a></li>
       
     
   
@@ -300,63 +285,8 @@ woopra.track('pv', {
       
       
       
-    
-  
-    
-    
+        <li><a href="/cs61a/rlists">Rlists (5)</a></li>
       
-      
-      
-      
-    
-  
-    
-    
-      
-      
-      
-      
-    
-  
-    
-    
-      
-      
-      
-      
-    
-  
-    
-    
-      
-      
-      
-      
-    
-  
-    
-    
-      
-      
-      
-      
-    
-  
-    
-    
-      
-      
-      
-      
-    
-  
-    
-    
-  
-    
-    
-  
-    
     
   
     
@@ -368,6 +298,100 @@ woopra.track('pv', {
       
       
       
+        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
+      
     
   
     
@@ -382,6 +406,8 @@ woopra.track('pv', {
       
       
       
+        <li><a href="/cs61a/iterators">Iterators (1)</a></li>
+      
     
   
     
@@ -392,6 +418,8 @@ woopra.track('pv', {
       
       
       
+      
+        <li><a href="/cs61a/logic">Logic (2)</a></li>
       
     
   
@@ -412,7 +440,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Functions Inside Functions</h3>
+  <h3>More Higher Order Functions Practice</h3>
 </div>
 
 
@@ -420,32 +448,49 @@ woopra.track('pv', {
 
 
 
-<p>Here we have some functions defined below. Run through and figure out what the two calls at the bottom output and then draw the environment diagram.</p>
+<p>Here are a series of functions, what would Python do? Draw the environment diagram that this produces.</p>
 
-<pre><code>def f(g, f):
-    return g(f)
+<pre><code>def f(x, y):
+    x, y = y, x
+    def x(x):
+        return y(x)
+    return x
 
-def foo(g, h):
-    return h * g(h)
+def y(x):
+    return 6 + x
 
-def h(i):
-    return 5
+def z(y):
+    return 4
 
-f(h, foo)       #1
-
-f(h, foo(h, 3)) #2
+g = f(y, z)
+h = g(5)
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>5</li>
-    <li>5</li>
-  </ol>
+  <p>Remember, when you <strong>call</strong> a function, you always need to make a new frame! Let’s take a closer look at the function call here:</p>
 
-  <p>The important thing to note here is the order of evaluation. Remember that you don’t pay attention to the body of a function until you actually call the function AND that you need to evaluate all of your operands before you can apply your operator.</p>
+  <pre><code>g = f(y, z)
+</code></pre>
+
+  <p>First, remember that when you have an assignment statement, you evaluate the <em>right</em> side first. We also have to remember that we have to evaluate our arguments before we make the frame for the function call. For this line, that means evaluating what <code>y</code> is equal to and what <code>z</code> is equal to.</p>
+
+  <p>So we make a new frame for <code>f</code> and bind our parameters to the arguments that are passed into the function. That means binding the local variable <code>x</code> is bound to the global function <code>y</code> and the local variable <code>y</code> bound to the global function <code>z</code>.</p>
+
+  <p>The next line I want to point out is:</p>
+
+  <pre><code>x, y = y, x
+</code></pre>
+
+  <p>Remember that in an assignment statement, we <strong>always</strong> evaluate the right side first. In the context of this line, that means that we have to figure out what <code>y</code> and <code>x</code> evaluate to. We notice that if we evaluate both of the items on the right side, then assign them to the left, we’re effectively swapping their values.</p>
+
+  <p>Again, follow the <a href="/cs61a/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a> to finish solving this one.</p>
+
+  <p>Here’s a visualization of the final output. Leave comments below if you are confused on a certain step.</p>
+
+  <iframe width="800" height="600" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=def+f(x,+y)%3A%0A++++x,+y+%3D+y,+x%0A++++def+x(x)%3A%0A++++++++return+y(x)%0A++++return+x%0A%0Adef+y(x)%3A%0A++++return+6+%2B+x%0A%0Adef+z(y)%3A%0A++++return+4%0A%0Ag+%3D+f(y,+z)%0Ah+%3D+g(5)&amp;mode=display&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3&amp;curInstr=0"></iframe>
 
 </div>
 
