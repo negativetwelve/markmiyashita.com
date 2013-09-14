@@ -130,6 +130,19 @@ cs_classes:
                 date: "2013-09-11"
                 published: true
                 solution: true
+        - name: "More Higher Order Functions Practice"
+          file: more_higher_order_functions_practice
+          type: Challenge
+          tags: [higher order functions, functions]
+          semesters:
+            - base:
+                date: "2013-09-13"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-13"
+                published: true
+                solution: true
       notes:
         - name: "Rules of Environment Diagrams"
           file: rules_of_environment_diagrams
