@@ -171,6 +171,10 @@ cs_classes:
                 date: "2013-07-06"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-09-16"
+                published: true
+                solution: true
 
     newtons_method:
       semesters: [base, su13]
@@ -230,6 +234,10 @@ cs_classes:
                 date: "2013-07-06"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-09-16"
+                published: true
+                solution: true
         - name: "Find Secret Using Recursion"
           file: find_secret_using_recursion
           type: Challenge
@@ -247,6 +255,10 @@ cs_classes:
                 date: "2013-07-14"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-09-16"
+                published: true
+                solution: true
         - name: "Binary Search"
           file: binary_search
           type: Warmup
@@ -262,6 +274,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-22"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-09-16"
                 published: true
                 solution: true
         - name: "Merge Sort"
