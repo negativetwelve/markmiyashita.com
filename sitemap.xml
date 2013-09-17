@@ -367,6 +367,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/lambdas/what_would_python_print/index.html</loc>
+        
+        <lastmod>2013-09-16T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/newtons_method/newtons_method_practice/index.html</loc>
         
         <lastmod>2013-07-06T00:00:00-07:00</lastmod>
@@ -430,6 +437,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/longest_length_of_the_same_character_in_a_string/index.html</loc>
+        
+        <lastmod>2013-09-16T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/recursion/find_secret_using_recursion/index.html</loc>
         
         <lastmod>2013-05-08T00:00:00-07:00</lastmod>
@@ -451,6 +465,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/find_secret_using_recursion/index.html</loc>
+        
+        <lastmod>2013-09-16T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/recursion/binary_search/index.html</loc>
         
         <lastmod>2013-05-09T00:00:00-07:00</lastmod>
@@ -468,6 +489,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/recursion/binary_search/index.html</loc>
         
         <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/binary_search/index.html</loc>
+        
+        <lastmod>2013-09-16T00:00:00-07:00</lastmod>
         
     </url>
     
