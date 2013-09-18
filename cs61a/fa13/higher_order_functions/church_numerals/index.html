@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Getting Started with Python - Mark Miyashita
+    CS61A - Church Numerals - Mark Miyashita
   
 </title>
 
@@ -412,7 +412,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h1>Getting Started with Python</h1>
+  <h1>Church Numerals</h1>
 </div>
 
 
@@ -420,129 +420,109 @@ woopra.track('pv', {
 
 
 <ul id="markdown-toc">
-  <li><a href="#welcome">Welcome!</a></li>
-  <li><a href="#downloading-and-installing-python-3">Downloading and Installing Python 3</a></li>
-  <li><a href="#variables">Variables</a></li>
-  <li><a href="#expressions">Expressions</a></li>
-  <li><a href="#functions-and-calling-functions">Functions and Calling Functions</a></li>
-  <li><a href="#advice-for-the-semester">Advice for the Semester</a></li>
+  <li><a href="#what-are-church-numerals">What are Church Numerals?</a></li>
+  <li><a href="#add-one">Add One</a></li>
+  <li><a href="#add">Add</a></li>
 </ul>
 
-<h4 id="welcome">Welcome!</h4>
+<h4 id="what-are-church-numerals">What are Church Numerals?</h4>
 
 <!--start-->
-<p>Welcome to CS61A! For the most part, this course is not about learning Python, the language, but instead, we focus on big computer science ideas. However, to implement those ideas in code…we need Python to do so. So we’re going to spend the first 1-2 weeks going over simple ideas in Python that will allow us to work on implementing the bigger ideas of the course.
+<p><a href="http://en.wikipedia.org/wiki/Church_encoding#Computation_with_Church_numerals">Church numerals</a> come from <a href="http://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a> and are based upon the idea that you can represent numbers by using a series of nested functions. At the most basic level, we have zero which can be defined as:
 <!--end--></p>
 
-<h4 id="downloading-and-installing-python-3">Downloading and Installing Python 3</h4>
-
-<p>In this class, we’re going to be using Python 3 as opposed to Python 2.x. There are a few major changes, enough to make sure that you are always using version 3 instead of any version of 2. If you have any problems installing Python on your computer, please leave a comment below with specific problems you are having.</p>
-
-<p>We can open up our Python <em>interpreter</em> by typing <code>python3</code> into our Terminal. If you did it correctly, you’ll see the following prompt.</p>
-
-<pre><code>&gt;&gt;&gt;
+<pre><code>def zero(f):
+    return lambda x: x
 </code></pre>
 
-<h4 id="variables">Variables</h4>
+<p>Or simply, the function for zero does not depend on the input function. It simply returns a function that takes in an argument and returns the same value. Now let’s take a look at one.</p>
 
-<p>Let’s start with a few fundamentals. First, we have variables. Variables are like labels, they allow us to store values and to use them later. In Python, it does not matter what type of data we store in the variable, it can be a string, integer, function, etc. We’ll learn all about what those are later. For now, let’s define some variables and see how that work!</p>
-
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = 6
-&gt;&gt;&gt; a
-5
-&gt;&gt;&gt; b
-6
+<pre><code>def one(f):
+    return lambda x: f(x)
 </code></pre>
 
-<p>Here, we defined to variables, <code>a</code> and <code>b</code> and their values are now 5 and 6, respectively.</p>
+<p>What’s going on here? We note that one is simply the same function as zero except with <code>f</code> applied once. As we look at two, we start to see a pattern:</p>
 
-<p>Strings are like words or sentences and we represent them as being surrounded by either single quotes, <code>'</code> or double quotes, <code>"</code>. We can store strings as variables too.</p>
-
-<pre><code>&gt;&gt;&gt; c = "hello world"
-&gt;&gt;&gt; c
-'hello world'
+<pre><code>def two(f):
+    return lambda x: f(f(x))
 </code></pre>
 
-<p>Notice how we defined our string with double quotes, but when we recalled the value, Python represented the same string with single quotes. Either way works and they mean the same thing, just remember that Python uses single quotes when it represents strings.</p>
+<p>A church numeral is basically just a funtion that takes in a value which we call <code>x</code>, it then takes the input function, <code>f</code> and applies it to the value <code>x</code>, <code>n</code> times. In this case, <code>n</code> is the number that we are representing.</p>
 
-<p>The reason why we use double quotes sometimes is so that we can represent a string that has a single quote in the middle of it. For example:</p>
+<h4 id="add-one">Add One</h4>
 
-<pre><code>&gt;&gt;&gt; d = 'don't do this'
-File "&lt;stdin&gt;", line 1
-  d = 'don't do this'
-             ^
-SyntaxError: invalid syntax
-&gt;&gt;&gt;
+<p>So this is pretty easy, huh? Let’s take it to another level. Let’s define a function that can add 1 to a church numeral. If I call this function on the church numeral, <code>one</code>, I should get back a function that is similar to the function <code>two</code> that we defined above.</p>
+
+<pre><code>def add_one(n):
+    """Returns the church numeral that is one more than the input n."""
+    "***YOUR CODE HERE***"
 </code></pre>
 
-<p>Here, we encounter a syntax error because Python thinks the string ends at <code>'don'</code> and then doesn’t know what to do with the rest. The proper way to represent this string is to do the following:</p>
+<p>Here’s what we came up with:</p>
 
-<pre><code>&gt;&gt;&gt; d = "don't (not) do this"
-&gt;&gt;&gt; d
-"don't (not) do this"
+<pre><code>def add_one(n):
+    return lambda f: lambda x: f(n(f)(x))
 </code></pre>
 
-<p>Now it works!</p>
+<p>Why and how does this work? Let’s break it down. First, let’s call this on our church numeral <code>one</code> that we defined earlier.</p>
 
-<h4 id="expressions">Expressions</h4>
-
-<p>Besides strings, we can work with a variety of other values in Python. Numbers (or integers) are fundamental and they, themselves, are what we call a primitive expression. They are expressions that <em>evaluate</em> to themselves.</p>
-
-<pre><code>&gt;&gt;&gt; 12
-12
+<pre><code>add_one(one)
 </code></pre>
 
-<p>We can also create expressions that represent mathematical equations. For example:</p>
+<p>The return value looks something like this:</p>
 
-<pre><code>&gt;&gt;&gt; 1 + 2
-3
-&gt;&gt;&gt; 4 - 5
--1
+<pre><code>lambda f: lambda x: f(one(f)(x))
 </code></pre>
 
-<p>One thing that you will notice, there are two different types of division. There is normal decimal division and integer division (which rounds down). We call these <code>div</code> and <code>floordiv</code> and they are represented by <code>/</code> and <code>//</code> respectively. </p>
+<p>Which also looks like:</p>
 
-<pre><code>&gt;&gt;&gt; 4 / 5
-0.8
-&gt;&gt;&gt; 4 // 5
-0
-&gt;&gt;&gt; 5 // 4
-1
+<pre><code>lambda f: lambda x: f((lambda g: lambda y: g(y))(f)(x))
 </code></pre>
 
-<p>You can think of <code>floordiv</code> as meaning to compute the normal division and then round the result down.</p>
+<p>This may look a little confusing at first, but let’s examine what we did here. I substituted the function <code>one</code> with <code>lambda g: lambda y: g(y)</code>. If you remember the lecture from lambdas, we can call lambdas as soon as we define them and that is exactly what is going on here. We’re calling <code>(lambda g: lambda y: g(y))</code> on <code>f</code> immediately after it’s defined. This means that we can replace every <code>g</code> with <code>f</code>. Basically, we’ve stated that the function call <code>(lambda g: lambda y: g(y))(f)</code> reduces to <code>(lambda y: f(y))</code>. We can do the same thing for the <code>x</code> that is also tacked onto the end of the function call. This time, we see that <code>(lambda y: f(y))(x)</code> reduces to <code>f(x)</code>. So, we finally see that the complex lambda expression that resulted from calling <code>add_one(one)</code> reduces all the way down to the following:</p>
 
-<h4 id="functions-and-calling-functions">Functions and Calling Functions</h4>
-
-<p>In Python, we have some built-in functions that compute common mathematical functions and values. These functions are different from the <em>infix</em> notation that we saw above. When we call functions, we have to evaluate both the <em>operator</em> and all of the <em>operands</em>. In the following example, the function <code>max</code> is our <em>operator</em> and the two values <code>3</code> and <code>5</code> are our operands.</p>
-
-<pre><code>&gt;&gt;&gt; max(3, 5)
-5
+<pre><code>lambda f: lambda x: f(f(x))
 </code></pre>
 
-<p>The way we go about evaluating this function is that we first evaluate the <em>operator</em>, <code>max</code>. We check the name in our current <em>environment</em> and find that it is the built-in function <code>max</code>. Next, we evaluate each of the <em>operands</em> going from left to right order. In this case, both of the <em>operands</em> are primitive expressions so we just have to evaluate the number for its value. However, we can imagine a scenario in which the <em>operands</em> are themselves expressions. We call this <em>nesting expressions</em>. Take a look at the following example:</p>
+<p>Which, if we look up above, is the same as the function two! Looks like it worked! </p>
 
-<pre><code>&gt;&gt;&gt; max(5, min(6, 7))
-6
+<h4 id="add">Add</h4>
+
+<p>We can even make this more general, instead of only adding one to our church numberal, we can extend this to adding two church numerals together. Let’s take a look at how that would work.</p>
+
+<pre><code>def add(m, n):
+    """Return the church numeral for m + n where m and n are Church Numerals."""
+    "***YOUR CODE HERE***"
 </code></pre>
 
-<p>Following the rules that we defined above, what do we do first? Well, we first evaluate the <em>operator</em> which in this case is <code>max</code>. Then, we start evaluating the <em>operands</em> from left to right. We evaluate <code>5</code> to the value <code>5</code>, and then we encounter our next <em>operand</em> which happens to be another expression. Since it’s a whole new expression, we must start the process over. If you are familiar with the term <strong>recursion</strong>, this is exactly what we are doing. If you’re not familiar with the term, recursion is something we will spend a lot of time with this semester (so don’t worry!). Recursion is basically repeating the same process until we hit a base case (which you can think of as being the most basic input). We are recursively evaluating the expressions in order, while evaluating any other expressions that might come up along the way. The full order of evaluating this function is this:</p>
+<p>Here’s what we came up with:</p>
 
-<ol>
-  <li>Evaluate <code>max</code>, the <em>operator</em> and find that it’s the built-in function.</li>
-  <li>Evaluate <code>5</code>, the first <em>operand</em>.</li>
-  <li>Evaluate the second <em>operand</em>, <code>min(6, 7)</code>.</li>
-  <li>To evaulate the second <em>operand</em>, we start over by evaulating the new operator, <code>min</code>.</li>
-  <li>Then, we evaulate the <em>operands</em> in order, first <code>6</code>, then <code>7</code>.</li>
-  <li>Then, we <em>apply</em> the <em>operator</em> that we evaluated earlier, in this case, applying the <em>operator</em> <code>min</code> with the <em>operands</em> <code>6</code> and <code>7</code>, evaulates to <code>6</code>.</li>
-  <li>Now that we have both of our <em>operands</em> for the original <em>operator</em>, we can now <em>apply</em> <code>max</code> with the <em>operands</em> <code>5</code> and <code>6</code>.</li>
-  <li>After applying the function <code>max</code>, we get the final value <code>6</code>.</li>
-</ol>
+<pre><code>def add(m, n):
+    return lambda f: lambda x: m(f)(n(f)(x))
+</code></pre>
 
-<h4 id="advice-for-the-semester">Advice for the Semester</h4>
+<p>Well what do we see here? We notice that the only difference between this function and the <code>add_one</code> function that we defined above is in this one, we’re calling <code>m(f)</code> wheras in the other one, we simply has <code>f</code>. Say that <code>m</code> is <code>one</code> and <code>n</code> is also <code>one</code>, we can follow the same evaluation rules as before and we see that the exact same result comes out of <code>(n(f)(x))</code>. Now, we have <code>lambda f: lambda x: m(f)f(x)</code>. Let’s reduce the <code>m(f)</code> call, substituting the function <code>one</code> for <code>m</code>, we get:</p>
 
-<p>One of the best things you can do, for your own learning, is to try things out on your own. There are many things that Python (and other languages) can do that we won’t have time to teach you in this class. Although you won’t be tested on that material, it might help you in learning and understanding the material that we <em>will</em> be testing you on. You also might find random intricacies in Python that might help you on your homeworks. You’re free to use them on your homework unless we explicitly forbid you from using them. It’s up to you to learn as much as you can (but only if you want to)!</p>
+<pre><code>one(f)
+
+lambda x: f(x)
+</code></pre>
+
+<p>Plugging that into the previous simplified <code>f(x)</code>, we see that we end up with the following lambda:</p>
+
+<pre><code>lambda f: lambda x: (lambda y: f(y))(f(x))
+</code></pre>
+
+<p>Which reduces down to:</p>
+
+<pre><code>lambda f: lambda x: f(f(x))
+</code></pre>
+
+<p>because the <code>y</code> value can be substituted with <code>f(x)</code>. If we look at this, we see that again, we added the two church numerals <code>one</code> and <code>one</code> and got <code>two</code>! Yay, we can do math again! </p>
+
+<p>The same ideas can be applied to multiplication and the power functions. Just remember to reduce your lambda calls as soon as you have all of the parameters to call them. Then you can start simplifying the return statements and getting it down to something you can visualize.</p>
+
+<p>Post any questions or comments in the comments below!</p>
 
 
 <p class="disclaimer">
