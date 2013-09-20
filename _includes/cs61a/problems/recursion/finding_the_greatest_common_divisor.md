@@ -1,5 +1,5 @@
 {% capture question %}
-Write a function that computes the greatest common divisor between `x` and `y`. Hint: Use `mod`
+Write a function that computes the greatest common divisor between `x` and `y`. Hint: Use `mod`. If you want another hint, check out [Euclid's Algorithm](http://en.wikipedia.org/wiki/Euclidean_algorithm).
 
     def gcd(x, y):
         """
