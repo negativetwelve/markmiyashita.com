@@ -344,6 +344,9 @@ cs_classes:
               su13:
                 date: "2013-07-09"
                 published: true
+              fa13:
+                date: "2013-09-19"
+                published: true
 
     rlists:
       semesters: [base, sp13, su13]
