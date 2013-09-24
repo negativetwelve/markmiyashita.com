@@ -64,7 +64,7 @@ After running that command, we should be able to go back to Github and refresh t
 
 And, if we wait about 2 minutes (sometimes it can take up to 10), we can navigate to http://\<username\>.github.io to see our website! Remeber to replace \<username\> with your Github username.
 
-If I navigate to [http://negativetwelve.github.io](http://negativetwelve.github.io), then I can see my static website!
+You can then navigate to http://username.github.io and view your awesome, static website!
 
 <img src="/assets/images/github_pages/see_the_result.png" class="img-border">
 
