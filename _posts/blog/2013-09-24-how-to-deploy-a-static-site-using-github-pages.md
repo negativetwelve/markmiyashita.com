@@ -10,7 +10,6 @@ date: 2013-09-24 03:41:00 -7
 
 published: true
 ---
-
 <!--start-->
 So you've built your static site, made it look pretty on your local computer, but now you want to go bigger. It's time to deploy our website to the world so that other people can find it! In this guide, you'll find a short tutorial on how to deploy your site onto the Internet. Let's get started!
 <!--end-->
