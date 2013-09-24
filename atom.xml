@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-09-24T04:19:01-07:00</updated>
+    <updated>2013-09-24T15:26:41-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -70,7 +70,7 @@ git push origin master
 
 <p>And, if we wait about 2 minutes (sometimes it can take up to 10), we can navigate to http://&lt;username&gt;.github.io to see our website! Remeber to replace &lt;username&gt; with your Github username.</p>
 
-<p>If I navigate to <a href="http://negativetwelve.github.io">http://negativetwelve.github.io</a>, then I can see my static website!</p>
+<p>You can then navigate to http://username.github.io and view your awesome, static website!</p>
 
 <p><img src="/assets/images/github_pages/see_the_result.png" class="img-border" /></p>
 
