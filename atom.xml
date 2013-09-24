@@ -3,9 +3,84 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-09-20T15:42:57-07:00</updated>
+    <updated>2013-09-24T04:14:53-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
+    
+    <entry>
+        <title><![CDATA[How to Deploy a Static Site using Github Pages]]></title>
+        
+        <category term="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//blog/how-to-deploy-a-static-site-using-github-pages"/>
+        <updated>2013-09-24T03:41:00-07:00</updated>
+        <id>markmiyashita.com:/blog/how-to-deploy-a-static-site-using-github-pages</id>
+        <content type="html"><![CDATA[<!--start-->
+<p>So you’ve built your static site, made it look pretty on your local computer, but now you want to go bigger. It’s time to deploy our website to the world so that other people can find it! In this guide, you’ll find a short tutorial on how to deploy your site onto the Internet. Let’s get started!
+<!--end--></p>
+
+<p>First, if you don’t have an account already, you should sign up for a <a href="http://github.com">Github account</a>. We’re going to be using <a href="http://pages.github.com/">Github Pages</a>, a free service provided by Github. On the home page, you should find a form that looks like this:</p>
+
+<p><img src="/assets/images/github_pages/github_homepage.png" class="img-border" /></p>
+
+<p>Fill that out and you should be good to go! Next, we’re going to create a new repository. You can think of a repository as a collection of files that you are putting on the Internet for others to see. You can find the “new repository” button in the top right hand corner of the screen:</p>
+
+<p><img src="/assets/images/github_pages/create_repo.png" class="img-border" /></p>
+
+<p>Here’s an important step, we must name the repository &lt;username&gt;.github.io where you should replace &lt;username&gt; with your actual Github username that you just signed up for. For example, my login is ‘negativetwelve’ so my repository name is ‘negativetwelve.github.io’.</p>
+
+<p><img src="/assets/images/github_pages/name_repo.png" class="img-border" /></p>
+
+<p>Now, when you created your repository on Github, it presented you a screen that looked a little like this:</p>
+
+<p><img src="/assets/images/github_pages/copy_remote.png" class="img-border" /></p>
+
+<p>We’re going to go to that page and click on the https button which is located here:</p>
+
+<p><img src="/assets/images/github_pages/copy_remote_highlighted.png" class="img-border" /></p>
+
+<p>Then, we’re going to copy that address in the box. It should look something like this:</p>
+
+<p><img src="/assets/images/github_pages/copy_address.png" class="img-border" /></p>
+
+<p>Now, we’re going to configure our local website that we just finished and get it ready to show to the world! Naviage to your website folder on your computer using <code>ls</code> and <code>cd</code>. Once you find the folder, you’re going to have to run two commands. The first is <code>git init</code>. This command gets your folder ready for the Internet by marking it as a repository. The second command is a bit more complicated. In short, it is telling our local files where to go – in this case we’re putting them in the repository that we just created. If you haven’t already, run the following two commands:</p>
+
+<pre><code>git init
+git remote add origin https://github.com/negativetwelve/negativetwelve.github.io.git
+</code></pre>
+
+<p>where you replace all occurrences of ‘negativetwelve’ with your username.</p>
+
+<p><img src="/assets/images/github_pages/add_remote.png" class="img-border" /></p>
+
+<p>Now, we’re ready to show the world! Let’s run the last few commands to send our files to the Internet. Run the following commands:</p>
+
+<pre><code>git add .
+git commit -am "Showing my work to the world"
+git push origin master
+</code></pre>
+
+<p>If you went to the Git workshop, this should be familiar to you. But if you didn’t, we’re basically saying “Let’s push our changes to the master branch (which is the main storage for my files).”</p>
+
+<p><img src="/assets/images/github_pages/push_to_master.png" class="img-border" /></p>
+
+<p>After running that command, we should be able to go back to Github and refresh the page. We should now see something like this:</p>
+
+<p><img src="/assets/images/github_pages/see_the_repo.png" class="img-border" /></p>
+
+<p>And, if we wait about 2 minutes (sometimes it can take up to 10), we can navigate to http://&lt;username&gt;.github.io to see our website! Remeber to replace &lt;username&gt; with your Github username.</p>
+
+<p>If I navigate to <a href="http://negativetwelve.github.io">http://negativetwelve.github.io</a>, then I can see my static website!</p>
+
+<p><img src="/assets/images/github_pages/see_the_result.png" class="img-border" /></p>
+
+<p>Happy website making!</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
     
     <entry>
         <title><![CDATA[Lab Assistant Tips]]></title>
