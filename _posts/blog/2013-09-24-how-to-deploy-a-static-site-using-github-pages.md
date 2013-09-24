@@ -17,7 +17,7 @@ So you've built your static site, made it look pretty on your local computer, bu
 
 First, if you don't have an account already, you should sign up for a [Github account](http://github.com). We're going to be using [Github Pages](http://pages.github.com/), a free service provided by Github. On the home page, you should find a form that looks like this:
 
-<img src="/assets/images/github_pages/github_homepage.png" class="img-border">
+<img src="/assets/images/github_pages/github_homepage.jpg" class="img-border">
 
 Fill that out and you should be good to go! Next, we're going to create a new repository. You can think of a repository as a collection of files that you are putting on the Internet for others to see. You can find the "new repository" button in the top right hand corner of the screen:
 
