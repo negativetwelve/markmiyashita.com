@@ -159,7 +159,7 @@ cs_classes:
                 published: true
 
     lambdas:
-      semesters: [base, su13]
+      semesters: [base, su13, fa13]
       problems:
         - name: "What Would Python Print?"
           file: what_would_python_print
@@ -313,6 +313,10 @@ cs_classes:
                 date: "2013-07-22"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-01"
+                published: true
+                solution: true
         - name: "Mutable Reverse List"
           file: mutable_reverse_list
           type: Challenge
@@ -328,6 +332,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-21"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-01"
                 published: true
                 solution: true
       notes:
@@ -349,7 +357,7 @@ cs_classes:
                 published: true
 
     rlists:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Map Rlist"
           file: map_rlist
@@ -366,6 +374,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-17"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-01"
                 published: true
                 solution: true
         - name: "Filter Rlist"
@@ -385,6 +397,10 @@ cs_classes:
                 date: "2013-07-17"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-01"
+                published: true
+                solution: true
         - name: "Sort Rlist"
           file: sort_rlist
           type: Challenge
@@ -400,6 +416,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-18"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-01"
                 published: true
                 solution: true
         - name: "Map and Filter Rlist (Object Version)"
@@ -433,12 +453,15 @@ cs_classes:
               su13:
                 date: "2013-07-10"
                 published: true
+              fa13:
+                date: "2013-10-01"
+                published: true
 
     data_abstraction:
       semesters: []
 
     iterables:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Tuples Practice"
           file: tuples_practice
@@ -451,6 +474,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-06"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-01"
                 published: true
                 solution: true
       notes:
@@ -466,6 +493,9 @@ cs_classes:
                 published: true
               su13:
                 date: "2013-07-10"
+                published: true
+              fa13:
+                date: "2013-10-01"
                 published: true
 
     object_oriented_programming:
@@ -498,7 +528,7 @@ cs_classes:
                 published: false
 
     mutable_data:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "In Place Functions"
           file: in_place_functions
@@ -515,6 +545,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-16"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-01"
                 published: true
                 solution: true
 
