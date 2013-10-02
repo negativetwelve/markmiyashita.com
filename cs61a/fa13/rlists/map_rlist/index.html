@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Nested Functions - Mark Miyashita
+    CS61A - Map Rlist - Mark Miyashita
   
 </title>
 
@@ -420,7 +420,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Nested Functions</h3>
+  <h3>Map Rlist</h3>
 </div>
 
 
@@ -428,25 +428,39 @@ woopra.track('pv', {
 
 
 
-<p>Draw out the following environment diagram:</p>
+<p>Write a function that emulates the fucntionality of <code>map</code> but for our implementation of rlists. You may use the functions we have been working with: <code>first</code> and <code>rest</code>.</p>
 
-<pre><code>x = 6
-def x(x):
-    return x + y(x)
-
-def y(x):
-    return x
-
-y(x)(4)
+<pre><code>def map_rlist(fn, r):
+    """
+    Takes in a function, fn, and applies it to all
+    items in the input rlist, r.
+    
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(3, empty_rlist)))
+    &gt;&gt;&gt; map_rlist(lambda x: x*x, r)
+    (1, (4, (9, None)))
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/fa13/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
+  <pre><code>def map_rlist(fn, r):
+    """
+    Takes in a function, fn, and applies it to all
+    items in the input rlist, r.
+    
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(3, empty_rlist)))
+    &gt;&gt;&gt; map_rlist(lambda x: x*x, r)
+    (1, (4, (9, None)))
+    """
+    if r == empty_rlist
+        return r
+    return rlist(fn(first(r)), map_rlist(fn, rest(r)))
+</code></pre>
 
-  <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=x+%3D+6%0Adef+x(x)%3A%0A++++return+x+%2B+y(x)%0A%0Adef+y(x)%3A%0A++++return+x%0A%0Ay(x)(4)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
+  <p>We want to apply the function, fn, to each item of the rlist so we’re going to need to access eah element individually. To do this, we will use recursion to recursively map over the rest of the rlist. We will return the newly created rlist by using the constructor <code>rlist</code> which takes in a first and a rest. The first element will be the original first element with the function applied to it.</p>
 
 </div>
 

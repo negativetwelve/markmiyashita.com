@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Nested Functions - Mark Miyashita
+    CS61A - Tuples Practice - Mark Miyashita
   
 </title>
 
@@ -420,7 +420,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Nested Functions</h3>
+  <h3>Tuples Practice</h3>
 </div>
 
 
@@ -428,25 +428,55 @@ woopra.track('pv', {
 
 
 
-<p>Draw out the following environment diagram:</p>
+<p>Here are some tuples problems! What would Python output at each of the numbered questions below?</p>
 
-<pre><code>x = 6
-def x(x):
-    return x + y(x)
+<pre><code>&gt;&gt;&gt; a = (1, 2, 3)
+&gt;&gt;&gt; b = (3, 2, a)
+&gt;&gt;&gt; a               #1
 
-def y(x):
-    return x
+&gt;&gt;&gt; b               #2
 
-y(x)(4)
+&gt;&gt;&gt; b[0] == a[2]    #3
+
+&gt;&gt;&gt; c = (1, 2, 3)
+&gt;&gt;&gt; a == c          #4
+
+&gt;&gt;&gt; a is c          #5
+
+&gt;&gt;&gt; b[2] is c       #6
+
+&gt;&gt;&gt; b[2] is a       #7
+
+&gt;&gt;&gt; b[:2]           #8
+
+&gt;&gt;&gt; c[1:]           #9
+
+&gt;&gt;&gt; d = (a, b, c)
+&gt;&gt;&gt; d[1:2]          #10
+
+&gt;&gt;&gt; d[2][2]         #11
+
+&gt;&gt;&gt; d[1][0]         #12
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/fa13/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
-
-  <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=x+%3D+6%0Adef+x(x)%3A%0A++++return+x+%2B+y(x)%0A%0Adef+y(x)%3A%0A++++return+x%0A%0Ay(x)(4)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
+  <ol>
+    <li>(1, 2, 3)</li>
+    <li>(3, 2, (1, 2, 3))</li>
+    <li>True</li>
+    <li>True</li>
+    <li>False</li>
+    <li>False</li>
+    <li>True</li>
+    <li>(3, 2)</li>
+    <li>(2, 3)</li>
+    <li>((3, 2, (1, 2, 3)),)</li>
+    <li>3</li>
+    <li>3</li>
+  </ol>
 
 </div>
 

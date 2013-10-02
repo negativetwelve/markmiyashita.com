@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Nested Functions - Mark Miyashita
+    CS61A - Sort Rlist - Mark Miyashita
   
 </title>
 
@@ -420,7 +420,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Nested Functions</h3>
+  <h3>Sort Rlist</h3>
 </div>
 
 
@@ -428,25 +428,55 @@ woopra.track('pv', {
 
 
 
-<p>Draw out the following environment diagram:</p>
+<p>Write a function that sorts an rlist. You might want to look up the <a href="http://en.wikipedia.org/wiki/Insertion_sort">Wikipedia article on Insertion Sort</a> although you are more than welcome to implement any kind of sort you want! Use the <code>first</code> and <code>rest</code> functions that we have defined for rlists and used in class. You may want to define a helper function…</p>
 
-<pre><code>x = 6
-def x(x):
-    return x + y(x)
-
-def y(x):
-    return x
-
-y(x)(4)
+<pre><code>def sort_rlist(r):
+    """
+    Sort an rlist in ascending order.
+    
+    &gt;&gt;&gt; r = rlist(4, rlist(3, rlist(6, rlist(8, rlist(1, empty_rlist)))))
+    &gt;&gt;&gt; sort_rlist(r)
+    (1, (3, (4, (6, (8, None)))))
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/fa13/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
+  <pre><code>def sort_rlist(r):
+    """
+    Sort an rlist in ascending order.
+    
+    &gt;&gt;&gt; r = rlist(3, rlist(5, rlist(1, rlist(9, rlist(7, None)))))
+    &gt;&gt;&gt; sort_rlist(r)
+    (1, (3, (5, (7, (9, None)))))
+    """
+    if r == empty_rlist:
+        return r
+    return insert(first(r), sort_rlist(rest(r)))
 
-  <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=x+%3D+6%0Adef+x(x)%3A%0A++++return+x+%2B+y(x)%0A%0Adef+y(x)%3A%0A++++return+x%0A%0Ay(x)(4)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
+def insert(item, r):
+    """
+    Inserts item into r in sorted order.
+    
+    &gt;&gt;&gt; r = rlist(4, rlist(6, rlist(8, None)))
+    &gt;&gt;&gt; insert(5, r)
+    (4, (5, (6, (8, None))))
+    """
+    if r == empty_rlist:
+        return rlist(item, empty_rlist)
+    if item &lt;= first(r):
+        return rlist(item, r)
+    return rlist(first(r), insert(item, rest(r)))
+</code></pre>
+
+  <p>First off, I want to state that this problem was very challenging. If you didn’t get it, don’t fret!</p>
+
+  <p>Let’s take a look at what this function is doing and how the <code>insert</code> function works. The <code>insert</code> function takes in an item and an rlist and inserts it as soon as it finds a number in the list that is bigger than it. This means that it assumes that everything before it is already sorted. For example, if our list was (1, (3, (6, (7, None)))) and we want to insert 4, it will first compare itself to 1, then 3, then 6. When it gets to 6, it realizes that it is less than that value and inserts itself just before the 6.</p>
+
+  <p>Now let’s take a look at the actual <code>sort_rlist</code> function. This function will continue to sort the rest of the rlist until it is equal to the empty rlist. At each recursive call, it is inserting the first of the rlist (in the doctest above, it first tries to insert 3) into the correct position <em>of the already sorted rlist</em>. This is the most important fact here. The <code>sort_rlist</code> function does not return the rlist until it has completely finished sorting what it currently has. That means that at each iteration, we are inserting the current item into an already sorted list AND if we correctly insert the current item then the rlist remains sorted. The output if the final sorted rlist.</p>
 
 </div>
 

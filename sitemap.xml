@@ -542,6 +542,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/merge_sort/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/recursion/mutable_reverse_list/index.html</loc>
         
         <lastmod>2013-05-09T00:00:00-07:00</lastmod>
@@ -559,6 +566,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/recursion/mutable_reverse_list/index.html</loc>
         
         <lastmod>2013-07-21T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/recursion/mutable_reverse_list/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -612,6 +626,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/rlists/map_rlist/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/filter_rlist/index.html</loc>
         
         <lastmod>2013-02-25T00:00:00-08:00</lastmod>
@@ -633,6 +654,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/rlists/filter_rlist/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/sort_rlist/index.html</loc>
         
         <lastmod>2013-02-26T00:00:00-08:00</lastmod>
@@ -650,6 +678,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/rlists/sort_rlist/index.html</loc>
         
         <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/rlists/sort_rlist/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -696,6 +731,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/rlists/rlists_as_functions/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/iterables/tuples_practice/index.html</loc>
         
         <lastmod>2013-07-06T00:00:00-07:00</lastmod>
@@ -706,6 +748,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/iterables/tuples_practice/index.html</loc>
         
         <lastmod>2013-07-06T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/iterables/tuples_practice/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -727,6 +776,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/iterables/dictionaries/index.html</loc>
         
         <lastmod>2013-07-10T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/iterables/dictionaries/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -769,6 +825,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/mutable_data/in_place_functions/index.html</loc>
         
         <lastmod>2013-07-16T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/mutable_data/in_place_functions/index.html</loc>
+        
+        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -1223,6 +1286,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/lambdas/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/lambdas/index.html</loc>
         
     </url>
@@ -1268,6 +1336,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/rlists/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/index.html</loc>
         
     </url>
@@ -1279,6 +1352,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/iterables/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/iterables/index.html</loc>
         
     </url>
     
@@ -1309,6 +1387,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/mutable_data/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/mutable_data/index.html</loc>
         
     </url>
     

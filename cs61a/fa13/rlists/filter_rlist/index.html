@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Nested Functions - Mark Miyashita
+    CS61A - Filter Rlist - Mark Miyashita
   
 </title>
 
@@ -420,7 +420,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Nested Functions</h3>
+  <h3>Filter Rlist</h3>
 </div>
 
 
@@ -428,25 +428,55 @@ woopra.track('pv', {
 
 
 
-<p>Draw out the following environment diagram:</p>
+<p>We want to define a function <code>filter_rlist</code> that takes in a function and an rlist and returns a new rlist that keeps all the items that satisfy the given input function. For this, we will be using the functional representation of our rlists using tuples and we will have the following constructors and selectors to use:</p>
 
-<pre><code>x = 6
-def x(x):
-    return x + y(x)
+<pre><code>empty_rlist = None
 
-def y(x):
-    return x
+def rlist(first, rest):
+    return (first, rest)
 
-y(x)(4)
+def first(r):
+    return r[0]
+
+def rest(r):
+    return r[1]
+</code></pre>
+
+<pre><code>def filter_rlist(fn, r):
+    """
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/fa13/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
+  <pre><code>def filter_rlist(fn, r):
+    """
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
 
-  <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=x+%3D+6%0Adef+x(x)%3A%0A++++return+x+%2B+y(x)%0A%0Adef+y(x)%3A%0A++++return+x%0A%0Ay(x)(4)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
+    """
+    if r == empty_rlist:
+        return r
+    if fn(first(r)):
+        return rlist(first(r), filter_rlist(fn, rest(r)))
+    return filter_rlist(fn, rest(r))
+</code></pre>
+
+  <p>Basically, we want to check to see if the first element of our rlist satisfies the input function. If it does, then we need construct a new rlist, keeping the first element, and recursively applying the filter on the rest. If it does not satisfy the function, then we can just recurse on the rest and that will disregard the current element. Finally, our base case is when we have the <code>empty_rlist</code>. When we have an <code>empty_rlist</code>, we don’t have to filter anything else out because we’ve already filtered everything!</p>
 
 </div>
 
