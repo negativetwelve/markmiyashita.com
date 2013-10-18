@@ -376,10 +376,6 @@ cs_classes:
                 date: "2013-07-17"
                 published: true
                 solution: true
-              fa13:
-                date: "2013-10-01"
-                published: true
-                solution: true
         - name: "Filter Rlist"
           file: filter_rlist
           type: Warmup
@@ -395,10 +391,6 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-17"
-                published: true
-                solution: true
-              fa13:
-                date: "2013-10-01"
                 published: true
                 solution: true
         - name: "Sort Rlist"
@@ -418,10 +410,6 @@ cs_classes:
                 date: "2013-07-18"
                 published: true
                 solution: true
-              fa13:
-                date: "2013-10-01"
-                published: true
-                solution: true
         - name: "Map and Filter Rlist (Object Version)"
           file: map_and_filter_rlists_object_version
           type: Challenge
@@ -439,6 +427,10 @@ cs_classes:
                 date: "2013-07-22"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-18"
+                published: true
+                solution: true
       notes:
         - name: "Rlists As Functions"
           file: rlists_as_functions
@@ -452,9 +444,6 @@ cs_classes:
                 published: true
               su13:
                 date: "2013-07-10"
-                published: true
-              fa13:
-                date: "2013-10-01"
                 published: true
 
     data_abstraction:
