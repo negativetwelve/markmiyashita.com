@@ -601,7 +601,7 @@ cs_classes:
                 solution: true
 
     tree_recursion:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       code:
         - name: "Tree Implementation"
           output: tree
@@ -625,6 +625,10 @@ cs_classes:
                 date: "2013-07-22"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-18"
+                published: true
+                solution: true
         - name: "In Order Traversal of a Binary Tree"
           file: in_order_traversal_binary_tree
           type: Challenge
@@ -640,6 +644,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-22"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-18"
                 published: true
                 solution: true
         - name: "Pre Order Traversal of a Binary Tree"
@@ -659,6 +667,10 @@ cs_classes:
                 date: "2013-07-22"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-18"
+                published: true
+                solution: true
         - name: "Post Order Traversal of a Binary Tree"
           file: post_order_traversal_binary_tree
           type: Challenge
@@ -674,6 +686,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-22"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-18"
                 published: true
                 solution: true
         - name: "Insert Into Binary Search Tree"
@@ -693,6 +709,10 @@ cs_classes:
                 date: "2013-07-23"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-18"
+                published: true
+                solution: true
         - name: "Is My Tree Binary and Searchable?"
           file: is_my_tree_binary_and_searchable
           type: Challenge
@@ -710,6 +730,10 @@ cs_classes:
                 date: "2013-07-24"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-18"
+                published: true
+                solution: true
         - name: "Tree to Reversed List"
           file: tree_to_reversed_list
           type: Challenge
@@ -725,6 +749,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-25"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-18"
                 published: true
                 solution: true
 
