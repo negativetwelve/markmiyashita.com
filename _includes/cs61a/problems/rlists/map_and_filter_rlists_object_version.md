@@ -1,5 +1,5 @@
 {% capture question %}
-We've already seen how to implement `map` and `filter` using our tuple/functional abstraction for rlists, now let's implement the same functions using the class version. You should be able to write these from scratch but here are the previous implementations of [map](http://markmiyashita.com/cs61a/sp13/problems/map_rlist/) and [filter](http://markmiyashita.com/cs61a/sp13/problems/filter_rlist/). Here is the class Rlist that we will be using as our abstraction.
+Let's implement `map` and `filter` for Rlists! Here is the class Rlist that we will be using as our abstraction.
 
     class Rlist(object):
         """A recursive list consisting of a first element and the rest.
