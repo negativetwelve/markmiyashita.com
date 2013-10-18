@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Fall 2013 - Lambdas - Mark Miyashita
+    CS61A - Insert Into Binary Search Tree - Mark Miyashita
   
 </title>
 
@@ -421,45 +421,78 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  
-
-  
-  
-
-
-
-<h1>CS61A - Fall 2013 - Lambdas</h1>
-
-<div class="page-header" id="notes">
-  <h3>Notes:</h3>
+  <div class="page-header">
+  <h3>Insert Into Binary Search Tree</h3>
 </div>
 
-<div class="cs-notes">
 
-  <p>
-    Looks like there currently aren't any notes (yet) about Lambdas...if you'd like to see some, <a href="/contact">let me know.</a>
-  </p>
+
+
+
+
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+
+<p>In this problem we are going to be inserting an item into a binary search tree. Recall that a binary search tree means that all items on the left of the tree are less than the current entry and all items on the right of the tree are greater than the current entry. Note: We cannot insert into an empty tree because of our implementation. Since we are using None as our empty tree, we can’t add a <code>.entry</code> to None because it is not an object. This function should still work for all other trees though.</p>
+
+<pre><code>def insert(item, tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; insert(2, t)
+    &gt;&gt;&gt; t
+    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def insert(item, tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; insert(2, t)
+    &gt;&gt;&gt; t
+    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
+    """
+    if tree is None:
+        return
+    elif item &lt; tree.entry:
+        if tree.left:
+            insert(item, tree.left)
+        else:
+            tree.left = Tree(item)
+    else:
+        if tree.right:
+            insert(item, tree.right)
+        else:
+            tree.right = Tree(item)
+</code></pre>
 
 </div>
 
-<div class="page-header" id="problems">
-  <h3>Practice Problems:</h3>
-</div>
 
-<div class="cs-problems">
 
-  <p>
-    Below are a list of practice problems, test what you've learned!
-  </p>
+<p class="disclaimer">
+  I don't claim to be perfect so if you find an error on this page, please <a href="/contact">send me an email</a> perferrably with a link to this page so that I know what I need to fix!
+</p>
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
 
-  <ul>
-  
-    <li><a href="/cs61a/fa13/lambdas/what_would_python_print">What Would Python Print?</a></li>
-  
-  </ul>
-
-</div>
-
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
 
 </div>
       </div>

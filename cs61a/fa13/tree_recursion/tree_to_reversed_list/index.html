@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Fall 2013 - Lambdas - Mark Miyashita
+    CS61A - Tree to Reversed List - Mark Miyashita
   
 </title>
 
@@ -421,45 +421,72 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  
-
-  
-  
-
-
-
-<h1>CS61A - Fall 2013 - Lambdas</h1>
-
-<div class="page-header" id="notes">
-  <h3>Notes:</h3>
+  <div class="page-header">
+  <h3>Tree to Reversed List</h3>
 </div>
 
-<div class="cs-notes">
 
-  <p>
-    Looks like there currently aren't any notes (yet) about Lambdas...if you'd like to see some, <a href="/contact">let me know.</a>
-  </p>
+
+
+
+
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+
+<p>In this problem, the input is a binary tree and the output is a list. The list is formed by getting the rightmost entry first. If you haven’t already, the traversal questions located <a href="http://markmiyashita.com/cs61a/fa13/problems/trees_trees_everywhere/">here</a> may help you.</p>
+
+<pre><code>def tree_to_reversed_list(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; tree_to_reversed_list(t)
+    [8, 7, 6, 5, 4, 1]
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def tree_to_reversed_list(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; tree_to_reversed_list(t)
+    [8, 7, 6, 5, 4, 1]
+    """
+    lst = []
+    if tree is not None:
+        if tree.right:
+            lst.extend(tree_to_reversed_list(tree.right))
+        lst.append(tree.entry)
+        if tree.left:
+            lst.extend(tree_to_reversed_list(tree.left))
+    return lst
+</code></pre>
 
 </div>
 
-<div class="page-header" id="problems">
-  <h3>Practice Problems:</h3>
-</div>
 
-<div class="cs-problems">
 
-  <p>
-    Below are a list of practice problems, test what you've learned!
-  </p>
+<p class="disclaimer">
+  I don't claim to be perfect so if you find an error on this page, please <a href="/contact">send me an email</a> perferrably with a link to this page so that I know what I need to fix!
+</p>
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
 
-  <ul>
-  
-    <li><a href="/cs61a/fa13/lambdas/what_would_python_print">What Would Python Print?</a></li>
-  
-  </ul>
-
-</div>
-
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
 
 </div>
       </div>

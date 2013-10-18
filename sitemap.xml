@@ -899,6 +899,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/flip_tree/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tree_recursion/in_order_traversal_binary_tree/index.html</loc>
         
         <lastmod>2013-05-11T00:00:00-07:00</lastmod>
@@ -916,6 +923,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/in_order_traversal_binary_tree/index.html</loc>
         
         <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/in_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -941,6 +955,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/pre_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tree_recursion/post_order_traversal_binary_tree/index.html</loc>
         
         <lastmod>2013-05-11T00:00:00-07:00</lastmod>
@@ -958,6 +979,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/post_order_traversal_binary_tree/index.html</loc>
         
         <lastmod>2013-07-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/post_order_traversal_binary_tree/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -983,6 +1011,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/insert_into_binary_search_tree/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tree_recursion/is_my_tree_binary_and_searchable/index.html</loc>
         
         <lastmod>2013-05-13T00:00:00-07:00</lastmod>
@@ -1004,6 +1039,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/is_my_tree_binary_and_searchable/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tree_recursion/tree_to_reversed_list/index.html</loc>
         
         <lastmod>2013-05-14T00:00:00-07:00</lastmod>
@@ -1021,6 +1063,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/tree_to_reversed_list/index.html</loc>
         
         <lastmod>2013-07-25T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/tree_to_reversed_list/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -1431,6 +1480,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/tree_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tree_recursion/index.html</loc>
         
     </url>
     
