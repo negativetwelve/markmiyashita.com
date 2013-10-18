@@ -626,13 +626,6 @@
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/cs61a/fa13/rlists/map_rlist/index.html</loc>
-        
-        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
-        
-    </url>
-    
-    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/filter_rlist/index.html</loc>
         
         <lastmod>2013-02-25T00:00:00-08:00</lastmod>
@@ -650,13 +643,6 @@
         <loc>http://markmiyashita.com/cs61a/su13/rlists/filter_rlist/index.html</loc>
         
         <lastmod>2013-07-17T00:00:00-07:00</lastmod>
-        
-    </url>
-    
-    <url>
-        <loc>http://markmiyashita.com/cs61a/fa13/rlists/filter_rlist/index.html</loc>
-        
-        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -682,13 +668,6 @@
     </url>
     
     <url>
-        <loc>http://markmiyashita.com/cs61a/fa13/rlists/sort_rlist/index.html</loc>
-        
-        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
-        
-    </url>
-    
-    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/map_and_filter_rlists_object_version/index.html</loc>
         
         <lastmod>2013-03-19T00:00:00-07:00</lastmod>
@@ -710,6 +689,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/rlists/map_and_filter_rlists_object_version/index.html</loc>
+        
+        <lastmod>2013-10-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/rlists_as_functions/index.html</loc>
         
         <lastmod>2013-03-05T00:00:00-08:00</lastmod>
@@ -727,13 +713,6 @@
         <loc>http://markmiyashita.com/cs61a/su13/rlists/rlists_as_functions/index.html</loc>
         
         <lastmod>2013-07-10T00:00:00-07:00</lastmod>
-        
-    </url>
-    
-    <url>
-        <loc>http://markmiyashita.com/cs61a/fa13/rlists/rlists_as_functions/index.html</loc>
-        
-        <lastmod>2013-10-01T00:00:00-07:00</lastmod>
         
     </url>
     

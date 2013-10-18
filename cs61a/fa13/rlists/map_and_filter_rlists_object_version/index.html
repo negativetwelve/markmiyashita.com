@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Rlists As Functions - Mark Miyashita
+    CS61A - Map and Filter Rlist (Object Version) - Mark Miyashita
   
 </title>
 
@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/fa13/practice">All Problems and Notes (26)</a></li>
+    <li><a href="/cs61a/fa13/practice">All Problems and Notes (23)</a></li>
   
 
   
@@ -283,7 +283,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/fa13/rlists">Rlists (4)</a></li>
+        <li><a href="/cs61a/fa13/rlists">Rlists (1)</a></li>
       
     
   
@@ -420,109 +420,114 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h1>Rlists As Functions</h1>
+  <h3>Map and Filter Rlist (Object Version)</h3>
 </div>
 
 
 
 
 
-<ul id="markdown-toc">
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#data-abstraction">Data Abstraction</a></li>
-  <li><a href="#constructors-and-selectors">Constructors and Selectors</a></li>
-</ul>
 
-<h4 id="introduction">Introduction</h4>
+<p>We’ve already seen how to implement <code>map</code> and <code>filter</code> using our tuple/functional abstraction for rlists, now let’s implement the same functions using the class version. You should be able to write these from scratch but here are the previous implementations of <a href="http://markmiyashita.com/cs61a/sp13/problems/map_rlist/">map</a> and <a href="http://markmiyashita.com/cs61a/sp13/problems/filter_rlist/">filter</a>. Here is the class Rlist that we will be using as our abstraction.</p>
 
-<!--start-->
-<p>What exactly are rlists? rlists are a CS61A abstraction that defines a series of pairs that connect together by accessing the <code>first</code> and <code>rest</code> elements of the pair. We have defined the following constructs for our rlist abstraction:
-<!--end--></p>
+<pre><code>class Rlist(object):
+    """A recursive list consisting of a first element and the rest.
 
-<pre><code>empty_rlist = None
-
-def rlist(first, rest):
-    return (first, rest)
-
-def first(r):
-    return r[0]
-
-def rest(r):
-    return r[1]
-</code></pre>
-
-<p>What does this mean for us? This means that for any rlist, we only have access to the first element of the list and a way to get the rest of the items (which is also an rlist). The idea is simple, but we can do powerful things with rlists.</p>
-
-<h4 id="data-abstraction">Data Abstraction</h4>
-
-<p>This rlist abstraction is considered an abstraction in the first place because we can change how rlists are stored and accessed. For example, we can define our class as follows and the code that we write (assuming we don’t break any abstraction barriers ourselves) would still work.</p>
-
-<pre><code>empty_rlist = lambda x: None
-
-def rlist(first, rest):
-    return lambda x: (first, rest)
-
-def first(r):
-    return r(None)[0]
-
-def rest(r):
-    return r(None)[1]
-
-def show(r):
-    if r == empty_rlist:
-        return None
-    return (first(r), show(rest(r)))
-</code></pre>
-
-<p>Notice how we had to add a new function, <code>show</code> that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at <code>&lt;function rlist&lt;locals&gt;.&lt;lambda&gt; at 0x1006f07a0&gt;</code> all day because our new abstraction returns functions.</p>
-
-<p>Okay, abstractions aside, let’s figure out how to tackle these rlist problems!</p>
-
-<h4 id="constructors-and-selectors">Constructors and Selectors</h4>
-
-<p><strong>Always, always, always</strong> remember that we only have access to two things in our rlist, the <code>first</code> element, and the rlist that consists of the <code>rest</code> of the elements. Generally, you won’t usually see many nested calls (for example: <code>first(rest(rest()))</code>) because we usually let recursion take care of the actual traversing part.</p>
-
-<p>Let’s walk through an example. Say we wanted to write a function, <code>less_rlist</code> that keeps all elements in the rlist that are less than the given input, <code>n</code>. How would we approach this problem?</p>
-
-<pre><code>def less_rlist(r, n):
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; len(s)
+    3
+    &gt;&gt;&gt; s[0]
+    1
+    &gt;&gt;&gt; s[1]
+    2
+    &gt;&gt;&gt; s[2]
+    3
     """
-    Takes in an rlist, r, and a number n.
-    Returns a new rlist with all the elements from the original
-    rlist that are less than n.
+    class EmptyList(object):
+        def __len__(self):
+            return 0
+    empty = EmptyList()
 
-    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(5, rlist(3, empty_rlist))))
-    &gt;&gt;&gt; less_rlist(r, 3)
-    (1, (2, None))
+    def __init__(self, first, rest=empty):
+        self.first = first
+        self.rest = rest
+
+    def __repr__(self):
+        f = repr(self.first)
+        if self.rest is Rlist.empty:
+            return 'Rlist({0})'.format(f)
+        else:
+            return 'Rlist({0}, {1})'.format(f, repr(self.rest))
+
+    def __len__(self):
+        return 1 + len(self.rest)
+
+    def __getitem__(self, i):
+        if i == 0:
+            return self.first
+        return self.rest[i - 1]
+</code></pre>
+
+<p>Let’s write our functions <code>map</code> and <code>filter</code> that work for the Rlist class. Here are some blank functions to fill in:</p>
+
+<pre><code>def map_rlist(fn, s):
+    """ Return an Rlist resulting from mapping fn over the elements of s.
+
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; map_rlist(lambda x: x * x, s)
+    Rlist(1, Rlist(4, Rlist(9)))
     """
+    "***YOUR CODE HERE***"
+
+def filter_rlist(fn, s):
+    """ Return an Rlist that removes all of the elements that do not satisfy
+    the input function.
+
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; filter_rlist(lambda x: x%2==0, s)
+    Rlist(2)
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
-<p>I recommend starting with the base case. Once we figure that out, we know when to stop, and we can focus on getting our input down to that level. For this question, and for most rlists in general, we want to think about our smallest input. For an rlist, that smallest input is the <code>empty_rlist</code>. When we input the <code>empty_rlist</code>, we expect to get back the <code>empty_rlist</code> because all the elements (none in this case) are less than n. So we can now write one of our base cases.</p>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<pre><code>def less_rlist(r, n):
-    if r == empty_rlist:
-        return r
+<div class="solution">
+
+  <pre><code>def map_rlist(fn, s):
+    """ Return an Rlist resulting from mapping fn over the elements of s.
+
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; map_rlist(lambda x: x * x, s)
+    Rlist(1, Rlist(4, Rlist(9)))
+    """
+    if s is Rlist.empty:
+        return s
+    return Rlist(fn(s.first), map_rlist(fn, s.rest))
+
+def filter_rlist(fn, s):
+    """ Return an Rlist that removes all of the elements that do not satisfy
+    the input function. 
+
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; filter_rlist(lambda x: x%2==0, s)
+    Rlist(2)
+    """
+    if s is Rlist.empty:
+        return s
+    if fn(s.first):
+        return Rlist(s.first, filter_rlist(fn, s.rest))
+    return filter_rlist(fn, s.rest)
 </code></pre>
 
-<p>Now we need to determine if there are any more base cases. For this question, we also have to consider the case when the item that we are currently on is less than the number n. What do we need to do when this is true? We need to just continue recursing on the rest of the list while keeping this element in our new rlist. What do we need to do when it’s false? We need to also recurse on the rest of our rlist, BUT, we don’t need to keep the current item and we can just keep going. Let’s write the if case.</p>
+  <p>Our implementations for the functions remain the same as before when we had a different abstraction. The only thing that has changed is the fact that we now call our first and rest in different ways. Previously, we used <code>first(r)</code>, now we call <code>r.first</code>.</p>
 
-<pre><code>def less_rlist(r, n):
-    if r == empty_rlist:
-        return r
-    if first(r) &lt; n:
-        return rlist(first(r), less_rlist(rest(r), n))
-</code></pre>
+  <p>For map, we still want to return the empty rlist when the input is the empty rlist. Then, we want to apply the function to the first item of our rlist and recursively call map on the rest of our rlist.</p>
 
-<p>The only single element that we can check is the one that we are currently on. The way we access this element is by calling the function, <code>first</code> on our rlist. Like we said above, when this is true, we need to construct an rlist with the first element being in our new rlist and the rest of the rlist is just the result of calling the same function on the rest. By calling the function on the rest of our rlist, we are making our way to the base case. Let’s finish up the function. What do we do in the recursive case? We just call the same function on our rest and we forget about the current element because it does not satisfy the condition of being less than n. Let’s write it.</p>
+  <p>For filter, we want to check if the first item satisfies our input function. If it does satisfy the function, then we can keep that item and recursively call filter on the rest of our rlist. If it does not, then we can ignore the first item entirely and recursively call filter on the rest of the rlist.</p>
 
-<pre><code>def less_rlist(r, n):
-    if r == empty_rlist:
-        return r
-    if first(r) &lt; n:
-        return rlist(first(r), less_rlist(rest(r), n))
-    return less_rlist(rest(r), n)
-</code></pre>
+</div>
 
-<p>That wasn’t so bad was it? Try some of the extra recursive rlist questions below!</p>
 
 
 <p class="disclaimer">
