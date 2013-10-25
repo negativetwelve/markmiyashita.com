@@ -787,6 +787,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/object_oriented_programming/pets_own_the_owners/index.html</loc>
+        
+        <lastmod>2013-10-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/mutable_data/in_place_functions/index.html</loc>
         
         <lastmod>2013-03-08T00:00:00-08:00</lastmod>
@@ -836,6 +843,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/inheritance/designing_classes_and_using_inheritance/index.html</loc>
+        
+        <lastmod>2013-10-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
         
         <lastmod>2013-03-18T00:00:00-07:00</lastmod>
@@ -857,6 +871,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
+        
+        <lastmod>2013-10-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/orders_of_growth/orders_of_growth_practice/index.html</loc>
         
         <lastmod>2013-04-04T00:00:00-07:00</lastmod>
@@ -874,6 +895,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/orders_of_growth/orders_of_growth_practice/index.html</loc>
         
         <lastmod>2013-07-24T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/orders_of_growth/orders_of_growth_practice/index.html</loc>
+        
+        <lastmod>2013-10-24T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -1101,6 +1129,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/memoization/better_fib/index.html</loc>
         
         <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/memoization/better_fib/index.html</loc>
+        
+        <lastmod>2013-10-24T00:00:00-07:00</lastmod>
         
     </url>
     
@@ -1404,6 +1439,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/object_oriented_programming/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/object_oriented_programming/index.html</loc>
         
     </url>
@@ -1439,6 +1479,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/inheritance/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/inheritance/index.html</loc>
         
     </url>
@@ -1454,6 +1499,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/generic_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/generic_functions/index.html</loc>
         
     </url>
@@ -1465,6 +1515,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/orders_of_growth/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/orders_of_growth/index.html</loc>
         
     </url>
     
@@ -1500,6 +1555,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/memoization/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/memoization/index.html</loc>
         
     </url>
     
