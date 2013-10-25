@@ -488,7 +488,7 @@ cs_classes:
                 published: true
 
     object_oriented_programming:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Pets Own the Owners"
           file: pets_own_the_owners
@@ -505,6 +505,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-24"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-24"
                 published: true
                 solution: true
       notes:
@@ -542,7 +546,7 @@ cs_classes:
                 solution: true
 
     inheritance:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Designing Classes and Using Inheritance"
           file: designing_classes_and_using_inheritance
@@ -561,9 +565,13 @@ cs_classes:
                 date: "2013-07-18"
                 published: true
                 solution: true
+              fa13:
+                date: "2013-10-24"
+                published: true
+                solution: true
 
     generic_functions:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       notes:
         - name: "Generic Functions and Type Dispatching"
           file: generic_functions_and_type_dispatching
@@ -578,9 +586,12 @@ cs_classes:
               su13:
                 date: "2013-07-18"
                 published: true
+              fa13:
+                date: "2013-10-24"
+                published: true
 
     orders_of_growth:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Orders of Growth Practice"
           file: orders_of_growth_practice
@@ -597,6 +608,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-24"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-24"
                 published: true
                 solution: true
 
@@ -757,7 +772,7 @@ cs_classes:
                 solution: true
 
     memoization:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       problems:
         - name: "Better Fib"
           file: better_fib
@@ -774,6 +789,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-18"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-24"
                 published: true
                 solution: true
 
@@ -1027,3 +1046,14 @@ cs_classes:
                 published: true
   cs170:
   cs188:
+    probability:
+      semesters: []
+      notes:
+        - name: "Random Variables"
+          file: random_variables
+          tags: []
+          semesters:
+            - base:
+                date: "2013-10-18"
+                published: false
+
