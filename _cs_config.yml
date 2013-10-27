@@ -444,6 +444,20 @@ cs_classes:
                 date: "2013-10-27"
                 published: true
                 solution: true
+        - name: "Delete Last Item"
+          file: delete_last_item
+          type: Challenge
+          tags: [recursion, higher order functions, mutable data, object oriented programming, mutation]
+          semesters:
+            - base:
+                date: "2013-10-27"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-27"
+                published: true
+                solution: true
+
       notes:
         - name: "Rlists As Functions"
           file: rlists_as_functions
