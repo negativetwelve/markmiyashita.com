@@ -431,6 +431,19 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+        - name: "Sort Rlist (Object Version)"
+          file: sort_rlist_object_version
+          type: Challenge
+          tags: [recursion, higher order functions, mutable data, object oriented programming]
+          semesters:
+            - base:
+                date: "2013-10-27"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-27"
+                published: true
+                solution: true
       notes:
         - name: "Rlists As Functions"
           file: rlists_as_functions
