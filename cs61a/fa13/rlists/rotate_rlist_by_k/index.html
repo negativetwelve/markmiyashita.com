@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Object Oriented Programming - Mark Miyashita
+    CS61A - Rotate Rlist by k - Mark Miyashita
   
 </title>
 
@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/practice">All Problems and Notes (49)</a></li>
+    <li><a href="/cs61a/fa13/practice">All Problems and Notes (40)</a></li>
   
 
   
@@ -219,7 +219,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/basics">Basics (3)</a></li>
+        <li><a href="/cs61a/fa13/basics">Basics (3)</a></li>
       
     
   
@@ -235,7 +235,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (3)</a></li>
+        <li><a href="/cs61a/fa13/higher_order_functions">Higher Order Functions (3)</a></li>
       
     
   
@@ -245,7 +245,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (4)</a></li>
+        <li><a href="/cs61a/fa13/environment_diagrams">Environment Diagrams (4)</a></li>
       
     
   
@@ -255,7 +255,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
+        <li><a href="/cs61a/fa13/lambdas">Lambdas (1)</a></li>
       
     
   
@@ -265,7 +265,15 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/fa13/recursion">Recursion (8)</a></li>
       
     
   
@@ -275,17 +283,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/recursion">Recursion (8)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/rlists">Rlists (9)</a></li>
+        <li><a href="/cs61a/fa13/rlists">Rlists (5)</a></li>
       
     
   
@@ -298,7 +296,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+        <li><a href="/cs61a/fa13/iterables">Iterables (2)</a></li>
       
     
   
@@ -308,7 +306,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (2)</a></li>
+        <li><a href="/cs61a/fa13/object_oriented_programming">Object Oriented Programming (2)</a></li>
       
     
   
@@ -318,7 +316,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+        <li><a href="/cs61a/fa13/mutable_data">Mutable Data (1)</a></li>
       
     
   
@@ -328,7 +326,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
+        <li><a href="/cs61a/fa13/inheritance">Inheritance (1)</a></li>
       
     
   
@@ -338,7 +336,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
+        <li><a href="/cs61a/fa13/generic_functions">Generic Functions (1)</a></li>
       
     
   
@@ -348,7 +346,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
+        <li><a href="/cs61a/fa13/orders_of_growth">Orders Of Growth (1)</a></li>
       
     
   
@@ -358,7 +356,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
+        <li><a href="/cs61a/fa13/tree_recursion">Tree Recursion (7)</a></li>
       
     
   
@@ -368,11 +366,8 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
+        <li><a href="/cs61a/fa13/memoization">Memoization (1)</a></li>
       
-    
-  
-    
     
   
     
@@ -386,11 +381,12 @@ woopra.track('pv', {
   
     
     
+  
+    
+    
       
       
       
-      
-        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
       
     
   
@@ -406,8 +402,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterators">Iterators (1)</a></li>
-      
     
   
     
@@ -418,8 +412,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/logic">Logic (2)</a></li>
       
     
   
@@ -439,51 +431,86 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  
-
-  
-  
-
-
-
-<h1>CS61A - Object Oriented Programming</h1>
-
-<div class="page-header" id="notes">
-  <h3>Notes:</h3>
+  <div class="page-header">
+  <h3>Rotate Rlist by k</h3>
 </div>
 
-<div class="cs-notes">
 
-  <ul>
-  
-    <li><h4><a href="/cs61a/object_oriented_programming/property">@property -- What does it do and what is it for?</a></h4></li>
-    
-<p>A lot of you ask “What is the purpose of @property?” and so I decided to write up a short summary of why we have @property, what it’s used for, and how to use it (correctly). When we define objects, we have several attributes that we can access by using the dot methods associated with our objects. We can access <strong>instance variables</strong> simply by doing <code>my_object.my_instance_variable</code> and we can call a method by doing <code>my_object.call_my_method(...)</code>. We usually define our <strong>instance variables</strong> in our constructors and then modifying them in subsequent methods. However, what happens if I have an <strong>instance variable</strong> that depends on other instance variables? Should I have to modify them both each time? Based on everything else we’ve learned in this class, your intuition should tell you that if you have to do something twice, you’re probably doing something wrong. Let’s explore that idea with @property.
 
-    <a href="/cs61a/object_oriented_programming/property">(Read More!)</a>
-  
-  </ul>
+
+
+
+<p>Write a function <code>rotate_by_k</code> that takes in an rlist and a number k and rotates the input rlist, k times. One rotation involves taking the first item of the rlist and moving it to the end. This function should mutate the input meaning that it does not return anything and instead modifies the input rlist.</p>
+
+<pre><code>def rotate_by_k(rlist, k):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; rotate_by_k(r, 2)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(4, Rlist(1, Rlist(2))))
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def rotate_by_k(rlist, k):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; rotate_by_k(r, 2)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(4, Rlist(1, Rlist(2))))
+    """
+    if rlist is not Rlist.empty and k &gt; 0:
+        item = rlist.first
+        rlist.first = rlist.rest.first
+        rlist.rest = rlist.rest.rest
+        add_to_end(rlist, item)
+        rotate_by_k(rlist, k - 1)
+
+def add_to_end(rlist, item):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; add_to_end(r, 6)
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2, Rlist(3, Rlist(6))))
+    """
+    if rlist.rest is Rlist.empty:
+        rlist.rest = Rlist(item)
+    else:
+        add_to_end(rlist.rest, item)
+</code></pre>
+
+  <p>The general idea here is to take off the first item, modify the rlist to remove that item, and then add that item to the end of the rlist. To help us out, we made a helper function <code>add_to_end</code> that takes in an rlist and an item and adds the item to the end of the rlist. Once we have this function, we can simply pop off the first item and then call this function to add it to the end.</p>
+
+  <p>Each time we call rotate, we decrease <code>k</code> by 1 until it is eventually 0.</p>
 
 </div>
 
-<div class="page-header" id="problems">
-  <h3>Practice Problems:</h3>
-</div>
 
-<div class="cs-problems">
 
-  <p>
-    Below are a list of practice problems, test what you've learned!
-  </p>
+<p class="disclaimer">
+  I don't claim to be perfect so if you find an error on this page, please <a href="/contact">send me an email</a> perferrably with a link to this page so that I know what I need to fix!
+</p>
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
 
-  <ul>
-  
-    <li><a href="/cs61a/object_oriented_programming/pets_own_the_owners">Pets Own the Owners</a></li>
-  
-  </ul>
-
-</div>
-
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
 
 </div>
       </div>
