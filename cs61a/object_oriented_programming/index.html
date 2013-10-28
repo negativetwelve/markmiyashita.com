@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/practice">All Problems and Notes (47)</a></li>
+    <li><a href="/cs61a/practice">All Problems and Notes (48)</a></li>
   
 
   
@@ -308,7 +308,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (1)</a></li>
+        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (2)</a></li>
       
     
   
@@ -454,9 +454,15 @@ woopra.track('pv', {
 
 <div class="cs-notes">
 
-  <p>
-    Looks like there currently aren't any notes (yet) about Object Oriented Programming...if you'd like to see some, <a href="/contact">let me know.</a>
-  </p>
+  <ul>
+  
+    <li><h4><a href="/cs61a/object_oriented_programming/property">@property -- What does it do and what is it for?</a></h4></li>
+    
+<p>A lot of you ask “What is the purpose of @property?” and so I decided to write up a short summary of why we have @property, what it’s used for, and how to use it (correctly). When we define objects, we have several attributes that we can access by using the dot methods associated with our objects. We can access <strong>instance variables</strong> simply by doing <code>my_object.my_instance_variable</code> and we can call a method by doing <code>my_object.call_my_method(...)</code>. We usually define our <strong>instance variables</strong> in our constructors and then modifying them in subsequent methods. However, what happens if I have an <strong>instance variable</strong> that depends on other instance variables? Should I have to modify them both each time? Based on everything else we’ve learned in this class, your intuition should tell you that if you have to do something twice, you’re probably doing something wrong. Let’s explore that idea with @property.
+
+    <a href="/cs61a/object_oriented_programming/property">(Read More!)</a>
+  
+  </ul>
 
 </div>
 

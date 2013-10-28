@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Newton's Method Practice - Mark Miyashita
+    CS61A - @property -- What does it do and what is it for? - Mark Miyashita
   
 </title>
 
@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/practice">All Problems and Notes (48)</a></li>
+    <li><a href="/cs61a/fa13/practice">All Problems and Notes (39)</a></li>
   
 
   
@@ -219,7 +219,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/basics">Basics (3)</a></li>
+        <li><a href="/cs61a/fa13/basics">Basics (3)</a></li>
       
     
   
@@ -235,7 +235,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (3)</a></li>
+        <li><a href="/cs61a/fa13/higher_order_functions">Higher Order Functions (3)</a></li>
       
     
   
@@ -245,7 +245,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (4)</a></li>
+        <li><a href="/cs61a/fa13/environment_diagrams">Environment Diagrams (4)</a></li>
       
     
   
@@ -255,7 +255,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
+        <li><a href="/cs61a/fa13/lambdas">Lambdas (1)</a></li>
       
     
   
@@ -265,7 +265,15 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/fa13/recursion">Recursion (8)</a></li>
       
     
   
@@ -275,17 +283,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/recursion">Recursion (8)</a></li>
-      
-    
-  
-    
-    
-      
-      
-      
-      
-        <li><a href="/cs61a/rlists">Rlists (8)</a></li>
+        <li><a href="/cs61a/fa13/rlists">Rlists (4)</a></li>
       
     
   
@@ -298,7 +296,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+        <li><a href="/cs61a/fa13/iterables">Iterables (2)</a></li>
       
     
   
@@ -308,7 +306,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (2)</a></li>
+        <li><a href="/cs61a/fa13/object_oriented_programming">Object Oriented Programming (2)</a></li>
       
     
   
@@ -318,7 +316,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+        <li><a href="/cs61a/fa13/mutable_data">Mutable Data (1)</a></li>
       
     
   
@@ -328,7 +326,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
+        <li><a href="/cs61a/fa13/inheritance">Inheritance (1)</a></li>
       
     
   
@@ -338,7 +336,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
+        <li><a href="/cs61a/fa13/generic_functions">Generic Functions (1)</a></li>
       
     
   
@@ -348,7 +346,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
+        <li><a href="/cs61a/fa13/orders_of_growth">Orders Of Growth (1)</a></li>
       
     
   
@@ -358,7 +356,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
+        <li><a href="/cs61a/fa13/tree_recursion">Tree Recursion (7)</a></li>
       
     
   
@@ -368,11 +366,8 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
+        <li><a href="/cs61a/fa13/memoization">Memoization (1)</a></li>
       
-    
-  
-    
     
   
     
@@ -386,11 +381,12 @@ woopra.track('pv', {
   
     
     
+  
+    
+    
       
       
       
-      
-        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
       
     
   
@@ -406,8 +402,6 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/iterators">Iterators (1)</a></li>
-      
     
   
     
@@ -418,8 +412,6 @@ woopra.track('pv', {
       
       
       
-      
-        <li><a href="/cs61a/logic">Logic (2)</a></li>
       
     
   
@@ -440,71 +432,87 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Newton's Method Practice</h3>
+  <h1>@property -- What does it do and what is it for?</h1>
 </div>
 
 
 
 
 
+<ul id="markdown-toc">
+  <li><a href="#why">Why?</a></li>
+  <li><a href="#usage">Usage</a></li>
+</ul>
 
-<p>Recall the following definitions from Newton’s Method from discussion:</p>
+<h4 id="why">Why?</h4>
 
-<pre><code>def approx_deriv(fn, x, dx=0.00001):
-    return (fn(x+dx)-fn(x))/dx
+<!--start-->
+<p>A lot of you ask “What is the purpose of @property?” and so I decided to write up a short summary of why we have @property, what it’s used for, and how to use it (correctly). When we define objects, we have several attributes that we can access by using the dot methods associated with our objects. We can access <strong>instance variables</strong> simply by doing <code>my_object.my_instance_variable</code> and we can call a method by doing <code>my_object.call_my_method(...)</code>. We usually define our <strong>instance variables</strong> in our constructors and then modifying them in subsequent methods. However, what happens if I have an <strong>instance variable</strong> that depends on other instance variables? Should I have to modify them both each time? Based on everything else we’ve learned in this class, your intuition should tell you that if you have to do something twice, you’re probably doing something wrong. Let’s explore that idea with @property.
+<!--end--></p>
 
-def newtons_method(fn, guess=1, max_iterations=100):
-    ALLOWED_ERROR_MARGIN = 0.0000001
-    i = 1
-    while abs(fn(guess)) &gt; ALLOWED_ERROR_MARGIN and i &lt;= max_iterations:
-        guess = guess - fn(guess) / approx_deriv(fn, guess)
-        i += 1
-    return guess
+<h4 id="usage">Usage</h4>
+
+<p>In one sentence, <code>@property</code> is used to declare a method that can act as an instance variable. What that means is that I can define a method that can compute some value dynamically (on-the-fly) and then return it as if I was talking about an instance variable. When we surround a method with <code>@property</code>, we’re changing the syntax of how we access that variable.</p>
+
+<p>Here’s a class that we’re going to use for this note:</p>
+
+<pre><code>class Coins:
+
+    def __init__(self, num_pennies, num_nickels):
+        self.num_pennies = num_pennies
+        self.num_nickels = num_nickels
+
+    def value(self):
+        return self.num_pennies + 5 * self.num_nickels
 </code></pre>
 
-<p>If you don’t understand Newton’s Method at all, be sure to ask your TA during office hours or ask on Piazza.</p>
+<p>If we instantiate an instance by executing something like:</p>
 
-<p>We want to write a function that will help us find the roots of the following mathematical equation:</p>
-
-<pre><code>f(x) = x^3 + x + 1
+<pre><code>c = Coins(3, 7)
 </code></pre>
 
-<p>Write a function, <code>f</code> that can find the root(s) of the function above.</p>
+<p>If we wanted to get the <code>value</code> from the coins, we’d have to call:</p>
 
-<pre><code>def f():
-    """Returns at least one root of the equation x^3 + x + 1."""
-    "***YOUR CODE HERE***"
+<pre><code>c.value()
 </code></pre>
 
-<p>Now, we want to make this function more general. How can we write a new function <code>g</code> that takes in an argument <code>y</code> and finds the roots of:</p>
+<p>Here’s the important part. When we see a method, we should immidiately think the following:</p>
 
-<pre><code>f(x, y) = x^3 + y + 1
+<ol>
+  <li>Soemthing on my object is changing because methods imply some sort of mutation or side effect. When you think methods, you should think actions.</li>
+</ol>
+
+<p>When we see an instance variable, such as:</p>
+
+<pre><code>c.num_pennies
 </code></pre>
 
-<p>For any <code>y</code> value.</p>
+<p>we should immidiately think that we are accessing some information stored on the object that <em>describes</em> the object rather than mutating it.</p>
 
-<pre><code>def g(y):
-    """Returns at least one root of the equation x^3 + y + 1.
+<p>With that in mind, let’s look at how <code>@property</code> changes our syntax. Say we surround the <code>value</code> method with <code>@property</code>.</p>
 
-    &gt;&gt;&gt; round(g(5), 3)
-    -1.817
-    """
-    "***YOUR CODE HERE***"
+<pre><code> class Coins:
+
+    def __init__(self, num_pennies, num_nickels):
+        self.num_pennies = num_pennies
+        self.num_nickels = num_nickels
+
+    @property
+    def value(self):
+        return self.num_pennies + 5 * self.num_nickels
 </code></pre>
 
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+<p>Our original query changes to the following:</p>
 
-<div class="solution">
-
-  <pre><code>def f():
-    return newtons_method(lambda x: x**3 + x + 1
-
-def g(y):
-    return newtons_method(lambda x: x**3 + y + 1
+<pre><code>c = Coins(3, 7)
+c.value
 </code></pre>
 
-</div>
+<p>Notice the lack of parenthesis. The whole point of <code>@property</code> is the following:</p>
 
+<p>Sometimes we have a value that can be computed by accessing other instance variables. Instead of defining a new instance variable (which would then have to be modified each time we change an existing instance variable), we simply make a property. A property tells us something about our object and the syntax for calling it is similar to an instance variable.</p>
+
+<p>So, in this example, <code>value</code> tells us something <em>about</em> our coins object, it does not modify our coins or produce some side effect. In this manner, <code>value</code> seems like a perfect candidate for <code>@property</code> because it tells us something <em>about</em> our object meaning it is more like an instance variable rather than a method.</p>
 
 
 <p class="disclaimer">
