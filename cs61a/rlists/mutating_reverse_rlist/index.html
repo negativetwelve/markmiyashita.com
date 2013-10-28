@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - In Order Traversal of a Binary Tree - Mark Miyashita
+    CS61A - Mutating Reverse Rlist - Mark Miyashita
   
 </title>
 
@@ -440,7 +440,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>In Order Traversal of a Binary Tree</h3>
+  <h3>Mutating Reverse Rlist</h3>
 </div>
 
 
@@ -448,22 +448,14 @@ woopra.track('pv', {
 
 
 
-<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+<p>Write a function <code>mutating reverse</code> that takes in an Rlist and mutates it by reversing the elements in the rlist. The function should not return anything and the original input rlist should be mutated. Hint: You might want to make one, possibly two helper functions. If you’re stuck, check out <a href="/cs61a/recursion/mutable_reverse_list">mutating reverse list</a> for the same sort of function, except over regular lists instead of rlists.</p>
 
-<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
-
-<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. In Order Traversal is one of them and the algorithm goes like this. First, we will recursively print out all the values to our left, then, we will print out the current node’s entry, then recursively print out all the values on the right. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
-
-<pre><code>def in_order_traversal(tree):
+<pre><code>def mutating_reverse(rlist):
     """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; in_order_traversal(t)
-    1
-    4
-    5
-    6
-    7
-    8
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; mutating_reverse(r)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(2, Rlist(1)))
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -472,23 +464,51 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def in_order_traversal(tree):
+  <pre><code>def mutating_reverse(rlist):
     """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; in_order_traversal(t)
-    1
-    4
-    5
-    6
-    7
-    8
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; mutating_reverse(r)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(2, Rlist(1)))
     """
-    if tree is None:
+    if rlist is Rlist.empty:
         return
-    in_order_traversal(tree.left)
-    print(tree.entry)
-    in_order_traversal(tree.right)
+    if rlist.rest is not Rlist.empty:
+        item = pop(rlist)
+        mutating_reverse(rlist)
+        insert_beginning(item, rlist)
+
+def insert_beginning(item, rlist):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; insert_beginning(6, r)
+    &gt;&gt;&gt; r
+    Rlist(6, Rlist(1, Rlist(2, Rlist(3))))
+    """
+    if rlist is not Rlist.empty:
+        rlist.rest = Rlist(rlist.first, rlist.rest)
+        rlist.first = item
+
+def pop(rlist):
+    """Removes the last item from the rlist and returns it.
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; pop(r)
+    3
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2))
+    """
+    if rlist.rest.rest is Rlist.empty:
+        item = rlist.rest.first
+        rlist.rest = Rlist.empty
+        return item
+    return pop(rlist.rest)
 </code></pre>
+
+  <p>That’s a lot of code. Let’s break this problem down. Our general approach to the <code>mutating_reverse</code> function is to <code>pop</code> off the last item of the rlist (which mutates the rlist), reverse the rest of the rlist. Then insert the item that we popped off into the beginning of the reversed rlist.</p>
+
+  <p>To do this, we write up two helper functions, <code>insert_beginning</code> and <code>pop</code> which work with rlists to do exactly that. For <code>insert_beginning</code>, we’re going to take in an <code>item</code>, and an <code>rlist</code> and mutate the input rlist by adding <code>item</code> to the beginning of it.</p>
+
+  <p>For <code>pop</code>, we’re going to iterate over the rlist until we reach the second to last item. From there, we’re going to grab the item that we want to return, and then mutate the rlist such that it no longer contains that item. Then we are going to return that item.</p>
 
 </div>
 
