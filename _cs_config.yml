@@ -457,6 +457,19 @@ cs_classes:
                 date: "2013-10-27"
                 published: true
                 solution: true
+        - name: "Mutating Reverse Rlist"
+          file: mutating_reverse_rlist
+          type: Challenge
+          tags: [recursion, mutable data, object oriented programming, mutation]
+          semesters:
+            - base:
+                date: "2013-10-27"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-10-27"
+                published: true
+                solution: true
 
       notes:
         - name: "Rlists As Functions"
