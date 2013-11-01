@@ -864,6 +864,17 @@ cs_classes:
 
     scheme:
       semesters: []
+      notes:
+        - name: "Introduction to Scheme"
+          file: introduction_to_scheme
+          tags: [programming languages, functional programming]
+          semesters:
+            - base:
+                date: "2013-11-1"
+                published: false
+              fa13:
+                date: "2013-11-1"
+                published: false
 
     exceptions:
       semesters: []
