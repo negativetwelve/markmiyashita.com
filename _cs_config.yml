@@ -863,7 +863,7 @@ cs_classes:
       semesters: []
 
     scheme:
-      semesters: []
+      semesters: [base, fa13]
       notes:
         - name: "Introduction to Scheme"
           file: introduction_to_scheme
@@ -875,6 +875,20 @@ cs_classes:
               fa13:
                 date: "2013-11-1"
                 published: false
+      problems:
+        - name: "Flatten Nested Lists"
+          file: flatten_nested_lists
+          type: Challenge
+          tags: [recursion, lists]
+          semesters:
+            - base:
+                date: "2013-11-05"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-11-05"
+                published: true
+                solution: true
 
     exceptions:
       semesters: []
