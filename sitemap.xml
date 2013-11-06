@@ -1210,6 +1210,20 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/scheme/flatten_nested_lists/index.html</loc>
+        
+        <lastmod>2013-11-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/scheme/flatten_nested_lists/index.html</loc>
+        
+        <lastmod>2013-11-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
         
         <lastmod>2013-05-10T00:00:00-07:00</lastmod>
@@ -1635,6 +1649,16 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/memoization/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/scheme/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/scheme/index.html</loc>
         
     </url>
     
