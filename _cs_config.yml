@@ -889,6 +889,19 @@ cs_classes:
                 date: "2013-11-05"
                 published: true
                 solution: true
+        - name: "Reverse Scheme List"
+          file: reverse_scheme_list
+          type: Warmup
+          tags: [recursion, lists]
+          semesters:
+            - base:
+                date: "2013-11-06"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-11-06"
+                published: true
+                solution: true
 
     exceptions:
       semesters: []
