@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - In Order Traversal of a Binary Tree - Mark Miyashita
+    CS61A - Reverse Scheme List - Mark Miyashita
   
 </title>
 
@@ -439,7 +439,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>In Order Traversal of a Binary Tree</h3>
+  <h3>Reverse Scheme List</h3>
 </div>
 
 
@@ -447,47 +447,34 @@ woopra.track('pv', {
 
 
 
-<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+<p>Write a function in Scheme that reverses a list. The output should be a new list that is the reverse of the original list.</p>
 
-<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
+<pre><code>(define (reverse lst)
+    ; Your Code Here
+                        )
+</code></pre>
 
-<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. In Order Traversal is one of them and the algorithm goes like this. First, we will recursively print out all the values to our left, then, we will print out the current node’s entry, then recursively print out all the values on the right. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
+<p>And here’s a test to help you out:</p>
 
-<pre><code>def in_order_traversal(tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; in_order_traversal(t)
-    1
-    4
-    5
-    6
-    7
-    8
-    """
-    "***YOUR CODE HERE***"
+<pre><code>(define (test)
+      (assert-equal '(1 2 3) (revsere '(3 2 1)))
+      (assert-equal '(3) (revsere '(3)))
+      (assert-equal '() (revsere '())))
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def in_order_traversal(tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; in_order_traversal(t)
-    1
-    4
-    5
-    6
-    7
-    8
-    """
-    if tree is None:
-        return
-    in_order_traversal(tree.left)
-    print(tree.entry)
-    in_order_traversal(tree.right)
+  <pre><code>(define (reverse lst)
+    (if (null? lst)
+        lst
+        (append (reverse (cdr lst)) (list (car lst)))))
 </code></pre>
+
+  <p>In this problem, we first check to make sure that the input <code>lst</code> is not empty. If it is, we can just return the empty list. Otherwise, we want to take off the first item, reverse the rest of the list, and then attach the original first item to the end of the reversed list.</p>
+
+  <p>We note that we have to use <code>append</code> in this case because of the way that <code>cons</code> works. <code>cons</code> works by creating a pair out of two elements. If we want to use <code>cons</code> to form a list, we’d have to have a list as the second argument. In this case, all we have is an element, the first item of the list. By using <code>append</code>, we can reverse the rest of the list (getting a list back) and then create a one-item list out of the first element and attach it to the end of the reversed list.</p>
 
 </div>
 

@@ -1224,6 +1224,20 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/scheme/reverse_scheme_list/index.html</loc>
+        
+        <lastmod>2013-11-06T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/scheme/reverse_scheme_list/index.html</loc>
+        
+        <lastmod>2013-11-06T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
         
         <lastmod>2013-05-10T00:00:00-07:00</lastmod>
