@@ -8,10 +8,10 @@ Write a function in Scheme that reverses a list. The output should be a new list
 And here's a test to help you out:
 
     (define (test)
-          (assert-equal '(1 2 3) (revsere '(3 2 1)))
-          (assert-equal '(3) (revsere '(3)))
-          (assert-equal '() (revsere '())))
-          
+          (assert-equal '(1 2 3) (reverse '(3 2 1)))
+          (assert-equal '(3) (reverse '(3)))
+          (assert-equal '() (reverse '())))
+
 {% endcapture %}
 
 {% capture solution %}
