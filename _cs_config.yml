@@ -902,6 +902,19 @@ cs_classes:
                 date: "2013-11-06"
                 published: true
                 solution: true
+        - name: "Nested Reverse List"
+          file: nested_reverse_list
+          type: Challenge
+          tags: [recursion, lists]
+          semesters:
+            - base:
+                date: "2013-11-08"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-11-08"
+                published: true
+                solution: true
 
     exceptions:
       semesters: []
