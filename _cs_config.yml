@@ -928,6 +928,19 @@ cs_classes:
                 date: "2013-11-08"
                 published: true
                 solution: true
+        - name: "Rotate List k Times"
+          file: rotate_list_k_times
+          type: Challenge
+          tags: [recursion lists]
+          semesters:
+            - base:
+                date: "2013-11-08"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-11-08"
+                published: true
+                solution: true
 
     exceptions:
       semesters: []
