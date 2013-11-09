@@ -82,8 +82,9 @@ pre {
 }
 
 .bs-sidebar .nav > li > a:hover, .bs-sidebar .nav > li > a:focus {
-  background-color: #D3E3FF;
+  background-color: #4A5783;
   border-right: 1px solid #4A5783;
+  color: white;
 }
 
 .bs-sidebar.affix {

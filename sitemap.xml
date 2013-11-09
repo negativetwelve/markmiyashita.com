@@ -1252,6 +1252,20 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/scheme/zip_two_lists/index.html</loc>
+        
+        <lastmod>2013-11-08T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/scheme/zip_two_lists/index.html</loc>
+        
+        <lastmod>2013-11-08T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
         
         <lastmod>2013-05-10T00:00:00-07:00</lastmod>
@@ -1269,6 +1283,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
         
         <lastmod>2013-07-25T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tail_recursion/tail_recursion_and_tail_optimized_calls/index.html</loc>
+        
+        <lastmod>2013-11-08T00:00:00-08:00</lastmod>
         
     </url>
     
@@ -1697,6 +1718,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/su13/tail_recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/tail_recursion/index.html</loc>
         
     </url>
     
