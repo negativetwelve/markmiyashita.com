@@ -915,6 +915,19 @@ cs_classes:
                 date: "2013-11-08"
                 published: true
                 solution: true
+        - name: "Zip Two Lists"
+          file: zip_two_lists
+          type: Challenge
+          tags: [recursion, lists]
+          semesters:
+            - base:
+                date: "2013-11-08"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-11-08"
+                published: true
+                solution: true
 
     exceptions:
       semesters: []
