@@ -923,7 +923,7 @@ cs_classes:
       semesters: []
 
     tail_recursion:
-      semesters: [base, sp13, su13]
+      semesters: [base, sp13, su13, fa13]
       notes:
         - name: "Tail Recursion and Tail Optimized Calls"
           file: tail_recursion_and_tail_optimized_calls
@@ -937,6 +937,9 @@ cs_classes:
                 published: true
               su13:
                 date: "2013-07-25"
+                published: true
+              fa13:
+                date: "2013-11-08"
                 published: true
 
     streams:
