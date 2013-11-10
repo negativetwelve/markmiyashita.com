@@ -820,6 +820,12 @@ body {
   }
 }
 
+@media screen and (max-width: 991px) {
+  .bs-docs-nav .navbar-collapse {
+    border-bottom: 1px solid;
+  }
+}
+
 /* Tablets and up */
 @media screen and (min-width: 768px) {
 
