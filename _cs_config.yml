@@ -931,7 +931,7 @@ cs_classes:
         - name: "Rotate List k Times"
           file: rotate_list_k_times
           type: Challenge
-          tags: [recursion lists]
+          tags: [recursion, lists]
           semesters:
             - base:
                 date: "2013-11-08"
@@ -939,6 +939,19 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-11-08"
+                published: true
+                solution: true
+        - name: "Count Occurrences"
+          file: count_occurrences
+          type: Warmup
+          tags: [recursion, lists]
+          semesters:
+            - base:
+                date: "2013-11-12"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-11-12"
                 published: true
                 solution: true
 
