@@ -483,6 +483,19 @@ cs_classes:
                 date: "2013-10-28"
                 published: true
                 solution: true
+        - name: "Append Rlists Iteratively"
+          file: append_rlists_iteratively
+          type: Challenge
+          tags: [iteration]
+          semesters:
+            - base:
+                date: "2013-11-14"
+                published: true
+                solution: false
+              fa13:
+                date: "2013-11-14"
+                published: true
+                solution: false
 
       notes:
         - name: "Rlists As Functions"
