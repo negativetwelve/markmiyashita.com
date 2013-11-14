@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Nested Reverse List - Mark Miyashita
+    CS61A - Append Rlists Iteratively - Mark Miyashita
   
 </title>
 
@@ -447,7 +447,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Nested Reverse List</h3>
+  <h3>Append Rlists Iteratively</h3>
 </div>
 
 
@@ -455,37 +455,67 @@ woopra.track('pv', {
 
 
 
-<p>Write a function in Scheme that reverses a nested list. The output should be a new list that is the reverse of the original list and it should keep the nesting intact. It should also reverse all of the elements of the nested lists.</p>
+<p>Write a function that appends two Rlists together and returns a new Rlist. The resulting Rlist should be a copy meaning that the input Rlists should not be modified AND modifying the resulting Rlist should not modify the two input Rlists.</p>
 
-<pre><code>(define (nested-reverse lst)
-    ; Your Code Here
-                        )
+<pre><code>def append_rlist_iter(a, b):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s = Rlist(3, Rlist(4))
+    &gt;&gt;&gt; result = append_rlist_iter(r, s)
+    &gt;&gt;&gt; result
+    Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; result.first = 5
+    &gt;&gt;&gt; result
+    Rlist(5, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s
+    Rlist(3, Rlist(4))
+    """
+    "*** YOUR CODE HERE ***"
 </code></pre>
 
-<p>And here’s a test to help you out:</p>
+<p>Here’s what my second discussion came up with. There’s a small bug causing the test to not pass, but a few of you wanted me to post what we came up with so that you guys can debug it on your own. Here it is:</p>
 
-<pre><code>(define (test)
-      (assert-equal '(1 2 3) (nested-reverse '(3 2 1)))
-      (assert-equal '(((((6) 5) 4) (3 2) 1)) (nested-reverse '(1 (2 3) (4 (5 (6))))))
-      (assert-equal '() (nested-reverse '())))
+<pre><code>def append_rlist_iter(a, b):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s = Rlist(3, Rlist(4))
+    &gt;&gt;&gt; result = append_rlist_iter(r, s)
+    &gt;&gt;&gt; result
+    Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; result.first = 5
+    &gt;&gt;&gt; result
+    Rlist(5, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s
+    Rlist(3, Rlist(4))
+
+    *** Here's what my second discussion came up with. There's a bug! Try and find it ***
+    """
+    result = Rlist.empty
+    final_result = result
+    if a is not Rlist.empty:
+        result = Rlist(a.first)
+        a = a.rest
+        while a is not Rlist.empty:
+            result.rest = Rlist(a.first)
+            a = a.rest
+            result = result.rest
+    
+    if b is not Rlist.empty:
+        if result is Rlist.empty:
+            result = Rlist(b.first)
+            b = b.rest
+        while b is not Rlist.empty:
+            result.rest = Rlist(b.first)
+            b = b.rest
+            result = result.rest
+    return final_result
 </code></pre>
 
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
-
-<div class="solution">
-
-  <pre><code>(define (nested-reverse lst)
-    (cond ((null? lst) lst)
-          ((list? (car lst))
-                  (append (nested-reverse (cdr lst)) (list (nested-reverse (car lst)))))
-        (else (append (reverse-nested (cdr lst)) (list (car lst))))))
-</code></pre>
-
-  <p>This problem is very similar to <code>reverse</code> and <code>flatten</code>. The idea is that we first check to see if we have more elements to work with. If we don’t, then we just return the empty list. Then, we check what the first item of the list is. If it, itself, is a list, then we need to reverse it’s contents. To do that, we recursively call <code>nested-reverse</code> on the <code>car</code> of the list. Then, we append the result to the end of the result of <code>nested-reverse</code>(ing) the rest of the list. </p>
-
-  <p>In the case where the first element is not a list, then we can just reverse the list like we normally would. We do this by taking the first item and appending it on to the back of the list. Remember, in order to use <code>append</code>, we need to make sure that we have two lists. To get around this requirement, we simply make a one-item list with just the first element. Then, we can successfully use <code>append</code> to solve the problem.</p>
-
-</div>
+<p>My solution will be posted later (along with the recursive and tail-recursive solutions).</p>
 
 
 
