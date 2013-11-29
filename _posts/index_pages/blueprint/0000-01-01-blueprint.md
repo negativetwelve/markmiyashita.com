@@ -1,6 +1,7 @@
 ---
 layout: one_column
 title: Blueprint
+permalink: /blueprint
 ---
 
 # [Cal Blueprint, Technology for Non-Profits](http://calblueprint.org)
