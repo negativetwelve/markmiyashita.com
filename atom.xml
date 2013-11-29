@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-11-28T22:16:14-08:00</updated>
+    <updated>2013-11-29T01:42:40-08:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -937,6 +937,190 @@ to interact with again.</p>
         <author>
             <name>Mark Miyashita</name>
             <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Summer 2013]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a/cs61a-su13</id>
+        <content type="html"><![CDATA[<h2 id="cs61a-summer-2013">CS61A Summer 2013</h2>
+
+<p id="previous_semesters">Previous Semesters: <a href="/cs61a/sp13">Spring 2013</a></p>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a></p>
+
+  <ul>
+    <li>If you would like to lab assist in the Fall, please fill out <a href="https://docs.google.com/forms/d/15hC07VjqZ70PLZ69nfwcaSARZg1pMqboZy8kOsibyx0/viewform">this form</a> or send me an email.</li>
+  </ul>
+</div>
+
+<h4 id="office-hours">Office Hours:</h4>
+
+<p>Monday and Thursday - 7-8pm - 411 Soda</p>
+
+<h4 id="sections">Sections:</h4>
+
+<p>Lab 106 - MW 8-9:30pm - 271 Soda<br />
+Discussion 106 - TTh 8-9:30pm - 320 Soda</p>
+
+<h4 id="email">Email:</h4>
+
+<p><a href="mailto:cs61a-tg@imail.eecs.berkeley.edu">cs61a-tg@imail.eecs.berkeley.edu</a></p>
+
+<h4 id="personal">Personal:</h4>
+
+<p>You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Spring 2013]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="sp13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/sp13"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a/cs61a-sp13</id>
+        <content type="html"><![CDATA[<h2 id="cs61a-spring-2013">CS61A Spring 2013</h2>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a></p>
+
+  <ul>
+    <li>Thanks for an awesome semester guys! If you need/want to contact me for whatever reason, you can find my email address in the <a href="http://markmiyashita.com/contact">contact section</a>! Have a great summer!</li>
+    <li>If you are interested in becoming a lab assistant for the summer, please contact me. My information is above and it is also on the pinned post on Piazza. You can either choose to volunteer or you can actually receive units based on the amount of time that you work! Email me with any questions!</li>
+  </ul>
+</div>
+
+<h4 id="office-hours">Office Hours:</h4>
+
+<p>Tuesday 11am-12pm, 3-4pm in 751 Soda<br />
+Wednesday 2-3pm in 345 Soda<br />
+Thursday 11am-12pm in 345 Soda<br /></p>
+
+<h4 id="sections">Sections:</h4>
+
+<p>Lab/Disc 23 - WF 11am-12:30pm<br />
+Lab/Disc 27 - TTh 9:30am-11am</p>
+
+<h4 id="email">Email:</h4>
+
+<p><a href="mailto:cs61a-td@imail.eecs.berkeley.edu">cs61a-td@imail.eecs.berkeley.edu</a></p>
+
+<h4 id="personal">Personal:</h4>
+
+<p>You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Fall 2013]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="fa13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/fa13"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a/cs61a-fa13</id>
+        <content type="html"><![CDATA[<h2 id="cs61a-fall-2013">CS61A Fall 2013</h2>
+
+<p id="previous_semesters">Previous Semesters: <a href="/cs61a/su13">Summer 2013</a> · <a href="/cs61a/sp13">Spring 2013</a></p>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a></p>
+
+  <ul>
+    <li>If you would like to lab assist in the Fall, please fill out <a href="https://docs.google.com/forms/d/15hC07VjqZ70PLZ69nfwcaSARZg1pMqboZy8kOsibyx0/viewform">this form</a> or send me an email.</li>
+  </ul>
+</div>
+
+<h4 id="office-hours">Office Hours:</h4>
+
+<p>Tuesday 5pm - 6pm in 651 Soda<br />
+Wednesday 1pm - 2pm in 290 Cory<br />
+Wednesday 2pm - 3pm in 651 Soda<br />
+Thursday 2pm - 3pm in 345 Soda</p>
+
+<h4 id="sections">Sections:</h4>
+
+<p>Lab 12 - Tuesday 9:30am - 11am in 273 Soda<br />
+Discussion 12 - Thursday 9:30am - 11am in 310 Soda<br />
+<br />
+Lab 15 - Tuesday 11am - 12:30pm in 273 Soda<br />
+Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
+
+<h4 id="email">Email:</h4>
+
+<p><a href="mailto:cs61a-tb@imail.eecs.berkeley.edu">cs61a-tb@imail.eecs.berkeley.edu</a></p>
+
+<h4 id="personal">Personal:</h4>
+
+<p>You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!</p>
+
+<div class="bs-callout bs-callout-info" id="extra_problems">
+  <h2 id="practice-problems-and-notes">Practice Problems and Notes</h2>
+
+  <p>On the left of this page is a list of topics that we have covered throughout this semester. Those topic pages contain notes and practice problems that I have written to test your knowledge! If you have any questions about the problems, feel free to leave a comment on that post or send me an email! Lastly, if there is a topic that you feel you need practice on and it is not listed on the left, shoot me an email and I’ll do my best to come up with some content for that topic.</p>
+</div>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS61A - Structure and Interpretations of Computer Programs - UC Berkeley</h2>
+
+<p class="alert alert-success">Looking for a specific semester of the course? Check out the most recent semester: <a href="/cs61a/fa13" class="alert-link">Fall 2013</a></p>
+
+<p>This is the first course in the CS61 series at UC Berkeley. The course focuses on the ideas of abstraction, program complexity, functional programming, object-oriented programming, and more. The language used in the course is Python although this course is not designed to focus primarily on the language. Students go through many different topics to expose them to many key ideas in computer science.</p>
+
+<div class="bs-callout bs-callout-info">
+  <h3 id="announcements">Announcements</h3>
+
+  <p>To the left, you’ll find topics that are covered in this course. Each topic contains practice problems related to that topic and some of the topics contain notes that I have written over the years.</p>
+
+  <ul>
+    <li>If you’re a lab assistant, check out the FAQ located <a href="/cs61a/lab_assistants/faq">here</a> and a list of my tips <a href="/cs61a/lab_assistants/tips">here!</a></li>
+  </ul>
+</div>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
         </author>
     </entry>
     
