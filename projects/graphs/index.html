@@ -142,25 +142,22 @@ woopra.track('pv', {
 
     <div class="container bs-docs-container">
       <div class="row">
-          <link rel="stylesheet" href="/public/css/graphs.css" type="text/css" />
-<script src="/public/js/d3.v3.min.js"></script>
-<script src="/public/js/jsnetworkx.js"></script>
+          <script src="/assets/js/d3.v3.min.js"></script>
 
-<article class="post">
-  <div class="graph_area">
-    <h2>Visualizing Graphs</h2>
+<script src="/assets/js/jsnetworkx.js"></script>
 
-    <div id="main_graph"></div>
+<div class="graph_area">
+  <h2 class="page-header" id="visualizing-graphs">Visualizing Graphs</h2>
 
-    <ul>
-      <li><a href="#" onclick="strongly_connected(); return false;">Strongly Connected</a></li>
-      <li><a href="#" onclick="clear_graph(); return false;">Clear</a></li>
-      <li><a href="#" onclick="create_graph(); return false;">Create Random Graph with 10 Nodes</a></li>
-    </ul>
+  <div id="main_graph"></div>
 
-  </div>
+  <ul>
+    <li><a href="#" onclick="strongly_connected(); return false;">Strongly Connected</a></li>
+    <li><a href="#" onclick="clear_graph(); return false;">Clear</a></li>
+    <li><a href="#" onclick="create_graph(); return false;">Create Random Graph with 10 Nodes</a></li>
+  </ul>
 
-</article>
+</div>
 
 <script>
 var G = jsnx.cycle_graph(6);
@@ -201,6 +198,8 @@ function strongly_connected() {
   jsnx.draw(G);
 }
 </script>
+
+
       </div>
 
     </div>

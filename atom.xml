@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-11-29T01:55:49-08:00</updated>
+    <updated>2013-11-29T23:11:44-08:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -907,6 +907,85 @@ to interact with again.</p>
     </entry>
     
     <entry>
+        <title><![CDATA[Projects]]></title>
+        
+        <link href="http://markmiyashita.com//projects"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/projects</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="projects">Projects</h1>
+
+<h3 id="pound-pong--a-hrefhttpsgithubcomnegativetwelveping-pong-ipadrepoa">Pound Pong  <a href="https://github.com/negativetwelve/ping-pong-ipad">(repo)</a></h3>
+
+<p>Initially, the idea started out as a web app that would keep track of all of the Ping Pong matches that went on at the Yelp office. However, the project quickly transitioned into much more. Using an RFID scanner hooked up to an Arduino which is hooked up to the iPad, we can communicate with the application using our badges which all happen to be RFID. From there, we can ‘badge’ into our matches and record the winner in a seamless transaction using nothing more than our badges and a single tap to label the winner. Results are sent to a simple Flask server through a JSON API where they are stored in a Mongo Database. This was a project that I worked on with a group of 4 at our semi-annual Yelp hackathon. We had two people working on the Flask server / front-end of the website and two of us (including me) working on the iPad app and getting it to communicate with the RFID scanner.</p>
+
+<h3 id="ios-game-with-json-api">iOS game with JSON API</h3>
+
+<p>I’ve been working on an iOS game that has a Rails JSON backend and will eventually have a web component too. Promo video and web page coming soon.</p>
+
+<h3 id="global-snapshot-a-hrefhttpglobalsnapshotherokuappcomdemoa-a-hrefhttpsgithubcomjaphethwongglobal-snapshotrepoa">Global Snapshot <a href="http://globalsnapshot.herokuapp.com/">(demo)</a> <a href="https://github.com/japhethwong/global-snapshot">(repo)</a></h3>
+
+<p>Working on a group of three at the LinkedIn Hack Day 2013, we buit a real-time Twitter and Flickr visualizer. Watch as tweets and photos fall onto the map and as the photos form a real-time stream on the sidebar. Want to see more photos? Simply expand the sidebar by pressing the toggle button on the bottom right. Hover over any of the dots to view the tweet or photo from that location. Node.js backend while working with several APIs including Google Maps, Twitter Real-time, and Flickr Real-time. Also uses Socket.io for sending the data to the browser in real-time.</p>
+
+<h3 id="calaborate-a-hrefhttpcalaborateherokuappcomdemoa-a-hrefhttpsgithubcomnegativetwelvecalaboraterepoa">Calaborate <a href="http://calaborate.herokuapp.com">(demo)</a> <a href="https://github.com/negativetwelve/calaborate">(repo)</a></h3>
+
+<p>I worked as the lead developer on a small team to develop a tool for Cal students to create meetups and study sessions to review for midterms and finals.</p>
+
+<p><img src="/assets/images/calaborate.png" alt="Calaborate" class="project_image" /></p>
+
+<h3 id="appsearches-a-hrefhttpappsearchesdemoa-a-hrefhttpsgithubcomnegativetwelveappsearchesrepoa">Appsearch.es <a href="http://appsearch.es">(demo)</a> <a href="https://github.com/negativetwelve/appsearches">(repo)</a></h3>
+
+<p>An iOS app search engine. Data is gathered using a scrapper that I built and stored in a Postgres database. Search is done by indexing the database and using Postgres built-in full-text search.</p>
+
+<p><img src="/assets/images/appsearches.png" alt="Appsearch.es" class="project_image" /></p>
+
+<h3 id="rubiks-detection--a-hrefhttpsgithubcomnegativetwelverubiksdetectionrepoa">Rubik’s Detection  <a href="https://github.com/negativetwelve/rubiks_detection">(repo)</a></h3>
+
+<p>The idea was simple, take a web camera, use it to detect the colors of a rubik’s cube that a user holds up to the screen. Analyze the colors, pass the output to a solver and display the necessary steps to solve the cube. It actually worked and we won third place at a hackathon as a result. My main role was working on detecting the colors by holding up the rubik’s cube to your screen.</p>
+
+<h3 id="sound-of-dub-a-hrefhttpsintense-journey-6792herokuappcomdemoa-a-hrefhttpsgithubcomnegativetwelvesound-of-dubrepoa">Sound of Dub <a href="https://intense-journey-6792.herokuapp.com/">(demo)</a> <a href="https://github.com/negativetwelve/sound-of-dub">(repo)</a></h3>
+
+<p>A music app that I built at a hackathon. It utilizes the Soundcloud API and allows users to make and play their own playlists.</p>
+
+<p><img src="/assets/images/sound-of-dub.png" alt="Sound of Dub" class="project_image" /></p>
+
+<h3 id="tim-todo-a-hrefhttpstimtodoherokuappcomdemoa-a-hrefhttpsgithubcomnegativetwelvetimrepoa">Tim Todo <a href="https://timtodo.herokuapp.com/">(demo)</a> <a href="https://github.com/negativetwelve/Tim">(repo)</a></h3>
+
+<p>A vim-style web based todo app that I built with a friend at our first ever hackathon. We won the Hilfinger Award given to us by Box at the 2012 H@B Hackjam.</p>
+
+<p><img src="/assets/images/tim.png" alt="Tim Todo" class="project_image" /></p>
+
+<h3 id="markmiyashitacom-a-hrefhttpmarkmiyashitacomdemoa-a-hrefhttpsgithubcomnegativetwelvemarkmiyashitacomrepoa">markmiyashita.com <a href="http://markmiyashita.com">(demo)</a> <a href="https://github.com/negativetwelve/markmiyashita.com">(repo)</a></h3>
+
+<p>My personal about me website that I have developed from scratch. It is built using Jekyll and hosted on Github Pages.</p>
+
+<p><img src="/assets/images/website.png" alt="markmiyashita.com" class="project_image" /></p>
+
+<h3 id="life-logger--a-hrefhttpsgithubcomnegativetwelvefacebook-hackathonrepoa">Life Logger  <a href="https://github.com/negativetwelve/facebook-hackathon">(repo)</a></h3>
+
+<p>I worked with a team of four at the 2012 Battle of the Bay Facebook Hackathon. We built an event logger for your computer that allows you to visualize and analyze your habits on the computer.</p>
+
+<p><img src="/assets/images/life-logger.png" alt="Life Logger" class="project_image" /></p>
+
+<h3 id="pets-alliance--a-hrefhttpsgithubcomnegativetwelvepets-alliancerepoa">Pets Alliance  <a href="https://github.com/negativetwelve/pets-alliance">(repo)</a></h3>
+
+<p>Half of an MMORPG that I built in the summer of 2012. The UI was never finished but the backend worked pretty well. May continue this project in the future.</p>
+
+<p><img src="/assets/images/petsalliance.png" alt="Pets Alliance" class="project_image" /></p>
+
+<h3 id="bashprofilecom-a-hrefhttpbashprofilecomdemoa-a-hrefhttpsgithubcomnegativetwelvebashprofilecomrepoa">bashprofile.com <a href="http://bashprofile.com">(demo)</a> <a href="https://github.com/negativetwelve/bashprofile.com">(repo)</a></h3>
+
+<p>A small tech blog that I built and designed.</p>
+
+<p><img src="/assets/images/bashprofile.png" alt="bashprofile.com" class="project_image" /></p>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
         <title><![CDATA[Introduction and Purpose]]></title>
         
         <category term="web_dev" scheme="http://www.sixapart.com/ns/types#tag" />
@@ -937,6 +1016,99 @@ to interact with again.</p>
         <author>
             <name>Mark Miyashita</name>
             <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[HKN]]></title>
+        
+        <link href="http://markmiyashita.com//hkn"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/hkn</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="hkn-eta-kappa-nu">HKN (Eta Kappa Nu)</h1>
+
+<h2 id="department-relations-officer-fall-2013">Department Relations Officer Fall 2013</h2>
+
+<h4 id="past-hkn-experience">Past HKN Experience</h4>
+
+<ul>
+  <li>Bridge Officer Spring 2013</li>
+  <li>Bridge Candidate Fall 2012</li>
+</ul>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Visualizing Graphs - Mark Miyashita]]></title>
+        
+        <link href="http://markmiyashita.com//projects/graphs"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/projects/graphs</id>
+        <content type="html"><![CDATA[<script src="/assets/js/d3.v3.min.js"></script>
+
+<script src="/assets/js/jsnetworkx.js"></script>
+
+<div class="graph_area">
+  <h2 class="page-header" id="visualizing-graphs">Visualizing Graphs</h2>
+
+  <div id="main_graph"></div>
+
+  <ul>
+    <li><a href="#" onclick="strongly_connected(); return false;">Strongly Connected</a></li>
+    <li><a href="#" onclick="clear_graph(); return false;">Clear</a></li>
+    <li><a href="#" onclick="create_graph(); return false;">Create Random Graph with 10 Nodes</a></li>
+  </ul>
+
+</div>
+
+<script>
+var G = jsnx.cycle_graph(6);
+
+jsnx.draw(G, {
+  element: '#main_graph',
+  with_labels: true,
+  node_style: {
+    fill: function(d) {
+      return d.data.color || '#AAA'; // any node without color is gray
+    }
+  }
+});
+
+function clear_graph() {
+  console.log('clear');
+  G.clear();
+  jsnx.draw(G);
+}
+
+function create_graph() {
+  console.log('create graph');
+  G.clear();
+  G = jsnx.binomial_graph(10, 0.15);
+  jsnx.draw(G);
+}
+
+function strongly_connected() {
+  console.log('strongly_connected');
+  var size = G.nodes().length;
+  var edges = [];
+  for (var i=0; i < size; i++) {
+    for (var j=0; j < size; j ++) {
+      edges.push([i, j]);
+    }
+  }
+  G.add_edges_from(edges);
+  jsnx.draw(G);
+}
+</script>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
         </author>
     </entry>
     
@@ -1213,6 +1385,99 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS170 - Algorithms - UC Berkeley</h2>
 
 <p>This class focuses on efficient algorithms and intractable problems. It is designed to give you an introduction to computer science theory with a heavy emphasis solving both solvable and unsolvable problems. Concepts include: graph theory, dynamic programming, linear programming, and NP complete problems.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Contact]]></title>
+        
+        <link href="http://markmiyashita.com//contact"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/contact</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="contact">Contact</h1>
+
+<h2 id="email">Email</h2>
+
+<p>The best way to get in contact with me is probably via email. You can reach me at a variety of places, most commonly:</p>
+
+<p><strong>negativetwelve AT gmail DOT com</strong></p>
+
+<h2 id="you-can-also-reach-me-at">You can also reach me at…</h2>
+
+<ul>
+  <li><a href="https://github.com/negativetwelve/">Github</a></li>
+  <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+  <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+  <li><a href="https://twitter.com/negativetwelve">Twitter</a></li>
+</ul>
+
+<h2 id="other-public-profiles">Other public profiles:</h2>
+
+<ul>
+  <li><a href="https://news.ycombinator.com/user?id=negativetwelve">Hacker News</a></li>
+  <li><a href="http://www.last.fm/user/collegejourney">Last.fm</a></li>
+</ul>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Blueprint]]></title>
+        
+        <link href="http://markmiyashita.com//blueprint"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/blueprint</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="cal-blueprint-technology-for-non-profitshttpcalblueprintorg"><a href="http://calblueprint.org">Cal Blueprint, Technology for Non-Profits</a></h1>
+
+<h4 id="our-goal-is-to-make-beautiful-engineering-accessible-and-useful-for-those-who-create-communities-and-promote-public-welfare">Our goal is to make beautiful engineering accessible and useful for those who create communities and promote public welfare.</h4>
+
+<p><img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width" /></p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Blog]]></title>
+        
+        <link href="http://markmiyashita.com//blog"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/blog</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="blog">Blog</h1>
+
+<h2 id="a-hrefbloghow-to-deploy-a-static-site-using-github-pages-classno-linkhow-to-deploy-a-static-site-using-github-pagesa"><a href="/blog/how-to-deploy-a-static-site-using-github-pages" class="no-link">How to Deploy a Static Site using Github Pages</a></h2>
+
+<p>So you’ve built your static site, made it look pretty on your local computer, but now you want to go bigger. It’s time to deploy our website to the world so that other people can find it! In this guide, you’ll find a short tutorial on how to deploy your site onto the Internet. Let’s get started!
+ <a href="/blog/how-to-deploy-a-static-site-using-github-pages" class="post-readmore">(Read More)</a></p>
+
+<h2 id="a-hrefbloginstallherokuanddeployyourapp-classno-linkinstall-heroku-and-deploy-your-appa"><a href="/blog/install_heroku_and_deploy_your_app" class="no-link">Install Heroku and Deploy Your App</a></h2>
+
+<p>So, you’ve finished adding the final touches to your app and now you want to put in on the Internet for everyone else to use. How do I do that?!</p>
+
+<p>Well, there are several options available to you at this point, most of them are free. The most popular free option is to use Heroku and I’m going to be walking through the steps to set up Heroku on your computer and deploy your first app.
+ <a href="/blog/install_heroku_and_deploy_your_app" class="post-readmore">(Read More)</a></p>
+
+<h2 id="a-hrefblogpython-args-and-kwargs-classno-linkpython-args-and-kwargsa"><a href="/blog/python-args-and-kwargs" class="no-link">Python *args and **kwargs</a></h2>
+
+<p>In Python, there are two special symbols that you can use when defining functions to allow them to take in a variable number of arguments. The syntax is to use the symbol <code>*</code> to take in a variable number of arguments; by convention, it is often used with the word <code>args</code>. What <code>*args</code> allows you to do is take in more arguments than the normal of formal arguments that you previously defined. With <code>*args</code>, any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments). Here’s an example which should make this clear:
+ <a href="/blog/python-args-and-kwargs" class="post-readmore">(Read More)</a></p>
+
+<h2 id="a-hrefbloghow-to-win-a-hackathon-classno-linkhow-to-win-a-hackathona"><a href="/blog/how-to-win-a-hackathon" class="no-link">How to Win a Hackathon</a></h2>
+
+<p><img src="/assets/images/hackathon.jpg" class="img-border" /></p>
+
+<p>This year I started participating in many hackathons of different lengths, different atmospheres, and different types of applications that won. I am still quite new to the hackathon scene, but I thought I’d share my thoughts on how most winners, won.
+ <a href="/blog/how-to-win-a-hackathon" class="post-readmore">(Read More)</a></p>
+
 ]]></content>
         <author>
             <name></name>
