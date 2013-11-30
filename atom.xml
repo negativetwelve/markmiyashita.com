@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-11-30T01:38:40-08:00</updated>
+    <updated>2013-11-30T01:44:00-08:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -1003,6 +1003,25 @@ to interact with again.</p>
     </entry>
     
     <entry>
+        <title><![CDATA[Web Development]]></title>
+        
+        <link href="http://markmiyashita.com//web_dev"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/web_dev</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="web-development">Web Development</h1>
+
+<h1 id="rails-walkthrough">Rails Walkthrough</h1>
+<p>### By: Mark Miyashita</p>
+
+<p>A work-in-progress book that provides step-by-step instructions on making an advanced web app using Ruby on Rails. People with zero experience will be walked through creating the application step-by-step. Others with some web development experience will find hidden gems that will help them become better at their craft.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
         <title><![CDATA[Resume]]></title>
         
         <link href="http://markmiyashita.com//resume"/>
@@ -1143,6 +1162,95 @@ to interact with again.</p>
 <h3 id="hkn-eta-kappa-nu-candidate---fall-2012">HKN (Eta Kappa Nu) Candidate - Fall 2012</h3>
 
 <p>I was selected as a candidate for the EECS Honors Society. HKN accepts students in the top 1/4 of the Junior standing EECS students.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Rails Walkthrough]]></title>
+        
+        <link href="http://markmiyashita.com//web_dev/rails"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/web_dev/rails</id>
+        <content type="html"><![CDATA[
+<h2 class="no_toc" id="rails-walkthrough">Rails Walkthrough</h2>
+
+<h3 class="no_toc" id="by-mark-miyashita">By: Mark Miyashita</h3>
+
+<ul id="markdown-toc">
+  <li><a href="#chapter-1---introduction-and-purposewebdevrailsintroductionandpurpose"><a href="/web_dev/rails/introduction_and_purpose">Chapter 1 - Introduction and Purpose</a></a>    <ul>
+      <li><a href="#introduction">1.1 Introduction</a>        <ul>
+          <li><a href="#section">1.1.1</a></li>
+          <li><a href="#section-1">1.1.2</a></li>
+        </ul>
+      </li>
+      <li><a href="#section-2">1.2</a></li>
+    </ul>
+  </li>
+  <li><a href="#chapter-2---models-views-and-controllerswebdevrailsmodelsviewsandcontrollers"><a href="/web_dev/rails/models_views_and_controllers">Chapter 2 - Models, Views, and Controllers</a></a>    <ul>
+      <li><a href="#mvc---an-idea">2.1 MVC - An Idea</a>        <ul>
+          <li><a href="#models">2.1.1 Models</a></li>
+          <li><a href="#views">2.1.2 Views</a></li>
+          <li><a href="#controllers">2.1.3 Controllers</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#chapter-3---setting-up-our-first-appwebdevrailssettingupourfirstapp"><a href="/web_dev/rails/setting_up_our_first_app">Chapter 3 - Setting Up Our First App</a></a>    <ul>
+      <li><a href="#section-3">3.1</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="chapter-1---introduction-and-purposewebdevrailsintroductionandpurpose"><a href="/web_dev/rails/introduction_and_purpose">Chapter 1 - Introduction and Purpose</a></h2>
+
+<h3 id="introduction">1.1 Introduction</h3>
+
+<h4 id="section">1.1.1</h4>
+
+<h4 id="section-1">1.1.2</h4>
+
+<h3 id="section-2">1.2</h3>
+
+<h2 id="chapter-2---models-views-and-controllerswebdevrailsmodelsviewsandcontrollers"><a href="/web_dev/rails/models_views_and_controllers">Chapter 2 - Models, Views, and Controllers</a></h2>
+
+<h3 id="mvc---an-idea">2.1 MVC - An Idea</h3>
+
+<p>What is MVC? MVC stands for Model, View, Controller, and it’s the idea that we
+want to separate our code into sections that represent different parts of our
+application. Popular web applications separate into three main components.
+First off, we have our models which represent the brains within our application.</p>
+
+<p>Models are like objects in which they have attributes and methods that work to
+edit and recall data stored within the object. Between objects, there can be
+correspondances between them such as one-to-one, many-to-one, or, many-to-many
+relationships. These can be thought up of as relationships between actual
+objects such as a <code>parent</code> having many <code>children</code>.</p>
+
+<p>Views are what show the data to the users of your web application. Once you find
+a user and get all of the attributes, you show it to the user using the view.
+Views are generally templated using a markup of some sort. We’ll learn all about
+this later on.</p>
+
+<p>Controllers are the link between the two. Requests come in and they are
+processed by figuring out which method is called in the controller. The
+controller then links together and gets whatever data it needs processed from
+the model where it is finally gathered and redisplayed in the view for the user
+to interact with again.</p>
+
+<h4 id="models">2.1.1 Models</h4>
+
+<h4 id="views">2.1.2 Views</h4>
+
+<h4 id="controllers">2.1.3 Controllers</h4>
+
+<h2 id="chapter-3---setting-up-our-first-appwebdevrailssettingupourfirstapp"><a href="/web_dev/rails/setting_up_our_first_app">Chapter 3 - Setting Up Our First App</a></h2>
+
+<h3 id="section-3">3.1</h3>
+
 ]]></content>
         <author>
             <name></name>
