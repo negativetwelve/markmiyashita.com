@@ -22,6 +22,10 @@ li {
   padding: 10px;
 }
 
+ul > li > p {
+  margin: 0;
+}
+
 header li {
   font-size: 14px;
   line-height: 22px;
