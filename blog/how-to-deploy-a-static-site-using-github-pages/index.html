@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently a Software Engineer at Yelp and a TA for CS61A at UC Berkeley.">
+<meta name="author" content="Mark Miyashita">
+<link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml">
+
+<title>
+  
+    How to Deploy a Static Site using Github Pages - Mark Miyashita
+  
+</title>
+
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
+<link href="/assets/css/solarized_dark.css" rel="stylesheet">
+
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Start of Google Analytics Code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29669299-1']);
+  _gaq.push(['_setDomainName', 'markmiyashita.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End of Google Analytics Code -->
+
+<!-- Start of Woopra Code -->
+<script>
+(function(){
+  var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+})("woopra");
+
+woopra.config({
+    domain: 'markmiyashita.com',
+    idle_timeout: 600000
+});
+woopra.track('pv', {
+    url: window.location.pathname+window.location.search,
+    title: document.title
+});
+</script>
+<!-- End of Woopra Code -->
+
+
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip navigation</a>
+
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/projects">Projects</a>
+        </li>
+        <li class="active">
+          <a href="/blog">Blog</a>
+        </li>
+        <li>
+          <a href="/cs61a/fa13">CS61A</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More CS Classes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/cs61b">CS61B - Data Structures</a></li>
+            <li><a href="/cs61c">CS61C - Computer Architecture</a></li>
+            <li><a href="/cs70">CS70 - Discrete Mathematics</a></li>
+            <li><a href="/cs170">CS170 - Algorithms</a></li>
+            <li><a href="/cs188">CS188 - Artificial Intelligence</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/interviews/problems">Interview Practice</a>
+        </li>
+        <li >
+          <a href="/blueprint">Blueprint</a>
+        </li>
+        <li>
+          <a href="/hkn">HKN</a>
+        </li>
+        <li>
+          <a href="/web_dev">Web Development</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="bs-header" id="content">
+      <div class="container">
+        <img class="profile-pic" src="/assets/images/mark_miyashita_small.png"></img>
+        <h1>Mark Miyashita</h1>
+        <h4>negativetwelve</h4>
+        <p>
+          <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+    
+
+
+    <div class="container bs-docs-container">
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+  <h1>How to Deploy a Static Site using Github Pages</h1>
+
+<!--start-->
+<p>So you’ve built your static site, made it look pretty on your local computer, but now you want to go bigger. It’s time to deploy our website to the world so that other people can find it! In this guide, you’ll find a short tutorial on how to deploy your site onto the Internet. Let’s get started!
+<!--end--></p>
+
+<p>First, if you don’t have an account already, you should sign up for a <a href="http://github.com">Github account</a>. We’re going to be using <a href="http://pages.github.com/">Github Pages</a>, a free service provided by Github. On the home page, you should find a form that looks like this:</p>
+
+<p><img src="/assets/images/github_pages/github_homepage.jpg" class="img-border" /></p>
+
+<p>Fill that out and you should be good to go! Next, we’re going to create a new repository. You can think of a repository as a collection of files that you are putting on the Internet for others to see. You can find the “new repository” button in the top right hand corner of the screen:</p>
+
+<p><img src="/assets/images/github_pages/create_repo.png" class="img-border" /></p>
+
+<p>Here’s an important step, we must name the repository &lt;username&gt;.github.io where you should replace &lt;username&gt; with your actual Github username that you just signed up for. For example, my login is ‘negativetwelve’ so my repository name is ‘negativetwelve.github.io’.</p>
+
+<p><img src="/assets/images/github_pages/name_repo.png" class="img-border" /></p>
+
+<p>Now, when you created your repository on Github, it presented you a screen that looked a little like this:</p>
+
+<p><img src="/assets/images/github_pages/copy_remote.png" class="img-border" /></p>
+
+<p>We’re going to go to that page and click on the https button which is located here:</p>
+
+<p><img src="/assets/images/github_pages/copy_remote_highlighted.png" class="img-border" /></p>
+
+<p>Then, we’re going to copy that address in the box. It should look something like this:</p>
+
+<p><img src="/assets/images/github_pages/copy_address.png" class="img-border" /></p>
+
+<p>Now, we’re going to configure our local website that we just finished and get it ready to show to the world! Naviage to your website folder on your computer using <code>ls</code> and <code>cd</code>. Once you find the folder, you’re going to have to run two commands. The first is <code>git init</code>. This command gets your folder ready for the Internet by marking it as a repository. The second command is a bit more complicated. In short, it is telling our local files where to go – in this case we’re putting them in the repository that we just created. If you haven’t already, run the following two commands:</p>
+
+<pre><code>git init
+git remote add origin https://github.com/negativetwelve/negativetwelve.github.io.git
+</code></pre>
+
+<p>where you replace all occurrences of ‘negativetwelve’ with your username.</p>
+
+<p><img src="/assets/images/github_pages/add_remote.png" class="img-border" /></p>
+
+<p>Now, we’re ready to show the world! Let’s run the last few commands to send our files to the Internet. Run the following commands:</p>
+
+<pre><code>git add .
+git commit -am "Showing my work to the world"
+git push origin master
+</code></pre>
+
+<p>If you went to the Git workshop, this should be familiar to you. But if you didn’t, we’re basically saying “Let’s push our changes to the master branch (which is the main storage for my files).”</p>
+
+<p><img src="/assets/images/github_pages/push_to_master.png" class="img-border" /></p>
+
+<p>After running that command, we should be able to go back to Github and refresh the page. We should now see something like this:</p>
+
+<p><img src="/assets/images/github_pages/see_the_repo.png" class="img-border" /></p>
+
+<p>And, if we wait about 2 minutes (sometimes it can take up to 10), we can navigate to http://&lt;username&gt;.github.io to see our website! Remeber to replace &lt;username&gt; with your Github username.</p>
+
+<p>You can then navigate to http://username.github.io and view your awesome, static website!</p>
+
+<p><img src="/assets/images/github_pages/see_the_result.png" class="img-border" /></p>
+
+<p>Happy website making!</p>
+
+
+<div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+</div>
+
+      </div>
+
+    </div>
+
+    <footer class="bs-footer" role="contentinfo">
+      <p class="copyright">
+        © 2013 Mark Miyashita
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="http://github.com/negativetwelve">Github</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">TA Ratings</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+        <li class="muted">&middot;</li>        
+        <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+      </ul>
+    </footer>
+
+    <script src="/assets/js/jquery-1.8.3.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
+
+
+hljs.initHighlightingOnLoad();
+
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>
+
+
+  </body>
+</html>

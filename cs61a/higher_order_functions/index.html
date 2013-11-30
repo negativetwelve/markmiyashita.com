@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently a Software Engineer at Yelp and a TA for CS61A at UC Berkeley.">
+<meta name="author" content="Mark Miyashita">
+<link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml">
+
+<title>
+  
+    CS61A - Higher Order Functions - Mark Miyashita
+  
+</title>
+
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
+<link href="/assets/css/solarized_dark.css" rel="stylesheet">
+
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Start of Google Analytics Code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29669299-1']);
+  _gaq.push(['_setDomainName', 'markmiyashita.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End of Google Analytics Code -->
+
+<!-- Start of Woopra Code -->
+<script>
+(function(){
+  var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+})("woopra");
+
+woopra.config({
+    domain: 'markmiyashita.com',
+    idle_timeout: 600000
+});
+woopra.track('pv', {
+    url: window.location.pathname+window.location.search,
+    title: document.title
+});
+</script>
+<!-- End of Woopra Code -->
+
+
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip navigation</a>
+
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/projects">Projects</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li class="active">
+          <a href="/cs61a/fa13">CS61A</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More CS Classes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/cs61b">CS61B - Data Structures</a></li>
+            <li><a href="/cs61c">CS61C - Computer Architecture</a></li>
+            <li><a href="/cs70">CS70 - Discrete Mathematics</a></li>
+            <li><a href="/cs170">CS170 - Algorithms</a></li>
+            <li><a href="/cs188">CS188 - Artificial Intelligence</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/interviews/problems">Interview Practice</a>
+        </li>
+        <li >
+          <a href="/blueprint">Blueprint</a>
+        </li>
+        <li>
+          <a href="/hkn">HKN</a>
+        </li>
+        <li>
+          <a href="/web_dev">Web Development</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="bs-header" id="content">
+      <div class="container">
+        <img class="profile-pic" src="/assets/images/mark_miyashita_small.png"></img>
+        <h1>Mark Miyashita</h1>
+        <h4>negativetwelve</h4>
+        <p>
+          <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+        </p>
+      </div>
+    </div>
+
+    
+      <div class="bs-old-docs">
+  <div class="container">
+    Looking for more CS classes? Check out:
+    
+      
+        <strong><a href="/cs61a">CS61A</a></strong>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61b">CS61B</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61c">CS61C</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs70">CS70</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs170">CS170</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs188">CS188</a>
+      
+      
+    
+  </div>
+</div>
+
+    
+
+    
+
+
+    <div class="container bs-docs-container">
+      <div class="row">
+          <div class="col-md-3">
+  
+  <div class="bs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="335">
+  <ul class="nav bs-sidenav">
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <li><a href="/cs61a/practice">All Problems and Notes (56)</a></li>
+  
+
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/basics">Basics (3)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (3)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (4)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/recursion">Recursion (8)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/rlists">Rlists (10)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (2)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/scheme">Scheme (6)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/iterators">Iterators (1)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/logic">Logic (2)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+
+
+  </ul>
+</div>
+
+</div>
+<div class="col-md-9" role="main">
+  
+
+  
+  
+
+
+
+<h1>CS61A - Higher Order Functions</h1>
+
+<div class="page-header" id="notes">
+  <h3>Notes:</h3>
+</div>
+
+<div class="cs-notes">
+
+  <ul>
+  
+    <li><h4><a href="/cs61a/higher_order_functions/church_numerals">Church Numerals</a></h4></li>
+    
+<p><a href="http://en.wikipedia.org/wiki/Church_encoding#Computation_with_Church_numerals">Church numerals</a> come from <a href="http://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a> and are based upon the idea that you can represent numbers by using a series of nested functions. At the most basic level, we have zero which can be defined as:
+
+    <a href="/cs61a/higher_order_functions/church_numerals">(Read More!)</a>
+  
+  </ul>
+
+</div>
+
+<div class="page-header" id="problems">
+  <h3>Practice Problems:</h3>
+</div>
+
+<div class="cs-problems">
+
+  <p>
+    Below are a list of practice problems, test what you've learned!
+  </p>
+
+  <ul>
+  
+    <li><a href="/cs61a/higher_order_functions/functions_inside_functions">Functions Inside Functions</a></li>
+  
+    <li><a href="/cs61a/higher_order_functions/which_function_is_higher_order">Which Function is Higher Order?</a></li>
+  
+  </ul>
+
+</div>
+
+
+</div>
+      </div>
+
+    </div>
+
+    <footer class="bs-footer" role="contentinfo">
+      <p class="copyright">
+        © 2013 Mark Miyashita
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="http://github.com/negativetwelve">Github</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">TA Ratings</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+        <li class="muted">&middot;</li>        
+        <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+      </ul>
+    </footer>
+
+    <script src="/assets/js/jquery-1.8.3.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
+
+
+hljs.initHighlightingOnLoad();
+
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>
+
+
+  </body>
+</html>

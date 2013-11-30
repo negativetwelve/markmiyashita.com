@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Mark Miyashita</title>
+    <link href="http://markmiyashita.com/atom.xml" rel="self"/>
+    <link href="http://markmiyashita.com"/>
+    <updated>2013-11-29T23:26:55-08:00</updated>
+    <id>http://markmiyashita.com/</id>
+    
+    
+    <entry>
+        <title><![CDATA[How to Deploy a Static Site using Github Pages]]></title>
+        
+        <category term="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//blog/how-to-deploy-a-static-site-using-github-pages"/>
+        <updated>2013-09-24T03:41:00-07:00</updated>
+        <id>markmiyashita.com:/blog/how-to-deploy-a-static-site-using-github-pages</id>
+        <content type="html"><![CDATA[<!--start-->
+<p>So you’ve built your static site, made it look pretty on your local computer, but now you want to go bigger. It’s time to deploy our website to the world so that other people can find it! In this guide, you’ll find a short tutorial on how to deploy your site onto the Internet. Let’s get started!
+<!--end--></p>
+
+<p>First, if you don’t have an account already, you should sign up for a <a href="http://github.com">Github account</a>. We’re going to be using <a href="http://pages.github.com/">Github Pages</a>, a free service provided by Github. On the home page, you should find a form that looks like this:</p>
+
+<p><img src="/assets/images/github_pages/github_homepage.jpg" class="img-border" /></p>
+
+<p>Fill that out and you should be good to go! Next, we’re going to create a new repository. You can think of a repository as a collection of files that you are putting on the Internet for others to see. You can find the “new repository” button in the top right hand corner of the screen:</p>
+
+<p><img src="/assets/images/github_pages/create_repo.png" class="img-border" /></p>
+
+<p>Here’s an important step, we must name the repository &lt;username&gt;.github.io where you should replace &lt;username&gt; with your actual Github username that you just signed up for. For example, my login is ‘negativetwelve’ so my repository name is ‘negativetwelve.github.io’.</p>
+
+<p><img src="/assets/images/github_pages/name_repo.png" class="img-border" /></p>
+
+<p>Now, when you created your repository on Github, it presented you a screen that looked a little like this:</p>
+
+<p><img src="/assets/images/github_pages/copy_remote.png" class="img-border" /></p>
+
+<p>We’re going to go to that page and click on the https button which is located here:</p>
+
+<p><img src="/assets/images/github_pages/copy_remote_highlighted.png" class="img-border" /></p>
+
+<p>Then, we’re going to copy that address in the box. It should look something like this:</p>
+
+<p><img src="/assets/images/github_pages/copy_address.png" class="img-border" /></p>
+
+<p>Now, we’re going to configure our local website that we just finished and get it ready to show to the world! Naviage to your website folder on your computer using <code>ls</code> and <code>cd</code>. Once you find the folder, you’re going to have to run two commands. The first is <code>git init</code>. This command gets your folder ready for the Internet by marking it as a repository. The second command is a bit more complicated. In short, it is telling our local files where to go – in this case we’re putting them in the repository that we just created. If you haven’t already, run the following two commands:</p>
+
+<pre><code>git init
+git remote add origin https://github.com/negativetwelve/negativetwelve.github.io.git
+</code></pre>
+
+<p>where you replace all occurrences of ‘negativetwelve’ with your username.</p>
+
+<p><img src="/assets/images/github_pages/add_remote.png" class="img-border" /></p>
+
+<p>Now, we’re ready to show the world! Let’s run the last few commands to send our files to the Internet. Run the following commands:</p>
+
+<pre><code>git add .
+git commit -am "Showing my work to the world"
+git push origin master
+</code></pre>
+
+<p>If you went to the Git workshop, this should be familiar to you. But if you didn’t, we’re basically saying “Let’s push our changes to the master branch (which is the main storage for my files).”</p>
+
+<p><img src="/assets/images/github_pages/push_to_master.png" class="img-border" /></p>
+
+<p>After running that command, we should be able to go back to Github and refresh the page. We should now see something like this:</p>
+
+<p><img src="/assets/images/github_pages/see_the_repo.png" class="img-border" /></p>
+
+<p>And, if we wait about 2 minutes (sometimes it can take up to 10), we can navigate to http://&lt;username&gt;.github.io to see our website! Remeber to replace &lt;username&gt; with your Github username.</p>
+
+<p>You can then navigate to http://username.github.io and view your awesome, static website!</p>
+
+<p><img src="/assets/images/github_pages/see_the_result.png" class="img-border" /></p>
+
+<p>Happy website making!</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Lab Assistant Tips]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="lab_assistants" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/lab_assistants/tips"/>
+        <updated>2013-08-23T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/lab_assistants/tips</id>
+        <content type="html"><![CDATA[<h3 id="lab-assistant-tips">Lab Assistant Tips</h3>
+
+<p>Here are some tips and tricks of things that I’ve learned over the years about teaching (with an emphasis on helping out in labs, discussions, and office hours). These are not official and are solely my opinion.</p>
+
+<ol>
+  <li>
+    <p><strong>It’s okay to not always know the answer.</strong>
+Something that lab assistants often struggle with at the beginning is being afraid of not knowing the right answer every single time. Relax, <em>you’re not expected to.</em> When the situation does come up, it’s always better to be honest and straight-forward with the student. They would much rather hear that they asked a good question rather than finding out later that you gave them a wrong answer. Just politely tell them that you’re not 100% sure and that you will get back to them either later in that lab or in the next lab. One method is that you can try to figure out the answer with them. Other option is that you can go look up the answer, learn something new, and then let them know what you learned next time you see them. Either way works depending on the type of student that you’re working with.</p>
+  </li>
+  <li>
+    <p><strong>Try to walk around the lab and not get stuck standing in one place waiting for hands to go up.</strong>
+Some students will be very active and will raise their hand as soon as they have a question. Others will wait for a TA or lab assistant to walk by in order to ask their question. If you don’t walk around, you limit the opportunities that a student will be able to grab you for a second and ask their question.</p>
+  </li>
+  <li>
+    <p><strong>Don’t touch the keyboard (or the mouse)!</strong>
+One thing that lab assistants realize is that as soon as they touch the keyboard <em>for</em> the student, they begin fixing the problem and the student has no idea what you did to fix it. It’s <strong>always</strong> better to have them “steer” (use the keyboard) while you “drive” (by explaining to them what you would do instead of actually doing it). That way, they’ll have a good understanding of what you just did together, <em>and</em> you’ll also have a better understanding becuase you just had to explain the concept to someone else which is always a lot harder than fixing it yourself. Trust me on this one. One method that I find very useful is just keeping my hands clasped behind my back, that way I’m not tempted to touch the keyboard or the mouse.</p>
+  </li>
+  <li>
+    <p><strong>Try not to be condescending (and realize when you accidentally are).</strong>
+It’s easy to get frusturated when you’ve explained a concept over and over again and a student just isn’t understaning or making that one connection that will lead to a better understanding. Just take a deep breath and calm down. One of the worst experiences for a student is being talked to like they are a child just because they aren’t understanding something. Try not to do this. If you find that you are having trouble helping a particular student with a particular topic, try explaining it from a different perspective with a different example and if that doesn’t work, see if there is another lab assistant or TA around who can help.</p>
+  </li>
+  <li>
+    <p><strong>Kneel down when you are helping in lab.</strong>
+This goes along with the keyboard one. For me, it’s better if I kneel down so that I’m at eye level with the students instead of looking down at them while they’re sitting down. This is just a personal thing, but I thought I’d mention it here.</p>
+  </li>
+  <li>
+    <p><strong>Use whiteboards whenever possible.</strong>
+Drawing diagrams is always a helpful way in solving most problems. If you’re working on a functions problem, try drawing an environment diagram for the student. Or, better yet, have them draw it! When we get to object oriented programming, drawing a little “object” with it’s attributes will help with inheritance. Box and pointer diagrams (remember those?) are usefull for Rlists, streams, etc. Also, if you’re working on a problem on one of the boards, chances are some other students are stuck on the same problem and will come up to watch what you’re doing.</p>
+  </li>
+  <li>
+    <p><strong>Encourage students to work together.</strong>
+If two students sitting next to each other are having the same problem, have them work together to try to figure out the answer. Just helped a student with that same question? Have the student that you just helped help out the next student with the same question. Let them know that being able to explain something to another person is the best indicator of mastery of a subject. If they can explain something to another student then they successfully understand the topic! This really comes into play when you are helping out in office hours (especially before a project or homework); getting students to work together in groups will make your life (and their lives) easier.</p>
+  </li>
+</ol>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</article>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Lab Assistants]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/lab_assistants"/>
+        <updated>2013-08-23T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/lab_assistants</id>
+        <content type="html"><![CDATA[<h3 id="faq">FAQ</h3>
+
+<p>Check out the <a href="/cs61a/lab_assistants/faq">FAQ</a> with answers to frequently asked questions about lab assisting.</p>
+
+<h3 id="tips">Tips</h3>
+
+<p>Check out the <a href="/cs61a/lab_assistants/tips">Tips</a> section for general tips about helping out students and being a great teacher.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Lab Assistant FAQ]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="lab_assistants" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/lab_assistants/faq"/>
+        <updated>2013-08-23T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/cs61a/lab_assistants/faq</id>
+        <content type="html"><![CDATA[<h3 id="lab-assistant-faq">Lab Assistant FAQ</h3>
+
+<p>In response to the initial survey that I sent out, here are my answers to your questions! If I didn’t answer your question fully or you need more details about a specific scenario, feel free to send me an email. Also, take a look at the <a href="/cs61a/lab_assistants/tips">Lab Assistant Tips</a> page for general tips and what to expect while you lab assist!</p>
+
+<ol>
+  <li>
+    <p><strong>Q: Do Lab Assistants get to choose their own schedule?</strong> <br />
+A: Yes, of course! You guys are volunteering and all we ask is that you are committed to the times that you choose. If you haven’t filled out the form yet, please do asap! It’s located <a href="https://docs.google.com/forms/d/1n-8YFlLP-1vYszbHr2dbOMHcbwBZJoIRNcuy3LLtbgk/viewform">here.</a></p>
+  </li>
+  <li>
+    <p><strong>Q: I won’t be here this Fall, but I’d like to help out in future semester. What should I do?</strong> <br />
+A: The person in charge of organizing lab assistants changed every semester (well it used to, I’ve been doing it for the past few semesters). You can email me and I’ll try to figure out who will be in charge in the coming semesters.</p>
+  </li>
+  <li>
+    <p><strong>Q: Is there a grade requirement?</strong> <br />
+A: We only ask that you passed the class.</p>
+  </li>
+  <li>
+    <p><strong>Q: I also applied as a Reader, when can I expect to hear about that?</strong> <br />
+A: Readers are chosen by the professor at the beginning of the semester (usually before it starts). I’m not exactly sure what the status is currently for hiring readers but I would assume that he has picked some (if not all) of the readers for the Fall semester. I might be wrong though.</p>
+  </li>
+  <li>
+    <p><strong>Q: Is this an unpaid internship?</strong> <br />
+A: The EECS department is now calling this position “Academic Intern” but you all know it as “Lab Assistant.” The two names are synonymous. Being a Lab Assistant/Academic Intern is a great way to reinforce what you learned/keep your skills sharp so you can consider it an internship because you will always be learning.</p>
+  </li>
+  <li>
+    <p><strong>Q: Will there be a training session for people that feel they aren’t ready to help out?</strong> <br />
+A: Sure! We’ll be meeting on the second floor of Soda Hall near 271/273 at 5pm on Wednesday, August 28th.</p>
+  </li>
+  <li>
+    <p><strong>Q: Is this class still in Python?</strong> <br />
+A: You bet!</p>
+  </li>
+  <li>
+    <p><strong>Q: Are the projects mostly the same?</strong> <br />
+A: The concepts are the same, there might be some slight variations in the directions and possibly some added/removed steps.</p>
+  </li>
+  <li>
+    <p><strong>Q: Are the hours flexible?</strong> <br />
+A: You should talk individually with your TA about this. In general, we’re fine with you skipping a week here or there for midterms/projects (we’re students too!). The only thing we ask is that you let us know in advance just in case we were relying on you being there the week that you took off. Also, try not to do this very often because consistency is better for the students that you are helping!</p>
+  </li>
+  <li>
+    <p><strong>Q: If I can’t make it every week, should I still opt-in for units?</strong> <br />
+   A: You should only opt-in for units if you can come every week (except maybe one or two labs). If you can’t commit to that schedule, please don’t sign up for the units, just come as a volunteer. We’re a little more lenient with volunteers (but we still like to see you as much as you can make).</p>
+  </li>
+  <li>
+    <p><strong>Q: Is it possible to add more units after the semester starts?</strong> <br />
+   A: Yes, but you should let me know within the first three weeks if you wish to add/remove units so that I can send them in to the department. Also, make sure you add/remove those units on Telebears.</p>
+  </li>
+</ol>
+
+<p>If you have any other questions, feel free to email me!</p>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</article>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[One Stack, One Queue]]></title>
+        
+        <category term="interviews" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//interviews/problems/one_stack_one_queue"/>
+        <updated>2013-08-06T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/interviews/problems/one_stack_one_queue</id>
+        <content type="html"><![CDATA[
+<h2 id="one-stack-one-queue">One Stack, One Queue</h2>
+
+<p>Stacks and Queues are popular abstract data structures that represent fundamental ideas in programming and more specifically data structures. One popular interview question is to mimic the functionality of a queue using two stacks. This question takes that a step further by requiring the queue to be made out of a single stack. Recall what fundamental idea stacks are related to and this question will be a breeze.</p>
+
+<p>Write your solution in any language you like. We have solutions below for the
+following languages:</p>
+
+<p><a href="#python">Python</a></p>
+
+<h3 id="python">Python Solution <a href="/interviews/problems/one_stack_one_queue/one_stack_one_queue_python.py">(download)</a></h3>
+
+<div class="highlight"><pre><code class="python"><span class="c"># One Stack, One Queue - Python Solution</span>
+<span class="c"># By: Mark Miyashita</span>
+
+<span class="k">class</span> <span class="nc">Queue</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Build a queue using only one stack.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="nf">enqueue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds an item to the queue.</span>
+
+<span class="sd">        &gt;&gt;&gt; q = Queue()</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        []</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(1)</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [1]</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(4)</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [1, 4]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">dequeue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Removes the first item in the queue.</span>
+
+<span class="sd">        &gt;&gt;&gt; q = Queue()</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        []</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(14)</span>
+<span class="sd">        &gt;&gt;&gt; q.enqueue(123)</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [14, 123]</span>
+<span class="sd">        &gt;&gt;&gt; q.dequeue()</span>
+<span class="sd">        14</span>
+<span class="sd">        &gt;&gt;&gt; q</span>
+<span class="sd">        [123]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">temp</span>
+        <span class="n">item</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dequeue</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">item</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">repr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</code></pre></div>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Merge Sort]]></title>
+        
+        <category term="interviews" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="problems" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//interviews/problems/merge_sort"/>
+        <updated>2013-06-02T00:00:00-07:00</updated>
+        <id>markmiyashita.com:/interviews/problems/merge_sort</id>
+        <content type="html"><![CDATA[
+<h2 id="merge-sort">Merge Sort</h2>
+
+<p>Merge sort is a popular conquer and divide sorting algorithm. If you haven’t
+heard of it before, you should check out the Wikipedia page
+<a href="http://en.wikipedia.org/wiki/Merge_sort">here</a>. It has a nice visualization of
+the algorithm in action.</p>
+
+<p>A basic outline of the algorithm is as follows:</p>
+
+<ol>
+  <li>Divide the input list into two sublists until you have <code>n</code> lists of one item
+each.</li>
+  <li>Repeatedly merge the two sublists together until you obtain the sorted list.</li>
+</ol>
+
+<p>Write your solution in any language you like. We have solutions below for the
+following languages:</p>
+
+<p><a href="#python">Python</a></p>
+
+<p><a href="#ruby">Ruby</a></p>
+
+<h3 id="python">Python Solution <a href="/interviews/problems/merge_sort/merge_sort_python.py">(download)</a></h3>
+
+<div class="highlight"><pre><code class="python"><span class="c"># Merge Sort Python Solution</span>
+<span class="c"># By: Mark Miyashita</span>
+
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Sorts the input list using the merge sort algorithm.</span>
+
+<span class="sd">    &gt;&gt;&gt; lst = [4, 5, 1, 6, 3]</span>
+<span class="sd">    &gt;&gt;&gt; merge_sort(lst)</span>
+<span class="sd">    [1, 3, 4, 5, 6]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lst</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">[:</span><span class="n">mid</span><span class="p">])</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">[</span><span class="n">mid</span><span class="p">:])</span>
+    <span class="k">return</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Takes two sorted lists and returns a single sorted list by comparing the</span>
+<span class="sd">    elements one at a time.</span>
+
+<span class="sd">    &gt;&gt;&gt; left = [1, 5, 6]</span>
+<span class="sd">    &gt;&gt;&gt; right = [2, 3, 4]</span>
+<span class="sd">    &gt;&gt;&gt; merge(left, right)</span>
+<span class="sd">    [1, 2, 3, 4, 5, 6]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">left</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">right</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">right</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">left</span>
+    <span class="k">if</span> <span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">left</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">right</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">right</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</code></pre></div>
+
+<h3 id="ruby">Ruby Solution <a href="/interviews/problems/merge_sort/merge_sort_ruby.rb">(download)</a></h3>
+
+<div class="highlight"><pre><code class="ruby"><span class="c1"># !/usr/bin/env ruby</span>
+<span class="c1"># Merge Sort Ruby Solution</span>
+<span class="c1"># By: Mark Miyashita</span>
+
+<span class="k">def</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">lst</span><span class="o">.</span><span class="n">length</span> <span class="o">&lt;=</span> <span class="mi">1</span>
+    <span class="n">lst</span>
+  <span class="k">else</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">lst</span><span class="o">.</span><span class="n">length</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">floor</span>
+    <span class="n">left</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.mid</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">merge_sort</span><span class="p">(</span><span class="n">lst</span><span class="o">[</span><span class="n">mid</span><span class="o">.</span><span class="n">.lst</span><span class="o">.</span><span class="n">length</span><span class="o">]</span><span class="p">)</span>
+    <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+  <span class="k">if</span> <span class="n">left</span><span class="o">.</span><span class="n">empty?</span>
+    <span class="n">right</span>
+  <span class="k">elsif</span> <span class="n">right</span><span class="o">.</span><span class="n">empty?</span>
+    <span class="n">left</span>
+  <span class="k">elsif</span> <span class="n">left</span><span class="o">.</span><span class="n">first</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">.</span><span class="n">first</span>
+    <span class="o">[</span><span class="n">left</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.left</span><span class="o">.</span><span class="n">length</span><span class="o">]</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+  <span class="k">else</span>
+    <span class="o">[</span><span class="n">right</span><span class="o">.</span><span class="n">first</span><span class="o">]</span> <span class="o">+</span> <span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="o">[</span><span class="mi">1</span><span class="o">.</span><span class="n">.right</span><span class="o">.</span><span class="n">length</span><span class="o">]</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Install Heroku and Deploy Your App]]></title>
+        
+        <category term="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//blog/install_heroku_and_deploy_your_app"/>
+        <updated>2013-04-13T01:39:00-07:00</updated>
+        <id>markmiyashita.com:/blog/install_heroku_and_deploy_your_app</id>
+        <content type="html"><![CDATA[<ul>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#deploying-your-app">Deploying Your App</a>
+    <ul>
+      <li><a href="#ruby-on-rails">Ruby on Rails</a></li>
+      <li><a href="#nodejs">Node.js</a></li>
+      <li><a href="#django">Django</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<!--start-->
+<p>So, you’ve finished adding the final touches to your app and now you want to put in on the Internet for everyone else to use. How do I do that?!</p>
+
+<p>Well, there are several options available to you at this point, most of them are free. The most popular free option is to use Heroku and I’m going to be walking through the steps to set up Heroku on your computer and deploy your first app.
+<!--end--></p>
+
+<p>First, let’s talk a little about what Heroku is. Heroku is a cloud application platform. In one sentence, Heroku allows you to serve your web applications using their servers and allows other computers to access your site at the specified url. Heroku has mastered the art of simplicity, and setting up an app and deploying has never been easier. Let’s dive into the steps necessary to do this.</p>
+
+<p>Since Heroku is a service, we’re first going to have to sign up for an account. You can do that <a href="https://id.heroku.com/signup/devcenter">here</a>.</p>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li>First, we need to download the <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>.</li>
+</ul>
+
+<p>The Heroku Toolbelt install a bunch of command line tools that allow you to easily create and edit apps straight from your own computer. It mainly gives us access to the <code>heroku</code> command that allows us to do a lot of different heroku-specific commands. </p>
+
+<ul>
+  <li>Next, let’s log in to our Heroku accounts using the command line. Run the following command:</li>
+</ul>
+
+<!-- code block below -->
+
+<pre><code>$ heroku login
+Enter your Heroku credentials.
+Email: example@example.com
+Password: 
+Could not find an existing public key.
+Would you like to generate one? [Yn] 
+Generating new SSH public key.
+Uploading ssh public key /Users/mark/.ssh/id_rsa.pub
+</code></pre>
+
+<p>If prompted to generate a public key, go ahead and enter “Y” and proceed to do so.</p>
+
+<p>That’s it for installation! Now we just need to figure out how to deploy our apps using the new command line interface that we just installed. Go on to the next section if you’re ready.</p>
+
+<h2 id="deploying-your-app">Deploying Your App</h2>
+
+<p>Heroku can deploy a bunch of apps and you can find different tutorials listed on their website <a href="https://devcenter.heroku.com/articles/quickstart#step-4-deploy-an-application">here</a>. I’m going to outline the three most popular: Ruby on Rails, Node.js, and Django.</p>
+
+<h2 id="ruby-on-rails">Ruby on Rails</h2>
+
+<p>If you already have an existing Rails app, you don’t need to complete this first step.</p>
+
+<p>Create a new app:</p>
+
+<pre><code>rails my_new_app
+cd my_new_app
+</code></pre>
+
+<p>Heroku uses a PostgreSQL database so we’re going to have to edit our <code>Gemfile</code> to reflect that. Change this line:</p>
+
+<pre><code>gem 'sqlite3'
+</code></pre>
+
+<p>To this:</p>
+
+<pre><code>gem 'pg'
+</code></pre>
+
+<p>Make sure everything works locally by running:</p>
+
+<pre><code>bundle install
+</code></pre>
+
+<p>If you aren’t using Git already, you definitely should be. Git allows you to quickly keep track of changes and to work easily and collaboratively with others. Let’s initialize our app to use git.</p>
+
+<pre><code>git init
+git add .
+git commit -m "initial commit"
+</code></pre>
+
+<p>Now let’s deploy our app to Heroku. First, let’s create a new app using the Heroku Toolbelt that we installed earlier. The argument below, “my-app-name”, is the name that we are giving our app. Feel free to choose anything here, it will eventually become the url for your app.</p>
+
+<pre><code>$ heroku create my-app-name
+Creating my-app-name... done, stack is cedar
+http://my-app-name.herokuapp.com/ | git@heroku.com:my-app-name.git
+Git remote heroku added
+</code></pre>
+
+<p>What the command did was create a new app with a name that you specified. If we want to give our app a random name, we can run the command: <code>heroku create</code> without an optional name and heroku will create a name for us. Let’s push our code to heroku and deploy app.</p>
+
+<pre><code>$ git push heroku master
+Counting objects: 67, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (52/52), done.
+Writing objects: 100% (67/67), 86.33 KiB, done.
+Total 67 (delta 5), reused 0 (delta 0)
+
+-----&gt; Heroku receiving push
+-----&gt; Rails app detected
+-----&gt; Installing dependencies using Bundler version 1.1
+       Checking for unresolved dependencies.
+       Unresolved dependencies detected.
+       Running: bundle install --without development:test --path vendor/bundle --deployment
+       Fetching source index for http://rubygems.org/
+       Installing rake (0.8.7)
+       ...
+       Installing rails (3.0.5)
+       Your bundle is complete! It was installed into ./vendor/bundle
+-----&gt; Rails plugin injection
+       Injecting rails_log_stdout
+       Injecting rails3_serve_static_assets
+-----&gt; Discovering process types
+       Procfile declares types -&gt; (none)
+       Default types for Rails -&gt; console, rake, web, worker
+-----&gt; Compiled slug size is 8.3MB
+-----&gt; Launching... done, v5
+       http://my-app-name.herokuapp.com deployed to Heroku
+
+To git@heroku.com:my-app-name.git
+ * [new branch]      master -&gt; master
+</code></pre>
+
+<p>Now that our app has been pushed to Heroku, we need to initialize our database. Then we can now open our app!</p>
+
+<pre><code>heroku run rake db:reset
+heroku open
+</code></pre>
+
+<p>Now, whenever we want to push updates to our app, we run the following sequence.</p>
+
+<pre><code>git add .
+git commit -m "updates for this commit"
+git push heroku master
+</code></pre>
+
+<p>And our app will be updated and the changes can be seen immediately at our url.</p>
+
+<h2 id="nodejs">Node.js</h2>
+
+<p>If you already have an existing Node app, you don’t have to complete this first step.</p>
+
+<p>Create a new folder and make a new file and add the following contents:</p>
+
+<pre><code>mkdir node_app
+cd node_app
+touch web.js
+</code></pre>
+
+<p>We’re going to create a simple web server that uses Express and displays “Hello World!”</p>
+
+<h4 id="webjs">web.js</h4>
+
+<pre><code>var express = require("express");
+var app = express();
+app.use(express.logger());
+
+app.get('/', function(request, response) {
+  response.send('Hello World!');
+});
+
+var port = process.env.PORT || 5000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
+</code></pre>
+
+<p>Now let’s create another file <code>package.json</code> that will contain information about the dependencies of our app.</p>
+
+<h4 id="packagejson">package.json</h4>
+<pre><code>{
+  "name": "node-example",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.1.x"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
+</code></pre>
+
+<p>Now use the command <code>npm</code> to install our dependencies.</p>
+
+<pre><code>npm install
+</code></pre>
+
+<p>Lastly, we’re going to make a <code>Procfile</code> that is going to declare what processes we want to run once we deploy.</p>
+
+<pre><code>web: node web.js
+</code></pre>
+
+<p>You can now start your app using Foreman with the following command.</p>
+
+<pre><code>foreman start
+</code></pre>
+
+<p>If you aren’t using Git already, you definitely should be. Git allows you to quickly keep track of changes and to work easily and collaboratively with others. Let’s initialize our app to use git.</p>
+
+<pre><code>git init
+git add .
+git commit -m "initial commit"
+</code></pre>
+
+<p>Now let’s deploy our app to Heroku. First, let’s create a new app using the Heroku Toolbelt that we installed earlier. The argument below, “my-app-name”, is the name that we are giving our app. Feel free to choose anything here, it will eventually become the url for your app.</p>
+
+<pre><code>$ heroku create my-app-name
+Creating my-app-name... done, stack is cedar
+http://my-app-name.herokuapp.com/ | git@heroku.com:my-app-name.git
+Git remote heroku added
+</code></pre>
+
+<p>What the command did was create a new app with a name that you specified. If we want to give our app a random name, we can run the command: <code>heroku create</code> without an optional name and heroku will create a name for us. Let’s push our code to heroku and deploy app.</p>
+
+<pre><code>$ git push heroku master
+Counting objects: 343, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (224/224), done.
+Writing objects: 100% (250/250), 238.01 KiB, done.
+Total 250 (delta 63), reused 0 (delta 0)
+
+-----&gt; Node.js app detected
+-----&gt; Resolving engine versions
+       Using Node.js version: 0.10.3
+       Using npm version: 1.2.18
+-----&gt; Fetching Node.js binaries
+-----&gt; Vendoring node into slug
+-----&gt; Installing dependencies with npm
+       ....
+       Dependencies installed
+-----&gt; Building runtime environment
+-----&gt; Discovering process types
+       Procfile declares types -&gt; web
+
+-----&gt; Compiled slug size: 4.1MB
+-----&gt; Launching... done, v9
+       http://my-app-name.herokuapp.com deployed to Heroku
+
+To git@heroku.com:my-app-name.git
+ * [new branch]      master -&gt; master
+</code></pre>
+
+<p>Once we have finished deploying our app, we can access it by entering in the following command.</p>
+
+<pre><code>heroku open
+</code></pre>
+
+<h2 id="django">Django</h2>
+
+<p>Django instructions are a little more complex and I believe that the Heroku instructions can explain it better than I can. For now, view the instructions <a href="https://devcenter.heroku.com/articles/django">here</a>. I will update this post in the future.</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Python *args and **kwargs]]></title>
+        
+        <category term="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//blog/python-args-and-kwargs"/>
+        <updated>2013-03-14T15:38:00-07:00</updated>
+        <id>markmiyashita.com:/blog/python-args-and-kwargs</id>
+        <content type="html"><![CDATA[<!--start-->
+<p>In Python, there are two special symbols that you can use when defining functions to allow them to take in a variable number of arguments. The syntax is to use the symbol <code>*</code> to take in a variable number of arguments; by convention, it is often used with the word <code>args</code>. What <code>*args</code> allows you to do is take in more arguments than the normal of formal arguments that you previously defined. With <code>*args</code>, any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments). Here’s an example which should make this clear:
+<!--end--></p>
+
+<pre><code>def func_with_two(one, two):
+    """
+    This function only takes in two arguments because we explicitly
+    defined two formal parameters. Any more or any less will cause an
+    error.
+    """
+
+def func_with_start_args(*args):
+    """
+    This function can take in any number of arguments, including zero!
+    """
+
+def func_with_both(one, two, *args):
+    """
+    This function requires &lt;i&gt;at least&lt;/i&gt; two arguments. The *args at the end
+    says that it can take just two arguments or any number of arguments as long
+    as there are at least two.
+    """
+</code></pre>
+
+<p>What can this be used for? Plenty of things. Say we wanted to make a multiply function that took in a any number of arguments and was able to multiply them all together. We could do this using *args. Here’s another example:</p>
+
+<pre><code>from operator import mul
+from functools import reduce
+
+def multiply(*args):
+    return reduce(mul, args)
+
+&gt;&gt;&gt; multiply(3, 5, 1, 5)
+75
+</code></pre>
+
+<p>Using the <code>*</code>, the variable that we associate with the <code>*</code> becomes an iterable meaning you can do things like iterate over it, run some higher order functions such as <code>map</code> and <code>filter</code>, etc.</p>
+
+<p>One last thing, you can also use the <code>*</code> syntax to break up an iterable into it’s individual elements. Here’s an example:</p>
+
+<pre><code>def print_three(a, b, c):
+    print(a, b, c)
+
+&gt;&gt;&gt; r = [1, 2, 3]
+&gt;&gt;&gt; print_three(*r)   # notice that the list gets broken up into three arguments
+1 2 3
+</code></pre>
+
+<p>So, what does the <code>**</code> stand for then? For starters, by convention, we use the name <code>kwargs</code> with the double star. The reason is because the double star allows us to pass through keyword arguments (and any number of them too!). A keyword argument is where you provide a name to the variable as you pass it into the function. Here’s an exmaple which should make it more clear:</p>
+
+<pre><code>def print_table(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+&gt;&gt;&gt; print_table(a = 5, b = 6, c = 7)
+b 6
+c 7
+a 5
+</code></pre>
+
+<p>Whoa, what just happened? Notice the syntax, within <code>print_table(a = 5, b = 6, c = 7)</code>, <code>a = 5</code>, <code>b = 6</code>, and <code>c = 7</code> are all keyword arguments. You can think of the <code>kwargs</code> as being a dictionary that maps each keyword to the value that you pass alongside it. That is why when we iterate over the <code>kwargs</code> there doesn’t seem to be any order in which they were printed out.</p>
+
+<p>I hope that this short article helped clarify what <code>*args</code> and <code>**kwargs</code> can be used for! Leave any questions or comments in the section below!</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[How to Win a Hackathon]]></title>
+        
+        <category term="blog" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//blog/how-to-win-a-hackathon"/>
+        <updated>2012-11-22T12:04:00-08:00</updated>
+        <id>markmiyashita.com:/blog/how-to-win-a-hackathon</id>
+        <content type="html"><![CDATA[<!--start-->
+<p><img src="/assets/images/hackathon.jpg" class="img-border" /></p>
+
+<p>This year I started participating in many hackathons of different lengths, different atmospheres, and different types of applications that won. I am still quite new to the hackathon scene, but I thought I’d share my thoughts on how most winners, won.
+<!--end--></p>
+
+<ul>
+  <li>Unless you’re a full-stack developer with really, really good frontend skills, you need a designer. The presentation is arguably the most important part and if your product is not visually pleasing, it will be hard to overcome.</li>
+  <li>The demo is the most important part. No matter how great your project is, if you can’t show it properly, or you can’t explain the technical aspects of it, you won’t be able to show off your project in a way that will attract the developers.</li>
+  <li>Work on something that you are passionate about. Passion helps you work faster and with less distractions, trust me.</li>
+  <li>Make an application that does one thing and make sure it does that one thing very, very well. Most projects that win have one purpose. The reason that they are able to win is because their project is complete and it has a direct purpose. Projects that are too ambitious almost always come up short because of missing features.</li>
+</ul>
+
+<p>These are just some of the things that I’ve noticed at various hackathons that I have participated in. Have any additional tips? Leave them in the comments below!</p>
+
+<p>Wow! My article was featured on the front page of Hacker News for almost half a day! You can check out the discussion <a href="http://news.ycombinator.com/item?id=4830418">here!</a> Thanks for all the support everyone!</p>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Setting Up Our First App]]></title>
+        
+        <category term="web_dev" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="rails" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//web_dev/rails/setting_up_our_first_app"/>
+        <updated>0000-01-03T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/web_dev/rails/setting_up_our_first_app</id>
+        <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#section">3.1</a></li>
+</ul>
+
+<h3 id="section">3.1</h3>
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Models, Views, and Controllers]]></title>
+        
+        <category term="web_dev" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="rails" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//web_dev/rails/models_views_and_controllers"/>
+        <updated>0000-01-02T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/web_dev/rails/models_views_and_controllers</id>
+        <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#mvc---an-idea">2.1 MVC - An Idea</a>    <ul>
+      <li><a href="#models">2.1.1 Models</a></li>
+      <li><a href="#views">2.1.2 Views</a></li>
+      <li><a href="#controllers">2.1.3 Controllers</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="mvc---an-idea">2.1 MVC - An Idea</h3>
+
+<p>What is MVC? MVC stands for Model, View, Controller, and it’s the idea that we
+want to separate our code into sections that represent different parts of our
+application. Popular web applications separate into three main components.
+First off, we have our models which represent the brains within our application.</p>
+
+<p>Models are like objects in which they have attributes and methods that work to
+edit and recall data stored within the object. Between objects, there can be
+correspondances between them such as one-to-one, many-to-one, or, many-to-many
+relationships. These can be thought up of as relationships between actual
+objects such as a <code>parent</code> having many <code>children</code>.</p>
+
+<p>Views are what show the data to the users of your web application. Once you find
+a user and get all of the attributes, you show it to the user using the view.
+Views are generally templated using a markup of some sort. We’ll learn all about
+this later on.</p>
+
+<p>Controllers are the link between the two. Requests come in and they are
+processed by figuring out which method is called in the controller. The
+controller then links together and gets whatever data it needs processed from
+the model where it is finally gathered and redisplayed in the view for the user
+to interact with again.</p>
+
+<h4 id="models">2.1.1 Models</h4>
+
+<h4 id="views">2.1.2 Views</h4>
+
+<h4 id="controllers">2.1.3 Controllers</h4>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Projects]]></title>
+        
+        <link href="http://markmiyashita.com//projects"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/projects</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="projects">Projects</h1>
+
+<h3 id="pound-pong--a-hrefhttpsgithubcomnegativetwelveping-pong-ipadrepoa">Pound Pong  <a href="https://github.com/negativetwelve/ping-pong-ipad">(repo)</a></h3>
+
+<p>Initially, the idea started out as a web app that would keep track of all of the Ping Pong matches that went on at the Yelp office. However, the project quickly transitioned into much more. Using an RFID scanner hooked up to an Arduino which is hooked up to the iPad, we can communicate with the application using our badges which all happen to be RFID. From there, we can ‘badge’ into our matches and record the winner in a seamless transaction using nothing more than our badges and a single tap to label the winner. Results are sent to a simple Flask server through a JSON API where they are stored in a Mongo Database. This was a project that I worked on with a group of 4 at our semi-annual Yelp hackathon. We had two people working on the Flask server / front-end of the website and two of us (including me) working on the iPad app and getting it to communicate with the RFID scanner.</p>
+
+<h3 id="ios-game-with-json-api">iOS game with JSON API</h3>
+
+<p>I’ve been working on an iOS game that has a Rails JSON backend and will eventually have a web component too. Promo video and web page coming soon.</p>
+
+<h3 id="global-snapshot-a-hrefhttpglobalsnapshotherokuappcomdemoa-a-hrefhttpsgithubcomjaphethwongglobal-snapshotrepoa">Global Snapshot <a href="http://globalsnapshot.herokuapp.com/">(demo)</a> <a href="https://github.com/japhethwong/global-snapshot">(repo)</a></h3>
+
+<p>Working on a group of three at the LinkedIn Hack Day 2013, we buit a real-time Twitter and Flickr visualizer. Watch as tweets and photos fall onto the map and as the photos form a real-time stream on the sidebar. Want to see more photos? Simply expand the sidebar by pressing the toggle button on the bottom right. Hover over any of the dots to view the tweet or photo from that location. Node.js backend while working with several APIs including Google Maps, Twitter Real-time, and Flickr Real-time. Also uses Socket.io for sending the data to the browser in real-time.</p>
+
+<h3 id="calaborate-a-hrefhttpcalaborateherokuappcomdemoa-a-hrefhttpsgithubcomnegativetwelvecalaboraterepoa">Calaborate <a href="http://calaborate.herokuapp.com">(demo)</a> <a href="https://github.com/negativetwelve/calaborate">(repo)</a></h3>
+
+<p>I worked as the lead developer on a small team to develop a tool for Cal students to create meetups and study sessions to review for midterms and finals.</p>
+
+<p><img src="/assets/images/calaborate.png" alt="Calaborate" class="project_image" /></p>
+
+<h3 id="appsearches-a-hrefhttpappsearchesdemoa-a-hrefhttpsgithubcomnegativetwelveappsearchesrepoa">Appsearch.es <a href="http://appsearch.es">(demo)</a> <a href="https://github.com/negativetwelve/appsearches">(repo)</a></h3>
+
+<p>An iOS app search engine. Data is gathered using a scrapper that I built and stored in a Postgres database. Search is done by indexing the database and using Postgres built-in full-text search.</p>
+
+<p><img src="/assets/images/appsearches.png" alt="Appsearch.es" class="project_image" /></p>
+
+<h3 id="rubiks-detection--a-hrefhttpsgithubcomnegativetwelverubiksdetectionrepoa">Rubik’s Detection  <a href="https://github.com/negativetwelve/rubiks_detection">(repo)</a></h3>
+
+<p>The idea was simple, take a web camera, use it to detect the colors of a rubik’s cube that a user holds up to the screen. Analyze the colors, pass the output to a solver and display the necessary steps to solve the cube. It actually worked and we won third place at a hackathon as a result. My main role was working on detecting the colors by holding up the rubik’s cube to your screen.</p>
+
+<h3 id="sound-of-dub-a-hrefhttpsintense-journey-6792herokuappcomdemoa-a-hrefhttpsgithubcomnegativetwelvesound-of-dubrepoa">Sound of Dub <a href="https://intense-journey-6792.herokuapp.com/">(demo)</a> <a href="https://github.com/negativetwelve/sound-of-dub">(repo)</a></h3>
+
+<p>A music app that I built at a hackathon. It utilizes the Soundcloud API and allows users to make and play their own playlists.</p>
+
+<p><img src="/assets/images/sound-of-dub.png" alt="Sound of Dub" class="project_image" /></p>
+
+<h3 id="tim-todo-a-hrefhttpstimtodoherokuappcomdemoa-a-hrefhttpsgithubcomnegativetwelvetimrepoa">Tim Todo <a href="https://timtodo.herokuapp.com/">(demo)</a> <a href="https://github.com/negativetwelve/Tim">(repo)</a></h3>
+
+<p>A vim-style web based todo app that I built with a friend at our first ever hackathon. We won the Hilfinger Award given to us by Box at the 2012 H@B Hackjam.</p>
+
+<p><img src="/assets/images/tim.png" alt="Tim Todo" class="project_image" /></p>
+
+<h3 id="markmiyashitacom-a-hrefhttpmarkmiyashitacomdemoa-a-hrefhttpsgithubcomnegativetwelvemarkmiyashitacomrepoa">markmiyashita.com <a href="http://markmiyashita.com">(demo)</a> <a href="https://github.com/negativetwelve/markmiyashita.com">(repo)</a></h3>
+
+<p>My personal about me website that I have developed from scratch. It is built using Jekyll and hosted on Github Pages.</p>
+
+<p><img src="/assets/images/website.png" alt="markmiyashita.com" class="project_image" /></p>
+
+<h3 id="life-logger--a-hrefhttpsgithubcomnegativetwelvefacebook-hackathonrepoa">Life Logger  <a href="https://github.com/negativetwelve/facebook-hackathon">(repo)</a></h3>
+
+<p>I worked with a team of four at the 2012 Battle of the Bay Facebook Hackathon. We built an event logger for your computer that allows you to visualize and analyze your habits on the computer.</p>
+
+<p><img src="/assets/images/life-logger.png" alt="Life Logger" class="project_image" /></p>
+
+<h3 id="pets-alliance--a-hrefhttpsgithubcomnegativetwelvepets-alliancerepoa">Pets Alliance  <a href="https://github.com/negativetwelve/pets-alliance">(repo)</a></h3>
+
+<p>Half of an MMORPG that I built in the summer of 2012. The UI was never finished but the backend worked pretty well. May continue this project in the future.</p>
+
+<p><img src="/assets/images/petsalliance.png" alt="Pets Alliance" class="project_image" /></p>
+
+<h3 id="bashprofilecom-a-hrefhttpbashprofilecomdemoa-a-hrefhttpsgithubcomnegativetwelvebashprofilecomrepoa">bashprofile.com <a href="http://bashprofile.com">(demo)</a> <a href="https://github.com/negativetwelve/bashprofile.com">(repo)</a></h3>
+
+<p>A small tech blog that I built and designed.</p>
+
+<p><img src="/assets/images/bashprofile.png" alt="bashprofile.com" class="project_image" /></p>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Introduction and Purpose]]></title>
+        
+        <category term="web_dev" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="rails" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//web_dev/rails/introduction_and_purpose"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/web_dev/rails/introduction_and_purpose</id>
+        <content type="html"><![CDATA[<ul id="markdown-toc">
+  <li><a href="#introduction">1.1 Introduction</a>    <ul>
+      <li><a href="#section">1.1.1</a></li>
+      <li><a href="#section-1">1.1.2</a></li>
+    </ul>
+  </li>
+  <li><a href="#section-2">1.2</a></li>
+</ul>
+
+<h3 id="introduction">1.1 Introduction</h3>
+
+<h4 id="section">1.1.1</h4>
+
+<h4 id="section-1">1.1.2</h4>
+
+<h3 id="section-2">1.2</h3>
+
+]]></content>
+        <author>
+            <name>Mark Miyashita</name>
+            <url>http://markmiyashita.com</url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[HKN]]></title>
+        
+        <link href="http://markmiyashita.com//hkn"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/hkn</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="hkn-eta-kappa-nu">HKN (Eta Kappa Nu)</h1>
+
+<h2 id="department-relations-officer-fall-2013">Department Relations Officer Fall 2013</h2>
+
+<h4 id="past-hkn-experience">Past HKN Experience</h4>
+
+<ul>
+  <li>Bridge Officer Spring 2013</li>
+  <li>Bridge Candidate Fall 2012</li>
+</ul>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Visualizing Graphs - Mark Miyashita]]></title>
+        
+        <link href="http://markmiyashita.com//projects/graphs"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/projects/graphs</id>
+        <content type="html"><![CDATA[<script src="/assets/js/d3.v3.min.js"></script>
+
+<script src="/assets/js/jsnetworkx.js"></script>
+
+<div class="graph_area">
+  <h2 class="page-header" id="visualizing-graphs">Visualizing Graphs</h2>
+
+  <div id="main_graph"></div>
+
+  <ul>
+    <li><a href="#" onclick="strongly_connected(); return false;">Strongly Connected</a></li>
+    <li><a href="#" onclick="clear_graph(); return false;">Clear</a></li>
+    <li><a href="#" onclick="create_graph(); return false;">Create Random Graph with 10 Nodes</a></li>
+  </ul>
+
+</div>
+
+<script>
+var G = jsnx.cycle_graph(6);
+
+jsnx.draw(G, {
+  element: '#main_graph',
+  with_labels: true,
+  node_style: {
+    fill: function(d) {
+      return d.data.color || '#AAA'; // any node without color is gray
+    }
+  }
+});
+
+function clear_graph() {
+  console.log('clear');
+  G.clear();
+  jsnx.draw(G);
+}
+
+function create_graph() {
+  console.log('create graph');
+  G.clear();
+  G = jsnx.binomial_graph(10, 0.15);
+  jsnx.draw(G);
+}
+
+function strongly_connected() {
+  console.log('strongly_connected');
+  var size = G.nodes().length;
+  var edges = [];
+  for (var i=0; i < size; i++) {
+    for (var j=0; j < size; j ++) {
+      edges.push([i, j]);
+    }
+  }
+  G.add_edges_from(edges);
+  jsnx.draw(G);
+}
+</script>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS70]]></title>
+        
+        <category term="cs70" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs70"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs70</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS70 - Discrete Mathematics and Probability - UC Berkeley</h2>
+
+<p>This class focuses on logic and problem solving skills and a few applications of these skills in areas of computer science. Some other topics include RSA and modular arithmetic, graph theory, expectation and inference (probability).</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61C]]></title>
+        
+        <category term="cs61c" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61c"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61c</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS61C - C, Mips, and Computer Architecture - UC Berkeley</h2>
+
+<p>This is the final class in the CS61 Series at UC Berkeley. The class focuses on more low-level programming including Mips, caching, performance, parallelism, pipelining, CPUs, memory management, and more. It also touches on a few more specific topics such as RAID, virtual memory, and modern microprocessors. The course uses a variety of different languages such as C, Java, Mips, and more.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61B]]></title>
+        
+        <category term="cs61b" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61b"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61b</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS61B - Data Structures - UC Berkeley</h2>
+
+<p>This is the second course in the CS61 Series at UC Berkeley. The language used throughout the course is Java and the students spend most of their time learning about different data structures, sorting algorithms, and general search algorithms.</p>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>Be sure to check out the <a href="/interviews/problems">interviews</a> section which contains a lot of interview level questions regarding data structures and run time.</p>
+</div>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Summer 2013]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/su13"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a/cs61a-su13</id>
+        <content type="html"><![CDATA[<h2 id="cs61a-summer-2013">CS61A Summer 2013</h2>
+
+<p id="previous_semesters">Previous Semesters: <a href="/cs61a/sp13">Spring 2013</a></p>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a></p>
+
+  <ul>
+    <li>If you would like to lab assist in the Fall, please fill out <a href="https://docs.google.com/forms/d/15hC07VjqZ70PLZ69nfwcaSARZg1pMqboZy8kOsibyx0/viewform">this form</a> or send me an email.</li>
+  </ul>
+</div>
+
+<h4 id="office-hours">Office Hours:</h4>
+
+<p>Monday and Thursday - 7-8pm - 411 Soda</p>
+
+<h4 id="sections">Sections:</h4>
+
+<p>Lab 106 - MW 8-9:30pm - 271 Soda<br />
+Discussion 106 - TTh 8-9:30pm - 320 Soda</p>
+
+<h4 id="email">Email:</h4>
+
+<p><a href="mailto:cs61a-tg@imail.eecs.berkeley.edu">cs61a-tg@imail.eecs.berkeley.edu</a></p>
+
+<h4 id="personal">Personal:</h4>
+
+<p>You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Spring 2013]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="sp13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/sp13"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a/cs61a-sp13</id>
+        <content type="html"><![CDATA[<h2 id="cs61a-spring-2013">CS61A Spring 2013</h2>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a></p>
+
+  <ul>
+    <li>Thanks for an awesome semester guys! If you need/want to contact me for whatever reason, you can find my email address in the <a href="http://markmiyashita.com/contact">contact section</a>! Have a great summer!</li>
+    <li>If you are interested in becoming a lab assistant for the summer, please contact me. My information is above and it is also on the pinned post on Piazza. You can either choose to volunteer or you can actually receive units based on the amount of time that you work! Email me with any questions!</li>
+  </ul>
+</div>
+
+<h4 id="office-hours">Office Hours:</h4>
+
+<p>Tuesday 11am-12pm, 3-4pm in 751 Soda<br />
+Wednesday 2-3pm in 345 Soda<br />
+Thursday 11am-12pm in 345 Soda<br /></p>
+
+<h4 id="sections">Sections:</h4>
+
+<p>Lab/Disc 23 - WF 11am-12:30pm<br />
+Lab/Disc 27 - TTh 9:30am-11am</p>
+
+<h4 id="email">Email:</h4>
+
+<p><a href="mailto:cs61a-td@imail.eecs.berkeley.edu">cs61a-td@imail.eecs.berkeley.edu</a></p>
+
+<h4 id="personal">Personal:</h4>
+
+<p>You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A - Fall 2013]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <category term="fa13" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a/fa13"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a/cs61a-fa13</id>
+        <content type="html"><![CDATA[<h2 id="cs61a-fall-2013">CS61A Fall 2013</h2>
+
+<p id="previous_semesters">Previous Semesters: <a href="/cs61a/su13">Summer 2013</a> · <a href="/cs61a/sp13">Spring 2013</a></p>
+
+<div class="bs-callout bs-callout-info">
+  <h2 id="announcements">Announcements</h2>
+
+  <p>If you are looking for extra practice problems or supplementary notes, check them out <a href="#extra_problems">below!</a></p>
+
+  <ul>
+    <li>If you would like to lab assist in the Fall, please fill out <a href="https://docs.google.com/forms/d/15hC07VjqZ70PLZ69nfwcaSARZg1pMqboZy8kOsibyx0/viewform">this form</a> or send me an email.</li>
+  </ul>
+</div>
+
+<h4 id="office-hours">Office Hours:</h4>
+
+<p>Tuesday 5pm - 6pm in 651 Soda<br />
+Wednesday 1pm - 2pm in 290 Cory<br />
+Wednesday 2pm - 3pm in 651 Soda<br />
+Thursday 2pm - 3pm in 345 Soda</p>
+
+<h4 id="sections">Sections:</h4>
+
+<p>Lab 12 - Tuesday 9:30am - 11am in 273 Soda<br />
+Discussion 12 - Thursday 9:30am - 11am in 310 Soda<br />
+<br />
+Lab 15 - Tuesday 11am - 12:30pm in 273 Soda<br />
+Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
+
+<h4 id="email">Email:</h4>
+
+<p><a href="mailto:cs61a-tb@imail.eecs.berkeley.edu">cs61a-tb@imail.eecs.berkeley.edu</a></p>
+
+<h4 id="personal">Personal:</h4>
+
+<p>You can find my personal site <a href="http://markmiyashita.com">here.</a> You can also find my projects <a href="http://markmiyashita.com/projects">here.</a> Always feel free to send me an email with any questions you have!</p>
+
+<div class="bs-callout bs-callout-info" id="extra_problems">
+  <h2 id="practice-problems-and-notes">Practice Problems and Notes</h2>
+
+  <p>On the left of this page is a list of topics that we have covered throughout this semester. Those topic pages contain notes and practice problems that I have written to test your knowledge! If you have any questions about the problems, feel free to leave a comment on that post or send me an email! Lastly, if there is a topic that you feel you need practice on and it is not listed on the left, shoot me an email and I’ll do my best to come up with some content for that topic.</p>
+</div>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS61A]]></title>
+        
+        <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs61a"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs61a</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS61A - Structure and Interpretations of Computer Programs - UC Berkeley</h2>
+
+<p class="alert alert-success">Looking for a specific semester of the course? Check out the most recent semester: <a href="/cs61a/fa13" class="alert-link">Fall 2013</a></p>
+
+<p>This is the first course in the CS61 series at UC Berkeley. The course focuses on the ideas of abstraction, program complexity, functional programming, object-oriented programming, and more. The language used in the course is Python although this course is not designed to focus primarily on the language. Students go through many different topics to expose them to many key ideas in computer science.</p>
+
+<div class="bs-callout bs-callout-info">
+  <h3 id="announcements">Announcements</h3>
+
+  <p>To the left, you’ll find topics that are covered in this course. Each topic contains practice problems related to that topic and some of the topics contain notes that I have written over the years.</p>
+
+  <ul>
+    <li>If you’re a lab assistant, check out the FAQ located <a href="/cs61a/lab_assistants/faq">here</a> and a list of my tips <a href="/cs61a/lab_assistants/tips">here!</a></li>
+  </ul>
+</div>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS188]]></title>
+        
+        <category term="cs188" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs188"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs188</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS188 - Artificial Intelligence - UC Berkeley</h2>
+
+<p>This is a course about artificial intelligence with an emphasis on the ideas and techniques used to design intelligent computer systems. Throughout the course, you will build autonomous agents that can make decisions based on their environment and optimize for rewards.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[CS170]]></title>
+        
+        <category term="cs170" scheme="http://www.sixapart.com/ns/types#tag" />
+        
+        <link href="http://markmiyashita.com//cs170"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/cs170</id>
+        <content type="html"><![CDATA[<h2 id="extra_problems">CS170 - Algorithms - UC Berkeley</h2>
+
+<p>This class focuses on efficient algorithms and intractable problems. It is designed to give you an introduction to computer science theory with a heavy emphasis solving both solvable and unsolvable problems. Concepts include: graph theory, dynamic programming, linear programming, and NP complete problems.</p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Contact]]></title>
+        
+        <link href="http://markmiyashita.com//contact"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/contact</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="contact">Contact</h1>
+
+<h2 id="email">Email</h2>
+
+<p>The best way to get in contact with me is probably via email. You can reach me at a variety of places, most commonly:</p>
+
+<p><strong>negativetwelve AT gmail DOT com</strong></p>
+
+<h2 id="you-can-also-reach-me-at">You can also reach me at…</h2>
+
+<ul>
+  <li><a href="https://github.com/negativetwelve/">Github</a></li>
+  <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+  <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+  <li><a href="https://twitter.com/negativetwelve">Twitter</a></li>
+</ul>
+
+<h2 id="other-public-profiles">Other public profiles:</h2>
+
+<ul>
+  <li><a href="https://news.ycombinator.com/user?id=negativetwelve">Hacker News</a></li>
+  <li><a href="http://www.last.fm/user/collegejourney">Last.fm</a></li>
+</ul>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Blueprint]]></title>
+        
+        <link href="http://markmiyashita.com//blueprint"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/blueprint</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="cal-blueprint-technology-for-non-profitshttpcalblueprintorg"><a href="http://calblueprint.org">Cal Blueprint, Technology for Non-Profits</a></h1>
+
+<h4 id="our-goal-is-to-make-beautiful-engineering-accessible-and-useful-for-those-who-create-communities-and-promote-public-welfare">Our goal is to make beautiful engineering accessible and useful for those who create communities and promote public welfare.</h4>
+
+<p><img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width" /></p>
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+    <entry>
+        <title><![CDATA[Blog]]></title>
+        
+        <link href="http://markmiyashita.com//blog"/>
+        <updated>0000-01-01T00:00:00-08:00</updated>
+        <id>markmiyashita.com:/blog</id>
+        <content type="html"><![CDATA[<h1 class="page-header" id="blog">Blog</h1>
+
+<h2 id="a-hrefbloghow-to-deploy-a-static-site-using-github-pages-classno-linkhow-to-deploy-a-static-site-using-github-pagesa"><a href="/blog/how-to-deploy-a-static-site-using-github-pages" class="no-link">How to Deploy a Static Site using Github Pages</a></h2>
+
+<p>So you’ve built your static site, made it look pretty on your local computer, but now you want to go bigger. It’s time to deploy our website to the world so that other people can find it! In this guide, you’ll find a short tutorial on how to deploy your site onto the Internet. Let’s get started!
+ <a href="/blog/how-to-deploy-a-static-site-using-github-pages" class="post-readmore">(Read More)</a></p>
+
+<h2 id="a-hrefbloginstallherokuanddeployyourapp-classno-linkinstall-heroku-and-deploy-your-appa"><a href="/blog/install_heroku_and_deploy_your_app" class="no-link">Install Heroku and Deploy Your App</a></h2>
+
+<p>So, you’ve finished adding the final touches to your app and now you want to put in on the Internet for everyone else to use. How do I do that?!</p>
+
+<p>Well, there are several options available to you at this point, most of them are free. The most popular free option is to use Heroku and I’m going to be walking through the steps to set up Heroku on your computer and deploy your first app.
+ <a href="/blog/install_heroku_and_deploy_your_app" class="post-readmore">(Read More)</a></p>
+
+<h2 id="a-hrefblogpython-args-and-kwargs-classno-linkpython-args-and-kwargsa"><a href="/blog/python-args-and-kwargs" class="no-link">Python *args and **kwargs</a></h2>
+
+<p>In Python, there are two special symbols that you can use when defining functions to allow them to take in a variable number of arguments. The syntax is to use the symbol <code>*</code> to take in a variable number of arguments; by convention, it is often used with the word <code>args</code>. What <code>*args</code> allows you to do is take in more arguments than the normal of formal arguments that you previously defined. With <code>*args</code>, any number of extra arguments can be tacked on to your current formal parameters (including zero extra arguments). Here’s an example which should make this clear:
+ <a href="/blog/python-args-and-kwargs" class="post-readmore">(Read More)</a></p>
+
+<h2 id="a-hrefbloghow-to-win-a-hackathon-classno-linkhow-to-win-a-hackathona"><a href="/blog/how-to-win-a-hackathon" class="no-link">How to Win a Hackathon</a></h2>
+
+<p><img src="/assets/images/hackathon.jpg" class="img-border" /></p>
+
+<p>This year I started participating in many hackathons of different lengths, different atmospheres, and different types of applications that won. I am still quite new to the hackathon scene, but I thought I’d share my thoughts on how most winners, won.
+ <a href="/blog/how-to-win-a-hackathon" class="post-readmore">(Read More)</a></p>
+
+]]></content>
+        <author>
+            <name></name>
+            <url></url>
+        </author>
+    </entry>
+    
+</feed>
