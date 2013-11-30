@@ -2,6 +2,7 @@
 
 deploy_dir = "_deploy"
 deploy_branch = "gh-pages"
+config_files = Dir.glob("_config/*.yml").join(",")
 
 ROOT = File.expand_path('.')
 
@@ -21,7 +22,8 @@ end
 desc "generate site"
 task :generate do
   puts("Generating static site into _deploy")
-  system('jekyll build --config _config.yml,_cs_config.yml,_work_config.yml,_projects_config.yml')
+  puts config_files
+  system("jekyll build --config #{config_files}")
 end
 
 desc "deploy site"
@@ -57,7 +59,6 @@ desc "Starts the server to serve files locally"
 task :jekyll do
   puts "Starting jekyll server."
   puts "Config files:"
-  config_files = Dir.glob("_config/*.yml").join(",")
   puts config_files
   sys("jekyll server --config #{config_files} --watch")
 end
