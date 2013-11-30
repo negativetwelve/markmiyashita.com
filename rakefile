@@ -53,6 +53,15 @@ task :test_deploy do
   puts "Check deploy/ for the files that would have been uploaded to github and deployed."
 end
 
+desc "Starts the server to serve files locally"
+task :jekyll do
+  puts "Starting jekyll server."
+  puts "Config files:"
+  config_files = Dir.glob("_config/*.yml").join(",")
+  puts config_files
+  sys("jekyll server --config #{config_files} --watch")
+end
+
 
 def die(s)
   puts(s.red)
@@ -121,4 +130,4 @@ task :problem, [:title] do |t, args|
   sys("cp #{ROOT}/_includes/cs61a/problems/template.md #{ROOT}/_includes/cs61a/problems/#{title}")
 end
 
-task :default => :server
+task :default => :jekyll
