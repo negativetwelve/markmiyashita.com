@@ -46,7 +46,7 @@ Here's what my second discussion came up with. There's a small bug causing the t
                 result.rest = Rlist(a.first)
                 a = a.rest
                 result = result.rest
-        
+
         if b is not Rlist.empty:
             if result is Rlist.empty:
                 result = Rlist(b.first)
