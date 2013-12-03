@@ -994,6 +994,23 @@ cs_classes:
                 date: "2013-11-08"
                 published: true
 
+    generators:
+      semesters: [base, fa13]
+      problems:
+        - name: "Fibonacci Generator"
+          file: fibonacci_generator
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-03"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-03"
+                published: true
+                solution: true
+
     streams:
       semesters: []
       problems:
@@ -1010,9 +1027,6 @@ cs_classes:
                 date: "2013-08-10"
                 published: false
                 solution: false
-
-    generators:
-      semesters: []
 
     iterators:
       semesters: [base, sp13, su13, fa13]
