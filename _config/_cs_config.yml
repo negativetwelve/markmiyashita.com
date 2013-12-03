@@ -1012,7 +1012,7 @@ cs_classes:
                 solution: true
 
     streams:
-      semesters: []
+      semesters: [base, fa13]
       problems:
         - name: "Streams of Streams"
           file: streams_of_streams
@@ -1027,6 +1027,19 @@ cs_classes:
                 date: "2013-08-10"
                 published: false
                 solution: false
+        - name: "Fibonacci Stream"
+          file: fibonacci_stream
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-03"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-03"
+                published: true
+                solution: true
 
     iterators:
       semesters: [base, sp13, su13, fa13]
