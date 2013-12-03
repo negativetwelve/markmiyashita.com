@@ -1225,6 +1225,20 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/streams/fibonacci_stream/index.html</loc>
+        
+        <lastmod>2013-12-03T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/streams/fibonacci_stream/index.html</loc>
+        
+        <lastmod>2013-12-03T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/iterators/once_an_infinite_sequence_always_an_infinite_sequence/index.html</loc>
         
         <lastmod>2013-05-09T00:00:00-07:00</lastmod>
@@ -1704,6 +1718,16 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/generators/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/fa13/streams/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/streams/index.html</loc>
         
     </url>
     
