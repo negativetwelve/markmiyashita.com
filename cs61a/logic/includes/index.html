@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Repeat Iterator - Mark Miyashita
+    CS61A - Includes in Logic - Mark Miyashita
   
 </title>
 
@@ -461,7 +461,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Repeat Iterator</h3>
+  <h3>Includes in Logic</h3>
 </div>
 
 
@@ -469,38 +469,30 @@ woopra.track('pv', {
 
 
 
-<p>Write an iterator that outputs the value <code>n</code> number of times. If there is no <code>n</code> specified in the input arguments, then your iterator should act as an infinite iterator, always outputting the same element.</p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<pre><code>class Repeat(object):
-    """
-    &gt;&gt;&gt; r = Repeat(3, 5) # Will output 3, 5 times.
-    &gt;&gt;&gt; s = Repeat(3) # Will output 3 an infinite number of times.
-    """
-    "***YOUR CODE HERE***"
+<p>Write facts to define <code>includes</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>includes</code> checks to see if the first item is contained within the second item which is a list.</p>
+
+<pre><code>(fact (includes ; YOUR CODE HERE ))
+
+(query (includes 1 (1 2 3)))
+; expect Success!
+
+(query (includes ?item (1 2 3 4)))
+; expect Success! ; item: 1 ; item: 2 ; item: 3 ; item: 4
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>class Repeat(object):
+  <pre><code>(fact (includes ?item (?item . ?anything)))
 
-    def __init__(self, elem, n=None):
-        self.elem = elem
-        self.n = n
-        self.index = 0
-
-    def __iter__(self):
-        return self
-
-    def __next__(self):
-        if self.n is not None and self.index &gt;= self.n:
-            raise StopIteration
-        self.index += 1
-        return self.elem
+(fact (includes ?item (?something . ?rest))
+      (includes ?item ?rest))
 </code></pre>
 
-  <p>The important thing to note in this question is the possibility of two different cases. On one hand, the iterator might be finite in which case you’d have to raise a <code>StopIteration</code>. On the other hand, the iterator might be infinite in which case you don’t have to raise the <code>StopIteration</code>.</p>
+  <p>Our base fact checks to see if the item that we’re looking for is the first item of the list. If it is, we’re good to go and should see a <code>Success!</code>. On the other hand, if the first item isn’t what we’re looking for, then we should check the rest of the list. So, in our recursive fact, we break up the list into <code>something</code> and <code>rest</code> and check to see if <code>item</code> is located in the <code>rest</code>.</p>
 
 </div>
 
