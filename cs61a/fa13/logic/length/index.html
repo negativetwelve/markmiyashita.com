@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - What Are Functions? - Mark Miyashita
+    CS61A - Length in Logic - Mark Miyashita
   
 </title>
 
@@ -459,7 +459,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>What Are Functions?</h3>
+  <h3>Length in Logic</h3>
 </div>
 
 
@@ -467,44 +467,31 @@ woopra.track('pv', {
 
 
 
-<p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<p>What would the following output in Python?</p>
+<p>Write facts to define <code>length</code>. You may use anything already included in the starter file as well as other facts defined in previous questions.</p>
 
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a = 6
-&gt;&gt;&gt; a       #1
+<pre><code>(fact (length ; YOUR CODE HERE ))
 
-&gt;&gt;&gt; b       #2
+(query (length (1 2 3) 3))
+; expect Success!
 
-&gt;&gt;&gt; def square(x):
-...     print(x * x)
-...     return x
-...
-&gt;&gt;&gt; a = square(a)
-            #3 - what is printed here?
-&gt;&gt;&gt; a       #4
-
-&gt;&gt;&gt; b = square(square(a))
-            #5 - what is printed here?
-
-&gt;&gt;&gt; b       #6
+(query (length (1 2 3 4 5) ?length))
+; expect Success! ; length: 5
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>6</li>
-    <li>5</li>
-    <li>36 (printed)</li>
-    <li>6</li>
-    <li>36 (printed) <br />
-36 (printed)</li>
-    <li>6</li>
-  </ol>
+  <pre><code>(fact (length () 0))
+
+(fact (length (?first . ?rest) ?num)
+    (increment ?some-num ?num)
+    (length ?rest ?some-num))
+</code></pre>
+
+  <p>First we define our base fact. The length of the empty list is 0. Then, in our recursive fact, we break up the list into <code>first</code> and <code>rest</code>. The length of the entire list is the length of the <code>rest</code> incremented by 1. So, we create a temporary variable <code>some-num</code> that relates the length of the <code>rest</code> with the length of the entire list.</p>
 
 </div>
 
