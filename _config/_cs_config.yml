@@ -1268,6 +1268,19 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+        - name: "Implementing Not Equal in Logic"
+          file: not_equal
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-13"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-13"
+                published: true
+                solution: true
 
     unification:
       semesters: []
