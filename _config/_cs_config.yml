@@ -1084,6 +1084,11 @@ cs_classes:
 
     logic:
       semesters: [base, sp13, su13, fa13]
+      code:
+        - name: "Logic Starter File"
+          output: logic_starter
+          file: logic_starter.logic
+          language: logic
       problems:
         - name: "Finding the Greatest Common Divisor using Logic"
           file: finding_the_greatest_common_divisor_using_logic
@@ -1100,10 +1105,6 @@ cs_classes:
                 solution: false
               su13:
                 date: "2013-08-08"
-                published: true
-                solution: false
-              fa13:
-                date: "2013-11-17"
                 published: true
                 solution: false
         - name: "Modulus In Logic"
@@ -1123,10 +1124,19 @@ cs_classes:
                 date: "2013-08-08"
                 published: true
                 solution: false
-              fa13:
-                date: "2013-11-17"
+        - name: "Subtraction in Logic"
+          file: subtraction
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-10"
                 published: true
-                solution: false
+                solution: true
+              fa13:
+                date: "2013-12-10"
+                published: true
+                solution: true
 
     unification:
       semesters: []
