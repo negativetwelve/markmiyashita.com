@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Modulus In Logic - Mark Miyashita
+    CS61A - Drop While Iterator - Mark Miyashita
   
 </title>
 
@@ -461,7 +461,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Modulus In Logic</h3>
+  <h3>Drop While Iterator</h3>
 </div>
 
 
@@ -469,14 +469,42 @@ woopra.track('pv', {
 
 
 
-<p>Using the result of your Homework 13 solutions, let’s implement some more math functions! Implement <code>modulus</code> that acts like the <code>mod</code> operator in Python. It should return the remainder.</p>
+<p>Write an iterator that takes in two arguments, a function and a list. The iterator should return all elements starting from the first item that <em>fails</em> the predicate function. This means that you should eliminate all items from the beginning of the list that <em>do</em> satisfy the predicate. Here’s an example:</p>
 
-<pre><code>(fact (% ***YOUR CODE HERE*** ))
-
-
-(query (% (1 1 1) (1 1) ?what))
-; expect Success! ; what: (1)
+<pre><code>&gt;&gt;&gt; d = DropWhile(lambda x: x &lt; 5, [1, 4, 6, 4, 1])
+&gt;&gt;&gt; for i in d:
+...     print(i)
+...
+6
+4
+1
 </code></pre>
+
+<!-- -->
+
+<pre><code>class DropWhile(object):
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>class DropWhile(object):
+
+    def __init__(self, pred, sequence):
+        self.pred = pred
+        self.sequence = sequence
+
+    def __iter__(self):
+        while self.sequence and self.pred(self.sequence[0]):
+            self.sequence.pop(0)
+        return iter(self.sequence)
+</code></pre>
+
+  <p>There are many ways to solve this problem. Basically, since we’re using a list, all we need to do is get rid of the elements at the beginning of the list that satisfy the predicate. Then, we just return the normal list iterator over the rest of the items in the list.</p>
+
+</div>
 
 
 
