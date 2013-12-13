@@ -1255,6 +1255,19 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+        - name: "Greater Than or Equal to in Logic"
+          file: greater_than_or_equal
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-13"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-13"
+                published: true
+                solution: true
 
     unification:
       semesters: []
