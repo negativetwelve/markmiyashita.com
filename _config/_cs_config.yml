@@ -1010,6 +1010,19 @@ cs_classes:
                 date: "2013-12-03"
                 published: true
                 solution: true
+        - name: "Zip Generator"
+          file: zip_generator
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-13"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-13"
+                published: true
+                solution: true
 
     streams:
       semesters: [base, fa13]
