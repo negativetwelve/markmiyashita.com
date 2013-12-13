@@ -10,7 +10,11 @@ layout: cs_course
 
 {% capture contents %}{% include file %}{% endcapture %}
 
+{% if page.language != 'logic' %}
 {% assign language = page.language %}
+{% else %}
+{% assign language = '' %}
+{% endif %}
 {% highlight language %}
 {{ contents }}
 {% endhighlight %}
