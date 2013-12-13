@@ -1,5 +1,5 @@
 {% capture question %}
-This problem uses the Logic starter file located [here.]({% code logic_starter.logic %})
+This problem uses the Logic starter file located [here.]({% code logic_starter %})
 
 {% endcapture %}
 
