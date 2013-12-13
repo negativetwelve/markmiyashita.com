@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Insert Into Binary Search Tree - Mark Miyashita
+    CS61A - List Cycle Iterator - Mark Miyashita
   
 </title>
 
@@ -459,7 +459,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Insert Into Binary Search Tree</h3>
+  <h3>List Cycle Iterator</h3>
 </div>
 
 
@@ -467,16 +467,26 @@ woopra.track('pv', {
 
 
 
-<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+<p>Write an iterator that continues to iterate over a list, infinitely. Once you iterate over an entire list, you should start back at the first element of the input list.</p>
 
-<p>In this problem we are going to be inserting an item into a binary search tree. Recall that a binary search tree means that all items on the left of the tree are less than the current entry and all items on the right of the tree are greater than the current entry. Note: We cannot insert into an empty tree because of our implementation. Since we are using None as our empty tree, we can’t add a <code>.entry</code> to None because it is not an object. This function should still work for all other trees though.</p>
-
-<pre><code>def insert(item, tree):
+<pre><code>class ListCycle(object):
     """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; insert(2, t)
-    &gt;&gt;&gt; t
-    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; m = ListCycle([1, 2, 3])
+    &gt;&gt;&gt; for i in m:
+    ...     print(i)
+    ...
+    1
+    2
+    3
+    1
+    2
+    3
+    1
+    2
+    3
+    ...
+    ...
+    ...
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -485,25 +495,19 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def insert(item, tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; insert(2, t)
-    &gt;&gt;&gt; t
-    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
-    """
-    if tree is None:
-        return
-    elif item &lt; tree.entry:
-        if tree.left:
-            insert(item, tree.left)
-        else:
-            tree.left = Tree(item)
-    else:
-        if tree.right:
-            insert(item, tree.right)
-        else:
-            tree.right = Tree(item)
+  <pre><code>class ListCycle(object):
+
+    def __init__(self, lst):
+        self.lst = lst
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        item = self.lst[self.index]
+        self.index = (self.index + 1) % len(self.lst)
+        return item
 </code></pre>
 
 </div>
