@@ -1078,6 +1078,19 @@ cs_classes:
                 date: "2013-12-03"
                 published: true
                 solution: true
+        - name: "List Cycle Iterator"
+          file: list_cycle_iterator
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-12"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-12"
+                published: true
+                solution: true
 
     declarative_programming:
       semesters: []
