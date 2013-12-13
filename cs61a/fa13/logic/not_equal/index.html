@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Finding the Greatest Common Divisor - Mark Miyashita
+    CS61A - Implementing Not Equal in Logic - Mark Miyashita
   
 </title>
 
@@ -459,7 +459,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Finding the Greatest Common Divisor</h3>
+  <h3>Implementing Not Equal in Logic</h3>
 </div>
 
 
@@ -467,29 +467,33 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that computes the greatest common divisor between <code>x</code> and <code>y</code>. Hint: Use <code>mod</code>. If you want another hint, check out <a href="http://en.wikipedia.org/wiki/Euclidean_algorithm">Euclid’s Algorithm</a>.</p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<pre><code>def gcd(x, y):
-    """
-    &gt;&gt;&gt; gcd(20, 4)
-    4
-    &gt;&gt;&gt; gcd(21, 81)
-    3
-    """
-    "***YOUR CODE HERE***"
+<p>Write facts to define <code>not-equal</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>not-equal</code> relates two numbers and displays <code>Success!</code> if the first number is not equal to the second number. Currently, not equal only works with numbers.</p>
+
+<pre><code>(fact (not-equal ; YOUR CODE HERE))
+
+(query (not-equal 5 1))
+; expect Success!
+
+(query (not-equal 3 3))
+; expect Failed.
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def gcd(x, y):
-    if y == 0:
-        return x
-    return gcd(y, x % y)
+  <pre><code>(fact (not-equal ?x ?y)
+      (sub ?x ?y ?num)
+      (greater-than-or-equal ?num 1))
+
+(fact (not-equal ?x ?y)
+      (sub ?y ?x ?num)
+      (greater-than-or-equal ?num 1))
 </code></pre>
 
-  <p>This problem takes a little bit of math intuition. If you pay close attention, you’ll notice that the <code>mod</code> operator actually helps us find the greatest common divisor. The reason is because when <code>mod</code> returns <code>0</code>, we’ve successfully found out that those two numbers are divisible by one another. That means that they are in fact divisors. Since we’re taking the modulo each time, we’re getting closer and closer to zero. Any integer mod 1 is zero so we can use that as our base case. When I’ve exhasuted all of the numbers except 1, I know that there won’t be able possible values that are smaller than 1 and are the <code>gcd</code> of any positive number, so I’ve reached my base case.</p>
+  <p>There are two possible cases that two numbers are not equal. Either the first number is greater than the second or the second is greater than the first. So, we must define two facts to account for each of these cases. In both cases, we subtract one from the other and if that result is greater than or equal to 1, then they are different and we should display <code>Success!</code>.</p>
 
 </div>
 
