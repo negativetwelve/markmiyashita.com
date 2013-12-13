@@ -1229,6 +1229,19 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+        - name: "Double List in Logic"
+          file: double_list
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-13"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-13"
+                published: true
+                solution: true
 
     unification:
       semesters: []
