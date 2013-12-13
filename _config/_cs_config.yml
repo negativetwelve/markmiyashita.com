@@ -1091,6 +1091,19 @@ cs_classes:
                 date: "2013-12-12"
                 published: true
                 solution: true
+        - name: "Range Iterator"
+          file: range_iterator
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-12"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-12"
+                published: true
+                solution: true
 
     declarative_programming:
       semesters: []
