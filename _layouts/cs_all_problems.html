@@ -67,7 +67,7 @@ layout: cs_course
     {% if site.custom_posts[class_name][semester][topic].problems.size > 0 %}
       {% for cs_post in site.custom_posts[class_name][semester][topic].problems reversed %}
         {% if cs_post.semester == semester %}
-          <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a> <span class="badge">{{ cs_post.topic | titleize }}</span></li>
+        <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a> {% if cs_post.type == 'Challenge' %}<span class="badge red-badge"> {{ cs_post.type | titleize }}</span>{% endif %} <span class="badge">{{ cs_post.topic | titleize }}</span></li>
         {% endif %}
       {% endfor %}
     {% endif %}
