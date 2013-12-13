@@ -62,10 +62,10 @@ layout: cs_course
   </p>
 
   <ul>
-  {% for topic_hash in site.custom_posts[class_name][semester] %}
+  {% for topic_hash in site.custom_posts[class_name][semester] reversed %}
     {% assign topic = topic_hash[0] %}
     {% if site.custom_posts[class_name][semester][topic].problems.size > 0 %}
-      {% for cs_post in site.custom_posts[class_name][semester][topic].problems %}
+      {% for cs_post in site.custom_posts[class_name][semester][topic].problems reversed %}
         {% if cs_post.semester == semester %}
           <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a> <span class="badge">{{ cs_post.topic | titleize }}</span></li>
         {% endif %}
