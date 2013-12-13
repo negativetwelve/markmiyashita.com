@@ -209,7 +209,7 @@ woopra.track('pv', {
 
   
   
-    <li><a href="/cs61a/practice">All Problems and Notes (67)</a></li>
+    <li><a href="/cs61a/practice">All Problems and Notes (68)</a></li>
   
 
   
@@ -440,7 +440,7 @@ woopra.track('pv', {
       
       
       
-        <li><a href="/cs61a/logic">Logic (4)</a></li>
+        <li><a href="/cs61a/logic">Logic (5)</a></li>
       
     
   
@@ -489,8 +489,8 @@ woopra.track('pv', {
   <pre><code>(fact (length () 0))
 
 (fact (length (?first . ?rest) ?num)
-    (increment ?some-num ?num)
-    (length ?rest ?some-num))
+      (increment ?some-num ?num)
+      (length ?rest ?some-num))
 </code></pre>
 
   <p>First we define our base fact. The length of the empty list is 0. Then, in our recursive fact, we break up the list into <code>first</code> and <code>rest</code>. The length of the entire list is the length of the <code>rest</code> incremented by 1. So, we create a temporary variable <code>some-num</code> that relates the length of the <code>rest</code> with the length of the entire list.</p>

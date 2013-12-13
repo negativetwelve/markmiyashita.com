@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Pre Order Traversal of a Binary Tree - Mark Miyashita
+    CS61A - Double List in Logic - Mark Miyashita
   
 </title>
 
@@ -461,7 +461,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Pre Order Traversal of a Binary Tree</h3>
+  <h3>Double List in Logic</h3>
 </div>
 
 
@@ -469,47 +469,30 @@ woopra.track('pv', {
 
 
 
-<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
+<p>Write facts to define <code>double-length</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>double-length</code> releates two lists with the second list being a copy of the first list with every element repeated twice.</p>
 
-<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. Pre Order Traversal is one of them and the algorithm goes like this. First, we will print out or current value, then, we will recursively print out all the values to our left, then recursively print out all the values on the right. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
+<pre><code>(fact (double-list ; YOUR CODE HERE ))
 
-<pre><code>def pre_order_traversal(tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; pre_order_traversal(t)
-    5
-    1
-    4
-    7
-    6
-    8
-    """
-    "***YOUR CODE HERE***"
+(query (double-list (1 2 3) (1 1 2 2 3 3)))
+; expect Success!
+
+(query (length (1 2) ?what))
+; expect Success! ; what: (1 1 2 2)
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def pre_order_traversal(tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; pre_order_traversal(t)
-    5
-    1
-    4
-    7
-    6
-    8
-    """
-    if tree is None:
-        return
-    print(tree.entry)
-    pre_order_traversal(tree.left)
-    pre_order_traversal(tree.right)
+  <pre><code>(fact (double-list () ()))
+
+(fact (double-list (?first . ?rest) (?first ?first . ?new-rest))
+      (double-list ?rest ?new-rest))
 </code></pre>
+
+  <p>In our base fact, we note that the <code>double-list</code> of the empty list is just the empty list. In our recursive case, we focus on breaking up our first list into <code>first</code> and <code>rest</code>, then we note that the second list is just the same as the original with an extra item, <code>first</code> added in the middle.</p>
 
 </div>
 
