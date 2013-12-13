@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Orders of Growth Practice - Mark Miyashita
+    CS61A - Greater Than or Equal to in Logic - Mark Miyashita
   
 </title>
 
@@ -461,7 +461,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Orders of Growth Practice</h3>
+  <h3>Greater Than or Equal to in Logic</h3>
 </div>
 
 
@@ -469,165 +469,42 @@ woopra.track('pv', {
 
 
 
-<p>Given the functions below, analyze the run time of each in Big Theta notation.</p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<pre><code>def factorial(n):
-    if n &lt; 2:
-        return 1
-    return n * factorial(n - 1)
+<p>Write facts to define <code>greater-than-or-equal</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>greater-than-or-equal</code> relates two numbers and displays <code>Success!</code> if the first number is greater than or equal the second the number.</p>
 
-def fib(n):
-    if n &lt; 2:
-        return 1
-    return fib(n - 1) + fib(n - 2)
+<pre><code>(fact (greater-than-or-equal ; YOUR CODE HERE))
 
-def foo(n):
-    while n &gt; 1:
-        print(n)
-        n = n // 2
+(query (greater-than-or-equal 5 1))
+; expect Success!
 
-def bar(n):
-    while n &gt; 1:
-        x = n
-        while x &gt; 1:
-            print(n, x)
-            x -= 1
-        n -= 1
+(query (greater-than-or-equal 1 3))
+; expect Failed.
 
-def baz(n):
-    while n &gt; 1:
-        x = n
-        while x &gt; 1:
-            print(n, x)
-            x = x // 2
-        n -= 1
-
-def buffalo(n):
-    while n &gt; 0:
-        if n % 7 == 0:
-            return n
-        n -= 1
-
-def tricycle(n):
-    sum = 0
-    for i in range(n):
-        for j in range(n):
-          sum += j
-    return sum
-
-def yoyo(n):
-    total, counter = 0, 0
-    for i in range(n):
-        while counter == 0:
-            total += (i + counter)
-            counter += 1
-        return total
-
-def toilet(n):
-    i = n
-    def boss(n):
-        nonlocal i
-        print(n)
-        if i &gt; 0:
-            i -= 1
-            boss(i)
-        return i
-    return boss(n // 2)
+(query (greater-than-or-equal ?what 1))
+; expect Success! ; what: 1 ; what: 2 ; what: 3 ; what: 4 ; what: 5 ; what: 6 ; what: 7 ; what: 8 ; what: 9 ; what: 10 ; what: 11 ; what: 12 ; what: 13
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def factorial(n):
-    if n &lt; 2:
-        return 1
-    return n * factorial(n - 1)
+  <pre><code>(fact (greater-than-or-equal ?x ?y)
+      (add ?y ?something ?x))
 </code></pre>
 
-  <p>Θ(n)</p>
+  <p>There are multiple ways to solve this problem and here’s one of those solutions. First, we note that there isn’t an explicit base case! This is because we have defined the number 0 and the relation <code>add</code>. <code>x</code> is greater than or equal to <code>y</code> if you can find something to <code>add</code> to <code>y</code> to get <code>x</code>. If they are equal, you can add <code>zero</code> to make this relation true.</p>
 
-  <pre><code>def fib(n):
-    if n &lt; 2:
-        return 1
-    return fib(n - 1) + fib(n - 2)
+  <p>Here’s an alternate solution (watch out for hitting the infinite recursion depth):</p>
+
+  <pre><code>(fact (greater-than-or-equal ?a ?a))
+
+(fact (greater-than-or-equal ?x ?y)
+      (increment ?y ?y+1)
+      (greater-than-or-equal ?x ?y+1))
 </code></pre>
 
-  <p>For the sake of this class, this is exponential and approximately Θ(2<sup>n</sup>). It is not exactly Θ(2<sup>n</sup>) and you will learn more about this in CS61B.</p>
-
-  <pre><code>def foo(n):
-    while n &gt; 1:
-        print(n)
-        n = n // 2
-</code></pre>
-
-  <p>Θ(log n)</p>
-
-  <pre><code>def bar(n):
-    while n &gt; 1:
-        x = n
-        while x &gt; 1:
-            print(n, x)
-            x -= 1
-        n -= 1
-</code></pre>
-
-  <p>Θ(n<sup>2</sup>)</p>
-
-  <pre><code>def baz(n):
-    while n &gt; 1:
-        x = n
-        while x &gt; 1:
-            print(n, x)
-            x = x // 2
-        n -= 1
-</code></pre>
-
-  <p>Θ(n log n)</p>
-
-  <pre><code>def buffalo(n):
-    while n &gt; 0:
-        if n % 7 == 0:
-            return n
-        n -= 1
-</code></pre>
-
-  <p>Θ(1)</p>
-
-  <pre><code>def tricycle(n):
-    sum = 0
-    for i in range(n):
-        for j in range(n):
-          sum += j
-    return sum
-</code></pre>
-
-  <p>Θ(n<sup>2</sup>)</p>
-
-  <pre><code>def yoyo(n):
-    total, counter = 0, 0
-    for i in range(n):
-        while counter == 0:
-            total += (i + counter)
-            counter += 1
-        return total
-</code></pre>
-
-  <p>Θ(1)</p>
-
-  <pre><code>def toilet(n):
-    i = n
-    def boss(n):
-        nonlocal i
-        print(n)
-        if i &gt; 0:
-            i -= 1
-            boss(i)
-        return i
-    return boss(n // 2)
-</code></pre>
-
-  <p>Θ(n)</p>
+  <p>This solution explicitly defines a base case of when the two numbers are equal. From there, the recursive fact keeps incrementing the second number until it is equivalent to the first. Using this solution, you might not get all of the answers because the logic interpreter might hit the maximum recursion depth, so watch out for that.</p>
 
 </div>
 
