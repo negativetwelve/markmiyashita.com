@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Rules of Environment Diagrams - Mark Miyashita
+    CS61A - All Distinct Elements in Logic - Mark Miyashita
   
 </title>
 
@@ -461,47 +461,44 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h1>Rules of Environment Diagrams</h1>
+  <h3>All Distinct Elements in Logic</h3>
 </div>
 
 
 
 
 
-<ul id="markdown-toc">
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#the-steps">The Steps</a></li>
-</ul>
 
-<h4 id="introduction">Introduction</h4>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<!--start-->
-<p>Environment Diagrams may seem tricky at first but they’re really useful in analyzing how functions are evaluated. If you follow these simple steps, you’ll be able to draw out <em>any</em> environment diagram. As with all things CS-related, practice, practice, practice!
-<!--end--></p>
+<p>Write facts to define <code>all-distinct</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>all-distinct</code> relates any number of elements and displays <code>Success!</code> if all of the elements in the rest of the list are unique. Again, this only works for numbers.</p>
 
-<h4 id="the-steps">The Steps</h4>
+<pre><code>(fact (all-distinct ; YOUR CODE HERE))
 
-<p>Follow these steps below for a successful environment diagram:</p>
+(query (all-distinct 5 1))
+; expect Success!
 
-<ol>
-  <li>Draw the global frame. No questions asked, just draw it.</li>
-  <li>When evaluating assignment statements (lines with a single equals sign), <strong>always</strong>, <strong>always</strong>, <strong>always</strong> remember to evaluate the <strong>right</strong> side first!</li>
-  <li>When you <strong>call</strong> a function, <strong>MAKE A NEW FRAME!</strong></li>
-  <li>When assigning a primitive expression to a variable, write that value directly in the box.</li>
-  <li>When assigning anything else besides a primitive expression to a variable, <strong>draw an arrow</strong> to that value.</li>
-  <li>Bind imported values in the current frame (represent the inside of the function with an ellipsis (…)).</li>
-  <li>When calling a function (see #3), name the frame with the intrinsic name of the function – that is, write the name of the function that your variable points to!</li>
-  <li>The parent frame of a function is the frame in which it was defined in.</li>
-</ol>
+(query (all-distinct 3 2 4 5 6 3))
+; expect Failed.
+</code></pre>
 
-<p>List of things <strong>not</strong> to do:</p>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<ol>
-  <li>Never, ever, ever draw an arrow from one variable to another. Remember, arrows always point to values, not other variables.</li>
-  <li>Don’t draw frames for built-in functions.</li>
-</ol>
+<div class="solution">
 
-<p>Lastly, like I said before, make sure you <a href="/cs61a/environment_diagrams/#problems">practice!</a></p>
+  <pre><code>(fact (all-distinct))
+(fact (all-distinct ?a))
+
+(fact (all-distinct ?first ?second . ?rest)
+      (not-equal ?first ?second)
+      (all-distinct ?first . ?rest)
+      (all-distinct ?second . ?rest))
+</code></pre>
+
+  <p>If there are no elements, then the list is entirely unique. If there is only one element, we’re also guaranteed that it is unique. So, in our recursive fact, we’re guaranteed that there are at least two elements. We break up the elements into three parts. Then, we want to check to make sure that the <code>first</code> and <code>second</code> elements are not equal, then we want to compare the <code>first</code> elements against all of the <code>rest</code> as well as comparing the <code>second</code> element against the <code>rest</code>.</p>
+
+</div>
+
 
 
 <p class="disclaimer">
