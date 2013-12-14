@@ -1242,6 +1242,19 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+        - name: "Reverse a List in Logic"
+          file: reverse
+          type: Warmup
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-13"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-13"
+                published: true
+                solution: true
         - name: "Includes in Logic"
           file: includes
           type: Warmup
