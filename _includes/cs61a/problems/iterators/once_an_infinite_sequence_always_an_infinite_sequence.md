@@ -16,10 +16,12 @@ Now we'll move onto type dispatching. If you haven't already, refresh your memor
 
 We're going to define a generic function `add` that takes in two infinite sequences and produces a generator that represents the two sequences added together. For example, I can input the natural numbers stream and the natural numbers iterator and get back a generator where the first 5 elements are 0, 2, 4, 6, 8. To do this, we will need the `type_tag` function that we generally use for type dispatching.
 
-    def type_tag(x):
-        return type_tag.tags[type(x)]
+{% highlight python %}
+def type_tag(x):
+    return type_tag.tags[type(x)]
 
-    type_tag.tags = {GeneratorType: 'generator', NaturalNumbers: 'iterator', Stream: 'stream'}
+type_tag.tags = {GeneratorType: 'generator', NaturalNumbers: 'iterator', Stream: 'stream'}
+{% endhighlight %}
 
 You can find get the class `GeneratorType` by importing from `types`: `from types import GeneratorType`.
 
