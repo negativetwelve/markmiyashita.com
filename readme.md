@@ -17,10 +17,6 @@ Contains all of the posts that I have written. The directory is split into secti
 
     yyyy-mm-dd-title-of-post.md
 
-### /blog, /contact, /cs61a, /hkn, /new, /projects, /resume, /web_dev
-
-These are the subdirectories that contain the index.html files that represent going to http://markmiyashita/\<directory\>. They utilize the layouts that are established in _layouts and work with content stored in _posts.
-
 ### /downloads
 
 Contains files that may be downloaded by users such as my resume.
