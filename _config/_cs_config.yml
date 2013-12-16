@@ -1156,6 +1156,19 @@ cs_classes:
                 date: "2013-12-12"
                 published: true
                 solution: true
+        - name: "Group By Iterator"
+          file: group_by_iterator
+          type: Challenge
+          tags: []
+          semesters:
+            - base:
+                date: "2013-12-16"
+                published: true
+                solution: true
+              fa13:
+                date: "2013-12-16"
+                published: true
+                solution: true
 
 
     declarative_programming:
