@@ -49,7 +49,7 @@ layout: cs_course
 
   <ul>
   {% for cs_post in site.custom_posts[class_name][semester][topic].problems %}
-    <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a></li>
+    <li><a href="{{ cs_post.clean_url }}">{{ cs_post.name }}</a> {% if cs_post.type == 'Challenge' %}<span class="badge red-badge"> {{ cs_post.type | titleize }}</span>{% endif %}</li>
   {% endfor %}
   </ul>
 {% endif %}
