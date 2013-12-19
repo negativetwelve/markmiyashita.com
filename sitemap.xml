@@ -32,6 +32,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/practice/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/sp13/practice/index.html</loc>
         
     </url>
@@ -88,6 +93,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/basics/what_are_functions/index.html</loc>
+        
+        <lastmod>2013-12-18T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/basics/renaming_functions/index.html</loc>
         
         <lastmod>2013-09-05T00:00:00-07:00</lastmod>
@@ -98,6 +110,13 @@
         <loc>http://markmiyashita.com/cs61a/fa13/basics/renaming_functions/index.html</loc>
         
         <lastmod>2013-09-05T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/basics/renaming_functions/index.html</loc>
+        
+        <lastmod>2013-12-18T00:00:00-08:00</lastmod>
         
     </url>
     
@@ -119,6 +138,13 @@
         <loc>http://markmiyashita.com/cs61a/fa13/basics/getting_started_with_python/index.html</loc>
         
         <lastmod>2013-08-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/basics/getting_started_with_python/index.html</loc>
+        
+        <lastmod>2013-12-18T00:00:00-08:00</lastmod>
         
     </url>
     
@@ -1629,6 +1655,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/basics/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/basics/index.html</loc>
         
     </url>
     
