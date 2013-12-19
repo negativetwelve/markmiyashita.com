@@ -3,7 +3,7 @@ current_semester: fa13
 cs_classes:
   cs61a:
     basics:
-      semesters: [base, su13, fa13]
+      semesters: [base, su13, fa13, sp14]
       problems:
         - name: "What Are Functions?"
           file: what_are_functions
@@ -22,6 +22,10 @@ cs_classes:
                 date: "2013-08-15"
                 published: true
                 solution: true
+              sp14:
+                date: "2013-12-18"
+                published: true
+                solution: true
         - name: "Renaming Functions"
           file: renaming_functions
           type: Warmup
@@ -33,6 +37,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-09-05"
+                published: true
+                solution: true
+              sp14:
+                date: "2013-12-18"
                 published: true
                 solution: true
       notes:
@@ -48,6 +56,9 @@ cs_classes:
                 published: true
               fa13:
                 date: "2013-08-15"
+                published: true
+              sp14:
+                date: "2013-12-18"
                 published: true
 
     functions:
