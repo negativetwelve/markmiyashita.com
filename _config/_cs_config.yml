@@ -68,7 +68,7 @@ cs_classes:
       semesters: []
 
     higher_order_functions:
-      semesters: [base, su13, fa13]
+      semesters: [base, su13, fa13, sp14]
       problems:
         - name: "Functions Inside Functions"
           file: functions_inside_functions
@@ -85,6 +85,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-09-02"
+                published: true
+                solution: true
+              sp14:
+                date: "2013-12-20"
                 published: true
                 solution: true
         - name: "Which Function is Higher Order?"
