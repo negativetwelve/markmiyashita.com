@@ -104,6 +104,10 @@ cs_classes:
                 date: "2013-09-12"
                 published: true
                 solution: true
+              sp14:
+                date: "2013-12-21"
+                published: true
+                solution: true
       notes:
         - name: "Church Numerals"
           file: church_numerals
