@@ -2,6 +2,7 @@
 layout: one_column
 title: Blueprint
 permalink: /blueprint
+skip_about: true
 ---
 # [Cal Blueprint, Technology for Non-Profits](http://calblueprint.org)
 {: .page-header}
