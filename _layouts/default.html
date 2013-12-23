@@ -20,13 +20,15 @@
       {% include e98/navigation.html %}
     {% endif %}
 
-
-    <div class="container bs-docs-container">
-      <div class="row">
-          {{ content }}
+    {% if page.full_page %}
+      {{ content }}
+    {% else %}
+      <div class="container bs-docs-container">
+        <div class="row">
+            {{ content }}
+        </div>
       </div>
-
-    </div>
+    {% endif %}
 
     <footer class="bs-footer" role="contentinfo">
       <p class="copyright">
