@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Comfortaa';
+  src: url('/assets/fonts/Comfortaa-Regular.ttf')
+}
+
+.blueprint-font {
+  font-family: 'Comfortaa';
+  font-weight: 300;
+}
+
+.blueprint-light-blue {
+  color: rgb(82, 185, 233);
+}
+
+.blueprint-dark-blue {
+  color: rgb(27, 117, 188);
+}
+
+#blueprint-main {
+  background: white;
+}
