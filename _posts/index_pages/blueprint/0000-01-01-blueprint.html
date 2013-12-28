@@ -5,15 +5,29 @@ permalink: /blueprint
 full_page: true
 skip_about: true
 ---
+<link href='http://fonts.googleapis.com/css?family=Comfortaa:300,400,700' rel='stylesheet' type='text/css'>
+<link href="{{ page.base_url }}/assets/css/blueprint.css" rel="stylesheet">
+
 <!--
 <div data-0="transform:translate3d(0px, 0px, 0px)" data-500="transform:translate3d(0px, -500px, 0px)">
 -->
-<div id="blueprint-main">
-  <img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width"></img>
+<div id="blueprint-main" class="top-elem">
+  <div class="container full-height">
+    <div class="row full-height">
+      <div class="block full-height">
+        <div class="block-inner">
+          <h1 class="block-title blueprint-font"><span class="blueprint-dark-blue">blue</span>print</h1>
+          <p class="block-description">
+            Technology for Non-Profits
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div id="feature-project" data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
-  <img src="/assets/images/blueprint/retreat_group.jpg" class="full_width"></img>
+<div id="feature-project">
+  <img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width"></img>
 </div>
 
 <div id="make-a-difference" class="feature-text">
@@ -78,3 +92,22 @@ skip_about: true
 <div id="football">
   <img src="/assets/images/blueprint/football.jpg" class="full_width"></img>
 </div>
+
+<script>
+  $(document).ready(function() {
+    setHeights();
+  });
+
+  $(window).resize(function() {
+    setHeights();
+  });
+
+  setHeights = function() {
+    var windowHeight = $(window).height();
+    $("#blueprint-main").height(windowHeight);
+
+    $("#feature-project").data('0', 'transform:translate3d(0px, -500px, 0px)');
+    $("#feature-project").data('1500', 'transform: translate3d(0px, -100px, 0px)');
+// data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
+  };
+</script>
