@@ -5,3 +5,8 @@
 .full_width {
   width: 100%;
 }
+
+.top-elem {
+  position: relative;
+  z-index: 1;
+}
