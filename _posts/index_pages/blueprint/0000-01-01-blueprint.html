@@ -5,7 +5,6 @@ permalink: /blueprint
 full_page: true
 skip_about: true
 ---
-<link href='http://fonts.googleapis.com/css?family=Comfortaa:300,400,700' rel='stylesheet' type='text/css'>
 <link href="{{ page.base_url }}/assets/css/blueprint.css" rel="stylesheet">
 
 <!--
@@ -26,7 +25,7 @@ skip_about: true
   </div>
 </div>
 
-<div id="feature-project">
+<div id="feature-project" data-center="transform:translate3d(0px, 0px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
   <img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width"></img>
 </div>
 
@@ -108,6 +107,7 @@ skip_about: true
 
     $("#feature-project").data('0', 'transform:translate3d(0px, -500px, 0px)');
     $("#feature-project").data('1500', 'transform: translate3d(0px, -100px, 0px)');
+    s.refresh($("#feature-project"));
 // data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
   };
 </script>
