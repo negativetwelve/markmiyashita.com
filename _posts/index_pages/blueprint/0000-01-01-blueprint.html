@@ -25,16 +25,16 @@ skip_about: true
   </div>
 </div>
 
-<div id="feature-project" data-center="transform:translate3d(0px, 0px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
+<div id="feature-project" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
   <img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width"></img>
 </div>
 
-<div id="make-a-difference" class="feature-text">
+<div id="make-a-difference" class="feature-text top-elem">
   <div class="container full-height">
     <div class="row full-height">
       <div class="block full-height">
         <div class="block-inner">
-          <h1 class="block-title">Make a Difference.</h1>
+          <h1 class="block-title blueprint-font">Make a Difference.</h1>
           <p class="block-description">
             Use your engineering skills to help a local or international non-profit.
           </p>
@@ -44,18 +44,16 @@ skip_about: true
   </div>
 </div>
 
-<div class="scroller-filler"></div>
-
-<div id="retreat">
+<div id="retreat" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
   <img src="/assets/images/blueprint/retreat_group.jpg" class="full_width"></img>
 </div>
 
-<div id="build-cool-things" class="feature-text">
+<div id="build-cool-things" class="feature-text top-elem">
   <div class="container full-height">
     <div class="row full-height">
       <div class="block full-height">
         <div class="block-inner">
-          <h1 class="block-title">Build cool things.</h1>
+          <h1 class="block-title blueprint-font">Build cool things.</h1>
           <p class="block-description">
             We like to build cool things. Whether it be a web app, mobile app, or the JSON API in between, we've built it all.
           </p>
@@ -65,18 +63,16 @@ skip_about: true
   </div>
 </div>
 
-<div class="scroller-filler"></div>
-
-<div id="retreat-funny">
+<div id="retreat-funny" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
   <img src="/assets/images/blueprint/retreat_group_funny.jpg" class="full_width"></img>
 </div>
 
-<div id="have-fun" class="feature-text">
+<div id="have-fun" class="feature-text top-elem">
   <div class="container full-height">
     <div class="row full-height">
       <div class="block full-height">
         <div class="block-inner">
-          <h1 class="block-title">Come have a blast with us.</h1>
+          <h1 class="block-title blueprint-font">Come have a blast with us.</h1>
           <p class="block-description">
             In addition to building cool things, we also have a ton of fun together!
           </p>
@@ -86,9 +82,7 @@ skip_about: true
   </div>
 </div>
 
-<div class="scroller-filler"></div>
-
-<div id="football">
+<div id="football" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
   <img src="/assets/images/blueprint/football.jpg" class="full_width"></img>
 </div>
 
@@ -102,12 +96,13 @@ skip_about: true
   });
 
   setHeights = function() {
-    var windowHeight = $(window).height();
+    var windowHeight = $(window).height() - 50;
     $("#blueprint-main").height(windowHeight);
 
-    $("#feature-project").data('0', 'transform:translate3d(0px, -500px, 0px)');
-    $("#feature-project").data('1500', 'transform: translate3d(0px, -100px, 0px)');
     s.refresh($("#feature-project"));
+    s.refresh($("#retreat"));
+    s.refresh($("#retreat-funny"));
+    s.refresh($("#football"));
 // data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
   };
 </script>

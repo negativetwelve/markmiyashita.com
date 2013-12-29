@@ -25,3 +25,41 @@
 #blueprint-main {
   background: white;
 }
+
+.scroller-filler {
+  height: 750px;
+}
+
+.feature-text {
+  height: 500px;
+  background: white;
+}
+
+.block {
+  display: table;
+  vertical-align: middle;
+  table-layout: fixed;
+}
+
+.block-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media(min-width: 992px) and (max-width: 1199px) {
+  .feature-text {
+    height: 350px;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 991px) {
+  .feature-text {
+    height: 200px;
+  }
+}
+
+@media(max-width: 767px) {
+  .feature-text {
+    height: 150px;
+  }
+}
