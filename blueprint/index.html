@@ -19,7 +19,10 @@
 <link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
 <link href="/assets/css/solarized_dark.css" rel="stylesheet">
 
+<link href="/assets/css/default.css" rel="stylesheet">
 <link href="/assets/css/custom.css" rel="stylesheet">
+
+<script src="/assets/js/jquery-1.8.3.min.js"></script>
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -124,36 +127,129 @@ woopra.track('pv', {
 </header>
 
 
-    <div class="bs-header" id="content">
-      <div class="container">
-        <img class="profile-pic" src="/assets/images/mark_miyashita.jpg"></img>
-        <h1>Mark Miyashita</h1>
-        <h4>negativetwelve</h4>
-        <p>
-          <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
-        </p>
+    
+
+    
+
+    
+
+    
+      <div class="full-width">
+  <link href="/assets/css/blueprint.css" rel="stylesheet">
+
+<!--
+<div data-0="transform:translate3d(0px, 0px, 0px)" data-500="transform:translate3d(0px, -500px, 0px)">
+-->
+<div id="blueprint-main" class="top-elem">
+  <div class="container full-height">
+    <div class="row full-height">
+      <div class="block full-height">
+        <div class="block-inner">
+          <h1 class="block-title blueprint-font"><span class="blueprint-dark-blue">blue</span>print</h1>
+          <p class="block-description">
+            Technology for Non-Profits
+          </p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
 
-    
+<div id="feature-project" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
+  <img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width"></img>
+</div>
 
-    
+<div id="make-a-difference" class="feature-text top-elem">
+  <div class="container full-height">
+    <div class="row full-height">
+      <div class="block full-height">
+        <div class="block-inner">
+          <h1 class="block-title blueprint-font">Make a Difference.</h1>
+          <p class="block-description">
+            Use your engineering skills to help a local or international non-profit.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="retreat" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
+  <img src="/assets/images/blueprint/retreat_group.jpg" class="full_width"></img>
+</div>
+
+<div id="build-cool-things" class="feature-text top-elem">
+  <div class="container full-height">
+    <div class="row full-height">
+      <div class="block full-height">
+        <div class="block-inner">
+          <h1 class="block-title blueprint-font">Build cool things.</h1>
+          <p class="block-description">
+            We like to build cool things. Whether it be a web app, mobile app, or the JSON API in between, we've built it all.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="retreat-funny" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
+  <img src="/assets/images/blueprint/retreat_group_funny.jpg" class="full_width"></img>
+</div>
+
+<div id="have-fun" class="feature-text top-elem">
+  <div class="container full-height">
+    <div class="row full-height">
+      <div class="block full-height">
+        <div class="block-inner">
+          <h1 class="block-title blueprint-font">Come have a blast with us.</h1>
+          <p class="block-description">
+            In addition to building cool things, we also have a ton of fun together!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="football" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
+  <img src="/assets/images/blueprint/football.jpg" class="full_width"></img>
+</div>
+
+<script>
+  $(document).ready(function() {
+    setHeights();
+  });
+
+  $(window).resize(function() {
+    setHeights();
+  });
+
+  setHeights = function() {
+    var windowHeight = $(window).height() - 50;
+    $("#blueprint-main").height(windowHeight);
+
+    s.refresh($("#feature-project"));
+    s.refresh($("#retreat"));
+    s.refresh($("#retreat-funny"));
+    s.refresh($("#football"));
+// data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
+  };
+</script>
 
 
-    <div class="container bs-docs-container">
-      <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-  <h1 class="page-header" id="cal-blueprint-technology-for-non-profitshttpcalblueprintorg"><a href="http://calblueprint.org">Cal Blueprint, Technology for Non-Profits</a></h1>
+<script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
 
-<h4 id="our-goal-is-to-make-beautiful-engineering-accessible-and-useful-for-those-who-create-communities-and-promote-public-welfare">Our goal is to make beautiful engineering accessible and useful for those who create communities and promote public welfare.</h4>
-
-<p><img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width" /></p>
+<script>
+  var s = skrollr.init({
+    smoothScrolling: true,
+    forceHeight: true
+  });
+</script>
 
 </div>
 
-      </div>
-
-    </div>
+    
 
     <footer class="bs-footer" role="contentinfo">
       <p class="copyright">
@@ -173,8 +269,7 @@ woopra.track('pv', {
       </ul>
     </footer>
 
-    <script src="/assets/js/jquery-1.8.3.min.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/highlight.pack.js"></script>
 
 <script type="text/javascript">
