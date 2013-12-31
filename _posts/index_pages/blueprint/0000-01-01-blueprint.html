@@ -88,6 +88,11 @@ skip_about: true
 
 <script>
   $(document).ready(function() {
+    s = skrollr.init({
+      smoothScrolling: true,
+      forceHeight: true
+    });
+
     setHeights();
   });
 
@@ -103,6 +108,5 @@ skip_about: true
     s.refresh($("#retreat"));
     s.refresh($("#retreat-funny"));
     s.refresh($("#football"));
-// data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
   };
 </script>
