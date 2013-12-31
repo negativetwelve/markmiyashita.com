@@ -26,10 +26,6 @@
   background: white;
 }
 
-.scroller-filler {
-  height: 750px;
-}
-
 .feature-text {
   height: 500px;
   background: white;
@@ -60,6 +56,6 @@
 
 @media(max-width: 767px) {
   .feature-text {
-    height: 150px;
+    height: 100px;
   }
 }

@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2013-12-29T15:23:18-08:00</updated>
+    <updated>2013-12-31T12:03:42-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -803,7 +803,7 @@ a 5
         <category term="blog" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//blog/how-to-win-a-hackathon"/>
-        <updated>2012-11-22T12:04:00-08:00</updated>
+        <updated>2012-11-22T13:04:00-07:00</updated>
         <id>markmiyashita.com:/blog/how-to-win-a-hackathon</id>
         <content type="html"><![CDATA[<!--start-->
 <p><img src="/assets/images/hackathon.jpg" class="img-border" /></p>
@@ -836,7 +836,7 @@ a 5
         <category term="rails" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//web_dev/rails/setting_up_our_first_app"/>
-        <updated>0000-01-03T00:00:00-08:00</updated>
+        <updated>0000-01-03T00:00:00-07:00</updated>
         <id>markmiyashita.com:/web_dev/rails/setting_up_our_first_app</id>
         <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#section">3.1</a></li>
@@ -858,7 +858,7 @@ a 5
         <category term="rails" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//web_dev/rails/models_views_and_controllers"/>
-        <updated>0000-01-02T00:00:00-08:00</updated>
+        <updated>0000-01-02T00:00:00-07:00</updated>
         <id>markmiyashita.com:/web_dev/rails/models_views_and_controllers</id>
         <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#mvc---an-idea">2.1 MVC - An Idea</a>    <ul>
@@ -910,7 +910,7 @@ to interact with again.</p>
         <title><![CDATA[E98 - Fall 2013 - Week 3 - Study Skills - Learning to Learn]]></title>
         
         <link href="http://markmiyashita.com//e98/week/3"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/e98/week/week-3</id>
         <content type="html"><![CDATA[<h2>E98 - Fall 2013 - Week 3 - Study Skills - Learning to Learn</h2>
 
@@ -932,7 +932,7 @@ to interact with again.</p>
         <title><![CDATA[E98 - Fall 2013 - Week 2 - Extracurricular Activities]]></title>
         
         <link href="http://markmiyashita.com//e98/week/2"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/e98/week/week-2</id>
         <content type="html"><![CDATA[<h2>E98 - Fall 2013 - Week 2 - Extracurricular Activities</h2>
 
@@ -954,7 +954,7 @@ to interact with again.</p>
         <title><![CDATA[E98 - Fall 2013 - Week 1 - Introductions]]></title>
         
         <link href="http://markmiyashita.com//e98/week/1"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/e98/week/week-1</id>
         <content type="html"><![CDATA[<h2>E98 - Fall 2013 - Week 1 - Introductions</h2>
 
@@ -976,7 +976,7 @@ to interact with again.</p>
         <title><![CDATA[E98 - Fall 2013 - All Weeks]]></title>
         
         <link href="http://markmiyashita.com//e98/week"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/e98/week</id>
         <content type="html"><![CDATA[<h2>E98 - Fall 2013 - All Weeks</h2>
 
@@ -1006,7 +1006,7 @@ to interact with again.</p>
         <title><![CDATA[Web Development]]></title>
         
         <link href="http://markmiyashita.com//web_dev"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/web_dev</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="web-development">Web Development</h1>
 
@@ -1025,7 +1025,7 @@ to interact with again.</p>
         <title><![CDATA[Resume]]></title>
         
         <link href="http://markmiyashita.com//resume"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/resume</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="resume">Resume</h1>
 
@@ -1173,7 +1173,7 @@ to interact with again.</p>
         <title><![CDATA[Rails Walkthrough]]></title>
         
         <link href="http://markmiyashita.com//web_dev/rails"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/web_dev/rails</id>
         <content type="html"><![CDATA[
 <h2 class="no_toc" id="rails-walkthrough">Rails Walkthrough</h2>
@@ -1262,7 +1262,7 @@ to interact with again.</p>
         <title><![CDATA[Projects]]></title>
         
         <link href="http://markmiyashita.com//projects"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/projects</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="projects">Projects</h1>
 
@@ -1341,7 +1341,7 @@ to interact with again.</p>
         <title><![CDATA[Interview Practice Problems]]></title>
         
         <link href="http://markmiyashita.com//interviews/problems"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/interviews/problems</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="interview-practice-problems">Interview Practice Problems</h1>
 
@@ -1454,7 +1454,7 @@ email (you can find my email address on the <a href="/contact">contact
         <category term="rails" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//web_dev/rails/introduction_and_purpose"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/web_dev/rails/introduction_and_purpose</id>
         <content type="html"><![CDATA[<ul id="markdown-toc">
   <li><a href="#introduction">1.1 Introduction</a>    <ul>
@@ -1484,7 +1484,7 @@ email (you can find my email address on the <a href="/contact">contact
         <title><![CDATA[Interviews]]></title>
         
         <link href="http://markmiyashita.com//interviews"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/interviews</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="interview-practice">Interview Practice</h1>
 
@@ -1500,7 +1500,7 @@ email (you can find my email address on the <a href="/contact">contact
         <title><![CDATA[HKN]]></title>
         
         <link href="http://markmiyashita.com//hkn"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/hkn</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="hkn-eta-kappa-nu">HKN (Eta Kappa Nu)</h1>
 
@@ -1523,7 +1523,7 @@ email (you can find my email address on the <a href="/contact">contact
         <title><![CDATA[Visualizing Graphs - Mark Miyashita]]></title>
         
         <link href="http://markmiyashita.com//projects/graphs"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/projects/graphs</id>
         <content type="html"><![CDATA[<script src="/assets/js/d3.v3.min.js"></script>
 
@@ -1593,7 +1593,7 @@ function strongly_connected() {
         <title><![CDATA[E98 - Fall 2013]]></title>
         
         <link href="http://markmiyashita.com//e98"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/e98</id>
         <content type="html"><![CDATA[<h2>E98 - Fall 2013</h2>
 
@@ -1625,7 +1625,7 @@ function strongly_connected() {
         <category term="cs70" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs70"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs70</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS70 - Discrete Mathematics and Probability - UC Berkeley</h2>
 
@@ -1643,7 +1643,7 @@ function strongly_connected() {
         <category term="cs61c" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61c"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61c</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS61C - C, Mips, and Computer Architecture - UC Berkeley</h2>
 
@@ -1661,7 +1661,7 @@ function strongly_connected() {
         <category term="cs61b" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61b"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61b</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS61B - Data Structures - UC Berkeley</h2>
 
@@ -1687,7 +1687,7 @@ function strongly_connected() {
         <category term="su13" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61a/su13"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a/cs61a-su13</id>
         <content type="html"><![CDATA[<h2 id="cs61a-summer-2013">CS61A Summer 2013</h2>
 
@@ -1734,7 +1734,7 @@ Discussion 106 - TTh 8-9:30pm - 320 Soda</p>
         <category term="sp14" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61a/sp14"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a/cs61a-sp14</id>
         <content type="html"><![CDATA[<h2 id="cs61a-spring-2014">CS61A Spring 2014</h2>
 
@@ -1783,7 +1783,7 @@ Discussion 106 - TTh 8-9:30pm - 320 Soda</p>
         <category term="sp13" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61a/sp13"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a/cs61a-sp13</id>
         <content type="html"><![CDATA[<h2 id="cs61a-spring-2013">CS61A Spring 2013</h2>
 
@@ -1831,7 +1831,7 @@ Lab/Disc 27 - TTh 9:30am-11am</p>
         <category term="fa13" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61a/fa13"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a/cs61a-fa13</id>
         <content type="html"><![CDATA[<h2 id="cs61a-fall-2013">CS61A Fall 2013</h2>
 
@@ -1888,7 +1888,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <category term="cs61a" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs61a"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs61a</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS61A - Structure and Interpretations of Computer Programs - UC Berkeley</h2>
 
@@ -1918,7 +1918,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <category term="cs188" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs188"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs188</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS188 - Artificial Intelligence - UC Berkeley</h2>
 
@@ -1936,7 +1936,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <category term="cs170" scheme="http://www.sixapart.com/ns/types#tag" />
         
         <link href="http://markmiyashita.com//cs170"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/cs170</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS170 - Algorithms - UC Berkeley</h2>
 
@@ -1952,7 +1952,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <title><![CDATA[Contact]]></title>
         
         <link href="http://markmiyashita.com//contact"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/contact</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="contact">Contact</h1>
 
@@ -1988,7 +1988,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <title><![CDATA[Blueprint]]></title>
         
         <link href="http://markmiyashita.com//blueprint"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/blueprint</id>
         <content type="html"><![CDATA[<link href="/assets/css/blueprint.css" rel="stylesheet">
 
@@ -2073,6 +2073,11 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
 
 <script>
   $(document).ready(function() {
+    s = skrollr.init({
+      smoothScrolling: true,
+      forceHeight: true
+    });
+
     setHeights();
   });
 
@@ -2088,7 +2093,6 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
     s.refresh($("#retreat"));
     s.refresh($("#retreat-funny"));
     s.refresh($("#football"));
-// data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
   };
 </script>
 ]]></content>
@@ -2102,7 +2106,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <title><![CDATA[Blog]]></title>
         
         <link href="http://markmiyashita.com//blog"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
+        <updated>0000-01-01T00:00:00-07:00</updated>
         <id>markmiyashita.com:/blog</id>
         <content type="html"><![CDATA[<h1 class="page-header" id="blog">Blog</h1>
 

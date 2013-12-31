@@ -218,6 +218,11 @@ woopra.track('pv', {
 
 <script>
   $(document).ready(function() {
+    s = skrollr.init({
+      smoothScrolling: true,
+      forceHeight: true
+    });
+
     setHeights();
   });
 
@@ -233,19 +238,11 @@ woopra.track('pv', {
     s.refresh($("#retreat"));
     s.refresh($("#retreat-funny"));
     s.refresh($("#football"));
-// data-250="transform:translate3d(0px, -500px, 0px)" data-1500="transform:translate3d(0px, -100px, 0px)">
   };
 </script>
 
 
 <script type="text/javascript" src="/assets/js/skrollr.min.js"></script>
-
-<script>
-  var s = skrollr.init({
-    smoothScrolling: true,
-    forceHeight: true
-  });
-</script>
 
 </div>
 
