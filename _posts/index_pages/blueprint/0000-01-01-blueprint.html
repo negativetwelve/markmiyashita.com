@@ -94,16 +94,20 @@ skip_about: true
     });
 
     setHeights();
+    refreshElements();
   });
 
   $(window).resize(function() {
     setHeights();
+    refreshElements();
   });
 
   setHeights = function() {
     var windowHeight = $(window).height() - 50;
     $("#blueprint-main").height(windowHeight);
+  };
 
+  refreshElements = function() {
     s.refresh($("#feature-project"));
     s.refresh($("#retreat"));
     s.refresh($("#retreat-funny"));
