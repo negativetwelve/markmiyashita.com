@@ -27,7 +27,7 @@
 }
 
 .feature-text {
-  height: 500px;
+  height: 350px;
   background: white;
 }
 
@@ -44,7 +44,7 @@
 
 @media(min-width: 992px) and (max-width: 1199px) {
   .feature-text {
-    height: 350px;
+    height: 300px;
   }
 }
 

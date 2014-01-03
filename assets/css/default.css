@@ -10,3 +10,7 @@
   position: relative;
   z-index: 1;
 }
+
+.relative {
+  position: relative;
+}
