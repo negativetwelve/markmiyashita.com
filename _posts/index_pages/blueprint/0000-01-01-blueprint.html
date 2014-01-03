@@ -7,9 +7,6 @@ skip_about: true
 ---
 <link href="{{ page.base_url }}/assets/css/blueprint.css" rel="stylesheet">
 
-<!--
-<div data-0="transform:translate3d(0px, 0px, 0px)" data-500="transform:translate3d(0px, -500px, 0px)">
--->
 <div id="blueprint-main" class="top-elem">
   <div class="container full-height">
     <div class="row full-height">
@@ -25,16 +22,7 @@ skip_about: true
   </div>
 </div>
 
-<!--
-<div id="feature-project" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
-
-<div id="feature-project" class="relative" data-stellar-ratio="0.75">
-  <img src="/assets/images/blueprint/calblueprint.jpg" alt="Blueprint" class="full_width"></img>
-</div>
--->
-
-<div class="relative" data-image="/assets/images/blueprint/calblueprint.jpg">
-</div>
+<div class="relative" data-image="/assets/images/blueprint/calblueprint.jpg"></div>
 
 <div id="make-a-difference" class="feature-text top-elem">
   <div class="container full-height">
@@ -51,16 +39,7 @@ skip_about: true
   </div>
 </div>
 
-<!--
-<div id="retreat" class="relative" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
-
-<div id="retreat" class="relative" data-stellar-ratio="0.75">
-  <img src="/assets/images/blueprint/retreat_group.jpg" class="full_width"></img>
-</div>
--->
-
-<div class="relative" data-image="/assets/images/blueprint/retreat_group.jpg">
-</div>
+<div class="relative" data-image="/assets/images/blueprint/retreat_group.jpg"></div>
 
 <div id="build-cool-things" class="feature-text top-elem">
   <div class="container full-height">
@@ -77,14 +56,7 @@ skip_about: true
   </div>
 </div>
 
-<!--
-<div id="retreat-funny" class="relative" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
-  <img src="/assets/images/blueprint/retreat_group_funny.jpg" class="full_width"></img>
-</div>
--->
-
-<div class="relative" data-image="/assets/images/blueprint/retreat_group_funny.jpg">
-</div>
+<div class="relative" data-image="/assets/images/blueprint/retreat_group_funny.jpg"></div>
 
 <div id="have-fun" class="feature-text top-elem">
   <div class="container full-height">
@@ -101,31 +73,24 @@ skip_about: true
   </div>
 </div>
 
-<!--
-<div id="football" class="relative" data-top-bottom="transform:translate3d(0px, 500px, 0px)" data-bottom-top="transform:translate3d(0px, -500px, 0px)">
-  <img src="/assets/images/blueprint/football.jpg" class="full_width"></img>
-</div>
--->
-
-<div class="relative" data-image="/assets/images/blueprint/football.jpg">
-</div>
+<div class="relative" data-image="/assets/images/blueprint/football.jpg"></div>
 
 <script>
   $(document).ready(function() {
     setHeights();
 
     $('.relative').imageScroll({
-      image: null, // The image to show.
-      imageAttribute: 'image', // The data attribute name for images. Uses the value of this attribute to load the image.
-      container: $('body'), // The element to which the parallax image(s) will be attached to.
-      speed: 0.2, // The speed of the parallax effect. 
-      coverRatio: 0.75, // How many percent of the screen each image should cover. 
-      holderMinHeight: 200, // The minimum height of the image in pixels.
-      extraHeight: 0, // Extra height added to the image. 
-      mediaWidth: 1350, // The original width of the image.
-      mediaHeight: 900, // The original height of the image.
-      parallax: true, // Whether or not you want the parallax effect.
-      touch: false // Presents a mobile/tablet friendly version, no parallax effect and smaller images (should be used with a mobile/tablet optimized image)
+      image: null,
+      imageAttribute: 'image',
+      container: $('body'),
+      speed: 0.2,
+      coverRatio: 0.75,
+      holderMinHeight: 200,
+      extraHeight: 0,
+      mediaWidth: 1350,
+      mediaHeight: 900,
+      parallax: true,
+      touch: false
     });
   });
 
