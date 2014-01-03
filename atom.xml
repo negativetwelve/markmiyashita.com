@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2014-01-02T23:33:46-07:00</updated>
+    <updated>2014-01-02T23:39:42-07:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -1892,7 +1892,7 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
         <id>markmiyashita.com:/cs61a</id>
         <content type="html"><![CDATA[<h2 id="extra_problems">CS61A - Structure and Interpretations of Computer Programs - UC Berkeley</h2>
 
-<p class="alert alert-success">Looking for a specific semester of the course? Check out the most recent semester: <a href="/cs61a/fa13" class="alert-link">Fall 2013</a></p>
+<p class="alert alert-success">Looking for a specific semester of the course? Check out the most recent semester: <a href="/cs61a/sp14" class="alert-link">Spring 2014</a></p>
 
 <p>This is the first course in the CS61 series at UC Berkeley. The course focuses on the ideas of abstraction, program complexity, functional programming, object-oriented programming, and more. The language used in the course is Python although this course is not designed to focus primarily on the language. Students go through many different topics to expose them to many key ideas in computer science.</p>
 
