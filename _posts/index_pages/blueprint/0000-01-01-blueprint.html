@@ -79,9 +79,11 @@ skip_about: true
   $(document).ready(function() {
     setHeights();
 
+    var touch = Modernizr.touch;
     $(".relative").imageScroll({
       mediaWidth: 1350,
-      mediaHeight: 900
+      mediaHeight: 900,
+      touch: touch
     });
   });
 
