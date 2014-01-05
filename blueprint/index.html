@@ -136,6 +136,7 @@ woopra.track('pv', {
     
       <div class="full-width">
   <script type="text/javascript" src="/assets/js/imageScroll.js"></script>
+<script type="text/javascript" src="/assets/js/modernizr.js"></script>
 
 <link href="/assets/css/blueprint.css" rel="stylesheet">
 
@@ -144,7 +145,7 @@ woopra.track('pv', {
     <div class="row full-height">
       <div class="block full-height">
         <div class="block-inner">
-          <h1 class="block-title blueprint-font"><span class="blueprint-dark-blue">blue</span>print</h1>
+          <h1 class="blueprint-font"><span class="blueprint-dark-blue">blue</span>print</h1>
           <p class="block-description">
             Technology for Non-Profits
           </p>
@@ -211,9 +212,11 @@ woopra.track('pv', {
   $(document).ready(function() {
     setHeights();
 
+    var touch = Modernizr.touch;
     $(".relative").imageScroll({
       mediaWidth: 1350,
-      mediaHeight: 900
+      mediaHeight: 900,
+      touch: touch
     });
   });
 
