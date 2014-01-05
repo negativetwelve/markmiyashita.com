@@ -55,7 +55,11 @@
 }
 
 @media(max-width: 767px) {
+  h1.block-title {
+    font-size: 18px;
+  }
+
   .feature-text {
-    height: 100px;
+    height: 200px;
   }
 }
