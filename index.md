@@ -11,9 +11,7 @@ Hello, I'm Mark, a student at the University of California, Berkeley pursuing a 
 ## Recent Projects
 {: .page-header}
 
-At the most recent hackathon at Yelp, I worked on a team of 4 to create Pound Pong, an iPad app with a JSON API and Arduino RFID scanner that allows you to 'badge' into your ping pong matches using our Yelp badges. From there, your profile is loaded from the server and after your match has finished, you label the winner. From there, we calculate the point difference between the two players using official ping pong rules and compute a rank for your user profile. I worked on the iPad app mainly getting the login flow to work with the RFID scanner.
-
-Between working at Yelp and TAing, I've also been working on an iOS app which communicates with a JSON API to form a dynamic game that involves raising and training creatures! Promo page is coming soon but you can always ask me about it and I always carry around a working demo on my phone.
+This past semester, I led a team of 5 developers in [Blueprint](http://calblueprint.org) to build both a website and a mobile app for the non-profit, [United States Open Music Competition](http://www.usomc.org/). We built a competition management system for their 1,300 participants to sign up, browse, and purchase events to compete in as well as an admin panel that allows administrators full control over almost every aspect of the competition. Check out a preview of the website [here](http://usomc.herokuapp.com/) and if you're interested in the repo, check it out [here](https://github.com/calblueprint/usomc-rails). The mobile component of the project is a judging application that allows USOMC judges to load events and write comments for each of the contestants that participate in a given event. The judges can then provide rankings to the contestants and view a summary page of the event that they just rated. The iOS app and the website communicated through a third component, a JSON API. The iOS repo is located [here](https://github.com/calblueprint/usomc-ios-v2).
 
 ## About This Site
 {: .page-header}
