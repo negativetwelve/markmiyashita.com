@@ -6,7 +6,7 @@ title: Mark Miyashita
 ## About Me
 {: .page-header}
 
-Hello, I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently working at <a href="http://yelp.com">Yelp</a> on the Mobile Team working on building a tool to Analyze and Visualize User Flows. I'm also a <a href="/cs61a">TA for CS61A at UC Berkeley</a>. I am passionate about web development, startups, challenging problems, and hacker culture. You can view my resume <a href="/resume">here</a>, projects <a href="/projects">here</a> and contact me <a href="/contact">here.</a> Enjoy your stay!
+Hello, I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently working at [Yelp](http://yelp.com) on the Mobile Team working on building a tool to Analyze and Visualize User Flows. I'm also a [TA for CS61A at UC Berkeley](/cs61a). I am passionate about web development, startups, challenging problems, and hacker culture. You can view my resume [here](/resume), projects [here](/projects) and contact me [here.](/contact) Enjoy your stay!
 
 ## Recent Projects
 {: .page-header}
@@ -16,4 +16,4 @@ This past semester, I led a team of 5 developers in [Blueprint](/blueprint) to b
 ## About This Site
 {: .page-header}
 
-This site is built using <a href="http://jekyllrb.com/">Jekyll</a>, a static blog generator. It is hosted on <a href="http://github.com">Github</a> using <a href="http://pages.github.com/">Github Pages</a>. You can find the repo for this site <a href="https://github.com/negativetwelve/markmiyashita.com">here</a>. I've provided a readme full of documentation for my website's structure <a href="https://github.com/negativetwelve/markmiyashita.com#readme">here.</a> Lastly, the site is responsive so feel free to play around with the window size and even view on mobile!
+This site is built using [Jekyll](http://jekyllrb.com/), a static blog generator. It is hosted on [Github](http://github.com) using [Github Pages](http://pages.github.com/). You can find the repo for this site [here](https://github.com/negativetwelve/markmiyashita.com). I've provided a readme full of documentation for my website's structure [here](https://github.com/negativetwelve/markmiyashita.com#readme) Lastly, the site is responsive so feel free to play around with the window size and even view on mobile!
