@@ -6,7 +6,7 @@ title: Mark Miyashita
 ## About Me
 {: .page-header}
 
-Hello, I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently working at [Yelp](http://yelp.com) on the Mobile Team working on building a tool to Analyze and Visualize User Flows. I'm also a [TA for CS61A at UC Berkeley](/cs61a). I am passionate about web development, startups, challenging problems, and hacker culture. You can view my resume [here](/resume), projects [here](/projects) and contact me [here.](/contact) Enjoy your stay!
+Hello, I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently working at [Yelp](http://yelp.com) on the Mobile Team working on building a tool to Analyze and Visualize User Flows. You can read about the tool that I built [here](http://engineeringblog.yelp.com/2013/12/yelp-internship-program-summer-2013.html). I'm also a [TA for CS61A at UC Berkeley](/cs61a). I am passionate about web development, startups, challenging problems, and hacker culture. You can view my resume [here](/resume), projects [here](/projects) and contact me [here.](/contact) Enjoy your stay!
 
 ## Recent Projects
 {: .page-header}
