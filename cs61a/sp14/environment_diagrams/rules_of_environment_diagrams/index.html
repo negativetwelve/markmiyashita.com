@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Renaming Functions - Mark Miyashita
+    CS61A - Rules of Environment Diagrams - Mark Miyashita
   
 </title>
 
@@ -433,47 +433,47 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Renaming Functions</h3>
+  <h1>Rules of Environment Diagrams</h1>
 </div>
 
 
 
 
 
+<ul id="markdown-toc">
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#the-steps">The Steps</a></li>
+</ul>
 
-<p>Remember, variables are just names of things. Things can be anything – integers, strings, even functions. Let’s play around with some variables, renaming them, and changing their value. Then we’ll predict what they output.
-What would the following output in Python?</p>
+<h4 id="introduction">Introduction</h4>
 
-<pre><code>&gt;&gt;&gt; f = min
-&gt;&gt;&gt; def f(x):
-...     return x + 1
-...
-&gt;&gt;&gt; max = f
-&gt;&gt;&gt; f, min = min, f
-&gt;&gt;&gt; min(4)
-            #1
-&gt;&gt;&gt; max(4)
-            #2
-</code></pre>
+<!--start-->
+<p>Environment Diagrams may seem tricky at first but they’re really useful in analyzing how functions are evaluated. If you follow these simple steps, you’ll be able to draw out <em>any</em> environment diagram. As with all things CS-related, practice, practice, practice!
+<!--end--></p>
 
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+<h4 id="the-steps">The Steps</h4>
 
-<div class="solution">
+<p>Follow these steps below for a successful environment diagram:</p>
 
-  <ol>
-    <li>5</li>
-    <li>5</li>
-  </ol>
+<ol>
+  <li>Draw the global frame. No questions asked, just draw it.</li>
+  <li>When evaluating assignment statements (lines with a single equals sign), <strong>always</strong>, <strong>always</strong>, <strong>always</strong> remember to evaluate the <strong>right</strong> side first!</li>
+  <li>When you <strong>call</strong> a function, <strong>MAKE A NEW FRAME!</strong></li>
+  <li>When assigning a primitive expression to a variable, write that value directly in the box.</li>
+  <li>When assigning anything else besides a primitive expression to a variable, <strong>draw an arrow</strong> to that value.</li>
+  <li>Bind imported values in the current frame (represent the inside of the function with an ellipsis (…)).</li>
+  <li>When calling a function (see #3), name the frame with the intrinsic name of the function – that is, write the name of the function that your variable points to!</li>
+  <li>The parent frame of a function is the frame in which it was defined in.</li>
+</ol>
 
-  <p>The tricky part here is the line:</p>
+<p>List of things <strong>not</strong> to do:</p>
 
-  <pre><code>&gt;&gt;&gt; f, min = min, f
-</code></pre>
+<ol>
+  <li>Never, ever, ever draw an arrow from one variable to another. Remember, arrows always point to values, not other variables.</li>
+  <li>Don’t draw frames for built-in functions.</li>
+</ol>
 
-  <p>In Python, we <strong>always</strong> evaluate the right side of an assignment before the left. In this case, we evaluate both the function <code>min</code> and the function <code>f</code>. We keep track of what those two variables are pointing to, then we reassign them. In this case, <code>f</code> now points to where <code>min</code> used to point to and <code>min</code> now points to where <code>f</code> points to. So, when we call both <code>min</code> and <code>max</code>, we’re actually just calling the original function <code>f</code>. The original function <code>f</code> simply returns 1 + the value of the input which in this case was four.</p>
-
-</div>
-
+<p>Lastly, like I said before, make sure you <a href="/cs61a/sp14/environment_diagrams/#problems">practice!</a></p>
 
 
 <p class="disclaimer">

@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Renaming Functions - Mark Miyashita
+    CS61A - Higher Order Functions in Environment Diagrams - Mark Miyashita
   
 </title>
 
@@ -433,7 +433,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Renaming Functions</h3>
+  <h3>Higher Order Functions in Environment Diagrams</h3>
 </div>
 
 
@@ -441,36 +441,36 @@ woopra.track('pv', {
 
 
 
-<p>Remember, variables are just names of things. Things can be anything – integers, strings, even functions. Let’s play around with some variables, renaming them, and changing their value. Then we’ll predict what they output.
-What would the following output in Python?</p>
+<p>Note: this problem is quite long. It’s very good practice though and if you can successfully complete this problem, you are pretty csolid on environment diagrams! Draw out the following environment diagram:</p>
 
-<pre><code>&gt;&gt;&gt; f = min
-&gt;&gt;&gt; def f(x):
-...     return x + 1
-...
-&gt;&gt;&gt; max = f
-&gt;&gt;&gt; f, min = min, f
-&gt;&gt;&gt; min(4)
-            #1
-&gt;&gt;&gt; max(4)
-            #2
+<pre><code>def f(x):
+    def y(f):
+        return f(x)
+    return y
+
+def g(x):
+    return f(x)
+
+def h(x):
+    return x * 2
+
+def z(s):
+    return s + 2
+
+y = g(5)
+z = y(z)
+p = y(h)
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>5</li>
-    <li>5</li>
-  </ol>
+  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/sp14/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
 
-  <p>The tricky part here is the line:</p>
+  <p>The number one thing to remember is that when you <strong>call</strong> a function, you always need to make a new frame! And, also remember that functions have to keep track of their parent frames when they are not defined in the global frame. What that means is the nested function <code>y(f)</code> has a parent frame because it’s defined inside of the <code>f</code> frame.</p>
 
-  <pre><code>&gt;&gt;&gt; f, min = min, f
-</code></pre>
-
-  <p>In Python, we <strong>always</strong> evaluate the right side of an assignment before the left. In this case, we evaluate both the function <code>min</code> and the function <code>f</code>. We keep track of what those two variables are pointing to, then we reassign them. In this case, <code>f</code> now points to where <code>min</code> used to point to and <code>min</code> now points to where <code>f</code> points to. So, when we call both <code>min</code> and <code>max</code>, we’re actually just calling the original function <code>f</code>. The original function <code>f</code> simply returns 1 + the value of the input which in this case was four.</p>
+  <iframe width="800" height="1020" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=def+f(x)%3A%0A++++def+y(f)%3A%0A++++++++return+f(x)%0A++++return+y%0A%0Adef+g(x)%3A%0A++++return+f(x)%0A%0Adef+h(x)%3A%0A++++return+x+*+2%0A%0Adef+z(s)%3A%0A++++return+s+%2B+2%0A%0Ay+%3D+g(5)%0Az+%3D+y(z)%0Ap+%3D+y(h)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
 
 </div>
 

@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Renaming Functions - Mark Miyashita
+    CS61A - Nested Functions - Mark Miyashita
   
 </title>
 
@@ -433,7 +433,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Renaming Functions</h3>
+  <h3>Nested Functions</h3>
 </div>
 
 
@@ -441,36 +441,25 @@ woopra.track('pv', {
 
 
 
-<p>Remember, variables are just names of things. Things can be anything – integers, strings, even functions. Let’s play around with some variables, renaming them, and changing their value. Then we’ll predict what they output.
-What would the following output in Python?</p>
+<p>Draw out the following environment diagram:</p>
 
-<pre><code>&gt;&gt;&gt; f = min
-&gt;&gt;&gt; def f(x):
-...     return x + 1
-...
-&gt;&gt;&gt; max = f
-&gt;&gt;&gt; f, min = min, f
-&gt;&gt;&gt; min(4)
-            #1
-&gt;&gt;&gt; max(4)
-            #2
+<pre><code>x = 6
+def x(x):
+    return x + y(x)
+
+def y(x):
+    return x
+
+y(x)(4)
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>5</li>
-    <li>5</li>
-  </ol>
+  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/sp14/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
 
-  <p>The tricky part here is the line:</p>
-
-  <pre><code>&gt;&gt;&gt; f, min = min, f
-</code></pre>
-
-  <p>In Python, we <strong>always</strong> evaluate the right side of an assignment before the left. In this case, we evaluate both the function <code>min</code> and the function <code>f</code>. We keep track of what those two variables are pointing to, then we reassign them. In this case, <code>f</code> now points to where <code>min</code> used to point to and <code>min</code> now points to where <code>f</code> points to. So, when we call both <code>min</code> and <code>max</code>, we’re actually just calling the original function <code>f</code>. The original function <code>f</code> simply returns 1 + the value of the input which in this case was four.</p>
+  <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=x+%3D+6%0Adef+x(x)%3A%0A++++return+x+%2B+y(x)%0A%0Adef+y(x)%3A%0A++++return+x%0A%0Ay(x)(4)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
 
 </div>
 

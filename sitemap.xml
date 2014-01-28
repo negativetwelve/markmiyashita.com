@@ -233,6 +233,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/environment_diagrams/nested_functions/index.html</loc>
+        
+        <lastmod>2014-01-28T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/environment_diagrams/higher_order_functions/index.html</loc>
         
         <lastmod>2013-09-11T00:00:00-07:00</lastmod>
@@ -243,6 +250,13 @@
         <loc>http://markmiyashita.com/cs61a/fa13/environment_diagrams/higher_order_functions/index.html</loc>
         
         <lastmod>2013-09-11T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/environment_diagrams/higher_order_functions/index.html</loc>
+        
+        <lastmod>2014-01-28T00:00:00-08:00</lastmod>
         
     </url>
     
@@ -261,6 +275,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/environment_diagrams/more_higher_order_functions_practice/index.html</loc>
+        
+        <lastmod>2014-01-28T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/environment_diagrams/rules_of_environment_diagrams/index.html</loc>
         
         <lastmod>2013-09-10T00:00:00-07:00</lastmod>
@@ -271,6 +292,13 @@
         <loc>http://markmiyashita.com/cs61a/fa13/environment_diagrams/rules_of_environment_diagrams/index.html</loc>
         
         <lastmod>2013-09-10T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/environment_diagrams/rules_of_environment_diagrams/index.html</loc>
+        
+        <lastmod>2014-01-28T00:00:00-08:00</lastmod>
         
     </url>
     
@@ -292,6 +320,13 @@
         <loc>http://markmiyashita.com/cs61a/fa13/lambdas/what_would_python_print/index.html</loc>
         
         <lastmod>2013-09-16T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/lambdas/what_would_python_print/index.html</loc>
+        
+        <lastmod>2014-01-28T00:00:00-08:00</lastmod>
         
     </url>
     
@@ -1708,6 +1743,11 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/environment_diagrams/index.html</loc>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/environment_diagrams/index.html</loc>
         
     </url>
@@ -1719,6 +1759,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/lambdas/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/lambdas/index.html</loc>
         
     </url>
     

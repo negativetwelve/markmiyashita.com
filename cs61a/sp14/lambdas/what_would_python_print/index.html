@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Renaming Functions - Mark Miyashita
+    CS61A - What Would Python Print? - Mark Miyashita
   
 </title>
 
@@ -433,7 +433,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Renaming Functions</h3>
+  <h3>What Would Python Print?</h3>
 </div>
 
 
@@ -441,36 +441,61 @@ woopra.track('pv', {
 
 
 
-<p>Remember, variables are just names of things. Things can be anything – integers, strings, even functions. Let’s play around with some variables, renaming them, and changing their value. Then we’ll predict what they output.
-What would the following output in Python?</p>
+<p>If we were to type these Python statements and expressions into the interpreter, what would they do? These all either evaluate to a value, an error, or another function. These start out fairly easy and get pretty tough by then end. Remember your rules for evaluating lambdas!</p>
 
-<pre><code>&gt;&gt;&gt; f = min
-&gt;&gt;&gt; def f(x):
-...     return x + 1
-...
-&gt;&gt;&gt; max = f
-&gt;&gt;&gt; f, min = min, f
-&gt;&gt;&gt; min(4)
-            #1
-&gt;&gt;&gt; max(4)
-            #2
+<pre><code>&gt;&gt;&gt; x = lambda: 4
+&gt;&gt;&gt; y = lambda x: x + 3
+&gt;&gt;&gt; z = lambda x: y
+&gt;&gt;&gt; z(4)(1)               #1
+
+&gt;&gt;&gt; z(5)(1)               #2
+
+&gt;&gt;&gt; h = lambda f, g: g(f)
+&gt;&gt;&gt; h(lambda x: x * 2, lambda x: x)(2)      #3
+
+&gt;&gt;&gt; g = lambda f: f(f)
+&gt;&gt;&gt; g(g(lambda x: x))(3)  #4
+
+&gt;&gt;&gt; g(g(lambda x: x))(lambda x: x + 5)(1)   #5
+
+&gt;&gt;&gt; a = lambda b: lambda a: b(a)
+&gt;&gt;&gt; b = lambda b: lambda b: b + 1
+&gt;&gt;&gt; a(b)                #6
+
+&gt;&gt;&gt; a(b)(1)(2)          #7
+
+&gt;&gt;&gt; b(a)(5)             #8
+
+&gt;&gt;&gt; b(a(b))(7)          #9
+
+&gt;&gt;&gt; c = lambda a, b: (b, a)
+&gt;&gt;&gt; b(a(c))(5)          #10
+
+&gt;&gt;&gt; c(a, b)[1](b)(1)(2) #11
+
+&gt;&gt;&gt; c(b(1), b(2))[0](5) #12
 </code></pre>
+
+<p>You can break this question up into subquestions. The first part is numbers 1-2, second part is 3-5, third part is 6-12.</p>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
   <ol>
-    <li>5</li>
-    <li>5</li>
+    <li>4</li>
+    <li>4</li>
+    <li>4</li>
+    <li>3</li>
+    <li>6</li>
+    <li>function</li>
+    <li>3</li>
+    <li>6</li>
+    <li>8</li>
+    <li>6</li>
+    <li>3</li>
+    <li>6</li>
   </ol>
-
-  <p>The tricky part here is the line:</p>
-
-  <pre><code>&gt;&gt;&gt; f, min = min, f
-</code></pre>
-
-  <p>In Python, we <strong>always</strong> evaluate the right side of an assignment before the left. In this case, we evaluate both the function <code>min</code> and the function <code>f</code>. We keep track of what those two variables are pointing to, then we reassign them. In this case, <code>f</code> now points to where <code>min</code> used to point to and <code>min</code> now points to where <code>f</code> points to. So, when we call both <code>min</code> and <code>max</code>, we’re actually just calling the original function <code>f</code>. The original function <code>f</code> simply returns 1 + the value of the input which in this case was four.</p>
 
 </div>
 
