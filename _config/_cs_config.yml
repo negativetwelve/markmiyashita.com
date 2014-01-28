@@ -124,7 +124,7 @@ cs_classes:
                 published: true
 
     environment_diagrams:
-      semesters: [base, fa13]
+      semesters: [base, fa13, sp14]
       problems:
         - name: "Nested Functions"
           file: nested_functions
@@ -137,6 +137,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-09-10"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-01-28"
                 published: true
                 solution: true
         - name: "Higher Order Functions in Environment Diagrams"
@@ -152,6 +156,10 @@ cs_classes:
                 date: "2013-09-11"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-01-28"
+                published: true
+                solution: true
         - name: "More Higher Order Functions Practice"
           file: more_higher_order_functions_practice
           type: Challenge
@@ -165,6 +173,10 @@ cs_classes:
                 date: "2013-09-13"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-01-28"
+                published: true
+                solution: true
       notes:
         - name: "Rules of Environment Diagrams"
           file: rules_of_environment_diagrams
@@ -176,9 +188,12 @@ cs_classes:
               fa13:
                 date: "2013-09-10"
                 published: true
+              sp14:
+                date: "2014-01-28"
+                published: true
 
     lambdas:
-      semesters: [base, su13, fa13]
+      semesters: [base, su13, fa13, sp14]
       problems:
         - name: "What Would Python Print?"
           file: what_would_python_print
@@ -195,6 +210,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-09-16"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-01-28"
                 published: true
                 solution: true
 
