@@ -373,6 +373,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/recursion/sum_digits/index.html</loc>
+        
+        <lastmod>2014-01-31T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/recursion/finding_the_greatest_common_divisor/index.html</loc>
         
         <lastmod>2013-09-19T00:00:00-07:00</lastmod>
@@ -1794,6 +1801,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/recursion/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/recursion/index.html</loc>
         
     </url>
     
