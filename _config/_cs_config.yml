@@ -235,7 +235,7 @@ cs_classes:
                 solution: true
 
     recursion:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       problems:
         - name: "Sum Digits"
           file: sum_digits
@@ -256,6 +256,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-09-04"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-01-31"
                 published: true
                 solution: true
         - name: "Finding the Greatest Common Divisor"
