@@ -275,6 +275,10 @@ cs_classes:
                 date: "2013-09-19"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-02-02"
+                published: true
+                solution: true
         - name: "Longest Length of the Same Character in a String"
           file: longest_length_of_the_same_character_in_a_string
           type: Challenge
