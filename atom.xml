@@ -3,7 +3,7 @@
     <title>Mark Miyashita</title>
     <link href="http://markmiyashita.com/atom.xml" rel="self"/>
     <link href="http://markmiyashita.com"/>
-    <updated>2014-02-03T00:47:18-08:00</updated>
+    <updated>2014-02-03T21:43:43-08:00</updated>
     <id>http://markmiyashita.com/</id>
     
     
@@ -1908,42 +1908,6 @@ Discussion 15 - Thursday 11am - 12:30pm in 229 Dwinelle<br /></p>
     <li>If you’re a lab assistant, check out the FAQ located <a href="/cs61a/lab_assistants/faq">here</a> and a list of my tips <a href="/cs61a/lab_assistants/tips">here!</a></li>
   </ul>
 </div>
-]]></content>
-        <author>
-            <name></name>
-            <url></url>
-        </author>
-    </entry>
-    
-    <entry>
-        <title><![CDATA[CS188]]></title>
-        
-        <category term="cs188" scheme="http://www.sixapart.com/ns/types#tag" />
-        
-        <link href="http://markmiyashita.com//cs188"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
-        <id>markmiyashita.com:/cs188</id>
-        <content type="html"><![CDATA[<h2 id="extra_problems">CS188 - Artificial Intelligence - UC Berkeley</h2>
-
-<p>This is a course about artificial intelligence with an emphasis on the ideas and techniques used to design intelligent computer systems. Throughout the course, you will build autonomous agents that can make decisions based on their environment and optimize for rewards.</p>
-]]></content>
-        <author>
-            <name></name>
-            <url></url>
-        </author>
-    </entry>
-    
-    <entry>
-        <title><![CDATA[CS170]]></title>
-        
-        <category term="cs170" scheme="http://www.sixapart.com/ns/types#tag" />
-        
-        <link href="http://markmiyashita.com//cs170"/>
-        <updated>0000-01-01T00:00:00-08:00</updated>
-        <id>markmiyashita.com:/cs170</id>
-        <content type="html"><![CDATA[<h2 id="extra_problems">CS170 - Algorithms - UC Berkeley</h2>
-
-<p>This class focuses on efficient algorithms and intractable problems. It is designed to give you an introduction to computer science theory with a heavy emphasis solving both solvable and unsolvable problems. Concepts include: graph theory, dynamic programming, linear programming, and NP complete problems.</p>
 ]]></content>
         <author>
             <name></name>
