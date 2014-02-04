@@ -1503,16 +1503,3 @@ cs_classes:
             - base:
                 date: "2013-09-04"
                 published: true
-  cs170:
-  cs188:
-    probability:
-      semesters: []
-      notes:
-        - name: "Random Variables"
-          file: random_variables
-          tags: []
-          semesters:
-            - base:
-                date: "2013-10-18"
-                published: false
-
