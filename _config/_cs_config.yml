@@ -300,6 +300,10 @@ cs_classes:
                 date: "2013-09-16"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-02-05"
+                published: true
+                solution: true
         - name: "Find Secret Using Recursion"
           file: find_secret_using_recursion
           type: Challenge
