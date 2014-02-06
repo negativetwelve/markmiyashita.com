@@ -325,6 +325,10 @@ cs_classes:
                 date: "2013-09-16"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-02-06"
+                published: true
+                solution: true
         - name: "Binary Search"
           file: binary_search
           type: Warmup
