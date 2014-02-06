@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Finding the Greatest Common Divisor - Mark Miyashita
+    CS61A - Find Secret Using Recursion - Mark Miyashita
   
 </title>
 
@@ -423,7 +423,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Finding the Greatest Common Divisor</h3>
+  <h3>Find Secret Using Recursion</h3>
 </div>
 
 
@@ -431,14 +431,19 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that computes the greatest common divisor between <code>x</code> and <code>y</code>. Hint: Use <code>mod</code>. If you want another hint, check out <a href="http://en.wikipedia.org/wiki/Euclidean_algorithm">Euclid’s Algorithm</a>.</p>
+<p>We want to see if the letters within out “secret” can be found, in order, in the given sentence. If it is, we will return back a list of indices that we will use as a secret code. If the secret word’s letters cannot be found within the sentence, then we have failed and should return False. Yes, this problem can be done using iteration instead of recursion, but let’s stick to practicing recursion. Hint: You might want to use a helper.</p>
 
-<pre><code>def gcd(x, y):
+<pre><code>def find_secret(secret, sentence):
     """
-    &gt;&gt;&gt; gcd(20, 4)
-    4
-    &gt;&gt;&gt; gcd(21, 81)
-    3
+    If the individual letters of the secret are in order within the sentence,
+    then the function reutrns the list of indices of those letters. If not, it returns False.
+
+    &gt;&gt;&gt; secret = "mark"
+    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
+    &gt;&gt;&gt; find_secret(secret, sentence)
+    [3, 7, 14, 27]
+    &gt;&gt;&gt; find_secret("hello", sentence)
+    False
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -447,13 +452,34 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def gcd(x, y):
-    if y == 0:
-        return x
-    return gcd(y, x % y)
+  <pre><code>def find_secret(secret, sentence):
+    """
+    If the individual letters of the secret are in order within the sentence,
+    then the function reutrns the list of indices of those letters. If not, it returns False.
+
+    &gt;&gt;&gt; secret = "mark"
+    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
+    &gt;&gt;&gt; find_secret(secret, sentence)
+    [3, 7, 14, 27]
+    &gt;&gt;&gt; find_secret("hello", sentence)
+    False
+    """
+    def helper(secret, sentence, indices, index):
+        if len(secret) == 0:
+            return indices
+        if len(sentence) == 0:
+            return False
+        if secret[0] == sentence[0]:
+            return helper(secret[1:], sentence[1:], indices + [index], index + 1)
+        return helper(secret, sentence[1:], indices, index + 1)
+    return helper(secret, sentence, [], 0)
 </code></pre>
 
-  <p>This problem takes a little bit of math intuition. If you pay close attention, you’ll notice that the <code>mod</code> operator actually helps us find the greatest common divisor. The reason is because when <code>mod</code> returns <code>0</code>, we’ve successfully found out that those two numbers are divisible by one another. That means that they are in fact divisors. Since we’re taking the modulo each time, we’re getting closer and closer to zero. Any integer mod 1 is zero so we can use that as our base case. When I’ve exhasuted all of the numbers except 1, I know that there won’t be able possible values that are smaller than 1 and are the <code>gcd</code> of any positive number, so I’ve reached my base case.</p>
+  <p>If we have a secret that is the empty string, then that automatically exists in our sentence so we return the indices that we have accumulated. If the sentence itself is empty and the secret is not empty, then we have failed and must return False.</p>
+
+  <p>In our recursive cases, we have either found the letter or we have not. If we have found the letter, then we reduce our secret and our sentence by cutting off the first letter. We also increase our index by 1 to move to the next position in the sentence and we also add the current index to our list of indices. </p>
+
+  <p>If we did not find the letter, we just pass through the same secret and we reduce our sentence by one character, keep the indices the same because we didn’t find anything and increase our index by 1. The index just helps us keep track of where we are within the sentence. </p>
 
 </div>
 
