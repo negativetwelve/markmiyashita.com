@@ -350,6 +350,10 @@ cs_classes:
                 date: "2013-09-16"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-02-09"
+                published: true
+                solution: true
         - name: "Merge Sort"
           file: merge_sort
           type: Challenge
