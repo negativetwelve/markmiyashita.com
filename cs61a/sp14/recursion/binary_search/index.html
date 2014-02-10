@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Longest Length of the Same Character in a String - Mark Miyashita
+    CS61A - Binary Search - Mark Miyashita
   
 </title>
 
@@ -423,7 +423,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Longest Length of the Same Character in a String</h3>
+  <h3>Binary Search</h3>
 </div>
 
 
@@ -431,34 +431,17 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that finds the length of the longest contiguous string of the same character and returns that length. Implement it recursively (you probably don’t want to do it iteratively but you’re free to try!) You may use the functions <code>first</code> and <code>rest</code> defined below.</p>
+<p>In this problem, our input is an item and a sorted list. We want to see if the item exists in the list, but we want to do this search in Θ(log n). That means that we cannot create copies of the list, we can’t slice the list, and we can’t just simply iterate through the list. Instead, we will use a technique called binary search. You can find more information about the algorithm <a href="http://en.wikipedia.org/wiki/Binary_search_algorithm">here</a>.</p>
 
-<h5 id="hint-1-you-might-want-to-use-a-helper-function">Hint #1: You might want to use a helper function…</h5>
+<p>The idea is that we will first check the middle item. Based off of the middle item, we will decide if we want to go left or right in the tree. If the middle item is less than our input item, then we will go right. If not, we will go left. Note: a helper function may be useful.</p>
 
-<h5 id="hint-2-your-helper-function-might-want-to-include-the-following-information-maybe-more">Hint #2: Your helper function might want to include the following information (maybe more):</h5>
-
-<pre><code>def helper(word, prev_char, curr_count, curr_max):
-    "***YOUR CODE HERE***"
-</code></pre>
-
-<p>Make sure that your function works on all inputs, including the empty string! Here are the functions <code>first</code> and <code>rest</code> that we have been working with in class.</p>
-
-<pre><code>def first(word):
-    return word[0]
-    
-def rest(word):
-    return word[1:]
-</code></pre>
-
-<pre><code>def find_longest_run(word):
+<pre><code>def binary_search(item, lst):
     """
-    Finds the length of the longest contiguous string
-    of a single character and returns the length.
-
-    &gt;&gt;&gt; find_longest_run("hello")
-    2
-    &gt;&gt;&gt; find_longest_run("helloooo")
-    4
+    &gt;&gt;&gt; l = [1, 4, 5, 8, 10, 12]
+    &gt;&gt;&gt; binary_search(4, l)
+    True
+    &gt;&gt;&gt; binary_search(9, l)
+    False
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -467,27 +450,26 @@ def rest(word):
 
 <div class="solution">
 
-  <pre><code>def helper(word, prev_char, curr_count, curr_max):
-    if len(word) == 0:
-        return curr_max
-    elif first(word) == prev_char:
-        return helper(rest(word), first(word), curr_count + 1, max(curr_count + 1, curr_max))
-    return helper(rest(word), first(word), 1, curr_max)
-
-def find_longest_run(word):
+  <pre><code>def binary_search(item, lst):
     """
-    Finds the length of the longest contiguous string
-    of a single character and returns the length.
-    
-    &gt;&gt;&gt; find_longest_run("hello")
-    2
-    &gt;&gt;&gt; find_longest_run("helloooo")
-    4
+    &gt;&gt;&gt; l = [1, 4, 5, 8, 10, 12]
+    &gt;&gt;&gt; binary_search(4, l)
+    True
+    &gt;&gt;&gt; binary_search(9, l)
+    False
     """
-    return helper(word, "", 0, 0)
+    def helper(item, lst, low, high):
+      if low &gt;= high:
+          return False
+      mid = (low + high) // 2
+      if item == lst[mid]:
+          return True
+      if item &lt; lst[mid]:
+          return helper(item, lst, low, mid - 1)
+      if item &gt; lst[mid]:
+          return helper(item, lst, mid + 1, high)
+    return helper(item, lst, 0, len(lst))
 </code></pre>
-
-  <p>We need to keep track of some information between each recursive call so to make our lives easier, we will implement a helper function that takes in 4 arguments. We will analyze the rest of the word, we will need to compare against the previous character, and we will need to keep track of how long our current run is as well as our current longest run. Once we have that, we can figure out what our base case(s) are. For one, if the word that we are checking doesn’t have any letters left, then there can’t be any characters left to check so we return the <code>curr_max</code> (longest length) that we have found so far. Then, we have two different situations, whether or not the previous character was eqaul to our current character. If it is, then we just add 1 to our <code>curr_count</code> and then compare to see if that new <code>curr_count</code> is greater than our <code>curr_max</code>. If it is, we take the new value. In our other recursive call, we just recurse on the input, but we also set our <code>curr_count</code> to 1 because the characters were not the same so the streak starts over.</p>
 
 </div>
 
