@@ -524,6 +524,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/recursion/merge_sort/index.html</loc>
+        
+        <lastmod>2014-02-12T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/recursion/mutable_reverse_list/index.html</loc>
         
         <lastmod>2013-05-09T00:00:00-07:00</lastmod>
@@ -548,6 +555,13 @@
         <loc>http://markmiyashita.com/cs61a/fa13/recursion/mutable_reverse_list/index.html</loc>
         
         <lastmod>2013-10-01T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/recursion/mutable_reverse_list/index.html</loc>
+        
+        <lastmod>2014-02-12T00:00:00-08:00</lastmod>
         
     </url>
     
