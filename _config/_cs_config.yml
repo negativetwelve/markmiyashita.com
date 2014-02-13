@@ -375,6 +375,10 @@ cs_classes:
                 date: "2013-10-01"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-02-12"
+                published: true
+                solution: true
         - name: "Mutable Reverse List"
           file: mutable_reverse_list
           type: Challenge
@@ -394,6 +398,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-10-01"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-02-12"
                 published: true
                 solution: true
       notes:
