@@ -218,7 +218,7 @@ cs_classes:
                 solution: true
 
     newtons_method:
-      semesters: [base, su13]
+      semesters: [base, su13, sp14]
       problems:
         - name: "Newton's Method Practice"
           file: newtons_method_practice
@@ -231,6 +231,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-06"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-02-13"
                 published: true
                 solution: true
 
