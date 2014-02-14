@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Which Function is Higher Order? - Mark Miyashita
+    CS61A - Newton's Method Practice - Mark Miyashita
   
 </title>
 
@@ -427,7 +427,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Which Function is Higher Order?</h3>
+  <h3>Newton's Method Practice</h3>
 </div>
 
 
@@ -435,52 +435,60 @@ woopra.track('pv', {
 
 
 
-<p>Here we have some functions defined below. Run through and figure out what the following expressions evaluate to. If you have time, draw the environment diagram (it might make the problem easier to solve!) If the expression raises an error, just write ERROR. If the expression returns a function, just write FUNC.</p>
+<p>Recall the following definitions from Newton’s Method from discussion:</p>
 
-<pre><code>x = 3
-y = 5
+<pre><code>def approx_deriv(fn, x, dx=0.00001):
+    return (fn(x+dx)-fn(x))/dx
 
-def f(x):
-    def g(y):
-        return x * y
-    return g
+def newtons_method(fn, guess=1, max_iterations=100):
+    ALLOWED_ERROR_MARGIN = 0.0000001
+    i = 1
+    while abs(fn(guess)) &gt; ALLOWED_ERROR_MARGIN and i &lt;= max_iterations:
+        guess = guess - fn(guess) / approx_deriv(fn, guess)
+        i += 1
+    return guess
+</code></pre>
 
-def h(f, g):
-    return g(x)(y)
+<p>If you don’t understand Newton’s Method at all, be sure to ask your TA during office hours or ask on Piazza.</p>
 
-def g(x):
-    def f(y):
-        return x
-    return f(x)
+<p>We want to write a function that will help us find the roots of the following mathematical equation:</p>
 
-&gt;&gt;&gt; g(5)          #1
+<pre><code>f(x) = x^3 + x + 1
+</code></pre>
 
-&gt;&gt;&gt; f(5)          #2
+<p>Write a function, <code>f</code> that can find the root(s) of the function above.</p>
 
-&gt;&gt;&gt; f(6)(7)       #3
+<pre><code>def f():
+    """Returns at least one root of the equation x^3 + x + 1."""
+    "***YOUR CODE HERE***"
+</code></pre>
 
-&gt;&gt;&gt; h(g, f)       #4
+<p>Now, we want to make this function more general. How can we write a new function <code>g</code> that takes in an argument <code>y</code> and finds the roots of:</p>
 
-&gt;&gt;&gt; g = f(5)
-&gt;&gt;&gt; g(4)          #5
+<pre><code>f(x, y) = x^3 + y + 1
+</code></pre>
 
-&gt;&gt;&gt; h(f, f)       #6
+<p>For any <code>y</code> value.</p>
+
+<pre><code>def g(y):
+    """Returns at least one root of the equation x^3 + y + 1.
+
+    &gt;&gt;&gt; round(g(5), 3)
+    -1.817
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>5</li>
-    <li>FUNC</li>
-    <li>42</li>
-    <li>15</li>
-    <li>20</li>
-    <li>15</li>
-  </ol>
+  <pre><code>def f():
+    return newtons_method(lambda x: x**3 + x + 1
 
-  <p>Remember to label the parent frames when drawing the environment. Also remember that a function’s intrinsic name and the variables that point to it may have differing values.</p>
+def g(y):
+    return newtons_method(lambda x: x**3 + y + 1
+</code></pre>
 
 </div>
 
