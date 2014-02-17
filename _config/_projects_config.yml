@@ -1,16 +1,28 @@
 projects:
+  - name: USOMC Competition Management System and iOS Judging app
+    url: http://usomc.herokuapp.com
+    repo: https://github.com/calblueprint/usomc-rails
+    image:
+    description: Ruby on Rails competition management system with user registration, purchasing events via Stripe, admin panel to manage competitions. iOS app uses JSON API to allow judges to post comments and results to the server.
+
+  - name: Pandagrader
+    url: http://pandagrader.com
+    repo:
+    image:
+    description: Online software for grading exams. I implemented instructor annotations on exams using the Open Layer library.
+
+  - name: iOS Pet Game
+    url:
+    repo: https://github.com/negativetwelve/ios-pet-game
+    image:
+    description: iOS app that I built which has a Rails backend API. Users train and battle pets while buying equipment from the online store.
+
   - name: Pound Pong
     url:
     repo: https://github.com/negativetwelve/ping-pong-ipad
     image:
     modal: pound-pong
     description: Initially, the idea started out as a web app that would keep track of all of the Ping Pong matches that went on at the Yelp office. However, the project quickly transitioned into much more. Using an RFID scanner hooked up to an Arduino which is hooked up to the iPad, we can communicate with the application using our badges which all happen to be RFID. From there, we can 'badge' into our matches and record the winner in a seamless transaction using nothing more than our badges and a single tap to label the winner. Results are sent to a simple Flask server through a JSON API where they are stored in a Mongo Database. This was a project that I worked on with a group of 4 at our semi-annual Yelp hackathon. We had two people working on the Flask server / front-end of the website and two of us (including me) working on the iPad app and getting it to communicate with the RFID scanner.
-
-  - name: iOS game with JSON API
-    url: 
-    repo: 
-    modal: 
-    description: I've been working on an iOS game that has a Rails JSON backend and will eventually have a web component too. Promo video and web page coming soon.
 
   - name: Global Snapshot
     url: http://globalsnapshot.herokuapp.com/
