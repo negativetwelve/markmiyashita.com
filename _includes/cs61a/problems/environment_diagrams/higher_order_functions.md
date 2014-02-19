@@ -1,5 +1,5 @@
 {% capture question %}
-Note: this problem is quite long. It's very good practice though and if you can successfully complete this problem, you are pretty csolid on environment diagrams! Draw out the following environment diagram:
+Note: this problem is quite long. It's very good practice though and if you can successfully complete this problem, you are pretty solid on environment diagrams! Draw out the following environment diagram:
 
     def f(x):
         def y(f):
