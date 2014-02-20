@@ -423,7 +423,7 @@ cs_classes:
                 published: true
 
     rlists:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       problems:
         - name: "Map Rlist"
           file: map_rlist
@@ -440,6 +440,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-17"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-02-20"
                 published: true
                 solution: true
         - name: "Filter Rlist"
