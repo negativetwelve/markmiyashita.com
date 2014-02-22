@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Find Secret Using Recursion - Mark Miyashita
+    CS61A - Filter Rlist - Mark Miyashita
   
 </title>
 
@@ -427,7 +427,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Find Secret Using Recursion</h3>
+  <h3>Filter Rlist</h3>
 </div>
 
 
@@ -435,19 +435,29 @@ woopra.track('pv', {
 
 
 
-<p>We want to see if the letters within out “secret” can be found, in order, in the given sentence. If it is, we will return back a list of indices that we will use as a secret code. If the secret word’s letters cannot be found within the sentence, then we have failed and should return False. Yes, this problem can be done using iteration instead of recursion, but let’s stick to practicing recursion. Hint: You might want to use a helper.</p>
+<p>We want to define a function <code>filter_rlist</code> that takes in a function and an rlist and returns a new rlist that keeps all the items that satisfy the given input function. For this, we will be using the functional representation of our rlists using tuples and we will have the following constructors and selectors to use:</p>
 
-<pre><code>def find_secret(secret, sentence):
+<pre><code>empty_rlist = None
+
+def rlist(first, rest):
+    return (first, rest)
+
+def first(r):
+    return r[0]
+
+def rest(r):
+    return r[1]
+</code></pre>
+
+<pre><code>def filter_rlist(fn, r):
     """
-    If the individual letters of the secret are in order within the sentence,
-    then the function reutrns the list of indices of those letters. If not, it returns False.
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
 
-    &gt;&gt;&gt; secret = "mark"
-    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
-    &gt;&gt;&gt; find_secret(secret, sentence)
-    [3, 7, 14, 27]
-    &gt;&gt;&gt; find_secret("hello", sentence)
-    False
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -456,34 +466,24 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def find_secret(secret, sentence):
+  <pre><code>def filter_rlist(fn, r):
     """
-    If the individual letters of the secret are in order within the sentence,
-    then the function reutrns the list of indices of those letters. If not, it returns False.
+    Takes in a function, fn, and an rlist, r.
+    Returns a new rlist that keeps all the elements
+    that satisfy the given function.
 
-    &gt;&gt;&gt; secret = "mark"
-    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
-    &gt;&gt;&gt; find_secret(secret, sentence)
-    [3, 7, 14, 27]
-    &gt;&gt;&gt; find_secret("hello", sentence)
-    False
+    &gt;&gt;&gt; r = rlist(1, rlist(4, rlist(5, rlist(3, rlist(9, empty_rlist)))))
+    &gt;&gt;&gt; filter_rlist(lambda x: x % 2 == 0, r)
+    (4, None)
     """
-    def helper(secret, sentence, indices, index):
-        if len(secret) == 0:
-            return indices
-        if len(sentence) == 0:
-            return False
-        if secret[0] == sentence[0]:
-            return helper(secret[1:], sentence[1:], indices + [index], index + 1)
-        return helper(secret, sentence[1:], indices, index + 1)
-    return helper(secret, sentence, [], 0)
+    if r == empty_rlist:
+        return r
+    if fn(first(r)):
+        return rlist(first(r), filter_rlist(fn, rest(r)))
+    return filter_rlist(fn, rest(r))
 </code></pre>
 
-  <p>If we have a secret that is the empty string, then that automatically exists in our sentence so we return the indices that we have accumulated. If the sentence itself is empty and the secret is not empty, then we have failed and must return False.</p>
-
-  <p>In our recursive cases, we have either found the letter or we have not. If we have found the letter, then we reduce our secret and our sentence by cutting off the first letter. We also increase our index by 1 to move to the next position in the sentence and we also add the current index to our list of indices. </p>
-
-  <p>If we did not find the letter, we just pass through the same secret and we reduce our sentence by one character, keep the indices the same because we didn’t find anything and increase our index by 1. The index just helps us keep track of where we are within the sentence. </p>
+  <p>Basically, we want to check to see if the first element of our rlist satisfies the input function. If it does, then we need construct a new rlist, keeping the first element, and recursively applying the filter on the rest. If it does not satisfy the function, then we can just recurse on the rest and that will disregard the current element. Finally, our base case is when we have the <code>empty_rlist</code>. When we have an <code>empty_rlist</code>, we don’t have to filter anything else out because we’ve already filtered everything!</p>
 
 </div>
 

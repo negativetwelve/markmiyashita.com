@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Find Secret Using Recursion - Mark Miyashita
+    CS61A - Sort Rlist - Mark Miyashita
   
 </title>
 
@@ -427,7 +427,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Find Secret Using Recursion</h3>
+  <h3>Sort Rlist</h3>
 </div>
 
 
@@ -435,19 +435,15 @@ woopra.track('pv', {
 
 
 
-<p>We want to see if the letters within out “secret” can be found, in order, in the given sentence. If it is, we will return back a list of indices that we will use as a secret code. If the secret word’s letters cannot be found within the sentence, then we have failed and should return False. Yes, this problem can be done using iteration instead of recursion, but let’s stick to practicing recursion. Hint: You might want to use a helper.</p>
+<p>Write a function that sorts an rlist. You might want to look up the <a href="http://en.wikipedia.org/wiki/Insertion_sort">Wikipedia article on Insertion Sort</a> although you are more than welcome to implement any kind of sort you want! Use the <code>first</code> and <code>rest</code> functions that we have defined for rlists and used in class. You may want to define a helper function…</p>
 
-<pre><code>def find_secret(secret, sentence):
+<pre><code>def sort_rlist(r):
     """
-    If the individual letters of the secret are in order within the sentence,
-    then the function reutrns the list of indices of those letters. If not, it returns False.
-
-    &gt;&gt;&gt; secret = "mark"
-    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
-    &gt;&gt;&gt; find_secret(secret, sentence)
-    [3, 7, 14, 27]
-    &gt;&gt;&gt; find_secret("hello", sentence)
-    False
+    Sort an rlist in ascending order.
+    
+    &gt;&gt;&gt; r = rlist(4, rlist(3, rlist(6, rlist(8, rlist(1, empty_rlist)))))
+    &gt;&gt;&gt; sort_rlist(r)
+    (1, (3, (4, (6, (8, None)))))
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -456,34 +452,38 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def find_secret(secret, sentence):
+  <pre><code>def sort_rlist(r):
     """
-    If the individual letters of the secret are in order within the sentence,
-    then the function reutrns the list of indices of those letters. If not, it returns False.
+    Sort an rlist in ascending order.
+    
+    &gt;&gt;&gt; r = rlist(3, rlist(5, rlist(1, rlist(9, rlist(7, None)))))
+    &gt;&gt;&gt; sort_rlist(r)
+    (1, (3, (5, (7, (9, None)))))
+    """
+    if r == empty_rlist:
+        return r
+    return insert(first(r), sort_rlist(rest(r)))
 
-    &gt;&gt;&gt; secret = "mark"
-    &gt;&gt;&gt; sentence = "hi my name is ridiculously karl."
-    &gt;&gt;&gt; find_secret(secret, sentence)
-    [3, 7, 14, 27]
-    &gt;&gt;&gt; find_secret("hello", sentence)
-    False
+def insert(item, r):
     """
-    def helper(secret, sentence, indices, index):
-        if len(secret) == 0:
-            return indices
-        if len(sentence) == 0:
-            return False
-        if secret[0] == sentence[0]:
-            return helper(secret[1:], sentence[1:], indices + [index], index + 1)
-        return helper(secret, sentence[1:], indices, index + 1)
-    return helper(secret, sentence, [], 0)
+    Inserts item into r in sorted order.
+    
+    &gt;&gt;&gt; r = rlist(4, rlist(6, rlist(8, None)))
+    &gt;&gt;&gt; insert(5, r)
+    (4, (5, (6, (8, None))))
+    """
+    if r == empty_rlist:
+        return rlist(item, empty_rlist)
+    if item &lt;= first(r):
+        return rlist(item, r)
+    return rlist(first(r), insert(item, rest(r)))
 </code></pre>
 
-  <p>If we have a secret that is the empty string, then that automatically exists in our sentence so we return the indices that we have accumulated. If the sentence itself is empty and the secret is not empty, then we have failed and must return False.</p>
+  <p>First off, I want to state that this problem was very challenging. If you didn’t get it, don’t fret!</p>
 
-  <p>In our recursive cases, we have either found the letter or we have not. If we have found the letter, then we reduce our secret and our sentence by cutting off the first letter. We also increase our index by 1 to move to the next position in the sentence and we also add the current index to our list of indices. </p>
+  <p>Let’s take a look at what this function is doing and how the <code>insert</code> function works. The <code>insert</code> function takes in an item and an rlist and inserts it as soon as it finds a number in the list that is bigger than it. This means that it assumes that everything before it is already sorted. For example, if our list was (1, (3, (6, (7, None)))) and we want to insert 4, it will first compare itself to 1, then 3, then 6. When it gets to 6, it realizes that it is less than that value and inserts itself just before the 6.</p>
 
-  <p>If we did not find the letter, we just pass through the same secret and we reduce our sentence by one character, keep the indices the same because we didn’t find anything and increase our index by 1. The index just helps us keep track of where we are within the sentence. </p>
+  <p>Now let’s take a look at the actual <code>sort_rlist</code> function. This function will continue to sort the rest of the rlist until it is equal to the empty rlist. At each recursive call, it is inserting the first of the rlist (in the doctest above, it first tries to insert 3) into the correct position <em>of the already sorted rlist</em>. This is the most important fact here. The <code>sort_rlist</code> function does not return the rlist until it has completely finished sorting what it currently has. That means that at each iteration, we are inserting the current item into an already sorted list AND if we correctly insert the current item then the rlist remains sorted. The output if the final sorted rlist.</p>
 
 </div>
 

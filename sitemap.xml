@@ -643,6 +643,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/rlists/filter_rlist/index.html</loc>
+        
+        <lastmod>2014-02-21T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/sort_rlist/index.html</loc>
         
         <lastmod>2013-02-26T00:00:00-08:00</lastmod>
@@ -660,6 +667,13 @@
         <loc>http://markmiyashita.com/cs61a/su13/rlists/sort_rlist/index.html</loc>
         
         <lastmod>2013-07-18T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/rlists/sort_rlist/index.html</loc>
+        
+        <lastmod>2014-02-21T00:00:00-08:00</lastmod>
         
     </url>
     
