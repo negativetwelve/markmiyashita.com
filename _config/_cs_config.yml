@@ -463,6 +463,10 @@ cs_classes:
                 date: "2013-07-17"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-02-21"
+                published: true
+                solution: true
         - name: "Sort Rlist"
           file: sort_rlist
           type: Challenge
@@ -478,6 +482,10 @@ cs_classes:
                 solution: true
               su13:
                 date: "2013-07-18"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-02-21"
                 published: true
                 solution: true
         - name: "Map and Filter Rlist (Object Version)"
