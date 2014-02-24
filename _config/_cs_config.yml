@@ -589,6 +589,9 @@ cs_classes:
               su13:
                 date: "2013-07-10"
                 published: true
+              sp14:
+                date: "2014-02-24"
+                published: true
 
     data_abstraction:
       semesters: []
