@@ -421,6 +421,9 @@ cs_classes:
               fa13:
                 date: "2013-09-19"
                 published: true
+              sp14:
+                date: "2014-02-24"
+                published: true
 
     rlists:
       semesters: [base, sp13, su13, fa13, sp14]
