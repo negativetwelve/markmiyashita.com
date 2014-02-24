@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Which Function is Higher Order? - Mark Miyashita
+    CS61A - Helper Functions - Mark Miyashita
   
 </title>
 
@@ -427,63 +427,44 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Which Function is Higher Order?</h3>
+  <h1>Helper Functions</h1>
 </div>
 
 
 
 
 
+<ul id="markdown-toc">
+  <li><a href="#what-are-helper-functions">What are Helper Functions?</a></li>
+</ul>
 
-<p>Here we have some functions defined below. Run through and figure out what the following expressions evaluate to. If you have time, draw the environment diagram (it might make the problem easier to solve!) If the expression raises an error, just write ERROR. If the expression returns a function, just write FUNC.</p>
+<h4 id="what-are-helper-functions">What are Helper Functions?</h4>
 
-<pre><code>x = 3
-y = 5
+<!--start-->
+<p>Helper functions are useful when you want to extend the amount of parameters that a certain function takes in. Helper functions are generally used to make our lives easier. This occurs most often when working with recursion, especially if you want your function to be tail recursive.
+<!--end--></p>
 
-def f(x):
-    def g(y):
-        return x * y
-    return g
+<p>Let’s take a look at the following function:</p>
 
-def h(f, g):
-    return g(x)(y)
-
-def g(x):
-    def f(y):
-        return x
-    return f(x)
-
-&gt;&gt;&gt; g(5)          #1
-
-&gt;&gt;&gt; f(5)          #2
-
-&gt;&gt;&gt; f(6)(7)       #3
-
-&gt;&gt;&gt; h(g, f)       #4
-
-&gt;&gt;&gt; g = f(5)
-&gt;&gt;&gt; g(4)          #5
-
-&gt;&gt;&gt; h(f, f)       #6
+<pre><code>def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
 </code></pre>
 
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+<p>Let’s say our task is to make this function tail recursive. Recall that the definition of tail recursion in its simplest form is to return the answer that we have accumulated throughout all of the function calls, in the last frame. In regular recursion, we must first recursively create frames until we hit the base case. Then from there, we use the base case to build our answer going back up. In tail recursion, we don’t have the “going back up” stage. </p>
 
-<div class="solution">
+<p>We know that we can’t do this while only taking in a single parameter, n, so we look to create a helper function.</p>
 
-  <ol>
-    <li>5</li>
-    <li>FUNC</li>
-    <li>42</li>
-    <li>15</li>
-    <li>20</li>
-    <li>15</li>
-  </ol>
+<p>Using a helper function can’t ever stop you from solving a problem, as long as you’re using it correctly. In the worst case, you don’t actually need the helper function and you will realize this when some of the parameters of the helper function go unused. The way you determine which extra parameters to include depends on the problem but here are some general tips for deciding what to do:</p>
 
-  <p>Remember to label the parent frames when drawing the environment. Also remember that a function’s intrinsic name and the variables that point to it may have differing values.</p>
+<ul>
+  <li>Am I keeping track of something at each level of recursion like a counter?</li>
+  <li>Is this recursive problem supposed to be tail recursive?</li>
+  <li>Am I supposed to be accumulating a list or value?</li>
+</ul>
 
-</div>
-
+<p>If you look out for those three things, you should be able to identify when a helper function might make your life easier. If you have any mroe questions, please post in the comment below.</p>
 
 
 <p class="disclaimer">
