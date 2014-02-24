@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Sort Rlist - Mark Miyashita
+    CS61A - Rlists As Functions - Mark Miyashita
   
 </title>
 
@@ -427,66 +427,109 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Sort Rlist</h3>
+  <h1>Rlists As Functions</h1>
 </div>
 
 
 
 
 
+<ul id="markdown-toc">
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#data-abstraction">Data Abstraction</a></li>
+  <li><a href="#constructors-and-selectors">Constructors and Selectors</a></li>
+</ul>
 
-<p>Write a function that sorts an rlist. You might want to look up the <a href="http://en.wikipedia.org/wiki/Insertion_sort">Wikipedia article on Insertion Sort</a> although you are more than welcome to implement any kind of sort you want! Use the <code>first</code> and <code>rest</code> functions that we have defined for rlists and used in class. You may want to define a helper function…</p>
+<h4 id="introduction">Introduction</h4>
 
-<pre><code>def sort_rlist(r):
-    """
-    Sort an rlist in ascending order.
-    
-    &gt;&gt;&gt; r = rlist(4, rlist(3, rlist(6, rlist(8, rlist(1, empty_rlist)))))
-    &gt;&gt;&gt; sort_rlist(r)
-    (1, (3, (4, (6, (8, None)))))
-    """
-    "***YOUR CODE HERE***"
+<!--start-->
+<p>What exactly are rlists? rlists are a CS61A abstraction that defines a series of pairs that connect together by accessing the <code>first</code> and <code>rest</code> elements of the pair. We have defined the following constructs for our rlist abstraction:
+<!--end--></p>
+
+<pre><code>empty_rlist = None
+
+def rlist(first, rest):
+    return (first, rest)
+
+def first(r):
+    return r[0]
+
+def rest(r):
+    return r[1]
 </code></pre>
 
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+<p>What does this mean for us? This means that for any rlist, we only have access to the first element of the list and a way to get the rest of the items (which is also an rlist). The idea is simple, but we can do powerful things with rlists.</p>
 
-<div class="solution">
+<h4 id="data-abstraction">Data Abstraction</h4>
 
-  <pre><code>def sort_rlist(r):
+<p>This rlist abstraction is considered an abstraction in the first place because we can change how rlists are stored and accessed. For example, we can define our class as follows and the code that we write (assuming we don’t break any abstraction barriers ourselves) would still work.</p>
+
+<pre><code>empty_rlist = lambda x: None
+
+def rlist(first, rest):
+    return lambda x: (first, rest)
+
+def first(r):
+    return r(None)[0]
+
+def rest(r):
+    return r(None)[1]
+
+def show(r):
+    if r == empty_rlist:
+        return None
+    return (first(r), show(rest(r)))
+</code></pre>
+
+<p>Notice how we had to add a new function, <code>show</code> that takes in an rlist and actually gives us readable output. Otherwise, we would be staring at <code>&lt;function rlist&lt;locals&gt;.&lt;lambda&gt; at 0x1006f07a0&gt;</code> all day because our new abstraction returns functions.</p>
+
+<p>Okay, abstractions aside, let’s figure out how to tackle these rlist problems!</p>
+
+<h4 id="constructors-and-selectors">Constructors and Selectors</h4>
+
+<p><strong>Always, always, always</strong> remember that we only have access to two things in our rlist, the <code>first</code> element, and the rlist that consists of the <code>rest</code> of the elements. Generally, you won’t usually see many nested calls (for example: <code>first(rest(rest()))</code>) because we usually let recursion take care of the actual traversing part.</p>
+
+<p>Let’s walk through an example. Say we wanted to write a function, <code>less_rlist</code> that keeps all elements in the rlist that are less than the given input, <code>n</code>. How would we approach this problem?</p>
+
+<pre><code>def less_rlist(r, n):
     """
-    Sort an rlist in ascending order.
-    
-    &gt;&gt;&gt; r = rlist(3, rlist(5, rlist(1, rlist(9, rlist(7, None)))))
-    &gt;&gt;&gt; sort_rlist(r)
-    (1, (3, (5, (7, (9, None)))))
+    Takes in an rlist, r, and a number n.
+    Returns a new rlist with all the elements from the original
+    rlist that are less than n.
+
+    &gt;&gt;&gt; r = rlist(1, rlist(2, rlist(5, rlist(3, empty_rlist))))
+    &gt;&gt;&gt; less_rlist(r, 3)
+    (1, (2, None))
     """
+</code></pre>
+
+<p>I recommend starting with the base case. Once we figure that out, we know when to stop, and we can focus on getting our input down to that level. For this question, and for most rlists in general, we want to think about our smallest input. For an rlist, that smallest input is the <code>empty_rlist</code>. When we input the <code>empty_rlist</code>, we expect to get back the <code>empty_rlist</code> because all the elements (none in this case) are less than n. So we can now write one of our base cases.</p>
+
+<pre><code>def less_rlist(r, n):
     if r == empty_rlist:
         return r
-    return insert(first(r), sort_rlist(rest(r)))
-
-def insert(item, r):
-    """
-    Inserts item into r in sorted order.
-    
-    &gt;&gt;&gt; r = rlist(4, rlist(6, rlist(8, None)))
-    &gt;&gt;&gt; insert(5, r)
-    (4, (5, (6, (8, None))))
-    """
-    if r == empty_rlist:
-        return rlist(item, empty_rlist)
-    if item &lt;= first(r):
-        return rlist(item, r)
-    return rlist(first(r), insert(item, rest(r)))
 </code></pre>
 
-  <p>First off, I want to state that this problem was very challenging. If you didn’t get it, don’t fret!</p>
+<p>Now we need to determine if there are any more base cases. For this question, we also have to consider the case when the item that we are currently on is less than the number n. What do we need to do when this is true? We need to just continue recursing on the rest of the list while keeping this element in our new rlist. What do we need to do when it’s false? We need to also recurse on the rest of our rlist, BUT, we don’t need to keep the current item and we can just keep going. Let’s write the if case.</p>
 
-  <p>Let’s take a look at what this function is doing and how the <code>insert</code> function works. The <code>insert</code> function takes in an item and an rlist and inserts it as soon as it finds a number in the list that is bigger than it. This means that it assumes that everything before it is already sorted. For example, if our list was (1, (3, (6, (7, None)))) and we want to insert 4, it will first compare itself to 1, then 3, then 6. When it gets to 6, it realizes that it is less than that value and inserts itself just before the 6.</p>
+<pre><code>def less_rlist(r, n):
+    if r == empty_rlist:
+        return r
+    if first(r) &lt; n:
+        return rlist(first(r), less_rlist(rest(r), n))
+</code></pre>
 
-  <p>Now let’s take a look at the actual <code>sort_rlist</code> function. This function will continue to sort the rest of the rlist until it is equal to the empty rlist. At each recursive call, it is inserting the first of the rlist (in the doctest above, it first tries to insert 3) into the correct position <em>of the already sorted rlist</em>. This is the most important fact here. The <code>sort_rlist</code> function does not return the rlist until it has completely finished sorting what it currently has. That means that at each iteration, we are inserting the current item into an already sorted list AND if we correctly insert the current item then the rlist remains sorted. The output if the final sorted rlist.</p>
+<p>The only single element that we can check is the one that we are currently on. The way we access this element is by calling the function, <code>first</code> on our rlist. Like we said above, when this is true, we need to construct an rlist with the first element being in our new rlist and the rest of the rlist is just the result of calling the same function on the rest. By calling the function on the rest of our rlist, we are making our way to the base case. Let’s finish up the function. What do we do in the recursive case? We just call the same function on our rest and we forget about the current element because it does not satisfy the condition of being less than n. Let’s write it.</p>
 
-</div>
+<pre><code>def less_rlist(r, n):
+    if r == empty_rlist:
+        return r
+    if first(r) &lt; n:
+        return rlist(first(r), less_rlist(rest(r), n))
+    return less_rlist(rest(r), n)
+</code></pre>
 
+<p>That wasn’t so bad was it? Try some of the extra recursive rlist questions below!</p>
 
 
 <p class="disclaimer">
