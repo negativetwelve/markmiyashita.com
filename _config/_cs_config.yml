@@ -640,6 +640,9 @@ cs_classes:
               fa13:
                 date: "2013-10-01"
                 published: true
+              sp14:
+                date: "2014-02-25"
+                published: true
 
     object_oriented_programming:
       semesters: [base, sp13, su13, fa13]
