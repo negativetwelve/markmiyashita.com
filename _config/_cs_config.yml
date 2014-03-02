@@ -122,6 +122,9 @@ cs_classes:
               fa13:
                 date: "2013-09-18"
                 published: true
+              sp14:
+                date: "2014-03-01"
+                published: true
 
     environment_diagrams:
       semesters: [base, fa13, sp14]
