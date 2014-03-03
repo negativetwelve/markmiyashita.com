@@ -652,7 +652,7 @@ cs_classes:
                 published: true
 
     object_oriented_programming:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       problems:
         - name: "Pets Own the Owners"
           file: pets_own_the_owners
@@ -673,6 +673,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-10-24"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-03-03"
                 published: true
                 solution: true
       notes:
