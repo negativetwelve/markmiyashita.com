@@ -916,6 +916,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/object_oriented_programming/pets_own_the_owners/index.html</loc>
+        
+        <lastmod>2014-03-03T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/object_oriented_programming/property/index.html</loc>
         
         <lastmod>2013-10-27T00:00:00-07:00</lastmod>
@@ -1983,6 +1990,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/object_oriented_programming/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/object_oriented_programming/index.html</loc>
         
     </url>
     
