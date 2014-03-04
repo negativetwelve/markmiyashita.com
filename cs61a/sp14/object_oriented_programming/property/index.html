@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Functions Inside Functions - Mark Miyashita
+    CS61A - @property -- What does it do and what is it for? - Mark Miyashita
   
 </title>
 
@@ -431,43 +431,87 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Functions Inside Functions</h3>
+  <h1>@property -- What does it do and what is it for?</h1>
 </div>
 
 
 
 
 
+<ul id="markdown-toc">
+  <li><a href="#why">Why?</a></li>
+  <li><a href="#usage">Usage</a></li>
+</ul>
 
-<p>Here we have some functions defined below. Run through and figure out what the two calls at the bottom output and then draw the environment diagram.</p>
+<h4 id="why">Why?</h4>
 
-<pre><code>def f(g, f):
-    return g(f)
+<!--start-->
+<p>A lot of you ask “What is the purpose of @property?” and so I decided to write up a short summary of why we have @property, what it’s used for, and how to use it (correctly). When we define objects, we have several attributes that we can access by using the dot methods associated with our objects. We can access <strong>instance variables</strong> simply by doing <code>my_object.my_instance_variable</code> and we can call a method by doing <code>my_object.call_my_method(...)</code>. We usually define our <strong>instance variables</strong> in our constructors and then modifying them in subsequent methods. However, what happens if I have an <strong>instance variable</strong> that depends on other instance variables? Should I have to modify them both each time? Based on everything else we’ve learned in this class, your intuition should tell you that if you have to do something twice, you’re probably doing something wrong. Let’s explore that idea with @property.
+<!--end--></p>
 
-def foo(g, h):
-    return h * g(h)
+<h4 id="usage">Usage</h4>
 
-def h(i):
-    return 5
+<p>In one sentence, <code>@property</code> is used to declare a method that can act as an instance variable. What that means is that I can define a method that can compute some value dynamically (on-the-fly) and then return it as if I was talking about an instance variable. When we surround a method with <code>@property</code>, we’re changing the syntax of how we access that variable.</p>
 
-f(h, foo)       #1
+<p>Here’s a class that we’re going to use for this note:</p>
 
-f(h, foo(h, 3)) #2
+<pre><code>class Coins:
+
+    def __init__(self, num_pennies, num_nickels):
+        self.num_pennies = num_pennies
+        self.num_nickels = num_nickels
+
+    def value(self):
+        return self.num_pennies + 5 * self.num_nickels
 </code></pre>
 
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+<p>If we instantiate an instance by executing something like:</p>
 
-<div class="solution">
+<pre><code>c = Coins(3, 7)
+</code></pre>
 
-  <ol>
-    <li>5</li>
-    <li>5</li>
-  </ol>
+<p>If we wanted to get the <code>value</code> from the coins, we’d have to call:</p>
 
-  <p>The important thing to note here is the order of evaluation. Remember that you don’t pay attention to the body of a function until you actually call the function AND that you need to evaluate all of your operands before you can apply your operator.</p>
+<pre><code>c.value()
+</code></pre>
 
-</div>
+<p>Here’s the important part. When we see a method, we should immidiately think the following:</p>
 
+<ol>
+  <li>Soemthing on my object is changing because methods imply some sort of mutation or side effect. When you think methods, you should think actions.</li>
+</ol>
+
+<p>When we see an instance variable, such as:</p>
+
+<pre><code>c.num_pennies
+</code></pre>
+
+<p>we should immidiately think that we are accessing some information stored on the object that <em>describes</em> the object rather than mutating it.</p>
+
+<p>With that in mind, let’s look at how <code>@property</code> changes our syntax. Say we surround the <code>value</code> method with <code>@property</code>.</p>
+
+<pre><code> class Coins:
+
+    def __init__(self, num_pennies, num_nickels):
+        self.num_pennies = num_pennies
+        self.num_nickels = num_nickels
+
+    @property
+    def value(self):
+        return self.num_pennies + 5 * self.num_nickels
+</code></pre>
+
+<p>Our original query changes to the following:</p>
+
+<pre><code>c = Coins(3, 7)
+c.value
+</code></pre>
+
+<p>Notice the lack of parenthesis. The whole point of <code>@property</code> is the following:</p>
+
+<p>Sometimes we have a value that can be computed by accessing other instance variables. Instead of defining a new instance variable (which would then have to be modified each time we change an existing instance variable), we simply make a property. A property tells us something about our object and the syntax for calling it is similar to an instance variable.</p>
+
+<p>So, in this example, <code>value</code> tells us something <em>about</em> our coins object, it does not modify our coins or produce some side effect. In this manner, <code>value</code> seems like a perfect candidate for <code>@property</code> because it tells us something <em>about</em> our object meaning it is more like an instance variable rather than a method.</p>
 
 
 <p class="disclaimer">
