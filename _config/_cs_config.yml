@@ -697,6 +697,9 @@ cs_classes:
               fa13:
                 date: "2013-10-27"
                 published: true
+              sp14:
+                date: "2014-03-04"
+                published: true
 
     mutable_data:
       semesters: [base, sp13, su13, fa13, sp14]
