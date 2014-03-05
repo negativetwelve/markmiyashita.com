@@ -1007,6 +1007,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/inheritance/designing_classes_and_using_inheritance/index.html</loc>
+        
+        <lastmod>2014-03-05T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
         
         <lastmod>2013-03-18T00:00:00-07:00</lastmod>
@@ -2047,6 +2054,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/inheritance/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/inheritance/index.html</loc>
         
     </url>
     
