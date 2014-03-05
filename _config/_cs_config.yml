@@ -731,7 +731,7 @@ cs_classes:
                 solution: true
 
     inheritance:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       problems:
         - name: "Designing Classes and Using Inheritance"
           file: designing_classes_and_using_inheritance
@@ -752,6 +752,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-10-24"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-03-05"
                 published: true
                 solution: true
 
