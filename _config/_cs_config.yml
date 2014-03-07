@@ -519,6 +519,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-07"
+                published: true
+                solution: true
         - name: "Sort Rlist (Object Version)"
           file: sort_rlist_object_version
           type: Challenge
