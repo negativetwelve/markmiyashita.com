@@ -536,6 +536,10 @@ cs_classes:
                 date: "2013-10-27"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-09"
+                published: true
+                solution: true
         - name: "Delete Last Item"
           file: delete_last_item
           type: Challenge
