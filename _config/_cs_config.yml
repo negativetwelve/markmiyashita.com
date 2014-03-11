@@ -553,6 +553,10 @@ cs_classes:
                 date: "2013-10-27"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-11"
+                published: true
+                solution: true
         - name: "Mutating Reverse Rlist"
           file: mutating_reverse_rlist
           type: Challenge
