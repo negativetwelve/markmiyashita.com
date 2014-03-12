@@ -570,6 +570,10 @@ cs_classes:
                 date: "2013-10-27"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-11"
+                published: true
+                solution: true
         - name: "Rotate Rlist by k"
           file: rotate_rlist_by_k
           type: Challenge
