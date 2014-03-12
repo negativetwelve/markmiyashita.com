@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Sort Rlist (Object Version) - Mark Miyashita
+    CS61A - Mutating Reverse Rlist - Mark Miyashita
   
 </title>
 
@@ -433,7 +433,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Sort Rlist (Object Version)</h3>
+  <h3>Mutating Reverse Rlist</h3>
 </div>
 
 
@@ -441,15 +441,14 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that sorts an rlist. You might want to look up the <a href="http://en.wikipedia.org/wiki/Insertion_sort">Wikipedia article on Insertion Sort</a> although you are more than welcome to implement any kind of sort you want! Use the Rlist class that we have been using in class. You may want to define a helper function…</p>
+<p>Write a function <code>mutating reverse</code> that takes in an Rlist and mutates it by reversing the elements in the rlist. The function should not return anything and the original input rlist should be mutated. Hint: You might want to make one, possibly two helper functions. If you’re stuck, check out <a href="/cs61a/sp14/recursion/mutable_reverse_list">mutating reverse list</a> for the same sort of function, except over regular lists instead of rlists.</p>
 
-<pre><code>def sort_rlist(r):
+<pre><code>def mutating_reverse(rlist):
     """
-    Sort an rlist in ascending order.
-    
-    &gt;&gt;&gt; r = Rlist(4, Rlist(3, Rlist(6, Rlist(8, Rlist(1)))))
-    &gt;&gt;&gt; sort_rlist(r)
-    Rlist(1, Rlist(3, Rlist(4, Rlist(6, Rlist(8)))))
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; mutating_reverse(r)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(2, Rlist(1)))
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -458,38 +457,51 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def sort_rlist(r):
+  <pre><code>def mutating_reverse(rlist):
     """
-    Sort an rlist in ascending order.
-    
-    &gt;&gt;&gt; r = Rlist(4, Rlist(3, Rlist(6, Rlist(8, Rlist(1)))))
-    &gt;&gt;&gt; sort_rlist(r)
-    Rlist(1, Rlist(3, Rlist(4, Rlist(6, Rlist(8)))))
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; mutating_reverse(r)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(2, Rlist(1)))
     """
-    if r is Rlist.empty:
-        return r
-    return insert(r.first, sort_rlist(r.rest))
+    if rlist is Rlist.empty:
+        return
+    if rlist.rest is not Rlist.empty:
+        item = pop(rlist)
+        mutating_reverse(rlist)
+        insert_beginning(item, rlist)
 
-def insert(item, r):
+def insert_beginning(item, rlist):
     """
-    Inserts item into r in sorted order.
-    
-    &gt;&gt;&gt; r = Rlist(4, Rlist(6, Rlist(8)))
-    &gt;&gt;&gt; insert(5, r)
-    Rlist(4, Rlist(5, Rlist(6, Rlist(8))))
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; insert_beginning(6, r)
+    &gt;&gt;&gt; r
+    Rlist(6, Rlist(1, Rlist(2, Rlist(3))))
     """
-    if r is Rlist.empty:
-        return Rlist(item)
-    if item &lt;= r.first:
-        return Rlist(item, r)
-    return Rlist(r.first, insert(item, r.rest))
+    if rlist is not Rlist.empty:
+        rlist.rest = Rlist(rlist.first, rlist.rest)
+        rlist.first = item
+
+def pop(rlist):
+    """Removes the last item from the rlist and returns it.
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; pop(r)
+    3
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2))
+    """
+    if rlist.rest.rest is Rlist.empty:
+        item = rlist.rest.first
+        rlist.rest = Rlist.empty
+        return item
+    return pop(rlist.rest)
 </code></pre>
 
-  <p>First off, I want to state that this problem was very challenging. If you didn’t get it, don’t fret!</p>
+  <p>That’s a lot of code. Let’s break this problem down. Our general approach to the <code>mutating_reverse</code> function is to <code>pop</code> off the last item of the rlist (which mutates the rlist), reverse the rest of the rlist. Then insert the item that we popped off into the beginning of the reversed rlist.</p>
 
-  <p>Let’s take a look at what this function is doing and how the <code>insert</code> function works. The <code>insert</code> function takes in an item and an rlist and inserts it as soon as it finds a number in the list that is bigger than it. This means that it assumes that everything before it is already sorted. For example, if our list was (1, (3, (6, (7, None)))) and we want to insert 4, it will first compare itself to 1, then 3, then 6. When it gets to 6, it realizes that it is less than that value and inserts itself just before the 6.</p>
+  <p>To do this, we write up two helper functions, <code>insert_beginning</code> and <code>pop</code> which work with rlists to do exactly that. For <code>insert_beginning</code>, we’re going to take in an <code>item</code>, and an <code>rlist</code> and mutate the input rlist by adding <code>item</code> to the beginning of it.</p>
 
-  <p>Now let’s take a look at the actual <code>sort_rlist</code> function. This function will continue to sort the rest of the rlist until it is equal to the empty rlist. At each recursive call, it is inserting the first of the rlist (in the doctest above, it first tries to insert 3) into the correct position <em>of the already sorted rlist</em>. This is the most important fact here. The <code>sort_rlist</code> function does not return the rlist until it has completely finished sorting what it currently has. That means that at each iteration, we are inserting the current item into an already sorted list AND if we correctly insert the current item then the rlist remains sorted. The output if the final sorted rlist.</p>
+  <p>For <code>pop</code>, we’re going to iterate over the rlist until we reach the second to last item. From there, we’re going to grab the item that we want to return, and then mutate the rlist such that it no longer contains that item. Then we are going to return that item.</p>
 
 </div>
 
