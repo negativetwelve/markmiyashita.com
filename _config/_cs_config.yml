@@ -587,6 +587,10 @@ cs_classes:
                 date: "2013-10-28"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-13"
+                published: true
+                solution: true
         - name: "Append Rlists Iteratively"
           file: append_rlists_iteratively
           type: Challenge
