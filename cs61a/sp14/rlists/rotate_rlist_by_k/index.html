@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - @property -- What does it do and what is it for? - Mark Miyashita
+    CS61A - Rotate Rlist by k - Mark Miyashita
   
 </title>
 
@@ -433,87 +433,63 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h1>@property -- What does it do and what is it for?</h1>
+  <h3>Rotate Rlist by k</h3>
 </div>
 
 
 
 
 
-<ul id="markdown-toc">
-  <li><a href="#why">Why?</a></li>
-  <li><a href="#usage">Usage</a></li>
-</ul>
 
-<h4 id="why">Why?</h4>
+<p>Write a function <code>rotate_by_k</code> that takes in an rlist and a number k and rotates the input rlist, k times. One rotation involves taking the first item of the rlist and moving it to the end. This function should mutate the input meaning that it does not return anything and instead modifies the input rlist.</p>
 
-<!--start-->
-<p>A lot of you ask “What is the purpose of @property?” and so I decided to write up a short summary of why we have @property, what it’s used for, and how to use it (correctly). When we define objects, we have several attributes that we can access by using the dot methods associated with our objects. We can access <strong>instance variables</strong> simply by doing <code>my_object.my_instance_variable</code> and we can call a method by doing <code>my_object.call_my_method(...)</code>. We usually define our <strong>instance variables</strong> in our constructors and then modifying them in subsequent methods. However, what happens if I have an <strong>instance variable</strong> that depends on other instance variables? Should I have to modify them both each time? Based on everything else we’ve learned in this class, your intuition should tell you that if you have to do something twice, you’re probably doing something wrong. Let’s explore that idea with @property.
-<!--end--></p>
-
-<h4 id="usage">Usage</h4>
-
-<p>In one sentence, <code>@property</code> is used to declare a method that can act as an instance variable. What that means is that I can define a method that can compute some value dynamically (on-the-fly) and then return it as if I was talking about an instance variable. When we surround a method with <code>@property</code>, we’re changing the syntax of how we access that variable.</p>
-
-<p>Here’s a class that we’re going to use for this note:</p>
-
-<pre><code>class Coins:
-
-    def __init__(self, num_pennies, num_nickels):
-        self.num_pennies = num_pennies
-        self.num_nickels = num_nickels
-
-    def value(self):
-        return self.num_pennies + 5 * self.num_nickels
+<pre><code>def rotate_by_k(rlist, k):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; rotate_by_k(r, 2)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(4, Rlist(1, Rlist(2))))
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
-<p>If we instantiate an instance by executing something like:</p>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<pre><code>c = Coins(3, 7)
+<div class="solution">
+
+  <pre><code>def rotate_by_k(rlist, k):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; rotate_by_k(r, 2)
+    &gt;&gt;&gt; r
+    Rlist(3, Rlist(4, Rlist(1, Rlist(2))))
+    """
+    if rlist is not Rlist.empty and k &gt; 0:
+        item = rlist.first
+        rlist.first = rlist.rest.first
+        rlist.rest = rlist.rest.rest
+        add_to_end(rlist, item)
+        rotate_by_k(rlist, k - 1)
+
+def add_to_end(rlist, item):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; add_to_end(r, 6)
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2, Rlist(3, Rlist(6))))
+    """
+    if rlist.rest is Rlist.empty:
+        rlist.rest = Rlist(item)
+    else:
+        add_to_end(rlist.rest, item)
 </code></pre>
 
-<p>If we wanted to get the <code>value</code> from the coins, we’d have to call:</p>
+  <p>The general idea here is to take off the first item, modify the rlist to remove that item, and then add that item to the end of the rlist. To help us out, we made a helper function <code>add_to_end</code> that takes in an rlist and an item and adds the item to the end of the rlist. Once we have this function, we can simply pop off the first item and then call this function to add it to the end.</p>
 
-<pre><code>c.value()
-</code></pre>
+  <p>Each time we call rotate, we decrease <code>k</code> by 1 until it is eventually 0.</p>
 
-<p>Here’s the important part. When we see a method, we should immidiately think the following:</p>
+</div>
 
-<ol>
-  <li>Soemthing on my object is changing because methods imply some sort of mutation or side effect. When you think methods, you should think actions.</li>
-</ol>
-
-<p>When we see an instance variable, such as:</p>
-
-<pre><code>c.num_pennies
-</code></pre>
-
-<p>we should immidiately think that we are accessing some information stored on the object that <em>describes</em> the object rather than mutating it.</p>
-
-<p>With that in mind, let’s look at how <code>@property</code> changes our syntax. Say we surround the <code>value</code> method with <code>@property</code>.</p>
-
-<pre><code> class Coins:
-
-    def __init__(self, num_pennies, num_nickels):
-        self.num_pennies = num_pennies
-        self.num_nickels = num_nickels
-
-    @property
-    def value(self):
-        return self.num_pennies + 5 * self.num_nickels
-</code></pre>
-
-<p>Our original query changes to the following:</p>
-
-<pre><code>c = Coins(3, 7)
-c.value
-</code></pre>
-
-<p>Notice the lack of parenthesis. The whole point of <code>@property</code> is the following:</p>
-
-<p>Sometimes we have a value that can be computed by accessing other instance variables. Instead of defining a new instance variable (which would then have to be modified each time we change an existing instance variable), we simply make a property. A property tells us something about our object and the syntax for calling it is similar to an instance variable.</p>
-
-<p>So, in this example, <code>value</code> tells us something <em>about</em> our coins object, it does not modify our coins or produce some side effect. In this manner, <code>value</code> seems like a perfect candidate for <code>@property</code> because it tells us something <em>about</em> our object meaning it is more like an instance variable rather than a method.</p>
 
 
 <p class="disclaimer">
