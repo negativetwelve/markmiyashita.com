@@ -734,6 +734,20 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/filter_rlist_method_with_mutation/index.html</loc>
+        
+        <lastmod>2014-03-13T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/rlists/filter_rlist_method_with_mutation/index.html</loc>
+        
+        <lastmod>2014-03-13T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/rlists/sort_rlist_object_version/index.html</loc>
         
         <lastmod>2013-10-27T00:00:00-07:00</lastmod>
@@ -856,6 +870,16 @@
         <loc>http://markmiyashita.com/cs61a/sp14/rlists/rlists_as_functions/index.html</loc>
         
         <lastmod>2014-02-24T00:00:00-08:00</lastmod>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/code/rlist/rlist.py</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/rlists/code/rlist/index.html</loc>
         
     </url>
     

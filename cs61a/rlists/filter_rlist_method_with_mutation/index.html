@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="google-site-verification" content="Sbao2yVur4CMYEsgpErDP5S6uuqaNxw3VOmmtylKbeA" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I'm Mark, a student at the University of California, Berkeley pursuing a degree in Electrical Engineering and Computer Science. I am currently a Software Engineer at Yelp and a TA for CS61A at UC Berkeley.">
+<meta name="author" content="Mark Miyashita">
+<link href="http://feeds.feedburner.com/markmiyashita" rel="alternate" title="Mark Miyashita" type="application/atom+xml">
+
+<title>
+  
+    CS61A - Filter Rlist (as a method) with Mutation - Mark Miyashita
+  
+</title>
+
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+
+<link href="/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/assets/css/main.css" rel="stylesheet">
+<link href="/assets/css/bootstrap-overrides.css" rel="stylesheet">
+<link href="/assets/css/solarized_dark.css" rel="stylesheet">
+
+<link href="/assets/css/default.css" rel="stylesheet">
+<link href="/assets/css/custom.css" rel="stylesheet">
+
+<script src="/assets/js/jquery-1.8.3.min.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="assets/js/html5shiv.js"></script>
+  <script src="assets/js/respond.min.js"></script>
+<![endif]-->
+
+<!-- Start of Google Analytics Code -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-29669299-1']);
+  _gaq.push(['_setDomainName', 'markmiyashita.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- End of Google Analytics Code -->
+
+<!-- Start of Woopra Code -->
+<script>
+(function(){
+  var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identify","visit","push","call"],c=function(){var t,i=this;for(i._e=[],t=0;r.length>t;t++)(function(t){i[t]=function(){return i._e.push([t].concat(Array.prototype.slice.call(arguments,0))),i}})(r[t])};for(n._w=n._w||{},t=0;a.length>t;t++)n._w[a[t]]=n[a[t]]=n[a[t]]||new c;i=o.createElement(s),i.async=1,i.src="//static.woopra.com/js/w.js",e=o.getElementsByTagName(s)[0],e.parentNode.insertBefore(i,e)
+})("woopra");
+
+woopra.config({
+    domain: 'markmiyashita.com',
+    idle_timeout: 600000
+});
+woopra.track('pv', {
+    url: window.location.pathname+window.location.search,
+    title: document.title
+});
+</script>
+<!-- End of Woopra Code -->
+
+
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip navigation</a>
+
+    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/">About</a>
+        </li>
+        <li>
+          <a href="/resume">Resume</a>
+        </li>
+        <li>
+          <a href="/projects">Projects</a>
+        </li>
+        <li>
+          <a href="/blog">Blog</a>
+        </li>
+        <li class="active">
+          <a href="/cs61a/sp14">CS61A</a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More CS Classes <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/cs61b">CS61B - Data Structures</a></li>
+            <li><a href="/cs61c">CS61C - Computer Architecture</a></li>
+            <li><a href="/cs70">CS70 - Discrete Mathematics</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="/interviews/problems">Interview Practice</a>
+        </li>
+        <li >
+          <a href="/blueprint">Blueprint</a>
+        </li>
+        <li>
+          <a href="/hkn">HKN</a>
+        </li>
+        <li>
+          <a href="/web_dev">Web Development</a>
+        </li>
+        <li>
+          <a href="/contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    
+      <div class="bs-header" id="content">
+  <div class="container">
+    <img class="profile-pic" src="/assets/images/mark_miyashita.jpg"></img>
+    <h1>Mark Miyashita</h1>
+    <h4>negativetwelve</h4>
+    <p>
+      <a href="/resume/#education">Student</a>, <a href="/resume/#work">Software Engineer</a>, <a href="/cs61a">Teacher</a>, <a href="/blog">Aspiring Entrepreneur</a>
+    </p>
+  </div>
+</div>
+
+    
+
+    
+      <div class="bs-old-docs">
+  <div class="container">
+    Looking for more CS classes? Check out:
+    
+      
+        <strong><a href="/cs61a">CS61A</a></strong>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61b">CS61B</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs61c">CS61C</a>
+      
+      
+      -
+      
+    
+      
+        <a href="/cs70">CS70</a>
+      
+      
+    
+  </div>
+</div>
+
+    
+
+    
+
+    
+      <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-3">
+  
+  <div class="bs-sidebar hidden-print" role="complementary" data-spy="affix" data-offset-top="335">
+  <ul class="nav bs-sidenav">
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    <li><a href="/cs61a/practice">All Problems and Notes (75)</a></li>
+  
+
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/basics">Basics (3)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/higher_order_functions">Higher Order Functions (3)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/environment_diagrams">Environment Diagrams (4)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/lambdas">Lambdas (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/newtons_method">Newtons Method (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/recursion">Recursion (8)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/rlists">Rlists (11)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/iterables">Iterables (2)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/object_oriented_programming">Object Oriented Programming (2)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/mutable_data">Mutable Data (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/inheritance">Inheritance (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/generic_functions">Generic Functions (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/orders_of_growth">Orders Of Growth (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/tree_recursion">Tree Recursion (7)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/memoization">Memoization (1)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/scheme">Scheme (6)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/tail_recursion">Tail Recursion (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/generators">Generators (3)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/streams">Streams (1)</a></li>
+      
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/iterators">Iterators (7)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+      
+      
+      
+      
+        <li><a href="/cs61a/logic">Logic (10)</a></li>
+      
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+
+
+  </ul>
+</div>
+
+</div>
+<div class="col-md-9" role="main">
+  <div class="page-header">
+  <h3>Filter Rlist (as a method) with Mutation</h3>
+</div>
+
+
+
+
+
+
+<p>This problem uses the Rlist Class defined <a href="/cs61a/rlists/code/rlist">here.</a></p>
+
+<p>Let’s write a <strong>method</strong> <code>filter</code> that is part of the <code>Rlist</code> class. It takes in a function and keeps all of the elements
+that satisfy the function. This method should <strong>mutate</strong> the rlist that this method is called on. You may assume that the rlist
+that this is being called on has at least one element that will remain in the list after it has been filtered. In other words,
+this <code>Rlist</code> cannot magically turn into an <code>EmptyRlist</code>.</p>
+
+<pre><code>def filter(self, fn):
+    """ Mutates the rlist and modifies it such that the elements that
+    do not satisfy the function are removed.
+
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; s.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; s
+    Rlist(1, Rlist(3))
+    &gt;&gt;&gt; r = Rlist(2, Rlist(1))
+    &gt;&gt;&gt; r.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; r
+    Rlist(1)
+    &gt;&gt;&gt; x = Rlist(1)
+    &gt;&gt;&gt; x.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; x
+    Rlist(1)
+    &gt;&gt;&gt; y = Rlist(1, Rlist(2, Rlist(2)))
+    &gt;&gt;&gt; y.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; y
+    Rlist(1)
+    &gt;&gt;&gt; z = Rlist(2, Rlist(1, Rlist(2)))
+    &gt;&gt;&gt; z.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; z
+    Rlist(1)
+    &gt;&gt;&gt; q = Rlist(2, Rlist(2, Rlist(1)))
+    &gt;&gt;&gt; q.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; q
+    Rlist(1)
+    &gt;&gt;&gt; p = Rlist(2, Rlist(2, Rlist(1, Rlist(3, Rlist(2)))))
+    &gt;&gt;&gt; p.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; p
+    Rlist(1, Rlist(3))
+
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
+
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
+
+<div class="solution">
+
+  <pre><code>def filter(self, fn):
+    """
+    &gt;&gt;&gt; s = Rlist(1, Rlist(2, Rlist(3)))
+    &gt;&gt;&gt; s.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; s
+    Rlist(1, Rlist(3))
+    &gt;&gt;&gt; r = Rlist(2, Rlist(1))
+    &gt;&gt;&gt; r.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; r
+    Rlist(1)
+    &gt;&gt;&gt; x = Rlist(1)
+    &gt;&gt;&gt; x.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; x
+    Rlist(1)
+    &gt;&gt;&gt; y = Rlist(1, Rlist(2, Rlist(2)))
+    &gt;&gt;&gt; y.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; y
+    Rlist(1)
+    &gt;&gt;&gt; z = Rlist(2, Rlist(1, Rlist(2)))
+    &gt;&gt;&gt; z.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; z
+    Rlist(1)
+    &gt;&gt;&gt; q = Rlist(2, Rlist(2, Rlist(1)))
+    &gt;&gt;&gt; q.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; q
+    Rlist(1)
+    &gt;&gt;&gt; p = Rlist(2, Rlist(2, Rlist(1, Rlist(3, Rlist(2)))))
+    &gt;&gt;&gt; p.filter(lambda x: x%2 == 1)
+    &gt;&gt;&gt; p
+    Rlist(1, Rlist(3))
+    """
+    if not fn(self.first):
+        self.first = self.rest.first
+        self.rest = self.rest.rest
+        self.filter(fn)
+    elif self.rest is Rlist.empty:
+        return
+    elif not fn(self.rest.first):
+        if self.rest.rest is Rlist.empty:
+            self.rest = Rlist.empty
+        else:
+            self.rest.first = self.rest.rest.first
+            self.rest.rest = self.rest.rest.rest
+            self.filter(fn)
+    else:
+        self.rest.filter(fn)
+</code></pre>
+
+  <p>This problem was really difficult so definitely don’t feel discouraged if you weren’t able
+to come up with a solution. Here is my thought process for when I tried to solve the problem:</p>
+
+  <p>I looked at many different cases (as seen by my doctests) and determined several things. You
+need to make sure that both the current element, and the next element are both valid (meaning that
+they are either valid because of the function or they are the empty rlist).</p>
+
+  <p>First, we check to see if the first element is <strong>not</strong> valid. If it’s not, we need to adjust some
+pointers such that we can check the next value. After reassigning the first and rest, we can simply call
+<code>self.filter(fn)</code> again since we have reduced the length of the rlist by 1. Because of this, we won’t reach
+infinite recursion because our rlist is getting smaller.</p>
+
+  <p>In the second case, I check to see if the next item is valid. If it isn’t and the next, next item is the empty,
+then I can simply set my <code>rest</code> to be the empty list and be done. If there are more elements after the next, next
+item, then we reassign the next element, and recursively call <code>self.filter(fn)</code> again.</p>
+
+  <p>Finally, if the first and second elements are both valid, we can move on and call <code>filter</code> on the rest of the list
+which we see in the final <code>else</code> clause.</p>
+
+</div>
+
+
+
+<p class="disclaimer">
+  I don't claim to be perfect so if you find an error on this page, please <a href="/contact">send me an email</a> preferably with a link to this page so that I know what I need to fix!
+</p>
+
+<article class="post">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+</article>
+
+</div>
+        </div>
+      </div>
+    
+
+    <footer class="bs-footer" role="contentinfo">
+      <p class="copyright">
+        © 2014 Mark Miyashita
+      </p>
+
+      <ul class="footer-links">
+        <li><a href="http://github.com/negativetwelve">Github</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">TA Ratings</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li>
+        <li class="muted">&middot;</li>
+        <li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li>
+      </ul>
+    </footer>
+
+    <script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/highlight.pack.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".solution_toggle").click(function(event) {
+    event.preventDefault();
+    $(".solution").fadeToggle('medium');
+  });
+});
+
+
+hljs.initHighlightingOnLoad();
+
+$(document).keypress(function(e) {
+  base = document.location.origin;
+  switch (e.charCode) {
+    case 97: // 'a' for about
+      document.location.href = base;
+      break;
+    case 98: // 'b' for blog
+      document.location.href = base + '/blog';
+      break;
+    case 104: // 'h' for hkn
+      document.location.href = base + "/hkn";
+      break;
+    case 105: // 'i' for interview practice
+      document.location.href = base + "/interviews/problems";
+      break;
+    case 109: // 'm' for more
+      $('#sub-links').slideDown('medium');
+      break;
+    case 112: // 'p' for projects
+      document.location.href = base + '/projects';
+      break;
+    case 114: // 'r' for resume
+      document.location.href = base + '/resume';
+      break;
+    case 119: // 'w' for web development
+      document.location.href = base + '/web_dev';
+      break;
+    case 99: // 'c' for cs61a
+      window.location.href = base + "/cs61a";
+      break;
+    default:
+      console.log(e.charCode);
+  }
+});
+</script>
+
+
+  </body>
+</html>
