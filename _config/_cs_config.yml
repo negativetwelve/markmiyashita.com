@@ -523,6 +523,19 @@ cs_classes:
                 date: "2014-03-07"
                 published: true
                 solution: true
+        - name: "Filter Rlist (as a method) with Mutation"
+          file: filter_rlist_method_with_mutation
+          type: Challenge
+          tags: [recursion, higher order functions, mutable data, object oriented programming]
+          semesters:
+            - base:
+                date: "2014-03-13"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-03-13"
+                published: true
+                solution: true
         - name: "Sort Rlist (Object Version)"
           file: sort_rlist_object_version
           type: Challenge
@@ -622,6 +635,11 @@ cs_classes:
               sp14:
                 date: "2014-02-24"
                 published: true
+      code:
+        - name: "Rlist Implementation"
+          output: rlist
+          file: rlist.py
+          language: python
 
     data_abstraction:
       semesters: []
