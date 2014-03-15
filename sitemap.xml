@@ -1129,6 +1129,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/orders_of_growth/orders_of_growth_practice/index.html</loc>
+        
+        <lastmod>2014-03-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/tree_recursion/flip_tree/index.html</loc>
         
         <lastmod>2013-05-11T00:00:00-07:00</lastmod>
@@ -2158,6 +2165,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/orders_of_growth/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/orders_of_growth/index.html</loc>
         
     </url>
     
