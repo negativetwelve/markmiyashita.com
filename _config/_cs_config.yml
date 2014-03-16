@@ -434,6 +434,11 @@ cs_classes:
 
     rlists:
       semesters: [base, sp13, su13, fa13, sp14]
+      code:
+        - name: "Rlist Implementation"
+          output: rlist
+          file: rlist.py
+          language: python
       problems:
         - name: "Map Rlist"
           file: map_rlist
@@ -635,11 +640,6 @@ cs_classes:
               sp14:
                 date: "2014-02-24"
                 published: true
-      code:
-        - name: "Rlist Implementation"
-          output: rlist
-          file: rlist.py
-          language: python
 
     data_abstraction:
       semesters: []
@@ -847,7 +847,7 @@ cs_classes:
                 solution: true
 
     tree_recursion:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       code:
         - name: "Tree Implementation"
           output: tree
@@ -873,6 +873,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-10-18"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-03-16"
                 published: true
                 solution: true
         - name: "In Order Traversal of a Binary Tree"
