@@ -900,6 +900,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-17"
+                published: true
+                solution: true
         - name: "Pre Order Traversal of a Binary Tree"
           file: pre_order_traversal_binary_tree
           type: Challenge
