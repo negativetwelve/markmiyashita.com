@@ -925,6 +925,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-18"
+                published: true
+                solution: true
         - name: "Post Order Traversal of a Binary Tree"
           file: post_order_traversal_binary_tree
           type: Challenge
