@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Rules of Environment Diagrams - Mark Miyashita
+    CS61A - Pre Order Traversal of a Binary Tree - Mark Miyashita
   
 </title>
 
@@ -437,47 +437,58 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h1>Rules of Environment Diagrams</h1>
+  <h3>Pre Order Traversal of a Binary Tree</h3>
 </div>
 
 
 
 
 
-<ul id="markdown-toc">
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#the-steps">The Steps</a></li>
-</ul>
 
-<h4 id="introduction">Introduction</h4>
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
 
-<!--start-->
-<p>Environment Diagrams may seem tricky at first but they’re really useful in analyzing how functions are evaluated. If you follow these simple steps, you’ll be able to draw out <em>any</em> environment diagram. As with all things CS-related, practice, practice, practice!
-<!--end--></p>
+<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
 
-<h4 id="the-steps">The Steps</h4>
+<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. Pre Order Traversal is one of them and the algorithm goes like this. First, we will print out or current value, then, we will recursively print out all the values to our left, then recursively print out all the values on the right. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
 
-<p>Follow these steps below for a successful environment diagram:</p>
+<pre><code>def pre_order_traversal(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; pre_order_traversal(t)
+    5
+    1
+    4
+    7
+    6
+    8
+    """
+    "***YOUR CODE HERE***"
+</code></pre>
 
-<ol>
-  <li>Draw the global frame. No questions asked, just draw it.</li>
-  <li>When evaluating assignment statements (lines with a single equals sign), <strong>always</strong>, <strong>always</strong>, <strong>always</strong> remember to evaluate the <strong>right</strong> side first!</li>
-  <li>When you <strong>call</strong> a function, <strong>MAKE A NEW FRAME!</strong></li>
-  <li>When assigning a primitive expression to a variable, write that value directly in the box.</li>
-  <li>When assigning anything else besides a primitive expression to a variable, <strong>draw an arrow</strong> to that value.</li>
-  <li>Bind imported values in the current frame (represent the inside of the function with an ellipsis (…)).</li>
-  <li>When calling a function (see #3), name the frame with the intrinsic name of the function – that is, write the name of the function that your variable points to!</li>
-  <li>The parent frame of a function is the frame in which it was defined in.</li>
-</ol>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<p>List of things <strong>not</strong> to do:</p>
+<div class="solution">
 
-<ol>
-  <li>Never, ever, ever draw an arrow from one variable to another. Remember, arrows always point to values, not other variables.</li>
-  <li>Don’t draw frames for built-in functions.</li>
-</ol>
+  <pre><code>def pre_order_traversal(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; pre_order_traversal(t)
+    5
+    1
+    4
+    7
+    6
+    8
+    """
+    if tree is None:
+        return
+    print(tree.entry)
+    pre_order_traversal(tree.left)
+    pre_order_traversal(tree.right)
+</code></pre>
 
-<p>Lastly, like I said before, make sure you <a href="/cs61a/sp14/environment_diagrams/#problems">practice!</a></p>
+</div>
+
 
 
 <p class="disclaimer">
