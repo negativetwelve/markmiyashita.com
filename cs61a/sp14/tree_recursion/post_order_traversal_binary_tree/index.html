@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - What Are Functions? - Mark Miyashita
+    CS61A - Post Order Traversal of a Binary Tree - Mark Miyashita
   
 </title>
 
@@ -437,7 +437,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>What Are Functions?</h3>
+  <h3>Post Order Traversal of a Binary Tree</h3>
 </div>
 
 
@@ -445,44 +445,47 @@ woopra.track('pv', {
 
 
 
-<p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
 
-<p>What would the following output in Python?</p>
+<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
 
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a = 6
-&gt;&gt;&gt; a       #1
+<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. Post Order Traversal is one of them and the algorithm goes like this. First, we will recursively print out all the values to our left, then, we will recursively print out all the values on the right, finally, we will print out the current node’s entry. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
 
-&gt;&gt;&gt; b       #2
-
-&gt;&gt;&gt; def square(x):
-...     print(x * x)
-...     return x
-...
-&gt;&gt;&gt; a = square(a)
-            #3 - what is printed here?
-&gt;&gt;&gt; a       #4
-
-&gt;&gt;&gt; b = square(square(a))
-            #5 - what is printed here?
-
-&gt;&gt;&gt; b       #6
+<pre><code>def post_order_traversal(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; post_order_traversal(t)
+    4
+    1
+    6
+    8
+    7
+    5
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>6</li>
-    <li>5</li>
-    <li>36 (printed)</li>
-    <li>6</li>
-    <li>36 (printed) <br />
-36 (printed)</li>
-    <li>6</li>
-  </ol>
+  <pre><code>def post_order_traversal(tree):
+    """
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; post_order_traversal(t)
+    4
+    1
+    6
+    8
+    7
+    5
+    """
+    if tree is None:
+        return
+    post_order_traversal(tree.left)
+    post_order_traversal(tree.right)
+    print(tree.entry)
+</code></pre>
 
 </div>
 
