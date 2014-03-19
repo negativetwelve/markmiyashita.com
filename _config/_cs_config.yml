@@ -950,6 +950,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-19"
+                published: true
+                solution: true
         - name: "Insert Into Binary Search Tree"
           file: insert_into_binary_search_tree
           type: Challenge
