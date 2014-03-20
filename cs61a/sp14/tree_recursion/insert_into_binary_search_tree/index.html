@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Longest Length of the Same Character in a String - Mark Miyashita
+    CS61A - Insert Into Binary Search Tree - Mark Miyashita
   
 </title>
 
@@ -437,7 +437,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Longest Length of the Same Character in a String</h3>
+  <h3>Insert Into Binary Search Tree</h3>
 </div>
 
 
@@ -445,34 +445,16 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that finds the length of the longest contiguous string of the same character and returns that length. Implement it recursively (you probably don’t want to do it iteratively but you’re free to try!) You may use the functions <code>first</code> and <code>rest</code> defined below.</p>
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
 
-<h5 id="hint-1-you-might-want-to-use-a-helper-function">Hint #1: You might want to use a helper function…</h5>
+<p>In this problem we are going to be inserting an item into a binary search tree. Recall that a binary search tree means that all items on the left of the tree are less than the current entry and all items on the right of the tree are greater than the current entry. Note: We cannot insert into an empty tree because of our implementation. Since we are using None as our empty tree, we can’t add a <code>.entry</code> to None because it is not an object. This function should still work for all other trees though.</p>
 
-<h5 id="hint-2-your-helper-function-might-want-to-include-the-following-information-maybe-more">Hint #2: Your helper function might want to include the following information (maybe more):</h5>
-
-<pre><code>def helper(word, prev_char, curr_count, curr_max):
-    "***YOUR CODE HERE***"
-</code></pre>
-
-<p>Make sure that your function works on all inputs, including the empty string! Here are the functions <code>first</code> and <code>rest</code> that we have been working with in class.</p>
-
-<pre><code>def first(word):
-    return word[0]
-    
-def rest(word):
-    return word[1:]
-</code></pre>
-
-<pre><code>def find_longest_run(word):
+<pre><code>def insert(item, tree):
     """
-    Finds the length of the longest contiguous string
-    of a single character and returns the length.
-
-    &gt;&gt;&gt; find_longest_run("hello")
-    2
-    &gt;&gt;&gt; find_longest_run("helloooo")
-    4
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; insert(2, t)
+    &gt;&gt;&gt; t
+    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -481,27 +463,26 @@ def rest(word):
 
 <div class="solution">
 
-  <pre><code>def helper(word, prev_char, curr_count, curr_max):
-    if len(word) == 0:
-        return curr_max
-    elif first(word) == prev_char:
-        return helper(rest(word), first(word), curr_count + 1, max(curr_count + 1, curr_max))
-    return helper(rest(word), first(word), 1, curr_max)
-
-def find_longest_run(word):
+  <pre><code>def insert(item, tree):
     """
-    Finds the length of the longest contiguous string
-    of a single character and returns the length.
-    
-    &gt;&gt;&gt; find_longest_run("hello")
-    2
-    &gt;&gt;&gt; find_longest_run("helloooo")
-    4
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; insert(2, t)
+    &gt;&gt;&gt; t
+    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
     """
-    return helper(word, "", 0, 0)
+    if tree is None:
+        return
+    elif item &lt; tree.entry:
+        if tree.left:
+            insert(item, tree.left)
+        else:
+            tree.left = Tree(item)
+    else:
+        if tree.right:
+            insert(item, tree.right)
+        else:
+            tree.right = Tree(item)
 </code></pre>
-
-  <p>We need to keep track of some information between each recursive call so to make our lives easier, we will implement a helper function that takes in 4 arguments. We will analyze the rest of the word, we will need to compare against the previous character, and we will need to keep track of how long our current run is as well as our current longest run. Once we have that, we can figure out what our base case(s) are. For one, if the word that we are checking doesn’t have any letters left, then there can’t be any characters left to check so we return the <code>curr_max</code> (longest length) that we have found so far. Then, we have two different situations, whether or not the previous character was eqaul to our current character. If it is, then we just add 1 to our <code>curr_count</code> and then compare to see if that new <code>curr_count</code> is greater than our <code>curr_max</code>. If it is, we take the new value. In our other recursive call, we just recurse on the input, but we also set our <code>curr_count</code> to 1 because the characters were not the same so the streak starts over.</p>
 
 </div>
 
