@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Newton's Method Practice - Mark Miyashita
+    CS61A - Is My Tree Binary and Searchable? - Mark Miyashita
   
 </title>
 
@@ -437,7 +437,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Newton's Method Practice</h3>
+  <h3>Is My Tree Binary and Searchable?</h3>
 </div>
 
 
@@ -445,46 +445,21 @@ woopra.track('pv', {
 
 
 
-<p>Recall the following definitions from Newton’s Method from discussion:</p>
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
 
-<pre><code>def approx_deriv(fn, x, dx=0.00001):
-    return (fn(x+dx)-fn(x))/dx
+<p>Given an input tree, we want to test if the tree is a binary search tree. A tree is a binary search tree if for each of its branches, all of the values on the left subtree are less than the entry and all of the values on the right subtree are greater than the entry.</p>
 
-def newtons_method(fn, guess=1, max_iterations=100):
-    ALLOWED_ERROR_MARGIN = 0.0000001
-    i = 1
-    while abs(fn(guess)) &gt; ALLOWED_ERROR_MARGIN and i &lt;= max_iterations:
-        guess = guess - fn(guess) / approx_deriv(fn, guess)
-        i += 1
-    return guess
-</code></pre>
-
-<p>If you don’t understand Newton’s Method at all, be sure to ask your TA during office hours or ask on Piazza.</p>
-
-<p>We want to write a function that will help us find the roots of the following mathematical equation:</p>
-
-<pre><code>f(x) = x^3 + x + 1
-</code></pre>
-
-<p>Write a function, <code>f</code> that can find the root(s) of the function above.</p>
-
-<pre><code>def f():
-    """Returns at least one root of the equation x^3 + x + 1."""
-    "***YOUR CODE HERE***"
-</code></pre>
-
-<p>Now, we want to make this function more general. How can we write a new function <code>g</code> that takes in an argument <code>y</code> and finds the roots of:</p>
-
-<pre><code>f(x, y) = x^3 + y + 1
-</code></pre>
-
-<p>For any <code>y</code> value.</p>
-
-<pre><code>def g(y):
-    """Returns at least one root of the equation x^3 + y + 1.
-
-    &gt;&gt;&gt; round(g(5), 3)
-    -1.817
+<pre><code>def is_binary_search_tree(tree):
+    """
+    &gt;&gt;&gt; t = Tree(3, Tree(2), Tree(4))
+    &gt;&gt;&gt; is_binary_search_tree(t)
+    True
+    &gt;&gt;&gt; t = Tree(5, Tree(1, Tree(3)), Tree(6, Tree(10)))
+    &gt;&gt;&gt; is_binary_search_tree(t)
+    False
+    &gt;&gt;&gt; s = Tree(10, Tree(5, Tree(3, None, Tree(4))), Tree(20, Tree(15), Tree(30, None, Tree(40, Tree(31)))))
+    &gt;&gt;&gt; is_binary_search_tree(s)
+    True
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -493,11 +468,27 @@ def newtons_method(fn, guess=1, max_iterations=100):
 
 <div class="solution">
 
-  <pre><code>def f():
-    return newtons_method(lambda x: x**3 + x + 1
-
-def g(y):
-    return newtons_method(lambda x: x**3 + y + 1
+  <pre><code>def is_binary_search_tree(tree):
+    """
+    &gt;&gt;&gt; t = Tree(3, Tree(2), Tree(4))
+    &gt;&gt;&gt; is_binary_search_tree(t)
+    True
+    &gt;&gt;&gt; t = Tree(5, Tree(1, Tree(3)), Tree(6, Tree(10)))
+    &gt;&gt;&gt; is_binary_search_tree(t)
+    False
+    &gt;&gt;&gt; s = Tree(10, Tree(5, Tree(3, None, Tree(4))), Tree(20, Tree(15), Tree(30, None, Tree(40, Tree(31)))))
+    &gt;&gt;&gt; is_binary_search_tree(s)
+    True
+    """
+    def is_bst_helper(tree, min_value, max_value):
+        if tree is None:
+            return True
+        check_left = is_bst_helper(tree.left, min_value, tree.entry)
+        check_right = is_bst_helper(tree.right, tree.entry, max_value)
+        if tree.entry &gt; min_value and tree.entry &lt;= max_value and check_left and check_right:
+            return True
+        return False
+    return is_bst_helper(tree, -float('inf'), float('inf'))
 </code></pre>
 
 </div>
