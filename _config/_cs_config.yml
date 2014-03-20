@@ -1000,6 +1000,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-20"
+                published: true
+                solution: true
         - name: "Tree to Reversed List"
           file: tree_to_reversed_list
           type: Challenge
