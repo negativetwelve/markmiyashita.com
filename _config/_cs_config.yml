@@ -975,6 +975,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-20"
+                published: true
+                solution: true
         - name: "Is My Tree Binary and Searchable?"
           file: is_my_tree_binary_and_searchable
           type: Challenge
