@@ -1031,7 +1031,7 @@ cs_classes:
                 solution: true
 
     memoization:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       problems:
         - name: "Better Fib"
           file: better_fib
@@ -1052,6 +1052,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-10-24"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-03-21"
                 published: true
                 solution: true
 
