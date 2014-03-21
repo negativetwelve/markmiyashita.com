@@ -1025,6 +1025,10 @@ cs_classes:
                 date: "2013-10-18"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-03-20"
+                published: true
+                solution: true
 
     memoization:
       semesters: [base, sp13, su13, fa13]
