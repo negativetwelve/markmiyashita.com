@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - Delete Last Item - Mark Miyashita
+    CS61A - Tree to Reversed List - Mark Miyashita
   
 </title>
 
@@ -437,7 +437,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Delete Last Item</h3>
+  <h3>Tree to Reversed List</h3>
 </div>
 
 
@@ -445,15 +445,15 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that takes in an Rlist and mutates it such that it removes the last item (not including the empty Rlist at the end). You can assume that the rlist has at least one element in it.</p>
+<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
 
-<pre><code>def delete_last_item(rlist):
+<p>In this problem, the input is a binary tree and the output is a list. The list is formed by getting the rightmost entry first. If you haven’t already, the traversal questions located <a href="http://markmiyashita.com/cs61a/sp14/problems/trees_trees_everywhere/">here</a> may help you.</p>
+
+<pre><code>def tree_to_reversed_list(tree):
     """
-    Removes the last item from an rlist.
-    &gt;&gt;&gt; r = Rlist(4, Rlist(3, Rlist(6, Rlist(1))))
-    &gt;&gt;&gt; delete_last_item(r)
-    &gt;&gt;&gt; r
-    Rlist(4, Rlist(3, Rlist(6)))
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; tree_to_reversed_list(t)
+    [8, 7, 6, 5, 4, 1]
     """
     "***YOUR CODE HERE***"
 </code></pre>
@@ -462,21 +462,21 @@ woopra.track('pv', {
 
 <div class="solution">
 
-  <pre><code>def delete_last_item(rlist):
+  <pre><code>def tree_to_reversed_list(tree):
     """
-    Removes the last item from an rlist.
-    &gt;&gt;&gt; r = Rlist(4, Rlist(3, Rlist(6, Rlist(1))))
-    &gt;&gt;&gt; delete_last_item(r)
-    &gt;&gt;&gt; r
-    Rlist(4, Rlist(3, Rlist(6)))
+    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
+    &gt;&gt;&gt; tree_to_reversed_list(t)
+    [8, 7, 6, 5, 4, 1]
     """
-    if rlist.rest.rest is Rlist.empty:
-        rlist.rest = Rlist.empty
-    else:
-        delete_last_item(rlist.rest)
+    lst = []
+    if tree is not None:
+        if tree.right:
+            lst.extend(tree_to_reversed_list(tree.right))
+        lst.append(tree.entry)
+        if tree.left:
+            lst.extend(tree_to_reversed_list(tree.left))
+    return lst
 </code></pre>
-
-  <p>Since we can assume that the rlist has at least one element in it, we can safely check to see if the <code>rlist.rest.rest</code> is empty or not. If it is, we want to mutate our input rlist and set it’s current <code>rest</code> to be <code>Rlist.empty</code>. If we’re not near the end of the <code>Rlist</code>, we want to iterate through by recursively calling <code>delete_last_item</code> on the rest of the rlist.</p>
 
 </div>
 
