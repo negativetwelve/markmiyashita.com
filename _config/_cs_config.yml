@@ -798,7 +798,7 @@ cs_classes:
                 solution: true
 
     generic_functions:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       notes:
         - name: "Generic Functions and Type Dispatching"
           file: generic_functions_and_type_dispatching
@@ -815,6 +815,9 @@ cs_classes:
                 published: true
               fa13:
                 date: "2013-10-24"
+                published: true
+              sp14:
+                date: "2013-03-22"
                 published: true
 
     orders_of_growth:
