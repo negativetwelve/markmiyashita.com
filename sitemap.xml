@@ -1101,6 +1101,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/generic_functions/generic_functions_and_type_dispatching/index.html</loc>
+        
+        <lastmod>2013-03-22T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/orders_of_growth/orders_of_growth_practice/index.html</loc>
         
         <lastmod>2013-04-04T00:00:00-07:00</lastmod>
@@ -2201,6 +2208,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/generic_functions/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/generic_functions/index.html</loc>
         
     </url>
     
