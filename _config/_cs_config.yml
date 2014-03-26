@@ -622,6 +622,10 @@ cs_classes:
                 date: "2013-11-14"
                 published: true
                 solution: false
+              sp14:
+                date: "2014-03-26"
+                published: true
+                solution: true
 
       notes:
         - name: "Rlists As Functions"
