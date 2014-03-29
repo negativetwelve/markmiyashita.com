@@ -10,7 +10,7 @@
 
 <title>
   
-    CS61A - What Are Functions? - Mark Miyashita
+    CS61A - Append Rlists Iteratively - Mark Miyashita
   
 </title>
 
@@ -441,7 +441,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>What Are Functions?</h3>
+  <h3>Append Rlists Iteratively</h3>
 </div>
 
 
@@ -449,44 +449,71 @@ woopra.track('pv', {
 
 
 
-<p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
+<p>Write a function that appends two Rlists together and returns a new Rlist. The resulting Rlist should be a copy meaning that the input Rlists should not be modified AND modifying the resulting Rlist should not modify the two input Rlists.</p>
 
-<p>What would the following output in Python?</p>
-
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a = 6
-&gt;&gt;&gt; a       #1
-
-&gt;&gt;&gt; b       #2
-
-&gt;&gt;&gt; def square(x):
-...     print(x * x)
-...     return x
-...
-&gt;&gt;&gt; a = square(a)
-            #3 - what is printed here?
-&gt;&gt;&gt; a       #4
-
-&gt;&gt;&gt; b = square(square(a))
-            #5 - what is printed here?
-
-&gt;&gt;&gt; b       #6
+<pre><code>def append_rlist_iter(a, b):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s = Rlist(3, Rlist(4))
+    &gt;&gt;&gt; result = append_rlist_iter(r, s)
+    &gt;&gt;&gt; result
+    Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; result.first = 5
+    &gt;&gt;&gt; result
+    Rlist(5, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s
+    Rlist(3, Rlist(4))
+    """
+    "*** YOUR CODE HERE ***"
 </code></pre>
+
+<p>Here’s what my second discussion came up with. There’s a small bug causing the test to not pass, but a few of you wanted me to post what we came up with so that you guys can debug it on your own. Here it is:</p>
+
+<pre><code>def append_rlist_iter(a, b):
+    """
+    &gt;&gt;&gt; r = Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s = Rlist(3, Rlist(4))
+    &gt;&gt;&gt; result = append_rlist_iter(r, s)
+    &gt;&gt;&gt; result
+    Rlist(1, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; result.first = 5
+    &gt;&gt;&gt; result
+    Rlist(5, Rlist(2, Rlist(3, Rlist(4))))
+    &gt;&gt;&gt; r
+    Rlist(1, Rlist(2))
+    &gt;&gt;&gt; s
+    Rlist(3, Rlist(4))
+
+    *** Here's what my second discussion came up with. There's a bug! Try and find it ***
+    """
+    result = Rlist.empty
+    final_result = result
+    if a is not Rlist.empty:
+        result = Rlist(a.first)
+        a = a.rest
+        while a is not Rlist.empty:
+            result.rest = Rlist(a.first)
+            a = a.rest
+            result = result.rest
+
+    if b is not Rlist.empty:
+        if result is Rlist.empty:
+            result = Rlist(b.first)
+            b = b.rest
+        while b is not Rlist.empty:
+            result.rest = Rlist(b.first)
+            b = b.rest
+            result = result.rest
+    return final_result
+</code></pre>
+
+<p>My solution will be posted later (along with the recursive and tail-recursive solutions).</p>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
-
-  <ol>
-    <li>6</li>
-    <li>5</li>
-    <li>36 (printed)</li>
-    <li>6</li>
-    <li>36 (printed) <br />
-36 (printed)</li>
-    <li>6</li>
-  </ol>
 
 </div>
 
