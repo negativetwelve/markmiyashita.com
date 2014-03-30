@@ -151,12 +151,10 @@
     margin-right: 0;
 }
 
-.ha-header .ha-header-front nav a:first-child,
 .ha-header .ha-header-front nav a:last-child {
   border: 2px solid #e74c3c;
 }
 
-.ha-header .ha-header-front nav a:first-child:hover,
 .ha-header .ha-header-front nav a:last-child:hover {
   border: 2px solid #bc3c2f;
 }
@@ -211,7 +209,7 @@
 }
 
 .ha-header-shrink {
-  height: 220px;
+  height: 110px;
   top: 50px;
   padding-left: 50px;
   padding-right: 50px;
