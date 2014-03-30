@@ -20,13 +20,11 @@ html lang='en'
     |   {% include e98/navigation.html %}
     | {% endif %}
 
-    | {% if page.full_page %}
-    |   {{ content }}
-    | {% else %}
-    .container.bs-docs-container
-      .row
-        | {{ content }}
-    | {% endif %}
+    .meny
+      hi
+
+    .contents
+      | {{ content }}
 
     footer.bs-footer role="contentinfo"
       p.copyright
