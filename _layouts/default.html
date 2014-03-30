@@ -30,4 +30,26 @@
     // Use touch swipe events to open/close
     touch: true
   });
+
+$(".meny-arrow").click(function(event) {
+  meny.open();
+});
+
+$(document).ready(function() {
+  var $head = $( '#ha-header' );
+  $( '.ha-waypoint' ).each( function(i) {
+    var $el = $( this ),
+      animClassDown = $el.data( 'animateDown' ),
+      animClassUp = $el.data( 'animateUp' );
+
+    $el.waypoint( function( direction ) {
+      if( direction === 'down' && animClassDown ) {
+        $head.attr('class', 'ha-header ' + animClassDown);
+      }
+      else if( direction === 'up' && animClassUp ){
+        $head.attr('class', 'ha-header ' + animClassUp);
+      }
+    }, { offset: '100%' } );
+  });
+});
 </script>
