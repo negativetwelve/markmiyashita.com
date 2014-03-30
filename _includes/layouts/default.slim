@@ -1,0 +1,51 @@
+doctype html
+
+html lang='en'
+  head
+    | {% include header.html %}
+  body
+    a.sr-only href="#content" Skip Navigation
+
+    | {% include navigation/nav-main.html %}
+
+    | {% if page.skip_about != true %}
+    |   {% include about.html %}
+    | {% endif %}
+
+    | {% if page.is_cs_course %}
+    |   {% include other-cs-course.html %}
+    | {% endif %}
+
+    | {% if page.is_e98 %}
+    |   {% include e98/navigation.html %}
+    | {% endif %}
+
+    | {% if page.full_page %}
+    |   {{ content }}
+    | {% else %}
+    .container.bs-docs-container
+      .row
+        | {{ content }}
+    | {% endif %}
+
+    footer.bs-footer role="contentinfo"
+      p.copyright
+        | © 2014 Mark Miyashita
+
+      ul.footer-links
+        li
+          a href="http://github.com/negativetwelve" Github
+        li.muted &middot;
+        li
+          a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419" TA Ratings
+        li.muted &middot;
+        li
+          a href="https://www.facebook.com/markmiyashita12" Facebook
+        li.muted &middot;
+        li
+          a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/" LinkedIn
+        li.muted &middot;
+        li
+          a href="https://plus.google.com/101180624276428786239?rel=author" Google+
+
+    | {% include footer.html %}
