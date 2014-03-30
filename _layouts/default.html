@@ -4,8 +4,6 @@
   var meny = Meny.create({
     menuElement: document.querySelector('.meny'),
     contentsElement: document.querySelector('.contents'),
-
-    // The alignment of the menu (top/right/bottom/left)
     position: 'left',
 
     // The height of the menu (when using top/bottom position)
@@ -15,10 +13,10 @@
     width: 260,
 
     // The mouse distance from menu position which can trigger menu to open.
-    threshold: 40,
+    threshold: 60,
 
     // Width(in px) of the thin line you see on screen when menu is in closed position.
-    overlap: 6,
+    overlap: 10,
 
     // The total time taken by menu animation.
     transitionDuration: '0.5s',
