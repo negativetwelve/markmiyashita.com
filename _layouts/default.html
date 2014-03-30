@@ -25,14 +25,20 @@
     transitionEasing: 'ease',
 
     // Use mouse movement to automatically open/close
-    mouse: false,
+    mouse: true,
 
     // Use touch swipe events to open/close
     touch: true
   });
 
 $(".meny-arrow, #see-more").click(function(event) {
+  meny.configure({ mouse: false });
   meny.open();
+});
+
+$(".meny-close").click(function(event) {
+  meny.close();
+  meny.configure({ mouse: true });
 });
 
 $(document).ready(function() {
