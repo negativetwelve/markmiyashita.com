@@ -1,3 +1,8 @@
+ul.sub-items {
+  margin-left: 20px;
+  margin-top: 0;
+}
+
 .solution {
   display: none;
 }
