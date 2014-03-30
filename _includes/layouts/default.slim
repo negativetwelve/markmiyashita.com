@@ -4,26 +4,21 @@ html lang='en'
   head
     | {% include header.html %}
   body
-    a.sr-only href="#content" Skip Navigation
-
-    | {% include navigation/nav-main.html %}
-
-    | {% if page.skip_about != true %}
-    |   {% include about.html %}
-    | {% endif %}
-
-    | {% if page.is_cs_course %}
-    |   {% include other-cs-course.html %}
-    | {% endif %}
-
-    | {% if page.is_e98 %}
-    |   {% include e98/navigation.html %}
-    | {% endif %}
-
     .meny
-      hi
-
+      | hi
+    .meny-arrow
     .contents
+      | {% if page.skip_about != true %}
+      |   {% include about.html %}
+      | {% endif %}
+
+      | {% if page.is_cs_course %}
+      |   {% include other-cs-course.html %}
+      | {% endif %}
+
+      | {% if page.is_e98 %}
+      |   {% include e98/navigation.html %}
+      | {% endif %}
       | {{ content }}
 
     footer.bs-footer role="contentinfo"
