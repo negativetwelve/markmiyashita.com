@@ -5,7 +5,7 @@ html lang='en'
     | {% include header.html %}
   body
     .meny
-      | hi
+      | {% convert sidebar.slim %}
     .meny-arrow
     .contents
       | {% if page.skip_about != true %}
