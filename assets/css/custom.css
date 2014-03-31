@@ -13,7 +13,7 @@ ul.sub-items {
   opacity: 0.7;
 }
 
-#header-scroll-alert {
+.ha-waypoint {
   position: relative;
   top: 110%;
   height: 180px;
