@@ -8,13 +8,15 @@ ul.sub-items {
   opacity: 0.5;
 }
 
-.meny-close:hover {
+.meny-close:hover, .meny-close:focus {
   color: #FFFFFF;
   opacity: 0.7;
 }
 
-div.filler {
-  height: 110px;
+#header-scroll-alert {
+  position: relative;
+  top: 110%;
+  height: 180px;
 }
 
 .solution {
