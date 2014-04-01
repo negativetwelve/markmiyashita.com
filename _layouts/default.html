@@ -45,12 +45,11 @@ $(".meny-close").click(function(event) {
   meny.configure({ mouse: true });
 });
 
-$(function() {
-  //caches a jQuery object containing the header element
+$(document).ready(function() {
   var header = $("#ha-header");
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop();
-    if (scroll >= 50) {
+  $(".contents").scroll(function() {
+    var scroll = $(".contents").scrollTop();
+    if (scroll >= 20) {
       header.removeClass('ha-header-shrink').addClass("ha-header-color");
     } else {
       header.removeClass("ha-header-color").addClass('ha-header-shrink');
