@@ -19,6 +19,10 @@ ul.sub-items {
   height: 180px;
 }
 
+.bs-old-docs {
+  margin: 0 10px;
+}
+
 .solution {
   display: none;
 }
