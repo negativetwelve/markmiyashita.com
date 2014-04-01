@@ -134,21 +134,21 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-    padding: 0.2em 0.4em;
-    margin: 0 0.4em 0;
-    font-size: 0.8em;
-    cursor: pointer;
-    color: #2980b9;
-    outline: none;
-    text-decoration: none;
+  padding: 0.2em 0.4em;
+  margin: 0 0.4em 0;
+  font-size: 0.8em;
+  cursor: pointer;
+  color: #2980b9;
+  outline: none;
+  text-decoration: none;
 }
 
 .ha-header nav a:hover {
-  color: #bc3c2f;
+  color: #226A99;
 }
 
 .ha-header nav a:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .ha-header .ha-header-front nav a:last-child {
@@ -156,7 +156,7 @@
 }
 
 .ha-header .ha-header-front nav a:last-child:hover {
-  border: 2px solid #bc3c2f;
+  border: 2px solid #226A99;
 }
 
 /* Individual states */
