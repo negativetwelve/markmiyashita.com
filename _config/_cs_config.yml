@@ -1070,7 +1070,7 @@ cs_classes:
       semesters: []
 
     scheme:
-      semesters: [base, fa13]
+      semesters: [base, fa13, sp14]
       notes:
         - name: "Introduction to Scheme"
           file: introduction_to_scheme
@@ -1081,6 +1081,9 @@ cs_classes:
                 published: false
               fa13:
                 date: "2013-11-1"
+                published: false
+              sp14:
+                date: "2014-04-07"
                 published: false
       problems:
         - name: "Flatten Nested Lists"
@@ -1094,6 +1097,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-11-05"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-04-07"
                 published: true
                 solution: true
         - name: "Reverse Scheme List"
