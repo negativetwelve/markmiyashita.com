@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Dictionaries - Mark Miyashita
+    CS61A - Flatten Nested Lists - Mark Miyashita
   
 </title>
 
@@ -420,131 +420,45 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h1>Dictionaries</h1>
+  <h3>Flatten Nested Lists</h3>
 </div>
 
 
 
 
 
-<ul id="markdown-toc">
-  <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#accessing-elements">Accessing Elements</a></li>
-  <li><a href="#inserting-and-changing-elements">Inserting and Changing Elements</a></li>
-  <li><a href="#removing-elements">Removing Elements</a></li>
-  <li><a href="#iterating-over-the-elements-in-a-dictionary">Iterating Over the Elements in a Dictionary</a></li>
-  <li><a href="#dictionaries-in-environment-diagrams">Dictionaries in Environment Diagrams</a></li>
-  <li><a href="#useful-methods-for-dictionaries">Useful Methods for Dictionaries</a></li>
-</ul>
 
-<h4 id="introduction">Introduction</h4>
+<p>Write a function in scheme called <code>flatten</code> that takes in a nested list (or any arbitrary number of nested items) and returns the flattened version of the list. You may find the helpers <code>number?</code>, <code>integer?</code>, <code>pair?</code>, or <code>list?</code> helpful.</p>
 
-<!--start-->
-<p>Dictionaries are another type of <em>data structure</em> that we can use to hold and store information. Dictionaries are built around the idea of storing key-value pairs and they offer a quick solution to look up one piece of information to access another. A key can be any type except a mutable data type. A value has no such restrictions (meaning its type is not restricted). A common key type is the string because in English, we often associate mapping a word or phrase to some longer or extended information.
-<!--end--></p>
-
-<p>A dictionary can only have one value for each individual key. If you try to insert a pair with an existing key, the value will be overridden. This can be shown by a quick example. Say I had a dictionary that mapped names of people to their ages:</p>
-
-<pre><code>&gt;&gt;&gt; ages = {'joe': 20, 'jenny': 19, 'tony': 24}
-&gt;&gt;&gt; ages['tony'] = 23
+<pre><code>(define (flatten lst)
+    ; Your Code Here
+                        )
 </code></pre>
 
-<p>If I try to add another person named <code>tony</code>, instead of having two keys, both labeled <code>tony</code>, I will instead have one key for <code>tony</code> mapped to the new value.</p>
+<p>And here’s a test to help you out:</p>
 
-<pre><code>&gt;&gt;&gt; ages
-{'joe': 20, 'jenny': 19, 'tony': 23}
+<pre><code>(define (test)
+      (assert-equal '(1 2 3) (flatten '(1 (2) 3)))
+      (assert-equal '(1 2 3 4 5 6) (flatten '(1 (2 3 4) (5 (6)))))
+      (assert-equal '(1 2) (flatten '((1) ((2))))))
 </code></pre>
 
-<p>This shows that dictionary keys are unique. Another thing we should note is that dictionaries are unordered. Python has its own way of organizing and arranging the items, but we as the programmer do not know for sure.</p>
+<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
-<h4 id="accessing-elements">Accessing Elements</h4>
+<div class="solution">
 
-<p>Elements in a dictionary can be accessed using the square bracket notation. If the key exists, it will return its value. If not, it will throw a <code>KeyError</code>.</p>
-
-<pre><code>&gt;&gt;&gt; ages['joe']
-20
-&gt;&gt;&gt; ages['johnny']
-Traceback (most recent call last):
-  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
-KeyError: 'johnny'
+  <pre><code>(define (flatten lst)
+    (cond ((null? lst) lst)
+          ((list? (car lst)) (append (flatten (car lst)) (flatten (cdr lst))))
+          (else (cons (car lst) (flatten (cdr lst))))))
 </code></pre>
 
-<h4 id="inserting-and-changing-elements">Inserting and Changing Elements</h4>
+  <p>For this problem, we have two cases to consider. First, we have to make sure that the list we’re iterating over isn’t empty. If it is, we can just return it. Second, we have to check to see if the current element is a nested list. If it is, we want to recursively call <code>flatten</code> on it. However, we still want to call <code>flatten</code> on the rest of the list in order to continue to with the rest of the list.</p>
 
-<p>Elements in a dictionary can be inserted in the same way that they are changed. Dictionaries are considered a mutable data type because we can change the entries and add new ones. To add elements, we do the following:</p>
+  <p>Once we have those two flattened lists, we need to <code>append</code> them together to get a single list. In the last case, if the first element is not a list, then we can just take the first element and <code>cons</code> it with the flattened version of the rest of the list.</p>
 
-<pre><code>&gt;&gt;&gt; ages['harry'] = 19
-&gt;&gt;&gt; ages
-{'joe': 20, 'harry': 19, 'jenny': 19, 'tony': 23}
-</code></pre>
+</div>
 
-<p>To change elements, we do the same thing, except we know that the key already exists.</p>
-
-<pre><code>&gt;&gt;&gt; ages['jenny'] = 25
-&gt;&gt;&gt; ages
-{'joe': 20, 'jenny': 25, 'harry': 19, 'tony': 23}
-</code></pre>
-
-<p>Again, notice that the elements are in a different order this time, a reminder that dictionaries are unordered and that we cannot rely upon the order when we iterate over them.</p>
-
-<h4 id="removing-elements">Removing Elements</h4>
-
-<p>If you desire to remove items from a dictionary, you must use the special built-in, <code>del</code>. The syntax is as follows:</p>
-
-<pre><code>&gt;&gt;&gt; del ages['tony']
-&gt;&gt;&gt; ages
-{'joe': 20, 'jenny': 25, 'harry': 19}  
-</code></pre>
-
-<p>We use the <code>del</code> function that requires you to specify the dictionary and the associated key that you want to remove.</p>
-
-<h4 id="iterating-over-the-elements-in-a-dictionary">Iterating Over the Elements in a Dictionary</h4>
-
-<p>We have several methods for iterating over a dictionary. Again, we remind ourselves that dictionaries are unordered so we cannot rely upon a for loop to give us the same values after we manipulate the data. For example:</p>
-
-<pre><code>&gt;&gt;&gt; for i in ages:
-...     print(i)
-...
-harry
-joe
-jenny
-</code></pre>
-
-<p>Notice that the <em>keys</em> are what gets printed and that the values are nowhere to be found. Iterating over the dictionary itself is the same as iterating over just the keys. To be more specific, we can use the <code>.keys()</code> method to iterate over just the keys. We also have access to the <code>.values()</code> method and the <code>.items()</code> method and they work as follows:</p>
-
-<pre><code>&gt;&gt;&gt; for i in ages.values():
-...     print(i)
-...
-19
-20
-25
-&gt;&gt;&gt; for k, v in ages.items():
-...     print(k, v)
-...
-harry 19
-joe 20
-jenny 25
-</code></pre>
-
-<h4 id="dictionaries-in-environment-diagrams">Dictionaries in Environment Diagrams</h4>
-
-<p>Dictionaries have a representation in environment diagrams too. We represent it by listing the type <em>dict</em> above the boxes with the keys on the left and the values on the right. The name of our dictionary, <code>ages</code>, points to the dict object. Here is what our <code>ages</code> dictionary would look like:</p>
-
-<p><img src="/assets/images/dictionaries/environment_diagram_01.png" alt="Environment Diagram" /></p>
-
-<p>When we add and remove items from the dictionary, our environment diagram updates to this:</p>
-
-<pre><code>&gt;&gt;&gt; ages['joe'] = 22
-&gt;&gt;&gt; del ages['jenny']
-&gt;&gt;&gt; ages
-{'joe': 22, 'harry': 19}
-</code></pre>
-
-<p><img src="/assets/images/dictionaries/environment_diagram_02.png" alt="Environment Diagram" /></p>
-
-<h4 id="useful-methods-for-dictionaries">Useful Methods for Dictionaries</h4>
-
-<p>Work in progress, will be updated soon.</p>
 
 
 <p class="disclaimer">
