@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Church Numerals - Mark Miyashita
+    CS61A - Spring 2014 - Tail Recursion - Mark Miyashita
   
 </title>
 
@@ -421,141 +421,47 @@ woopra.track('pv', {
 
 </div>
 <div class="col-md-9" role="main">
-  <div class="page-header">
-  <h1>Church Numerals</h1>
+  
+
+  
+  
+
+
+
+<h1>CS61A - Spring 2014 - Tail Recursion</h1>
+
+<div class="page-header" id="notes">
+  <h3>Notes:</h3>
 </div>
 
+<div class="cs-notes">
 
+  <ul>
+  
+    <li><h4><a href="/cs61a/sp14/tail_recursion/tail_recursion_and_tail_optimized_calls">Tail Recursion and Tail Optimized Calls</a></h4></li>
+    
+<p>Frist off, I think this is an excellent article to read about tail recursion and tail calls in Python: <a href="http://paulbutler.org/archives/tail-recursion-in-python/">here</a></p>
 
+<p>Basically, you can write tail recursive functions in any language. Tail recursion, in one sentence, is where you return the answer in the final frame instead of following the frames back up to the original frame. For example, we have factorial which is normally not tail recursive:
 
+    <a href="/cs61a/sp14/tail_recursion/tail_recursion_and_tail_optimized_calls">(Read More!)</a>
+  
+  </ul>
 
-<ul id="markdown-toc">
-  <li><a href="#what-are-church-numerals">What are Church Numerals?</a></li>
-  <li><a href="#add-one">Add One</a></li>
-  <li><a href="#add">Add</a></li>
-</ul>
+</div>
 
-<h4 id="what-are-church-numerals">What are Church Numerals?</h4>
+<div class="page-header" id="problems">
+  <h3>Practice Problems:</h3>
+</div>
 
-<!--start-->
-<p><a href="http://en.wikipedia.org/wiki/Church_encoding#Computation_with_Church_numerals">Church numerals</a> come from <a href="http://en.wikipedia.org/wiki/Lambda_calculus">lambda calculus</a> and are based upon the idea that you can represent numbers by using a series of nested functions. At the most basic level, we have zero which can be defined as:
-<!--end--></p>
+<div class="cs-problems">
 
-<pre><code>def zero(f):
-    return lambda x: x
-</code></pre>
+  <p>
+    Looks like there currently aren't any practice problems (yet) about Tail Recursion...if you'd like to see some, <a href="/contact">let me know.</a>
+  </p>
 
-<p>Or simply, the function for zero does not depend on the input function. It simply returns a function that takes in an argument and returns the same value. Now let’s take a look at one.</p>
+</div>
 
-<pre><code>def one(f):
-    return lambda x: f(x)
-</code></pre>
-
-<p>What’s going on here? We note that one is simply the same function as zero except with <code>f</code> applied once. As we look at two, we start to see a pattern:</p>
-
-<pre><code>def two(f):
-    return lambda x: f(f(x))
-</code></pre>
-
-<p>A church numeral is basically just a funtion that takes in a value which we call <code>x</code>, it then takes the input function, <code>f</code> and applies it to the value <code>x</code>, <code>n</code> times. In this case, <code>n</code> is the number that we are representing.</p>
-
-<h4 id="add-one">Add One</h4>
-
-<p>So this is pretty easy, huh? Let’s take it to another level. Let’s define a function that can add 1 to a church numeral. If I call this function on the church numeral, <code>one</code>, I should get back a function that is similar to the function <code>two</code> that we defined above.</p>
-
-<pre><code>def add_one(n):
-    """Returns the church numeral that is one more than the input n."""
-    "***YOUR CODE HERE***"
-</code></pre>
-
-<p>Here’s what we came up with:</p>
-
-<pre><code>def add_one(n):
-    return lambda f: lambda x: f(n(f)(x))
-</code></pre>
-
-<p>Why and how does this work? Let’s break it down. First, let’s call this on our church numeral <code>one</code> that we defined earlier.</p>
-
-<pre><code>add_one(one)
-</code></pre>
-
-<p>The return value looks something like this:</p>
-
-<pre><code>lambda f: lambda x: f(one(f)(x))
-</code></pre>
-
-<p>Which also looks like:</p>
-
-<pre><code>lambda f: lambda x: f((lambda g: lambda y: g(y))(f)(x))
-</code></pre>
-
-<p>This may look a little confusing at first, but let’s examine what we did here. I substituted the function <code>one</code> with <code>lambda g: lambda y: g(y)</code>. If you remember the lecture from lambdas, we can call lambdas as soon as we define them and that is exactly what is going on here. We’re calling <code>(lambda g: lambda y: g(y))</code> on <code>f</code> immediately after it’s defined. This means that we can replace every <code>g</code> with <code>f</code>. Basically, we’ve stated that the function call <code>(lambda g: lambda y: g(y))(f)</code> reduces to <code>(lambda y: f(y))</code>. We can do the same thing for the <code>x</code> that is also tacked onto the end of the function call. This time, we see that <code>(lambda y: f(y))(x)</code> reduces to <code>f(x)</code>. So, we finally see that the complex lambda expression that resulted from calling <code>add_one(one)</code> reduces all the way down to the following:</p>
-
-<pre><code>lambda f: lambda x: f(f(x))
-</code></pre>
-
-<p>Which, if we look up above, is the same as the function two! Looks like it worked! </p>
-
-<h4 id="add">Add</h4>
-
-<p>We can even make this more general, instead of only adding one to our church numberal, we can extend this to adding two church numerals together. Let’s take a look at how that would work.</p>
-
-<pre><code>def add(m, n):
-    """Return the church numeral for m + n where m and n are Church Numerals."""
-    "***YOUR CODE HERE***"
-</code></pre>
-
-<p>Here’s what we came up with:</p>
-
-<pre><code>def add(m, n):
-    return lambda f: lambda x: m(f)(n(f)(x))
-</code></pre>
-
-<p>Well what do we see here? We notice that the only difference between this function and the <code>add_one</code> function that we defined above is in this one, we’re calling <code>m(f)</code> wheras in the other one, we simply has <code>f</code>. Say that <code>m</code> is <code>one</code> and <code>n</code> is also <code>one</code>, we can follow the same evaluation rules as before and we see that the exact same result comes out of <code>(n(f)(x))</code>. Now, we have <code>lambda f: lambda x: m(f)f(x)</code>. Let’s reduce the <code>m(f)</code> call, substituting the function <code>one</code> for <code>m</code>, we get:</p>
-
-<pre><code>one(f)
-
-lambda x: f(x)
-</code></pre>
-
-<p>Plugging that into the previous simplified <code>f(x)</code>, we see that we end up with the following lambda:</p>
-
-<pre><code>lambda f: lambda x: (lambda y: f(y))(f(x))
-</code></pre>
-
-<p>Which reduces down to:</p>
-
-<pre><code>lambda f: lambda x: f(f(x))
-</code></pre>
-
-<p>because the <code>y</code> value can be substituted with <code>f(x)</code>. If we look at this, we see that again, we added the two church numerals <code>one</code> and <code>one</code> and got <code>two</code>! Yay, we can do math again! </p>
-
-<p>The same ideas can be applied to multiplication and the power functions. Just remember to reduce your lambda calls as soon as you have all of the parameters to call them. Then you can start simplifying the return statements and getting it down to something you can visualize.</p>
-
-<p>Post any questions or comments in the comments below!</p>
-
-
-<p class="disclaimer">
-  I don't claim to be perfect so if you find an error on this page, please <a href="/contact">send me an email</a> preferably with a link to this page so that I know what I need to fix!
-</p>
-
-<article class="post">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'markmiyashita'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  </div>
-</article>
 
 </div></div></div><footer class="bs-footer" role="contentinfo"><p class="copyright">© 2014 Mark Miyashita</p><ul class="footer-links"><li><a href="http://github.com/negativetwelve">Github</a></li><li class="muted">&middot;</li><li><a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7762">TA Ratings</a></li><li class="muted">&middot;</li><li><a href="https://www.facebook.com/markmiyashita12">Facebook</a></li><li class="muted">&middot;</li><li><a href="http://www.linkedin.com/pub/mark-miyashita/38/63/49/">LinkedIn</a></li><li class="muted">&middot;</li><li><a href="https://plus.google.com/101180624276428786239?rel=author">Google+</a></li></ul></footer><script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/highlight.pack.js"></script>
