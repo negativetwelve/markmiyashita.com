@@ -1116,6 +1116,10 @@ cs_classes:
                 date: "2013-11-06"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-10"
+                published: true
+                solution: true
         - name: "Nested Reverse List"
           file: nested_reverse_list
           type: Challenge
