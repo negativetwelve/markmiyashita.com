@@ -1,4 +1,14 @@
 projects:
+  - name: Ding
+    url:
+    repo: https://github.com/negativetwelve/ding
+    image:
+    description: An iOS, multiclient instant messaging application that works with Google Chat, Google Voice, and Facebook Chat. Allows users to send and receive messages with a simple UI.
+  - name: Talk2Text
+    url: https://textintotalk.herokuapp.com/
+    repo: https://github.com/negativetwelve/talk-n-text
+    image:
+    description: A website that uses Chrome's speech and voice recognition API to interpret natural, spoken language into Python code in an online text editor. Also has the ability to navigate the text environment using voice commands.
   - name: USOMC Competition Management System and iOS Judging app
     url: http://usomc.herokuapp.com
     repo: https://github.com/calblueprint/usomc-rails
