@@ -1133,6 +1133,10 @@ cs_classes:
                 date: "2013-11-08"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-11"
+                published: true
+                solution: true
         - name: "Zip Two Lists"
           file: zip_two_lists
           type: Challenge
