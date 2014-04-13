@@ -1167,6 +1167,10 @@ cs_classes:
                 date: "2013-11-08"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-13"
+                published: true
+                solution: true
         - name: "Count Occurrences"
           file: count_occurrences
           type: Warmup
