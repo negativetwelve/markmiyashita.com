@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Post Order Traversal of a Binary Tree - Mark Miyashita
+    CS61A - Zip Two Lists - Mark Miyashita
   
 </title>
 
@@ -422,7 +422,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Post Order Traversal of a Binary Tree</h3>
+  <h3>Zip Two Lists</h3>
 </div>
 
 
@@ -430,47 +430,32 @@ woopra.track('pv', {
 
 
 
-<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+<p>Write a function in Scheme that zips two lists together. Zip takes in two lists and pairs each of the elements in the first list with the item at the corresponding index of the other list. The output is a list of two-item-lists. The length of the output list is the same as the smallest input list (meaning that the function should stop if you run out of elements in either list).</p>
 
-<p>This problem is a challenge problem and might touch on some concepts taught mainly in CS61B. However, as a CS61A student who has learned all about tree recursion, you should be able to complete a problem like this.</p>
+<pre><code>(define (zip lst1 lst2)
+    ; Your Code Here
+                        )
+</code></pre>
 
-<p>We like to be able to traverse our trees in order to get all of the elements back into some sort of list. We can traverse the tree in many different ways. Post Order Traversal is one of them and the algorithm goes like this. First, we will recursively print out all the values to our left, then, we will recursively print out all the values on the right, finally, we will print out the current node’s entry. Take a look at the doctests below if you are still confused. Post in the comments section if you are still confused after reading the doctests.</p>
+<p>And here’s a test to help you out:</p>
 
-<pre><code>def post_order_traversal(tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; post_order_traversal(t)
-    4
-    1
-    6
-    8
-    7
-    5
-    """
-    "***YOUR CODE HERE***"
+<pre><code>(define (test)
+      (assert-equal (zip '(1 3 5) '(2 4 6)) '((1 2) (3 4) (5 6)))
+      (assert-equal (zip '(1) '(2 3 4 5 6)) '((1 2)))
+      (assert-equal (zip '(1 2 3) '()) '()))
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def post_order_traversal(tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; post_order_traversal(t)
-    4
-    1
-    6
-    8
-    7
-    5
-    """
-    if tree is None:
-        return
-    post_order_traversal(tree.left)
-    post_order_traversal(tree.right)
-    print(tree.entry)
+  <pre><code>(define (zip lst1 lst2)
+    (if (or (null? lst1) (null? lst2))
+        nil
+        (cons (list (car lst1) (car lst2)) (zip (cdr lst1) (cdr lst2)))))
 </code></pre>
+
+  <p>If either of the lists is empty, then we’re done and we should just return the empty list. Otherwise, we form a list out of the first elements of each list and we pair that with the zipped up version of the remaining parts of each of the lists. The result is our expected list of two-item-lists.</p>
 
 </div>
 
