@@ -1150,6 +1150,10 @@ cs_classes:
                 date: "2013-11-08"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-12"
+                published: true
+                solution: true
         - name: "Rotate List k Times"
           file: rotate_list_k_times
           type: Challenge
