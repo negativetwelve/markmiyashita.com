@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Rotate List k Times - Mark Miyashita
+    CS61A - Count Occurrences - Mark Miyashita
   
 </title>
 
@@ -422,7 +422,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Rotate List k Times</h3>
+  <h3>Count Occurrences</h3>
 </div>
 
 
@@ -430,9 +430,9 @@ woopra.track('pv', {
 
 
 
-<p>Write a function in Scheme that rotates a list by k elements. Rotating a list by 1 consists of moving the first item to the end of the list. Rotating a list by k consists of moving the first k items to the end of the list. <code>k</code> can be any number (not constrained by the size of the list).</p>
+<p>Write a function in Scheme that counts the number of occurrences of a single item. This function should return a number representing the number of times that <code>item</code> appears in <code>lst</code>.</p>
 
-<pre><code>(define (rotate lst k)
+<pre><code>(define (count lst item)
     ; Your Code Here
                         )
 </code></pre>
@@ -440,22 +440,22 @@ woopra.track('pv', {
 <p>And here’s a test to help you out:</p>
 
 <pre><code>(define (test)
-      (assert-equal (rotate '(1 2 3 4) 3) '(4 1 2 3))
-      (assert-equal (rotate '(1 2) 3) '(2 1))
-      (assert-equal (rotate '(1 2 3 4 5) 10) '(1 2 3 4 5)))
+      (assert-equal (count '(1 2 3) 1) 1)
+      (assert-equal (count '(1 1 1 1 1) 1) 5)
+      (assert-equal (count '(1 0 1 0 1) 2) 0))
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>(define (rotate lst k)
-    (cond ((null? lst) lst)
-          ((= k 0) lst)
-          (else (rotate (append (cdr lst) (list (car lst))) (- k 1)))))
+  <pre><code>(define (count lst item)
+    (cond ((null? lst) 0)
+          ((= (car lst) item) (+ 1 (count (cdr lst) item)))
+          (else (count (cdr lst) item))))
 </code></pre>
 
-  <p>If <code>lst</code> is initially empty, then any input will return the same list (the empty list) so we should just go ahead and return it. If <code>k</code> is equal to zero, meaning that there are no more rotations, then return <code>lst</code>. Otherwise, we want to <code>rotate</code> the list while keeping all of the elements intact. That means appending the first item to the end of the rest of the list. We also want to make sure we decrement <code>k</code> by 1 meaning that we just successfully completed one rotation.</p>
+  <p>If <code>lst</code> is empty, then <code>item</code> cannot be inside it so we should return 0. If the first item is equal to <code>item</code>, then we should return 1 plus the number of times that <code>item</code> appears in the rest of the list. Otherwise, we should just return the number of times that <code>item</code> appears in the rest of the list.</p>
 
 </div>
 
