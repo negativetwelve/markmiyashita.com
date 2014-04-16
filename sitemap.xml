@@ -1615,6 +1615,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/generators/fibonacci_generator/index.html</loc>
+        
+        <lastmod>2014-04-15T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/generators/chain_generator/index.html</loc>
         
         <lastmod>2013-12-13T00:00:00-08:00</lastmod>
@@ -2394,6 +2401,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/generators/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/generators/index.html</loc>
         
     </url>
     
