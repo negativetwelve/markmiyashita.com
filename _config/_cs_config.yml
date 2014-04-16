@@ -1219,7 +1219,7 @@ cs_classes:
                 published: true
 
     generators:
-      semesters: [base, fa13]
+      semesters: [base, fa13, sp14]
       problems:
         - name: "Fibonacci Generator"
           file: fibonacci_generator
@@ -1232,6 +1232,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-12-03"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-04-15"
                 published: true
                 solution: true
         - name: "Chain Generator"
