@@ -1402,7 +1402,7 @@ cs_classes:
       semesters: []
 
     logic:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       code:
         - name: "Logic Starter File"
           output: logic_starter
@@ -1454,6 +1454,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-12-10"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-04-16"
                 published: true
                 solution: true
         - name: "Length in Logic"
