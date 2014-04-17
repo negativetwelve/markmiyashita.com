@@ -1473,6 +1473,10 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-17"
+                published: true
+                solution: true
         - name: "Double List in Logic"
           file: double_list
           type: Warmup
