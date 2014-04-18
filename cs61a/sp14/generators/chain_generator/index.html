@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Nested Reverse List - Mark Miyashita
+    CS61A - Chain Generator - Mark Miyashita
   
 </title>
 
@@ -426,7 +426,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Nested Reverse List</h3>
+  <h3>Chain Generator</h3>
 </div>
 
 
@@ -434,35 +434,49 @@ woopra.track('pv', {
 
 
 
-<p>Write a function in Scheme that reverses a nested list. The output should be a new list that is the reverse of the original list and it should keep the nesting intact. It should also reverse all of the elements of the nested lists.</p>
+<p>Write a generator that takes in any number of iterables and returns the elements of all the iterables in order, starting with the first item of the first iterable.</p>
 
-<pre><code>(define (nested-reverse lst)
-    ; Your Code Here
-                        )
-</code></pre>
-
-<p>And here’s a test to help you out:</p>
-
-<pre><code>(define (test)
-      (assert-equal '(1 2 3) (nested-reverse '(3 2 1)))
-      (assert-equal '(((((6) 5) 4) (3 2) 1)) (nested-reverse '(1 (2 3) (4 (5 (6))))))
-      (assert-equal '() (nested-reverse '())))
+<pre><code>def chain(        ):
+    """
+    &gt;&gt;&gt; c = chain([1, 2, 3], [4, 5], [6, 7])
+    &gt;&gt;&gt; for i in c:
+    ...     print(i)
+    ...
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>(define (nested-reverse lst)
-    (cond ((null? lst) lst)
-          ((list? (car lst))
-                  (append (nested-reverse (cdr lst)) (list (nested-reverse (car lst)))))
-        (else (append (reverse-nested (cdr lst)) (list (car lst))))))
+  <pre><code>def chain(*iterables):
+    """
+    &gt;&gt;&gt; c = chain([1, 2, 3], [4, 5], [6, 7])
+    &gt;&gt;&gt; for i in c:
+    ...     print(i)
+    ...
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    """
+    for iterable in iterables:
+        for item in iterable:
+            yield item
 </code></pre>
 
-  <p>This problem is very similar to <code>reverse</code> and <code>flatten</code>. The idea is that we first check to see if we have more elements to work with. If we don’t, then we just return the empty list. Then, we check what the first item of the list is. If it, itself, is a list, then we need to reverse it’s contents. To do that, we recursively call <code>nested-reverse</code> on the <code>car</code> of the list. Then, we append the result to the end of the result of <code>nested-reverse</code>(ing) the rest of the list. </p>
-
-  <p>In the case where the first element is not a list, then we can just reverse the list like we normally would. We do this by taking the first item and appending it on to the back of the list. Remember, in order to use <code>append</code>, we need to make sure that we have two lists. To get around this requirement, we simply make a one-item list with just the first element. Then, we can successfully use <code>append</code> to solve the problem.</p>
+  <p>The first thing to note in this problem is that the <code>chain</code> function can take in any number of arguments. Therefore, we must recall that thei <code>*</code> syntax allows us to do that. In this problem, if we remember that a <code>for</code> loop implicitly calls the <code>iter</code> method on the object that it iterates over, then we know that each iterable will become an interator. From there, we just need to iterate over the iterator to get the individual elements of the list and yield them in order.</p>
 
 </div>
 
