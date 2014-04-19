@@ -1268,6 +1268,10 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-19"
+                published: true
+                solution: true
 
     streams:
       semesters: [base, fa13]
