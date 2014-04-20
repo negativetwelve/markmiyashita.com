@@ -1274,7 +1274,7 @@ cs_classes:
                 solution: true
 
     streams:
-      semesters: [base, fa13]
+      semesters: [base, fa13, sp14]
       problems:
         - name: "Streams of Streams"
           file: streams_of_streams
@@ -1300,6 +1300,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-12-03"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-04-20"
                 published: true
                 solution: true
 
