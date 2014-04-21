@@ -1308,7 +1308,7 @@ cs_classes:
                 solution: true
 
     iterators:
-      semesters: [base, sp13, su13, fa13]
+      semesters: [base, sp13, su13, fa13, sp14]
       problems:
         - name: "Once an Infinite Sequence, Always an Infinite Sequence"
           file: once_an_infinite_sequence_always_an_infinite_sequence
@@ -1329,6 +1329,10 @@ cs_classes:
                 solution: true
               fa13:
                 date: "2013-11-17"
+                published: true
+                solution: true
+              sp14:
+                date: "2014-04-21"
                 published: true
                 solution: true
         - name: "Fibonacci Iterator"
