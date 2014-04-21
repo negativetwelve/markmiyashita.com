@@ -1713,6 +1713,13 @@
     </url>
     
     <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/iterators/once_an_infinite_sequence_always_an_infinite_sequence/index.html</loc>
+        
+        <lastmod>2014-04-21T00:00:00-07:00</lastmod>
+        
+    </url>
+    
+    <url>
         <loc>http://markmiyashita.com/cs61a/iterators/fibonacci_iterator/index.html</loc>
         
         <lastmod>2013-12-03T00:00:00-08:00</lastmod>
@@ -2476,6 +2483,11 @@
     
     <url>
         <loc>http://markmiyashita.com/cs61a/fa13/iterators/index.html</loc>
+        
+    </url>
+    
+    <url>
+        <loc>http://markmiyashita.com/cs61a/sp14/iterators/index.html</loc>
         
     </url>
     
