@@ -1365,6 +1365,10 @@ cs_classes:
                 date: "2013-12-12"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-23"
+                published: true
+                solution: true
         - name: "Range Iterator"
           file: range_iterator
           type: Warmup
