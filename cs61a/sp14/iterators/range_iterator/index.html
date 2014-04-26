@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - What Are Functions? - Mark Miyashita
+    CS61A - Range Iterator - Mark Miyashita
   
 </title>
 
@@ -430,7 +430,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>What Are Functions?</h3>
+  <h3>Range Iterator</h3>
 </div>
 
 
@@ -438,44 +438,52 @@ woopra.track('pv', {
 
 
 
-<p>So far, we’ve been experimenting with variables, functions, and some basic Python. Here are some questions to help test your knowledge so far. Don’t worry if these are hard at first, they will get easier throughout the semester!</p>
+<p>Write an iterator that acts as the built-in <code>range</code> iterator in Python. You should account for all different cases:</p>
 
-<p>What would the following output in Python?</p>
+<ol>
+  <li>When there is only one input, the argument acts as the ending value with 0 as the start value.</li>
+  <li>When there is only two inputs, the arguments act as the start and end, respectively.</li>
+  <li>When there are three inputs, they act as the start, end, and step values.</li>
+</ol>
 
-<pre><code>&gt;&gt;&gt; a = 5
-&gt;&gt;&gt; b = a
-&gt;&gt;&gt; a = 6
-&gt;&gt;&gt; a       #1
+<p>Also, remember that <code>range</code> starts from <code>start</code> and goes up to, but not including <code>end</code>.</p>
 
-&gt;&gt;&gt; b       #2
-
-&gt;&gt;&gt; def square(x):
-...     print(x * x)
-...     return x
-...
-&gt;&gt;&gt; a = square(a)
-            #3 - what is printed here?
-&gt;&gt;&gt; a       #4
-
-&gt;&gt;&gt; b = square(square(a))
-            #5 - what is printed here?
-
-&gt;&gt;&gt; b       #6
+<pre><code>class Range(object):
+    """
+    &gt;&gt;&gt; r = Range(3) # 0, 1, 2
+    &gt;&gt;&gt; s = Range(1, 5) # 1, 2, 3, 4
+    &gt;&gt;&gt; t = Range(1, 5, 2) # 1, 3
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>6</li>
-    <li>5</li>
-    <li>36 (printed)</li>
-    <li>6</li>
-    <li>36 (printed) <br />
-36 (printed)</li>
-    <li>6</li>
-  </ol>
+  <pre><code>class Range(object):
+
+    def __init__(self, start, end=None, step=1):
+        if end is None:
+            end = start
+            start = 0
+
+        self.start = start
+        self.end = end
+        self.step = step
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.start &gt;= self.end:
+            raise StopIteration
+        current = self.start
+        self.start += self.step
+        return current
+</code></pre>
+
+  <p>The tricky part about this question is the <code>__init__</code> method. As long as you pay particular attention to the different ways of creating a <code>Range</code> object, you should be good to go.</p>
 
 </div>
 
