@@ -1382,6 +1382,10 @@ cs_classes:
                 date: "2013-12-12"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-26"
+                published: true
+                solution: true
         - name: "Repeat Iterator"
           file: repeat_iterator
           type: Warmup
