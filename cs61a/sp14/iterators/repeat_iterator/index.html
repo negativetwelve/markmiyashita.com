@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - What Would Python Print? - Mark Miyashita
+    CS61A - Repeat Iterator - Mark Miyashita
   
 </title>
 
@@ -430,7 +430,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>What Would Python Print?</h3>
+  <h3>Repeat Iterator</h3>
 </div>
 
 
@@ -438,61 +438,38 @@ woopra.track('pv', {
 
 
 
-<p>If we were to type these Python statements and expressions into the interpreter, what would they do? These all either evaluate to a value, an error, or another function. These start out fairly easy and get pretty tough by then end. Remember your rules for evaluating lambdas!</p>
+<p>Write an iterator that outputs the value <code>n</code> number of times. If there is no <code>n</code> specified in the input arguments, then your iterator should act as an infinite iterator, always outputting the same element.</p>
 
-<pre><code>&gt;&gt;&gt; x = lambda: 4
-&gt;&gt;&gt; y = lambda x: x + 3
-&gt;&gt;&gt; z = lambda x: y
-&gt;&gt;&gt; z(4)(1)               #1
-
-&gt;&gt;&gt; z(5)(1)               #2
-
-&gt;&gt;&gt; h = lambda f, g: g(f)
-&gt;&gt;&gt; h(lambda x: x * 2, lambda x: x)(2)      #3
-
-&gt;&gt;&gt; g = lambda f: f(f)
-&gt;&gt;&gt; g(g(lambda x: x))(3)  #4
-
-&gt;&gt;&gt; g(g(lambda x: x))(lambda x: x + 5)(1)   #5
-
-&gt;&gt;&gt; a = lambda b: lambda a: b(a)
-&gt;&gt;&gt; b = lambda b: lambda b: b + 1
-&gt;&gt;&gt; a(b)                #6
-
-&gt;&gt;&gt; a(b)(1)(2)          #7
-
-&gt;&gt;&gt; b(a)(5)             #8
-
-&gt;&gt;&gt; b(a(b))(7)          #9
-
-&gt;&gt;&gt; c = lambda a, b: (b, a)
-&gt;&gt;&gt; b(a(c))(5)          #10
-
-&gt;&gt;&gt; c(a, b)[1](b)(1)(2) #11
-
-&gt;&gt;&gt; c(b(1), b(2))[0](5) #12
+<pre><code>class Repeat(object):
+    """
+    &gt;&gt;&gt; r = Repeat(3, 5) # Will output 3, 5 times.
+    &gt;&gt;&gt; s = Repeat(3) # Will output 3 an infinite number of times.
+    """
+    "***YOUR CODE HERE***"
 </code></pre>
-
-<p>You can break this question up into subquestions. The first part is numbers 1-2, second part is 3-5, third part is 6-12.</p>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <ol>
-    <li>4</li>
-    <li>4</li>
-    <li>4</li>
-    <li>3</li>
-    <li>6</li>
-    <li>function</li>
-    <li>3</li>
-    <li>6</li>
-    <li>8</li>
-    <li>6</li>
-    <li>3</li>
-    <li>6</li>
-  </ol>
+  <pre><code>class Repeat(object):
+
+    def __init__(self, elem, n=None):
+        self.elem = elem
+        self.n = n
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.n is not None and self.index &gt;= self.n:
+            raise StopIteration
+        self.index += 1
+        return self.elem
+</code></pre>
+
+  <p>The important thing to note in this question is the possibility of two different cases. On one hand, the iterator might be finite in which case you’d have to raise a <code>StopIteration</code>. On the other hand, the iterator might be infinite in which case you don’t have to raise the <code>StopIteration</code>.</p>
 
 </div>
 
