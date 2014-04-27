@@ -1399,6 +1399,10 @@ cs_classes:
                 date: "2013-12-12"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-27"
+                published: true
+                solution: true
         - name: "Drop While Iterator"
           file: drop_while_iterator
           type: Challenge
