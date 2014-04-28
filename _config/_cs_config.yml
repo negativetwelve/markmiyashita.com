@@ -1416,6 +1416,10 @@ cs_classes:
                 date: "2013-12-12"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-28"
+                published: true
+                solution: true
         - name: "Group By Iterator"
           file: group_by_iterator
           type: Challenge
