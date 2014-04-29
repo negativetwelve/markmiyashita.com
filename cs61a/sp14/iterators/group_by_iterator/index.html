@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Delete Last Item - Mark Miyashita
+    CS61A - Group By Iterator - Mark Miyashita
   
 </title>
 
@@ -430,7 +430,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Delete Last Item</h3>
+  <h3>Group By Iterator</h3>
 </div>
 
 
@@ -438,38 +438,67 @@ woopra.track('pv', {
 
 
 
-<p>Write a function that takes in an Rlist and mutates it such that it removes the last item (not including the empty Rlist at the end). You can assume that the rlist has at least one element in it.</p>
+<p>Write an iterator that takes in an <code>iterable</code> and an optional <code>key_func</code> where the key function is responsible for computing the key value for each element. If a <code>key_func</code> is not specified, then the identity function is used.</p>
 
-<pre><code>def delete_last_item(rlist):
-    """
-    Removes the last item from an rlist.
-    &gt;&gt;&gt; r = Rlist(4, Rlist(3, Rlist(6, Rlist(1))))
-    &gt;&gt;&gt; delete_last_item(r)
-    &gt;&gt;&gt; r
-    Rlist(4, Rlist(3, Rlist(6)))
-    """
-    "***YOUR CODE HERE***"
+<p>The <code>iterable</code> is assumed to be sorted by the <code>key_func</code>. Take a look at the following example:</p>
+
+<pre><code>&gt;&gt;&gt; g = GroupBy('AAAABBBCCDEFFF')
+&gt;&gt;&gt; for key, value_iterator in g:
+...     print(key, list(value_iterator))
+...
+A ['A', 'A', 'A', 'A']
+B ['B', 'B', 'B']
+C ['C', 'C']
+D ['D']
+E ['E']
+F ['F', 'F', 'F']
+</code></pre>
+
+<p>Remember MapReduce? You don’t need to in order to solve this problem; however, if you remember the phrase before the reduce stage where the inputs are all grouped together by the key…that’s what you’re implementing here. So, after solving this problem, you can say you know how that phase of MapReduce works! Pretty cool!</p>
+
+<pre><code>class GroupBy(object):
+
+    def __init__(self, iterable, key_func=lambda x: x):
+        "***YOUR CODE HERE***"
+
+    "***ADD MORE METHODS AS NECESSARY***"
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def delete_last_item(rlist):
-    """
-    Removes the last item from an rlist.
-    &gt;&gt;&gt; r = Rlist(4, Rlist(3, Rlist(6, Rlist(1))))
-    &gt;&gt;&gt; delete_last_item(r)
-    &gt;&gt;&gt; r
-    Rlist(4, Rlist(3, Rlist(6)))
-    """
-    if rlist.rest.rest is Rlist.empty:
-        rlist.rest = Rlist.empty
-    else:
-        delete_last_item(rlist.rest)
+  <pre><code>class GroupBy(object):
+
+    def __init__(self, iterable, key_func=lambda x: x):
+        self.iterable = iter(iterable)
+        self.key_func = key_func
+        self.current_key = None
+        self.target_key = None
+        self.current_value = None
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        while self.current_key == self.target_key:
+            self.current_value = next(self.iterable)
+            self.current_key = self.key_func(self.current_value)
+        self.target_key = self.current_key
+        return (self.current_key, self.grouper(self.target_key))
+
+    def grouper(self, target_key):
+        while self.current_key == target_key:
+            yield self.current_value
+            self.current_value = next(self.iterable)
+            self.current_key = self.key_func(self.current_value)
 </code></pre>
 
-  <p>Since we can assume that the rlist has at least one element in it, we can safely check to see if the <code>rlist.rest.rest</code> is empty or not. If it is, we want to mutate our input rlist and set it’s current <code>rest</code> to be <code>Rlist.empty</code>. If we’re not near the end of the <code>Rlist</code>, we want to iterate through by recursively calling <code>delete_last_item</code> on the rest of the rlist.</p>
+  <p>This problem is really, really hard so don’t be discouraged if you didn’t get it. We mainly have three variables to keep track of, we have the <code>current_key</code> which is the key that we’re currently on, we have the <code>target_key</code> which is the key that we’re looking for, and we have the <code>current_value</code> which, after finding the matching key, we want to yield out the current values.</p>
+
+  <p>In our <code>__next__</code> method, we’re doing two things. First, we’re searching for the current key that does not match the target key. As soon as we find a current key that’s not the target key, we update the target key so that we can use it in our helper function and then we output the <code>current_key</code> and the grouped up values based on that <code>target_key</code> that we just found.</p>
+
+  <p>The <code>grouper</code> method is searching for the <code>target_key</code> in the next keys. Essentially, it is looking through the input to try to find the next key that does not match the key that we’re looking for. As soon as that’s true, it exits the while loop and stops yielding values to the <code>__next__</code> method. The result is that the <code>grouper</code> function yields all values that match the <code>target_key</code> and then updates the <code>current_key</code> to be the next key that appears in the iterable.</p>
 
 </div>
 
