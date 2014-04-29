@@ -1433,6 +1433,10 @@ cs_classes:
                 date: "2013-12-16"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-04-29"
+                published: true
+                solution: true
 
     declarative_programming:
       semesters: []
