@@ -1560,6 +1560,10 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-05-02"
+                published: true
+                solution: true
         - name: "Greater Than or Equal to in Logic"
           file: greater_than_or_equal
           type: Challenge
