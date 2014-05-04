@@ -1547,6 +1547,10 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-05-06"
+                published: true
+                solution: true
         - name: "Includes in Logic"
           file: includes
           type: Warmup
