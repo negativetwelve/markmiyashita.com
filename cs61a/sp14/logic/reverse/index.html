@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Insert Into Binary Search Tree - Mark Miyashita
+    CS61A - Reverse a List in Logic - Mark Miyashita
   
 </title>
 
@@ -430,7 +430,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Insert Into Binary Search Tree</h3>
+  <h3>Reverse a List in Logic</h3>
 </div>
 
 
@@ -438,44 +438,33 @@ woopra.track('pv', {
 
 
 
-<p>This problem uses the Tree Class defined <a href="/cs61a/tree_recursion/code/tree">here.</a></p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<p>In this problem we are going to be inserting an item into a binary search tree. Recall that a binary search tree means that all items on the left of the tree are less than the current entry and all items on the right of the tree are greater than the current entry. Note: We cannot insert into an empty tree because of our implementation. Since we are using None as our empty tree, we can’t add a <code>.entry</code> to None because it is not an object. This function should still work for all other trees though.</p>
+<p>Write facts to define <code>reverse</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>reverse</code> relates two lists with the second being the reversed of the first.</p>
 
-<pre><code>def insert(item, tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; insert(2, t)
-    &gt;&gt;&gt; t
-    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
-    """
-    "***YOUR CODE HERE***"
+<pre><code>(fact (reverse ; YOUR CODE HERE ))
+
+(query (reverse (1 2 3) (3 2 1)))
+; expect Success!
+
+(query (reverse (1 2 3) ?what))
+; expect Success! ; what: (3 2 1)
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>def insert(item, tree):
-    """
-    &gt;&gt;&gt; t = Tree(5, Tree(1, None, Tree(4)), Tree(7, Tree(6), Tree(8)))
-    &gt;&gt;&gt; insert(2, t)
-    &gt;&gt;&gt; t
-    Tree(5, Tree(1, None, Tree(4, Tree(2), None)), Tree(7, Tree(6), Tree(8)))
-    """
-    if tree is None:
-        return
-    elif item &lt; tree.entry:
-        if tree.left:
-            insert(item, tree.left)
-        else:
-            tree.left = Tree(item)
-    else:
-        if tree.right:
-            insert(item, tree.right)
-        else:
-            tree.right = Tree(item)
+  <pre><code>(fact (reverse () ()))
+
+(fact (reverse (?first . ?rest) ?result)
+      (reverse ?rest ?new-rest)
+      (append ?new-rest (?first) ?result))
 </code></pre>
+
+  <p>We start with the base case. The reverse of the empty list is the empty list.</p>
+
+  <p>Moving on to the recursive case, we split up the original list into <code>first</code> and <code>rest</code>. From there, we need to find the <code>reverse</code> of the <code>rest</code>, store that as a new value, in this case <code>new-rest</code>, and then appending <code>first</code> to the end of <code>new-rest</code> to get the <code>result</code> that we originally wanted.</p>
 
 </div>
 
