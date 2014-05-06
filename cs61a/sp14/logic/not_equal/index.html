@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Reverse a List in Logic - Mark Miyashita
+    CS61A - Implementing Not Equal in Logic - Mark Miyashita
   
 </title>
 
@@ -430,7 +430,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Reverse a List in Logic</h3>
+  <h3>Implementing Not Equal in Logic</h3>
 </div>
 
 
@@ -440,31 +440,31 @@ woopra.track('pv', {
 
 <p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<p>Write facts to define <code>reverse</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>reverse</code> relates two lists with the second being the reversed of the first.</p>
+<p>Write facts to define <code>not-equal</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>not-equal</code> relates two numbers and displays <code>Success!</code> if the first number is not equal to the second number. Currently, not equal only works with numbers.</p>
 
-<pre><code>(fact (reverse ; YOUR CODE HERE ))
+<pre><code>(fact (not-equal ; YOUR CODE HERE))
 
-(query (reverse (1 2 3) (3 2 1)))
+(query (not-equal 5 1))
 ; expect Success!
 
-(query (reverse (1 2 3) ?what))
-; expect Success! ; what: (3 2 1)
+(query (not-equal 3 3))
+; expect Failed.
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <pre><code>(fact (reverse () ()))
+  <pre><code>(fact (not-equal ?x ?y)
+      (sub ?x ?y ?num)
+      (greater-than-or-equal ?num 1))
 
-(fact (reverse (?first . ?rest) ?result)
-      (reverse ?rest ?new-rest)
-      (append ?new-rest (?first) ?result))
+(fact (not-equal ?x ?y)
+      (sub ?y ?x ?num)
+      (greater-than-or-equal ?num 1))
 </code></pre>
 
-  <p>We start with the base case. The reverse of the empty list is the empty list.</p>
-
-  <p>Moving on to the recursive case, we split up the original list into <code>first</code> and <code>rest</code>. From there, we need to find the <code>reverse</code> of the <code>rest</code>, store that as a new value, in this case <code>new-rest</code>, and then appending <code>first</code> to the end of <code>new-rest</code> to get the <code>result</code> that we originally wanted.</p>
+  <p>There are two possible cases that two numbers are not equal. Either the first number is greater than the second or the second is greater than the first. So, we must define two facts to account for each of these cases. In both cases, we subtract one from the other and if that result is greater than or equal to 1, then they are different and we should display <code>Success!</code>.</p>
 
 </div>
 
