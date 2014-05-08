@@ -1611,6 +1611,10 @@ cs_classes:
                 date: "2013-12-13"
                 published: true
                 solution: true
+              sp14:
+                date: "2014-05-08"
+                published: true
+                solution: true
 
     unification:
       semesters: []
