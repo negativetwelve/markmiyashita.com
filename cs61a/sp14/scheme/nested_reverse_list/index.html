@@ -461,7 +461,7 @@ woopra.track('pv', {
     (cond ((null? lst) lst)
           ((list? (car lst))
                   (append (nested-reverse (cdr lst)) (list (nested-reverse (car lst)))))
-        (else (append (reverse-nested (cdr lst)) (list (car lst))))))
+        (else (append (nested-reverse (cdr lst)) (list (car lst))))))
 </code></pre>
 
   <p>This problem is very similar to <code>reverse</code> and <code>flatten</code>. The idea is that we first check to see if we have more elements to work with. If we don’t, then we just return the empty list. Then, we check what the first item of the list is. If it, itself, is a list, then we need to reverse it’s contents. To do that, we recursively call <code>nested-reverse</code> on the <code>car</code> of the list. Then, we append the result to the end of the result of <code>nested-reverse</code>(ing) the rest of the list. </p>
