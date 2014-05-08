@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Higher Order Functions in Environment Diagrams - Mark Miyashita
+    CS61A - Greater Than or Equal to in Logic - Mark Miyashita
   
 </title>
 
@@ -430,7 +430,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Higher Order Functions in Environment Diagrams</h3>
+  <h3>Greater Than or Equal to in Logic</h3>
 </div>
 
 
@@ -438,36 +438,42 @@ woopra.track('pv', {
 
 
 
-<p>Note: this problem is quite long. It’s very good practice though and if you can successfully complete this problem, you are pretty solid on environment diagrams! Draw out the following environment diagram:</p>
+<p>This problem uses the Logic starter file located <a href="/cs61a/logic/code/logic_starter">here.</a></p>
 
-<pre><code>def f(x):
-    def y(f):
-        return f(x)
-    return y
+<p>Write facts to define <code>greater-than-or-equal</code>. You may use anything already included in the starter file as well as other facts defined in previous questions. <code>greater-than-or-equal</code> relates two numbers and displays <code>Success!</code> if the first number is greater than or equal the second the number.</p>
 
-def g(x):
-    return f(x)
+<pre><code>(fact (greater-than-or-equal ; YOUR CODE HERE))
 
-def h(x):
-    return x * 2
+(query (greater-than-or-equal 5 1))
+; expect Success!
 
-def z(s):
-    return s + 2
+(query (greater-than-or-equal 1 3))
+; expect Failed.
 
-y = g(5)
-z = y(z)
-p = y(h)
+(query (greater-than-or-equal ?what 1))
+; expect Success! ; what: 1 ; what: 2 ; what: 3 ; what: 4 ; what: 5 ; what: 6 ; what: 7 ; what: 8 ; what: 9 ; what: 10 ; what: 11 ; what: 12 ; what: 13
 </code></pre>
 
 <p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
 
 <div class="solution">
 
-  <p>Here’s a visualization of the environment diagram. If you are stuck, remember the <a href="/cs61a/sp14/environment_diagrams/rules_of_environment_diagrams">rules of environment diagrams</a>.</p>
+  <pre><code>(fact (greater-than-or-equal ?x ?y)
+      (add ?y ?something ?x))
+</code></pre>
 
-  <p>The number one thing to remember is that when you <strong>call</strong> a function, you always need to make a new frame! And, also remember that functions have to keep track of their parent frames when they are not defined in the global frame. What that means is the nested function <code>y(f)</code> has a parent frame because it’s defined inside of the <code>f</code> frame.</p>
+  <p>There are multiple ways to solve this problem and here’s one of those solutions. First, we note that there isn’t an explicit base case! This is because we have defined the number 0 and the relation <code>add</code>. <code>x</code> is greater than or equal to <code>y</code> if you can find something to <code>add</code> to <code>y</code> to get <code>x</code>. If they are equal, you can add <code>zero</code> to make this relation true.</p>
 
-  <iframe width="800" height="1020" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=def+f(x)%3A%0A++++def+y(f)%3A%0A++++++++return+f(x)%0A++++return+y%0A%0Adef+g(x)%3A%0A++++return+f(x)%0A%0Adef+h(x)%3A%0A++++return+x+*+2%0A%0Adef+z(s)%3A%0A++++return+s+%2B+2%0A%0Ay+%3D+g(5)%0Az+%3D+y(z)%0Ap+%3D+y(h)&amp;mode=edit&amp;cumulative=true&amp;heapPrimitives=&amp;drawParentPointers=&amp;textReferences=&amp;showOnlyOutputs=&amp;py=3"></iframe>
+  <p>Here’s an alternate solution (watch out for hitting the infinite recursion depth):</p>
+
+  <pre><code>(fact (greater-than-or-equal ?a ?a))
+
+(fact (greater-than-or-equal ?x ?y)
+      (increment ?y ?y+1)
+      (greater-than-or-equal ?x ?y+1))
+</code></pre>
+
+  <p>This solution explicitly defines a base case of when the two numbers are equal. From there, the recursive fact keeps incrementing the second number until it is equivalent to the first. Using this solution, you might not get all of the answers because the logic interpreter might hit the maximum recursion depth, so watch out for that.</p>
 
 </div>
 
