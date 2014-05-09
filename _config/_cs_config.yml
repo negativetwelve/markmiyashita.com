@@ -1466,6 +1466,10 @@ cs_classes:
                 date: "2013-08-08"
                 published: true
                 solution: false
+              fa13:
+                date: "2013-12-01"
+                published: true
+                solution: false
         - name: "Modulus In Logic"
           file: modulus_in_logic
           type: Challenge
