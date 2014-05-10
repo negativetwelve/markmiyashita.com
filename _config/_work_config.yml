@@ -21,7 +21,7 @@ work:
     end-date: "Present"
     image: /assets/images/berkeley.png
     modal: cs61a-ta
-    description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. In the summer of 2013, I gave a lecture to 200+ students on MapReduce. The lecture notes can be found <a href="http://www-inst.eecs.berkeley.edu/~cs61a/su13/slides/28-MapReduce_1pp.pdf">here.</a> My TA ratings are located <a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7419">here.</a>
+    description: I am an Undergraduate Student Instructor for the introductory computer science course, CS61A at UC Berkeley. I teach two sections, hold office hours, prepare discussion notes, create labs, and also lead review sessions. In the summer of 2013, I gave a lecture to 200+ students on MapReduce. The lecture notes can be found <a href="http://www-inst.eecs.berkeley.edu/~cs61a/su13/slides/28-MapReduce_1pp.pdf">here.</a> My TA ratings are located <a href="https://hkn.eecs.berkeley.edu/coursesurveys/instructor/7762">here.</a>
     full-description:
 
   - name: Kloudless
