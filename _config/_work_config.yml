@@ -1,8 +1,15 @@
 work:
-  - name: Yelp
-    role: Software Engineering Intern - Mobile Team
-    start-date: "May '13"
+  - name: Asana
+    role: Software Engineering Intern - Mobile
+    start-date: "May 2014"
     end-date: "Present"
+    image:
+    modal: asana
+    description:
+  - name: Yelp
+    role: Software Engineering Intern/Part Time - Mobile Team
+    start-date: "May 2013"
+    end-date: "May 2014"
     image: /assets/images/yelp.png
     modal: yelp
     description: As an intern on the Mobile Team, I built a flow analysis tool that allows you to breakdown and visualize user flows from the app. It also enables a visual interface for A/B testing and breakdown of data by dimensions. Gave a technical presentation to all of Yelp Engineering about the architecture of my project and how to extend it. I also worked on improving performance for some of our back-end processing, worked with analytics on the mobile apps, and added a few minor features to the iOS app.
