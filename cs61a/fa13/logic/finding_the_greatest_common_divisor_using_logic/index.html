@@ -7,7 +7,7 @@
 
 <title>
   
-    CS61A - Reverse Scheme List - Mark Miyashita
+    CS61A - Finding the Greatest Common Divisor using Logic - Mark Miyashita
   
 </title>
 
@@ -428,7 +428,7 @@ woopra.track('pv', {
 </div>
 <div class="col-md-9" role="main">
   <div class="page-header">
-  <h3>Reverse Scheme List</h3>
+  <h3>Finding the Greatest Common Divisor using Logic</h3>
 </div>
 
 
@@ -436,36 +436,14 @@ woopra.track('pv', {
 
 
 
-<p>Write a function in Scheme that reverses a list. The output should be a new list that is the reverse of the original list.</p>
+<p>Using the result of Homework 13 and after implmenting <code>modulus</code> <a href="http://markmiyashita.com/cs61a/sp13/problems/modulus_in_logic/">here</a>, you should be able to take those and write a fact for the greatest common divisor. I would recommending reading the Wikipedia article about using Euclid’s method for finding the GCD of two numbers. The link can be found <a href="http://en.wikipedia.org/wiki/Greatest_common_divisor#Using_Euclid.27s_algorithm">here</a>. Post in the comments if you have any questions.</p>
 
-<pre><code>(define (reverse lst)
-    ; Your Code Here
-                        )
+<pre><code>(fact (gcd ***YOUR CODE HERE*** ))
+
+
+(query (gcd (1 1 1 1) (1 1) ?what))
+; expect Success! ; what: (1 1)
 </code></pre>
-
-<p>And here’s a test to help you out:</p>
-
-<pre><code>(define (test)
-      (assert-equal '(1 2 3) (reverse '(3 2 1)))
-      (assert-equal '(3) (reverse '(3)))
-      (assert-equal '() (reverse '())))
-</code></pre>
-
-<p><a href="#solution" class="solution_toggle">Toggle Solution</a></p>
-
-<div class="solution">
-
-  <pre><code>(define (reverse lst)
-    (if (null? lst)
-        lst
-        (append (reverse (cdr lst)) (list (car lst)))))
-</code></pre>
-
-  <p>In this problem, we first check to make sure that the input <code>lst</code> is not empty. If it is, we can just return the empty list. Otherwise, we want to take off the first item, reverse the rest of the list, and then attach the original first item to the end of the reversed list.</p>
-
-  <p>We note that we have to use <code>append</code> in this case because of the way that <code>cons</code> works. <code>cons</code> works by creating a pair out of two elements. If we want to use <code>cons</code> to form a list, we’d have to have a list as the second argument. In this case, all we have is an element, the first item of the list. By using <code>append</code>, we can reverse the rest of the list (getting a list back) and then create a one-item list out of the first element and attach it to the end of the reversed list.</p>
-
-</div>
 
 
 
