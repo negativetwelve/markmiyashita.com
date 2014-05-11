@@ -38,7 +38,7 @@
 (fact (append (?x . ?r) ?b (?x . ?c))
       (append ?r ?b ?c))
 
-(query (append (1 2) (3 4) (1 2 3 4))
+(query (append (1 2) (3 4) (1 2 3 4)))
 ; expect Success!
 
 (query (append (1 2) (3 ?what) (1 2 3 5)))
