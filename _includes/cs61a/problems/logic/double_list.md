@@ -8,7 +8,7 @@ Write facts to define `double-length`. You may use anything already included in 
     (query (double-list (1 2 3) (1 1 2 2 3 3)))
     ; expect Success!
 
-    (query (length (1 2) ?what))
+    (query (double-list (1 2) ?what))
     ; expect Success! ; what: (1 1 2 2)
 {% endcapture %}
 
