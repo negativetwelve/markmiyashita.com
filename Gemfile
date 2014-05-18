@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.1'
 
 gem 'liquid', '2.5.0'
 gem 'jekyll', git: 'git://github.com/negativetwelve/jekyll.git'
